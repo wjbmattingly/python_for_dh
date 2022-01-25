@@ -32,4 +32,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
-        cname: python_textbook.pythonhumanities.com
+        cname: python-textbook.pythonhumanities.com
