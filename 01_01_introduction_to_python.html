@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Advanced Searching on Strings &#8212; Introduction to Python for Digital Humanists</title>
+    <title>1. Introduction to Python &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -226,18 +226,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   1.2. Introduction
+  <a class="reference internal nav-link" href="#about-this-textbook">
+   1.2. About this Textbook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-should-humanists-learn-to-code">
+   1.3. Why Should Humanists Learn to Code?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   1.3. Finding Strings that Don’t Contain Feature
+   1.4. Finding Strings that Don’t Contain Feature
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   1.4. Using RegEx with Pandas
+   1.5. Using RegEx with Pandas
   </a>
  </li>
 </ul>
@@ -250,7 +255,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Advanced Searching on Strings</center></h1>
+                <h1><center>Introduction to Python</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -266,18 +271,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   1.2. Introduction
+  <a class="reference internal nav-link" href="#about-this-textbook">
+   1.2. About this Textbook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-should-humanists-learn-to-code">
+   1.3. Why Should Humanists Learn to Code?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   1.3. Finding Strings that Don’t Contain Feature
+   1.4. Finding Strings that Don’t Contain Feature
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   1.4. Using RegEx with Pandas
+   1.5. Using RegEx with Pandas
   </a>
  </li>
 </ul>
@@ -289,240 +299,34 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="center-advanced-searching-on-strings-center">
-<h1><span class="section-number">1. </span><center>Advanced Searching on Strings</center><a class="headerlink" href="#center-advanced-searching-on-strings-center" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-introduction-to-python-center">
+<h1><span class="section-number">1. </span><center>Introduction to Python</center><a class="headerlink" href="#center-introduction-to-python-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>August 2021</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">1.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><br>
-</li>
-<li><br>
-</li>
-<li><br></li>
+<ol class="simple">
+<li><p>Why should historians, or humanists in general, learn to code?<br></p></li>
+<li><p>Why use Python specifically?<br></p></li>
+<li><p>What is covered in this textbook?<br></p></li>
 </ol>
 </div>
-<div class="section" id="introduction">
-<h2><span class="section-number">1.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
+<div class="section" id="about-this-textbook">
+<h2><span class="section-number">1.2. </span>About this Textbook<a class="headerlink" href="#about-this-textbook" title="Permalink to this headline">¶</a></h2>
+<p>If you are reading this textbook, then you, like me, are probably a humanist interested in coding. If you are here, then it is likely true that you have already been presented with or heard about the benefits of coding. Nevertheless, I will begin this textbook with the presumption that you need convincing. It is my hope that by the end of this chapter, you will not only have a clear understanding of the utility of coding, but its direct applications to humanities-based inquiry. You will also learn about Python specifically and where it sits within the realm of coding languages. This chapter will not argue that Python is the best programming language, rather it will present the strengths and weaknesses of it compared to others available. I will conclude this chapter with a brief outline of this textbook, so that you will have a clear picture of where we are going and, most importantly, why.</p>
+<p>If you have no coding experience, please do not worry. I presume no knowledge on the part of the reader about computers or programming. This textbook is meant to serve both as a primary and a refresher. As you progress through this textbook, you will notice video links. These videos are meant to serve as video-based lectures that cover the material in greater detail. While text is a well-suited medium for educating others, with programming it is sometimes important to watch live coding. More importantly, a person learning to code should engage with the language itself. This particular textbook is coded in JupyterBook. A good way to think about JupyterBook is as a regular electronic textbook that allows me, the author, to execute code so that you, the reader, can see the results. It also allows you, the reader, to download the book and execute the commands locally. I will be explaining all of this as we progress through the textbook.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
-      <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
-      <td>Heikkinen, Miss. Laina</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
-      <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>113803</td>
-      <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
-      <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>887</th>
-      <td>888</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Graham, Miss. Margaret Edith</td>
-      <td>female</td>
-      <td>19.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>112053</td>
-      <td>30.0000</td>
-      <td>B42</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>888</th>
-      <td>889</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
-      <td>female</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>W./C. 6607</td>
-      <td>23.4500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
-    </tr>
-  </tbody>
-</table>
-<p>891 rows × 12 columns</p>
-</div></div></div>
-</div>
+<div class="section" id="why-should-humanists-learn-to-code">
+<h2><span class="section-number">1.3. </span>Why Should Humanists Learn to Code?<a class="headerlink" href="#why-should-humanists-learn-to-code" title="Permalink to this headline">¶</a></h2>
+<p>As a humanist who had a rather traditional education, I know all too well the skepticism that is placed on digital approaches to humanist inquiry. This skepticism, believe it or not, is well earned and should not be scoffed at. Learning to code will mean that you, as a humanist, can do things that other humanist who cannot code will not be able to do. You will be able to analyze thousands of texts in minutes. You will be able to find relevant images among 300,000. You will be able to clean texts so that you can perform more complex searches. All of these benefits, however, come at a cost. You must, by default, surrender some tasks to a machine and this means that the tasks you are performing will not be 100% accurate. As a result, you may miss certain key pieces of information. If you decide to learn to code as a humanist, you must become familiar and comfortable with these concepts.</p>
+<p>In computer science and data science, this caveat is well-understood and accepted. In the humanities, however, it is and should be met with skepticism. Humanists are researchers who pride themselves in close reading of texts. In some cases, a historian writing a PhD may spend years with only a handful of documents. So how then do wee handle this seemingly paradoxical position. The answer is understanding and not ignoring the weaknesses coding presents in a research workflow. In understanding that weakness, you as a humanist must make it known to your audience that your methods are not 100% accurate, but you have taken steps necessary to ensure as high an accuracy as possible. Further, should you use coding to engage in other adventures, such as machine learning, you should be reluctant to rest conclusions strongly on the results of your computational approaches unless you are well-acquainted with the mathematics and statistics behind them.</p>
+<p>With this scaring warning out of the way, let us then consider the benefits of coding. We, as humans, are fundamentally flawed. We must sleep, eat, socialize, enjoy relationships with loved ones; essentially, we must live our lives. We are mortal beings who will die. Our time is one of our greatest commodities. All of these things mean that we cannot opperate 24/7 on a single task for 365 days a year. Furthermore, we are terrible at performing repetitive tasks. We, as humans, make mistakes.</p>
 </div>
 <div class="section" id="finding-strings-that-don-t-contain-feature">
-<h2><span class="section-number">1.3. </span>Finding Strings that Don’t Contain Feature<a class="headerlink" href="#finding-strings-that-don-t-contain-feature" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Finding Strings that Don’t Contain Feature<a class="headerlink" href="#finding-strings-that-don-t-contain-feature" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="using-regex-with-pandas">
-<h2><span class="section-number">1.4. </span>Using RegEx with Pandas<a class="headerlink" href="#using-regex-with-pandas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>Using RegEx with Pandas<a class="headerlink" href="#using-regex-with-pandas" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
