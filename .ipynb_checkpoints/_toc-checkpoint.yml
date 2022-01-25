@@ -1,0 +1,10 @@
+format: jb-book
+root: intro
+parts:
+- caption: Key Concepts and Terms
+  numbered: true
+  chapters:
+  - file: 01_01_introduction_to_python
+    title: Introduction to Python
+  - file: 01_02_installing_python
+    title: Installing Python
