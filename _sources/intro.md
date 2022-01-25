@@ -1,4 +1,4 @@
-# <p align="center">INTRODUCTION TO PANDAS IN PYTHON</p>
+# <p align="center">INTRODUCTION TO PYTHON FOR DH</p>
 <p align="center">by</p>
 
 ### <p align="center">Dr. W.J.B. Mattingly</p>
@@ -7,7 +7,7 @@
 <p align="center">United States Holocaust Memorial Museum</p>
 
 ### <p align="center">How to Cite</p>
-Mattingly, William. <i>Introduction to Pandas in Python</i>, 2021. <a href="ner.pythonhumanities.com" target="_blank">pandas.pythonhumanities.com</a>.
+Mattingly, William. <i>Introduction to Python for DH</i>, 2022. <a href="python_textbook.pythonhumanities.com" target="_blank">python_textbook.pythonhumanities.com</a>.
 <p align="center">
 
 <br><br><br><br>
