@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Digital Humanists</title>
+    <title>Introduction to Data &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -96,24 +96,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Key Concepts and Terms
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_01_introduction_to_python.html">
-   1. Introduction to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_02_installing_python.html">
-   2. Installing Python
-  </a>
- </li>
-</ul>
-
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -217,7 +199,49 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-data">
+   What is Data?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-strings">
+     Examples of Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-integers-and-floats">
+   Numbers (Integers and Floats)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#booleans">
+   Booleans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-strings-as-data">
+   Working with Strings as Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-numbers-as-data">
+   Working with Numbers as Data
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -228,7 +252,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1><center>Introduction to Data</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -237,7 +261,49 @@
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-data">
+   What is Data?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-strings">
+     Examples of Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-integers-and-floats">
+   Numbers (Integers and Floats)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#booleans">
+   Booleans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-strings-as-data">
+   Working with Strings as Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-numbers-as-data">
+   Working with Numbers as Data
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -247,7 +313,32 @@
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-introduction-to-data-center">
+<h1><center>Introduction to Data</center><a class="headerlink" href="#center-introduction-to-data-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2022</center><div class="section" id="covered-in-this-chapter">
+<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>What is Data?<br></p></li>
+<li><p>Types of Python Data<br></p></li>
+<li><p>Strings<br></p></li>
+<li><p>Numbers (Integers and Floats)<br></p></li>
+<li><p>Booleans<br></p></li>
+<li><p>Manipulating Strings<br></p></li>
+<li><p>Mathematical Operations<br></p></li>
+</ol>
+</div>
+<div class="section" id="what-is-data">
+<h2>What is Data?<a class="headerlink" href="#what-is-data" title="Permalink to this headline">¶</a></h2>
+<p>In the video, I noted that in Python there are six key pieces of data and data structures with which we will be working: integers, floats, strings, lists, tuples, and dictionaries. Data are pieces of information (the singular is datum)i.e., integers, floats, and strings. Data structures are objects that make data relational, i.e. lists, tuples, and dictionaries. Before you proceed to lesson three, you MUST have a basic understanding of the ways in which you create data in Python and the ways in which you make that data relational through data structures. Start to train your brain to recognize the Python syntax for these pieces of data and data structures discussed below.</p>
+</div>
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<p>Unlike integers and floats, strings are a sequence of characters. These can be digits or they can be letters or symbols, but what makes a string distinctly different from an integer or a float is the presence of quotation marks, i.e. ” ” or ‘ ‘. The opening of a quotation mark indicates to Python that a string has begun and the closing of the same style of a quotation mark indicates the close of a string. It is important to use the same style of quotation mark for a string, either a double or a single. In the examples below, we have two string objects: a_string and b_string, the former corresponds to the string “Hello” and the latter corresponds to the string “Bye”.</p>
+<div class="section" id="examples-of-strings">
+<h3>Examples of Strings<a class="headerlink" href="#examples-of-strings" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Strings - any kind of text</span>
 <span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;This is a string.&quot;</span>
@@ -335,6 +426,11 @@
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="numbers-integers-and-floats">
+<h2>Numbers (Integers and Floats)<a class="headerlink" href="#numbers-integers-and-floats" title="Permalink to this headline">¶</a></h2>
+<p>An <b>integer</b>, as noted in the video, is a digit that does not contain a decimal place, i.e. 1 or 2 or 3. This can be a number of any size, such as 100,001,200. A float, on the other hand, is a digit with a decimal place. So, while 1 is an integer, 1.0 is a float. Floats, like integers, can be of any size, but they necessarily have a decimal place, i.e. 200.0020002938. In python, you do not need any special characters to create an integer or float object. You simply need an equal sign. In the example below, we have two objects which are created with a single equal sign. These objects are titled an_integer and a_float with the former being an object that corresponds to the integer 1 and the latter being an object that corresponds to the float 1.1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Numbers</span>
@@ -382,6 +478,10 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="booleans">
+<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
+<p>The term boolean comes from Boolean algebra, which is a type of mathematics that works in binary logic. Binary is the basis for all computers, save for the more nascent quantum computers. Binary is 0 or 1; off or on; true or false. A boolean object in programming languages is either True or False. True is 1, while False is 0. In Python we can express these concepts with capitalized T or F in True or False. Let’s make one such object now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Boolean =&gt; True or False</span>
@@ -435,6 +535,13 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="working-with-strings-as-data">
+<h2>Working with Strings as Data<a class="headerlink" href="#working-with-strings-as-data" title="Permalink to this headline">¶</a></h2>
+<p>They are the key way in which we handle text data in Python. This means that for the digital humanist, strings will be fundamentally necessary to understand as they are the chief form of data we use.</p>
+<p>In order to interact with strings as pieces of data, we use methods and functions. The chief functions for interacting with strings on a basic level come standard with Python. This means that you do not need to install third-party libraries. Later in this textbook we will do more advanced things with strings using third-party libraries, such as Regex, but for now, we will simply work with the basic functions.</p>
+<p>Although I will discuss functions in greater detail in a later lesson, it is important to understand what a function is. A function is a block of code stored outside (or inside) your Python script. We call a function by using the function name and added an open and a close parentheses. Often when we call functions, we need to pass arguments. These are the pieces of data that the function will perform the operations on. The arguments are contained within the parentheses and delineated with commas. In some cases, there will be named arguments which require you to specify a specific argument.</p>
+<p>In the example below, we have an object, which is a string (a_string), and two different functions. The first function is the split function which will split a string. In the example we state the object upon which we want to perform the function. Next, we place a period to state the specific function that we want to run on the string. We have an open parentheses in which we have a single argument, a string (created by quotation marks). The specific string is a single comma. This means that we are telling Python to split the string any time it finds a comma. Remember though, strings are immutable. This means that in order to store the result of this function in memory, we need to create a new object. This new object is new_string which we create with an equal sign. Were we to print off new string, we would see a list of strings that would look like this: [“Hello”,”Bye”]. To run the code below, hit the play button.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str6</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
@@ -597,6 +704,9 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="working-with-numbers-as-data">
+<h2>Working with Numbers as Data<a class="headerlink" href="#working-with-numbers-as-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">1</span>
@@ -717,6 +827,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt; &gt; =&lt; =&gt;  ==</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
