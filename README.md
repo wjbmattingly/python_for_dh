@@ -5,7 +5,7 @@ While this course was originally designed for humanists, it is equally valuable 
 
 ## OUTLINE OF COURSE
 
-### PART 1: KEY CONCEPTS AND TERMS
+### PART ONE: KEY CONCEPTS AND TERMS
 1) Introduction
   1) Introduction to Me
   2) Introduction to Course
@@ -16,7 +16,7 @@ While this course was originally designed for humanists, it is equally valuable 
 3) How to Install Python
 4) Online Compilers
 
-### PART 2.1: DATA and DATA STRUCTURES
+### PART TWO: DATA and DATA STRUCTURES
 1) What is Data?
 2) Strings
 3) Numbers
@@ -37,45 +37,40 @@ While this course was originally designed for humanists, it is equally valuable 
 2) Why are Loops Useful?
 3) For Loops
 4) While Loops
+5) What are conditionals?
+6) If-Then
 
-1) What are conditionals?
-2) If-Then
-
-### PART SIX: FUNCTIONS
+### PART FOUR: FUNCTIONS AND CLASSES
 1) What are Functions?
 2) When do we Use Functions?
 2) How do we Create Functions?
 3) How do we call Functions?
+4) What are Classes?
+5) When do we Use Classes?
+6) How do we Create Classes?
+7) How do we call Classes?
 
-### PART SEVEN: CLASSES
-1) What are Classes?
-2) When do we Use Classes?
-3) How do we Create Classes?
-4) How do we call Classes?
-
-### PART EIGHT: LOADING AND SAVING DATA
+### PART FIVE: LOADING AND SAVING DATA
 1) Why Save Data?
 2) The with opereator
 
-### PART NINE: LIBRARIES
+### PART SIX: LIBRARIES
 1) What are Libraries
 2) Why are Libraries Useful
 
-### PART TEN: TABULAR DATA (EXCEL, CSV, TSV)
+### PART SEVEN: TABULAR DATA (EXCEL, CSV, TSV) AND JSON DATA
 1) What is Tabular Data?
 2) Pandas and the DataFrame
+3) What is JSON?
+4) Why is JSON important?
+5) The Basics of the JSON Library
 
-### PART ELEVEN: WORKING WITH JSON DATA
-1) What is JSON?
-2) Why is JSON important?
-3) The Basics of the JSON Library
-
-### PART TWELVE: WORKING WITH WEB DATA
+### PART EIGHT: WORKING WITH WEB DATA
 1) What is Web Scrapping?
 2) Requests
 3) BeautifulSoup
 
-### PART THIRTEEN: FINAL PROJECT - EXTRACTING TABLE FROM WIKIPEDIA
+### PART NINE: FINAL PROJECT - EXTRACTING TABLE FROM WIKIPEDIA
 1) How to Find Data
 2) Extracting theh Data
 3) Saving the Data
