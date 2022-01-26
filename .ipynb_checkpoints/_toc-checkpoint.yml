@@ -8,3 +8,17 @@ parts:
     title: Introduction to Python
   - file: 01_02_installing_python
     title: Installing Python
+parts:
+- caption: Working with Data
+  numbered: true
+  chapters:
+  - file: 02_01_data
+    title: Introduction to Data
+  - file: 02_02_data_structurees
+    title: Introduction to Data Structures
+parts:
+- caption: Loops and Conditionals
+  numbered: true
+  chapters:
+  - file: 03_01_loops
+    title: Introduction to Python
