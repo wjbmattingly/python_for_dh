@@ -363,7 +363,8 @@
 </div>
 <div class="section" id="what-is-data">
 <h2><span class="section-number">3.2. </span>What is Data?<a class="headerlink" href="#what-is-data" title="Permalink to this headline">¶</a></h2>
-<p>In the video, I noted that in Python there are six key pieces of data and data structures with which we will be working: integers, floats, strings, lists, tuples, and dictionaries. Data are pieces of information (the singular is datum)i.e., integers, floats, and strings. Data structures are objects that make data relational, i.e. lists, tuples, and dictionaries. Before you proceed to lesson three, you MUST have a basic understanding of the ways in which you create data in Python and the ways in which you make that data relational through data structures. Start to train your brain to recognize the Python syntax for these pieces of data and data structures discussed below.</p>
+<p>In Python there are seven key pieces of data and data structures with which we will be working: strings, numbers (integers and floats), booleans, lists, tuples, and dictionaries. In the next two chapters, we will explore each of these.</p>
+<p>Data are pieces of information (the singular is datum)i.e., integers, floats, and strings. Data structures are objects that make data relational, i.e. lists, tuples, and dictionaries. Before you proceed to lesson three, you MUST have a basic understanding of the ways in which you create data in Python and the ways in which you make that data relational through data structures. Start to train your brain to recognize the Python syntax for these pieces of data and data structures discussed below.</p>
 </div>
 <div class="section" id="strings">
 <h2><span class="section-number">3.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
@@ -462,6 +463,7 @@
 </div>
 <div class="section" id="numbers-integers-and-floats">
 <h2><span class="section-number">3.4. </span>Numbers (Integers and Floats)<a class="headerlink" href="#numbers-integers-and-floats" title="Permalink to this headline">¶</a></h2>
+<p>Numbers are represented in programming languages in two several ways. The two we will deal with are integers and floats.</p>
 <p>An <b>integer</b>, as noted in the video, is a digit that does not contain a decimal place, i.e. 1 or 2 or 3. This can be a number of any size, such as 100,001,200. A float, on the other hand, is a digit with a decimal place. So, while 1 is an integer, 1.0 is a float. Floats, like integers, can be of any size, but they necessarily have a decimal place, i.e. 200.0020002938. In python, you do not need any special characters to create an integer or float object. You simply need an equal sign. In the example below, we have two objects which are created with a single equal sign. These objects are titled an_integer and a_float with the former being an object that corresponds to the integer 1 and the latter being an object that corresponds to the float 1.1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,6 +741,9 @@
 </div>
 <div class="section" id="working-with-numbers-as-data">
 <h2><span class="section-number">3.7. </span>Working with Numbers as Data<a class="headerlink" href="#working-with-numbers-as-data" title="Permalink to this headline">¶</a></h2>
+<p>Now that you understand how strings work, let’s begin exploring another type of data: numbers. Numbers in Python exist in two chief forms: integers and floats. As noted in Lesson 02, integers are numbers without a decimal point, whereas floats are numbers with a decimal point. This is am important distinction that you MUST remember, especially when working with data imported from and exported to Excel.</p>
+<p>As digital humanists, you might be thinking to yourself, “I just work with text, why should I care so much about numbers?” The answer? Numbers allow us to form quantitative analysis. What if you want to know the times a specific author wrote to a colleague or to which places he wrote most frequently, as was the case with the Republic of Letters project at Stanford? In order to perform that kind of analysis, you MUST have a command of how numbers work in Python, how to perform basic mathematical functions on those numbers, and how to interact with them. Further, numbers are essential to understand for performing more advanced functions in Python, such as Loops, explored in Lesson 09.</p>
+<p>The way in which you create a number object in Python is the to create an object name, use the equal sign and type the number. If your number has a decimal, Python will automatically consider it a float. If it does not, it will automatically consider it an integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">1</span>
@@ -747,6 +752,16 @@
 </div>
 </div>
 </div>
+<p>Throughout your DH project, you will very likely need to manipulate numbers through mathematical operations. Here is a list of the common operations:</p>
+<ol class="simple">
+<li><p>Addition +</p></li>
+<li><p>Subtraction –</p></li>
+<li><p>Multiplication *</p></li>
+<li><p>Exponential Multiplication **</p></li>
+<li><p>Division /</p></li>
+<li><p>Modulo % #This will return the remainder, e.g. 2%7 will yield 1.</p></li>
+<li><p>Floor // #This will return the max number of times two numbers can be divided into each other, e.g. 2//7 will yield 3.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="p">)</span>
@@ -855,6 +870,15 @@
 </div>
 </div>
 </div>
+<p>In addition to this, you will very often in loops need to identify Comparison Operators (equal to, less than, etc). Here is a list of those:</p>
+<ol class="simple">
+<li><p>Equal to (==)</p></li>
+<li><p>Greater than (&gt;)</p></li>
+<li><p>Less than (&lt;)</p></li>
+<li><p>Less than or equal to (&lt;=)</p></li>
+<li><p>Greater than or equal to (&gt;=)</p></li>
+<li><p>Not equal to (!=)</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt; &gt; =&lt; =&gt;  ==</span>
