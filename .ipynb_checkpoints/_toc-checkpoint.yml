@@ -13,7 +13,7 @@ parts:
   chapters:
   - file: 02_01_data
     title: Introduction to Data
-  - file: 02_02_data_structurees
+  - file: 02_02_data_structures
     title: Introduction to Data Structures
 - caption: Loops and Conditionals
   numbered: true
