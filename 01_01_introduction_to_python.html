@@ -257,6 +257,16 @@
    1.4. Why Should Humanists Learn to Code?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-python">
+   1.5. What is Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   1.6. Why Python?
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -297,6 +307,16 @@
    1.4. Why Should Humanists Learn to Code?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-python">
+   1.5. What is Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   1.6. Why Python?
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -321,7 +341,7 @@
 <div class="section" id="about-the-author">
 <h2><span class="section-number">1.2. </span>About the Author<a class="headerlink" href="#about-the-author" title="Permalink to this headline">¶</a></h2>
 <p>I am Dr. William Mattingly. I hold a PhD in Medieval History from the University of Kentucky where I explored early medieval social networks. A lot of my research was aided by my ability to code, specifically in Python, for data cleaning and analysis. I was even able to use Python to plot and visualize social networks and data. During the fourth year of my PhD, I used Python to create an app that I could use to plot and analyze these social networks. Currently, I am a Postdoctoral Fellow for the Analysis of Historical Documents at the Smithsonian Institution with a joint appointment at the United States Holocaust Memorial Museum. In both institutions, I use Python, machine learning, and natural language processing (NLP) to analyze historical texts in large quantities to generate new insights about the documents held in the archives. In all, I have nearly a decade of experience using Python as a historian.</p>
-<p>When I first started to explore Python, there were not many available tutorials geared towards humanists and, for that reason, four years ago I started PythonHumanities.com and Python Tutorials for Digital Humanities. I geared these resources to humanists who had no prior knowledge about computing or coding. This new JupyterBook is the third iteration of this textbook that brings a lot of the material that first appeared on PythonHumanities.com years ago into a new, more accessible JupyterBook.</p>
+<p>When I first started to explore Python, there were not many available tutorials geared towards humanists and, for that reason, four years ago I started PythonHumanities.com and Python Tutorials for Digital Humanities on YouTube. I geared these resources to humanists who had no prior knowledge about computing or coding. This new JupyterBook is the third iteration of this textbook that brings a lot of the material that first appeared on PythonHumanities.com years ago into a new, more accessible JupyterBook. It will forever remain free to all as will the video lectures embedded in this book.</p>
 </div>
 <div class="section" id="about-this-textbook">
 <h2><span class="section-number">1.3. </span>About this Textbook<a class="headerlink" href="#about-this-textbook" title="Permalink to this headline">¶</a></h2>
@@ -336,6 +356,39 @@
 <p>Coding allows us to pass tasks to a computer that could otherwise be done by a human. Many of the tasks we need to perform as humanists are repetitive and we, as humans, are prone to make mistakes. Coding a solution to perform a repetitive specific task is known as <b>automation</b>. Being able to automate these tasks can radically reduce the amount of time we use to do these tasks, from hours, weeks, or even years, to seconds, minutes, or hours. Imagine having to grab data from an archive website. Imagine that the information you need is found on 2,000 different pages. How long would it take you to go to each of those pages and copy and paste the text into a Word Document? In Python, that task can be coded in minutes and left to run for an hour. This allows you, the researcher to go off and do some other task more essential or, perhaps, enjoy a nice tea break in a hammock so that when you return to analyze the documents, you will be well-rested.</p>
 <p>But coding does not just allow us to automate tasks like this. It also allows us to systematically clean data. Imagine you wanted to search across PDF scans of medieval Latin. This problem presents many key issues that make such a task impossible or unreliable. First, medieval Latin did not have any firm spelling convention. This means that some scans may have variant spelling of words. Second, Latin is a highly inflected language, meaning word order is not important, rather the ending of a given word is. This means that each word can have as many as 8 forms in nouns and sometimese as many as 25+ forms if it is a verb. In addition to this, your texts are scans. Are those scans even searchable? If they are, was the OCR, or Optical Character Recognition, accurate? If it was done prior to 2015, it likely is not. If after, then the scans may be in a bad enough state where the OCR is not accurate. In addition to these problems, any OCR system will retain line breaks, meaning if the key word that you want to search for is hyphenated because the word is broken up between two lines, you need to account for that in your search. Next, we need to take into account editor notations, which often are noted in brackets, parentheses, and carrots. While this example is certainly a complex one, it is perfectly common. And while I am using Latin to demonstrate a greater issue with inflected languages, these same issues, especially those around OCR, surface with English texts. Coding allows us to address each and every one of these issues, some more easily than others.</p>
 <p>The issue of searching is further complicated when this needs to be done for many documents simultaneously. Imagine if these issues surfaced in 5,000 different PDFs that you needed to analyze. Could you realistically run all these searches across 5,000 documents? If you could, would your results be good? To answer the former, yes, if you are willing to spend months doing it; to answer the latter, likely not. Programming allows for you to develop programs that perform all these tasks across all 5,000 documents. It may take a few days to run, but in the end you will have cleaned, structured data, that searchable. Further, when you run a search, you will not simply hit ctrl+f. You will code your own search method so that your simple search can return very complex results that accounts for variance in the text.</p>
+</div>
+<div class="section" id="what-is-python">
+<h2><span class="section-number">1.5. </span>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">¶</a></h2>
+<p>Python is a programming language. Programming languages are ways that we, as humans, can write commands that can then be sent a compiler, which translates our code into a more machine-readable form, and then executes the orders we have given the computer. There are many types of programming languages available:</p>
+<ol class="simple">
+<li><p>C</p></li>
+<li><p>Python</p></li>
+<li><p>JavaScript</p></li>
+<li><p>R</p></li>
+<li><p>HTML (this is debatable)</p></li>
+</ol>
+<p>Not all programming languages are created equal. Some are best used for developing software, such as C; others are best suited for web development, such as HTML and JavaScript. And others are great at statistical analysis, R (and Python). Where does Python excel? Python excels in two key ways.</p>
+<ol class="simple">
+<li><p>Easy to Write</p></li>
+<li><p>Easy to Read</p></li>
+</ol>
+<p>It is relatively easy to write compared to other programming languages because the syntax, or way in which you perform tasks in code, is straightforward. It is easy to read because Python forces you to use indentation, meaning blocks of code that are nested within other blocks of code are indented, which means you can easily identify the logic behind a complex program. This is different from C, for example, where indentation is optional and squiggly brackets {} are used to define nested blocks of code.</p>
+<p>Because of these two things, Python has soared in popularity which has, in turn, resulted in a massive community of programmers and a large number of libraries available. We will learn about libraries in Part Six of this textbook. For now, think of them as large quantities of code that have already been written for you so that you can write 1 line of code rather than hundreds or even thousands! This has, in turn, made Python more appealing. Today, it is one of the most widely used programming languages and is considered the essential language for text analysis, machine learning, data analysis (alongside R), web scrapping, and much more.</p>
+<p>When you hear it described, you will often here it described in several ways:</p>
+<ol class="simple">
+<li><p>General Purpose Programming Language</p></li>
+<li><p>Scripting Programming Language</p></li>
+</ol>
+<p>Let’s discuss both of these really quickly, beginning with General Purpose Programming Language. As I said above, not all programming languages are created equal. They are often times designed to do very specific things. Python was created so that one could write code quickly to perform large tasks that do not necessarily require complex software, (e.g. data cleaning and analysis). Nevertheless, it packs all the same features as a general purpose programming language, meaning you can develop entire apps or software with it. A general purpose programming language simply means that Python can do anything other programming languages designed to develop software can do (such as C). You will often hear Python compared to R. In this regard, Python is different from R. While R is useful for statistical analysis, it is not a general purpose programming language. You cannot  develop software with R. Instead, R is limited in what it can do. Because Python is a general purpose programming language, you can use one language to perform all needed tasks, albeit some more challenging than others.</p>
+<p>Next, Python is a scripting language. While Python can be used to develop software, that is not where it shines. It is particularly suited so that you, the coder, can write code quickly to perform a narrow task. This is often done in the terminal, but we will get to that later in this book. Because Python is a scripting language, you can often times write the necessary code in minutes to perform a task that would take hours, days, or even weeks.</p>
+<p>All of this comes with one significant caveat. Python is slow. There are complex reasons for this, but understand that in most programming languages, a program is coded and then compiled. Once compiled, you can run that code consistently without recompiling. Because Python is a scripting language, each time the code is run, it is recompiled by your computer. The thing that makes Python easy to use, therefore, is what makes it slow. Nevertheless, the time saved by writing code in Python often outweighs the time saved by recompiling your code.</p>
+<p>Python (as of this writing) is currently in version 3.10.2. Let’s break each of these numbers down. The 3 refers to the main Python language. Python 2 still exists (in fact it comes standard on all Macs), but it is no longer supported and is slowly being replaced by Python 3. This is important to note because certain things are coded differently between the two programming languages. The 10.2 tells us specifically what version of Python 3 we are working with. Not all code from certain libraries is backwards compatible, meaning some libraries require a specific version of Python so understanding this now as a concept will save confusion later on. Each time a new version comes out, new features are available, so it is important to stay up-to-date with current versions, but not always essential.</p>
+</div>
+<div class="section" id="why-python">
+<h2><span class="section-number">1.6. </span>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
+<p>For all the above reasons, I encourage historians and humanists in general to learn Python as their first programming language. It is the easiest to learn, the quickest to write, and can solve all problems that surface. The large quantities of libraries and tutorials mean that there are few tasks that will prove impossible to do.</p>
+<p>If you want to engage in statistical analysis, R might be another suitable language. But all tasks done in R can also be done in Python. Further, Python is a general purpose language which means there are some things we can do in Python that you cannot do in R.</p>
+<p>If you are sold on Python, then continue reading this textbook as we learn how to install it and use it as humanists.</p>
 </div>
 </div>
 
