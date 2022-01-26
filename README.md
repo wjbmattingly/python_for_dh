@@ -5,7 +5,7 @@ While this course was originally designed for humanists, it is equally valuable 
 
 ## OUTLINE OF COURSE
 
-### PART ONE: KEY CONCEPTS AND TERMS
+### PART 1: KEY CONCEPTS AND TERMS
 1) Introduction
   1) Introduction to Me
   2) Introduction to Course
@@ -16,7 +16,7 @@ While this course was originally designed for humanists, it is equally valuable 
 3) How to Install Python
 4) Online Compilers
 
-### PART TWO: DATA
+### PART 2.1: DATA and DATA STRUCTURES
 1) What is Data?
 2) Strings
 3) Numbers
@@ -26,21 +26,18 @@ While this course was originally designed for humanists, it is equally valuable 
 5) String Methods
 6) Mathematical Operations
 7) Types of Division
+8) What are Data Structures?
+9) Lists
+10) Tuples
+11) Sets
+12) Dictionaries
 
-### PART THREE: DATA STRUCTURES
-1) What are Data Structures?
-2) Lists
-3) Tuples
-4) Sets
-5) Dictionaries
-
-### PART FOUR: LOOPING
+### PART THREE: LOOPING AND CONDITIONALS
 1) What are Loops?
 2) Why are Loops Useful?
 3) For Loops
 4) While Loops
 
-### PART FIVE: CONDITIONALS
 1) What are conditionals?
 2) If-Then
 
