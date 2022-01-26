@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Structures &#8212; Introduction to Python for Digital Humanists</title>
+    <title>4. Data Structures &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="03_01_loops.html" />
+    <link rel="prev" title="3. Introduction to Data" href="02_01_data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,10 +120,15 @@
   Working with Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02_01_data.html">
    3. Introduction to Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Data Structures
   </a>
  </li>
 </ul>
@@ -232,37 +239,37 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Structures
+   4. Data Structures
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists">
-   Lists
+   5. Lists
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tuples">
-   Tuples
+   6. Tuples
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mutability-vs-immutability">
-   Mutability vs Immutability
+   7. Mutability vs Immutability
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sets-bonus-data-structure">
-   Sets (Bonus Data Structure)
+   8. Sets (Bonus Data Structure)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dictionaries">
-   Dictionaries
+   9. Dictionaries
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexing">
-   Indexing
+   10. Indexing
   </a>
  </li>
 </ul>
@@ -287,37 +294,37 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Structures
+   4. Data Structures
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists">
-   Lists
+   5. Lists
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tuples">
-   Tuples
+   6. Tuples
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mutability-vs-immutability">
-   Mutability vs Immutability
+   7. Mutability vs Immutability
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sets-bonus-data-structure">
-   Sets (Bonus Data Structure)
+   8. Sets (Bonus Data Structure)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dictionaries">
-   Dictionaries
+   9. Dictionaries
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexing">
-   Indexing
+   10. Indexing
   </a>
  </li>
 </ul>
@@ -337,12 +344,12 @@
 </div>
 </div>
 <div class="section" id="data-structures">
-<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h1>
 <p>In the last chapter, we met strings, integers, floats, and booleans. Each of these were types of data. Strings, for example, allowed us to work with text and numbers allowed us to work with integers and floats. In this chapter, we will begin working with data structures. <b>Data structures</b> are ways of storing multiple kinds of data in a systematic way. In Python, these are created as objects that can be stored in memory and called later in a script. They are divided into two categories: mutable and immutable.</p>
 <p>Throughout this chapter, we will learn about some of the key types of data structures, how they are different, and how they can be used. We will only cover these in a cursory manner. Throughout this textbook, we will use these data structures to write code and perform data cleaning and data analysis tasks. It is essential that you know how to recognize types of data structures and differentiate them before moving forward. To keep things simple for now, we will focus on three types of data structures: lists, tuples, and dictionaries. There are other types of data structures in Python, but these are the core three that you will use.</p>
 </div>
 <div class="section" id="lists">
-<h1>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
 <p><b>Lists</b> and tuples are identical with one major exception: lists are mutable. This means that you can create a list object and then alter it in memory as your script runs. This allows for you to do very powerful things to lists that you cannot do to tuples. And these are going to be one of the key data structures you use in all digital humanities projects. The reason? We often need to adjust data while working with it.</p>
 <p>While we created a tuple with parentheses, we will create lists with square brackets. In the examples below we have two lists. In the first list we see that lists, just like tuples, can contain integers, floats, or strings. We separate items in our list with a comma. In the second example, a_list2, we see that lists can contain data structures within them. This is true for lists, tuples, and dictionaries.</p>
 <div class="cell docutils container">
@@ -373,7 +380,7 @@
 </div>
 </div>
 <div class="section" id="tuples">
-<h1>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h1>
 <p><b>Tuples</b> are lists of data that cannot be changed. When we look at lists in Lesson 06, we will see that lists are the exact same thing as tuples, except they can be changed. We can distinguish tuples from lists by the way in which they are formed. While lists use square brackets, tuples use parentheses. We create a tuple, like the example below. Our tuple object is a_tuple and the tuple consist of three items: an integer 1, a float 1.0, and a string of “one”. Lists and tuples can contain all three of these types of data. The way in which we separate items in a tuple is with a comma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,7 +403,7 @@
 </div>
 </div>
 <div class="section" id="mutability-vs-immutability">
-<h1>Mutability vs Immutability<a class="headerlink" href="#mutability-vs-immutability" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Mutability vs Immutability<a class="headerlink" href="#mutability-vs-immutability" title="Permalink to this headline">¶</a></h1>
 <p>As noted above, tuples are immutable which means they cannot be changed. Let’s see precisely what this means in practice. Say, we wanted to add to a list. We can do this with the .append() method. This will take one argument, or piece of information placed between the parentheses. You will learn about arguments later when we discuss functions and methods in greater depth. For now, understand that the information passed between the parentheses tells the method or function what is needed to perform the function. In this case, .append() allows us to append, or add, something to a list. The argument that we pass, “one”, tells what we want to append. In this case, the string, “one”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -438,7 +445,7 @@
 <p>Notice that we get an AttributeError. This means that a tuple does not have the ability to use the append method. This does not exist for tuples because they are immutable or unchangeable. The only way to alter the object name, tuple1 is to entirely replace it in memory.</p>
 </div>
 <div class="section" id="sets-bonus-data-structure">
-<h1>Sets (Bonus Data Structure)<a class="headerlink" href="#sets-bonus-data-structure" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Sets (Bonus Data Structure)<a class="headerlink" href="#sets-bonus-data-structure" title="Permalink to this headline">¶</a></h1>
 <p>There is one other data structure similar to lists and tuples and I include it here as a bonus data structure. This is the set. A <b>set</b> is identical to a list. It is mutable, meaning we can update it, but unlike a list, it cannot contain duplicates. This is useful in niche circumstances, such as when you need to remove all duplicates from a list. I include it here just so that you are aware that other types of data structures do exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -455,7 +462,7 @@
 </div>
 </div>
 <div class="section" id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
 <p>Like tuples and lists, dictionaries are a data structure in Python. Like lists, dictionaries are mutable, meaning they can be changed in memory. Unlike tuples and lists, dictionaries are not lists of data. Instead, they have two components: keys and values. These two components are separated by a colon. All of this is contained within squiggly brackets. In the example below, we have a dictionary, a_dict, with a key of “name” and a value of “William”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,7 +514,7 @@
 </div>
 </div>
 <div class="section" id="indexing">
-<h1>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Indexing</span>
@@ -626,7 +633,21 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_01_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span><center>Introduction to Data</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_01_loops.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
