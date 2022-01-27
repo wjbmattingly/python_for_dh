@@ -1,4 +1,4 @@
-# <p align="center">INTRODUCTION TO PYTHON FOR DH</p>
+# <p align="center">INTRODUCTION TO PYTHON FOR DIGITAL HUMANITIES</p>
 <p align="center">by</p>
 
 ### <p align="center">Dr. W.J.B. Mattingly</p>
