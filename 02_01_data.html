@@ -315,6 +315,11 @@
    3.8. Working with Numbers as Data
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.9. Conclusion
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -413,6 +418,11 @@
    3.8. Working with Numbers as Data
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.9. Conclusion
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -455,8 +465,8 @@
 <div class="section" id="the-print-function">
 <h3><span class="section-number">3.2.2. </span>The Print Function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
 <p>Excellent! We have created our first object. Now, it is time to use that object. Below, we will learn about ways we can manipulate strings, but for now, let’s simply see if that object exists in memory. We can do this with the print function.</p>
-<p>The print function will become your best friend in Python. It is, perhaps, the function I used most commonly. The reason for this is because the print function allows for you to easily debug, or identify problems and fix them, within your code. It allows us to print off objects that are stored in memory.</p>
-<p>To use the print function, we type the word print followed by an open parentheses (. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses, ). Let’s try to print off our new object author to make sure it is in memory.</p>
+<p>The print function will become your best friend in Python. It is, perhaps, the function I use most commonly. The reason for this is because the print function allows for you to easily debug, or identify problems and fix them, within your code. It allows us to print off objects that are stored in memory.</p>
+<p>To use the print function, we type the word print followed by an open parentheses. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses. Let’s try to print off our new object author to make sure it is in memory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">author</span><span class="p">)</span>
@@ -596,7 +606,7 @@
 <div class="section" id="numbers-integers-and-floats">
 <h2><span class="section-number">3.5. </span>Numbers (Integers and Floats)<a class="headerlink" href="#numbers-integers-and-floats" title="Permalink to this headline">¶</a></h2>
 <p>Numbers are represented in programming languages in two several ways. The two we will deal with are integers and floats.</p>
-<p>An <b>integer</b>, as noted in the video, is a digit that does not contain a decimal place, i.e. 1 or 2 or 3. This can be a number of any size, such as 100,001,200. A float, on the other hand, is a digit with a decimal place. So, while 1 is an integer, 1.0 is a float. Floats, like integers, can be of any size, but they necessarily have a decimal place, i.e. 200.0020002938. In python, you do not need any special characters to create an integer or float object. You simply need an equal sign. In the example below, we have two objects which are created with a single equal sign. These objects are titled an_integer and a_float with the former being an object that corresponds to the integer 1 and the latter being an object that corresponds to the float 1.1.</p>
+<p>An <b>integer</b> is a digit that does not contain a decimal place, i.e. 1 or 2 or 3. This can be a number of any size, such as 100,001,200. A float, on the other hand, is a digit with a decimal place. So, while 1 is an integer, 1.0 is a float. Floats, like integers, can be of any size, but they necessarily have a decimal place, i.e. 200.0020002938. In python, you do not need any special characters to create an integer or float object. You simply need an equal sign. In the example below, we have two objects which are created with a single equal sign. These objects are titled an_integer and a_float with the former being an object that corresponds to the integer 1 and the latter being an object that corresponds to the float 1.1.</p>
 <div class="section" id="examples-of-numbers">
 <h3><span class="section-number">3.5.1. </span>Examples of Numbers<a class="headerlink" href="#examples-of-numbers" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -704,6 +714,7 @@
 <p>In order to interact with strings as pieces of data, we use methods and functions. The chief functions for interacting with strings on a basic level come standard with Python. This means that you do not need to install third-party libraries. Later in this textbook we will do more advanced things with strings using third-party libraries, such as Regex, but for now, we will simply work with the basic functions.</p>
 <p>Although I will discuss functions in greater detail in a later lesson, it is important to understand what a function is. A function is a block of code stored outside (or inside) your Python script. We call a function by using the function name and added an open and a close parentheses. Often when we call functions, we need to pass arguments. These are the pieces of data that the function will perform the operations on. The arguments are contained within the parentheses and delineated with commas. In some cases, there will be named arguments which require you to specify a specific argument.</p>
 <p>In the example below, we have an object, which is a string (a_string), and two different functions. The first function is the split function which will split a string. In the example we state the object upon which we want to perform the function. Next, we place a period to state the specific function that we want to run on the string. We have an open parentheses in which we have a single argument, a string (created by quotation marks). The specific string is a single comma. This means that we are telling Python to split the string any time it finds a comma. Remember though, strings are immutable. This means that in order to store the result of this function in memory, we need to create a new object. This new object is new_string which we create with an equal sign. Were we to print off new string, we would see a list of strings that would look like this: [“Hello”,”Bye”]. To run the code below, hit the play button.</p>
+<p>Let’s learn to manipulate strings now through code, but first we need to create a string. Let’s call it str6.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str6</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
@@ -711,6 +722,7 @@
 </div>
 </div>
 </div>
+<p>It is not a very clever name, but it will work for our purposes. Now, let’s try to convert the entire string into all uppercase letters. We can do this with the method .upper(). Notice that the .upper() is coming after the string and within the () are no arguments. This is a way you can easily identify a method (as opposed to a function). We will learn more about these distinctions in the chapters on functions and classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str6</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -723,6 +735,7 @@
 </div>
 </div>
 </div>
+<p>Noice that our string is now all uppercase. We can do the same thing with the .lower() method, but this method will make everything in the string lowercase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str6</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
@@ -735,6 +748,8 @@
 </div>
 </div>
 </div>
+<p>On the surface, these methods may appear to only be useful in niche circumstances. While these methods are useful for making strings look the way you want them to look, they have far greater utility. Imagine if you wanted to search for a name, “William”, in a string. What if the data you are examining is from emails, text messages, etc. William may be capitalized or not. This means that you would have to run two searches for William across a string. If, however, you lowercase the string before you search, you can simply search for “william” and you will find all hits. This is one of the things that happens on the back-end of most search engines to ensure that your search is not strictly case-sensitive. In Python, however, it is important to do this step of data cleaning before running searches over strings.</p>
+<p>Let’s explore another method, .capitalize(). This method will allow you to capitalize a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str7</span> <span class="o">=</span> <span class="s2">&quot;william&quot;</span>
@@ -754,6 +769,9 @@
 </div>
 </div>
 </div>
+<p>I will use this in niche circumstances, particularly when I am performing data cleaning and need to ensure that all names or proper nouns in a dataset are cleaned and well-structured.</p>
+<p>Perhaps the most useful string method is .replace(). Notice in the cells below, replace takes a mandatory of two arguments, or things passed between the parentheses. Each is separated by a comma. The first argument is the substring or piece of the string that you want to replace and the second argument is what you want to replace it with. Why is this so useful? If you are using Python to analyze texts, those texts will, I promise, never be well-cleaned. They may have bad encoding, characters that will throw off searches, bad OCR, multiple line breaks, hyphenated characters, the list goes on. Replace allows you to quickly and effectively clean textual data so that it can be standardized.</p>
+<p>In the example below, let’s try and replace the period at the end of “Mattingly.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str8</span> <span class="o">=</span> <span class="s2">&quot;My name is William Mattingly.&quot;</span>
@@ -773,6 +791,7 @@
 </div>
 </div>
 </div>
+<p>Excellent! Now, let’s try and reprint off str8 and see what happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str8</span><span class="p">)</span>
@@ -785,6 +804,7 @@
 </div>
 </div>
 </div>
+<p>Uh oh! Something is not right. Nothing has changed! Indeed, this is because strings are immutable objects. In order to change a string, you must recreate it in memory or create a new string object from it. Let’s try and do that below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str9</span> <span class="o">=</span> <span class="n">str8</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -804,9 +824,23 @@
 </div>
 </div>
 </div>
+<p>Excellent! Now we have a new string that has been cleaned, but let’s say I am only interested in grabbing what comes after the phrase “My name is”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str10</span> <span class="o">=</span> <span class="n">str9</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Everything looks good when we print it off below, but notice, there is a leading white space before the W. This is uncleaned data. We often want to remove leading or trailing whitespaces so that all data is consistent in our dataset. We can do this by using the .strip() method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> William Mattingly
 </pre></div>
 </div>
 </div>
@@ -823,6 +857,7 @@
 </div>
 </div>
 </div>
+<p>Now, our data is cleaned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str9</span><span class="p">)</span>
@@ -835,6 +870,7 @@
 </div>
 </div>
 </div>
+<p>Strings have a lot of other useful methods that we will be learning about throughout this textbook, such as the split() method which returns a list of substrings that are split by the delimiter, which is the argument of the method. By default, split() will split your string at the whitespace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str9</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
@@ -847,6 +883,7 @@
 </div>
 </div>
 </div>
+<p>As we learn about lists in the next chapter, you will be able to use split to grab specific items from that list. Notice that in the output below, we have the same output as our method of replace and strip above. It is important to remember that in programming, there is rarely one right answer. Usually a problem can be solved many ways, but some are more efficient or easier to parse when another programmer tries to read your code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str9</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
@@ -1007,13 +1044,12 @@
 <li><p>Greater than or equal to (&gt;=)</p></li>
 <li><p>Not equal to (!=)</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt; &gt; =&lt; =&gt;  ==</span>
-</pre></div>
+<p>We will address these in greater detail in a later chapter</p>
 </div>
-</div>
-</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">3.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>This chapter has introduced you two some of the essential types of data: strings, integers, floats, and booleans. It has also introduced you to some of the key methods and operations that you can perform on strings and numbers. Before moving onto the next chapter, I recommend spending some time and testing out these methods on your own data. Try and manipulate an input text to locate and retrieve specific information.</p>
+<p>If you haven’t yet installed Python, that’s okay! There are free compilers online, including the one I have available at PythonHumanities.com</p>
 </div>
 </div>
 
