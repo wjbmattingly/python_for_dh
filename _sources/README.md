@@ -54,18 +54,17 @@ While this course was originally designed for humanists, it is equally valuable 
 1) Why Save Data?
 2) The with opereator
 
-### PART SIX: LIBRARIES
+### PART SIX: LIBRARIES and TABULAR DATA (EXCEL, CSV, TSV)
 1) What are Libraries
 2) Why are Libraries Useful
 
-### PART SEVEN: TABULAR DATA (EXCEL, CSV, TSV) AND JSON DATA
 1) What is Tabular Data?
 2) Pandas and the DataFrame
 3) What is JSON?
 4) Why is JSON important?
 5) The Basics of the JSON Library
 
-### PART EIGHT: WORKING WITH WEB DATA
+### PART SEVEN: WORKING WITH WEB DATA
 1) What is Web Scrapping?
 2) Requests
 3) BeautifulSoup

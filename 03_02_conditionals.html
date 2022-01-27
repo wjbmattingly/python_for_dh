@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Searching on Strings &#8212; Introduction to Python for Digital Humanists</title>
+    <title>5. Conditionals &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Functions" href="04_01_functitons.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="03_01_loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -135,9 +137,9 @@
   Loops and Conditionals
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="03_02_conditionals.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    5. Introduction to Conditionals
   </a>
  </li>
@@ -250,7 +252,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/template - Copy.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_02_conditionals.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -270,10 +272,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2Ftemplate - Copy.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_02_conditionals.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/template - Copy.ipynb"><button
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_02_conditionals.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -293,7 +295,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/template - Copy.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_02_conditionals.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -317,22 +319,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   Finding Strings that Don’t Contain Feature
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   Using RegEx with Pandas
+   5.2. Introduction
   </a>
  </li>
 </ul>
@@ -345,7 +337,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Advanced Searching on Strings</center></h1>
+                <h1><center>Conditionals</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -357,22 +349,12 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   Finding Strings that Don’t Contain Feature
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   Using RegEx with Pandas
+   5.2. Introduction
   </a>
  </li>
 </ul>
@@ -384,12 +366,12 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="center-advanced-searching-on-strings-center">
-<h1><center>Advanced Searching on Strings</center><a class="headerlink" href="#center-advanced-searching-on-strings-center" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-conditionals-center">
+<h1><span class="section-number">5. </span><center>Conditionals</center><a class="headerlink" href="#center-conditionals-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>August 2021</center><div class="section" id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<center>January 2022</center><div class="section" id="covered-in-this-chapter">
+<h2><span class="section-number">5.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><br>
 </li>
@@ -399,13 +381,7 @@
 </ol>
 </div>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="finding-strings-that-don-t-contain-feature">
-<h2>Finding Strings that Don’t Contain Feature<a class="headerlink" href="#finding-strings-that-don-t-contain-feature" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="using-regex-with-pandas">
-<h2>Using RegEx with Pandas<a class="headerlink" href="#using-regex-with-pandas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -433,7 +409,21 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_01_loops.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_01_functitons.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span><center>Functions</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
