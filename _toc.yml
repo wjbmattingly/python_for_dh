@@ -19,4 +19,37 @@ parts:
   numbered: true
   chapters:
   - file: 03_01_loops
-    title: Introduction to Python
+    title: Introduction to Loops
+  - file: 03_02_conditionals
+    title: Introduction to Conditionals  
+- caption: Functions and Classes
+  numbered: true
+  chapters:
+  - file: 04_01_functitons
+    title: Introduction to Functions
+  - file: 04_02_classes
+    title: Introduction to Classes
+    
+- caption: Loadaing and Saving Data
+  numbered: true
+  chapters:
+  - file: 05_01_texts
+    title: Loading and Saving Text Data
+  - file: 05_02_json
+    title: Loading and Saving JSON Data  
+
+- caption: Libraries and Tabular Data
+  numbered: true
+  chapters:
+  - file: 06_01_libraries
+    title: Introduction to Libraries
+  - file: 06_02_pandas
+    title: Pandas
+    
+- caption: Working with Web Data
+  numbered: true
+  chapters:
+  - file: 07_01_html
+    title: Introduction to HTML and Requests
+  - file: 07_02_beautiful_soup
+    title: BeautifulSoup
