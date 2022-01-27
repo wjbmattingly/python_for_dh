@@ -467,16 +467,27 @@ Steph
 </div>
 </div>
 </div>
+<p>While being able to print things off in a for loop is useful, especially when debugging, usually for loops are used to modify data in some capacity. In the cell below, I want to be able to create a new list based on the list of names in namelist. However, I know that all individuals in that list have the last name “Mattingly”. I could manually add the last name Mattingly to each individual person, but that would be tedious and, if I had a list of thousands of names, impractical.</p>
+<p>Within the for loop, therefore, I want to modify the existing string and add it to the new list, “new_names”. We can modify a string in several ways. For now, we will use the simpler approach of simply adding a plus sign (+) between the object name and the new piece of information I want to add to it, ” Mattingly”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_names</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namelist</span><span class="p">:</span>
-<span class="c1">#     print (name+&quot; Mattingly&quot;)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; Mattingly&quot;</span><span class="p">)</span>
     <span class="n">new_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; Mattingly&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tom Mattingly
+Nancy Mattingly
+Drew Mattingly
+Steph Mattingly
+</pre></div>
 </div>
+</div>
+</div>
+<p>Now that we have executed the cell above, let’s see how our new list looks. Let’s print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
@@ -489,6 +500,7 @@ Steph
 </div>
 </div>
 </div>
+<p>Viola! Like magic, we have brought two different pieces of data together in a for loop. But there is another kind of loop in Python, the while loop.</p>
 </div>
 <div class="section" id="while-loops">
 <h2><span class="section-number">5.4. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
