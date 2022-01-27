@@ -7,7 +7,7 @@
 <p align="center">United States Holocaust Memorial Museum</p>
 
 ### <p align="center">How to Cite</p>
-Mattingly, William. <i>Introduction to Python for DH</i>, 2022. <a href="python_textbook.pythonhumanities.com" target="_blank">python_textbook.pythonhumanities.com</a>.
+Mattingly, William. <i>Introduction to Python for Digital Humanities</i>, 2022. <a href="python-textbook.pythonhumanities.com" target="_blank">python_textbook.pythonhumanities.com</a>.
 <p align="center">
 
 <br><br><br><br>
