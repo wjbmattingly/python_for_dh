@@ -332,6 +332,11 @@
    9.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-with-operator">
+   9.3. The With Operator
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -362,6 +367,11 @@
    9.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-with-operator">
+   9.3. The With Operator
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -377,16 +387,59 @@
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">9.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><br>
-</li>
-<li><br>
-</li>
-<li><br></li>
+<ol class="simple">
+<li><p>Text Files<br></p></li>
+<li><p>The With Operator<br></p></li>
+<li><p>How to Open Text Files in Python<br></p></li>
+<li><p>How to Read from Text Files in Python<br></p></li>
+<li><p>How to Write to Text Files in Python<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">9.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Up until now, we have strictly worked with data that we have produced within our own code. Rarely will you ever copy-and-paste data into a Python script. Instead, you will need to interact with external data. Further, you will often need to save data in some way. This chapter is the first of two that walk you through how to interact with external data. We will be working with textual data in this chapter, while in the following chapter we will work with JSON, or JavaScript Object Notation data. In Part 07, Chapter 02, we will work with tabular data.</p>
+</div>
+<div class="section" id="the-with-operator">
+<h2><span class="section-number">9.3. </span>The With Operator<a class="headerlink" href="#the-with-operator" title="Permalink to this headline">¶</a></h2>
+<p>The with operator in Python is an essential command that allows for you to do something in memory for so long as the operator is open. This is really important when opening text files. There are several ways to open text files in Python, but I am only showing you this method because it is the most Pythonic. Other methods require you to close the text file in code. If you do not, it will remain open in memory. If you are working with 10,000 text files (I have done this before), and forget to add a close command in your code while iterating over all 10,000 files, your computer will run out of memory and crash. The with operator avoids this problem entirely.</p>
+<p>Let’s see what it looks like in action and then we will break down what is happening.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a sample of a text
+This is another line of the same sample text
+This is a third line.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;This is a sample of a text&#39;, &#39;This is another line of the same sample text&#39;, &#39;This is a third line.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_string</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
