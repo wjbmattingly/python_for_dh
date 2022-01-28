@@ -332,6 +332,21 @@
    6.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statement">
+   6.3. If Statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#else-statement">
+   6.4. Else Statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elif">
+   6.5. Elif
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -362,6 +377,21 @@
    6.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statement">
+   6.3. If Statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#else-statement">
+   6.4. Else Statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elif">
+   6.5. Elif
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -377,16 +407,119 @@
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">6.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><br>
-</li>
-<li><br>
-</li>
-<li><br></li>
+<ol class="simple">
+<li><p>What conditional statements are<br></p></li>
+<li><p>What the logic is behind them<br></p></li>
+<li><p>If<br></p></li>
+<li><p>Else<br></p></li>
+<li><p>Elif (or if)<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">6.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Like Loops, Conditionals are an essential component of all programming languages. <b>Conditionals</b> are a type of logic in programming that allow you to allow something to happen upon the condition that something is true. Conditionals are always binary. I always find it useful to think about conditionals in plain English first.</p>
+<p>If something is true, then do this. If that something is not true, then you can specify what should happen if that is the case. In pseudo code, it would look something like this:</p>
+<p>If something is true:
+do this
+Otherwise:
+do this instead.</p>
+<p>Notice again the indentation. As we progress throughout this chapter, you will learn three essential components of conditional statements:</p>
+<ol class="simple">
+<li><p>if</p></li>
+<li><p>else</p></li>
+<li><p>elif (or if)</p></li>
+</ol>
+</div>
+<div class="section" id="if-statement">
+<h2><span class="section-number">6.3. </span>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h2>
+<p>Let’s first practice the if statement. In Python, you will need something to test if it is true. Let’s create an object called x and make it equal to 0. Now, we can say if x is equal to 0, then print it off. Notice in the code below the “:” and the indentation afterwards, just as we saw with loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try and state the opposite of this. Let’s set our condition to x being equal to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that nothing happens.</p>
+</div>
+<div class="section" id="else-statement">
+<h2><span class="section-number">6.4. </span>Else Statement<a class="headerlink" href="#else-statement" title="Permalink to this headline">¶</a></h2>
+<p>If we want something to occur if that condition is not met, we can use the Else statement. Think of else as “otherwise” in English. If this condition it met, do this; otherwise, do something else. Let’s write that out in real code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;X is not 1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X is not 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that else has the same indentation placement as the if and it too has a “:” followed by indented code. This allows us to create complex logic within our code. You will find yourself using conditional more often than you may realize now.</p>
+</div>
+<div class="section" id="elif">
+<h2><span class="section-number">6.5. </span>Elif<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h2>
+<p>I debated including elif in this chapter for fear that it may introduce too many new things at once, but I think it is import to at least be familiar with its existence, even if you will not be using it right away. Elif, in plain English, means “or if”.</p>
+<p>If condition 1 is met:
+do this
+Or if condition 2 is met:
+do this instead</p>
+<p>Within this paradigm, it functions a little differently than else in that another condition must be met for it to occur, but it functions a little differently than a regular if statement. Let me demonstrate this in code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I know two people. Marge and Susan.&quot;</span>
+<span class="k">if</span> <span class="s2">&quot;Marge&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Marge Found&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">&quot;Susan&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Susan Found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge Found
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output may appear to be surprising. Both Marge and Susan are in the string, “text”. Why, then, do we not see “Susan Found” printed off? The reason is because elif only is triggered if one of the preceding if or other elif statements has not been triggered. If I wanted to check if both conditions were met, I would, instead, use two if statements, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Marge&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Marge Found&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="s2">&quot;Susan&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Susan Found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge Found
+Susan Found
+</pre></div>
+</div>
+</div>
+</div>
+<p>The elif statement allows for more robust logic and sequential conditionals to occur.</p>
 </div>
 </div>
 
