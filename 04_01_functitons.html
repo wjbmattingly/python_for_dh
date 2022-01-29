@@ -338,8 +338,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-multiple-arguments">
+   7.4. Functions with Multiple Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyword-argument">
+   7.5. Keyword Argument
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyword-arbitrary-arguments">
+   7.6. Keyword Arbitrary Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   7.7. Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#answer-for-result">
-   7.4. Answer for Result
+   7.8. Answer for Result
   </a>
  </li>
 </ul>
@@ -378,8 +398,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-multiple-arguments">
+   7.4. Functions with Multiple Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyword-argument">
+   7.5. Keyword Argument
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyword-arbitrary-arguments">
+   7.6. Keyword Arbitrary Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   7.7. Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#answer-for-result">
-   7.4. Answer for Result
+   7.8. Answer for Result
   </a>
  </li>
 </ul>
@@ -397,12 +437,12 @@
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">7.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><br>
-</li>
-<li><br>
-</li>
-<li><br></li>
+<ol class="simple">
+<li><p>What a function is conceptually<br></p></li>
+<li><p>How to create a function<br></p></li>
+<li><p>How to assign arguments to a function<br></p></li>
+<li><p>How to assign variable keyword arguments to a function<br></p></li>
+<li><p>How to assign variable arbitrary arguments to a function<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
@@ -470,8 +510,157 @@
 <p>We receive an error. This error message allows us to debug the problem. It is a TypeError, meaning we tried to use the wrong object type. We know that the error occurs in line 2 of our cell, “x = number+1”. Why do you think we received this error?</p>
 <p>If you said because “one” is a string and you cannot add a string by the integer 1, then you would be right. If we were writing this program for ourselves, we would know this and never try to pass a string to the function, but what if someone else is trying to use our code and does not know precisely what it is supposed to do? In Python, we can pass in some key information to help our users.</p>
 </div>
+<div class="section" id="functions-with-multiple-arguments">
+<h2><span class="section-number">7.4. </span>Functions with Multiple Arguments<a class="headerlink" href="#functions-with-multiple-arguments" title="Permalink to this headline">¶</a></h2>
+<p>In the above section, we saw a simple function that had a single argument. In Python, you can assign as many arguments you want to a function. Let’s try to make a slightly different function that adds two numbers together, each supplied by the user.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function2</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">number1</span><span class="o">+</span><span class="n">number2</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that my_function2 is the precise same as the function above except we have two arguments, “number1” and “number2”. Also, in the function x is the result of number1 plus number2.</p>
+<p>Now, let’s try and use this function by passing two numbers to it: 1 and 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result2</span> <span class="o">=</span> <span class="n">my_function2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yay! We got the result we desired. These are known as positional arguments because we are relying on the position of the argument in the function’s () section. Let’s modify this function slightly again so that you can see what I mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function3</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Number 1 is &quot;</span><span class="p">,</span> <span class="n">number1</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Number 2 is &quot;</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_function3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number 1 is  1
+Number 2 is  3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that I have deleted the return line. This is because this function does not need to return anything to the user. Instead, it’s sole purpose is to simply print off what the two arguments are. Let’s reverse the order of our arguments now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_function3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number 1 is  3
+Number 2 is  1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because these are positional arguments, we are dependent upon the position of the arguments to assign them correctly. We can get around this by specifying which argument we want to assign things to, thus avoiding the reliance on the order in which we pass the arguments to the function. Check out the code below to see this in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_function3</span><span class="p">(</span><span class="n">number2</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">number1</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number 1 is  1
+Number 2 is  3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="keyword-argument">
+<h2><span class="section-number">7.5. </span>Keyword Argument<a class="headerlink" href="#keyword-argument" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes when we create a function, we want to make it optional for the user to pass an argument. In these instances, we will create what is known as a keyword argument, something that is set to a default. In the function below, we want to give the user the option to pass a last name to the function. Notice, though, it defaults to “Mattingly”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_surname</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Mattingly&quot;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_surname</span><span class="p">(</span><span class="s2">&quot;William&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>William Mattingly
+</pre></div>
+</div>
+</div>
+</div>
+<p>That worked well, but a user still has the ability to change the last_name object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_surname</span><span class="p">(</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Smith&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>William Smith
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="keyword-arbitrary-arguments">
+<h2><span class="section-number">7.6. </span>Keyword Arbitrary Arguments<a class="headerlink" href="#keyword-arbitrary-arguments" title="Permalink to this headline">¶</a></h2>
+<p>In rare instances, you will not know precisely how many arguments a user will need to pass to your function, so you want to give them the option to pass as many as they wish. In these instances, you will use what are known as arbitrary arguments. You assign these with an * before the argument name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_names</span><span class="p">(</span><span class="o">*</span><span class="n">names</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_names</span><span class="p">(</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Sally&quot;</span><span class="p">,</span> <span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>William
+Marge
+Sally
+Alex
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the function has allowed the user to pass as many arguments as they wish to the function. In my entire time coding, I have only used an arbitrary argument a handful of times, but it is important to keep it in the back of your mind in case you are ever in that situation.</p>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">7.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Hopefully, you now have a basic understanding about what functions are and how they work in practice. I recommend spending a few hours playing around with some basic functions to do some tasks you need to perform on your own personal data. If you get stuck, try Googling your question. You would be surprised how many responses are available. Pay particular attention to StackOverflow responses.</p>
+</div>
 <div class="section" id="answer-for-result">
-<h2><span class="section-number">7.4. </span>Answer for Result<a class="headerlink" href="#answer-for-result" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.8. </span>Answer for Result<a class="headerlink" href="#answer-for-result" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span>
