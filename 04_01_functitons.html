@@ -332,6 +332,16 @@
    7.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-in-action">
+   7.3. Functions in Action
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#answer-for-result">
+   7.4. Answer for Result
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -362,6 +372,16 @@
    7.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-in-action">
+   7.3. Functions in Action
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#answer-for-result">
+   7.4. Answer for Result
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -387,6 +407,83 @@
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">7.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you will learn all about functions. You have already been exposed to several functions in this textbook, such as the print() function. My goal in this chapter is to teach you how to create your own functions.</p>
+<p><b>Functions</b> exist in all programming languages. They allow you to write a set of code that can be used later in your program. They are essential because they allow you to not rewrite the same block of text over and over again. Good code is code that does not repeat. In other words, if your program has a task that it needs to do repetitively, then you should develop that code into a cleaned function.</p>
+<p>A function, as we will see has four parts:</p>
+<ol class="simple">
+<li><p>the name of the function</p></li>
+<li><p>the arguments passed to the function</p></li>
+<li><p>the code</p></li>
+<li><p>the returned piece of data (optional)</p></li>
+</ol>
+</div>
+<div class="section" id="functions-in-action">
+<h2><span class="section-number">7.3. </span>Functions in Action<a class="headerlink" href="#functions-in-action" title="Permalink to this headline">¶</a></h2>
+<p>I think the best way to learn about functions is to see them in action before breaking down what is happening. Let’s take a look at the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">number</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above cell, I have told Python that I am creating a function by using the command “def”. This is followed by the name of the function, “my_function”. After this we see open and a close parentheses, between which sit the word “number”. This is the argument that the function expects to take. This is then followed with our “:”, which, if you remember from the previous two chapters, means that the next block of text must be indented. Whatever is indented will belong to the function.</p>
+<p>The code of the function is “x = number+1”. Before moving on, pause for a moment and think about what this function might do. Once you have an idea, proceed reading to the next paragraph.</p>
+<p>The final portion of the cell is “return x”. This is the bit of code. This will return for the user the x object that we created temporarily in the function.</p>
+<p>Let’s now call this function in the cell bellow to see how it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code above, we have created a new object, “result”. This will be the result of our function. Like all objects, it can be named whatever you like, save for the forbidden object names in Python.</p>
+<p>We then call the function, “my_function” and pass a single argument to it, an integer. In this case, 1.</p>
+<p>I am not going to print off “result” here in the textbook, rather I will print it off at the very bottom of this page. But please do not look down there just yet. Instead, I want you to take a moment and try and guess what result will be. Go ahead and try and recreate this code in your own notebook, or, if you are using this textbook with the built-in Binder environment, create a new cell below and print off “result”.</p>
+<p>Did you guess correctly? If so, great. If not, that’s okay. Why do you think your answer was wrong? Do you understand why? These are some of the core questions you should be asking yourself at this moment.</p>
+<p>Let’s break down the function now from a logical point of view. The key piece of code is “x = number+1”. This code tells Python to create a new object called “x”. This will be equal to whatever the input argument, “number”, is plus 1. If we give the function the number 1, then our output will be 2. Likewise, if we do this with 3, we will get 4. But what would happen if we tried to pass the string “one”?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bad_result</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">727</span><span class="n">ec5ed3632</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bad_result</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-52cfa1c566a4&gt;</span> in <span class="ni">my_function</span><span class="nt">(number)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">number</span><span class="o">+</span><span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>We receive an error. This error message allows us to debug the problem. It is a TypeError, meaning we tried to use the wrong object type. We know that the error occurs in line 2 of our cell, “x = number+1”. Why do you think we received this error?</p>
+<p>If you said because “one” is a string and you cannot add a string by the integer 1, then you would be right. If we were writing this program for ourselves, we would know this and never try to pass a string to the function, but what if someone else is trying to use our code and does not know precisely what it is supposed to do? In Python, we can pass in some key information to help our users.</p>
+</div>
+<div class="section" id="answer-for-result">
+<h2><span class="section-number">7.4. </span>Answer for Result<a class="headerlink" href="#answer-for-result" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
