@@ -399,12 +399,10 @@ const thebe_selector_output = ".output, .cell_output"
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">10.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
-<li><br>
-</li>
-<li><br>
-</li>
-<li><br></li>
+<ol class="simple">
+<li><p>JSON data format<br></p></li>
+<li><p>json.dump()<br></p></li>
+<li><p>json.load()<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
@@ -480,7 +478,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="json-load">
 <h2><span class="section-number">10.4. </span>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have dumped the data into a file, let’s try and load it back up. Here, we will open the same JSON file, but this time as readable. We will create a new object, new_data and use json.load(). This will take one argument, the file object that you want to load from.</p>
+<p>Now that we have dumped the data into a file, let’s try and load it back up. Here, we will open the same JSON file, but this time as readable. We will create a new object, new_data and use json.load(). This will take one argument, the file object that you want to load from. So long as your JSON file is not corrupted, the data will load successfully.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample_json.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -496,6 +494,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>These are the only two commands that you need to know to start working with JSON data in Python. I highly encourage you to spend a few minutes playing with these commands and trying to store data with json.dump() and load data with json.load()</p>
 </div>
 </div>
 
