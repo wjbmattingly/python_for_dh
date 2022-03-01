@@ -37,17 +37,19 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -332,6 +334,16 @@
    10.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-dump">
+   10.3. json.dump()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-load">
+   10.4. json.load()
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -362,6 +374,16 @@
    10.2. Introduction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-dump">
+   10.3. json.dump()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-load">
+   10.4. json.load()
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -387,6 +409,93 @@
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">10.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you will meet JSON data. JSON is a data format that is frequently used online. It stands for JavaScript Object Notation. It is the principal way in which data is stored for websites and called by JavaScript. There are two reasons to learn JSON data structures early in your coding career.</p>
+<ol class="simple">
+<li><p>JSON is universally recognized by all browsers.</p></li>
+<li><p>JSON allows you to structure hierarchical data.</p></li>
+</ol>
+<p>What is hierarchical data? This is data that may be nested within other data. This type of data is sometimes difficult to represent cleanly in CSV format. A good way to think about this is with the following data structure. Imagine you wanted to store a series of texts in Excel. In one column, you would have a text and then in the next column, you would store a list of speakers. Now, how do you represent the list of names? You could do it like this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Text</p></th>
+<th class="head"><p>Names</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>John and Kathy both know each other. Marge and Francois do not.</p></td>
+<td><p>John, Kathy, Marge, Francois</p></td>
+</tr>
+</tbody>
+</table>
+<p>But this can get messy really quickly because lists are difficult to store as a data structure within a cell. There are ways to get around this, but when you start working with this type of CSV data computationally, it can get complicated the deeper the hierarchies go. Imagine if for each person, we had an age and a role. How would we store that data? Perhaps like this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Text</p></th>
+<th class="head"><p>Names</p></th>
+<th class="head"><p>Age</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>John and Kathy both know each other. Marge and Francois do not.</p></td>
+<td><p>John, Kathy, Marge, Francois</p></td>
+<td><p>20, 25, 30, 35</p></td>
+</tr>
+</tbody>
+</table>
+<p>If I want to update the data, I need to make sure that the list of ages corresponds to the list of names. Again, this can lead to issues down the road. The solution is to stop using CSV or Excel to store this type of data and use a format that is more flexible and able to handle things like lists and nested hierarchical data. In Python, the easiest solution is JSON. To use JSON, you do not need to install any special libraries. It comes prebuilt with a special library called JSON. We will learn about libraries in the next chapter, but for now simply execute the following command and you will be able to use the only methods you need to know to use JSON: json.dump() and json.load()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create the data above as a data structure within Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;John and Kathy both know each other. Marge and Francois do not.&quot;</span><span class="p">,</span> <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Kathy&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Francois&quot;</span><span class="p">]}</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;text&#39;: &#39;John and Kathy both know each other. Marge and Francois do not.&#39;,
+ &#39;names&#39;: [&#39;John&#39;, &#39;Kathy&#39;, &#39;Marge&#39;, &#39;Francois&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="json-dump">
+<h2><span class="section-number">10.3. </span>json.dump()<a class="headerlink" href="#json-dump" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s try and store that data outside of Python as a JSON file. To do that, we with use the with open operator we learned about in the last chapter. Instead of naming this a .txt file, however, we will name is .json. Next, we will execute the command json.dump(). This will take 2 essential arguments: the data that you want to dump to the file and the object in which you want to dump the data, in this case “f”. The other keyword argument here is indent. I always like to use this because it makes the JSON file easier to read. It indents the data 4 spaces each time it goes deeper into the hierarchy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample_json.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="json-load">
+<h2><span class="section-number">10.4. </span>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have dumped the data into a file, let’s try and load it back up. Here, we will open the same JSON file, but this time as readable. We will create a new object, new_data and use json.load(). This will take one argument, the file object that you want to load from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample_json.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">new_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">new_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;text&#39;: &#39;John and Kathy both know each other. Marge and Francois do not.&#39;,
+ &#39;names&#39;: [&#39;John&#39;, &#39;Kathy&#39;, &#39;Marge&#39;, &#39;Francois&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
