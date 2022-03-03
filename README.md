@@ -71,7 +71,7 @@ While this course was originally designed for humanists, it is equally valuable 
 
 ### PART NINE: FINAL PROJECT - EXTRACTING TABLE FROM WIKIPEDIA
 1) How to Find Data
-2) Extracting theh Data
+2) Extracting the Data
 3) Saving the Data
 4) Loading Data in Excel
 
