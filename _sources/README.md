@@ -5,76 +5,6 @@ While this course was originally designed for humanists, it is equally valuable 
 
 ## OUTLINE OF COURSE
 
-### PART ONE: KEY CONCEPTS AND TERMS
-1) Introduction
-  1) Introduction to Me
-  2) Introduction to Course
-  3) Introduction to the PythonHumanities.com
-2) Why Python?
-  1) Programming Languages
-  2) What is Python used for?
-3) How to Install Python
-4) Online Compilers
-
-### PART TWO: DATA and DATA STRUCTURES
-1) What is Data?
-2) Strings
-3) Numbers
-   1) Integers
-   2) Floats
-4) Booleans
-5) String Methods
-6) Mathematical Operations
-7) Types of Division
-8) What are Data Structures?
-9) Lists
-10) Tuples
-11) Sets
-12) Dictionaries
-
-### PART THREE: LOOPING AND CONDITIONALS
-1) What are Loops?
-2) Why are Loops Useful?
-3) For Loops
-4) While Loops
-5) What are conditionals?
-6) If-Then
-
-### PART FOUR: FUNCTIONS AND CLASSES
-1) What are Functions?
-2) When do we Use Functions?
-2) How do we Create Functions?
-3) How do we call Functions?
-4) What are Classes?
-5) When do we Use Classes?
-6) How do we Create Classes?
-7) How do we call Classes?
-
-### PART FIVE: LOADING AND SAVING DATA
-1) Why Save Data?
-2) The with opereator
-
-### PART SIX: LIBRARIES and TABULAR DATA (EXCEL, CSV, TSV)
-1) What are Libraries
-2) Why are Libraries Useful
-
-1) What is Tabular Data?
-2) Pandas and the DataFrame
-3) What is JSON?
-4) Why is JSON important?
-5) The Basics of the JSON Library
-
-### PART SEVEN: WORKING WITH WEB DATA
-1) What is Web Scrapping?
-2) Requests
-3) BeautifulSoup
-
-### PART NINE: FINAL PROJECT - EXTRACTING TABLE FROM WIKIPEDIA
-1) How to Find Data
-2) Extracting theh Data
-3) Saving the Data
-4) Loading Data in Excel
-
 | Lesson Number      | Lesson Title |
 | ----------- | ----------- |
 |01.01 |Introduction to Python for DH|
@@ -85,12 +15,12 @@ While this course was originally designed for humanists, it is equally valuable 
 |03.01 |Introduction to Data Structures |
 |03.02 |Lists, Tuples, and Sets |
 |03.03 |Dictionaries |
-|10 | |
-|11 | |
-|12 | |
-|13 | |
-|14 | |
-|15 | |
-|16 | |
-|17 | |
-|18 | |
+|04.01 |Functions |
+|04.02 |Classes |
+|05.01 |Working with Text Files |
+|05.02 |Working with JSON Files |
+|06.01 |What are Libraries? |
+|06.02 |Introduction to Pandas |
+|06.03 |The Basics of Pandas |
+|07.01 |Introduction to HTML |
+|07.02 |Introduction to Web Scraping |
