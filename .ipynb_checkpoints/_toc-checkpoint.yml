@@ -44,7 +44,9 @@ parts:
   - file: 06_01_libraries
     title: Introduction to Libraries
   - file: 06_02_pandas
-    title: Pandas
+    title: Introduction to Pandas
+  - file: 06_03_pandas2
+    title: The Basics of Pandas
     
 - caption: Working with Web Data
   numbered: true
