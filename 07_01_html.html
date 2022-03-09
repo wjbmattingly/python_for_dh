@@ -344,6 +344,16 @@ const thebe_selector_output = ".output, .cell_output"
    14.3. Diving into HTML
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-attributes">
+   14.4. Understanding Attributes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-find-a-website-s-html">
+   14.5. How to Find a Website’s HTML
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -379,6 +389,16 @@ const thebe_selector_output = ".output, .cell_output"
    14.3. Diving into HTML
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-attributes">
+   14.4. Understanding Attributes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-find-a-website-s-html">
+   14.5. How to Find a Website’s HTML
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -407,7 +427,77 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="diving-into-html">
 <h2><span class="section-number">14.3. </span>Diving into HTML<a class="headerlink" href="#diving-into-html" title="Permalink to this headline">¶</a></h2>
-<p>So why is HTML useful? HTML, like other markup languages, such as XML</p>
+<p>So why is HTML useful? HTML, like other markup languages, such as XML, or eXstensible Markup Language, allows users to structure data within data. This is achieved by what are known as tags. I think It is best to see what this looks like in practice. Let’s examine a simple HTML file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html_file</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&lt;div&gt;</span>
+<span class="s2">    &lt;p&gt;This is a paragraph&lt;/p&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above cell, we see a very simple HTML file structure. Note the use of carrots “&lt;” and “&gt;”. The first thing you may notice is that within the first set of carrots is the word “div”. This is known as a div tag and it is one of the most common types of tags you will see within the HTML of a website. Jump ahead now to the bottom of the string and you will notice another div tag. There is something different with this one, however. Can you spot the difference?</p>
+<p>If you said the “/” after the “&lt;”, you would be right! The first div tag is known as the <b>open tag</b> and the second div tag is known as the <b>close tag</b>. This tells a browser to parse this as a single block of data. Between these two tags, we have one piece of <b>nested data</b> Nested data is data that falls within a collection of tags. In our case, this is a <b>p tag</b>. P tags get their name from “paragraph”. They are one of the essential types of tags you can expect to see. On websites, they are often used in the main content portion of the page and are used to break up texts. P tags allow your browser to understand how to render the HTML for you. When it sees a p tag, it will often separate it out from the paragraph above with a line break.</p>
+<p>While in the early days of the internet, HTML files for websites were fairly simple on their structure, today that is no longer the case. It is very common for websites to have 20+layers deep of nested HTML structure. This is because websites are rarely written out by someone hard coding them. Instead, they are designed with user-friendly apps, such as Wordpress. They take user drag-and-drop input and features and convert it into robust HTML (and CSS - a subject for another day).</p>
+</div>
+<div class="section" id="understanding-attributes">
+<h2><span class="section-number">14.4. </span>Understanding Attributes<a class="headerlink" href="#understanding-attributes" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a look at another block of HTML. This time, we will make one small change. Can you spot it?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html_file2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&lt;div class=&quot;content&quot;&gt;</span>
+<span class="s2">    &lt;p&gt;This is a paragraph&lt;/p&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you said the class=”content” portion of the open div tag, then you would be right! This bit is nested within the tag and is known as an<b>attribute</b>. These will become your best friend when you try and start web scraping pages. You can use these attributes to specify which div tag to grab. Sometimes there will be multiple div tags with the same attribute name, however, but we will get to that in the next chapter. There are several common attributes, specifically class and id. Some websites will use custom attribute names, but this is quite rare and they are easy to spot.</p>
+</div>
+<div class="section" id="how-to-find-a-website-s-html">
+<h2><span class="section-number">14.5. </span>How to Find a Website’s HTML<a class="headerlink" href="#how-to-find-a-website-s-html" title="Permalink to this headline">¶</a></h2>
+<p>Now that you are familiar generally with HTML and how it works, let’s dive in and take a look at some real-world HTML from a real website. In the next chapter, we will web scrape Wikipedia, so let’s go ahead and focus on Wikipedia here as well. If you are using a web browser that supports it (Chrome and Firefox), you can enter developer mode. Each operating system and browser has a different set of hotkeys to do this, but on all you can right click the webpage and click “inspect”. This will open up developer mode. At this point in the chapter, I highly recommend switching over to the video as it will be a bit easier to follow along.</p>
+<p>For this chapter (and the next), we will be working specifically with this page:
+https://en.wikipedia.org/wiki/List_of_French_monarchs</p>
+<p>Go ahead and open it up on another screen or in a new tab. This Wikipedia article contains some text, but primarily it hosts a list of all French monarchs, from the Carolingians up through the mid-19th century with Napoleon III.</p>
+<p>When you inspect this page, you will see all the nested HTML within it. Spend some time and go through these tags. In the next chapter, we will learn how to scrape this page, but for now take a look at what we can do with a few basic commands in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_French_monarchs&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;mw-content-text&quot;</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">body</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">paragraph</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">paragraph</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The monarchs of the Kingdom of France ruled from the establishment of the Kingdom of the West Franks in 843 until the fall of the Second French Empire in 1870, with several interruptions. Between the period from King Charles the Bald in 843 to King Louis XVI in 1792, France had 45 kings. Adding the 7 emperors and kings after the French Revolution, this comes to a total of 52 monarchs of France.
+
+In August 843 the Treaty of Verdun divided the Frankish realm into three kingdoms, one of which (Middle Francia) was short-lived; the other two evolved into France (West Francia) and, eventually, Germany (East Francia). By this time, the eastern and western parts of the land had already developed different languages and cultures.
+
+Initially, the kingdom was ruled primarily by two dynasties, the Carolingians and the Robertians, who alternated rule from 843 until 987, when Hugh Capet, the progenitor of the Capetian dynasty, took the throne.  The kings use the title &quot;King of the Franks&quot; until the late twelfth century; the first to adopt the title of &quot;King of France&quot; was Philip II (r. 1180–1223).  The Capetians ruled continuously from 987 to 1792 and again from 1814 to 1848. The branches of the dynasty which ruled after 1328, however, are generally given the specific branch names of Valois (until 1589), Bourbon (from 1589 until 1792 and from 1814 until 1830), and the Orléans (from 1830 until 1848).
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the cell above, we used two libraries, requests and BeautifulSoup to call the Wikipedia server that hosts that particular page. We then searched for the div tag that contains the main body of the page. In this case, it was a div tag whose attribute “id” corresponded to “mw-content-text”. I thin searched for all of the “p” tags, or paragraphs within that body and printed off the the text if the text was not blank. By the end of the next chapter, you will not only understand the code above, but you will be able to write it and code it out yourself. For now, inspect that page and see if you can find where the div tag whose id corresponds to “mw-content-text” is located in the HTML. It is okay if this is hard! It is not something that you naturally can do quickly. It takes practice. A trick to help get you started, however, is to right click the area that you want to scrape and then click inspect.</p>
+<p>Once you feel comfortable with this, feel free to move on to the next chapter to start learning how to web scrape!</p>
 </div>
 </div>
 
