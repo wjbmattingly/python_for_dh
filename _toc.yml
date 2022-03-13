@@ -52,6 +52,6 @@ parts:
   numbered: true
   chapters:
   - file: 07_01_html
-    title: Introduction to HTML and Requests
+    title: Introduction to HTML
   - file: 07_02_beautiful_soup
-    title: BeautifulSoup
+    title: Requests and BeautifulSoup
