@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Working with Textual Data &#8212; Introduction to Python for Digital Humanists</title>
+    <title>10. Working with Textual Data &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Working with JSON Data" href="05_02_json.html" />
-    <link rel="prev" title="8. Classes" href="04_02_classes.html" />
+    <link rel="next" title="11. Working with JSON Data" href="05_02_json.html" />
+    <link rel="prev" title="9. Libraries in Python" href="04_03_libraries.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -167,6 +167,11 @@ const thebe_selector_output = ".output, .cell_output"
    8. Introduction to Classes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_libraries.html">
+   9. Introduction to Libraries
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -176,12 +181,34 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9. Loading and Saving Text Data
+   10. Loading and Saving Text Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05_02_json.html">
-   10. Loading and Saving JSON Data
+   11. Loading and Saving JSON Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_03_multiple_files.html">
+   12. Working with Multiple Files
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tabular Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_01_pandas.html">
+   13. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_02_pandas2.html">
+   14. The Basics of Pandas
   </a>
  </li>
 </ul>
@@ -193,12 +220,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="07_01_html.html">
-   11. Introduction to HTML
+   15. Introduction to HTML
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07_02_beautiful_soup.html">
-   12. Requests and BeautifulSoup
+   16. Requests and BeautifulSoup
   </a>
  </li>
 </ul>
@@ -309,27 +336,27 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   9.1. Covered in this Chapter
+   10.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   9.2. Introduction
+   10.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-with-operator">
-   9.3. The With Operator
+   10.3. The With Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-open-a-text-file">
-   9.4. How to Open a Text File
+   10.4. How to Open a Text File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
-   9.5. How to Write Data to a Text File
+   10.5. How to Write Data to a Text File
   </a>
  </li>
 </ul>
@@ -354,27 +381,27 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   9.1. Covered in this Chapter
+   10.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   9.2. Introduction
+   10.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-with-operator">
-   9.3. The With Operator
+   10.3. The With Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-open-a-text-file">
-   9.4. How to Open a Text File
+   10.4. How to Open a Text File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
-   9.5. How to Write Data to a Text File
+   10.5. How to Write Data to a Text File
   </a>
  </li>
 </ul>
@@ -387,11 +414,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="center-working-with-textual-data-center">
-<h1><span class="section-number">9. </span><center>Working with Textual Data</center><a class="headerlink" href="#center-working-with-textual-data-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10. </span><center>Working with Textual Data</center><a class="headerlink" href="#center-working-with-textual-data-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
-<h2><span class="section-number">9.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Text Files<br></p></li>
 <li><p>The With Operator<br></p></li>
@@ -401,15 +428,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 <div class="section" id="introduction">
-<h2><span class="section-number">9.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Up until now, we have strictly worked with data that we have produced within our own code. Rarely will you ever copy-and-paste data into a Python script. Instead, you will need to interact with external data. Further, you will often need to save data in some way. This chapter is the first of two that walk you through how to interact with external data. We will be working with textual data in this chapter, while in the following chapter we will work with JSON, or JavaScript Object Notation data. In Part 07, Chapter 02, we will work with tabular data.</p>
 </div>
 <div class="section" id="the-with-operator">
-<h2><span class="section-number">9.3. </span>The With Operator<a class="headerlink" href="#the-with-operator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3. </span>The With Operator<a class="headerlink" href="#the-with-operator" title="Permalink to this headline">¶</a></h2>
 <p>The with operator in Python is an essential command that allows for you to do something in memory for so long as the operator is open. This is really important when opening text files. There are several ways to open text files in Python, but I am only showing you this method because it is the most Pythonic. Other methods require you to close the text file in code. If you do not, it will remain open in memory. If you are working with 10,000 text files (I have done this before), and forget to add a close command in your code while iterating over all 10,000 files, your computer will run out of memory and crash. The with operator avoids this problem entirely.</p>
 </div>
 <div class="section" id="how-to-open-a-text-file">
-<h2><span class="section-number">9.4. </span>How to Open a Text File<a class="headerlink" href="#how-to-open-a-text-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4. </span>How to Open a Text File<a class="headerlink" href="#how-to-open-a-text-file" title="Permalink to this headline">¶</a></h2>
 <p>Let’s see what it looks like in action and then we will break down what is happening.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -456,7 +483,7 @@ This is a third line.
 <p>As you can see, splitlines allows us to convert our string into a list of strings that are separated by linebreaks.</p>
 </div>
 <div class="section" id="how-to-write-data-to-a-text-file">
-<h2><span class="section-number">9.5. </span>How to Write Data to a Text File<a class="headerlink" href="#how-to-write-data-to-a-text-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.5. </span>How to Write Data to a Text File<a class="headerlink" href="#how-to-write-data-to-a-text-file" title="Permalink to this headline">¶</a></h2>
 <p>Just as it is necessary to access external data via Python, you will find yourself frequently needing to storing data outside of a Python script. Let’s take a look at how to do this in the following block of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -497,17 +524,17 @@ This is a third line.
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="04_02_classes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04_03_libraries.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span><center>Classes</center></p>
+            <p class="prev-next-title"><span class="section-number">9. </span><center>Libraries in Python</center></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05_02_json.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span><center>Working with JSON Data</center></p>
+        <p class="prev-next-title"><span class="section-number">11. </span><center>Working with JSON Data</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

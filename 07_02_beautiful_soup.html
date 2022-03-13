@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. Requests and BeautifulSoup &#8212; Introduction to Python for Digital Humanists</title>
+    <title>16. Requests and BeautifulSoup &#8212; Introduction to Python for Digital Humanists</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="11. Introduction to HTML" href="07_01_html.html" />
+    <link rel="prev" title="15. Introduction to HTML" href="07_01_html.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,6 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
    8. Introduction to Classes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_libraries.html">
+   9. Introduction to Libraries
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -175,12 +180,34 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="05_01_texts.html">
-   9. Loading and Saving Text Data
+   10. Loading and Saving Text Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05_02_json.html">
-   10. Loading and Saving JSON Data
+   11. Loading and Saving JSON Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_03_multiple_files.html">
+   12. Working with Multiple Files
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tabular Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_01_pandas.html">
+   13. Introduction to Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_02_pandas2.html">
+   14. The Basics of Pandas
   </a>
  </li>
 </ul>
@@ -192,12 +219,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="07_01_html.html">
-   11. Introduction to HTML
+   15. Introduction to HTML
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   12. Requests and BeautifulSoup
+   16. Requests and BeautifulSoup
   </a>
  </li>
 </ul>
@@ -308,32 +335,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   12.1. Covered in this Chapter
+   16.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   12.2. Introduction
+   16.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-requests-and-beautifulsoup">
-   12.3. Why Requests and BeautifulSoup?
+   16.3. Why Requests and BeautifulSoup?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-the-libraries">
-   12.4. Installing the Libraries
+   16.4. Installing the Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#requests">
-   12.5. Requests
+   16.5. Requests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#beautifulsoup">
-   12.6. BeautifulSoup
+   16.6. BeautifulSoup
   </a>
  </li>
 </ul>
@@ -358,32 +385,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   12.1. Covered in this Chapter
+   16.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   12.2. Introduction
+   16.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-requests-and-beautifulsoup">
-   12.3. Why Requests and BeautifulSoup?
+   16.3. Why Requests and BeautifulSoup?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-the-libraries">
-   12.4. Installing the Libraries
+   16.4. Installing the Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#requests">
-   12.5. Requests
+   16.5. Requests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#beautifulsoup">
-   12.6. BeautifulSoup
+   16.6. BeautifulSoup
   </a>
  </li>
 </ul>
@@ -396,11 +423,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="center-requests-and-beautifulsoup-center">
-<h1><span class="section-number">12. </span><center>Requests and BeautifulSoup</center><a class="headerlink" href="#center-requests-and-beautifulsoup-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">16. </span><center>Requests and BeautifulSoup</center><a class="headerlink" href="#center-requests-and-beautifulsoup-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><div class="section" id="covered-in-this-chapter">
-<h2><span class="section-number">12.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><br>
 </li>
@@ -410,18 +437,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 <div class="section" id="introduction">
-<h2><span class="section-number">12.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>In the last chapter, I introduced you to the basics of HTML. At the end of the chapter, we saw briefly how that HTML can be used to call a server that holds a website’s page and then parse that data. While we did not cover precisely what was happening in the code, all of this was achieved with two libraries that we will meet in this chapter: requests and BeautifulSoup.</p>
 <p>The <b>requests</b> library allows us to send a signal via Python to server. A good way to think about requests is as an invisible browser that opens in the background of your computer. Requests does the precise thing your browser does. It sends a signal over the internet to connect to a specific server address. While all servers have a unique IP address. Often the internet links a specific and unique address that can be used as a way to connect to a server without having to type out an IP address. Unlike your browser, however, requests does not will up the results for you to see. Instead, it receives the return signal and simply stores the HTML data in memory.</p>
 <p><b>BeautifulSoup</b> is the second library in this workflow. It allows us to create a unique soup object which converts the HTML into a unique data structure in memory that we can then parse, analyze, and navigate through Python.</p>
 </div>
 <div class="section" id="why-requests-and-beautifulsoup">
-<h2><span class="section-number">12.3. </span>Why Requests and BeautifulSoup?<a class="headerlink" href="#why-requests-and-beautifulsoup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.3. </span>Why Requests and BeautifulSoup?<a class="headerlink" href="#why-requests-and-beautifulsoup" title="Permalink to this headline">¶</a></h2>
 <p>I recommend learning requests and BeautifulSoup to beginners of web scraping for two reasons. First, they are the simplest libraries to learn in Python. Second, for the vast majority of web scraping tasks, requests and BeautifulSoup will do everything you need. In some circumstances, websites may have robust methods in place to prevent web scraping.</p>
 <p>While not covered in this chapter, there are more robust and powerful ways to scrape data with Python, specifically with Selenium. <b>Selenium</b> performs both the functions of requests and BeautifulSoup. Additionally, Selenium allows you to open up a special instance of a browser (typically Chrome or Firefox) and control that browser through Python. When you need to do more sophisticated web scraping, particularly instances where you need to type in a password or scroll down a page or need to imitate a human, Selenium is the method of choice. I will be coming out with a textbook around web scraping in the near future (as of March 2022) that will detail this process in greater detail. For now, I mention it so that you know the limitations of requests and BeautifulSoup and the potential ways to fill their gaps.</p>
 </div>
 <div class="section" id="installing-the-libraries">
-<h2><span class="section-number">12.4. </span>Installing the Libraries<a class="headerlink" href="#installing-the-libraries" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.4. </span>Installing the Libraries<a class="headerlink" href="#installing-the-libraries" title="Permalink to this headline">¶</a></h2>
 <p>In part 6 of this textbook, I introduced you to the installation of libraries. In case you have forgotten, you can install the libraries with pip, Python’s package manager. You can do this with the following commands:</p>
 <ul class="simple">
 <li><p>pip install requests</p></li>
@@ -429,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="requests">
-<h2><span class="section-number">12.5. </span>Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.5. </span>Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have installed the libraries, we can go ahead and start working with them. As noted above, the request library lets us make calls via Python to a server over the internet. Let’s try it out now.</p>
 <p>First, let’s import the requests library</p>
 <div class="cell docutils container">
@@ -471,7 +498,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>On the surface, this looks like we may have failed. What is this odd “response 200” and what does it mean? This particular response means that our attempt to connect to a server was successful. There are many types of responses, but 200 is the one we want to see. If you ever see a response that is not 200, you can Google the particular server response and you will find out what is happening. Sometimes, a response indicates that your request was blocked. This may be because the website has anti-web scraping measures in place. In other cases, the page may be protected, meaning that it lies behind a login. There are too many potential errors that may surface that I cannot detail them all in this basic introduction chapter. I will, however, give you a solution to a very common problem that can allow you to get around a common 403 response. For that solution, check out the final section of this chapter.</p>
 </div>
 <div class="section" id="beautifulsoup">
-<h2><span class="section-number">12.6. </span>BeautifulSoup<a class="headerlink" href="#beautifulsoup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.6. </span>BeautifulSoup<a class="headerlink" href="#beautifulsoup" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have learned how to make a call to a server and stored the response (the HTML) in memory, we need a way to parse that data. Buried within the s request object is the HTML content. We can access that data by accessing the content method of the response object class. Let’s do that and check out the first 100 characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,7 +651,7 @@ Initially, the kingdom was ruled primarily by two dynasties, the Carolingians an
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">11. </span><center>Introduction to HTML</center></p>
+            <p class="prev-next-title"><span class="section-number">15. </span><center>Introduction to HTML</center></p>
         </div>
     </a>
 </div>
