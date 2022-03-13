@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Functions and Classes
+  Functions, Classes, and Libraries
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Loadaing and Saving Data
+  Working with External Files
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -440,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p>If I want to update the data, I need to make sure that the list of ages corresponds to the list of names. Again, this can lead to issues down the road. The solution is to stop using CSV or Excel to store this type of data and use a format that is more flexible and able to handle things like lists and nested hierarchical data. In Python, the easiest solution is JSON. To use JSON, you do not need to install any special libraries. It comes prebuilt with a special library called JSON. We will learn about libraries in the next chapter, but for now simply execute the following command and you will be able to use the only methods you need to know to use JSON: json.dump() and json.load()</p>
+<p>If I want to update the data, I need to make sure that the list of ages corresponds to the list of names. Again, this can lead to issues down the road. The solution is to stop using CSV or Excel to store this type of data and use a format that is more flexible and able to handle things like lists and nested hierarchical data. In Python, the easiest solution is JSON. To use JSON, you do not need to install any special libraries. It comes prebuilt with a special library called JSON. The only methods you need to know to use JSON: json.dump() and json.load(). But first, let’s import json.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -451,7 +451,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s create the data above as a data structure within Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;John and Kathy both know each other. Marge and Francois do not.&quot;</span><span class="p">,</span> <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Kathy&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Francois&quot;</span><span class="p">]}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;John and Kathy both know each other. Marge and Francois do not.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Kathy&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Francois&quot;</span><span class="p">]}</span>
 <span class="n">data</span>
 </pre></div>
 </div>
