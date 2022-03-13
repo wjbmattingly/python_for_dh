@@ -55,4 +55,4 @@ parts:
   - file: 07_02_beautiful_soup
     title: Requests and BeautifulSoup
   - file: 07_03_tabular_html
-    title: Getting Tabular Data from HTML
+    title: Extracting Tabular Data from HTML
