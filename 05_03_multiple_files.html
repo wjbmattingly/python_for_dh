@@ -359,6 +359,11 @@ const thebe_selector_output = ".output, .cell_output"
    12.5. Walking a Directory
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   12.6. Conclusion
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -402,6 +407,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#walking-a-directory">
    12.5. Walking a Directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   12.6. Conclusion
   </a>
  </li>
 </ul>
@@ -521,7 +531,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _walk at 0x7fc18d11bd60&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _walk at 0x7f93f26abcf0&gt;
 </pre></div>
 </div>
 </div>
@@ -574,7 +584,6 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;This is the Root&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">()</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;These are the Files&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">files</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">()</span>
@@ -585,49 +594,66 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is the Root
 data/
-
 These are the Files
 [&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;]
 
 
 This is the Root
 data/other2
-
 These are the Files
 [&#39;sample4.txt&#39;]
 
 
 This is the Root
 data/other2/.ipynb_checkpoints
-
 These are the Files
 []
 
 
 This is the Root
 data/other
-
 These are the Files
 [&#39;sample3.txt&#39;]
 
 
 This is the Root
 data/other/.ipynb_checkpoints
-
 These are the Files
 []
 
 
 This is the Root
 data/.ipynb_checkpoints
-
 These are the Files
 [&#39;sample2-checkpoint.txt&#39;, &#39;sample_json-checkpoint.json&#39;, &#39;sample-checkpoint.txt&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>As we can see, the files are a list. We can then iterate over the files to recombine the root with the files to cultivate a list. With os, we can do this with os.path.join(). This will take two arguments, the root directory and the file.</p>
+<p>As we can see, the files are a list. We can then iterate over the files to recombine the root with the files to cultivate a list. With os, we can do this with os.path.join(). This will take two arguments, the root directory and the file. Let’s again modify our loop. We will print off the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
+             <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/sample2.txt
+data/sample.txt
+data/other2/sample4.txt
+data/other/sample3.txt
+data/.ipynb_checkpoints/sample2-checkpoint.txt
+data/.ipynb_checkpoints/sample-checkpoint.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Excellent! Now, we can use this exact same loop to append the file names to an empty list called final_files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_files</span> <span class="o">=</span> <span class="p">[]</span>
@@ -647,6 +673,11 @@ These are the Files
 </div>
 </div>
 </div>
+<p>Notice that we now have all the .txt files in the main directory and all subdirectories. This will be very useful when your files are in multiple subdirectories within multiple subdirectories.</p>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">12.6. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>I would recommend playing around with the code provided to you in this chapter. I cannot emphasize enough how frequently you will need to work with multiple files in a Python project. It is perhaps one of the things you should work hard to commit to memory. Over time, it will become more instinctual.</p>
 </div>
 </div>
 
