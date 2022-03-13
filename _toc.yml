@@ -22,7 +22,7 @@ parts:
     title: Introduction to Loops
   - file: 03_02_conditionals
     title: Introduction to Conditionals  
-- caption: Functions and Classes
+- caption: Functions, Classes, and Libraries
   numbered: true
   chapters:
   - file: 04_01_functitons
@@ -32,7 +32,7 @@ parts:
   - file: 04_03_libraries
     title: Introduction to Libraries
     
-- caption: Loadaing and Saving Data
+- caption: Working with External Files
   numbered: true
   chapters:
   - file: 05_01_texts
