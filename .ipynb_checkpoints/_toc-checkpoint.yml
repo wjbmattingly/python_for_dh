@@ -31,7 +31,6 @@ parts:
     title: Introduction to Classes
   - file: 04_03_libraries
     title: Introduction to Libraries
-    
 - caption: Working with External Files
   numbered: true
   chapters:
@@ -40,16 +39,14 @@ parts:
   - file: 05_02_json
     title: Loading and Saving JSON Data  
   - file: 05_03_multiple_files
-    title: Working with Multiple Files
-    
+    title: Working with Multiple Files 
 - caption: Tabular Data
   numbered: true
   chapters:
-  - file: 06_02_pandas
+  - file: 06_01_pandas
     title: Introduction to Pandas
-  - file: 06_03_pandas2
-    title: The Basics of Pandas
-    
+  - file: 06_02_pandas2
+    title: The Basics of Pandas 
 - caption: Working with Web Data
   numbered: true
   chapters:
