@@ -349,28 +349,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   17.3. Finding Strings that Don’t Contain Feature
+  <a class="reference internal nav-link" href="#finding-the-tables-on-the-page">
+   17.3. Finding the Tables on the Page
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   17.4. Using RegEx with Pandas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iterating-across-rows">
-   17.5. Iterating Across Rows
+  <a class="reference internal nav-link" href="#grabbing-rows-of-a-table">
+   17.4. Grabbing Rows of a Table
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#find-cells">
-   17.6. Find Cells
+   17.5. Find Cells
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iterating-across-the-entire-table">
-   17.7. Iterating Across the Entire Table
+   17.6. Iterating Across the Entire Table
   </a>
  </li>
 </ul>
@@ -404,28 +399,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-strings-that-don-t-contain-feature">
-   17.3. Finding Strings that Don’t Contain Feature
+  <a class="reference internal nav-link" href="#finding-the-tables-on-the-page">
+   17.3. Finding the Tables on the Page
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-regex-with-pandas">
-   17.4. Using RegEx with Pandas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iterating-across-rows">
-   17.5. Iterating Across Rows
+  <a class="reference internal nav-link" href="#grabbing-rows-of-a-table">
+   17.4. Grabbing Rows of a Table
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#find-cells">
-   17.6. Find Cells
+   17.5. Find Cells
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iterating-across-the-entire-table">
-   17.7. Iterating Across the Entire Table
+   17.6. Iterating Across the Entire Table
   </a>
  </li>
 </ul>
@@ -453,6 +443,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">17.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, we will put our skills to work! We will learn how to extract tabular data via requests and BeautifulSoup. We will work with a lot of the commands and methods we saw in the last chapter, but we will not be trying to extract p tags, rather tabular data from the same Wikipedia page. All of this will allow you to apply your skills to the final challenge of this textbook (introduced in the next chapter).</p>
+<p>First, let’s import the same libraries as in the last chapter, requests and BeautifulSoup.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -461,6 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Let’s also go ahead and make the same string object, the url of the page we want to scrape.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_French_monarchs&quot;</span>
@@ -468,9 +461,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Now, let’s dive in!</p>
 </div>
-<div class="section" id="finding-strings-that-don-t-contain-feature">
-<h2><span class="section-number">17.3. </span>Finding Strings that Don’t Contain Feature<a class="headerlink" href="#finding-strings-that-don-t-contain-feature" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="finding-the-tables-on-the-page">
+<h2><span class="section-number">17.3. </span>Finding the Tables on the Page<a class="headerlink" href="#finding-the-tables-on-the-page" title="Permalink to this headline">¶</a></h2>
+<p>In the cell below, we will make the call to the Wikipedia server and convert the HTML content into a soup object as we saw in the last chapter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span>  <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -479,6 +474,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Now that we have our soup object, we can start to parse it. Tables are often structured in HTML the same way across all sites. The main tag used is the table tag. On Wikipedia, there are multiple kinds of tables. The class we want is a table class called “wikitable”. Let’s go ahead and grab all these tables and print off how many we have on the page.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;wikitable&quot;</span><span class="p">})</span>
@@ -493,8 +489,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="using-regex-with-pandas">
-<h2><span class="section-number">17.4. </span>Using RegEx with Pandas<a class="headerlink" href="#using-regex-with-pandas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="grabbing-rows-of-a-table">
+<h2><span class="section-number">17.4. </span>Grabbing Rows of a Table<a class="headerlink" href="#grabbing-rows-of-a-table" title="Permalink to this headline">¶</a></h2>
+<p>Excellent! Now that hwe have the tables, let’s take a look at the first one’s HTML.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -588,9 +585,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="iterating-across-rows">
-<h2><span class="section-number">17.5. </span>Iterating Across Rows<a class="headerlink" href="#iterating-across-rows" title="Permalink to this headline">¶</a></h2>
+<p>A table is a combination of 2 things: rows and cells. Rows will almost always be “tr” tags. This stands for table row. Cells with either be th tags or td tags. The th tag stands for table header. This will usually be used in the first row that indicates the name of the column. The td tag stands for Table Data cell. These are the cells that start on the first row that contains data and continue on down until the table ends. Because tables are precise structurally, there will always be the same name of headers as there are columns of data. We can use this structure to our advantage.</p>
+<p>Let’s find all the rows in the first table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="n">first_table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">)</span>
@@ -598,6 +594,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Excellent! Now, let’s iterate over all the rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
@@ -690,9 +687,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>We can see the precise same HTML that we saw above. Now that we can access the rows, let’s try and access the first row of data.</p>
 </div>
 <div class="section" id="find-cells">
-<h2><span class="section-number">17.6. </span>Find Cells<a class="headerlink" href="#find-cells" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">17.5. </span>Find Cells<a class="headerlink" href="#find-cells" title="Permalink to this headline">¶</a></h2>
+<p>To do this, we will need to find each cell. Remember, on row 1, we are working with th tags because these are headers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_row</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -718,6 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Let’s now try to find all the cells in the first row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cells</span> <span class="o">=</span> <span class="n">first_row</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;th&quot;</span><span class="p">)</span>
@@ -737,6 +737,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>We can iterate over these cells and print off their text. I am adding .strip() here to remove the leading whitespaces and line breaks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
@@ -757,7 +758,8 @@ Title
 </div>
 </div>
 <div class="section" id="iterating-across-the-entire-table">
-<h2><span class="section-number">17.7. </span>Iterating Across the Entire Table<a class="headerlink" href="#iterating-across-the-entire-table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">17.6. </span>Iterating Across the Entire Table<a class="headerlink" href="#iterating-across-the-entire-table" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know how to grab all tables, all rows within a table, and all cells within a row, let’s try and iterate over the entire first table. First, let’s grab the headers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="n">first_table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">)</span>
@@ -779,6 +781,7 @@ Title
 </div>
 </div>
 </div>
+<p>Now that we know all the headers, explore all the table data cells which start on the next row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="n">first_table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">)</span>
@@ -824,6 +827,7 @@ King of the FranksEmperor of the Romans (881–88)
 </div>
 </div>
 </div>
+<p>Now that you know how to grab all of this data, it will be</p>
 </div>
 </div>
 
