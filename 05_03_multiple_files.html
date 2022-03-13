@@ -419,10 +419,10 @@ const thebe_selector_output = ".output, .cell_output"
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>March 2022</center><div class="section" id="covered-in-this-chapter">
 <h2><span class="section-number">12.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
-<ol>
+<ol class="simple">
 <li><p>The glob library<br></p></li>
 <li><p>Working with os<br></p></li>
-<li><br></li>
+<li><p>Walking Directories<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
@@ -455,7 +455,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/sample_json.json&#39;, &#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/other2&#39;, &#39;data/sample_json.json&#39;, &#39;data/other&#39;, &#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;]
 </pre></div>
 </div>
 </div>
@@ -503,22 +503,146 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>Once we have imported os, we can use the os.walk command. This will take one string. This should correspond to the directory that you want to start walking. Imagine that this is our directory:</p>
+<ul class="simple">
+<li><p>data</p>
+<ul>
+<li><p>other</p></li>
+<li><p>other2</p></li>
+</ul>
+</li>
+</ul>
+<p>We want to get all the text files in data, other, and other2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
-             <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walking</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">walking</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/sample2.txt
-data/sample.txt
-data/other2/sample4.txt
-data/other/sample3.txt
-data/.ipynb_checkpoints/sample2-checkpoint.txt
-data/.ipynb_checkpoints/sample-checkpoint.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _walk at 0x7fc18d11bd60&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This above output tells us what what we are looking at is a generator. Generators are a bit beyond this textbook, but think of them as a special kind of object that exists for a single moment in memory. Whenever you see generators, you can usually convert them to a list to work with them. Let’s convert it by using the list() function in Python</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walking</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">walking</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">walking</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;data/&#39;, [&#39;other2&#39;, &#39;other&#39;, &#39;.ipynb_checkpoints&#39;], [&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;]), (&#39;data/other2&#39;, [&#39;.ipynb_checkpoints&#39;], [&#39;sample4.txt&#39;]), (&#39;data/other2/.ipynb_checkpoints&#39;, [], []), (&#39;data/other&#39;, [&#39;.ipynb_checkpoints&#39;], [&#39;sample3.txt&#39;]), (&#39;data/other/.ipynb_checkpoints&#39;, [], []), (&#39;data/.ipynb_checkpoints&#39;, [], [&#39;sample2-checkpoint.txt&#39;, &#39;sample_json-checkpoint.json&#39;, &#39;sample-checkpoint.txt&#39;])]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be a bit diffult to parse, so let’s iterate over each item in walking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;data/&#39;, [&#39;other2&#39;, &#39;other&#39;, &#39;.ipynb_checkpoints&#39;], [&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;])
+(&#39;data/other2&#39;, [&#39;.ipynb_checkpoints&#39;], [&#39;sample4.txt&#39;])
+(&#39;data/other2/.ipynb_checkpoints&#39;, [], [])
+(&#39;data/other&#39;, [&#39;.ipynb_checkpoints&#39;], [&#39;sample3.txt&#39;])
+(&#39;data/other/.ipynb_checkpoints&#39;, [], [])
+(&#39;data/.ipynb_checkpoints&#39;, [], [&#39;sample2-checkpoint.txt&#39;, &#39;sample_json-checkpoint.json&#39;, &#39;sample-checkpoint.txt&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, each item is a tuple with 3 parts:</p>
+<ul class="simple">
+<li><p>root directory</p></li>
+<li><p>subfolders</p></li>
+<li><p>files</p></li>
+</ul>
+<p>For our purposes, we only care about the root directory and the file itself. We can use these two pieces of data. Let’s now modify our loop to grab these two pieces of data and print them off.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_files</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;This is the Root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;These are the Files&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">files</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">()</span>
+    <span class="nb">print</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is the Root
+data/
+
+These are the Files
+[&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;]
+
+
+This is the Root
+data/other2
+
+These are the Files
+[&#39;sample4.txt&#39;]
+
+
+This is the Root
+data/other2/.ipynb_checkpoints
+
+These are the Files
+[]
+
+
+This is the Root
+data/other
+
+These are the Files
+[&#39;sample3.txt&#39;]
+
+
+This is the Root
+data/other/.ipynb_checkpoints
+
+These are the Files
+[]
+
+
+This is the Root
+data/.ipynb_checkpoints
+
+These are the Files
+[&#39;sample2-checkpoint.txt&#39;, &#39;sample_json-checkpoint.json&#39;, &#39;sample-checkpoint.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, the files are a list. We can then iterate over the files to recombine the root with the files to cultivate a list. With os, we can do this with os.path.join(). This will take two arguments, the root directory and the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_files</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
+             <span class="n">final_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">final_files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;, &#39;data/other2/sample4.txt&#39;, &#39;data/other/sample3.txt&#39;, &#39;data/.ipynb_checkpoints/sample2-checkpoint.txt&#39;, &#39;data/.ipynb_checkpoints/sample-checkpoint.txt&#39;]
 </pre></div>
 </div>
 </div>
