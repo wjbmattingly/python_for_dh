@@ -1,31 +1,27 @@
-  {
-        "question": "Choose all of the following that can be included in Jupyter notebooks?",
-        "type": "many_choice",
+[{
+        "question": "What type of data structure is created with []",
+        "type": "multiple_choice",
         "answers": [
             {
-                "answer": "Text and graphics output from Python",
-                "correct": true,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "Typeset mathematics",
-                "correct": true,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "Python executable code",
-                "correct": true,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "Formatted text",
-                "correct": true,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "Live snakes via Python",
+                "answer": "String",
                 "correct": false,
-                "feedback": "I hope not."
-            }
+                "feedback": "Incorrect. Strings are not a data structure, rather a type of data."
+            },
+            {
+                "answer": "Dictionary",
+                "correct": false,
+                "feedback": "Incorrect. While dictionaries are data structures, we do not create them with []"
+            },
+            {
+                "answer": "List",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Tuple",
+                "correct": false,
+                "feedback": "Incorrect. While lists and tuples are very similar, we create them differently."
+            },
         ]
     }
+ ]
