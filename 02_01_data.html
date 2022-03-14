@@ -1182,7 +1182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output text_html"><div id="SQxYWbSfGtwM" data-shufflequestions="False"
+<div class="output text_html"><div id="HHAWxPsLNAtb" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-numquestions="1000000"> <style>:root {
     --medium-slate-blue: #6f78ffff;
@@ -1343,32 +1343,69 @@ const thebe_selector_output = ".output, .cell_output"
     100% {
         background-color: var(--correct-green);
     }
-}</style><script type="text/Javascript">var questionsSQxYWbSfGtwM={
-        "question": "Which of these are used to create formatted text in Jupyter notebooks?",
-        "type": "multiple_choice",
+}</style><script type="text/Javascript">var questionsHHAWxPsLNAtb=[{
+        "question": "Choose all of the following that can be included in Jupyter notebooks?",
+        "type": "many_choice",
         "answers": [
             {
-                "answer": "Wiki markup",
-                "correct": false,
-                "feedback": "False."
-            },
-            {
-                "answer": "SVG",
-                "correct": false,
-                "feedback": "False."
-            },
-            {
-                "answer": "Markdown",
+                "answer": "Text and graphics output from Python",
                 "correct": true,
                 "feedback": "Correct."
             },
             {
-                "answer": "Rich Text",
+                "answer": "Typeset mathematics",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Python executable code",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Formatted text",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Live snakes via Python",
                 "correct": false,
-                "feedback": "False."
+                "feedback": "I hope not."
             }
         ]
-    };
+    },
+ {
+        "question": "Choose of the following that can be included in Jupyter notebooks?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Text and graphics output from Python",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Typeset mathematics",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Python executable code",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Formatted text",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Live snakes via Python",
+                "correct": false,
+                "feedback": "I hope not."
+            }
+        ]
+    }
+ ];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1990,7 +2027,7 @@ if (typeof version == 'undefined') {
 }
 
         {
-        show_questions(questionsSQxYWbSfGtwM,  SQxYWbSfGtwM);
+        show_questions(questionsHHAWxPsLNAtb,  HHAWxPsLNAtb);
         }
         </script>
 </div></div>
