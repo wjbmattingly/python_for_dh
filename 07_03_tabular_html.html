@@ -368,6 +368,11 @@ const thebe_selector_output = ".output, .cell_output"
    17.6. Iterating Across the Entire Table
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-options">
+   17.7. Other Options
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -418,6 +423,11 @@ const thebe_selector_output = ".output, .cell_output"
    17.6. Iterating Across the Entire Table
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-options">
+   17.7. Other Options
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -437,7 +447,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Table Tags<br></p></li>
 <li><p>TR Tags<br></p></li>
 <li><p>TH and TD Tags<br></p></li>
-<li><p>How to parse an HTML Table<b></p></li>
+<li><p>How to parse an HTML Table<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
@@ -827,6 +837,184 @@ King of the FranksEmperor of the Romans (881–88)
 </div>
 </div>
 <p>Now that you know how to grab all of this data, it will be time to bring all of this together for your final task. In the next chapter, we will try and extract all this data into properly structured data that will be stored within Python, then parsed as a Pandas DataFrame, and finally saved as a .csv file.</p>
+</div>
+<div class="section" id="other-options">
+<h2><span class="section-number">17.7. </span>Other Options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
+<p>I want to emphasize that there are other, easier ways to do this task. As with all things in Python, there are multiple solutions to the same problem. Here is one potential solution with Pandas. Pandas has a .read_html() function that can take a url. It will return a list of all tables in an HTML document. Let’s try that and take a look at the first table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Portrait</th>
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Succession / Notes</th>
+      <th>Title</th>
+      <th>Ref.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Charles II "the Bald"[b]</td>
+      <td>c. 10 August 843[c][i]</td>
+      <td>6 October 877</td>
+      <td>• Son of Louis I and grandson of Charlemagne (...</td>
+      <td>King of the Franks(840–77)Emperor of the Roman...</td>
+      <td>[7][8][9][10]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>Louis II "the Stammerer"[d]</td>
+      <td>6 October 877[ii]</td>
+      <td>10 April 879</td>
+      <td>• Son of Charles the Bald</td>
+      <td>King of the Franks</td>
+      <td>[8][7][11]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>Louis III</td>
+      <td>10 April 879[iii]</td>
+      <td>5 August 882</td>
+      <td>• Son of Louis the Stammerer</td>
+      <td>King of the Franks</td>
+      <td>[8][12][13]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>Carloman II</td>
+      <td>10 April 879[iv]</td>
+      <td>12 December 884</td>
+      <td>• Son of Louis the Stammerer</td>
+      <td>King of the Franks</td>
+      <td>[8][7][13]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>Charles (III) "the Fat"[e]</td>
+      <td>12 December 884[v]</td>
+      <td>13 January 888</td>
+      <td>• Son of Louis II the German • Cousin once rem...</td>
+      <td>King of East Francia(871–88)Emperor of the Rom...</td>
+      <td>[14][15]</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>Eudes(Robertians)</td>
+      <td>13 January 888[vi]</td>
+      <td>1 January 898</td>
+      <td>• Son of Robert the Strong • Rivaled by Charle...</td>
+      <td>King of the Franks</td>
+      <td>[16][11]</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>Charles III"the Simple"</td>
+      <td>1 January 898[vii]</td>
+      <td>29 June 922</td>
+      <td>• Posthumous son of Louis II • Deposed</td>
+      <td>King of the Franks</td>
+      <td>[8][7]</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>Robert I(Robertians)</td>
+      <td>29 June 922[viii]</td>
+      <td>15 June 923</td>
+      <td>• Son of Robert the Strong and younger brother...</td>
+      <td>King of the Franks</td>
+      <td>[17][11]</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NaN</td>
+      <td>Rudolph(Bosonids)</td>
+      <td>15 June 923[ix]</td>
+      <td>14 January 936</td>
+      <td>• Son of Richard, Duke of Burgundy • Son-in-la...</td>
+      <td>King of the Franks</td>
+      <td>[8][7]</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>Louis IV"d'Outremer"</td>
+      <td>19 June 936[x]</td>
+      <td>10 September 954</td>
+      <td>• Son of Charles III the Simple</td>
+      <td>King of the Franks</td>
+      <td>[8][7]</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NaN</td>
+      <td>Lothair[f]</td>
+      <td>10 September 954[xi]</td>
+      <td>2 March 986</td>
+      <td>• Son of Louis IV</td>
+      <td>King of the Franks</td>
+      <td>[8][18]</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>NaN</td>
+      <td>Louis V"the Do-Nothing"</td>
+      <td>2 March 986[xii]</td>
+      <td>22 May 987</td>
+      <td>• Son of Lothair</td>
+      <td>King of the Franks</td>
+      <td>[19][20]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It’s not bad. And for a quick result, this is great, but it is not perfect. Notice the brackets with the citations in the Start column and the circle at the lead of each string in the Succession column. We also likely do not need to know NaN for each Portrait column. In other words, while Pandas is a quick solution, it is good to know how to do a custom solution using requests and BeautifulSoup.</p>
 </div>
 </div>
 
