@@ -2,3 +2,5 @@ jupyter-book>=0.9
 requests
 bs4
 pandas
+jupyterquiz
+jupytercards
