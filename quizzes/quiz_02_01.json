@@ -21,7 +21,7 @@
                 "answer": "Tuple",
                 "correct": false,
                 "feedback": "Incorrect. While lists and tuples are very similar, we create them differently."
-            },
+            }
         ]
     }
  ]
