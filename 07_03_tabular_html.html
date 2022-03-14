@@ -492,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -503,92 +503,212 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Excellent! Now that hwe have the tables, let’s take a look at the first one’s HTML.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-output&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">first_table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">first_table</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;table class=&quot;wikitable&quot; width=&quot;95%&quot;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;table class=&quot;wikitable&quot; style=&quot;text-align:center;&quot; width=&quot;97%&quot;&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;th width=&quot;8%&quot;&gt;Portrait
+&lt;th width=&quot;10%&quot;&gt;Portrait
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Name
+&lt;th width=&quot;16%&quot;&gt;Name
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King from
+&lt;th width=&quot;15%&quot;&gt;Start
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King until
+&lt;th width=&quot;15%&quot;&gt;End
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Relationship with predecessor(s)
+&lt;th width=&quot;22%&quot;&gt;Succession / Notes
 &lt;/th&gt;
-&lt;th width=&quot;13%&quot;&gt;Title
+&lt;th width=&quot;15%&quot;&gt;Title
+&lt;/th&gt;
+&lt;th width=&quot;4%&quot;&gt;Ref.
 &lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg&quot;&gt;&lt;img alt=&quot;Bibliothèque nationale de France - Bible de Vivien Ms. Latin 1 folio 423r détail Le comte Vivien offre le manuscrit de la Bible faite à l&#39;abbaye de Saint-Martin de Tours à Charles le Chauve.jpg&quot; data-file-height=&quot;2462&quot; data-file-width=&quot;2068&quot; decoding=&quot;async&quot; height=&quot;119&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/100px-thumbnail.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/150px-thumbnail.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/200px-thumbnail.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Charles_II,_Holy_Roman_Emperor.jpg&quot;&gt;&lt;img alt=&quot;Charles II, Holy Roman Emperor.jpg&quot; data-file-height=&quot;1842&quot; data-file-width=&quot;1228&quot; decoding=&quot;async&quot; height=&quot;165&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/110px-Charles_II%2C_Holy_Roman_Emperor.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/165px-Charles_II%2C_Holy_Roman_Emperor.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/220px-Charles_II%2C_Holy_Roman_Emperor.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_II_the_Bald&quot; title=&quot;Charles II the Bald&quot;&gt;Charles II the Bald&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_II_the_Bald&quot; title=&quot;Charles II the Bald&quot;&gt;&lt;b&gt;Charles II&lt;/b&gt;&lt;br/&gt;  &quot;the Bald&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-:0_8-0&quot;&gt;&lt;a href=&quot;#cite_note-:0-8&quot;&gt;[b]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Treaty_of_Verdun&quot; title=&quot;Treaty of Verdun&quot;&gt;August 843&lt;/a&gt;&lt;br/&gt;&lt;small&gt;(King of the Franks from 20 June 840)&lt;/small&gt;
+&lt;td&gt;&lt;abbr title=&quot;circa&quot;&gt;c.&lt;/abbr&gt; 10 August 843&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-9&quot;&gt;&lt;a href=&quot;#cite_note-9&quot;&gt;[c]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-10&quot;&gt;&lt;a href=&quot;#cite_note-10&quot;&gt;[i]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 October 877
+&lt;td&gt;6 October 877
 &lt;/td&gt;
-&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I the Pious&lt;/a&gt;
+&lt;td&gt; • Son of &lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I&lt;/a&gt;&lt;/b&gt; and grandson of &lt;a href=&quot;/wiki/Charlemagne&quot; title=&quot;Charlemagne&quot;&gt;Charlemagne&lt;/a&gt; (&lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_I_of_France&quot; title=&quot;Charles I of France&quot;&gt;Charles I&lt;/a&gt;&lt;/b&gt;)
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt; (875–77)
+&lt;td&gt;&lt;i&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;(840–77)&lt;br/&gt;&lt;i&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt;&lt;/i&gt; (875–77)
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-13&quot;&gt;&lt;a href=&quot;#cite_note-13&quot;&gt;[9]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-14&quot;&gt;&lt;a href=&quot;#cite_note-14&quot;&gt;[10]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Amiel_-_Louis_the_Stammerer.jpg&quot;&gt;&lt;img alt=&quot;Amiel - Louis the Stammerer.jpg&quot; data-file-height=&quot;624&quot; data-file-width=&quot;504&quot; decoding=&quot;async&quot; height=&quot;124&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/100px-Amiel_-_Louis_the_Stammerer.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/150px-Amiel_-_Louis_the_Stammerer.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/200px-Amiel_-_Louis_the_Stammerer.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Louis II dit le Bègue.jpg&quot; data-file-height=&quot;1380&quot; data-file-width=&quot;2773&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/110px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/165px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/220px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_Stammerer&quot; title=&quot;Louis II the Stammerer&quot;&gt;Louis II the Stammerer&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_Stammerer&quot; title=&quot;Louis II the Stammerer&quot;&gt;&lt;b&gt;Louis II&lt;/b&gt;&lt;br/&gt; &quot;the Stammerer&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-15&quot;&gt;&lt;a href=&quot;#cite_note-15&quot;&gt;[d]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 October 877
+&lt;td&gt;6 October 877&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-16&quot;&gt;&lt;a href=&quot;#cite_note-16&quot;&gt;[ii]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;10 April 879
+&lt;td&gt;10 April 879
 &lt;/td&gt;
-&lt;td&gt; • Son of Charles II the Bald
+&lt;td&gt; • Son of Charles the Bald
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-1&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-1&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-0&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Louis_III.jpg&quot;&gt;&lt;img alt=&quot;Louis III.jpg&quot; data-file-height=&quot;471&quot; data-file-width=&quot;235&quot; decoding=&quot;async&quot; height=&quot;200&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/100px-Louis_III.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/150px-Louis_III.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/200px-Louis_III.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Louis_III.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Louis III.jpg&quot; data-file-height=&quot;1140&quot; data-file-width=&quot;2347&quot; decoding=&quot;async&quot; height=&quot;53&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/110px-Denier_sous_Louis_III.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/165px-Denier_sous_Louis_III.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/220px-Denier_sous_Louis_III.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;Louis III&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;&lt;b&gt;Louis III&lt;/b&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;10 April 879
+&lt;td&gt;10 April 879&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-18&quot;&gt;&lt;a href=&quot;#cite_note-18&quot;&gt;[iii]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;5 August 882
+&lt;td&gt;5 August 882
 &lt;/td&gt;
-&lt;td&gt; • Son of Louis II the Stammerer
+&lt;td&gt; • Son of Louis the Stammerer
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-2&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189._The_text_says_&amp;quot;3_August&amp;quot;,_but_the_&#39;&#39;[[Annales_Vedastini]]&#39;&#39;_clearly_indicate_&amp;quot;5_August&amp;quot;_([httpwwwthelatinlibrarycomannalesvedastinihtml_nonis_augusti])_19-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189._The_text_says_&amp;quot;3_August&amp;quot;,_but_the_&#39;&#39;[[Annales_Vedastini]]&#39;&#39;_clearly_indicate_&amp;quot;5_August&amp;quot;_([httpwwwthelatinlibrarycomannalesvedastinihtml_nonis_augusti])-19&quot;&gt;[12]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-ca_20-0&quot;&gt;&lt;a href=&quot;#cite_note-ca-20&quot;&gt;[13]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Carloman_II.jpg&quot;&gt;&lt;img alt=&quot;Carloman II.jpg&quot; data-file-height=&quot;451&quot; data-file-width=&quot;182&quot; decoding=&quot;async&quot; height=&quot;248&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Carloman_II.jpg/100px-Carloman_II.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Carloman_II.jpg/150px-Carloman_II.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/e/e4/Carloman_II.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Carloman_II.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Carloman II.jpg&quot; data-file-height=&quot;1323&quot; data-file-width=&quot;2652&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/110px-Denier_sous_Carloman_II.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/165px-Denier_sous_Carloman_II.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/220px-Denier_sous_Carloman_II.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;Carloman II&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;&lt;b&gt;Carloman II&lt;/b&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;5 August 882
+&lt;td&gt;10 April 879&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-21&quot;&gt;&lt;a href=&quot;#cite_note-21&quot;&gt;[iv]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 December 884
+&lt;td&gt;12 December 884
 &lt;/td&gt;
-&lt;td&gt; • Son of Louis II the Stammerer
-&lt;p&gt; • Younger brother of Louis III
-&lt;/p&gt;
+&lt;td&gt; • Son of Louis the Stammerer
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-3&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-2&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-ca_20-1&quot;&gt;&lt;a href=&quot;#cite_note-ca-20&quot;&gt;[13]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Amiel_-_Charles_the_Fat.jpg&quot;&gt;&lt;img alt=&quot;Amiel - Charles the Fat.jpg&quot; data-file-height=&quot;620&quot; data-file-width=&quot;496&quot; decoding=&quot;async&quot; height=&quot;125&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/100px-Amiel_-_Charles_the_Fat.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/150px-Amiel_-_Charles_the_Fat.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/200px-Amiel_-_Charles_the_Fat.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Sceau_de_Charles_le_gros.jpg&quot;&gt;&lt;img alt=&quot;Sceau de Charles le gros.jpg&quot; data-file-height=&quot;291&quot; data-file-width=&quot;302&quot; decoding=&quot;async&quot; height=&quot;106&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/110px-Sceau_de_Charles_le_gros.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/165px-Sceau_de_Charles_le_gros.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/220px-Sceau_de_Charles_le_gros.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Charles_the_Fat&quot; title=&quot;Charles the Fat&quot;&gt;Charles the Fat&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Charles_the_Fat&quot; title=&quot;Charles the Fat&quot;&gt;&lt;b&gt;Charles&lt;/b&gt; (&lt;b&gt;III&lt;/b&gt;)&lt;br/&gt; &quot;the Fat&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-22&quot;&gt;&lt;a href=&quot;#cite_note-22&quot;&gt;[e]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;20 May 885
+&lt;td&gt;12 December 884&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-23&quot;&gt;&lt;a href=&quot;#cite_note-23&quot;&gt;[v]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;13 January 888
+&lt;td&gt;13 January 888
 &lt;/td&gt;
-&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_German&quot; title=&quot;Louis II the German&quot;&gt;Louis II the German&lt;/a&gt;&lt;br/&gt; • Cousin once removed of Carloman II and Louis III&lt;br/&gt; • Grandson of Louis I the Pious
+&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_German&quot; title=&quot;Louis II the German&quot;&gt;Louis II the German&lt;/a&gt;&lt;br/&gt; • Cousin once removed of &lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;Carloman II&lt;/a&gt; and &lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;Louis III&lt;/a&gt;&lt;br/&gt; • Grandson of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt; (881–88)
+&lt;td&gt;&lt;i&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_East_Francia&quot; title=&quot;King of East Francia&quot;&gt;King of East Francia&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;(871–88)&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;&lt;i&gt;Emperor of the Romans&lt;/i&gt;&lt;/a&gt; (881–88)
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-24&quot;&gt;&lt;a href=&quot;#cite_note-24&quot;&gt;[14]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-25&quot;&gt;&lt;a href=&quot;#cite_note-25&quot;&gt;[15]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_de_Blois_sous_Eudes_de_France.jpg&quot;&gt;&lt;img alt=&quot;Denier de Blois sous Eudes de France.jpg&quot; data-file-height=&quot;1865&quot; data-file-width=&quot;3739&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/110px-Denier_de_Blois_sous_Eudes_de_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/165px-Denier_de_Blois_sous_Eudes_de_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/220px-Denier_de_Blois_sous_Eudes_de_France.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Eudes_of_France&quot; title=&quot;Eudes of France&quot;&gt;Eudes&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Robertians&quot; title=&quot;Robertians&quot;&gt;Robertians&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;13 January 888&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-26&quot;&gt;&lt;a href=&quot;#cite_note-26&quot;&gt;[vi]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;1 January 898
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Robert_the_Strong&quot; title=&quot;Robert the Strong&quot;&gt;Robert the Strong&lt;/a&gt;&lt;br/&gt; • Rivaled by Charles III.
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-27&quot;&gt;&lt;a href=&quot;#cite_note-27&quot;&gt;[16]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-1&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Charles_III_le_Simple.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Charles III le Simple.jpg&quot; data-file-height=&quot;1845&quot; data-file-width=&quot;3699&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/110px-Denier_sous_Charles_III_le_Simple.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/165px-Denier_sous_Charles_III_le_Simple.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/220px-Denier_sous_Charles_III_le_Simple.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Charles_the_Simple&quot; title=&quot;Charles the Simple&quot;&gt;&lt;b&gt;Charles III&lt;/b&gt;&lt;br/&gt;&quot;the Simple&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;1 January 898&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-28&quot;&gt;&lt;a href=&quot;#cite_note-28&quot;&gt;[vii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;29 June 922
+&lt;/td&gt;
+&lt;td&gt; • Posthumous son of Louis II&lt;br/&gt; • Deposed
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-4&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-3&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Robert_Ier_roi_des_Francs.jpg&quot;&gt;&lt;img alt=&quot;Robert Ier roi des Francs.jpg&quot; data-file-height=&quot;266&quot; data-file-width=&quot;269&quot; decoding=&quot;async&quot; height=&quot;89&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/90px-Robert_Ier_roi_des_Francs.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/135px-Robert_Ier_roi_des_Francs.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/180px-Robert_Ier_roi_des_Francs.jpg 2x&quot; width=&quot;90&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;b&gt;&lt;a href=&quot;/wiki/Robert_I_of_France&quot; title=&quot;Robert I of France&quot;&gt;Robert I&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Robertians&quot; title=&quot;Robertians&quot;&gt;Robertians&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;29 June 922&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-29&quot;&gt;&lt;a href=&quot;#cite_note-29&quot;&gt;[viii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;15 June 923
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Robert_the_Strong&quot; title=&quot;Robert the Strong&quot;&gt;Robert the Strong&lt;/a&gt; and younger brother of Odo&lt;br/&gt; •  Killed at the &lt;a href=&quot;/wiki/Battle_of_Soissons_(923)&quot; title=&quot;Battle of Soissons (923)&quot;&gt;Battle of Soissons&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-30&quot;&gt;&lt;a href=&quot;#cite_note-30&quot;&gt;[17]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-2&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Raoul_de_France.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Raoul de France.jpg&quot; data-file-height=&quot;1922&quot; data-file-width=&quot;3901&quot; decoding=&quot;async&quot; height=&quot;54&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/110px-Denier_sous_Raoul_de_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/165px-Denier_sous_Raoul_de_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/220px-Denier_sous_Raoul_de_France.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a href=&quot;/wiki/Rudolph_of_France&quot; title=&quot;Rudolph of France&quot;&gt;&lt;b&gt;Rudolph&lt;/b&gt;&lt;/a&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Bosonids&quot; title=&quot;Bosonids&quot;&gt;Bosonids&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;15 June 923&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-31&quot;&gt;&lt;a href=&quot;#cite_note-31&quot;&gt;[ix]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;14 January 936
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Richard,_Duke_of_Burgundy&quot; title=&quot;Richard, Duke of Burgundy&quot;&gt;Richard, Duke of Burgundy&lt;/a&gt;&lt;br/&gt; • Son-in-law of Robert I
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-5&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-4&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_Chinon_954,_obverse.jpg&quot;&gt;&lt;img alt=&quot;Denier Chinon 954, obverse.jpg&quot; data-file-height=&quot;231&quot; data-file-width=&quot;252&quot; decoding=&quot;async&quot; height=&quot;92&quot; src=&quot;//upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/100px-Denier_Chinon_954%2C_obverse.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/150px-Denier_Chinon_954%2C_obverse.jpg 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/200px-Denier_Chinon_954%2C_obverse.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_IV_of_France&quot; title=&quot;Louis IV of France&quot;&gt;&lt;b&gt;Louis IV&lt;/b&gt;&lt;br/&gt;&quot;d&#39;Outremer&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;19 June 936&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-32&quot;&gt;&lt;a href=&quot;#cite_note-32&quot;&gt;[x]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;10 September 954
+&lt;/td&gt;
+&lt;td&gt; • Son of Charles III the Simple
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-6&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-5&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:LotharRichardII10thcentury.JPG&quot;&gt;&lt;img alt=&quot;LotharRichardII10thcentury.JPG&quot; data-file-height=&quot;360&quot; data-file-width=&quot;268&quot; decoding=&quot;async&quot; height=&quot;134&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/100px-LotharRichardII10thcentury.JPG&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/150px-LotharRichardII10thcentury.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/199px-LotharRichardII10thcentury.JPG 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Lothair_of_France&quot; title=&quot;Lothair of France&quot;&gt;&lt;b&gt;Lothair&lt;/b&gt;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-33&quot;&gt;&lt;a href=&quot;#cite_note-33&quot;&gt;[f]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;10 September 954&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-34&quot;&gt;&lt;a href=&quot;#cite_note-34&quot;&gt;[xi]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;2 March 986
+&lt;/td&gt;
+&lt;td&gt; • Son of Louis IV
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-7&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888190_35-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888190-35&quot;&gt;[18]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Louis_V_of_France.jpg&quot;&gt;&lt;img alt=&quot;Louis V of France.jpg&quot; data-file-height=&quot;313&quot; data-file-width=&quot;302&quot; decoding=&quot;async&quot; height=&quot;93&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/90px-Louis_V_of_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/135px-Louis_V_of_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/179px-Louis_V_of_France.jpg 2x&quot; width=&quot;90&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_V_of_France&quot; title=&quot;Louis V of France&quot;&gt;&lt;b&gt;Louis V&lt;/b&gt;&lt;br/&gt;&quot;the Do-Nothing&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;2 March 986&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-36&quot;&gt;&lt;a href=&quot;#cite_note-36&quot;&gt;[xii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;22 May 987
+&lt;/td&gt;
+&lt;td&gt; • Son of Lothair
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-37&quot;&gt;&lt;a href=&quot;#cite_note-37&quot;&gt;[19]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-38&quot;&gt;&lt;a href=&quot;#cite_note-38&quot;&gt;[20]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 </pre></div>
 </div>
@@ -613,84 +733,199 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tr&gt;
-&lt;th width=&quot;8%&quot;&gt;Portrait
+&lt;th width=&quot;10%&quot;&gt;Portrait
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Name
+&lt;th width=&quot;16%&quot;&gt;Name
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King from
+&lt;th width=&quot;15%&quot;&gt;Start
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King until
+&lt;th width=&quot;15%&quot;&gt;End
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Relationship with predecessor(s)
+&lt;th width=&quot;22%&quot;&gt;Succession / Notes
 &lt;/th&gt;
-&lt;th width=&quot;13%&quot;&gt;Title
+&lt;th width=&quot;15%&quot;&gt;Title
+&lt;/th&gt;
+&lt;th width=&quot;4%&quot;&gt;Ref.
 &lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg&quot;&gt;&lt;img alt=&quot;Bibliothèque nationale de France - Bible de Vivien Ms. Latin 1 folio 423r détail Le comte Vivien offre le manuscrit de la Bible faite à l&#39;abbaye de Saint-Martin de Tours à Charles le Chauve.jpg&quot; data-file-height=&quot;2462&quot; data-file-width=&quot;2068&quot; decoding=&quot;async&quot; height=&quot;119&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/100px-thumbnail.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/150px-thumbnail.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/40/Biblioth%C3%A8que_nationale_de_France_-_Bible_de_Vivien_Ms._Latin_1_folio_423r_d%C3%A9tail_Le_comte_Vivien_offre_le_manuscrit_de_la_Bible_faite_%C3%A0_l%27abbaye_de_Saint-Martin_de_Tours_%C3%A0_Charles_le_Chauve.jpg/200px-thumbnail.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Charles_II,_Holy_Roman_Emperor.jpg&quot;&gt;&lt;img alt=&quot;Charles II, Holy Roman Emperor.jpg&quot; data-file-height=&quot;1842&quot; data-file-width=&quot;1228&quot; decoding=&quot;async&quot; height=&quot;165&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/110px-Charles_II%2C_Holy_Roman_Emperor.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/165px-Charles_II%2C_Holy_Roman_Emperor.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Charles_II%2C_Holy_Roman_Emperor.jpg/220px-Charles_II%2C_Holy_Roman_Emperor.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_II_the_Bald&quot; title=&quot;Charles II the Bald&quot;&gt;Charles II the Bald&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_II_the_Bald&quot; title=&quot;Charles II the Bald&quot;&gt;&lt;b&gt;Charles II&lt;/b&gt;&lt;br/&gt;  &quot;the Bald&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-:0_8-0&quot;&gt;&lt;a href=&quot;#cite_note-:0-8&quot;&gt;[b]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Treaty_of_Verdun&quot; title=&quot;Treaty of Verdun&quot;&gt;August 843&lt;/a&gt;&lt;br/&gt;&lt;small&gt;(King of the Franks from 20 June 840)&lt;/small&gt;
+&lt;td&gt;&lt;abbr title=&quot;circa&quot;&gt;c.&lt;/abbr&gt; 10 August 843&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-9&quot;&gt;&lt;a href=&quot;#cite_note-9&quot;&gt;[c]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-10&quot;&gt;&lt;a href=&quot;#cite_note-10&quot;&gt;[i]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 October 877
+&lt;td&gt;6 October 877
 &lt;/td&gt;
-&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I the Pious&lt;/a&gt;
+&lt;td&gt; • Son of &lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I&lt;/a&gt;&lt;/b&gt; and grandson of &lt;a href=&quot;/wiki/Charlemagne&quot; title=&quot;Charlemagne&quot;&gt;Charlemagne&lt;/a&gt; (&lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Charles_I_of_France&quot; title=&quot;Charles I of France&quot;&gt;Charles I&lt;/a&gt;&lt;/b&gt;)
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt; (875–77)
+&lt;td&gt;&lt;i&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;(840–77)&lt;br/&gt;&lt;i&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt;&lt;/i&gt; (875–77)
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-13&quot;&gt;&lt;a href=&quot;#cite_note-13&quot;&gt;[9]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-14&quot;&gt;&lt;a href=&quot;#cite_note-14&quot;&gt;[10]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Amiel_-_Louis_the_Stammerer.jpg&quot;&gt;&lt;img alt=&quot;Amiel - Louis the Stammerer.jpg&quot; data-file-height=&quot;624&quot; data-file-width=&quot;504&quot; decoding=&quot;async&quot; height=&quot;124&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/100px-Amiel_-_Louis_the_Stammerer.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/150px-Amiel_-_Louis_the_Stammerer.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amiel_-_Louis_the_Stammerer.jpg/200px-Amiel_-_Louis_the_Stammerer.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Louis II dit le Bègue.jpg&quot; data-file-height=&quot;1380&quot; data-file-width=&quot;2773&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/110px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/165px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg/220px-Denier_sous_Louis_II_dit_le_B%C3%A8gue.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_Stammerer&quot; title=&quot;Louis II the Stammerer&quot;&gt;Louis II the Stammerer&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_Stammerer&quot; title=&quot;Louis II the Stammerer&quot;&gt;&lt;b&gt;Louis II&lt;/b&gt;&lt;br/&gt; &quot;the Stammerer&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-15&quot;&gt;&lt;a href=&quot;#cite_note-15&quot;&gt;[d]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 October 877
+&lt;td&gt;6 October 877&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-16&quot;&gt;&lt;a href=&quot;#cite_note-16&quot;&gt;[ii]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;10 April 879
+&lt;td&gt;10 April 879
 &lt;/td&gt;
-&lt;td&gt; • Son of Charles II the Bald
+&lt;td&gt; • Son of Charles the Bald
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-1&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-1&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-0&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Louis_III.jpg&quot;&gt;&lt;img alt=&quot;Louis III.jpg&quot; data-file-height=&quot;471&quot; data-file-width=&quot;235&quot; decoding=&quot;async&quot; height=&quot;200&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/100px-Louis_III.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/150px-Louis_III.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Louis_III.jpg/200px-Louis_III.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Louis_III.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Louis III.jpg&quot; data-file-height=&quot;1140&quot; data-file-width=&quot;2347&quot; decoding=&quot;async&quot; height=&quot;53&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/110px-Denier_sous_Louis_III.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/165px-Denier_sous_Louis_III.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/66/Denier_sous_Louis_III.jpg/220px-Denier_sous_Louis_III.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;Louis III&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;&lt;b&gt;Louis III&lt;/b&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;10 April 879
+&lt;td&gt;10 April 879&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-18&quot;&gt;&lt;a href=&quot;#cite_note-18&quot;&gt;[iii]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;5 August 882
+&lt;td&gt;5 August 882
 &lt;/td&gt;
-&lt;td&gt; • Son of Louis II the Stammerer
+&lt;td&gt; • Son of Louis the Stammerer
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-2&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189._The_text_says_&amp;quot;3_August&amp;quot;,_but_the_&#39;&#39;[[Annales_Vedastini]]&#39;&#39;_clearly_indicate_&amp;quot;5_August&amp;quot;_([httpwwwthelatinlibrarycomannalesvedastinihtml_nonis_augusti])_19-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189._The_text_says_&amp;quot;3_August&amp;quot;,_but_the_&#39;&#39;[[Annales_Vedastini]]&#39;&#39;_clearly_indicate_&amp;quot;5_August&amp;quot;_([httpwwwthelatinlibrarycomannalesvedastinihtml_nonis_augusti])-19&quot;&gt;[12]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-ca_20-0&quot;&gt;&lt;a href=&quot;#cite_note-ca-20&quot;&gt;[13]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Carloman_II.jpg&quot;&gt;&lt;img alt=&quot;Carloman II.jpg&quot; data-file-height=&quot;451&quot; data-file-width=&quot;182&quot; decoding=&quot;async&quot; height=&quot;248&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Carloman_II.jpg/100px-Carloman_II.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Carloman_II.jpg/150px-Carloman_II.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/e/e4/Carloman_II.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Carloman_II.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Carloman II.jpg&quot; data-file-height=&quot;1323&quot; data-file-width=&quot;2652&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/110px-Denier_sous_Carloman_II.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/165px-Denier_sous_Carloman_II.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Denier_sous_Carloman_II.jpg/220px-Denier_sous_Carloman_II.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;Carloman II&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;&lt;b&gt;Carloman II&lt;/b&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;5 August 882
+&lt;td&gt;10 April 879&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-21&quot;&gt;&lt;a href=&quot;#cite_note-21&quot;&gt;[iv]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;6 December 884
+&lt;td&gt;12 December 884
 &lt;/td&gt;
-&lt;td&gt; • Son of Louis II the Stammerer
-&lt;p&gt; • Younger brother of Louis III
-&lt;/p&gt;
+&lt;td&gt; • Son of Louis the Stammerer
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-3&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-2&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-ca_20-1&quot;&gt;&lt;a href=&quot;#cite_note-ca-20&quot;&gt;[13]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Amiel_-_Charles_the_Fat.jpg&quot;&gt;&lt;img alt=&quot;Amiel - Charles the Fat.jpg&quot; data-file-height=&quot;620&quot; data-file-width=&quot;496&quot; decoding=&quot;async&quot; height=&quot;125&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/100px-Amiel_-_Charles_the_Fat.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/150px-Amiel_-_Charles_the_Fat.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amiel_-_Charles_the_Fat.jpg/200px-Amiel_-_Charles_the_Fat.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Sceau_de_Charles_le_gros.jpg&quot;&gt;&lt;img alt=&quot;Sceau de Charles le gros.jpg&quot; data-file-height=&quot;291&quot; data-file-width=&quot;302&quot; decoding=&quot;async&quot; height=&quot;106&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/110px-Sceau_de_Charles_le_gros.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/165px-Sceau_de_Charles_le_gros.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sceau_de_Charles_le_gros.jpg/220px-Sceau_de_Charles_le_gros.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;/wiki/Charles_the_Fat&quot; title=&quot;Charles the Fat&quot;&gt;Charles the Fat&lt;/a&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Charles_the_Fat&quot; title=&quot;Charles the Fat&quot;&gt;&lt;b&gt;Charles&lt;/b&gt; (&lt;b&gt;III&lt;/b&gt;)&lt;br/&gt; &quot;the Fat&quot;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-22&quot;&gt;&lt;a href=&quot;#cite_note-22&quot;&gt;[e]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;20 May 885
+&lt;td&gt;12 December 884&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-23&quot;&gt;&lt;a href=&quot;#cite_note-23&quot;&gt;[v]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;13 January 888
+&lt;td&gt;13 January 888
 &lt;/td&gt;
-&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_German&quot; title=&quot;Louis II the German&quot;&gt;Louis II the German&lt;/a&gt;&lt;br/&gt; • Cousin once removed of Carloman II and Louis III&lt;br/&gt; • Grandson of Louis I the Pious
+&lt;td&gt; • Son of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_II_the_German&quot; title=&quot;Louis II the German&quot;&gt;Louis II the German&lt;/a&gt;&lt;br/&gt; • Cousin once removed of &lt;a href=&quot;/wiki/Carloman_II&quot; title=&quot;Carloman II&quot;&gt;Carloman II&lt;/a&gt; and &lt;a href=&quot;/wiki/Louis_III_of_France&quot; title=&quot;Louis III of France&quot;&gt;Louis III&lt;/a&gt;&lt;br/&gt; • Grandson of &lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Louis_I_the_Pious&quot; title=&quot;Louis I the Pious&quot;&gt;Louis I&lt;/a&gt;
 &lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_the_Franks&quot; title=&quot;King of the Franks&quot;&gt;King of the Franks&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;Emperor of the Romans&lt;/a&gt; (881–88)
+&lt;td&gt;&lt;i&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/King_of_East_Francia&quot; title=&quot;King of East Francia&quot;&gt;King of East Francia&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;(871–88)&lt;br/&gt;&lt;a href=&quot;/wiki/Holy_Roman_Emperor&quot; title=&quot;Holy Roman Emperor&quot;&gt;&lt;i&gt;Emperor of the Romans&lt;/i&gt;&lt;/a&gt; (881–88)
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-24&quot;&gt;&lt;a href=&quot;#cite_note-24&quot;&gt;[14]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-25&quot;&gt;&lt;a href=&quot;#cite_note-25&quot;&gt;[15]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_de_Blois_sous_Eudes_de_France.jpg&quot;&gt;&lt;img alt=&quot;Denier de Blois sous Eudes de France.jpg&quot; data-file-height=&quot;1865&quot; data-file-width=&quot;3739&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/110px-Denier_de_Blois_sous_Eudes_de_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/165px-Denier_de_Blois_sous_Eudes_de_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Denier_de_Blois_sous_Eudes_de_France.jpg/220px-Denier_de_Blois_sous_Eudes_de_France.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;b&gt;&lt;a class=&quot;mw-redirect&quot; href=&quot;/wiki/Eudes_of_France&quot; title=&quot;Eudes of France&quot;&gt;Eudes&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Robertians&quot; title=&quot;Robertians&quot;&gt;Robertians&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;13 January 888&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-26&quot;&gt;&lt;a href=&quot;#cite_note-26&quot;&gt;[vi]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;1 January 898
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Robert_the_Strong&quot; title=&quot;Robert the Strong&quot;&gt;Robert the Strong&lt;/a&gt;&lt;br/&gt; • Rivaled by Charles III.
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-27&quot;&gt;&lt;a href=&quot;#cite_note-27&quot;&gt;[16]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-1&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Charles_III_le_Simple.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Charles III le Simple.jpg&quot; data-file-height=&quot;1845&quot; data-file-width=&quot;3699&quot; decoding=&quot;async&quot; height=&quot;55&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/110px-Denier_sous_Charles_III_le_Simple.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/165px-Denier_sous_Charles_III_le_Simple.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Denier_sous_Charles_III_le_Simple.jpg/220px-Denier_sous_Charles_III_le_Simple.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Charles_the_Simple&quot; title=&quot;Charles the Simple&quot;&gt;&lt;b&gt;Charles III&lt;/b&gt;&lt;br/&gt;&quot;the Simple&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;1 January 898&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-28&quot;&gt;&lt;a href=&quot;#cite_note-28&quot;&gt;[vii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;29 June 922
+&lt;/td&gt;
+&lt;td&gt; • Posthumous son of Louis II&lt;br/&gt; • Deposed
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-4&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-3&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Robert_Ier_roi_des_Francs.jpg&quot;&gt;&lt;img alt=&quot;Robert Ier roi des Francs.jpg&quot; data-file-height=&quot;266&quot; data-file-width=&quot;269&quot; decoding=&quot;async&quot; height=&quot;89&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/90px-Robert_Ier_roi_des_Francs.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/135px-Robert_Ier_roi_des_Francs.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Robert_Ier_roi_des_Francs.jpg/180px-Robert_Ier_roi_des_Francs.jpg 2x&quot; width=&quot;90&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;b&gt;&lt;a href=&quot;/wiki/Robert_I_of_France&quot; title=&quot;Robert I of France&quot;&gt;Robert I&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Robertians&quot; title=&quot;Robertians&quot;&gt;Robertians&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;29 June 922&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-29&quot;&gt;&lt;a href=&quot;#cite_note-29&quot;&gt;[viii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;15 June 923
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Robert_the_Strong&quot; title=&quot;Robert the Strong&quot;&gt;Robert the Strong&lt;/a&gt; and younger brother of Odo&lt;br/&gt; •  Killed at the &lt;a href=&quot;/wiki/Battle_of_Soissons_(923)&quot; title=&quot;Battle of Soissons (923)&quot;&gt;Battle of Soissons&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-30&quot;&gt;&lt;a href=&quot;#cite_note-30&quot;&gt;[17]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-c_17-2&quot;&gt;&lt;a href=&quot;#cite_note-c-17&quot;&gt;[11]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_sous_Raoul_de_France.jpg&quot;&gt;&lt;img alt=&quot;Denier sous Raoul de France.jpg&quot; data-file-height=&quot;1922&quot; data-file-width=&quot;3901&quot; decoding=&quot;async&quot; height=&quot;54&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/110px-Denier_sous_Raoul_de_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/165px-Denier_sous_Raoul_de_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Denier_sous_Raoul_de_France.jpg/220px-Denier_sous_Raoul_de_France.jpg 2x&quot; width=&quot;110&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;a href=&quot;/wiki/Rudolph_of_France&quot; title=&quot;Rudolph of France&quot;&gt;&lt;b&gt;Rudolph&lt;/b&gt;&lt;/a&gt;&lt;br/&gt;&lt;small&gt;(&lt;a href=&quot;/wiki/Bosonids&quot; title=&quot;Bosonids&quot;&gt;Bosonids&lt;/a&gt;)&lt;/small&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;15 June 923&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-31&quot;&gt;&lt;a href=&quot;#cite_note-31&quot;&gt;[ix]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;14 January 936
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt; • Son of &lt;a href=&quot;/wiki/Richard,_Duke_of_Burgundy&quot; title=&quot;Richard, Duke of Burgundy&quot;&gt;Richard, Duke of Burgundy&lt;/a&gt;&lt;br/&gt; • Son-in-law of Robert I
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td bgcolor=&quot;#d6ebff&quot;&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-5&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-4&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Denier_Chinon_954,_obverse.jpg&quot;&gt;&lt;img alt=&quot;Denier Chinon 954, obverse.jpg&quot; data-file-height=&quot;231&quot; data-file-width=&quot;252&quot; decoding=&quot;async&quot; height=&quot;92&quot; src=&quot;//upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/100px-Denier_Chinon_954%2C_obverse.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/150px-Denier_Chinon_954%2C_obverse.jpg 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/e/e3/Denier_Chinon_954%2C_obverse.jpg/200px-Denier_Chinon_954%2C_obverse.jpg 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_IV_of_France&quot; title=&quot;Louis IV of France&quot;&gt;&lt;b&gt;Louis IV&lt;/b&gt;&lt;br/&gt;&quot;d&#39;Outremer&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;19 June 936&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-32&quot;&gt;&lt;a href=&quot;#cite_note-32&quot;&gt;[x]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;10 September 954
+&lt;/td&gt;
+&lt;td&gt; • Son of Charles III the Simple
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-6&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888189_11-5&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888189-11&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:LotharRichardII10thcentury.JPG&quot;&gt;&lt;img alt=&quot;LotharRichardII10thcentury.JPG&quot; data-file-height=&quot;360&quot; data-file-width=&quot;268&quot; decoding=&quot;async&quot; height=&quot;134&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/100px-LotharRichardII10thcentury.JPG&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/150px-LotharRichardII10thcentury.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LotharRichardII10thcentury.JPG/199px-LotharRichardII10thcentury.JPG 2x&quot; width=&quot;100&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Lothair_of_France&quot; title=&quot;Lothair of France&quot;&gt;&lt;b&gt;Lothair&lt;/b&gt;&lt;/a&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-33&quot;&gt;&lt;a href=&quot;#cite_note-33&quot;&gt;[f]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;10 September 954&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-34&quot;&gt;&lt;a href=&quot;#cite_note-34&quot;&gt;[xi]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;2 March 986
+&lt;/td&gt;
+&lt;td&gt; • Son of Louis IV
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEBrougham1861395_12-7&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEBrougham1861395-12&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-FOOTNOTEThoison1888190_35-0&quot;&gt;&lt;a href=&quot;#cite_note-FOOTNOTEThoison1888190-35&quot;&gt;[18]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class=&quot;image&quot; href=&quot;/wiki/File:Louis_V_of_France.jpg&quot;&gt;&lt;img alt=&quot;Louis V of France.jpg&quot; data-file-height=&quot;313&quot; data-file-width=&quot;302&quot; decoding=&quot;async&quot; height=&quot;93&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/90px-Louis_V_of_France.jpg&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/135px-Louis_V_of_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/58/Louis_V_of_France.jpg/179px-Louis_V_of_France.jpg 2x&quot; width=&quot;90&quot;/&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;/wiki/Louis_V_of_France&quot; title=&quot;Louis V of France&quot;&gt;&lt;b&gt;Louis V&lt;/b&gt;&lt;br/&gt;&quot;the Do-Nothing&quot;&lt;/a&gt;
+&lt;/td&gt;
+&lt;td&gt;2 March 986&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-36&quot;&gt;&lt;a href=&quot;#cite_note-36&quot;&gt;[xii]&lt;/a&gt;&lt;/sup&gt;
+&lt;/td&gt;
+&lt;td&gt;22 May 987
+&lt;/td&gt;
+&lt;td&gt; • Son of Lothair
+&lt;/td&gt;
+&lt;td&gt;&lt;i&gt;King of the Franks&lt;/i&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-37&quot;&gt;&lt;a href=&quot;#cite_note-37&quot;&gt;[19]&lt;/a&gt;&lt;/sup&gt;&lt;br/&gt;&lt;sup class=&quot;reference&quot; id=&quot;cite_ref-38&quot;&gt;&lt;a href=&quot;#cite_note-38&quot;&gt;[20]&lt;/a&gt;&lt;/sup&gt;
 &lt;/td&gt;&lt;/tr&gt;
 </pre></div>
 </div>
@@ -710,17 +945,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tr&gt;
-&lt;th width=&quot;8%&quot;&gt;Portrait
+&lt;th width=&quot;10%&quot;&gt;Portrait
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Name
+&lt;th width=&quot;16%&quot;&gt;Name
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King from
+&lt;th width=&quot;15%&quot;&gt;Start
 &lt;/th&gt;
-&lt;th width=&quot;7%&quot;&gt;King until
+&lt;th width=&quot;15%&quot;&gt;End
 &lt;/th&gt;
-&lt;th width=&quot;20%&quot;&gt;Relationship with predecessor(s)
+&lt;th width=&quot;22%&quot;&gt;Succession / Notes
 &lt;/th&gt;
-&lt;th width=&quot;13%&quot;&gt;Title
+&lt;th width=&quot;15%&quot;&gt;Title
+&lt;/th&gt;
+&lt;th width=&quot;4%&quot;&gt;Ref.
 &lt;/th&gt;&lt;/tr&gt;
 </pre></div>
 </div>
@@ -735,12 +972,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;th width=&quot;8%&quot;&gt;Portrait
-&lt;/th&gt;, &lt;th width=&quot;20%&quot;&gt;Name
-&lt;/th&gt;, &lt;th width=&quot;7%&quot;&gt;King from
-&lt;/th&gt;, &lt;th width=&quot;7%&quot;&gt;King until
-&lt;/th&gt;, &lt;th width=&quot;20%&quot;&gt;Relationship with predecessor(s)
-&lt;/th&gt;, &lt;th width=&quot;13%&quot;&gt;Title
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;th width=&quot;10%&quot;&gt;Portrait
+&lt;/th&gt;, &lt;th width=&quot;16%&quot;&gt;Name
+&lt;/th&gt;, &lt;th width=&quot;15%&quot;&gt;Start
+&lt;/th&gt;, &lt;th width=&quot;15%&quot;&gt;End
+&lt;/th&gt;, &lt;th width=&quot;22%&quot;&gt;Succession / Notes
+&lt;/th&gt;, &lt;th width=&quot;15%&quot;&gt;Title
+&lt;/th&gt;, &lt;th width=&quot;4%&quot;&gt;Ref.
 &lt;/th&gt;]
 </pre></div>
 </div>
@@ -757,10 +995,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Portrait
 Name
-King from
-King until
-Relationship with predecessor(s)
+Start
+End
+Succession / Notes
 Title
+Ref.
 </pre></div>
 </div>
 </div>
@@ -782,10 +1021,11 @@ Title
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Portrait
 Name
-King from
-King until
-Relationship with predecessor(s)
+Start
+End
+Succession / Notes
 Title
+Ref.
 </pre></div>
 </div>
 </div>
@@ -802,36 +1042,89 @@ Title
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charles II the Bald
-August 843(King of the Franks from 20 June 840)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charles II  &quot;the Bald&quot;[b]
+c. 10 August 843[c][i]
 6 October 877
-• Son of Louis I the Pious
-King of the FranksEmperor of the Romans (875–77)
+• Son of Louis I and grandson of Charlemagne (Charles I)
+King of the Franks(840–77)Emperor of the Romans (875–77)
+[7][8][9][10]
 
-Louis II the Stammerer
-6 October 877
+Louis II &quot;the Stammerer&quot;[d]
+6 October 877[ii]
 10 April 879
-• Son of Charles II the Bald
+• Son of Charles the Bald
 King of the Franks
+[8][7][11]
 
 Louis III
-10 April 879
+10 April 879[iii]
 5 August 882
-• Son of Louis II the Stammerer
+• Son of Louis the Stammerer
 King of the Franks
+[8][12][13]
 
 Carloman II
-5 August 882
-6 December 884
-• Son of Louis II the Stammerer
- • Younger brother of Louis III
+10 April 879[iv]
+12 December 884
+• Son of Louis the Stammerer
 King of the Franks
+[8][7][13]
 
-Charles the Fat
-20 May 885
+Charles (III) &quot;the Fat&quot;[e]
+12 December 884[v]
 13 January 888
-• Son of Louis II the German • Cousin once removed of Carloman II and Louis III • Grandson of Louis I the Pious
-King of the FranksEmperor of the Romans (881–88)
+• Son of Louis II the German • Cousin once removed of Carloman II and Louis III • Grandson of Louis I
+King of East Francia(871–88)Emperor of the Romans (881–88)
+[14][15]
+
+Eudes(Robertians)
+13 January 888[vi]
+1 January 898
+• Son of Robert the Strong • Rivaled by Charles III.
+King of the Franks
+[16][11]
+
+Charles III&quot;the Simple&quot;
+1 January 898[vii]
+29 June 922
+• Posthumous son of Louis II • Deposed
+King of the Franks
+[8][7]
+
+Robert I(Robertians)
+29 June 922[viii]
+15 June 923
+• Son of Robert the Strong and younger brother of Odo •  Killed at the Battle of Soissons
+King of the Franks
+[17][11]
+
+Rudolph(Bosonids)
+15 June 923[ix]
+14 January 936
+• Son of Richard, Duke of Burgundy • Son-in-law of Robert I
+King of the Franks
+[8][7]
+
+Louis IV&quot;d&#39;Outremer&quot;
+19 June 936[x]
+10 September 954
+• Son of Charles III the Simple
+King of the Franks
+[8][7]
+
+Lothair[f]
+10 September 954[xi]
+2 March 986
+• Son of Louis IV
+King of the Franks
+[8][18]
+
+Louis V&quot;the Do-Nothing&quot;
+2 March 986[xii]
+22 May 987
+• Son of Lothair
+King of the Franks
+[19][20]
 </pre></div>
 </div>
 </div>
