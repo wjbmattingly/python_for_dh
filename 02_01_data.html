@@ -575,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="objects">
 <h3><span class="section-number">3.2.1. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
 <p>When we import or create data within Python, we are essentially creating an object in memory with a variable. These two words, <b>object</b> and <b>variable</b> mean slightly different things and, but are often used interchangeably. We will not get into the complexities of their differences and why they exist in this textbook, but for now, view an object as something that is created by a Python script and stored in your computer’s memory so that it can be used later in a program.</p>
-<p>Think of your <b>computer’s memory</b> rather like your own brain. Imagine if you needed to remember what the word for “hello” in German. You may use your memory rather like a flashcard, where “hello” in English equates to “hallo” in German. In Python, we create objects in a similar way. The object would be the dictionary entry of “hello: hallo”.</p>
+<p>Think of your <b>computer’s memory</b> rather like your own brain. Imagine if you needed to remember what the word for “hello” in German. You may use your memory rather like a flashcard, where “hello” in English equates to “hallo” in German. In Python, we create objects in a similar way. The object would be the dictionary entry of “hello: hallo”.created</p>
 </div>
 <div class="section" id="variables">
 <h3><span class="section-number">3.2.2. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
@@ -632,12 +632,24 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="what-is-data">
 <h2><span class="section-number">3.3. </span>What is Data?<a class="headerlink" href="#what-is-data" title="Permalink to this headline">¶</a></h2>
-<p>In Python there are seven key pieces of data and data structures with which we will be working: strings, numbers (integers and floats), booleans, lists, tuples, and dictionaries. In the next two chapters, we will explore each of these.</p>
+<p>In Python there are seven key pieces of data and data structures with which we will be working:</p>
+<ul class="simple">
+<li><p>strings (text)</p></li>
+<li><p>integers (whole numbers)</p></li>
+<li><p>floats (decimal numbers)</p></li>
+<li><p>Booleans (True or False)</p></li>
+<li><p>lists</p></li>
+<li><p>tuples (lists that cannot be changed in memory)</p></li>
+<li><p>dictionaries (key : value)</p></li>
+</ul>
+<p>In the next two chapters, we will explore each of these. While this chapter focuses on data: strings, integers, floats, and Booleans; the next chapter will focus on data structures: lists, tuples, and dictionaries.</p>
 <p>Data are pieces of information (the singular is datum)i.e., integers, floats, and strings. Data structures are objects that make data relational, i.e. lists, tuples, and dictionaries. Before you proceed to lesson three, you MUST have a basic understanding of the ways in which you create data in Python and the ways in which you make that data relational through data structures. Start to train your brain to recognize the Python syntax for these pieces of data and data structures discussed below.</p>
 </div>
 <div class="section" id="strings">
 <h2><span class="section-number">3.4. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
-<p><b>Strings</b> are a sequence of characters. These can be digits or they can be letters or symbols, but what makes a string distinctly different from an integer or a float is the presence of quotation marks, i.e. ” ” or ‘ ‘. The opening of a quotation mark indicates to Python that a string has begun and the closing of the same style of a quotation mark indicates the close of a string. It is important to use the same style of quotation mark for a string, either a double or a single. In the examples below, we have two string objects: a_string and b_string, the former corresponds to the string “Hello” and the latter corresponds to the string “Bye”.</p>
+<p><b>Strings</b> are a sequence of characters. A good way to think about a string is as a text. We can create a string in python by designating a unique variable name and setting = to something within quotation marks, i.e. ” ” or ‘ ‘.</p>
+<p>The opening of a quotation mark indicates to Python that a string has begun and the closing of the same style of a quotation mark indicates the close of a string. It is important to use the same style of quotation mark for a string, either a double or a single. In the examples below, we have two string objects: a_string and b_string, the former corresponds to the string “Hello” and the latter corresponds to the string “Bye”.</p>
+<p>Let’s take a look at a few examples of strings.</p>
 <div class="section" id="examples-of-strings">
 <h3><span class="section-number">3.4.1. </span>Examples of Strings<a class="headerlink" href="#examples-of-strings" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -837,10 +849,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="working-with-strings-as-data">
 <h2><span class="section-number">3.7. </span>Working with Strings as Data<a class="headerlink" href="#working-with-strings-as-data" title="Permalink to this headline">¶</a></h2>
-<p>They are the key way in which we handle text data in Python. This means that for the digital humanist, strings will be fundamentally necessary to understand as they are the chief form of data we use.</p>
-<p>In order to interact with strings as pieces of data, we use methods and functions. The chief functions for interacting with strings on a basic level come standard with Python. This means that you do not need to install third-party libraries. Later in this textbook we will do more advanced things with strings using third-party libraries, such as Regex, but for now, we will simply work with the basic functions.</p>
-<p>Although I will discuss functions in greater detail in a later lesson, it is important to understand what a function is. A function is a block of code stored outside (or inside) your Python script. We call a function by using the function name and added an open and a close parentheses. Often when we call functions, we need to pass arguments. These are the pieces of data that the function will perform the operations on. The arguments are contained within the parentheses and delineated with commas. In some cases, there will be named arguments which require you to specify a specific argument.</p>
-<p>In the example below, we have an object, which is a string (a_string), and two different functions. The first function is the split function which will split a string. In the example we state the object upon which we want to perform the function. Next, we place a period to state the specific function that we want to run on the string. We have an open parentheses in which we have a single argument, a string (created by quotation marks). The specific string is a single comma. This means that we are telling Python to split the string any time it finds a comma. Remember though, strings are immutable. This means that in order to store the result of this function in memory, we need to create a new object. This new object is new_string which we create with an equal sign. Were we to print off new string, we would see a list of strings that would look like this: [“Hello”,”Bye”]. To run the code below, hit the play button.</p>
+<p>Often when working within Python, you will not be simply creating data, you will be manipulating it and changing it. Because humanists frequently work with strings, I recommend spending a good deal of time practicing and memorizing the basic ways we work with strings in Python via the built-in methods.</p>
+<p>In order to interact with strings as pieces of data, we use <b>methods</b> and <b>functions</b>. The chief functions for interacting with strings on a basic level come standard with Python. This means that you do not need to install third-party libraries. Later in this textbook we will do more advanced things with strings using third-party libraries, such as Regex, but for now, we will simply work with the basic methods.</p>
 <p>Let’s learn to manipulate strings now through code, but first we need to create a string. Let’s call it str6.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,7 +859,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>It is not a very clever name, but it will work for our purposes. Now, let’s try to convert the entire string into all uppercase letters. We can do this with the method .upper(). Notice that the .upper() is coming after the string and within the () are no arguments. This is a way you can easily identify a method (as opposed to a function). We will learn more about these distinctions in the chapters on functions and classes.</p>
+<p>It is not a very clever name, but it will work for our purposes. Now, let’s try to convert the entire string into all uppercase letters. We can do this with the method <b>.upper()</b>. Notice that the .upper() is coming after the string and within the () are no arguments. This is a way you can easily identify a method (as opposed to a function). We will learn more about these distinctions in the chapters on functions and classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str6</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -862,7 +872,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Noice that our string is now all uppercase. We can do the same thing with the .lower() method, but this method will make everything in the string lowercase.</p>
+<p>Noice that our string is now all uppercase. We can do the same thing with the <b>.lower()</b> method, but this method will make everything in the string lowercase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">str6</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
@@ -876,7 +886,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>On the surface, these methods may appear to only be useful in niche circumstances. While these methods are useful for making strings look the way you want them to look, they have far greater utility. Imagine if you wanted to search for a name, “William”, in a string. What if the data you are examining is from emails, text messages, etc. William may be capitalized or not. This means that you would have to run two searches for William across a string. If, however, you lowercase the string before you search, you can simply search for “william” and you will find all hits. This is one of the things that happens on the back-end of most search engines to ensure that your search is not strictly case-sensitive. In Python, however, it is important to do this step of data cleaning before running searches over strings.</p>
-<p>Let’s explore another method, .capitalize(). This method will allow you to capitalize a string.</p>
+<p>Let’s explore another method, <b>.capitalize()</b>. This method will allow you to capitalize a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str7</span> <span class="o">=</span> <span class="s2">&quot;william&quot;</span>
@@ -897,7 +907,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>I will use this in niche circumstances, particularly when I am performing data cleaning and need to ensure that all names or proper nouns in a dataset are cleaned and well-structured.</p>
-<p>Perhaps the most useful string method is .replace(). Notice in the cells below, replace takes a mandatory of two arguments, or things passed between the parentheses. Each is separated by a comma. The first argument is the substring or piece of the string that you want to replace and the second argument is what you want to replace it with. Why is this so useful? If you are using Python to analyze texts, those texts will, I promise, never be well-cleaned. They may have bad encoding, characters that will throw off searches, bad OCR, multiple line breaks, hyphenated characters, the list goes on. Replace allows you to quickly and effectively clean textual data so that it can be standardized.</p>
+<p>Perhaps the most useful string method is .replace(). Notice in the cells below, replace takes a mandatory of two arguments, or things passed between the parentheses. Each is separated by a comma. The first argument is the substring or piece of the string that you want to replace and the second argument is what you want to replace it with. Why is this so useful? If you are using Python to analyze texts, those texts will, I promise, never be well-cleaned. They may have bad encoding, characters that will throw off searches, bad OCR, multiple line breaks, hyphenated characters, the list goes on. The <b>.replace()</b> method allows you to quickly and effectively clean textual data so that it can be standardized.</p>
+<p>Unlike the above methods, for .replace(), we need to put two things within the parentheses. These are known as arguments. This method requires two and they must be in order. The first is the thing that you want to replace and the second is the thing that you want to replace it with. These will be separated by a parentheses and both must be strings. It should, therefore, look something like this:</p>
+<p>.replace(“the thing to replace”, “the thing you want to replace it with”)</p>
 <p>In the example below, let’s try and replace the period at the end of “Mattingly.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -931,7 +943,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Uh oh! Something is not right. Nothing has changed! Indeed, this is because strings are immutable objects. In order to change a string, you must recreate it in memory or create a new string object from it. Let’s try and do that below.</p>
+<p>Uh oh! Something is not right. Nothing has changed! Indeed, this is because strings are <b>immutable objects</b>. Immutable objects are objects that cannot be changed in memory. As we will see in the next chapter with lists, the other type of object is one that <i>can</i> be changed in memory. These are known as <b>mutable objects</b>. In order to change a string, therefore, you must recreate it in memory or create a new string object from it. Let’s try and do that below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str9</span> <span class="o">=</span> <span class="n">str8</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -951,7 +963,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Excellent! Now we have a new string that has been cleaned, but let’s say I am only interested in grabbing what comes after the phrase “My name is”</p>
+<p>Excellent! Now we have a new string that has been cleaned, but let’s say I am only interested in grabbing what comes after the phrase “My name is”. I have a couple different methods to do this. I could use the .replace() method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str10</span> <span class="o">=</span> <span class="n">str9</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -1033,8 +1045,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="working-with-numbers-as-data">
 <h2><span class="section-number">3.8. </span>Working with Numbers as Data<a class="headerlink" href="#working-with-numbers-as-data" title="Permalink to this headline">¶</a></h2>
-<p>Now that you understand how strings work, let’s begin exploring another type of data: numbers. Numbers in Python exist in two chief forms: integers and floats. As noted in Lesson 02, integers are numbers without a decimal point, whereas floats are numbers with a decimal point. This is am important distinction that you MUST remember, especially when working with data imported from and exported to Excel.</p>
-<p>As digital humanists, you might be thinking to yourself, “I just work with text, why should I care so much about numbers?” The answer? Numbers allow us to form quantitative analysis. What if you want to know the times a specific author wrote to a colleague or to which places he wrote most frequently, as was the case with the Republic of Letters project at Stanford? In order to perform that kind of analysis, you MUST have a command of how numbers work in Python, how to perform basic mathematical functions on those numbers, and how to interact with them. Further, numbers are essential to understand for performing more advanced functions in Python, such as Loops, explored in Lesson 09.</p>
+<p>Now that you understand how strings work, let’s begin exploring another type of data: numbers. Numbers in Python exist in two chief forms:</p>
+<ul class="simple">
+<li><p>integers</p></li>
+<li><p>floats</p></li>
+</ul>
+<p>As noted above, integers are numbers without a decimal point, whereas floats are numbers with a decimal point. This is am important distinction that you MUST remember, especially when working with data imported from and exported to Excel.</p>
+<p>As digital humanists, you might be thinking to yourself, “I just work with text, why should I care so much about numbers?” The answer? Numbers allow us to perform quantitative analysis. What if you want to know the times a specific author wrote to a colleague or to which places he wrote most frequently, as was the case with the Republic of Letters project at Stanford? In order to perform that kind of analysis, you MUST have a command of how numbers work in Python, how to perform basic mathematical functions on those numbers, and how to interact with them. Further, numbers are essential to understand for performing more advanced functions in Python, such as Loops, explored in Chapter 03.01.</p>
 <p>The way in which you create a number object in Python is the to create an object name, use the equal sign and type the number. If your number has a decimal, Python will automatically consider it a float. If it does not, it will automatically consider it an integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
