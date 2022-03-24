@@ -15,14 +15,14 @@ parts:
     title: Introduction to Data
   - file: 02_02_data_structures
     title: Introduction to Data Structures
-- caption: Loops and Conditionals
+- caption: Logic Statements
   numbered: true
   chapters:
   - file: 03_01_loops
     title: Introduction to Loops
   - file: 03_02_conditionals
     title: Introduction to Conditionals  
-- caption: Functions, Classes, and Libraries
+- caption: Formal Coding
   numbered: true
   chapters:
   - file: 04_01_functitons
