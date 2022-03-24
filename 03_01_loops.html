@@ -355,8 +355,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   5.4. Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   5.4. While Loops
+   5.5. While Loops
   </a>
  </li>
 </ul>
@@ -395,8 +400,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   5.4. Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   5.4. While Loops
+   5.5. While Loops
   </a>
  </li>
 </ul>
@@ -519,8 +529,21 @@ Steph Mattingly
 </div>
 <p>Viola! Like magic, we have brought two different pieces of data together in a for loop. But there is another kind of loop in Python, the while loop.</p>
 </div>
+<div class="section" id="operators">
+<h2><span class="section-number">5.4. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<p>In Chapter 02-01, we met briefly operators. I mentioned them there so that you were aware of them and because they most often associated with numbers, but as we will see, these can be used on all types of data. We will very often in loops need to identify Comparison Operators (equal to, less than, etc). Here is a list of those:</p>
+<ol class="simple">
+<li><p>Equal to (==)</p></li>
+<li><p>Greater than (&gt;)</p></li>
+<li><p>Less than (&lt;)</p></li>
+<li><p>Less than or equal to (&lt;=)</p></li>
+<li><p>Greater than or equal to (&gt;=)</p></li>
+<li><p>Not equal to (!=)</p></li>
+</ol>
+<p>These operators allow us to structure complex conditions within our loop. So, we can say that while something is equal to something else, Python should do x. We will see this same concept in the following chapter as we explore conditionals. I think the best way to learn about this concept is to jump in and explore it.</p>
+</div>
 <div class="section" id="while-loops">
-<h2><span class="section-number">5.4. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
 <p>In the for loop, the loop iterated over a set of data. A while loop is a bit different. In a while loop, the loop will run continuously while something is true. Like the for loop, we create the loop with a set of commands beginning with its name, while. Next we state the condition to be met that will result in breaking, or stoping the loop. Let’s say we wanted to count from 0 to 10. We would create an object named x and set that equal to our start position. Then we would state so long as x != (not equal to) 10, print off x. In order to ensure that x ticks up, we need to make sure that we change the object from x to x+1 so that it moves up by 1 number each time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

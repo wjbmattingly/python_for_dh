@@ -355,13 +355,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     3.2.2. Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-print-function">
-     3.2.2. The Print Function
+     3.2.3. The Print Function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#case-sensitivity">
-     3.2.3. Case Sensitivity
+     3.2.4. Case Sensitivity
     </a>
    </li>
   </ul>
@@ -463,13 +468,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     3.2.2. Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-print-function">
-     3.2.2. The Print Function
+     3.2.3. The Print Function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#case-sensitivity">
-     3.2.3. Case Sensitivity
+     3.2.4. Case Sensitivity
     </a>
    </li>
   </ul>
@@ -564,8 +574,13 @@ const thebe_selector_output = ".output, .cell_output"
 <h2><span class="section-number">3.2. </span>Some Quick Notes about Terminology and Commands we will Use<a class="headerlink" href="#some-quick-notes-about-terminology-and-commands-we-will-use" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="objects">
 <h3><span class="section-number">3.2.1. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
-<p>When we import or create data within Python, we are essentially creating an object, or a variable. These two words mean slightly different things and, but are often used interchangeably. We will get into the differences later in this textbook, but for now, view an object as something that is created by a Python script. An object is stored in your computer’s memory so that it can be used later in a program. Think of your computer’s memory rather like your own brain. Imagine if you needed to remember what the word for “hello” in German. You may use your memory rather like a flashcard, where “hello” in English equates to “hallo” in German. In Python, we create objects in a similar way so that our computer understands what that object name corresponds to.</p>
-<p>They can be created by typing a unique word, followed by an = sign, followed by the specific data. As we will learn throughout this chapter, there are many types of data that are created differently. Let’s create our first object before we begin. This will be a string, or a piece of text. (We will learn about these in more detail below.) In my case, I want to create the object author. I want author to be associated with my name in memory. In the cell, or block of code, below, let’s do this.</p>
+<p>When we import or create data within Python, we are essentially creating an object in memory with a variable. These two words, <b>object</b> and <b>variable</b> mean slightly different things and, but are often used interchangeably. We will not get into the complexities of their differences and why they exist in this textbook, but for now, view an object as something that is created by a Python script and stored in your computer’s memory so that it can be used later in a program.</p>
+<p>Think of your <b>computer’s memory</b> rather like your own brain. Imagine if you needed to remember what the word for “hello” in German. You may use your memory rather like a flashcard, where “hello” in English equates to “hallo” in German. In Python, we create objects in a similar way. The object would be the dictionary entry of “hello: hallo”.</p>
+</div>
+<div class="section" id="variables">
+<h3><span class="section-number">3.2.2. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<p>In order to reference this dictionary entry in memory, we need a way to reference it. We do this with a variable. The variable is simply the name of the item in our script that will point to that object in memory. Variables make it so that we can have an easy-to-remember name to reference, call, and change that object in memory.</p>
+<p>Variables can be created by typing a unique word, followed by an = sign, followed by the specific data. As we will learn throughout this chapter, there are many types of data that are created differently. Let’s create our first object before we begin. This will be a string, or a piece of text. (We will learn about these in more detail below.) In my case, I want to create the object author. I want author to be associated with my name in memory. In the cell, or block of code, below, let’s do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;William Mattingly&quot;</span>
@@ -575,7 +590,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="the-print-function">
-<h3><span class="section-number">3.2.2. </span>The Print Function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>The Print Function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
 <p>Excellent! We have created our first object. Now, it is time to use that object. Below, we will learn about ways we can manipulate strings, but for now, let’s simply see if that object exists in memory. We can do this with the print function.</p>
 <p>The print function will become your best friend in Python. It is, perhaps, the function I use most commonly. The reason for this is because the print function allows for you to easily debug, or identify problems and fix them, within your code. It allows us to print off objects that are stored in memory.</p>
 <p>To use the print function, we type the word print followed by an open parentheses. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses. Let’s try to print off our new object author to make sure it is in memory.</p>
@@ -594,7 +609,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Notice that when I execute the cell above, I see an output that relates to the object we created above. What would happen if I tried to print off that object, but I used a capital letter, rather than a lowercase one at the beginning, so Author, rather than author?</p>
 </div>
 <div class="section" id="case-sensitivity">
-<h3><span class="section-number">3.2.3. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.4. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">Author</span><span class="p">)</span>
@@ -1156,7 +1171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Greater than or equal to (&gt;=)</p></li>
 <li><p>Not equal to (!=)</p></li>
 </ol>
-<p>We will address these in greater detail in a later chapter</p>
+<p>We will address these in greater detail in a later chapter as they are particularly useful when you work with loops.</p>
 </div>
 <div class="section" id="conclusion">
 <h2><span class="section-number">3.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
