@@ -21,7 +21,7 @@ parts:
   - file: 03_01_loops
     title: Introduction to Loops
   - file: 03_02_conditionals
-    title: Introduction to Conditionals  
+    title: Introduction to Conditionals
 - caption: Formal Coding
   numbered: true
   chapters:
