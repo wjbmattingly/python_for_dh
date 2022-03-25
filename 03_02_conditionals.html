@@ -360,18 +360,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#elif">
-   6.5. Elif
+  <a class="reference internal nav-link" href="#elif-and-the-in-operator-with-strings">
+   6.5. Elif and the ‘in’ Operator with Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionals-and-lists-with-in-and-not-in">
+   6.6. Conditionals and Lists with ‘in’ and ‘not in’
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   6.6. Conclusion
+   6.7. Conclusion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   6.7. Quiz
+   6.8. Quiz
   </a>
  </li>
 </ul>
@@ -415,18 +420,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#elif">
-   6.5. Elif
+  <a class="reference internal nav-link" href="#elif-and-the-in-operator-with-strings">
+   6.5. Elif and the ‘in’ Operator with Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionals-and-lists-with-in-and-not-in">
+   6.6. Conditionals and Lists with ‘in’ and ‘not in’
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   6.6. Conclusion
+   6.7. Conclusion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   6.7. Quiz
+   6.8. Quiz
   </a>
  </li>
 </ul>
@@ -519,14 +529,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Notice that else has the same indentation placement as the if and it too has a “:” followed by indented code. This allows us to create complex logic within our code. You will find yourself using conditional more often than you may realize now.</p>
 </div>
-<div class="section" id="elif">
-<h2><span class="section-number">6.5. </span>Elif<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="elif-and-the-in-operator-with-strings">
+<h2><span class="section-number">6.5. </span>Elif and the ‘in’ Operator with Strings<a class="headerlink" href="#elif-and-the-in-operator-with-strings" title="Permalink to this headline">¶</a></h2>
 <p>I debated including elif in this chapter for fear that it may introduce too many new things at once, but I think it is import to at least be familiar with its existence, even if you will not be using it right away. Elif, in plain English, means “or if”.</p>
-<p>If condition 1 is met:
-do this
-Or if condition 2 is met:
-do this instead</p>
+<p>If condition 1 is met:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do this
+</pre></div>
+</div>
+<p>Or if condition 2 is met:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do this instead
+</pre></div>
+</div>
 <p>Within this paradigm, it functions a little differently than else in that another condition must be met for it to occur, but it functions a little differently than a regular if statement. Let me demonstrate this in code.</p>
+<p>In the code below, you will see within the conditional the word <strong>“in”</strong>, known as an operator. In Python, in functions rather like the way it functions in English. It is used to test if something is inside a piece of data or a data structure. So, if we want to know if some string is within another string, we can use in to see if that is the case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I know two people. Marge and Susan.&quot;</span>
@@ -562,12 +577,51 @@ Susan Found
 </div>
 <p>The elif statement allows for more robust logic and sequential conditionals to occur.</p>
 </div>
+<div class="section" id="conditionals-and-lists-with-in-and-not-in">
+<h2><span class="section-number">6.6. </span>Conditionals and Lists with ‘in’ and ‘not in’<a class="headerlink" href="#conditionals-and-lists-with-in-and-not-in" title="Permalink to this headline">¶</a></h2>
+<p>Conditionals are frequently necessary when checking to see if something is in a list. Remember, lists are data structures that contain a list of data. These can be strings, integers, floats, or even other data structures, such as lists, tuples, and dictionaries. You will frequently need to understand what a list contains. To do this, we can use conditionals with the same in operator that we saw above.</p>
+<p>Let’s begin by first making a list called names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Terry&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Joanne&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Marge&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The in operator has a negative version to, <strong>‘not in’</strong>. This operator functions precisely the same way, but it is the opposite of the in operator. Let’s see it in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Tom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Tom is not in the list.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tom is not in the list.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="conclusion">
-<h2><span class="section-number">6.6. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>This chapter has introduced the three essential components of conditional statements: if, else, and elif. I would recommend practicing with these on your own data. The best way to learn about conditionals is to use them. Remember, as you write them in Python, speak out loud in English. I still speak aloud (or in my mind) pseudo code as I write in proper Python syntax.</p>
 </div>
 <div class="section" id="quiz">
-<h2><span class="section-number">6.7. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
