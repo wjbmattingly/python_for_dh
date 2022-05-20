@@ -1,7 +1,7 @@
 # Book settings
 title: Introduction to Python for Humanists
 author: William J.B. Mattingly
-logo: 'images/data_science_lab_logo.png'
+logo: 'images/crc-press-logo.jpg'
 execute:
   execute_notebooks: 'off'
 parse:

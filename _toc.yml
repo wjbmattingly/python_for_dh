@@ -187,10 +187,36 @@ parts:
   - file: 04_topic_modeling/03_04_top2vec
     title: Top2Vec Topic Modeling
 
-# - caption: Optical Character Recognition with OpenCV and PyTesseract
+- caption: Optical Character Recognition with OpenCV and PyTesseract
+  chapters:
+#   - file: 05_ocr/05_01_intro
+#     title: Introduction to OCR
+#     sections:
+#     - file: 
+#       title: What is Topic Modeling?
+#     - file: 
+#       title: Introduction to Topics and Clusters
+#     - file: 
+#       title: Bigrams and Trigrams
+      
 
-
-# - caption: Network Analysis with PyVis
+  - file: 05_ocr/05_02_intro
+    title: Cleaning Images for OCR with OpenCV
+    sections:
+    - file: 05_ocr/02_02_working with opencv
+      title: Intro to OpenCV
+    - file: 05_ocr/03_bounding_boxes_index_ocr
+      title: Applied OpenCV
+      
+  - file: 05_ocr/05_03_intro
+    title: A Real-World Example
+    sections:
+    - file: 05_ocr/04_01_get_whole_text
+      title: Finding the Body of a Text
+    - file: 05_ocr/04_03_capture_side_notes
+      title: Finding Marginalia
+    - file: 05_ocr/04_04_separate_footnotes
+      title: Finding Footnotes
 
 
 # - caption: Beyond the Notebook: Python Files and the Command Line
