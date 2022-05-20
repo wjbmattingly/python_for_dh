@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Introduction to Python for Humanists</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/crc-press-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <p align="center">
+    INTRODUCTION TO PYTHON FOR HUMANISTS
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
+     1.4. What is Python? (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
+     1.5. Installing Python (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_01_data.html">
+     2.2. Data Types (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
+     2.3. Data Structures (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_01_loops.html">
+     3.1. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
+     3.2. Introduction to Conditionals (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03_intro.html">
+   4. Formal Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_01_functitons.html">
+     4.1. Introduction to Functions (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_02_classes.html">
+     4.2. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_03_libraries.html">
+     4.3. Introduction to Libraries (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_01_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_02_json.html">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis with Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_01_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_02_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_01_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_02_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_03_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_01_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_02_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/05_01_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_01_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_02_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_03_word_vectors.html">
+     1.3. Word Vectors and spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_04_pipelines.html">
+     1.4. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_02_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_01_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_02_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_04_custom_component.html">
+     2.3. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_05_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_06_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_03_intro.html">
+   3. Machine Learning Named Entity Recognition with spaCy 3x
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_intro_to_ml.html">
+     3.1. Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_create_ner_training_set.html">
+     3.2. Creating a Training Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_train_spacy_ner_model.html">
+     3.3. How to Train a Base NER ML Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_examining_a_spacy_model.html">
+     3.4. Examining a spaCy Model in the Folder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_04_introduction_to_word_vectors.html">
+     3.5. Introduction to Word Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_05_generating_custom_word_vectors.html">
+     3.6. Generating Custom Word Vectors with Gensim
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_06_loading_custom_word_vectors.html">
+     3.7. Loading Custom Word Vectors into a spaCy Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_04_intro.html">
+   4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/04_01_cultivating_concentration_camp_dataset.html">
+     4.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/04_02_cultivating_corpus.html">
+     4.2. Cultivating a Corpus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/04_03_the_challenges_of_holocaust_ner.html">
+     4.3. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/04_04_introduction_to_custom_pipes.html">
+     4.4. Introduction to Custom Pipes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/04_05_building_holocaust_pipeline_rules_based.html">
+     4.5. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Modeling and Text Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
+   Introduction to Topic Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_01_introduction_to_topic_modeling.html">
+     What is Topic Modeling?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_02_topics_and_clusters.html">
+     Introduction to Topics and Clusters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_03_bigrams_and_trigrams.html">
+     Bigrams and Trigrams
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
+   TF-IDF and K-Means Clustering
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_01_intro_to_tf_idf.html">
+     Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_02_intro_to_scikit_learn.html">
+     Introduction to Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_03_setting_up_tf_idf.html">
+     Setting up TF-IDF in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_03_lda_model_demo.html">
+   LDA Topic Modeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_04_top2vec.html">
+   Top2Vec Topic Modeling
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Optical Character Recognition with OpenCV and PyTesseract
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05_02_intro.html">
+   Cleaning Images for OCR with OpenCV
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_working%20with%20opencv.html">
+     Intro to OpenCV
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05_03_intro.html">
+   A Real-World Example
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_get_whole_text.html">
+     Finding the Body of a Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_capture_side_notes.html">
+     Finding Marginalia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_separate_footnotes.html">
+     Finding Footnotes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/05_ocr/03_ocr_index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_ocr/03_ocr_index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_ocr/03_ocr_index.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_ocr/03_ocr_index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+
+<span class="n">image_file</span> <span class="o">=</span> <span class="s2">&quot;data/index_02.jpg&quot;</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ocr_result</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">ocr_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX NOMINUM.
+
+SCRIPSIT KAROLUS HAMPE.
+
+Maior numerus indicat paginam, minor lineam.
+
+A. v. E.
+
+Aaron 38, 20. 123, 18. 168, 6. 203, 38. |
+
+Abacuc propheta 36,5. 319,29. 373, 23.
+Abagarus rex Edessenorum 382, 13.
+Abdenago 585, 3.
+
+Abel 26, 11.
+
+Abigail 606, 6.
+
+Abraham 26,18. 124,18. 133, 23. 2:
+264. 302, 13. 303, 13. 320, 40. 328, 1.
+496, 22.
+
+Absalon 102, 5.
+
+Acgfredi v. Ecgfridus.
+
+Achab rex 504, 1.
+
+Achaz rex 504,1.
+
+Achiel 606, 19.
+
+Achilon 496, 26.
+
+Adal-, Adel-, Adhel-, Aedel-, Aedel-,
+‘Aedil-, Aed
+Athel-, Athil-, Aethel-, Aethil-,
+Ethel-.
+
+Aedelbaldusabb.S. Petri Wiremuthen-
+sis et S. Pauli Girwensis 110, 28.
+
+Aedilberctus, Aedilberthus ep. Ha-
+gulstadensis, antea ep. Candidae
+casae sive Witernensis 27,43. 72,16.
+
+Adalbertus, Aedilberctus sive Magus,
+discipulus et capellanus Arnonis
+archiep. Salisburg., postea_abb.
+Ferrariensis 254, 1. 320, 41. 322, 19.
+416. 418, 14. 422, 10.
+
+Adalpertabb. [Tegernseensis ?]497,23.
+
+Adalbertus presb. monasterii 8. Mar-
+tini Turonensis 399, 3.
+
+Aedilburga, Edilburga,cognom. Euge-
+nia, abbatissa Flaedanbyrgensis,
+filia Offae regis Merciorum 78, 1.
+148, 32. 149, 33 [?]7 458.
+
+Aethelfleda uxor Aethilredi regis
+Northanhumbrorum, filia Offae
+regis Merciorum 149, 14. 150, 4.
+
+Adalgarius ep. [Trecensis?] 510, 10.
+
+Adelgisa filia Arichis ducis Bene-
+ventani 506, 27.
+
+Adalgisus fil. Desiderii regis Lango-
+bardorum 503, 45.
+
+Epistotae IV.
+
+ 
+
+ 
+
+il-, Edel-, Edil-, Athal-, |
+
+Aethelhardus, Aethilhardus, Athel-
+hardus, Athilhardus, Aedelhardus,
+Aedelhardus, Aedilhardus, Aedil-
+hardus, Ethelardus, Edelardus
+archiep. Cantuariensis Dorovernen-
+sis ecclesiae metropolitanus 46, 9.
+49,9. 128,2. 145, 31, 147,5. 188. 189.
+192, 24. 193, 5[?]. 374376, v9. 377, 4.
+412. 414,1 (2. 448. 449 [2]. 450 [2].
+
+| 451,8([?]. 479. 480. 614, 10. 21. 36.
+
+| Adalhardus , cognom. Antonius, abb.
+Corbeiae veteris, fil. Bernhardi
+eo Caroli Magni 34, 25. 290.
+
+1. 299. 300. 364. 365, 381. 382.
+509. 566,16; frater: Bernarius;
+fratres 381,25; soror: Gundrada.
+
+Adalmondus, Aethelmodus ep. Scire-
+
+| burnensis 29,9.
+
+Adelperga uxor Arichis ducis Bene-
+
+| ventani, filia Desiderii regis Lango-
+
+bardorum 506, 5; liberi: Romual-
+dus, Grimoaldus, Adelgisa.
+
+| Adalpert v, Adalbertus.
+
+Aedelredus, Aedilredus, Aethelredus,
+Aethilredus, Hedilredus rex Nor-
+thanhumbrorum, fil. Aedelwaldi
+Moll regis 33,15. 35,8. 41, 19.
+49, 16. 71, 20. 146,2. 147,10. 150, 6.
+151, 35. 171,17. 377,31; mater:
+Aedilthyda; uxor: Aethelfleda;
+famulus: Torchmundus.
+
+Adhelricus diaconus, discipulus et
+capellanus Arnonis archiep. Salis-
+burg., postea abbas Ferrariensis,
+archiepiscopus Senonensis, 418, 14.
+422, 10.
+
+Aedilthyda, Edilthruda uxor Aethel-
+waldi Moll regis Northanhumbro-
+rum, postea abbatissa 120,12. 151,17.
+152,31 hs filius: Aethelredus rex
+Northanhumbrorum.
+
+Edildryda uxor Ecgfridi regis Nor-
+thanhumbrorum, postea abbatissa
+(t 679) 417,15.
+
+Aedelwaldus, Aethelwoldus Moll rex
+Northanhumbrorum 33, 16; uxor:
+Aedilthyda; filius: Aethelredus,
+
+Adalwinus ep. Reginensis 421, 24.
+422, 21. 424,3.
+
+ 
+
+ 
+
+Aethiluuinus episcopus 28, 2.
+
+Adam 124, 201,1. 226, 7. 264, at.
+379, 29. 466, 36—468, v5. 591, 34.
+Adam abb. monasterii Gemeticensis
+
+579.
+
+Adaula abbatissa Anglica 112, 4.
+
+Adoredus, Hathoredus ep. Hwiccio-
+rum [Wigorniensis] 29, 10.
+
+Adrianus v. Hadrianus.
+
+Adriaticum mare 324, 41.
+
+| Aedel-, Aedil-, v. Adal-.
+
+Aegesippus [#. e. Hegesippus] 501, 11.
+
+Aegil v. Eigil.
+
+Aegyptus, Egyptus 123,19. 554, 17;
+Aegyptii, Aegyptiaci 231. 232, 17.
+467, 36. 567,6. 571,33; Egyptiacae
+divitiae 470, 22; Aegyptiacae tene-
+brae 232, 3; Acgy pit rex: Pharao;
+Aegyptiacascola, Aegyptiaci pueri
+v. Carolus I imperator.
+
+Aeine, Aesne, Esne ep. Herefordensis
+29, 6.
+
+Aelberhtus archiep. Eboracensis, ma-
+
+‘ister Alevini abbatis (162, 24]. 167,s.
+171,19]. [177,5]. [224,20]. [239, 28].
+332, 28]. [377,32]. (378, 31]. [429,27
+
+Aelfvaldus, Aelfwaldus rex Nor-
+thanhymbrorum, [Transhymbranae
+gentis] 20, 27. 28, 11. 43,8. 377, 31.
+
+Aelim v. Alim.
+
+Aeneades 39, 21; v. Virgilius.
+
+Aesculapius, Scolapius 397, 25.
+
+Aesne v. Aeine,
+
+Aethel-, Aethil- v. Adal-.
+
+Aethiopia 478, 5.
+
+Africa 124, 16; Afer: Melchiades
+papa; Africanum concilium 526,33.
+
+Africanus, sc. Scipio Afr. 575, 36.
+
+Agar 584, 3s.
+
+Agareni, Aggareni 32, 19. 601, 21;
+v, Saraceni.
+
+Agathensis synodus 396,
+
+Aginus ep. Constantiensis 117, 32.
+
+129, 19.
+
+8
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">ocr_result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">temp_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">temp_line</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">segs</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segs</span><span class="p">:</span>
+            <span class="n">seg</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">seg</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+                    <span class="n">num</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seg</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">components</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Abdel-Malek&#39;, &#39;A.&#39;]
+[&#39;Abernethy&#39;, &#39;D. B.&#39;]
+[&#39;Achinger&#39;, &#39;H.&#39;]
+[&#39;Adler&#39;, &#39;M.&#39;]
+[&#39;The affluent worker in the\nclass structure&#39;, &#39;&#39;]
+[&#39;Agarwala&#39;, &#39;S.N.&#39;]
+[]
+[&#39;Agnelli&#39;, &#39;A.&#39;]
+[&#39;Agosti&#39;, &#39;A.&#39;]
+[&#39;Albrecht&#39;, &#39;W.&#39;]
+[&#39;Alexander&#39;, &#39;R. J.&#39;]
+[&#39;Der algerische Sozialismus&#39;]
+[&#39;Almasy&#39;, &#39;E.&#39;]
+[&#39;Alston&#39;, &#39;P. L.&#39;]
+[&#39;Altholz&#39;, &#39;J. L.&#39;]
+[&#39;Ammassari&#39;, &#39;G.&#39;]
+[&#39;Anders&#39;, &#39;K.&#39;]
+[&#39;Anderson&#39;, &#39;E. N.&#39;]
+[&#39;Andréani&#39;, &#39;E.&#39;]
+[&#39;Andréas&#39;, &#39;B.&#39;]
+[&#39;Andreasi&#39;, &#39;A.&#39;]
+[&#39;Andrews&#39;, &#39;W.&#39;]
+[&#39;Angell&#39;, &#39;A.&#39;]
+[&#39;Anikeev&#39;, &#39;V. V.&#39;]
+[&#39;Anklage und Botschaft&#39;]
+[]
+[&#39;Ansart&#39;, &#39;P.&#39;]
+[&#39;Anweiler&#39;, &#39;O.&#39;]
+[&#39;Archiv fiir Sozialgeschichte&#39;, &#39;IX&#39;]
+[&#39;Archives de Jules Humbert-\nDroz&#39;, &#39;I&#39;]
+[]
+[&#39;Arian&#39;, &#39;A.&#39;]
+[&#39;Arima&#39;, &#39;T.&#39;]
+[&#39;Aron&#39;, &#39;Raymond&#39;]
+[&#39;Aronson&#39;, &#39;G.&#39;]
+[&#39;Ashraf&#39;, &#39;A.&#39;]
+[&#39;Ashtor&#39;, &#39;E.&#39;]
+[&#39;INDEX OF NAMES*&#39;]
+[&#39;Asociacién Internacional de\nlos Trabajadores. Actas de\nlos Consejos y Comisién\nFederal de la Regién Es-\npafiola&#39;]
+[&#39;Atkin&#39;, &#39;R.&#39;]
+[&#39;Atkinson&#39;, &#39;A. B.&#39;]
+[&#39;Austromarxismus&#39;]
+[&#39;Auty&#39;, &#39;Ph.&#39;]
+[&#39;Avakumovié&#39;, &#39;I.&#39;]
+[&#39;Avrich&#39;, &#39;P.&#39;]
+[&#39;Azmon&#39;, &#39;Y.&#39;]
+[&#39;Ba Maw&#39;, &#39;G.&#39;, &#39;S.&#39;, &#39;S.&#39;, &#39;H. C.&#39;, &#39;P.&#39;, &#39;M.&#39;, &#39;vide Bakunin&#39;, &#39;M.\nBakunin&#39;, &#39;M.&#39;, &#39;R. J.&#39;, &#39;I.&#39;, &#39;J. A.&#39;, &#39;A.&#39;, &#39;R. H.&#39;, &#39;H.&#39;, &#39;W.&#39;, &#39;N. V.&#39;, &#39;H.&#39;, &#39;R.&#39;, &#39;O.&#39;, &#39;J.&#39;, &#39;R.&#39;, &#39;A.&#39;, &#39;J.&#39;, &#39;F.&#39;, &#39;W.&#39;, &#39;H. J.&#39;, &#39;A. W.&#39;, &#39;B.&#39;, &#39;G.&#39;]
+[&#39;Beradt&#39;, &#39;Ch.&#39;, &#39;P. L.&#39;, &#39;D.&#39;, &#39;M.&#39;, &#39;L.&#39;, &#39;E.&#39;, &#39;E.&#39;, &#39;I.&#39;, &#39;S.&#39;, &#39;J.&#39;, &#39;Ph.&#39;, &#39;L.&#39;, &#39;N.&#39;, &#39;K.&#39;, &#39;C. J.&#39;, &#39;A.&#39;, &#39;A.&#39;, &#39;H. D.&#39;, &#39;E.&#39;, &#39;A. A.&#39;, &#39;H. M.&#39;, &#39;J.&#39;, &#39;V.&#39;, &#39;A.&#39;, &#39;G.-E.&#39;, &#39;M.&#39;, &#39;F.&#39;, &#39;A.&#39;, &#39;G.&#39;, &#39;E.&#39;, &#39;D. M.&#39;, &#39;H.&#39;, &#39;A.&#39;, &#39;Rh.&#39;, &#39;R.&#39;, &#39;G. M.&#39;, &#39;C.&#39;, &#39;S.&#39;, &#39;A.&#39;, &#39;L.&#39;, &#39;V.&#39;, &#39;M. J.&#39;, &#39;M. J.&#39;]
+[&#39;&#39;]
+[&#39;* References to publications listed under the heading of Other Books are printed in italics.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./05_ocr"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William J.B. Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
