@@ -118,12 +118,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="01_01_introduction_to_python.html">
-     1.4. What is Python? (Work in Progress)
+     1.2. What is Python? (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01_02_installing_python.html">
-     1.5. Installing Python (Work in Progress)
+     1.3. Installing Python (Work in Progress)
     </a>
    </li>
   </ul>
@@ -749,6 +749,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.2.1.4. Case Sensitivity
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reserved-words">
+     2.2.1.5. Reserved Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#built-in-types">
+     2.2.1.6. Built-in Types
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -857,6 +867,16 @@ const thebe_selector_output = ".output, .cell_output"
      2.2.1.4. Case Sensitivity
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reserved-words">
+     2.2.1.5. Reserved Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#built-in-types">
+     2.2.1.6. Built-in Types
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -931,9 +951,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="center-introduction-to-data-center">
 <h1><span class="section-number">2.2. </span><center>Introduction to Data</center><a class="headerlink" href="#center-introduction-to-data-center" title="Permalink to this headline">¶</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><div class="section" id="some-quick-notes-about-terminology-and-commands-we-will-use">
+<div class="section" id="some-quick-notes-about-terminology-and-commands-we-will-use">
 <h2><span class="section-number">2.2.1. </span>Some Quick Notes about Terminology and Commands we will Use<a class="headerlink" href="#some-quick-notes-about-terminology-and-commands-we-will-use" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="objects">
 <h3><span class="section-number">2.2.1.1. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
@@ -959,7 +977,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To use the print function, we type the word print followed by an open parentheses. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses. Let’s try to print off our new object author to make sure it is in memory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">author</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -975,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">2.2.1.4. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -991,6 +1009,144 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>The scary looking block of text above indicates that we have produced an error in Python. This mistake teaches us two things. First, python is case sensitive. This means that if any object (or string) will need to be matched in not only letters, but also the case of those letters. Second, this mistake teaches us that we can only call objects that have been created and stored in memory.</p>
+</div>
+<div class="section" id="reserved-words">
+<h3><span class="section-number">2.2.1.5. </span>Reserved Words<a class="headerlink" href="#reserved-words" title="Permalink to this headline">¶</a></h3>
+<p>When working with Python, there are a number of words known as <strong>reserve words</strong>. These are words that cannot be used as variable names. As of Python version 3.6, there are a total of 33 reserve words. In can sometimes be difficult to remember all of these reserve words, so Python has a nice built in function, “help”. If we execute the following command, we will see an entire list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="s2">&quot;keywords&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are words that you cannot use as a variable name.</p>
+</div>
+<div class="section" id="built-in-types">
+<h3><span class="section-number">2.2.1.6. </span>Built-in Types<a class="headerlink" href="#built-in-types" title="Permalink to this headline">¶</a></h3>
+<p>In addition to reserve words, there are also built-in types in Python. These are words that you can use (as we will see) to convert one type of data into another. There are 94 of these in total. Unlike reserve words, you <em>can</em> use a built-in type as a variable name. It is, however, strongly discouraged to do so because it will overwrite the intended use of these variable names in your script.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">builtins</span>
+<span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">builtins</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="nb">type</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ArithmeticError,
+ AssertionError,
+ AttributeError,
+ BaseException,
+ BlockingIOError,
+ BrokenPipeError,
+ BufferError,
+ BytesWarning,
+ ChildProcessError,
+ ConnectionAbortedError,
+ ConnectionError,
+ ConnectionRefusedError,
+ ConnectionResetError,
+ DeprecationWarning,
+ EOFError,
+ OSError,
+ Exception,
+ FileExistsError,
+ FileNotFoundError,
+ FloatingPointError,
+ FutureWarning,
+ GeneratorExit,
+ OSError,
+ ImportError,
+ ImportWarning,
+ IndentationError,
+ IndexError,
+ InterruptedError,
+ IsADirectoryError,
+ KeyError,
+ KeyboardInterrupt,
+ LookupError,
+ MemoryError,
+ ModuleNotFoundError,
+ NameError,
+ NotADirectoryError,
+ NotImplementedError,
+ OSError,
+ OverflowError,
+ PendingDeprecationWarning,
+ PermissionError,
+ ProcessLookupError,
+ RecursionError,
+ ReferenceError,
+ ResourceWarning,
+ RuntimeError,
+ RuntimeWarning,
+ StopAsyncIteration,
+ StopIteration,
+ SyntaxError,
+ SyntaxWarning,
+ SystemError,
+ SystemExit,
+ TabError,
+ TimeoutError,
+ TypeError,
+ UnboundLocalError,
+ UnicodeDecodeError,
+ UnicodeEncodeError,
+ UnicodeError,
+ UnicodeTranslateError,
+ UnicodeWarning,
+ UserWarning,
+ ValueError,
+ Warning,
+ OSError,
+ ZeroDivisionError,
+ _frozen_importlib.BuiltinImporter,
+ bool,
+ bytearray,
+ bytes,
+ classmethod,
+ complex,
+ dict,
+ enumerate,
+ filter,
+ float,
+ frozenset,
+ int,
+ list,
+ map,
+ memoryview,
+ object,
+ property,
+ range,
+ reversed,
+ set,
+ slice,
+ staticmethod,
+ str,
+ super,
+ tuple,
+ type,
+ zip]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of this long list, I recommend paying particular attention to the ones that you are more likely to write naturally: bool, dict, float, int, list, map, object, property, range, reversed, set, slice, str, super, tuple, type, and zip. You are more likely to use these as variable names by accident than, say, ZeroDivisionError; and this shorter list is a lot easier to memorize.</p>
 </div>
 </div>
 <div class="section" id="what-is-data">
