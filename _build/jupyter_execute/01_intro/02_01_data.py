@@ -5,6 +5,18 @@
 
 # ## Some Quick Notes about Terminology and Commands we will Use
 
+# ### The Print Function
+
+# The very first thing that every programmer learns is how to print something off using that programming language. In most tutorials, you will see the phrase "Hello, World!" used. In this textbook, let's try something a bit different. Let's say I wanted to print off "Hello, William". We can do this in Python by using the **print function**. The print function lets us print off some piece of data. In our case, that piece of data will be a piece of text, known as a string (see below). Our text is "Hello, William". The thing that we want to print off must be located between an open parentheses and a close parentheses. Let's try to execute the print command in the cell below.
+
+# In[2]:
+
+
+print("Hello, William!")
+
+
+# As we can see, the code that we typed in the Jupyter cell outputted beneath it. This has worked wonderfully, but what if our Python notebook needs to be more dynamic, meaning it needs to adjust based on some user input. Perhaps, we need to use a name other than William based on some user-defined input. To do this, we would need to store a piece of data in memory. We can do this in Python by creating a variable that will point to an object. Before we get into how this is done, let's first get to know objects and variables.
+
 # ### Objects
 
 # When we import or create data within Python, we are essentially creating an object in memory with a variable. These two words, <b>object</b> and <b>variable</b> mean slightly different things and, but are often used interchangeably. We will not get into the complexities of their differences and why they exist in this textbook, but for now, view an object as something that is created by a Python script and stored in your computer's memory so that it can be used later in a program.
@@ -17,13 +29,11 @@
 # 
 # Variables can be created by typing a unique word, followed by an = sign, followed by the specific data. As we will learn throughout this chapter, there are many types of data that are created differently. Let's create our first object before we begin. This will be a string, or a piece of text. (We will learn about these in more detail below.) In my case, I want to create the object author. I want author to be associated with my name in memory. In the cell, or block of code, below, let's do this.
 
-# In[1]:
+# In[4]:
 
 
 author = "William Mattingly"
 
-
-# ### The Print Function
 
 # Excellent! We have created our first object. Now, it is time to use that object. Below, we will learn about ways we can manipulate strings, but for now, let's simply see if that object exists in memory. We can do this with the print function.
 # 
@@ -31,7 +41,7 @@ author = "William Mattingly"
 # 
 # To use the print function, we type the word print followed by an open parentheses. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses. Let's try to print off our new object author to make sure it is in memory.
 
-# In[2]:
+# In[6]:
 
 
 print(author)
@@ -48,6 +58,14 @@ print(Author)
 
 
 # The scary looking block of text above indicates that we have produced an error in Python. This mistake teaches us two things. First, python is case sensitive. This means that if any object (or string) will need to be matched in not only letters, but also the case of those letters. Second, this mistake teaches us that we can only call objects that have been created and stored in memory.
+# 
+# Now that we have the variable pointing to a specific piece of data, we can make our print function above a bit more dynamic. Let's try and print off the same statement as before, but with the new full author name. I don't expect you to understand the specifics of the code below, rather simply understand that we will frequently need to store variables in memory so that we can use them later in our programs.
+
+# In[13]:
+
+
+print(f"Hello, {author}!")
+
 
 # ### Reserved Words
 
@@ -100,10 +118,9 @@ import builtins
 
 # ### Examples of Strings
 
-# In[4]:
+# In[14]:
 
 
-#Strings - any kind of text
 str1 = "This is a string."
 
 
@@ -131,7 +148,7 @@ print (str2)
 str3 = "This is a "bad" example of a string"
 
 
-# In[10]:
+# In[16]:
 
 
 str4 = '''
@@ -145,6 +162,18 @@ This is a verrry long string.
 
 print (str4)
 
+
+# ### Type Function
+
+# It is frequently necessary to check to see what type of data a variable is. To identify this, you can use the built-in function **type** in Python. To use type, we use the command below with the data we want to analyze placed between the two parentheses.
+
+# In[17]:
+
+
+type(str4)
+
+
+# The output is "str" which tells us that the object is a string.
 
 # ## Numbers (Integers and Floats)
 
@@ -462,6 +491,47 @@ print (5//2)
 # 
 # If you haven't yet installed Python, that's okay! There are free compilers online, including the one I have available at https://pythonhumanities.com/lesson-02-storing-data-in-python/. Once you feel comfortable with types of data and how to create and interact with them in Python, feel free to continue into the next chapter as we explore data structures.
 
+# ## Challenge Questions
+
+# What would be the output of the command below?
+
+# In[18]:
+
+
+type('What type of data is this?')
+
+
+# What about this?
+
+# In[19]:
+
+
+print("Hello, world!')
+
+
+# And what about this?
+
+# In[21]:
+
+
+person = "John"
+person = person.lower()
+person2 = person
+person = person.upper()
+print(person2)
+
+
+# Expand below to see why the output looks the way it does.
+
+# If you did not get this right, let's talk about why. Remember, programming is a sequential set of operations.
+# 
+# | Number | Line      | Meaning |
+# | -- | ----------- | ----------- |
+# | 1| person = "John" | establishes that the variable is a string and that it is "John" |
+# | 2| person = person.lower() | this will lowercase the string so at this stage, it would be "john" |
+# | 3| person2 = person | this creates person2 as a variable and points it to person |
+# |4| person = person.upper() | this changes the person variable and uppercases it. The variable person2, however, remains the same|
+
 # ## Quiz
 
 # In[53]:
@@ -551,28 +621,10 @@ mc
 '''
 
 
-# In[ ]:
-
-
-
-
-
 # In[58]:
 
 
 myquiz = md2json.convert(quiz)
 myquiz = json.loads(myquiz)
 display_quiz(myquiz)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

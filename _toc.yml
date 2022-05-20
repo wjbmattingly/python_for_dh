@@ -126,7 +126,7 @@ parts:
       title: How to use RegEx in spaCy (Advanced)
     
   - file: 03_spacy/03_03_intro 
-    title: Machine Learning Named Entity Recognition with spaCy 3x (Work in Progress)
+    title: Machine Learning Named Entity Recognition with spaCy
     sections:
     - file: 03_spacy/03_01_intro_to_ml
       title: Introduction to Machine Learning
