@@ -1,50 +1,53 @@
 format: jb-book
 root: intro
 parts:
-- caption: The Basics of Python (Work in Progress)
+- caption: The Basics of Python
   numbered: true
   chapters:
-  - file: 01_01_intro
-    title: Introduction to Python and Data
+  - file: 01_intro/01_01_intro
+    title: Introduction to Python
     sections:
-    - file: 01_01_introduction_to_python
+    - file: 01_intro/01_01_introduction_to_python
       title: What is Python? (Work in Progress)
       
-    - file: 01_02_installing_python
+    - file: 01_intro/01_02_installing_python
       title: Installing Python (Work in Progress)
       
-    - file: 02_01_data
+  - file: 01_intro/01_01-01_intro
+    title: Working with Data
+    sections:
+    - file: 01_intro/02_01_data
       title: Data Types (Work in Progress)
       
-    - file: 02_02_data_structures
+    - file: 01_intro/02_02_data_structures
       title: Data Structures (Work in Progress)
       
-  - file: 01_02_intro
+  - file: 01_intro/01_02_intro
     title: Loops and Logic
     sections:
-    - file: 03_01_loops
+    - file: 01_intro/03_01_loops
       title: Introduction to Loops (Work in Progress)
-    - file: 03_02_conditionals
+    - file: 01_intro/03_02_conditionals
       title: Introduction to Conditionals (Work in Progress)
 
-  - file: 01_03_intro
+  - file: 01_intro/01_03_intro
     title: Formal Coding
     sections:
-    - file: 04_01_functitons
+    - file: 01_intro/04_01_functitons
       title: Introduction to Functions (Work in Progress)
-    - file: 04_02_classes
+    - file: 01_intro/04_02_classes
       title: Introduction to Classes (Work in Progress)
-    - file: 04_03_libraries
+    - file: 01_intro/04_03_libraries
       title: Introduction to Libraries (Work in Progress)
       
-  - file: 01_04_intro
+  - file: 01_intro/01_04_intro
     title: Working with External Data
     sections:
-    - file: 05_01_texts
+    - file: 01_intro/05_01_texts
       title: Loading and Saving Text Data (Work in Progress)
-    - file: 05_02_json
+    - file: 01_intro/05_02_json
       title: Loading and Saving JSON Data (Work in Progress)
-    - file: 05_03_multiple_files
+    - file: 01_intro/05_03_multiple_files
       title: Working with Multiple Files (Work in Progress)
 
 
@@ -52,7 +55,7 @@ parts:
   numbered: true
   chapters:
   
-  - file: 02_01_intro
+  - file: 02_pandas/02_01_intro
     title: Introduction to Pandas
     sections:
     - file: 02_pandas/01_01_introduction_to_pandas
@@ -60,7 +63,7 @@ parts:
     - file: 02_pandas/01_02_the_basics
       title: The Basics of Pandas
       
-  - file: 02_02_intro
+  - file: 02_pandas/02_02_intro
     title: Working with Data in Pandas
     sections:
     - file: 02_pandas/02_01_finding_data
@@ -70,7 +73,7 @@ parts:
     - file: 02_pandas/02_03_cleaning_data
       title: Cleaning Data with Pandas
       
-  - file: 02_03_intro
+  - file: 02_pandas/02_03_intro
     title: Searching for Data
     sections:
     - file: 02_pandas/03_01_advanced_strings
@@ -80,7 +83,7 @@ parts:
     - file: 02_pandas/03_03_advanced_grouping
       title: Advanced Grouping with Groupby
       
-  - file: 02_04_intro
+  - file: 02_pandas/02_04_intro
     title: Advanced Pandas
     sections:
     - file: 02_pandas/04_01_pandas_and_plots
@@ -91,12 +94,10 @@ parts:
     - file: 02_pandas/05_01_time_series_data
       title: Introduction to Time Series Data
     
-# - caption: Network Analysis with PyVis
-
 - caption: Natural Language Processing with spaCy
   numbered: true
   chapters:
-  - file: 03_01_intro
+  - file: 03_spacy/03_01_intro
     title: Introduction to spaCy
     sections:
     - file: 03_spacy/01_01_install_and_containers
@@ -108,7 +109,7 @@ parts:
     - file: 03_spacy/01_04_pipelines
       title: spaCy Pipelines
       
-  - file: 03_02_intro
+  - file: 03_spacy/03_02_intro
     title: Rules-Based spaCy
     sections:
     - file: 03_spacy/02_01_entityruler
@@ -130,6 +131,9 @@ parts:
 
 
 # - caption: Optical Character Recognition with OpenCV and PyTesseract
+
+
+# - caption: Network Analysis with PyVis
 
 
 # - caption: Building a Digital Humanities App with Streamlit
