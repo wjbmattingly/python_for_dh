@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.4. Creating Location Pipe for Holocaust NER &#8212; Introduction to Python for Humanists</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.5. Creating Rules-Based Pipeline for Holocaust Documents" href="04_05_building_holocaust_pipeline_rules_based.html" />
+    <link rel="prev" title="4.3. The Challenges of Holocaust NER" href="04_03_the_challenges_of_holocaust_ner.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <p align="center">
+    INTRODUCTION TO PYTHON FOR DIGITAL HUMANITIES
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
+     1.4. What is Python? (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
+     1.5. Installing Python (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_01_data.html">
+     2.2. Data Types (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
+     2.3. Data Structures (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_01_loops.html">
+     3.1. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
+     3.2. Introduction to Conditionals (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03_intro.html">
+   4. Formal Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_01_functitons.html">
+     4.1. Introduction to Functions (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_02_classes.html">
+     4.2. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_03_libraries.html">
+     4.3. Introduction to Libraries (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_01_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_02_json.html">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis with Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_01_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_02_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_01_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_02_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_03_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_01_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_02_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/05_01_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_03_word_vectors.html">
+     1.3. Word Vectors and spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_04_pipelines.html">
+     1.4. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_02_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_01_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_custom_component.html">
+     2.3. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_05_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_06_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_03_intro.html">
+   3. Machine Learning Named Entity Recognition with spaCy 3x
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_intro_to_ml.html">
+     3.1. Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_create_ner_training_set.html">
+     3.2. Creating a Training Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
+     3.3. How to Train a Base NER ML Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
+     3.4. Examining a spaCy Model in the Folder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
+     3.5. Introduction to Word Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
+     3.6. Generating Custom Word Vectors with Gensim
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+     3.7. Loading Custom Word Vectors into a spaCy Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03_04_intro.html">
+   4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
+     4.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_cultivating_corpus.html">
+     4.2. Cultivating a Corpus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
+     4.3. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.4. Introduction to Custom Pipes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_05_building_holocaust_pipeline_rules_based.html">
+     4.5. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Modeling and Text Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
+   Introduction to Topic Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_01_introduction_to_topic_modeling.html">
+     What is Topic Modeling?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_02_topics_and_clusters.html">
+     Introduction to Topics and Clusters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_03_bigrams_and_trigrams.html">
+     Bigrams and Trigrams
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
+   TF-IDF and K-Means Clustering
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_01_intro_to_tf_idf.html">
+     Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_02_intro_to_scikit_learn.html">
+     Introduction to Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_03_setting_up_tf_idf.html">
+     Setting up TF-IDF in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_03_lda_model_demo.html">
+   LDA Topic Modeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_04_top2vec.html">
+   Top2Vec Topic Modeling
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03_spacy/04_04_introduction_to_custom_pipes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/04_04_introduction_to_custom_pipes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/04_04_introduction_to_custom_pipes.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/04_04_introduction_to_custom_pipes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   4.4.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.4.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-blank-spacy-model">
+   4.4.3. Creating a Blank spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-spacy-model">
+   4.4.4. Saving a spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#placing-pipes">
+   4.4.5. Placing Pipes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-custom-labels">
+   4.4.6. Adding Custom Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   4.4.7. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   4.4.8. Video
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Creating Location Pipe for Holocaust NER</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   4.4.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.4.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-blank-spacy-model">
+   4.4.3. Creating a Blank spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-spacy-model">
+   4.4.4. Saving a spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#placing-pipes">
+   4.4.5. Placing Pipes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-custom-labels">
+   4.4.6. Adding Custom Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   4.4.7. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   4.4.8. Video
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-creating-location-pipe-for-holocaust-ner-center">
+<h1><span class="section-number">4.4. </span><center>Creating Location Pipe for Holocaust NER</center><a class="headerlink" href="#center-creating-location-pipe-for-holocaust-ner-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h2><span class="section-number">4.4.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How to add pipes to a spaCy model<br></p></li>
+<li><p>How to custom labels to NER pipe<br></p></li>
+</ol>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.4.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this notebook, we will cover how to create a blank spaCy model, load in pipes from another model, save that new model. We will also work with custom entities.</p>
+</div>
+<div class="section" id="creating-a-blank-spacy-model">
+<h2><span class="section-number">4.4.3. </span>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you are creating a custom spaCy model, it is usually a good idea to start with a blank model. Let’s do that first. The spaCy blank class takes one argument, the language. In our case, we want to create a blank English model. The language affects how spaCy will tokenize the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">main_nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our goal now is to take the NER pipeline from the spaCy small English model and inject it into our blank model First. We need to grab the English model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">en_model</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we need to grab specifically the NER pipe. We can do that with the function get_pipe(). This will take one argument, the pipe desired. Because we want to grab the NER pipe, we will specifcy “ner”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ner</span> <span class="o">=</span> <span class="n">en_model</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have that pipe, we can add it to our blank spaCy model using the add_pipe() function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">ner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have that added to our main_nlp pipeline, let’s test it out and make sure that it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent</span> <span class="o">=</span> <span class="s2">&quot;Hello, my name is Bob and I live in the United States.&quot;</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">main_nlp</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bob PERSON
+the United States GPE
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that our blank model now can use the ner pipe from the small English spaCy model. Success.</p>
+</div>
+<div class="section" id="saving-a-spacy-model">
+<h2><span class="section-number">4.4.4. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">¶</a></h2>
+<p>Saving a spaCy model is just as simple. Let’s go ahead and save our blank model before moving forward. We can do this with the to_disk() function. This will take one argument, the location we want to save it to. We are going to put it in the subfolder models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main_nlp</span><span class="o">.</span><span class="n">to_disk</span><span class="p">(</span><span class="s2">&quot;models/sample_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="placing-pipes">
+<h2><span class="section-number">4.4.5. </span>Placing Pipes<a class="headerlink" href="#placing-pipes" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, we will want to make more sophistocated pipelines where we have multiple pipes. In these scenarios, we will want to place specific pipes in specific locations. Let’s try and work through how to do that.</p>
+<p>We can do this several different ways. First, we can place pipes in order in our script. The last pipe added will be the last pipe in the pipeline. In the code below, we add English and German NERs to our pipeline. If we do this, however, we will get an error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">main_nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+
+<span class="n">en_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">de_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;de_core_news_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">en_ner</span><span class="p">)</span>
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">de_ner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">51</span><span class="n">f12b1879b3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">en_ner</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">de_ner</span><span class="p">)</span>
+
+<span class="nn">c:\python38\lib\site-packages\spacy\language.py</span> in <span class="ni">add_pipe</span><span class="nt">(self, component, name, before, after, first, last)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>             <span class="n">name</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">get_component_name</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe_names</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">Errors</span><span class="o">.</span><span class="n">E007</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe_names</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>         <span class="k">if</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">bool</span><span class="p">(</span><span class="n">before</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">after</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">first</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">last</span><span class="p">)])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">Errors</span><span class="o">.</span><span class="n">E006</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: [E007] &#39;ner&#39; already exists in pipeline. Existing names: [&#39;ner&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason we are getting this error is because we are trying to add two NER pipes that have the same name, “ner”. We need to give each of these a unique name. We can do this with the code below and then we will iterate over the pipeline to make sure we have all the pipes listed correctly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">main_nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+
+<span class="n">en_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">de_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;de_core_news_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">en_ner</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;en_ner&quot;</span><span class="p">)</span>
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">de_ner</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;de_ner&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">main_nlp</span><span class="o">.</span><span class="n">pipeline</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">pipe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;en_ner&#39;, &lt;spacy.pipeline.pipes.EntityRecognizer object at 0x000001A20BD97700&gt;)
+(&#39;de_ner&#39;, &lt;spacy.pipeline.pipes.EntityRecognizer object at 0x000001A20FADCA00&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice in the output that we not only get the correct pipes with unique names, we also get them in the order we expected. Let’s try and put the German model in front of the English one. To do that, we can pass an argument. You can use either before or after, depending on how you want to place the pipe. We will use before=”en_ner”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">main_nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+
+<span class="n">en_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">de_ner</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;de_core_news_sm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">en_ner</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;en_ner&quot;</span><span class="p">)</span>
+<span class="n">main_nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">de_ner</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;de_ner&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;en_ner&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">main_nlp</span><span class="o">.</span><span class="n">pipeline</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">pipe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;de_ner&#39;, &lt;spacy.pipeline.pipes.EntityRecognizer object at 0x000001A212600FA0&gt;)
+(&#39;en_ner&#39;, &lt;spacy.pipeline.pipes.EntityRecognizer object at 0x000001A207E00580&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Placement of specific pipes in a specific order is essential because later pipes receive the data of the earlier pipes. In the case of NER, this means that later pipes cannot overwrite earlier pipes, unless we give them permission.</p>
+</div>
+<div class="section" id="adding-custom-labels">
+<h2><span class="section-number">4.4.6. </span>Adding Custom Labels<a class="headerlink" href="#adding-custom-labels" title="Permalink to this headline">¶</a></h2>
+<p>In order to best demonstrate how to add custom labels, it is best to watch the video below.</p>
+</div>
+<div class="section" id="exercise">
+<h2><span class="section-number">4.4.7. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Try to create some custom pipelines for fun. See how they perform on texts when ordered in specific ways.</p>
+</div>
+<div class="section" id="video">
+<h2><span class="section-number">4.4.8. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/1l3v2Zcgb3s&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1l3v2Zcgb3s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_spacy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04_03_the_challenges_of_holocaust_ner.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span><center>The Challenges of Holocaust NER</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_05_building_holocaust_pipeline_rules_based.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William J.B. Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

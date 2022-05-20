@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.6. Generating Custom Word Vectors with Gensim &#8212; Introduction to Python for Humanists</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.7. Loading Custom Word Vectors into a spaCy Model" href="03_06_loading_custom_word_vectors.html" />
+    <link rel="prev" title="3.5. Introduction to Word Vectors" href="03_04_introduction_to_word_vectors.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <p align="center">
+    INTRODUCTION TO PYTHON FOR DIGITAL HUMANITIES
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
+     1.4. What is Python? (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
+     1.5. Installing Python (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_01_data.html">
+     2.2. Data Types (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
+     2.3. Data Structures (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_01_loops.html">
+     3.1. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
+     3.2. Introduction to Conditionals (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03_intro.html">
+   4. Formal Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_01_functitons.html">
+     4.1. Introduction to Functions (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_02_classes.html">
+     4.2. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_03_libraries.html">
+     4.3. Introduction to Libraries (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_01_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_02_json.html">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis with Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_01_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_02_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_01_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_02_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_03_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_01_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_02_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/05_01_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_03_word_vectors.html">
+     1.3. Word Vectors and spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_04_pipelines.html">
+     1.4. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_02_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_01_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_custom_component.html">
+     2.3. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_05_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_06_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03_03_intro.html">
+   3. Machine Learning Named Entity Recognition with spaCy 3x
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_intro_to_ml.html">
+     3.1. Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_create_ner_training_set.html">
+     3.2. Creating a Training Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
+     3.3. How to Train a Base NER ML Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
+     3.4. Examining a spaCy Model in the Folder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
+     3.5. Introduction to Word Vectors
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.6. Generating Custom Word Vectors with Gensim
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+     3.7. Loading Custom Word Vectors into a spaCy Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_04_intro.html">
+   4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
+     4.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_cultivating_corpus.html">
+     4.2. Cultivating a Corpus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
+     4.3. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
+     4.4. Introduction to Custom Pipes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_05_building_holocaust_pipeline_rules_based.html">
+     4.5. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Modeling and Text Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
+   Introduction to Topic Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_01_introduction_to_topic_modeling.html">
+     What is Topic Modeling?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_02_topics_and_clusters.html">
+     Introduction to Topics and Clusters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_03_bigrams_and_trigrams.html">
+     Bigrams and Trigrams
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
+   TF-IDF and K-Means Clustering
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_01_intro_to_tf_idf.html">
+     Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_02_intro_to_scikit_learn.html">
+     Introduction to Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_03_setting_up_tf_idf.html">
+     Setting up TF-IDF in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_03_lda_model_demo.html">
+   LDA Topic Modeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_04_top2vec.html">
+   Top2Vec Topic Modeling
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03_spacy/03_05_generating_custom_word_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_05_generating_custom_word_vectors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_05_generating_custom_word_vectors.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_05_generating_custom_word_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   3.6.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-gensim">
+   3.6.2. Introduction to Gensim
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-corpus">
+   3.6.3. Preparing the Corpus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-word-vectors">
+   3.6.4. Creating Word Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examining-word-vectors">
+   3.6.5. Examining Word Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   3.6.6. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   3.6.7. Video
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Generating Custom Word Vectors with Gensim</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   3.6.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-gensim">
+   3.6.2. Introduction to Gensim
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-corpus">
+   3.6.3. Preparing the Corpus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-word-vectors">
+   3.6.4. Creating Word Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examining-word-vectors">
+   3.6.5. Examining Word Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   3.6.6. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   3.6.7. Video
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-generating-custom-word-vectors-with-gensim-center">
+<h1><span class="section-number">3.6. </span><center>Generating Custom Word Vectors with Gensim</center><a class="headerlink" href="#center-generating-custom-word-vectors-with-gensim-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h2><span class="section-number">3.6.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Gensim library<br></p></li>
+<li><p>How to create word vectors in Gensim<br></p></li>
+<li><p>Topic modeling<br></p></li>
+</ol>
+</div>
+<div class="section" id="introduction-to-gensim">
+<h2><span class="section-number">3.6.2. </span>Introduction to Gensim<a class="headerlink" href="#introduction-to-gensim" title="Permalink to this headline">¶</a></h2>
+<p>Gensim is a powerful Python library that was originally designed to produce good topic models. <strong>Topic models</strong> are machine learning models that read over an entire corpus and cluster individual documents into clusters of similarity. In order to produce good results, Gensim (and other topic modeling methods) are reliant upon numerical represntations of words. In other words, these methods depend on word vectors. To have accurate results, therefore, Gensim is capable of generating word vectors with relatively minimal code. SpaCy, on the other hand, is an NLP library not capable of generating custom word vectors. While users can inject to words into models, spaCy is not designed to generate word vectors on its own. For this reason, even spaCy’s documentation recomends using other libraries, such as Gensim to generate word vectors.</p>
+<p>In this notebook, we will be going through the process of generating our own word vectors. In order to reduce the time to perform the task at hand, we will use a toy corpus. This process, however, can easily be scaled for a corpus of millions of documents.</p>
+</div>
+<div class="section" id="preparing-the-corpus">
+<h2><span class="section-number">3.6.3. </span>Preparing the Corpus<a class="headerlink" href="#preparing-the-corpus" title="Permalink to this headline">¶</a></h2>
+<p>In order to generate word vectors, we need one thing: a corpus/ Let’s create one right now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corpus</span> <span class="o">=</span> <span class="s2">&quot;Tom is cat, while Jerry is a mouse. Tom and Jerry are characters in a cartoon series. Some of the cartoons contain words, but most are silent. Silent cartoons still have music and sound effects.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before we can give this corpus to Gensim, however, we need to do a few preprocessing techniques to it.</p>
+<ol class="simple">
+<li><p>First, we need to remove the stopwords from the corpus. Stopwords are words that occur frequently in a corpus, so frequently that they do not necessarily offer much meaning for distant reading and, as a result, throw off machine learning models. Other stopwords are words that occur with high frequency in a langauge as a whole. For our purposes, we will use the following stopwords available from the NLTK (natural language toolkit)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stopwords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;me&quot;</span><span class="p">,</span><span class="s2">&quot;my&quot;</span><span class="p">,</span><span class="s2">&quot;myself&quot;</span><span class="p">,</span><span class="s2">&quot;we&quot;</span><span class="p">,</span><span class="s2">&quot;our&quot;</span><span class="p">,</span><span class="s2">&quot;ours&quot;</span><span class="p">,</span><span class="s2">&quot;ourselves&quot;</span><span class="p">,</span><span class="s2">&quot;you&quot;</span><span class="p">,</span><span class="s2">&quot;your&quot;</span><span class="p">,</span><span class="s2">&quot;yours&quot;</span><span class="p">,</span><span class="s2">&quot;yourself&quot;</span><span class="p">,</span><span class="s2">&quot;yourselves&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;he&quot;</span><span class="p">,</span><span class="s2">&quot;him&quot;</span><span class="p">,</span><span class="s2">&quot;his&quot;</span><span class="p">,</span><span class="s2">&quot;himself&quot;</span><span class="p">,</span><span class="s2">&quot;she&quot;</span><span class="p">,</span><span class="s2">&quot;her&quot;</span><span class="p">,</span><span class="s2">&quot;hers&quot;</span><span class="p">,</span><span class="s2">&quot;herself&quot;</span><span class="p">,</span><span class="s2">&quot;it&quot;</span><span class="p">,</span><span class="s2">&quot;its&quot;</span><span class="p">,</span><span class="s2">&quot;itself&quot;</span><span class="p">,</span><span class="s2">&quot;they&quot;</span><span class="p">,</span><span class="s2">&quot;them&quot;</span><span class="p">,</span><span class="s2">&quot;their&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;theirs&quot;</span><span class="p">,</span><span class="s2">&quot;themselves&quot;</span><span class="p">,</span><span class="s2">&quot;what&quot;</span><span class="p">,</span><span class="s2">&quot;which&quot;</span><span class="p">,</span><span class="s2">&quot;who&quot;</span><span class="p">,</span><span class="s2">&quot;whom&quot;</span><span class="p">,</span><span class="s2">&quot;this&quot;</span><span class="p">,</span><span class="s2">&quot;that&quot;</span><span class="p">,</span><span class="s2">&quot;these&quot;</span><span class="p">,</span><span class="s2">&quot;those&quot;</span><span class="p">,</span><span class="s2">&quot;am&quot;</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="s2">&quot;are&quot;</span><span class="p">,</span><span class="s2">&quot;was&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;were&quot;</span><span class="p">,</span><span class="s2">&quot;be&quot;</span><span class="p">,</span><span class="s2">&quot;been&quot;</span><span class="p">,</span><span class="s2">&quot;being&quot;</span><span class="p">,</span><span class="s2">&quot;have&quot;</span><span class="p">,</span><span class="s2">&quot;has&quot;</span><span class="p">,</span><span class="s2">&quot;had&quot;</span><span class="p">,</span><span class="s2">&quot;having&quot;</span><span class="p">,</span><span class="s2">&quot;do&quot;</span><span class="p">,</span><span class="s2">&quot;does&quot;</span><span class="p">,</span><span class="s2">&quot;did&quot;</span><span class="p">,</span><span class="s2">&quot;doing&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;an&quot;</span><span class="p">,</span><span class="s2">&quot;the&quot;</span><span class="p">,</span><span class="s2">&quot;and&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;but&quot;</span><span class="p">,</span><span class="s2">&quot;if&quot;</span><span class="p">,</span><span class="s2">&quot;or&quot;</span><span class="p">,</span><span class="s2">&quot;because&quot;</span><span class="p">,</span><span class="s2">&quot;as&quot;</span><span class="p">,</span><span class="s2">&quot;until&quot;</span><span class="p">,</span><span class="s2">&quot;while&quot;</span><span class="p">,</span><span class="s2">&quot;of&quot;</span><span class="p">,</span><span class="s2">&quot;at&quot;</span><span class="p">,</span><span class="s2">&quot;by&quot;</span><span class="p">,</span><span class="s2">&quot;for&quot;</span><span class="p">,</span><span class="s2">&quot;with&quot;</span><span class="p">,</span><span class="s2">&quot;about&quot;</span><span class="p">,</span><span class="s2">&quot;against&quot;</span><span class="p">,</span><span class="s2">&quot;between&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;into&quot;</span><span class="p">,</span><span class="s2">&quot;through&quot;</span><span class="p">,</span><span class="s2">&quot;during&quot;</span><span class="p">,</span><span class="s2">&quot;before&quot;</span><span class="p">,</span><span class="s2">&quot;after&quot;</span><span class="p">,</span><span class="s2">&quot;above&quot;</span><span class="p">,</span><span class="s2">&quot;below&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">,</span><span class="s2">&quot;from&quot;</span><span class="p">,</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="s2">&quot;out&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;over&quot;</span><span class="p">,</span><span class="s2">&quot;under&quot;</span><span class="p">,</span><span class="s2">&quot;again&quot;</span><span class="p">,</span><span class="s2">&quot;further&quot;</span><span class="p">,</span><span class="s2">&quot;then&quot;</span><span class="p">,</span><span class="s2">&quot;once&quot;</span><span class="p">,</span><span class="s2">&quot;here&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;when&quot;</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">,</span><span class="s2">&quot;why&quot;</span><span class="p">,</span><span class="s2">&quot;how&quot;</span><span class="p">,</span><span class="s2">&quot;all&quot;</span><span class="p">,</span><span class="s2">&quot;any&quot;</span><span class="p">,</span><span class="s2">&quot;both&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;each&quot;</span><span class="p">,</span><span class="s2">&quot;few&quot;</span><span class="p">,</span><span class="s2">&quot;more&quot;</span><span class="p">,</span><span class="s2">&quot;most&quot;</span><span class="p">,</span><span class="s2">&quot;other&quot;</span><span class="p">,</span><span class="s2">&quot;some&quot;</span><span class="p">,</span><span class="s2">&quot;such&quot;</span><span class="p">,</span><span class="s2">&quot;no&quot;</span><span class="p">,</span><span class="s2">&quot;nor&quot;</span><span class="p">,</span><span class="s2">&quot;not&quot;</span><span class="p">,</span><span class="s2">&quot;only&quot;</span><span class="p">,</span><span class="s2">&quot;own&quot;</span><span class="p">,</span><span class="s2">&quot;same&quot;</span><span class="p">,</span><span class="s2">&quot;so&quot;</span><span class="p">,</span><span class="s2">&quot;than&quot;</span><span class="p">,</span><span class="s2">&quot;too&quot;</span><span class="p">,</span><span class="s2">&quot;very&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;can&quot;</span><span class="p">,</span><span class="s2">&quot;will&quot;</span><span class="p">,</span><span class="s2">&quot;just&quot;</span><span class="p">,</span><span class="s2">&quot;don&quot;</span><span class="p">,</span><span class="s2">&quot;should&quot;</span><span class="p">,</span><span class="s2">&quot;now&quot;</span>
+            <span class="p">]</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">new_corpus</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">:</span>
+        <span class="n">new_corpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_corpus</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tom cat, jerry mouse. tom jerry characters cartoon series. cartoons contain words, silent. silent cartoons still music sound effects.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Second, this corpus should be divided into sentences. In order to do that, I recommend using spaCy’s sentence tokenizer.</p></li>
+<li><p>While we do this, we should also eliminate the punctuation from the sentences. We can do this with the standard string library from Python.</p></li>
+<li><p>Also at this stage, we should lowercase our words (OPTIONAL)</p></li>
+<li><p>If we wish to produce a smaller amount of word vectors, we could also consider lemmatizing our words as well (OPTIONAL)</p></li>
+<li><p>We need to split the sentence into words and append that list of words to a new object</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+
+<span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">:</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;tom&#39;, &#39;cat&#39;, &#39;jerry&#39;, &#39;mouse&#39;], [&#39;tom&#39;, &#39;jerry&#39;, &#39;characters&#39;, &#39;cartoon&#39;, &#39;series&#39;], [&#39;cartoons&#39;, &#39;contain&#39;, &#39;words&#39;, &#39;silent&#39;], [&#39;silent&#39;, &#39;cartoons&#39;, &#39;still&#39;, &#39;music&#39;, &#39;sound&#39;, &#39;effects&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-word-vectors">
+<h2><span class="section-number">3.6.4. </span>Creating Word Vectors<a class="headerlink" href="#creating-word-vectors" title="Permalink to this headline">¶</a></h2>
+<p>At this stage, we can start preparing our word vectors. To do this, we will use the function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_wordvecs</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">gensim.models.word2vec</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
+    <span class="kn">from</span> <span class="nn">gensim.models.phrases</span> <span class="kn">import</span> <span class="n">Phrases</span><span class="p">,</span> <span class="n">Phraser</span>
+    <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+    
+    <span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">corpus</span><span class="p">))</span>
+    
+
+    <span class="n">phrases</span> <span class="o">=</span> <span class="n">Phrases</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">progress_per</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Made Phrases&quot;</span><span class="p">)</span>
+    
+    <span class="n">bigram</span> <span class="o">=</span> <span class="n">Phraser</span><span class="p">(</span><span class="n">phrases</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Made Bigrams&quot;</span><span class="p">)</span>
+    
+    <span class="n">sentences</span> <span class="o">=</span> <span class="n">phrases</span><span class="p">[</span><span class="n">corpus</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Found sentences&quot;</span><span class="p">)</span>
+    <span class="n">word_freq</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sent</span><span class="p">:</span>
+            <span class="n">word_freq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+
+    <span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word_freq</span><span class="p">))</span>
+    
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Training model now...&quot;</span><span class="p">)</span>
+    <span class="n">w2v_model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                        <span class="n">sample</span><span class="o">=</span><span class="mf">6e-5</span><span class="p">,</span>
+                        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
+                        <span class="n">min_alpha</span><span class="o">=</span><span class="mf">0.0007</span><span class="p">,</span>
+                        <span class="n">negative</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">w2v_model</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">progress_per</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+    <span class="n">w2v_model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">total_examples</span><span class="o">=</span><span class="n">w2v_model</span><span class="o">.</span><span class="n">corpus_count</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">report_delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">w2v_model</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">save_word2vec_format</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+<span class="n">create_wordvecs</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="s2">&quot;word_vecs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+Made Phrases
+Made Bigrams
+Found sentences
+15
+Training model now...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examining-word-vectors">
+<h2><span class="section-number">3.6.5. </span>Examining Word Vectors<a class="headerlink" href="#examining-word-vectors" title="Permalink to this headline">¶</a></h2>
+<p>Now, we can open up our word vectors and examine them. The first line in this text file will be the shape of the word vectors. This should be two integers. The first number (17) is the number of unique words in the vocabulary. The second number (10) are the number of dimensions of each word.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/word_vecs.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at the first word in our word vectors, “Tom”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tom 0.046630684 -0.019758822 -0.00631089 0.039143123 -0.027235914 -0.013175516 0.027348584 0.0005846504 -0.02984228 -0.016458655
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we see two pieces of information. The first is a string and it is the word itself. In this case, “Tom”. The second bit of data is a series of 10 floats. These are our dimensions for the word. This is the numerical way in which “Tom” is understood by the Gensim model. This is precisely the data that spaCy expects to recieve in order to load these vectors into a model. In the next notebook, we will do just that.</p>
+</div>
+<div class="section" id="exercise">
+<h2><span class="section-number">3.6.6. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Try to use the above code to create your own custom word vectors for your own corpus.</p>
+</div>
+<div class="section" id="video">
+<h2><span class="section-number">3.6.7. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/eZJm7PisZvk&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eZJm7PisZvk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_spacy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_04_introduction_to_word_vectors.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.5. </span><center>Introduction to Word Vectors</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_06_loading_custom_word_vectors.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span><center>Loading Custom Word Vectors into a spaCy Model</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William J.B. Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

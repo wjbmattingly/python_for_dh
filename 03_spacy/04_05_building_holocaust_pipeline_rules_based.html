@@ -1,0 +1,1865 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.5. Creating Rules-Based Pipeline for Holocaust Documents &#8212; Introduction to Python for Humanists</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Python" href="../04_topic_modeling/04_01_intro.html" />
+    <link rel="prev" title="4.4. Creating Location Pipe for Holocaust NER" href="04_04_introduction_to_custom_pipes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <p align="center">
+    INTRODUCTION TO PYTHON FOR DIGITAL HUMANITIES
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
+     1.4. What is Python? (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
+     1.5. Installing Python (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_01_data.html">
+     2.2. Data Types (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
+     2.3. Data Structures (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_01_loops.html">
+     3.1. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
+     3.2. Introduction to Conditionals (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03_intro.html">
+   4. Formal Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_01_functitons.html">
+     4.1. Introduction to Functions (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_02_classes.html">
+     4.2. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/04_03_libraries.html">
+     4.3. Introduction to Libraries (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_01_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_02_json.html">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis with Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_01_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_02_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_01_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_02_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_03_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_01_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_02_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/05_01_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_03_word_vectors.html">
+     1.3. Word Vectors and spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_04_pipelines.html">
+     1.4. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_02_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_01_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_custom_component.html">
+     2.3. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_05_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_06_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_03_intro.html">
+   3. Machine Learning Named Entity Recognition with spaCy 3x
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_intro_to_ml.html">
+     3.1. Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_create_ner_training_set.html">
+     3.2. Creating a Training Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
+     3.3. How to Train a Base NER ML Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
+     3.4. Examining a spaCy Model in the Folder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
+     3.5. Introduction to Word Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
+     3.6. Generating Custom Word Vectors with Gensim
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+     3.7. Loading Custom Word Vectors into a spaCy Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03_04_intro.html">
+   4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
+     4.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_cultivating_corpus.html">
+     4.2. Cultivating a Corpus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
+     4.3. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
+     4.4. Introduction to Custom Pipes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.5. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Modeling and Text Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
+   Introduction to Topic Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_01_introduction_to_topic_modeling.html">
+     What is Topic Modeling?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_02_topics_and_clusters.html">
+     Introduction to Topics and Clusters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/01_03_bigrams_and_trigrams.html">
+     Bigrams and Trigrams
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
+   TF-IDF and K-Means Clustering
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_01_intro_to_tf_idf.html">
+     Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_02_intro_to_scikit_learn.html">
+     Introduction to Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/02_03_setting_up_tf_idf.html">
+     Setting up TF-IDF in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_03_lda_model_demo.html">
+   LDA Topic Modeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_topic_modeling/03_04_top2vec.html">
+   Top2Vec Topic Modeling
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/04_05_building_holocaust_pipeline_rules_based.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   4.5.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.5.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-blank-spacy-model">
+   4.5.3. Creating a Blank spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-pipe-for-finding-streets">
+   4.5.4. Add Pipe for Finding Streets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ships">
+   4.5.5. Creating a Pipe for Finding Ships
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
+   4.5.6. Creating a Pipe for Finding Ghettos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-pipe-for-identifying-a-person">
+   4.5.7. Create Pipe for Identifying a Person
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-pipe-for-identifying-spouses">
+   4.5.8. Create Pipe for Identifying Spouses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-concentration-camp-pipe">
+   4.5.9. Creating Concentration Camp Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-revolutionary-groups-pipe">
+   4.5.10. Creating Revolutionary Groups Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-places-pipe">
+   4.5.11. Creating a Places Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-geography-pipe">
+   4.5.12. Creating a Geography Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-streets">
+   4.5.13. Adding Streets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seeing-the-pipes-at-work">
+   4.5.14. Seeing the Pipes at Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-spacy-model">
+   4.5.15. Saving a spaCy Model
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Creating Rules-Based Pipeline for Holocaust Documents</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   4.5.1. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.5.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-blank-spacy-model">
+   4.5.3. Creating a Blank spaCy Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-pipe-for-finding-streets">
+   4.5.4. Add Pipe for Finding Streets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ships">
+   4.5.5. Creating a Pipe for Finding Ships
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
+   4.5.6. Creating a Pipe for Finding Ghettos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-pipe-for-identifying-a-person">
+   4.5.7. Create Pipe for Identifying a Person
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-pipe-for-identifying-spouses">
+   4.5.8. Create Pipe for Identifying Spouses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-concentration-camp-pipe">
+   4.5.9. Creating Concentration Camp Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-revolutionary-groups-pipe">
+   4.5.10. Creating Revolutionary Groups Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-places-pipe">
+   4.5.11. Creating a Places Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-geography-pipe">
+   4.5.12. Creating a Geography Pipe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-streets">
+   4.5.13. Adding Streets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seeing-the-pipes-at-work">
+   4.5.14. Seeing the Pipes at Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-spacy-model">
+   4.5.15. Saving a spaCy Model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-creating-rules-based-pipeline-for-holocaust-documents-center">
+<h1><span class="section-number">4.5. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center><a class="headerlink" href="#center-creating-rules-based-pipeline-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h2><span class="section-number">4.5.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How to add pipes to a spaCy model<br></p></li>
+<li><p>How to Consider Rules<br></p></li>
+<li><p>How to Implement those Rules<br></p></li>
+</ol>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this notebook, we will walk through some of the heuristic pipes I developed or am developing for my Holocaust NER spaCy pipeline. The purpose of these heuristic pipes is not to catch all potential entities, but to return with a high degree of confidence only true positives. We accept that the heuristics won’t catch everything because the final item in this long pipeline is a machine learning NER model that will generalize, or make predictions, on the unseen data. By structuring many heuristics in the pipeline, we can radically reduce the chances of our ML model making a wrong prediction because the all known true positives will have already been annotated.</p>
+<p>I should also note that the code in my pipes is repetitious by design. As this is a textbook, it would be difficult for the reader to consistently look at the top of the notebook to identify the variable set 20 cells earlier. For this reason, I opt to recreate the variables later in the notebook. While this is bad practice, it allows the reader to understand better what is happening at any given moment in the notebook.</p>
+</div>
+<div class="section" id="creating-a-blank-spacy-model">
+<h2><span class="section-number">4.5.3. </span>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">¶</a></h2>
+<p>The first thing we need to do is import all of the different components from spaCy and other libraries that we will need. I will explain these as we go forward.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">from</span> <span class="nn">spacy.util</span> <span class="kn">import</span> <span class="n">filter_spans</span>
+<span class="kn">from</span> <span class="nn">spacy.tokens</span> <span class="kn">import</span> <span class="n">Span</span>
+<span class="kn">from</span> <span class="nn">spacy.language</span> <span class="kn">import</span> <span class="n">Language</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
+INFO:tensorflow:Enabling v2 tensorshape
+INFO:tensorflow:Enabling resource variables
+INFO:tensorflow:Enabling tensor equality
+INFO:tensorflow:Enabling control flow v2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will be using Pandas in this notebook to run data checks in a CSV file originally produced by the <a href="https://holocaustgeographies.org/">Holocaust Geographies Collaborative</a>, headed by Anne Knowles, Tim Cole, Alberto Giordano, Paul Jaskot, and Anika Walke. We will be importing RegEx because a lot of our heuristics will rely on capturing multi-word tokens.</p>
+<p>Now that we have imported everything, let’s create a blank English pipeline in spaCy. As we work through this notebook, we will add pipes to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_trf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">911</span><span class="n">d29e313e9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_trf&quot;</span><span class="p">)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\__init__.py</span> in <span class="ni">load</span><span class="nt">(name, vocab, disable, exclude, config)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">RETURNS</span> <span class="p">(</span><span class="n">Language</span><span class="p">):</span> <span class="n">The</span> <span class="n">loaded</span> <span class="n">nlp</span> <span class="nb">object</span><span class="o">.</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">51</span><span class="sd">     return util.load_model(</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd">         name, vocab=vocab, disable=disable, exclude=exclude, config=config</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span><span class="sd">     )</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py</span> in <span class="ni">load_model</span><span class="nt">(name, vocab, disable, exclude, config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span><span class="sd">             return get_lang_class(name.replace(&quot;blank:&quot;, &quot;&quot;))()</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span><span class="sd">         if is_package(name):  # installed as package</span>
+<span class="ne">--&gt; </span><span class="mi">420</span><span class="sd">             return load_model_from_package(name, **kwargs)  # type: ignore[arg-type]</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span><span class="sd">         if Path(name).exists():  # path to model data directory</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span><span class="sd">             return load_model_from_path(Path(name), **kwargs)  # type: ignore[arg-type]</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py</span> in <span class="ni">load_model_from_package</span><span class="nt">(name, vocab, disable, exclude, config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">453</span>     <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="n">disable</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+<span class="g g-Whitespace">    </span><span class="mi">454</span> 
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\en_core_web_trf\__init__.py</span> in <span class="ni">load</span><span class="nt">(**overrides)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="o">**</span><span class="n">overrides</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="k">return</span> <span class="n">load_model_from_init_py</span><span class="p">(</span><span class="vm">__file__</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py</span> in <span class="ni">load_model_from_init_py</span><span class="nt">(init_file, vocab, disable, exclude, config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">613</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">model_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>         <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">Errors</span><span class="o">.</span><span class="n">E052</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">615</span>     <span class="k">return</span> <span class="n">load_model_from_path</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span>         <span class="n">data_path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span>         <span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py</span> in <span class="ni">load_model_from_path</span><span class="nt">(model_path, meta, vocab, disable, exclude, config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="n">overrides</span> <span class="o">=</span> <span class="n">dict_to_dot</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="n">config</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">488</span>     <span class="n">nlp</span> <span class="o">=</span> <span class="n">load_model_from_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="n">disable</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>     <span class="k">return</span> <span class="n">nlp</span><span class="o">.</span><span class="n">from_disk</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> 
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py</span> in <span class="ni">load_model_from_config</span><span class="nt">(config, vocab, disable, exclude, auto_fill, validate)</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span>     <span class="c1"># registry, including custom subclasses provided via entry points</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">lang_cls</span> <span class="o">=</span> <span class="n">get_lang_class</span><span class="p">(</span><span class="n">nlp_config</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">525</span>     <span class="n">nlp</span> <span class="o">=</span> <span class="n">lang_cls</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>         <span class="n">config</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\language.py</span> in <span class="ni">from_config</span><span class="nt">(cls, config, vocab, disable, exclude, meta, auto_fill, validate)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1747</span>         <span class="c1"># then we would load them twice at runtime: once when we make from config,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1748</span>         <span class="c1"># and then again when we load from disk.</span>
+<span class="ne">-&gt; </span><span class="mi">1749</span>         <span class="n">nlp</span> <span class="o">=</span> <span class="n">lang_cls</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">vocab</span><span class="p">,</span> <span class="n">create_tokenizer</span><span class="o">=</span><span class="n">create_tokenizer</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="n">meta</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1750</span>         <span class="k">if</span> <span class="n">after_creation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1751</span>             <span class="n">nlp</span> <span class="o">=</span> <span class="n">after_creation</span><span class="p">(</span><span class="n">nlp</span><span class="p">)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\language.py</span> in <span class="ni">__init__</span><span class="nt">(self, vocab, max_length, meta, create_tokenizer, batch_size, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>         <span class="c1"># points. The factory decorator applied to these functions takes care</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>         <span class="c1"># of the rest.</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>         <span class="n">util</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">_entry_point_factories</span><span class="o">.</span><span class="n">get_all</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> 
+<span class="g g-Whitespace">    </span><span class="mi">164</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_config</span> <span class="o">=</span> <span class="n">DEFAULT_CONFIG</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default_config</span><span class="p">)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\catalogue\__init__.py</span> in <span class="ni">get_all</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_points</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">109</span>             <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_entry_points</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="k">for</span> <span class="n">keys</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">REGISTRY</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">namespace</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\catalogue\__init__.py</span> in <span class="ni">get_entry_points</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>         <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="k">for</span> <span class="n">entry_point</span> <span class="ow">in</span> <span class="n">AVAILABLE_ENTRY_POINTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entry_point_namespace</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="ne">--&gt; </span><span class="mi">124</span>             <span class="n">result</span><span class="p">[</span><span class="n">entry_point</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry_point</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span> 
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\metadata.py</span> in <span class="ni">load</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="s2">         match = self.pattern.match(self.value)</span>
+<span class="ne">---&gt; </span><span class="mi">77</span><span class="s2">         module = import_module(match.group(&#39;module&#39;))</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2">         attrs = filter(None, (match.group(&#39;attr&#39;) or &#39;&#39;).split(&#39;.&#39;))</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         return functools.reduce(getattr, attrs, module)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\__init__.py</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="s2">                 break</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span><span class="s2">             level += 1</span>
+<span class="ne">--&gt; </span><span class="mi">127</span><span class="s2">     return _bootstrap._gcd_import(name[level:], package, level)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="s2"> </span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap_external.py</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
+
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\importlib\_bootstrap.py</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\__init__.py in &lt;module&gt;
+<span class="ne">----&gt; </span><span class="mi">1</span><span class="s2"> from . import architectures</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> from . import annotation_setters</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> from . import span_getters</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> from .layers import TransformerModel</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> from .pipeline_component import Transformer, install_extensions</span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\architectures.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> from spacy.tokens import Doc</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> </span>
+<span class="ne">----&gt; </span><span class="mi">6</span><span class="s2"> from .layers import TransformerModel, TransformerListener</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> from .layers import trfs2arrays, split_trf_batch</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> from .util import registry</span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\layers\__init__.py in &lt;module&gt;
+<span class="ne">----&gt; </span><span class="mi">1</span><span class="s2"> from .listener import TransformerListener</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> from .transformer_model import TransformerModel</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> from .split_trf import split_trf_batch</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> from .trfs2arrays import trfs2arrays</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> </span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\layers\listener.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> from thinc.api import Model</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> from spacy.tokens import Doc</span>
+<span class="ne">----&gt; </span><span class="mi">4</span><span class="s2"> from ..data_classes import TransformerData</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> </span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\data_classes.py in &lt;module&gt;
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> import srsly</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> </span>
+<span class="ne">---&gt; </span><span class="mi">12</span><span class="s2"> from .util import transpose_list</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2"> from .align import get_token_positions</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2"> </span>
+
+<span class="ne">c</span>:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy_transformers\util.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> from pathlib import Path</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> import random</span>
+<span class="ne">----&gt; </span><span class="mi">4</span><span class="s2"> from transformers import AutoModel, AutoTokenizer</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> from transformers.tokenization_utils import BatchEncoding</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> from transformers.tokenization_utils_fast import PreTrainedTokenizerFast</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;AutoModel&#39; from &#39;transformers&#39; (c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\transformers\__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-pipe-for-finding-streets">
+<h2><span class="section-number">4.5.4. </span>Add Pipe for Finding Streets<a class="headerlink" href="#add-pipe-for-finding-streets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z][a-z]*(strasse|straße|straat)\b|([A-Z][a-z]* (Street|St|Boulevard|Blvd|Avenue|Ave|Road|Rd|Lane|Ln|Place|Pl)(\.)*))&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_streets&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_streets</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">streets_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;STREET&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_streets&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-pipe-for-finding-ships">
+<h2><span class="section-number">4.5.5. </span>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">¶</a></h2>
+<p>The very first pipe I want to create is a pipe that can find ships, specifically transport ships. In order to achieve this objective, this pipe does several things at once. First, it leverages RegEx to find known patterns that are always ships, e.g. multi-word tokens that may or may not begin with “S.S.”, “SS”, or “The”, followed by a list of known ships. I have opted to not use a spaCy EntityRuler here primarily because I want to expand this pipe in the future and it allows me to find matches that are more varied. Were I to implement this in an EntityRuler pipe, I would need to have many patterns sit in its knowledge-base.</p>
+<p>But finding one of these patterns isn’t enough. I want to ensure that the thing referenced is in fact a ship. Many of these terms could easily be toponyms, or entities that share the same spelling but mean different things in different contexts, e.g. the Ile de France, could easily be a GPE that refers to the area around Paris. General Hosey could easily be a PERSON. To ensure toponym disambiguation, I set up several contextual clues, e.g. the list of nautical terms. If any of these words appear in area around the hit, then the heuristics assign that token the label of SHIP. If not, it ignores it and allows later pipes or the machine learning model to annotate it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ships_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((S.S. |SS |The )*(Lieutenant Colonel James Barker|General Hosey|Pan Crescent|Marilyn Marlene|Winnipeg|Ile de France|Scythia|Aquitania|Empress of Britain|General A. W. Greely|General J. H. McRae|Empress of Scotland|General T. H. Bliss|New Amsterdam|Niagara|Henry Gibbs|Serpa Pinto|Mauretania|Cabo de Hornos|Julius Caesar|Ben Hecht|Sțrumah|Strumah|General Harry Taylor|General W.P. Richardson|Marine Jumper|Simon Bolivar|Pan York|Mauretania|Orduña|Wilhelm Gustloff|Orduna|General W.H. Gordon|Rakuyō Maru|Rakuyo Maru|Mouzinho|Saturnia|St. Louis|Saint Louis|Nyassa|Simon Bolivar|Queen Elizabeth|Exodus 1947|Dunera|Cap Arcona|Ernie Pyle|Hayim Arlozorov|Patria))&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ships&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_ships</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">new_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="n">nautical</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;boat&quot;</span><span class="p">,</span> <span class="s2">&quot;sail&quot;</span><span class="p">,</span> <span class="s2">&quot;captain&quot;</span><span class="p">,</span> <span class="s2">&quot;sea&quot;</span><span class="p">,</span> <span class="s2">&quot;harbor&quot;</span><span class="p">,</span> <span class="s2">&quot;aboard&quot;</span><span class="p">,</span> <span class="s2">&quot;admiral&quot;</span><span class="p">,</span> <span class="s2">&quot;liner&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">ships_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="o">-</span><span class="mi">100</span><span class="p">:</span><span class="n">end</span><span class="o">+</span><span class="mi">100</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">term</span> <span class="ow">in</span> <span class="n">context</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">nautical</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">new_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;SHIP&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ships&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look and load in some data to see how this pipe functions. Remember, our goal is not to capture all ships, just ensure the ones we captured are true positives.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import glob</span>
+<span class="c1"># hits = []</span>
+<span class="c1"># files = glob.glob(&quot;data/new_ocr/*trs_en.txt&quot;)</span>
+<span class="c1"># all_data = {}</span>
+<span class="c1"># for file in files[:30]:</span>
+<span class="c1">#     all_hits = []</span>
+<span class="c1">#     with open (file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+<span class="c1">#         print (file)</span>
+<span class="c1">#         text = f.read()</span>
+<span class="c1">#         doc = nlp(text)</span>
+<span class="c1">#         for ent in doc.ents:</span>
+<span class="c1">#             if ent.label_ == &quot;SHIP&quot;:</span>
+<span class="c1">#                 print (ent.text, ent.label_)</span>
+<span class="c1">#                 print (text[ent.start_char-100:ent.end_char+100])</span>
+<span class="c1">#                 print ()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Success! File, data/new_ocr\RG-50.030.0006_trs_en.txt, referenced two ships, the Cap Arcona and the St. Louis. Now that we know we can capture ships in this manner, let’s try out the same principle on ghettos.</p>
+</div>
+<div class="section" id="creating-a-pipe-for-finding-ghettos">
+<h2><span class="section-number">4.5.6. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">¶</a></h2>
+<p>As of the time of pushing this notebook, August 13, 2021, I have yet to receive a comprehensive dataset of ghettos. In the near future, this pipe will be vastly improved, similar to the concentration camp pipe below. For now, this pipe functions precisely the same way our earlier ship pipe function. Here, we’re looking for the use of the word ghetto around one of these known cities that had ghettos. This is absolutely necessary because any of these cities could be a GPE in general. The use of the word ghetto within a small contextual window is a good heuristic for assigning this city the label of GHETTO over GPE.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ghetto_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Anykščiai|Anyksciai|Arad|Ashmiany|Babruĭsk|Babruisk|Balassagyarmat|Baranavichy|Barysaŭ|Barysau|Będzin|Bedzin|Bełżyce|Belzyce|Berdychiv|Berehove|Berestechko|Berezdiv|Berezhany|Berezne|Bershad&#39;|Biała Podlaska|Biala Podlaska|Birkenau|Biała Rawska|Białystok|Bialystok|Biaroza|Bibrka|Bielsko-Biała|Biržai|Bitola|Blazhiv|Bobowa|Bochnia|Bolekhiv|Borshchuv|Boryslav|Boskovice|Brańsk|Bratslav|Brody|Brzesko|Buczacz|Budapest|Bus&#39;k|Bychawa|Chashniki|Chrzanów|Chrzanow|Ciechanów|Ciechanow|Cieszanów|Cristuru Secuiesc|Czernowitz|Częstochowa|Czortków|Dąbrowa Górnicza|Dąbrowa Tarnowska|Damashėvichy|Daugavpils|Dokshytsy|Dombóvár|Dombrowa|Drohobycz|Drzewica|Dubrovytsia|Dzialoszyce|Dziarechyn|Dziatlava|Glebokie|Gol&#39;shany|Góra Kalwaria|Gorodnaia|Gostynin|Gyöngyös|Hajdúszoboszló|Halushchyntsi|Halych|Hantsavichy|Haradnaia|Hatvan|Hlusk|Hlyniany|Homel&#39;|Horodenka|Horokhiv|Hradzianka|Hrodna|Hvizdets&#39;|Iaktoriv|Izbica Lubelska|Józefów|Kalisz|Kałuszyn|Kam&#39;iane Pole|Kamin&#39;-Kashyrs&#39;kyĭ|Katowice|Kecskemét|Kelme|Kharkiv|Khmel&#39;nyts&#39;ka oblast&#39;|Khmel&#39;nyts&#39;kyĭ|Khust|Kielce|Kisvárda|Kletsk|Kobryn|Kolbuszowa|Kolozsvár|Komarów-Osada|Kopychyntsi|Korets&#39;|Košice|Kőszeg|Kovel&#39;|Kozienice|Kraków|Kraśnik|Kretinga|Krośniewice|Krymne|Kryzhopil&#39;|Kul&#39;chyny|Kunhegyes|Kutno|Kysylyn|Ladyzhyn|Lakhva|Lask|Lęczyca|Lesko|Lida|Liepāja|Lipinki|Lithakia|Litin|Litzmannstadt|Liubavichi|Łomża|Lubaczów|Lubartów|Lublin|Łuck|Lwów|Lyubcha|Mahiliou|Maków Mazowiecki|Marcinkonys|Matejovce nad Hornádom|Mátészalka|Miechów|Międzyrzec Podlaski|Minsk|Mir|Miskolc|Modliborzyce|Mogilev|Monastyrok|Monor|Munkács|Nadvirna|Nagyvárad|Navahrudak|Novomyrhorod|Nowy Sącz|Nyíregyháza|Odessa|Oleyëvo-Korolëvka|Opatów|Opoczno|Opole|Opole Lubelskie|Orla|Orsha|Ostroh|Ostrowiec Świętokrzyski|Otwock|Ozarintsy|Ozorków|Pabianice|Papul|Parichi|Pechera|Pinsk|Piotrków Trybunalski|Płaszów|Płock|Plońsk|Praszka|Prienai|Prużana|Pruzhany|Przemyśl|Pułtusk|Radom|Radomyśl Wielki|Radun&#39;|Rava-Rus&#39;ka|Rawa Mazowiecka|Reghin|Ribnița|Riga|Rohatyn|Romanove Selo|Rozhyshche|Rudky|Rudnik nad Sanem|Rzeszów|Saharna|Šahy|Salgótarján|Sarny|Sátoraljaújhely|Schwientochlowitz|Senkevychivka|Sernyky|Sharhorod|Shchyrets&#39;|Shepetivka|Shpola|Shumilino|Šiauliai|Siedlce|Siedliszcze|Sieradz|Sighetu Marmației|Skalat|Slobodka|Slonim|Slutsk|Smolensk|Sokołów Podlaski|Sokyrnytsia|Solotvyno|Soroca|Sosnowiec|Stalovichy|Stanislav|Stara Mohylʹnytsia|Starachowice|Starokostiantyniv|Stary Sącz|Stepan&#39;|Stoczek Lukowski|Stolbëisy|Stolin|Sucha|Suchowola|Surazh|Švenčionys|Szarvas|Szczebrzeszyn|Szeged|Szolnok|Tarnogród|Tarnów|Telšiai|Terebovlia|Ternopol|Theresienstadt|Thessalonike|Timkovichi|Tlumach|Tolna|Tomaszów Mazowiecki|Torchyn|Trakai|Trebíč|Trnava|Tul&#39;chyn|Tuliszków|Tyvriv|Uzda|Uzhhorod|Vác|Valozhyn|Velizh|Velykyĭ Bereznyĭ|Vilna|Vinnytsia|Vlonia|Volodymyr-Volyns&#39;kyi|Vysokovskiy Rayon|Warka|Warsaw|Wisznice|Wrocław|Žagarė|Zamość|Zarichne|Zboriv|Zduńska Wola|Zhmerinka|Zhytomyr|Žiežmariai|Anyksciai|Arad|Ashmiany|Babruisk|Balassagyarmat|Baranavichy|Barysau|Bedzin|Bełzyce|Berdychiv|Berehove|Berestechko|Berezdiv|Berezhany|Berezne|Bershad&#39;|Biała Podlaska|Biała Rawska|Białystok|Biaroza|Bibrka|Bielsko-Biała|Birzai|Bitola|Blazhiv|Bobowa|Bochnia|Bolekhiv|Borshchuv|Boryslav|Boskovice|Bransk|Bratslav|Brody|Brzesko|Buczacz|Budapest|Bus&#39;k|Bychawa|Chashniki|Chrzanow|Ciechanow|Cieszanow|Cristuru Secuiesc|Czernowitz|Czestochowa|Czortkow|Dabrowa Gornicza|Dabrowa Tarnowska|Damashevichy|Daugavpils|Dokshytsy|Dombovar|Dombrowa|Drohobycz|Drzewica|Dubrovytsia|Dzialoszyce|Dziarechyn|Dziatlava|Glebokie|Gol&#39;shany|Gora Kalwaria|Gorodnaia|Gostynin|Gyongyos|Hajduszoboszlo|Halushchyntsi|Halych|Hantsavichy|Haradnaia|Hatvan|Hlusk|Hlyniany|Homel&#39;|Horodenka|Horokhiv|Hradzianka|Hrodna|Hvizdets&#39;|Iaktoriv|Izbica Lubelska|Jozefow|Kalisz|Kałuszyn|Kam&#39;iane Pole|Kamin&#39;-Kashyrs&#39;kyi|Katowice|Kecskemet|Kelme|Kharkiv|Khmel&#39;nyts&#39;ka oblast&#39;|Khmel&#39;nyts&#39;kyi|Khust|Kielce|Kisvarda|Kletsk|Kobryn|Kolbuszowa|Kolozsvar|Komarow-Osada|Kopychyntsi|Korets&#39;|Kosice|Koszeg|Kovel&#39;|Kozienice|Krakow|Krasnik|Kretinga|Krosniewice|Krymne|Kryzhopil&#39;|Kul&#39;chyny|Kunhegyes|Kutno|Kysylyn|Ladyzhyn|Lakhva|Lask|Leczyca|Lesko|Lida|Liepaja|Lipinki|Lithakia|Litin|Litzmannstadt|Liubavichi|Łomza|Lubaczow|Lubartow|Lublin|Łuck|Lwow|Lyubcha|Mahiliou|Makow Mazowiecki|Marcinkonys|Matejovce nad Hornadom|Mateszalka|Miechow|Miedzyrzec Podlaski|Minsk|Mir|Miskolc|Modliborzyce|Mogilev|Monastyrok|Monor|Munkacs|Nadvirna|Nagyvarad|Navahrudak|Novomyrhorod|Nowy Sacz|Nyiregyhaza|Odessa|Oleyevo-Korolevka|Opatow|Opoczno|Opole|Opole Lubelskie|Orla|Orsha|Ostroh|Ostrowiec Swietokrzyski|Otwock|Ozarintsy|Ozorkow|Pabianice|Papul|Parichi|Pechera|Pinsk|Piotrkow Trybunalski|Płaszow|Płock|Plonsk|Praszka|Prienai|Pruzana|Pruzhany|Przemysl|Pułtusk|Radom|Radomysl Wielki|Radun&#39;|Rava-Rus&#39;ka|Rawa Mazowiecka|Reghin|Ribnita|Riga|Rohatyn|Romanove Selo|Rozhyshche|Rudky|Rudnik nad Sanem|Rzeszow|Saharna|Sahy|Salgotarjan|Sarny|Satoraljaujhely|Senkevychivka|Sernyky|Sharhorod|Shchyrets&#39;|Shepetivka|Shpola|Shumilino|Siauliai|Siedlce|Siedliszcze|Sieradz|Sighetu Marmatiei|Skalat|Slobodka|Slonim|Slutsk|Smolensk|Sokołow Podlaski|Sokyrnytsia|Solotvyno|Soroca|Sosnowiec|Stalovichy|Stanislav|Stara Mohylʹnytsia|Starachowice|Starokostiantyniv|Stary Sacz|Stepan&#39;|Stoczek Lukowski|Stolbeisy|Stolin|Sucha|Suchowola|Surazh|Svencionys|Szarvas|Szczebrzeszyn|Szeged|Szolnok|Tarnogrod|Tarnow|Telsiai|Terebovlia|Ternopol|Theresienstadt|Thessalonike|Timkovichi|Tlumach|Tolna|Tomaszow Mazowiecki|Torchyn|Trakai|Trebic|Trnava|Tul&#39;chyn|Tuliszkow|Tyvriv|Uzda|Uzhhorod|Vac|Valozhyn|Velizh|Velykyi Bereznyi|Vilna|Vinnytsia|Vlonia|Volodymyr-Volyns&#39;kyi|Vysokovskiy Rayon|Warka|Warsaw|Wisznice|Wrocław|Zagare|Zamosc|Zarichne|Zboriv|Zdunska Wola|Zhmerinka|Zhytomyr|Ziezmariai)&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_ghettos</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">ghetto_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">gpe_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">ghetto_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="o">-</span><span class="mi">25</span><span class="p">:</span><span class="n">end</span><span class="o">+</span><span class="mi">25</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;ghetto&quot;</span> <span class="ow">in</span> <span class="n">context</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ghetto_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+                
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">gpe_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">ghetto_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GHETTO&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">gpe_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GPE&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_ghettos_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[A-Z]\w+((-| )*[A-Z]\w+)* (g|G)hetto&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ghettos2&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_ghettos2</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;That&quot;</span><span class="p">,</span> <span class="s2">&quot;The&quot;</span><span class="p">]</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">second_ghettos_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fps</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;The &quot;</span> <span class="ow">in</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+                <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GHETTO&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ghettos2&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import glob</span>
+<span class="c1"># hits = []</span>
+<span class="c1"># files = glob.glob(&quot;data/new_ocr/*trs_en.txt&quot;)</span>
+<span class="c1"># all_data = {}</span>
+<span class="c1"># for file in files[:5]:</span>
+<span class="c1">#     all_hits = []</span>
+<span class="c1">#     with open (file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+<span class="c1">#         print (file)</span>
+<span class="c1">#         text = f.read()</span>
+<span class="c1">#         doc = nlp(text)</span>
+<span class="c1">#         for ent in doc.ents:</span>
+<span class="c1">#             if ent.label_ == &quot;GHETTO&quot;:</span>
+<span class="c1">#                 print (ent.text, ent.label_)</span>
+<span class="c1">#                 print (text[ent.start_char-100:ent.end_char+100])</span>
+<span class="c1">#                 print ()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, the pipe is working. We’ve grabbed three instances of Warsaw in data/new_ocr\RG-50.030.0001_trs_en.txt.</p>
+</div>
+<div class="section" id="create-pipe-for-identifying-a-person">
+<h2><span class="section-number">4.5.7. </span>Create Pipe for Identifying a Person<a class="headerlink" href="#create-pipe-for-identifying-a-person" title="Permalink to this headline">¶</a></h2>
+<p>For PERSON, we will be leveraging spaCy’s small model, but we can add some heuristics that will greatly improve the results. The heuristics here is any known salutation capitalized followed by a series of proper nouns. This RegEx “(?:[A-Z]\w+[ -]?)+)” allows us to grab all continuous capital words and then break when it encounters a non capital letter followed by a space. In English, these will always be PERSON entities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((((Mr|Mrs|Miss|Dr|Col|Adm|Lt|Cap|Cpt|Fr|Cl|Cln|Sgt)(\.)*)|(Frau|Herr|President|Rabbi|Queen|Prince|Princess|Pope|Father|Bishop|King|Cardinal|General|Liutenant|Colonel|Lieutenant Colonel|Private|Admiral|Captain|Sergeant|Sergeant First Class|Staff Sergeant|Sergeant Major|Corp Sergeant Major|Field Sergeant|Technical Sergeant|Corporal|Lance Corporal|Ensign|2nd Lieutenant|1st Lieutenant|Major|Hauptmann|Staff Captain|Oberst|Oberstlieutenant|Maj\. Geb\.|Capt\.|Sub Com\.)) (?:[A-Z]\w+[ -]?)+)(the [A-Z]\w*|I\w*|X\w*|v\w*)*&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_people&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_people</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">match_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">people_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">match_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+                
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">match_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">match_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;PERSON&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_people&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-pipe-for-identifying-spouses">
+<h2><span class="section-number">4.5.8. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">¶</a></h2>
+<p>Often times in historical documents the identity of people are referenced collectively. In some instances, such as those of spouses, this results in the name of the woman being attached to the name of her husband. The purpose of this SPOUSAL entity is to identify such constructs so that users can manipulate the output and reconstruct each individual singularly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spousal_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((Mr|Mrs|Miss|Dr)(\.)* and (Mr|Mrs|Miss|Dr)(\.)* (?:[A-Z]\w+[ -]?)+)&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_spousal&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_spousal</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">new_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">spousal_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">new_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;SPOUSAL&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_spousal&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-concentration-camp-pipe">
+<h2><span class="section-number">4.5.9. </span>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">¶</a></h2>
+<p>The correct identification of camp is one of the most important pipes in this pipeline. There are two concentration camp pipes. The first pipe looks at all known camps and subcamps and then looks for surrounding words to identify the context. The second pipe is less strict. It looks for all known main concentration camps without context. The reason for this is because sometimes the subcamps have the same names as frequently cited cities, e.g. Berlin or Neustadt. This is particularly true of the subcamps. The main camps, however, are frequently referenced to the camp itself. Both pipes are activated by default, but a user can deactivate one or other.</p>
+<p>Throughout this pipe, you will see many functions that contain the name “getter”. These are custom functions that allow us to add special attributes to our entity spans. If you scroll down to the bottom of this section, you will see that we can use the HGC dataset for conentration camps to retrieve other salient information, such as the subcamp’s main camp, its longitude and latitude, opening date, closing date, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subcamp_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+    <span class="n">subcamps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Main</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_c</span><span class="p">:</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;\(&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;\)&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+<span class="c1">#                 if c == &quot;Buna-Monowitz (Auschwitz III)&quot;:</span>
+<span class="c1">#                     print (c)</span>
+                <span class="k">if</span> <span class="n">hit</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+<span class="c1">#                     print (hit, c)</span>
+                    <span class="k">if</span> <span class="n">subcamps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">potential</span><span class="p">:</span>
+                        <span class="n">potential</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subcamps</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="ne">AttributeError</span>
+        <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_open_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date_Open</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_c</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">hit</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">potential</span><span class="p">:</span>
+                        <span class="n">potential</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="ne">AttributeError</span>
+        <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_closed_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date_Close</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_c</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">hit</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">potential</span><span class="p">:</span>
+                        <span class="n">potential</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="ne">AttributeError</span>
+        <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">latlong_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">LAT</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">longs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">LONG</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_c</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">hit</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">potential</span><span class="p">:</span>
+                        <span class="n">potential</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">longs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="ne">AttributeError</span>
+        <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hgc_id_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">HGC_ID</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">all_c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_c</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">hit</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">potential</span><span class="p">:</span>
+                        <span class="n">potential</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="ne">AttributeError</span>
+        <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">camp_type_getter</span><span class="p">(</span><span class="n">hit</span><span class="p">):</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">hit</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/hgc_data.csv&quot;</span><span class="p">)</span>
+<span class="n">camps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SubcampMattingly</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">subcamps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Main</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">final_camps</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">camps</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">&quot;nan&quot;</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">&quot;FALSE&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">subcamps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;nan&quot;</span> <span class="ow">and</span> <span class="n">subcamps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;FALSE&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;^&quot;</span><span class="p">):</span>
+                        <span class="n">final_camps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;\(&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;\)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="ne">AttributeError</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    
+<span class="n">final_camps</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">final_list</span> <span class="o">=</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">final_camps</span><span class="p">)</span>
+<span class="n">strict_camps_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="n">final_list</span><span class="o">+</span><span class="s2">&quot;)&quot;</span>
+<span class="c1"># print (strict_camps_pattern)</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_camps_strict&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_camps_strict</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="n">context_terms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;camp&quot;</span><span class="p">,</span> <span class="s2">&quot;concentration&quot;</span><span class="p">,</span> <span class="s2">&quot;labor&quot;</span><span class="p">,</span> <span class="s2">&quot;forced&quot;</span><span class="p">,</span> <span class="s2">&quot;gas&quot;</span><span class="p">,</span> <span class="s2">&quot;chamber&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">strict_camps_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+<span class="c1">#         print (match)</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="o">-</span><span class="mi">100</span><span class="p">:</span><span class="n">end</span><span class="o">+</span><span class="mi">100</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">term</span> <span class="ow">in</span> <span class="n">context</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">context_terms</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c1">#                 print (span)</span>
+                <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+<span class="c1">#         print (ent)</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+<span class="c1">#         per_ent = Span(doc, start, end, label=&quot;CAMP&quot;)</span>
+<span class="c1">#         per_ent.set_extension(&quot;subcamp&quot;, getter=subcamp_getter, force=True)</span>
+<span class="c1">#         per_ent.set_extension(&quot;date_open&quot;, getter=date_open_getter, force=True)</span>
+<span class="c1">#         per_ent.set_extension(&quot;date_closed&quot;, getter=date_closed_getter, force=True)</span>
+<span class="c1">#         per_ent.set_extension(&quot;latlong&quot;, getter=latlong_getter, force=True)</span>
+<span class="c1">#         per_ent.set_extension(&quot;hgc_id&quot;, getter=hgc_id_getter, force=True)</span>
+        
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">camps_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Alderney|Amersfoort|Auschwitz|Banjica|Belzec|Bergen-Belsen|Bernburg|Bogdanovka|Bolzano|Bor|Breendonk|Breitenau|Buchenwald|Chelmno|Dachau|Drancy|Falstad|Flossenburg|Fort VII|Fossoli|Grini|Gross-Rosen|Herzogenbusch|Hinzert|Janowska|Jasenovac|Kaiserwald|Kaunas|Kemna|Klooga|Le Vernet|Majdanek|Malchow|Maly Trostenets|Mechelen|Mittelbau-Dora|Natzweiler-Struthof|Neuengamme|Niederhagen|Oberer Kuhberg|Oranienburg|Osthofen|Plaszow|Ravensbruck|Risiera di San Sabba|Sachsenhausen|Sajmište|Salaspils|Sobibor|Soldau|Stutthof|Theresienstadt|Trawniki|Treblinka|Vaivara)(-[A-Z]\S+)*&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_camps&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_camps</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">camps_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CAMP&quot;</span><span class="p">)</span>
+        <span class="n">per_ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s2">&quot;subcamp&quot;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">subcamp_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">per_ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s2">&quot;date_open&quot;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">date_open_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">per_ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s2">&quot;date_closed&quot;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">date_closed_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">per_ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s2">&quot;latlong&quot;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">latlong_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">per_ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s2">&quot;hgc_id&quot;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">hgc_id_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_camps_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[A-Z]\w+((-| )*[A-Z]\w+)* (c|C)oncentration (c|C)amp&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_camps2&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_camps2</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">second_camps_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CAMP&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_camps_strict&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_camps&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_camps2&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import glob</span>
+<span class="c1"># hits = []</span>
+<span class="c1"># files = glob.glob(&quot;data/new_ocr/*trs_en.txt&quot;)</span>
+<span class="c1"># all_data = {}</span>
+<span class="c1"># for file in files[1:2]:</span>
+<span class="c1">#     all_hits = []</span>
+<span class="c1">#     with open (file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+<span class="c1">#         print (file)</span>
+<span class="c1">#         text = f.read()</span>
+<span class="c1">#         doc = nlp(text)</span>
+<span class="c1">#         for ent in doc.ents:</span>
+<span class="c1">#             if ent.label_ == &quot;CAMP&quot;:</span>
+<span class="c1">#                 print ((ent.text, ent.label_, ent._.subcamp, ent._.date_open, ent._.date_closed, ent._.latlong, ent._.hgc_id))</span>
+<span class="c1">#                 print (text[ent.start_char-100:ent.end_char+100])</span>
+<span class="c1">#                 print ()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-revolutionary-groups-pipe">
+<h2><span class="section-number">4.5.10. </span>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this pipe is to find known Revolutionary Groups. Again, this pipe is not an EntityRuler because I intend to do a few extra things with it in the future beyond the limitations of the EntityRuler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groups_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Ethnikon Apeleutherotikon Metopon|Weisse Rose|Rote Kapelle|Affiche rouge|Edelweisspiraten|White Rose|Bielski|Nekamah|Voroshilov|OEuvre de secours aux enfants|Union des juifs pour la résistance et l&#39;entraide|Zorin Unit|Komsomolski|Fareynikte|Korzh|Zhukov|Budenny|Parkhomenko|Sixième)((-)*[A-Z]\S+)*( (Brigade|brothers|group))*&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_groups&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_groups</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">groups_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GROUP&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_groups&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-places-pipe">
+<h2><span class="section-number">4.5.11. </span>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">¶</a></h2>
+<p>The ML model will capture place fairly well. Nevertheless, if you can write a simple rule, write a simple rule.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(?:[A-Z]\w+[ -]?)+, (Germany|Poland|England|Russia|Italy|USA|U.S.A.|United States|United States of America|America|United Kingdom|France|Spain|Ukraine|Romania|Netherlands|Belgium|Greece|Portugal|Sweden|Hungary|Austria|Belarus|Serbia|Switzerland|Bulgaria|Denmark|Finland|Slovakia|Norway|Ireland|Croatia|Moldova|Bosnia|Albania|Estonia|Malta|Iceland|Andorra|Luxembourg|Montenegro|Macedonia|San Marino|Lichtenstein|Monaco)&quot;</span>
+<span class="n">country_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Germany|Poland|England|Russia|Italy|USA|U.S.A.|United States|United States of America|America|United Kingdom|France|Spain|Ukraine|Romania|Netherlands|Belgium|Greece|Portugal|Sweden|Hungary|Austria|Belarus|Serbia|Switzerland|Bulgaria|Denmark|Finland|Slovakia|Norway|Ireland|Croatia|Moldova|Bosnia|Albania|Estonia|Malta|Iceland|Andorra|Luxembourg|Montenegro|Macedonia|San Marino|Lichtenstein|Monaco)&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_places&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_places</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">new_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">city_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">new_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GPE&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">per_ent</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">city_pattern</span><span class="p">:</span>
+            <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+            
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">country_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">new_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GPE&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_places&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-geography-pipe">
+<h2><span class="section-number">4.5.12. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">general_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z]\w+) (River|Mountain|Mountains|Forest|Forests|Sea|Ocean)*&quot;</span>
+<span class="n">river_pattern</span> <span class="o">=</span> <span class="s2">&quot;(the|The) (Rhone|Volga|Danube|Ural|Dnieper|Don|Pechora|Kama|Oka|Belaya|Dniester|Rhine|Desna|Elbe|Donets|Vistula|Tagus|Daugava|Loire|Tisza|Ebro|Prut|Neman|Sava|Meuse|Kuban River|Douro|Mezen|Oder|Guadiana|Rhône|Kuma|Warta|Seine|Mureș|Northern Dvina|Vychegda|Drava|Po|Guadalquivir|Bolshoy Uzen|Siret|Maly Uzen|Terek|Olt|Vashka|Glomma|Garonne|Usa|Kemijoki|Great Morava|Moselle|Main 525|Torne|Dalälven|Inn|Maritsa|Marne|Neris|Júcar|Dordogne|Saône|Ume|Mur|Ångerman|Klarälven|Lule|Gauja|Weser|Kalix|Vindel River|Ljusnan|Indalsälven|Vltava|Ponoy|Ialomița|Onega|Somes|Struma|Adige|Skellefte|Tiber|Vah|Pite|Faxälven|Vardar|Shannon|Charente|Iskar|Tundzha|Ems|Tana|Scheldt|Timiș|Genil|Severn|Morava|Luga|Argeș|Ljungan|Minho|Venta|Thames|Drina|Jiu|Drin|Segura|Torne|Osam|Arda|Yantra|Kamchiya|Mesta)&quot;</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_geography&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_geography</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">river_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">general_ents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">river_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">river_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">general_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">general_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>       
+            
+<span class="c1">#     all_ents = river_ents+general_ents       </span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">river_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;RIVER&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+        
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">general_ents</span><span class="p">:</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+        <span class="k">if</span> <span class="s2">&quot;River&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;RIVER&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;Mountain&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MOUNTAIN&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;Sea&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;SEA-OCEAN&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;Forest&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;FOREST&quot;</span><span class="p">)</span>
+        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_geography&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-streets">
+<h2><span class="section-number">4.5.13. </span>Adding Streets<a class="headerlink" href="#adding-streets" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="seeing-the-pipes-at-work">
+<h2><span class="section-number">4.5.14. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have assembled all these pipes into a pipeline, let’s see how they perform on a real testimony.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import glob</span>
+<span class="c1"># from spacy import displacy</span>
+<span class="c1"># hits = []</span>
+<span class="c1"># files = glob.glob(&quot;data/new_ocr/*trs_en.txt&quot;)</span>
+<span class="c1"># all_data = {}</span>
+<span class="c1"># for file in files[5:6]:</span>
+<span class="c1">#     all_hits = []</span>
+<span class="c1">#     with open (file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
+<span class="c1">#         print (file)</span>
+<span class="c1">#         text = f.read().replace(&quot;(ph)&quot;, &quot;&quot;)</span>
+<span class="c1">#         while &quot;  &quot; in text:</span>
+<span class="c1">#             text =  text.replace(&quot;  &quot;, &quot; &quot;)</span>
+<span class="c1">#         doc = nlp(text)</span>
+<span class="c1">#         colors = {&quot;CAMP&quot;: &quot;#FF5733&quot;, &quot;GHETTO&quot;: &quot;#1F9D12&quot;, &quot;SHIP&quot;: &quot;#557DB4&quot;, &quot;SPOUSAL&quot;: &quot;#55B489&quot;, &quot;GPE&quot;:&quot;#17B4C2&quot;, &quot;RIVER&quot;: &quot;#9017C2&quot;, &quot;MOUNTAIN&quot;: &quot;#878787&quot;, &quot;SEA-OCEAN&quot;: &quot;#0A6DF5&quot;, &quot;FOREST&quot;: &quot;#1F541D&quot;}</span>
+<span class="c1">#         options = {&quot;ents&quot;: [&quot;CAMP&quot;, &quot;GHETTO&quot;, &quot;SHIP&quot;, &quot;SPOUSAL&quot;, &quot;GPE&quot;, &quot;RIVER&quot;, &quot;MOUNTAIN&quot;, &quot;SEA-OCEAN&quot;, &quot;FOREST&quot;], &quot;colors&quot;:colors}</span>
+<span class="c1">#         displacy.render(doc, style=&quot;ent&quot;, jupyter=True)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;This is Berlinstrasse, which is also known as Berlin Street or Berlin St. That Ghetto and The Ghetto. The Warsaw Ghetto&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This result is not perfect, but again, that’s not the point here. Here we are less interested in catching all entities as much as not catching any false positives. At a quick glance, we have achieved that. Now that were are tentatively happy, wan save our pipeline to disk, but first, let’s add some metadata.</p>
+</div>
+<div class="section" id="saving-a-spacy-model">
+<h2><span class="section-number">4.5.15. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ushmm&quot;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0.1.2&#39;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;W.J.B. Mattingly&quot;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;author_email&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;wjbmattingly@gmail.com&quot;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;This is a pipeline of heuristics to help identify essential entities for research into the Holocaust.&quot;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;www.wjbmattingly.com&quot;</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">to_disk</span><span class="p">(</span><span class="s2">&quot;models/rules_pipeline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we are particularly happy with our results, we can even save the file to disk. It is important to note that we need to copy and paste all of our code into a python script that we can inject into the model. I’ll cover this in greater detail in the next notebook as we start working on an ML model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python -m spacy package models/rules_pipeline models --code data/components.py --force
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_spacy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04_04_introduction_to_custom_pipes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.4. </span><center>Creating Location Pipe for Holocaust NER</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04_topic_modeling/04_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William J.B. Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
