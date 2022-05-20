@@ -75,3 +75,9 @@
 # If you want to engage in statistical analysis, R might be another suitable language. But all tasks done in R can also be done in Python. Further, Python is a general purpose language which means there are some things we can do in Python that you cannot do in R.
 # 
 # If you are sold on Python, then continue reading this textbook as we learn how to install it and use it as humanists.
+
+# In[ ]:
+
+
+
+
