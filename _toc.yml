@@ -1,20 +1,20 @@
 format: jb-book
 root: intro
 parts:
-- caption: The Basics of Python
+- caption: The Basics of Python (Work in Progress)
   numbered: true
   chapters:
   - file: 01_intro/01_01_intro
     title: Introduction to Python
     sections:
     - file: 01_intro/01_01_introduction_to_python
-      title: What is Python? (Work in Progress)
+      title: What is Python?
       
     - file: 01_intro/01_02_installing_python
-      title: Installing Python (Work in Progress)
+      title: Installing Python
       
   - file: 01_intro/01_01-01_intro
-    title: Working with Data
+    title: Working with Data (Work in Progress)
     sections:
     - file: 01_intro/02_01_data
       title: Data Types (Work in Progress)
@@ -51,7 +51,7 @@ parts:
       title: Working with Multiple Files (Work in Progress)
 
 
-- caption: Data Analysis with Pandas
+- caption: Data Analysis with Pandas (Work in Progress)
   numbered: true
   chapters:
   
@@ -94,7 +94,7 @@ parts:
     - file: 02_pandas/05_01_time_series_data
       title: Introduction to Time Series Data
     
-- caption: Natural Language Processing with spaCy
+- caption: Natural Language Processing with spaCy (Work in Progress)
   numbered: true
   chapters:
   - file: 03_spacy/03_01_intro
@@ -125,8 +125,8 @@ parts:
     - file: 03_spacy/02_06_complex_regex
       title: How to use RegEx in spaCy (Advanced)
     
-  - file: 03_spacy/03_03_intro
-    title: Machine Learning Named Entity Recognition with spaCy 3x
+  - file: 03_spacy/03_03_intro 
+    title: Machine Learning Named Entity Recognition with spaCy 3x (Work in Progress)
     sections:
     - file: 03_spacy/03_01_intro_to_ml
       title: Introduction to Machine Learning
@@ -144,7 +144,7 @@ parts:
       title: Loading Custom Word Vectors into a spaCy Model
       
   - file: 03_spacy/03_04_intro
-    title: Solving a Domain-Specific Problem - A Case Study with Holocaust NER
+    title: Solving a Domain-Specific Problem - A Case Study with Holocaust NER 
     sections:
     - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
       title: Cultivating Good Datasets for Entities
@@ -158,7 +158,7 @@ parts:
       title: Creating the Rules-Based Pipeline
 
 
-- caption: Topic Modeling and Text Classification
+- caption: Topic Modeling and Text Classification (Work in Progress)
   chapters:
   - file: 04_topic_modeling/04_01_intro
     title: Introduction to Topic Modeling
@@ -187,7 +187,7 @@ parts:
   - file: 04_topic_modeling/03_04_top2vec
     title: Top2Vec Topic Modeling
 
-- caption: Optical Character Recognition with OpenCV and PyTesseract
+- caption: Optical Character Recognition with OpenCV and PyTesseract (Work in Progress)
   chapters:
 #   - file: 05_ocr/05_01_intro
 #     title: Introduction to OCR

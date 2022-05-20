@@ -3,12 +3,6 @@
 
 # # <center>Introduction to Data Structures</center>
 
-# <center>Dr. W.J.B. Mattingly</center>
-# 
-# <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-# 
-# <center>January 2022</center>
-
 # ## Data Structures
 
 # In the last chapter, we met strings, integers, floats, and booleans. Each of these were types of data. Strings, for example, allowed us to work with text and numbers allowed us to work with integers and floats. In this chapter, we will begin working with data structures. <b>Data structures</b> are ways of storing multiple kinds of data in a systematic way. In Python, these are created as objects that can be stored in memory and called later in a script. They are divided into two categories: mutable and immutable. We encountered these terms in the last chapter, but we will explore what they mean in more depth below.
