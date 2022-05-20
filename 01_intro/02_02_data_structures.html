@@ -1,0 +1,1877 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.3. Introduction to Data Structures &#8212; Introduction to Python for Humanists</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Introduction to Python" href="01_02_intro.html" />
+    <link rel="prev" title="2.2. Introduction to Data" href="02_01_data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   <p align="center">
+    INTRODUCTION TO PYTHON FOR DIGITAL HUMANITIES
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Basics of Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_introduction_to_python.html">
+     1.4. What is Python? (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_installing_python.html">
+     1.5. Installing Python (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_01-01_intro.html">
+   2. Working with Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_01_data.html">
+     2.2. Data Types (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Data Structures (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_02_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_loops.html">
+     3.1. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_conditionals.html">
+     3.2. Introduction to Conditionals (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_03_intro.html">
+   4. Formal Coding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_functitons.html">
+     4.1. Introduction to Functions (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_classes.html">
+     4.2. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_libraries.html">
+     4.3. Introduction to Libraries (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_04_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_01_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_json.html">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_03_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis with Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_01_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/01_02_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_01_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_02_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/03_03_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_01_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/04_02_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/05_01_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_01_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_02_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_03_word_vectors.html">
+     1.3. Word Vectors and spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/01_04_pipelines.html">
+     1.4. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_02_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_01_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_02_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_04_custom_component.html">
+     2.3. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_05_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/02_06_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/01_intro/02_02_data_structures.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/02_02_data_structures.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/02_02_data_structures.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/02_02_data_structures.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-structures">
+   2.3.1. Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   2.3.2. Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   2.3.3. Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mutability-vs-immutability">
+   2.3.4. Mutability vs Immutability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-bonus-data-structure">
+   2.3.5. Sets (Bonus Data Structure)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   2.3.6. Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing">
+   2.3.7. Indexing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-a-list-or-tuple">
+     2.3.7.1. Indexing a List or Tuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-dictionaries">
+     2.3.7.2. Indexing Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz">
+   2.3.8. Quiz
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Introduction to Data Structures</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-structures">
+   2.3.1. Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   2.3.2. Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   2.3.3. Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mutability-vs-immutability">
+   2.3.4. Mutability vs Immutability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-bonus-data-structure">
+   2.3.5. Sets (Bonus Data Structure)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   2.3.6. Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing">
+   2.3.7. Indexing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-a-list-or-tuple">
+     2.3.7.1. Indexing a List or Tuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-dictionaries">
+     2.3.7.2. Indexing Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiz">
+   2.3.8. Quiz
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-introduction-to-data-structures-center">
+<h1><span class="section-number">2.3. </span><center>Introduction to Data Structures</center><a class="headerlink" href="#center-introduction-to-data-structures-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2022</center><div class="section" id="data-structures">
+<h2><span class="section-number">2.3.1. </span>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h2>
+<p>In the last chapter, we met strings, integers, floats, and booleans. Each of these were types of data. Strings, for example, allowed us to work with text and numbers allowed us to work with integers and floats. In this chapter, we will begin working with data structures. <b>Data structures</b> are ways of storing multiple kinds of data in a systematic way. In Python, these are created as objects that can be stored in memory and called later in a script. They are divided into two categories: mutable and immutable. We encountered these terms in the last chapter, but we will explore what they mean in more depth below.</p>
+<p>Throughout this chapter, we will learn about some of the key types of data structures, how they are different, and how they can be used. We will only cover these in a cursory manner. Throughout this textbook, we will use these data structures to write code and perform data cleaning and data analysis tasks. It is essential that you know how to recognize types of data structures and differentiate them before moving forward. To keep things simple for now, we will focus on three types of data structures: lists, tuples, and dictionaries. There are other types of data structures in Python, but these are the core three that you will use.</p>
+</div>
+<div class="section" id="lists">
+<h2><span class="section-number">2.3.2. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p><b>Lists</b> and tuples are identical with one major exception: lists are mutable. This means that you can create a list object and then alter it in memory as your script runs. This allows for you to do very powerful things to lists that you cannot do to tuples. And these are going to be one of the key data structures you use in all digital humanities projects. The reason? We often need to adjust data while working with it.</p>
+<p>While we created a tuple with parentheses, we will create lists with square brackets. In the examples below we have two lists. In the first list we see that lists, just like tuples, can contain integers, floats, or strings. We separate items in our list with a comma. In the second example, a_list2, we see that lists can contain data structures within them. This is true for lists, tuples, and dictionaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1.0, &#39;one&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can index lists, or grab the data from a certain position, with the square brackets. The command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tuples">
+<h2><span class="section-number">2.3.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p><b>Tuples</b> are lists of data that cannot be changed. When we look at lists in Lesson 06, we will see that lists are the exact same thing as tuples, except they can be changed. We can distinguish tuples from lists by the way in which they are formed. While lists use square brackets, tuples use parentheses. We create a tuple, like the example below. Our tuple object is a_tuple and the tuple consist of three items: an integer 1, a float 1.0, and a string of “one”. Lists and tuples can contain all three of these types of data. The way in which we separate items in a tuple is with a comma.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 1.0, &#39;one&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mutability-vs-immutability">
+<h2><span class="section-number">2.3.4. </span>Mutability vs Immutability<a class="headerlink" href="#mutability-vs-immutability" title="Permalink to this headline">¶</a></h2>
+<p>As noted above, tuples are immutable which means they cannot be changed. Let’s see precisely what this means in practice. Say, we wanted to add to a list. We can do this with the .append() method. This will take one argument, or piece of information placed between the parentheses. You will learn about arguments later when we discuss functions and methods in greater depth. For now, understand that the information passed between the parentheses tells the method or function what is needed to perform the function. In this case, .append() allows us to append, or add, something to a list. The argument that we pass, “one”, tells what we want to append. In this case, the string, “one”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1.0, &#39;one&#39;, &#39;one&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we do not have an error. This is because our list is mutable, or changeable. This means that we can add to it, delete items from it, and other operations that allow us to change how it is stored in memory. Tuples, on the other hand, are immutable, or unchangeable. Let’s try and perform the same method on the tuple and see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">f0071754b9b9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we get an AttributeError. This means that a tuple does not have the ability to use the append method. This does not exist for tuples because they are immutable or unchangeable. The only way to alter the object name, tuple1 is to entirely replace it in memory.</p>
+</div>
+<div class="section" id="sets-bonus-data-structure">
+<h2><span class="section-number">2.3.5. </span>Sets (Bonus Data Structure)<a class="headerlink" href="#sets-bonus-data-structure" title="Permalink to this headline">¶</a></h2>
+<p>There is one other data structure similar to lists and tuples and I include it here as a bonus data structure. This is the set. A <b>set</b> is identical to a list. It is mutable, meaning we can update it, but unlike a list, it cannot contain duplicates. This is useful in niche circumstances, such as when you need to remove all duplicates from a list. I include it here just so that you are aware that other types of data structures do exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">}</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">set1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, &#39;one&#39;, 1.1}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h2><span class="section-number">2.3.6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>Like tuples and lists, dictionaries are a data structure in Python. Like lists, dictionaries are mutable, meaning they can be changed in memory. Unlike tuples and lists, dictionaries are not lists of data. Instead, they have two components: keys and values. These two components are separated by a colon. All of this is contained within squiggly brackets. In the example below, we have a dictionary, a_dict, with a key of “name” and a value of “William”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Mattingly&quot;</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In digital humanities projects, dictionaries are particularly useful for structuring complex data that you may have in Excel with each key being an Excel column and each value being its corresponding value. The dictionary name could be the name of the individual to whom the row corresponds. Like lists and tuples, you can embed data structures within a Python dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;William&#39;, &#39;last_name&#39;: &#39;Mattingly&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Mattingly&quot;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;William&#39;, &#39;Mattingly&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="s2">&quot;last_name&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mattingly
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing">
+<h2><span class="section-number">2.3.7. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<p>Often times, you will not simply make a data structure in Python, but need a way to interact with it. We saw above that one can append a list. This would be considered one type of interaction. In other instances, we may only want to interact with a single piece of data within a data structure or we may simply want to look at a single piece of data. This is known as <b>indexing</b>. Indexing is when we index, or pull from a particular data structure at a specific point or points. Let’s learn about this first with lists and tuples.</p>
+<div class="section" id="indexing-a-list-or-tuple">
+<h3><span class="section-number">2.3.7.1. </span>Indexing a List or Tuple<a class="headerlink" href="#indexing-a-list-or-tuple" title="Permalink to this headline">¶</a></h3>
+<p>Often we will index a list at a specific point. To do this, let’s first create an object called list5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Excellent. This list contains 5 pieces of data within it, the numbers 1-5. Each of these are separated with a comma, as is required by a list. To index this list, we call up the variable name list5 and we use [ ]. Within these brackets, we place the index, or position within the list that we want to grab.</p>
+<p><strong>It is very important to note that Python is a 0-Index language. This means that all indexing starts at 0 and moves up, so the first position in a list is index 0, second is index 1, etc.</strong></p>
+<p>With that said, let’s try and grab the first item in the list at index 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list5</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we have printed off successfully the number 1. Often times, though, it is important to index multiple items in a list. If we want to do this, we use [ ] again. Within the brackets we will have a start position and an end position. The end position will be the point after we want to grab. These will be separated by a :. In code, it would look something like this:</p>
+<p>index_item[start:end]</p>
+<p>Let’s say, we wanted to grab the first 3 items from the list, we would want to do something like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list5</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also work backwards with indexing. We can, for example, use a -1 to grab the final item in the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list5</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use range indexing to grab the final three items. In Python, if you index a list with no end point, it will grab everything up to the end of that list. We can see this in the two examples below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list5</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list5</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-dictionaries">
+<h3><span class="section-number">2.3.7.2. </span>Indexing Dictionaries<a class="headerlink" href="#indexing-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>In Python, we will frequently need to index a dictionary. Dictionaries, remember, are a bit different from lists and tuples. Rather than being a sequence of items in a list, a dictionary is a collection of keys and corresponding values. To index a dictionary, therefore, we need to work a bit differently. Rather than indexing at a specific point, we index dictionaries at a specific key.</p>
+<p>To understand this, it is best to see it in practice, so let’s go ahead and create a dictionary called dict5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephanie&quot;</span><span class="p">,</span> <span class="s2">&quot;Samantha&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Sierra&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This dictionary has one key, “names”. If I wanted to index at the key “names”, I would use the same method of brackets and place the key within the brackets. It would look something like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict5</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;William&#39;, &#39;Stephanie&#39;, &#39;Samantha&#39;, &#39;Anna&#39;, &#39;Sierra&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quiz">
+<h2><span class="section-number">2.3.8. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1"># What kind of data structure is made with [ ]?</span>
+<span class="s1">mc</span>
+<span class="s1">* List</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Tuple</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Dictionary</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1"># What kind of data structure is made with ()?</span>
+<span class="s1">mc</span>
+<span class="s1">* List</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Tuple</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Dictionary</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1"># What kind of data structure is made with </span><span class="si">{}</span><span class="s1">?</span>
+<span class="s1">mc</span>
+<span class="s1">* List</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Tuple</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Dictionary</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1"># What are the two parts of a dictionary?</span>
+<span class="s1">mc</span>
+<span class="s1">* Key</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Value</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1">* Index</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+
+<span class="s1"># What index does a Python list start at?</span>
+<span class="s1">mc</span>
+<span class="s1">* 0</span>
+<span class="s1">-c t</span>
+<span class="s1">-f</span>
+
+<span class="s1">* 1</span>
+<span class="s1">-c f</span>
+<span class="s1">-f</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="kn">import</span> <span class="nn">md2json</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">myquiz</span> <span class="o">=</span> <span class="n">md2json</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">quiz</span><span class="p">)</span>
+<span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">myquiz</span><span class="p">)</span>
+<span class="n">display_quiz</span><span class="p">(</span><span class="n">myquiz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div id="NiMzedNkbPoL" data-shufflequestions="False"
+               data-shuffleanswers="True"
+               data-numquestions="1000000"> <style>:root {
+    --medium-slate-blue: #6f78ffff;
+    --orange-pantone: #f75c03ff;
+    --russian-violet: #392061ff;
+    --maximum-yellow-red: #ffc857ff;
+    --viridian-green: #119da4ff;
+    --incorrect-red: #c80202;
+    --correct-green: #009113;
+}
+
+.Quiz {
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    line-height: 1.1;
+    font-size: 16pt;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode>pre {
+    padding: 4px;
+}
+
+.Answer {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.Feedback {
+    font-size: 16pt;
+    text-align: center;
+    min-height: 2em;
+}
+
+.Input {
+    align: left;
+    font-size: 20pt;
+}
+
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: 140px;
+    background-color: #c0c0c0;
+    color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+.Input-text:focus {
+    outline: none;
+    background-color: #c0c0c0;
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
+}
+
+.MCButton {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.MCButton p {
+    color: inherit;
+}
+
+.MultipleChoiceQn {
+    padding: 10px;
+    background: var(--medium-slate-blue);
+    color: #fafafa;
+    border-radius: 10px;
+}
+
+.ManyChoiceQn {
+    padding: 10px;
+    background: var(--orange-pantone);
+    color: #fafafa;
+    border-radius: 10px;
+}
+
+.NumericQn {
+    padding: 10px;
+    background: var(--russian-violet);
+    color: #fafafa;
+    border-radius: 10px;
+}
+
+.NumericQn p {
+    color: inherit;
+}
+
+.InpLabel {
+    line-height: 34px;
+    float: left;
+    margin-right: 10px;
+    color: #101010;
+    font-size: 15pt;
+}
+
+.incorrect {
+    color: var(--incorrect-red);
+}
+
+.correct {
+    color: var(--correct-green);
+}
+
+.correctButton {
+    /*
+    background: var(--correct-green);
+   */
+    animation: correct-anim 0.6s ease;
+    animation-fill-mode: forwards;
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+
+.incorrectButton {
+    animation: incorrect-anim 0.8s ease;
+    animation-fill-mode: forwards;
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+
+@keyframes incorrect-anim {
+    100% {
+        background-color: var(--incorrect-red);
+    }
+}
+
+@keyframes correct-anim {
+    100% {
+        background-color: var(--correct-green);
+    }
+}</style><script type="text/Javascript">var questionsNiMzedNkbPoL=[{"question": "What kind of data structure is made with ()?", "type": "multiple_choice", "answers": [{"answer": "List", "correct": false, "feedback": "Incorrect."}, {"answer": "Tuple", "correct": true, "feedback": "Correct!"}, {"answer": "Dictionary", "correct": false, "feedback": "Incorrect."}]}, {"question": "What index does a Python list start at?", "type": "multiple_choice", "answers": [{"answer": "0", "correct": true, "feedback": "Correct!"}, {"answer": "1", "correct": false, "feedback": "Incorrect."}]}, {"question": "What kind of data structure is made with {}?", "type": "multiple_choice", "answers": [{"answer": "List", "correct": false, "feedback": "Incorrect."}, {"answer": "Tuple", "correct": false, "feedback": "Incorrect."}, {"answer": "Dictionary", "correct": true, "feedback": "Correct!"}]}, {"question": "What are the two parts of a dictionary?", "type": "many_choice", "answers": [{"answer": "Key", "correct": true, "feedback": "Correct!"}, {"answer": "Value", "correct": true, "feedback": "Correct!"}, {"answer": "Index", "correct": false, "feedback": "Incorrect."}]}, {"question": "What kind of data structure is made with [ ]?", "type": "multiple_choice", "answers": [{"answer": "List", "correct": true, "feedback": "Correct!"}, {"answer": "Tuple", "correct": false, "feedback": "Incorrect."}, {"answer": "Dictionary", "correct": false, "feedback": "Incorrect."}]}];
+    // Make a random ID
+function makeid(length) {
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    }
+    return result.join('');
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+function check_mc() {
+    var id = this.id.split('-')[0];
+
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth = 0;
+    while ((label.nodeName != "LABEL") && (depth < 20)) {
+        label = label.parentElement;
+        console.log(depth, label);
+        depth++;
+    }
+
+
+
+    var answers = label.parentElement.children;
+
+    //console.log(answers);
+
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb" + id);
+    //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+    if (fb.dataset.numcorrect == 1) {
+        for (var i = 0; i < answers.length; i++) {
+            var child = answers[i];
+            //console.log(child);
+            child.className = "MCButton";
+        }
+
+
+
+        if (label.dataset.correct == "true") {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.textContent = jaxify(label.dataset.feedback);
+            } else {
+                fb.textContent = "Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.textContent = jaxify(label.dataset.feedback);
+            } else {
+                fb.textContent = "Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else {
+        var reset = false;
+        var feedback;
+        if (label.dataset.correct == "true") {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Correct!";
+            }
+            if (label.dataset.answered <= 0) {
+                if (fb.dataset.answeredcorrect < 0) {
+                    fb.dataset.answeredcorrect = 1;
+                    reset = true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child = answers[i];
+                        child.className = "MCButton";
+                        child.dataset.answered = 0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered = 1;
+                fb.className = "Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect > 0) {
+                fb.dataset.answeredcorrect = -1;
+                reset = true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child = answers[i];
+                    child.className = "MCButton";
+                    child.dataset.answered = 0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+
+        var numcorrect = fb.dataset.numcorrect;
+        var answeredcorrect = fb.dataset.answeredcorrect;
+        if (answeredcorrect >= 0) {
+            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (typeof MathJax != 'undefined') {
+        var version = MathJax.version;
+        console.log('MathJax version', version);
+        if (version[0] == "2") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset([fb]);
+        }
+    } else {
+        console.log('MathJax not detected');
+    }
+
+}
+
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+    var shuffled;
+    if (shuffle_answers == "True") {
+        //console.log(shuffle_answers+" read as true");
+        shuffled = getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled = qa.answers;
+    }
+
+
+    var num_correct = 0;
+
+
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.style = "display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className = "MCButton";
+        lab.id = id + '-' + index;
+        lab.onclick = check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName = "";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML = jaxify(item.answer);
+            //aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item) {
+            codeSpan = document.createElement('span');
+            codeSpan.id = "code" + id + index;
+            codeSpan.className = "QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML = item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item) {
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct > 1) {
+        outerqDiv.className = "ManyChoiceQn";
+    } else {
+        outerqDiv.className = "MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+
+        var submission = ths.value;
+        if (submission.indexOf('/') != -1) {
+            sub_parts = submission.split('/');
+            //console.log(sub_parts);
+            submission = sub_parts[0] / sub_parts[1];
+        }
+        //console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            precision = ths.dataset.precision;
+            // console.log("1:", submission)
+            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
+            // console.log("Rounded to ", submission, " precision=", precision  );
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.textContent = "Incorrect -- try again.";
+
+        answers = JSON.parse(ths.dataset.answers);
+        //console.log(answers);
+
+        var defaultFB = "";
+        var correct;
+        var done = false;
+        answers.every(answer => {
+            //console.log(answer.type);
+
+            correct = false;
+            // if (answer.type=="value"){
+            if ('value' in answer) {
+                if (submission == answer.value) {
+                    fb.textContent = jaxify(answer.feedback);
+                    correct = answer.correct;
+                    //console.log(answer.correct);
+                    done = true;
+                }
+                // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                //console.log(answer.range);
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.textContent = jaxify(answer.feedback);
+                    correct = answer.correct;
+                    //console.log(answer.correct);
+                    done = true;
+                }
+            } else if (answer.type == "default") {
+                defaultFB = answer.feedback;
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+            //console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            console.log('MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        return false;
+    }
+
+}
+
+function isValid(el, charC) {
+    //console.log("Input char: ", charC);
+    if (charC == 46) {
+        if (el.value.indexOf('.') === -1) {
+            return true;
+        } else if (el.value.indexOf('/') != -1) {
+            parts = el.value.split('/');
+            if (parts[1].indexOf('.') === -1) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    } else if (charC == 47) {
+        if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else if (charC == 45) {
+        edex = el.value.indexOf('e');
+        if (edex == -1) {
+            edex = el.value.indexOf('E');
+        }
+
+        if (el.value == "") {
+            return true;
+        } else if (edex == (el.value.length - 1)) { // If just after e or E
+            return true;
+        } else {
+            return false;
+        }
+    } else if (charC == 101) { // "e"
+        if ((el.value.indexOf('e') === -1) && (el.value.indexOf('E') === -1) && (el.value.indexOf('/') == -1)) {
+            // Prev symbol must be digit or decimal point:
+            if (el.value.slice(-1).search(/\d/) >= 0) {
+                return true;
+            } else if (el.value.slice(-1).search(/\./) >= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        if (charC > 31 && (charC < 48 || charC > 57))
+            return false;
+    }
+    return true;
+}
+
+function numeric_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_numeric(this, evnt);
+    } else {
+        return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+    //console.log(answer);
+
+
+    outerqDiv.className = "NumericQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.textContent = "Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    //inp.id="input-"+id;
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    //console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress = numeric_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    }
+    );
+
+
+}
+function jaxify(string) {
+    var mystring = string;
+
+    count = 0;
+    var loc = mystring.search(/([^\\]|^)(\$)/);
+
+    count2 = 0;
+    var loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+
+    //console.log(loc);
+
+    while ((loc >= 0) || (loc2 >= 0)) {
+
+        /* Have to replace all the double $$ first with current implementation */
+        if (loc2 >= 0) {
+            if (count2 % 2 == 0) {
+                mystring = mystring.replace(/([^\\]|^)(\$\$)/, "$1\\[");
+            } else {
+                mystring = mystring.replace(/([^\\]|^)(\$\$)/, "$1\\]");
+            }
+            count2++;
+        } else {
+            if (count % 2 == 0) {
+                mystring = mystring.replace(/([^\\]|^)(\$)/, "$1\\(");
+            } else {
+                mystring = mystring.replace(/([^\\]|^)(\$)/, "$1\\)");
+            }
+            count++;
+        }
+        loc = mystring.search(/([^\\]|^)(\$)/);
+        loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+        //console.log(mystring,", loc:",loc,", loc2:",loc2);
+    }
+
+    //console.log(mystring);
+    return mystring;
+}
+
+
+function show_questions(json, mydiv) {
+    //var mydiv=document.getElementById(myid);
+    var shuffle_questions = mydiv.dataset.shufflequestions;
+    var num_questions = mydiv.dataset.numquestions;
+    var shuffle_answers = mydiv.dataset.shuffleanswers;
+
+    if (num_questions > json.length) {
+        num_questions = json.length;
+    }
+
+    var questions;
+    if ((num_questions < json.length) || (shuffle_questions == "True")) {
+        //console.log(num_questions+","+json.length);
+        questions = getRandomSubarray(json, num_questions);
+    } else {
+        questions = json;
+    }
+
+    //console.log("SQ: "+shuffle_questions+", NQ: " + num_questions + ", SA: ", shuffle_answers);
+
+    // Iterate over questions
+    questions.forEach((qa, index, array) => {
+        //console.log(qa.question); 
+
+        var id = makeid(8);
+        //console.log(id);
+
+
+        // Create Div to contain question and answers
+        var iDiv = document.createElement('div');
+        iDiv.id = 'quizWrap' + id + index;
+        iDiv.className = 'Quiz';
+        mydiv.appendChild(iDiv);
+        // iDiv.innerHTML=qa.question;
+
+        var outerqDiv = document.createElement('div');
+        outerqDiv.id = "OuterquizQn" + id + index;
+        //qDiv.textContent=qa.question;
+        iDiv.append(outerqDiv);
+
+        // Create div to contain question part
+        var qDiv = document.createElement('div');
+        qDiv.id = "quizQn" + id + index;
+        //qDiv.textContent=qa.question;
+        qDiv.innerHTML = jaxify(qa.question);
+        outerqDiv.append(qDiv);
+
+        // Create div for code inside question
+        var codeDiv;
+        if ("code" in qa) {
+            codeDiv = document.createElement('div');
+            codeDiv.id = "code" + id + index;
+            codeDiv.className = "QuizCode";
+            var codePre = document.createElement('pre');
+            codeDiv.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML = qa.code;
+            outerqDiv.append(codeDiv);
+            //console.log(codeDiv);
+        }
+
+
+        // Create div to contain answer part
+        var aDiv = document.createElement('div');
+        aDiv.id = "quizAns" + id + index;
+        aDiv.className = 'Answer';
+        iDiv.append(aDiv);
+
+        //console.log(qa.type);
+
+        var num_correct;
+        if (qa.type == "multiple_choice") {
+            num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if (qa.type == "many_choice") {
+            num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if (qa.type == "numeric") {
+            //console.log("numeric");
+            make_numeric(qa, outerqDiv, qDiv, aDiv, id);
+        }
+
+
+        //Make div for feedback
+        var fb = document.createElement("div");
+        fb.id = "fb" + id;
+        //fb.style="font-size: 20px;text-align:center;";
+        fb.className = "Feedback";
+        fb.setAttribute("data-answeredcorrect", 0);
+        fb.setAttribute("data-numcorrect", num_correct);
+        iDiv.append(fb);
+
+
+    });
+    //console.log("At end of show_questions");
+    if (typeof MathJax != 'undefined') {
+        console.log("MathJax version", MathJax.version);
+        var version = MathJax.version;
+        setTimeout(function(){
+            var version = MathJax.version;
+            console.log('After sleep, MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([mydiv]);
+            }
+        }, 500);
+if (typeof version == 'undefined') {
+        } else
+        {
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([mydiv]);
+            } else {
+                console.log("MathJax not found");
+            }
+        }
+    }
+    return false;
+}
+
+        {
+        show_questions(questionsNiMzedNkbPoL,  NiMzedNkbPoL);
+        }
+        </script>
+</div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01_intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_01_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span><center>Introduction to Data</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01_02_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William J.B. Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
