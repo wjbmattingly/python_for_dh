@@ -3,12 +3,6 @@
 
 # # <center>Introduction to Data</center>
 
-# <center>Dr. W.J.B. Mattingly</center>
-# 
-# <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-# 
-# <center>January 2022</center>
-
 # ## Some Quick Notes about Terminology and Commands we will Use
 
 # ### Objects
@@ -40,7 +34,7 @@ author = "William Mattingly"
 # In[2]:
 
 
-print (author)
+print(author)
 
 
 # Notice that when I execute the cell above, I see an output that relates to the object we created above. What would happen if I tried to print off that object, but I used a capital letter, rather than a lowercase one at the beginning, so Author, rather than author?
@@ -50,10 +44,35 @@ print (author)
 # In[3]:
 
 
-print (Author)
+print(Author)
 
 
 # The scary looking block of text above indicates that we have produced an error in Python. This mistake teaches us two things. First, python is case sensitive. This means that if any object (or string) will need to be matched in not only letters, but also the case of those letters. Second, this mistake teaches us that we can only call objects that have been created and stored in memory.
+
+# ### Reserved Words
+
+# When working with Python, there are a number of words known as **reserve words**. These are words that cannot be used as variable names. As of Python version 3.6, there are a total of 33 reserve words. In can sometimes be difficult to remember all of these reserve words, so Python has a nice built in function, "help". If we execute the following command, we will see an entire list.
+
+# In[13]:
+
+
+help("keywords")
+
+
+# These are words that you cannot use as a variable name.
+
+# ### Built-in Types
+
+# In addition to reserve words, there are also built-in types in Python. These are words that you can use (as we will see) to convert one type of data into another. There are 94 of these in total. Unlike reserve words, you *can* use a built-in type as a variable name. It is, however, strongly discouraged to do so because it will overwrite the intended use of these variable names in your script.
+
+# In[8]:
+
+
+import builtins
+[getattr(builtins, d) for d in dir(builtins) if isinstance(getattr(builtins, d), type)]
+
+
+# Of this long list, I recommend paying particular attention to the ones that you are more likely to write naturally: bool, dict, float, int, list, map, object, property, range, reversed, set, slice, str, super, tuple, type, and zip. You are more likely to use these as variable names by accident than, say, ZeroDivisionError; and this shorter list is a lot easier to memorize.
 
 # ## What is Data?
 
@@ -94,7 +113,7 @@ str1 = "This is a string."
 print (str1)
 
 
-# In[6]:
+# In[10]:
 
 
 str2 = 'This is a string too.'
