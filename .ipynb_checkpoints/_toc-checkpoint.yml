@@ -1,58 +1,135 @@
 format: jb-book
 root: intro
 parts:
-- caption: Key Concepts and Terms
+- caption: The Basics of Python (Work in Progress)
   numbered: true
   chapters:
-  - file: 01_01_introduction_to_python
-    title: Introduction to Python
-  - file: 01_02_installing_python
-    title: Installing Python
-- caption: Working with Data
+  - file: 01_01_intro
+    title: Introduction to Python and Data
+    sections:
+    - file: 01_01_introduction_to_python
+      title: What is Python? (Work in Progress)
+      
+    - file: 01_02_installing_python
+      title: Installing Python (Work in Progress)
+      
+    - file: 02_01_data
+      title: Data Types (Work in Progress)
+      
+    - file: 02_02_data_structures
+      title: Data Structures (Work in Progress)
+      
+  - file: 01_02_intro
+    title: Loops and Logic
+    sections:
+    - file: 03_01_loops
+      title: Introduction to Loops (Work in Progress)
+    - file: 03_02_conditionals
+      title: Introduction to Conditionals (Work in Progress)
+
+  - file: 01_03_intro
+    title: Formal Coding
+    sections:
+    - file: 04_01_functitons
+      title: Introduction to Functions (Work in Progress)
+    - file: 04_02_classes
+      title: Introduction to Classes (Work in Progress)
+    - file: 04_03_libraries
+      title: Introduction to Libraries (Work in Progress)
+      
+  - file: 01_04_intro
+    title: Working with External Data
+    sections:
+    - file: 05_01_texts
+      title: Loading and Saving Text Data (Work in Progress)
+    - file: 05_02_json
+      title: Loading and Saving JSON Data (Work in Progress)
+    - file: 05_03_multiple_files
+      title: Working with Multiple Files (Work in Progress)
+
+
+- caption: Data Analysis with Pandas
   numbered: true
   chapters:
-  - file: 02_01_data
-    title: Introduction to Data
-  - file: 02_02_data_structures
-    title: Introduction to Data Structures
-- caption: Logic Statements
-  numbered: true
-  chapters:
-  - file: 03_01_loops
-    title: Introduction to Loops
-  - file: 03_02_conditionals
-    title: Introduction to Conditionals
-- caption: Formal Coding
-  numbered: true
-  chapters:
-  - file: 04_01_functitons
-    title: Introduction to Functions
-  - file: 04_02_classes
-    title: Introduction to Classes
-  - file: 04_03_libraries
-    title: Introduction to Libraries
-- caption: Working with External Files
-  numbered: true
-  chapters:
-  - file: 05_01_texts
-    title: Loading and Saving Text Data
-  - file: 05_02_json
-    title: Loading and Saving JSON Data  
-  - file: 05_03_multiple_files
-    title: Working with Multiple Files 
-- caption: Tabular Data
-  numbered: true
-  chapters:
-  - file: 06_01_pandas
+  
+  - file: 02_01_intro
     title: Introduction to Pandas
-  - file: 06_02_pandas2
-    title: The Basics of Pandas 
-- caption: Working with Web Data
+    sections:
+    - file: 02_pandas/01_01_introduction_to_pandas
+      title: What is Pandas?
+    - file: 02_pandas/01_02_the_basics
+      title: The Basics of Pandas
+      
+  - file: 02_02_intro
+    title: Working with Data in Pandas
+    sections:
+    - file: 02_pandas/02_01_finding_data
+      title: Finding Data in a DataFrame
+    - file: 02_pandas/02_02_organizing_data
+      title: Organizing Data in Pandas
+    - file: 02_pandas/02_03_cleaning_data
+      title: Cleaning Data with Pandas
+      
+  - file: 02_03_intro
+    title: Searching for Data
+    sections:
+    - file: 02_pandas/03_01_advanced_strings
+      title: Advanced Searching on Strings in DataFrame
+    - file: 02_pandas/03_02_advanced_querying
+      title: Advanced Filtering and Querying
+    - file: 02_pandas/03_03_advanced_grouping
+      title: Advanced Grouping with Groupby
+      
+  - file: 02_04_intro
+    title: Advanced Pandas
+    sections:
+    - file: 02_pandas/04_01_pandas_and_plots
+      title: Basic Plotting with Pandas
+    - file: 02_pandas/04_02_graphing_networks_with_pandas
+      title: Graphing Network Data from Pandas
+
+    - file: 02_pandas/05_01_time_series_data
+      title: Introduction to Time Series Data
+    
+# - caption: Network Analysis with PyVis
+
+- caption: Natural Language Processing with spaCy
   numbered: true
   chapters:
-  - file: 07_01_html
-    title: Introduction to HTML
-  - file: 07_02_beautiful_soup
-    title: Requests and BeautifulSoup
-  - file: 07_03_tabular_html
-    title: Extracting Tabular Data from HTML
+  - file: 03_01_intro
+    title: Introduction to spaCy
+    sections:
+    - file: 03_spacy/01_01_install_and_containers
+      title: The Basics of spaCy
+    - file: 03_spacy/01_02_linguistic_annotations
+      title: spaCy Linguistic Annotations
+    - file: 03_spacy/01_03_word_vectors
+      title: Word Vectors and spaCy
+    - file: 03_spacy/01_04_pipelines
+      title: spaCy Pipelines
+      
+  - file: 03_02_intro
+    title: Rules-Based spaCy
+    sections:
+    - file: 03_spacy/02_01_entityruler
+      title: How to use the spaCy EntityRuler
+    - file: 03_spacy/02_02_matcher
+      title: How to use the spaCy Matcher
+    - file: 03_spacy/02_03_phrase_matcher
+      title: How to use the spaCy PhraseMatcher
+    - file: 03_spacy/02_04_custom_component
+      title: Custom Components in spaCy
+    - file: 03_spacy/02_05_simple_regex
+      title: How to use RegEx in spaCy (Basic)
+    - file: 03_spacy/02_06_complex_regex
+      title: How to use RegEx in spaCy (Advanced)
+    
+
+
+# - caption: Named Entity Recognition with spaCy
+
+
+# - caption: Optical Character Recognition with OpenCV and PyTesseract
+
+
+# - caption: Building a Digital Humanities App with Streamlit
