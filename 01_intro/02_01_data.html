@@ -414,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_spacy/03_03_intro.html">
-   3. Machine Learning Named Entity Recognition with spaCy 3x (Work in Progress)
+   3. Machine Learning Named Entity Recognition with spaCy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -730,18 +730,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-print-function">
+     2.2.1.1. The Print Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#objects">
-     2.2.1.1. Objects
+     2.2.1.2. Objects
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables">
-     2.2.1.2. Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-print-function">
-     2.2.1.3. The Print Function
+     2.2.1.3. Variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -774,6 +774,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#examples-of-strings">
      2.2.3.1. Examples of Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type-function">
+     2.2.3.2. Type Function
     </a>
    </li>
   </ul>
@@ -818,8 +823,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challenge-questions">
+   2.2.9. Challenge Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   2.2.9. Quiz
+   2.2.10. Quiz
   </a>
  </li>
 </ul>
@@ -848,18 +858,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-print-function">
+     2.2.1.1. The Print Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#objects">
-     2.2.1.1. Objects
+     2.2.1.2. Objects
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables">
-     2.2.1.2. Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-print-function">
-     2.2.1.3. The Print Function
+     2.2.1.3. Variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -892,6 +902,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#examples-of-strings">
      2.2.3.1. Examples of Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type-function">
+     2.2.3.2. Type Function
     </a>
    </li>
   </ul>
@@ -936,8 +951,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challenge-questions">
+   2.2.9. Challenge Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   2.2.9. Quiz
+   2.2.10. Quiz
   </a>
  </li>
 </ul>
@@ -953,13 +973,30 @@ const thebe_selector_output = ".output, .cell_output"
 <h1><span class="section-number">2.2. </span><center>Introduction to Data</center><a class="headerlink" href="#center-introduction-to-data-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="some-quick-notes-about-terminology-and-commands-we-will-use">
 <h2><span class="section-number">2.2.1. </span>Some Quick Notes about Terminology and Commands we will Use<a class="headerlink" href="#some-quick-notes-about-terminology-and-commands-we-will-use" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-print-function">
+<h3><span class="section-number">2.2.1.1. </span>The Print Function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
+<p>The very first thing that every programmer learns is how to print something off using that programming language. In most tutorials, you will see the phrase “Hello, World!” used. In this textbook, let’s try something a bit different. Let’s say I wanted to print off “Hello, William”. We can do this in Python by using the <strong>print function</strong>. The print function lets us print off some piece of data. In our case, that piece of data will be a piece of text, known as a string (see below). Our text is “Hello, William”. The thing that we want to print off must be located between an open parentheses and a close parentheses. Let’s try to execute the print command in the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, William!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, William!
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, the code that we typed in the Jupyter cell outputted beneath it. This has worked wonderfully, but what if our Python notebook needs to be more dynamic, meaning it needs to adjust based on some user input. Perhaps, we need to use a name other than William based on some user-defined input. To do this, we would need to store a piece of data in memory. We can do this in Python by creating a variable that will point to an object. Before we get into how this is done, let’s first get to know objects and variables.</p>
+</div>
 <div class="section" id="objects">
-<h3><span class="section-number">2.2.1.1. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1.2. </span>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
 <p>When we import or create data within Python, we are essentially creating an object in memory with a variable. These two words, <b>object</b> and <b>variable</b> mean slightly different things and, but are often used interchangeably. We will not get into the complexities of their differences and why they exist in this textbook, but for now, view an object as something that is created by a Python script and stored in your computer’s memory so that it can be used later in a program.</p>
 <p>Think of your <b>computer’s memory</b> rather like your own brain. Imagine if you needed to remember what the word for “hello” in German. You may use your memory rather like a flashcard, where “hello” in English equates to “hallo” in German. In Python, we create objects in a similar way. The object would be the dictionary entry of “hello: hallo”.created</p>
 </div>
 <div class="section" id="variables">
-<h3><span class="section-number">2.2.1.2. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1.3. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>In order to reference this dictionary entry in memory, we need a way to reference it. We do this with a variable. The variable is simply the name of the item in our script that will point to that object in memory. Variables make it so that we can have an easy-to-remember name to reference, call, and change that object in memory.</p>
 <p>Variables can be created by typing a unique word, followed by an = sign, followed by the specific data. As we will learn throughout this chapter, there are many types of data that are created differently. Let’s create our first object before we begin. This will be a string, or a piece of text. (We will learn about these in more detail below.) In my case, I want to create the object author. I want author to be associated with my name in memory. In the cell, or block of code, below, let’s do this.</p>
 <div class="cell docutils container">
@@ -969,9 +1006,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-print-function">
-<h3><span class="section-number">2.2.1.3. </span>The Print Function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
 <p>Excellent! We have created our first object. Now, it is time to use that object. Below, we will learn about ways we can manipulate strings, but for now, let’s simply see if that object exists in memory. We can do this with the print function.</p>
 <p>The print function will become your best friend in Python. It is, perhaps, the function I use most commonly. The reason for this is because the print function allows for you to easily debug, or identify problems and fix them, within your code. It allows us to print off objects that are stored in memory.</p>
 <p>To use the print function, we type the word print followed by an open parentheses. After the open parentheses, we place the object or that or piece of data that we want to print. After that, we close the function with the close parentheses. Let’s try to print off our new object author to make sure it is in memory.</p>
@@ -1009,6 +1043,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>The scary looking block of text above indicates that we have produced an error in Python. This mistake teaches us two things. First, python is case sensitive. This means that if any object (or string) will need to be matched in not only letters, but also the case of those letters. Second, this mistake teaches us that we can only call objects that have been created and stored in memory.</p>
+<p>Now that we have the variable pointing to a specific piece of data, we can make our print function above a bit more dynamic. Let’s try and print off the same statement as before, but with the new full author name. I don’t expect you to understand the specifics of the code below, rather simply understand that we will frequently need to store variables in memory so that we can use them later in our programs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">author</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, William Mattingly!
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="reserved-words">
 <h3><span class="section-number">2.2.1.5. </span>Reserved Words<a class="headerlink" href="#reserved-words" title="Permalink to this headline">¶</a></h3>
@@ -1173,8 +1220,7 @@ break               for                 not
 <h3><span class="section-number">2.2.3.1. </span>Examples of Strings<a class="headerlink" href="#examples-of-strings" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Strings - any kind of text</span>
-<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;This is a string.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;This is a string.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1247,6 +1293,23 @@ break               for                 not
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="type-function">
+<h3><span class="section-number">2.2.3.2. </span>Type Function<a class="headerlink" href="#type-function" title="Permalink to this headline">¶</a></h3>
+<p>It is frequently necessary to check to see what type of data a variable is. To identify this, you can use the built-in function <strong>type</strong> in Python. To use type, we use the command below with the data we want to analyze placed between the two parentheses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">str4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output is “str” which tells us that the object is a string.</p>
 </div>
 </div>
 <div class="section" id="numbers-integers-and-floats">
@@ -1702,105 +1765,86 @@ break               for                 not
 <p>This chapter has introduced you two some of the essential types of data: strings, integers, floats, and booleans. It has also introduced you to some of the key methods and operations that you can perform on strings and numbers. Before moving onto the next chapter, I recommend spending some time and testing out these methods on your own data. Try and manipulate an input text to locate and retrieve specific information.</p>
 <p>If you haven’t yet installed Python, that’s okay! There are free compilers online, including the one I have available at https://pythonhumanities.com/lesson-02-storing-data-in-python/. Once you feel comfortable with types of data and how to create and interact with them in Python, feel free to continue into the next chapter as we explore data structures.</p>
 </div>
+<div class="section" id="challenge-questions">
+<h2><span class="section-number">2.2.9. </span>Challenge Questions<a class="headerlink" href="#challenge-questions" title="Permalink to this headline">¶</a></h2>
+<p>What would be the output of the command below?</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;What type of data is this?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>What about this?</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&#39;)</span>
+                          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>And what about this?</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="n">person</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>john
+</pre></div>
+</div>
+</div>
+</div>
+<p>Expand below to see why the output looks the way it does.</p>
+<p>If you did not get this right, let’s talk about why. Remember, programming is a sequential set of operations.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>Line</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>person = “John”</p></td>
+<td><p>establishes that the variable is a string and that it is “John”</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>person = person.lower()</p></td>
+<td><p>this will lowercase the string so at this stage, it would be “john”</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>person2 = person</p></td>
+<td><p>this creates person2 as a variable and points it to person</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>person = person.upper()</p></td>
+<td><p>this changes the person variable and uppercases it. The variable person2, however, remains the same</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="quiz">
-<h2><span class="section-number">2.2.9. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
-<span class="kn">import</span> <span class="nn">md2json</span>
-<span class="kn">import</span> <span class="nn">json</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1"># What type of data is associated with text?</span>
-<span class="s1">mc</span>
-<span class="s1">* Strings</span>
-<span class="s1">-c t</span>
-<span class="s1">-f Correct! Strings are how we create text in Python.</span>
-
-<span class="s1">* Integers</span>
-<span class="s1">-c f</span>
-<span class="s1">-f While a type of data, Integers are not text</span>
-
-<span class="s1">* Floats</span>
-<span class="s1">-c f</span>
-<span class="s1">-f While a type of data, Floats are not text</span>
-
-<span class="s1">* Boolean</span>
-<span class="s1">-c f</span>
-<span class="s1">-f Booleans are not text.</span>
-
-
-<span class="s1"># How do we create strings?</span>
-<span class="s1">mc</span>
-<span class="s1">* With &quot;&quot;</span>
-<span class="s1">-c t</span>
-<span class="s1">-f Correct!</span>
-
-<span class="s1">* With &#39;&#39;</span>
-<span class="s1">-c t</span>
-<span class="s1">-f Correct!</span>
-
-<span class="s1">* With :</span>
-<span class="s1">-c f</span>
-<span class="s1">-f</span>
-
-<span class="s1">* With &lt;&gt;</span>
-<span class="s1">-c f</span>
-<span class="s1">-f</span>
-
-<span class="s1"># What are the two types of numbers?</span>
-<span class="s1">mc</span>
-<span class="s1">* Integers</span>
-<span class="s1">-c t</span>
-<span class="s1">-f</span>
-
-<span class="s1">* Floats</span>
-<span class="s1">-c t</span>
-<span class="s1">-f</span>
-
-<span class="s1">* Strings</span>
-<span class="s1">-c f</span>
-<span class="s1">-f</span>
-
-<span class="s1">* Booleans</span>
-<span class="s1">-c f</span>
-<span class="s1">-f</span>
-
-<span class="s1"># What are the types of Booleans?</span>
-<span class="s1">mc</span>
-<span class="s1">* True</span>
-<span class="s1">-c t</span>
-<span class="s1">-f</span>
-
-<span class="s1">* False</span>
-<span class="s1">-c t</span>
-<span class="s1">-f</span>
-
-<span class="s1">* true</span>
-<span class="s1">-c f</span>
-<span class="s1">-f Close. Remember, case matters in Python.</span>
-
-<span class="s1">* false</span>
-<span class="s1">-c f</span>
-<span class="s1">-f Close. Remember, case matters in Python.</span>
-<span class="s1">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myquiz</span> <span class="o">=</span> <span class="n">md2json</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">quiz</span><span class="p">)</span>
-<span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">myquiz</span><span class="p">)</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">myquiz</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<h2><span class="section-number">2.2.10. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
