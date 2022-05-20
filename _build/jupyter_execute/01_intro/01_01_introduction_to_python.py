@@ -15,7 +15,7 @@
 # 2) Why use Python specifically?<br>
 # 3) What is covered in this textbook?<br>
 
-# ```{image} ./images/install/github_logo.JPG
+# ```{image} ../images/install/github_logo.JPG
 # :alt: jupyter_org
 # :class: bg-primary
 # :width: 500px
