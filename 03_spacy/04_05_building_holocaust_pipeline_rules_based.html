@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>4.5. Creating Rules-Based Pipeline for Holocaust Documents &#8212; Introduction to Python for Humanists</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,23 +105,22 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   <p align="center">
-    INTRODUCTION TO PYTHON FOR HUMANISTS
-   </p>
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <p align="center">INTRODUCTION TO PYTHON FOR HUMANISTS</p>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The Basics of Python (Work in Progress)
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01_intro.html">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
    1. Introduction to Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -115,115 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
-     1.2. What is Python?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
-     1.3. Installing Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
-   2. Working with Data (Work in Progress)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/02_01_data.html">
-     2.2. Data Types (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
-     2.3. Data Structures (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_02_intro.html">
-   3. Loops and Logic
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/03_01_loops.html">
-     3.1. Introduction to Loops (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
-     3.2. Introduction to Conditionals (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_03_intro.html">
-   4. Formal Coding
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_01_functitons.html">
-     4.1. Introduction to Functions (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_02_classes.html">
-     4.2. Introduction to Classes (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_03_libraries.html">
-     4.3. Introduction to Libraries (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_04_intro.html">
-   5. Working with External Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_01_texts.html">
-     5.1. Loading and Saving Text Data (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_02_json.html">
-     5.2. Loading and Saving JSON Data (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
-     5.3. Working with Multiple Files (Work in Progress)
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
 </ul>
@@ -237,8 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_01_intro.html">
    1. Introduction to Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -259,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_02_intro.html">
    2. Working with Data in Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -286,8 +191,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_03_intro.html">
    3. Searching for Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +218,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_04_intro.html">
    4. Advanced Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -347,8 +252,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_01_intro.html">
    1. Introduction to spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -379,8 +284,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_02_intro.html">
    2. Rules-Based spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -416,8 +321,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_03_intro.html">
    3. Machine Learning Named Entity Recognition with spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -463,8 +368,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_04_intro.html">
    4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -507,8 +412,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
    Introduction to Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -534,8 +439,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
    TF-IDF and K-Means Clustering
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -578,8 +483,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_ocr/05_02_intro.html">
    Cleaning Images for OCR with OpenCV
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -595,8 +500,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_ocr/05_03_intro.html">
    A Real-World Example
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -621,109 +526,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/04_05_building_holocaust_pipeline_rules_based.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/04_05_building_holocaust_pipeline_rules_based.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/03_spacy/04_05_building_holocaust_pipeline_rules_based.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
    4.5.1. Key Concepts in this Notebook
@@ -801,12 +823,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1><center>Creating Rules-Based Pipeline for Holocaust Documents</center></h1>
@@ -900,28 +921,29 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="center-creating-rules-based-pipeline-for-holocaust-documents-center">
-<h1><span class="section-number">4.5. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center><a class="headerlink" href="#center-creating-rules-based-pipeline-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-creating-rules-based-pipeline-for-holocaust-documents-center">
+<h1><span class="section-number">4.5. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center><a class="headerlink" href="#center-creating-rules-based-pipeline-for-holocaust-documents-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h2><span class="section-number">4.5.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<center>January 2021</center><section id="key-concepts-in-this-notebook">
+<h2><span class="section-number">4.5.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>How to add pipes to a spaCy model<br></p></li>
 <li><p>How to Consider Rules<br></p></li>
 <li><p>How to Implement those Rules<br></p></li>
 </ol>
-</div>
-<div class="section" id="introduction">
-<h2><span class="section-number">4.5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introduction">
+<h2><span class="section-number">4.5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In this notebook, we will walk through some of the heuristic pipes I developed or am developing for my Holocaust NER spaCy pipeline. The purpose of these heuristic pipes is not to catch all potential entities, but to return with a high degree of confidence only true positives. We accept that the heuristics won’t catch everything because the final item in this long pipeline is a machine learning NER model that will generalize, or make predictions, on the unseen data. By structuring many heuristics in the pipeline, we can radically reduce the chances of our ML model making a wrong prediction because the all known true positives will have already been annotated.</p>
 <p>I should also note that the code in my pipes is repetitious by design. As this is a textbook, it would be difficult for the reader to consistently look at the top of the notebook to identify the variable set 20 cells earlier. For this reason, I opt to recreate the variables later in the notebook. While this is bad practice, it allows the reader to understand better what is happening at any given moment in the notebook.</p>
-</div>
-<div class="section" id="creating-a-blank-spacy-model">
-<h2><span class="section-number">4.5.3. </span>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-blank-spacy-model">
+<h2><span class="section-number">4.5.3. </span>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">#</a></h2>
 <p>The first thing we need to do is import all of the different components from spaCy and other libraries that we will need. I will explain these as we go forward.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1114,9 +1136,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="add-pipe-for-finding-streets">
-<h2><span class="section-number">4.5.4. </span>Add Pipe for Finding Streets<a class="headerlink" href="#add-pipe-for-finding-streets" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="add-pipe-for-finding-streets">
+<h2><span class="section-number">4.5.4. </span>Add Pipe for Finding Streets<a class="headerlink" href="#add-pipe-for-finding-streets" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">streets_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z][a-z]*(strasse|straße|straat)\b|([A-Z][a-z]* (Street|St|Boulevard|Blvd|Avenue|Ave|Road|Rd|Lane|Ln|Place|Pl)(\.)*))&quot;</span>
@@ -1142,9 +1164,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-pipe-for-finding-ships">
-<h2><span class="section-number">4.5.5. </span>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-pipe-for-finding-ships">
+<h2><span class="section-number">4.5.5. </span>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">#</a></h2>
 <p>The very first pipe I want to create is a pipe that can find ships, specifically transport ships. In order to achieve this objective, this pipe does several things at once. First, it leverages RegEx to find known patterns that are always ships, e.g. multi-word tokens that may or may not begin with “S.S.”, “SS”, or “The”, followed by a list of known ships. I have opted to not use a spaCy EntityRuler here primarily because I want to expand this pipe in the future and it allows me to find matches that are more varied. Were I to implement this in an EntityRuler pipe, I would need to have many patterns sit in its knowledge-base.</p>
 <p>But finding one of these patterns isn’t enough. I want to ensure that the thing referenced is in fact a ship. Many of these terms could easily be toponyms, or entities that share the same spelling but mean different things in different contexts, e.g. the Ile de France, could easily be a GPE that refers to the area around Paris. General Hosey could easily be a PERSON. To ensure toponym disambiguation, I set up several contextual clues, e.g. the list of nautical terms. If any of these words appear in area around the hit, then the heuristics assign that token the label of SHIP. If not, it ignores it and allows later pipes or the machine learning model to annotate it.</p>
 <div class="cell docutils container">
@@ -1202,9 +1224,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 <p>Success! File, data/new_ocr\RG-50.030.0006_trs_en.txt, referenced two ships, the Cap Arcona and the St. Louis. Now that we know we can capture ships in this manner, let’s try out the same principle on ghettos.</p>
-</div>
-<div class="section" id="creating-a-pipe-for-finding-ghettos">
-<h2><span class="section-number">4.5.6. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-pipe-for-finding-ghettos">
+<h2><span class="section-number">4.5.6. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">#</a></h2>
 <p>As of the time of pushing this notebook, August 13, 2021, I have yet to receive a comprehensive dataset of ghettos. In the near future, this pipe will be vastly improved, similar to the concentration camp pipe below. For now, this pipe functions precisely the same way our earlier ship pipe function. Here, we’re looking for the use of the word ghetto around one of these known cities that had ghettos. This is absolutely necessary because any of these cities could be a GPE in general. The use of the word ghetto within a small contextual window is a good heuristic for assigning this city the label of GHETTO over GPE.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1293,9 +1315,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 <p>As we can see, the pipe is working. We’ve grabbed three instances of Warsaw in data/new_ocr\RG-50.030.0001_trs_en.txt.</p>
-</div>
-<div class="section" id="create-pipe-for-identifying-a-person">
-<h2><span class="section-number">4.5.7. </span>Create Pipe for Identifying a Person<a class="headerlink" href="#create-pipe-for-identifying-a-person" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-pipe-for-identifying-a-person">
+<h2><span class="section-number">4.5.7. </span>Create Pipe for Identifying a Person<a class="headerlink" href="#create-pipe-for-identifying-a-person" title="Permalink to this headline">#</a></h2>
 <p>For PERSON, we will be leveraging spaCy’s small model, but we can add some heuristics that will greatly improve the results. The heuristics here is any known salutation capitalized followed by a series of proper nouns. This RegEx “(?:[A-Z]\w+[ -]?)+)” allows us to grab all continuous capital words and then break when it encounters a non capital letter followed by a space. In English, these will always be PERSON entities.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1334,9 +1356,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="create-pipe-for-identifying-spouses">
-<h2><span class="section-number">4.5.8. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-pipe-for-identifying-spouses">
+<h2><span class="section-number">4.5.8. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">#</a></h2>
 <p>Often times in historical documents the identity of people are referenced collectively. In some instances, such as those of spouses, this results in the name of the woman being attached to the name of her husband. The purpose of this SPOUSAL entity is to identify such constructs so that users can manipulate the output and reconstruct each individual singularly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1373,9 +1395,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-concentration-camp-pipe">
-<h2><span class="section-number">4.5.9. </span>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-concentration-camp-pipe">
+<h2><span class="section-number">4.5.9. </span>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">#</a></h2>
 <p>The correct identification of camp is one of the most important pipes in this pipeline. There are two concentration camp pipes. The first pipe looks at all known camps and subcamps and then looks for surrounding words to identify the context. The second pipe is less strict. It looks for all known main concentration camps without context. The reason for this is because sometimes the subcamps have the same names as frequently cited cities, e.g. Berlin or Neustadt. This is particularly true of the subcamps. The main camps, however, are frequently referenced to the camp itself. Both pipes are activated by default, but a user can deactivate one or other.</p>
 <p>Throughout this pipe, you will see many functions that contain the name “getter”. These are custom functions that allow us to add special attributes to our entity spans. If you scroll down to the bottom of this section, you will see that we can use the HGC dataset for conentration camps to retrieve other salient information, such as the subcamp’s main camp, its longitude and latitude, opening date, closing date, etc.</p>
 <div class="cell docutils container">
@@ -1654,9 +1676,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-revolutionary-groups-pipe">
-<h2><span class="section-number">4.5.10. </span>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-revolutionary-groups-pipe">
+<h2><span class="section-number">4.5.10. </span>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">#</a></h2>
 <p>The purpose of this pipe is to find known Revolutionary Groups. Again, this pipe is not an EntityRuler because I intend to do a few extra things with it in the future beyond the limitations of the EntityRuler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1689,9 +1711,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-places-pipe">
-<h2><span class="section-number">4.5.11. </span>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-places-pipe">
+<h2><span class="section-number">4.5.11. </span>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">#</a></h2>
 <p>The ML model will capture place fairly well. Nevertheless, if you can write a simple rule, write a simple rule.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1744,9 +1766,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-geography-pipe">
-<h2><span class="section-number">4.5.12. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-a-geography-pipe">
+<h2><span class="section-number">4.5.12. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">general_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z]\w+) (River|Mountain|Mountains|Forest|Forests|Sea|Ocean)*&quot;</span>
@@ -1793,12 +1815,12 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adding-streets">
-<h2><span class="section-number">4.5.13. </span>Adding Streets<a class="headerlink" href="#adding-streets" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="seeing-the-pipes-at-work">
-<h2><span class="section-number">4.5.14. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adding-streets">
+<h2><span class="section-number">4.5.13. </span>Adding Streets<a class="headerlink" href="#adding-streets" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="seeing-the-pipes-at-work">
+<h2><span class="section-number">4.5.14. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">#</a></h2>
 <p>Now that we have assembled all these pipes into a pipeline, let’s see how they perform on a real testimony.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1826,9 +1848,9 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 <p>This result is not perfect, but again, that’s not the point here. Here we are less interested in catching all entities as much as not catching any false positives. At a quick glance, we have achieved that. Now that were are tentatively happy, wan save our pipeline to disk, but first, let’s add some metadata.</p>
-</div>
-<div class="section" id="saving-a-spacy-model">
-<h2><span class="section-number">4.5.15. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="saving-a-spacy-model">
+<h2><span class="section-number">4.5.15. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ushmm&quot;</span>
@@ -1850,8 +1872,8 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1875,9 +1897,11 @@ INFO:tensorflow:Enabling control flow v2
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="04_04_introduction_to_custom_pipes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1893,24 +1917,28 @@ INFO:tensorflow:Enabling control flow v2
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By William J.B. Mattingly<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By William J.B. Mattingly<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
