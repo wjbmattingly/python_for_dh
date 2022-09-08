@@ -28,7 +28,7 @@
 # In[2]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/G6cW5JybUPU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/G6cW5JybUPU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 
 
 # Machine Learning (and deep learning) is the process by which practitioners teach a computer system to perform a task, not with rules, but with statistics and linear algebra so that the system can learn from repeated (and randomized) experiences. If this does not make sense right now, it will by the end of this notebook. This notebook will necessary contain some math, but it will be kept to an absolute minimum. I will only present the math and mathematical concepts that are absolutely necessary.
@@ -38,7 +38,7 @@ get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="5
 # In[3]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/G0hvxnb7hHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/G0hvxnb7hHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 
 
 # ## Types of Machine Learning
@@ -79,7 +79,7 @@ get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="5
 # In[4]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/I9Nl8QIIP54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/I9Nl8QIIP54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 
 
 # Through spaCy, NLP practitioners do not have to engage in the tedious structure of neural networks. Instead, they can take advantage of the state-of-the-art neural network architectures developed by spaCy and easily train spaCy models with just a few lines of code. If you are curious about how training works, I recommend the video below:
@@ -87,7 +87,7 @@ get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="5
 # In[5]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/s8yQ4lRrEIY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/s8yQ4lRrEIY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 
 
 # ## When to use Machine Learning NER
@@ -161,5 +161,5 @@ for ent in doc.ents:
 # In[1]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/2Ny0yATnuxY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/2Ny0yATnuxY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 

@@ -51,6 +51,7 @@ nlp = spacy.load("en_core_web_trf")
 # In[ ]:
 
 
+
 streets_pattern = r"([A-Z][a-z]*(strasse|straße|straat)\b|([A-Z][a-z]* (Street|St|Boulevard|Blvd|Avenue|Ave|Road|Rd|Lane|Ln|Place|Pl)(\.)*))"
 @Language.component("find_streets")
 def find_streets(doc):

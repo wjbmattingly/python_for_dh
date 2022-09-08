@@ -117,7 +117,7 @@ def convert(lang: str, TRAIN_DATA, output_path: Path):
 # In[21]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/TKoPva69_6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/TKoPva69_6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
 
 
 # Now that the function is ready, we can call. In this simple, toy example, we are going to do (intentionally) a major mistake in ML. We are going to use not only a small training data sample (only 2), we are going to use both for training and validation. I cannot stress this enough. NEVER DO THIS. We are doing it here, simply to establish a workflow and demonstrate some of the problems that this method of small training data can present.
@@ -150,7 +150,7 @@ get_ipython().system('python -m spacy init fill-config data/base_config.cfg data
 # In[28]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/l67PXnhu0ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/l67PXnhu0ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 
 
 # With the config.cfg file in place, we can train our first model. In our case, I will be placing our models in the subfolder models/output. We run the command below, and we have a trained model.
@@ -203,5 +203,5 @@ if len(doc.ents) == 0:
 # In[23]:
 
 
-get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/PJZzBp6em-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>\n')
+get_ipython().run_cell_magic('html', '', '<div align="center">\n<iframe width="560" height="315" src="https://www.youtube.com/embed/PJZzBp6em-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n</div>')
 

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3.5. Introduction to Word Vectors &#8212; Introduction to Python for Humanists</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,23 +105,22 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   <p align="center">
-    INTRODUCTION TO PYTHON FOR HUMANISTS
-   </p>
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <p align="center">INTRODUCTION TO PYTHON FOR HUMANISTS</p>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   The Basics of Python (Work in Progress)
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01_intro.html">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
    1. Introduction to Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -117,19 +130,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01_introduction_to_python.html">
+    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
      1.2. What is Python?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02_installing_python.html">
-     1.3. Installing Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
    2. Working with Data (Work in Progress)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -139,89 +147,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/02_01_data.html">
+    <a class="reference internal" href="../01_intro/01_02-02_data.html">
      2.2. Data Types (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/02_02_data_structures.html">
+    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
      2.3. Data Structures (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_02_intro.html">
-   3. Loops and Logic
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/03_01_loops.html">
-     3.1. Introduction to Loops (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/03_02_conditionals.html">
-     3.2. Introduction to Conditionals (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_03_intro.html">
-   4. Formal Coding
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_01_functitons.html">
-     4.1. Introduction to Functions (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_02_classes.html">
-     4.2. Introduction to Classes (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/04_03_libraries.html">
-     4.3. Introduction to Libraries (Work in Progress)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_04_intro.html">
-   5. Working with External Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_01_texts.html">
-     5.1. Loading and Saving Text Data (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_02_json.html">
-     5.2. Loading and Saving JSON Data (Work in Progress)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/05_03_multiple_files.html">
-     5.3. Working with Multiple Files (Work in Progress)
     </a>
    </li>
   </ul>
@@ -237,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_01_intro.html">
    1. Introduction to Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -259,8 +191,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_02_intro.html">
    2. Working with Data in Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -286,8 +218,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_03_intro.html">
    3. Searching for Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +245,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_04_intro.html">
    4. Advanced Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -347,8 +279,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_01_intro.html">
    1. Introduction to spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -379,8 +311,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_02_intro.html">
    2. Rules-Based spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -416,8 +348,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_03_intro.html">
    3. Machine Learning Named Entity Recognition with spaCy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -463,8 +395,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="03_04_intro.html">
    4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -507,8 +439,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_intro.html">
    Introduction to Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -534,8 +466,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_intro.html">
    TF-IDF and K-Means Clustering
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -578,8 +510,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_ocr/05_02_intro.html">
    Cleaning Images for OCR with OpenCV
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -595,8 +527,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_ocr/05_03_intro.html">
    A Real-World Example
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -621,109 +553,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/03_spacy/03_04_introduction_to_word_vectors.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/wjbmattingly/python_for_dh"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_04_introduction_to_word_vectors.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_04_introduction_to_word_vectors.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_04_introduction_to_word_vectors.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_04_introduction_to_word_vectors.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_04_introduction_to_word_vectors.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_04_introduction_to_word_vectors.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/03_spacy/03_04_introduction_to_word_vectors.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
    3.5.1. Key Concepts in this Notebook
@@ -761,12 +810,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1><center>Introduction to Word Vectors</center></h1>
@@ -820,28 +868,29 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="center-introduction-to-word-vectors-center">
-<h1><span class="section-number">3.5. </span><center>Introduction to Word Vectors</center><a class="headerlink" href="#center-introduction-to-word-vectors-center" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-word-vectors-center">
+<h1><span class="section-number">3.5. </span><center>Introduction to Word Vectors</center><a class="headerlink" href="#center-introduction-to-word-vectors-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h2><span class="section-number">3.5.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<center>January 2021</center><section id="key-concepts-in-this-notebook">
+<h2><span class="section-number">3.5.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Word Vectors (Word Embeddings)<br></p></li>
 <li><p>Matrix<br></p></li>
 <li><p>Bigrams and Trigrams<br></p></li>
 <li><p>Bag of Words<br></p></li>
 </ol>
-</div>
-<div class="section" id="before-you-start-reading">
-<h2><span class="section-number">3.5.2. </span>Before you Start Reading!<a class="headerlink" href="#before-you-start-reading" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="before-you-start-reading">
+<h2><span class="section-number">3.5.2. </span>Before you Start Reading!<a class="headerlink" href="#before-you-start-reading" title="Permalink to this headline">#</a></h2>
 <p>Before you star reading, I want you to do one thing. Think about the word concentation camp. Think about what concepts it evokes. Think about the first few words that come to mind. Write down a few proper nouns that come to mind as well.</p>
-</div>
-<div class="section" id="the-need-to-represent-text-numerically">
-<h2><span class="section-number">3.5.3. </span>The Need to Represent Text Numerically<a class="headerlink" href="#the-need-to-represent-text-numerically" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-need-to-represent-text-numerically">
+<h2><span class="section-number">3.5.3. </span>The Need to Represent Text Numerically<a class="headerlink" href="#the-need-to-represent-text-numerically" title="Permalink to this headline">#</a></h2>
 <p>Word vectors, or word embeddings, are numerical representations of words in multidimensional space through matrices. The purpose of the word vector is to get a computer system to understand a word. Computers cannot understand text efficiently. They can, however, process numbers quickly and well. For this reason, it is important to convert a word into a number.</p>
 <p>Initial methods for creating word vectors in a pipeline take all words in a corpus and convert them into a single, unique number. These words are then stored in a dictionary that would look like this: {“the”: 1, “a”, 2} etc. This is known as a <strong>bag of words</strong>. This approach to representing words numerically, however, only allow a computer to understand words numerically to identify unique words. It does not, however, allow a computer to understand <em>meaning</em>.</p>
 <p>Imagine this scenario:</p>
@@ -852,9 +901,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>1, 6, 3, 4, 5</p>
 <p>As we can see, as humans both sentences are nearly identical. The only difference is the degree to which Tom appreciates eating chocolate. If we examine the numbers, however, these two sentences seem quite close, but their semantical meaning is impossible to know for certain. How similar is 2 to 6? The number 6 could represent “hates” as much as it could represent “likes”. This is where word vectors come in.</p>
 <p>Word vectors take these one dimensional bag of words and gives them multidimensional meaning by representing them in higher dimensional space, noted above. This is achieved through machine learning and can be easily achieved via Python libraries, such as Gensim, which we will explore more closely in the next notebook.</p>
-</div>
-<div class="section" id="why-use-word-vectors">
-<h2><span class="section-number">3.5.4. </span>Why use Word Vectors?<a class="headerlink" href="#why-use-word-vectors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="why-use-word-vectors">
+<h2><span class="section-number">3.5.4. </span>Why use Word Vectors?<a class="headerlink" href="#why-use-word-vectors" title="Permalink to this headline">#</a></h2>
 <p>The goal of word vectors is to achieve numerical understanding of language so that a computer can perform more complex tasks on that corpus. Let’s consider the example above. How do we get a computer to understand 2 and 6 are synonyms or mean something similar? One option you might be thinking is to simply give the computer a synonym dictionary. It can look up synonyms and then know what words mean. This approach, on the surface, makes perfect sense, but let’s explore that option and see why it cannot possibly work.</p>
 <p>For the example below, we will be using the Python library PyDictionary which allows us to look up definitions and synonyms of words.</p>
 <div class="cell docutils container">
@@ -909,16 +958,16 @@ love: [&#39;amorousness&#39;, &#39;caring&#39;, &#39;lovingness&#39;, &#39;agape
 </div>
 </div>
 <p>This, as we can see, has some potential to work, but again it is not entirely reliable and to work with such a list would be computationally expensive. For both of these reasons, word vectors are prefered. The reason? Because they are formed by the computer on corpora for a specific task. Further, they are numerical in nature (not a dictionary of words), meaning the computer can process them more quickly.</p>
-</div>
-<div class="section" id="what-do-word-vectors-look-like">
-<h2><span class="section-number">3.5.5. </span>What do Word Vectors Look Like?<a class="headerlink" href="#what-do-word-vectors-look-like" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-do-word-vectors-look-like">
+<h2><span class="section-number">3.5.5. </span>What do Word Vectors Look Like?<a class="headerlink" href="#what-do-word-vectors-look-like" title="Permalink to this headline">#</a></h2>
 <p>Word vectors have a preset number of dimensions. These dimensions are honed via machine learned. Models take into account word frequency alongside words across a corpus and the appearance of other words in similar contexts. This allows for the the computer to determin the syntactical similarity of words numerically. It then needs to represent these relationships numerically. It does this through the vector, or a matrix of matrices. To represent these more concisely, models flatten a matrix to a float (decimal number). The number of dimensions represent the number of floats in the matrix.</p>
 <p>Below is a pretrained model’s output of word vectors for Holocaust documents. This is how the word “know” looks in vectors:</p>
 <p>know -0.19911548 -0.27387282 0.04241912 -0.58703226 0.16149549 -0.08585547 -0.10403373 -0.112367705 -0.28902963 -0.42949626 0.051096343 -0.04708015 -0.051914077 -0.010533272 -0.23334776 0.031974062 -0.015784053 -0.21945408 0.07359381 0.04936823 -0.15373217 -0.18460844 -0.055799782 -0.057939123 0.14816307 -0.46049833 0.16128318 0.190906 -0.29180774 -0.08877125 0.23563664 -0.036557104 -0.23812544 0.21938106 -0.2781296 0.5112853 0.049084224 0.14876273 0.20611146 -0.04535578 -0.35051352 -0.26381743 0.20824358 0.29732847 -0.013382204 -0.19970295 -0.34890386 -0.16214448 -0.23497184 0.1656344 0.15815939 0.012848561 -0.22887675 -0.21618247 0.13367777 0.1028471 0.25068823 -0.13625076 -0.11771541 0.4857257 0.102198474 0.06380113 -0.22328818 -0.05281015 0.0059655504 0.095453635 0.39693353 -0.066147 -0.1920163 0.5153346 0.24972811 -0.0076305643 -0.05530072 -0.24668717 -0.074051596 0.29288396 -0.0849124 0.37786478 0.2398532 -0.10374063 0.5445305 -0.41955113 0.39866814 -0.23992492 -0.15373677 0.34488577 -0.07166888 -0.48001364 0.0660652 0.061260436 0.32197484 -0.12741785 0.024006622 -0.07915035 -0.04467735 -0.2387938 -0.07527494 0.07079664 0.074456714 0.17877163 -0.002122373 -0.16164272 0.12381973 -0.5908519 0.5827627 -0.38076186 0.095964395 0.020342976 -0.5244792 0.24467848 -0.12481717 0.2869162 -0.34473857 -0.19579992 -0.18069582 0.015281798 -0.18330036 -0.08794056 0.015334953 -0.5609912 0.17393902 0.04283724 -0.07696586 0.2040299 0.34686008 0.31219167 0.14669564 -0.26249585 -0.42771882 0.5381632 -0.123247474 -0.29142144 -0.29963812 -0.32800657 -0.10684048 -0.08594837 0.19670585 0.13474767 0.18349588 -0.4734125 0.15554792 -0.21062694 -0.14191462 -0.12800062 0.2053445 -0.05258381 0.10878109 0.56381494 0.22724482 -0.17778987 -0.061046753 0.10789692 -0.015310492 0.16563527 -0.31812978 -0.1478078 0.4323269 -0.2543924 -0.25956103 0.38653126 0.5080214 -0.18796602 -0.10318089 0.023921987 -0.14618908 0.22923793 0.37690258 0.13323267 -0.34325415 -0.048353776 -0.30283198 -0.2839813 -0.2627738 -0.07422618 -0.31940162 0.38072023 0.56700015 -0.023362642 -0.3786432 0.084006436 0.0729958 0.09483505 -0.2665334 0.12699558 -0.37927982 -0.39073908 0.0063185897 -0.34464878 -0.24011964 0.09303968 -0.15488827 -0.018486138 0.3560308 -0.26005003 0.089302294 0.116130605 0.07684872 -0.085253105 -0.28178927 -0.17346472 -0.20008522 0.004347025 0.34192443 0.017453942 0.06926512 -0.15926014 -0.018554512 0.18478563 -0.040194467 0.38450953 0.4104423 -0.016453728 0.013374495 -0.011256633 0.09106963 0.20074937 0.17310189 -0.12467103 0.16330549 -0.0009963055 0.12181527 -0.05295286 -0.0059491103 -0.04697837 0.38616535 -0.21074814 -0.32234505 0.47269863 0.27924335 0.13548143 -0.2677968 0.03536313 0.3248672 0.2062973 0.29093853 0.1844036 -0.43359983 0.025519002 -0.06319317 -0.2427806 -0.22732906 0.08803728 -0.041860744 -0.151291 0.3400458 -0.29143015 0.25334117 0.06265491 0.26399022 -0.20121849 0.22156847 -0.50599706 0.069224015 0.52325517 -0.34115726 -0.105219565 -0.37346402 -0.02126528 0.09619415 0.017722093 -0.3621799 -0.109912336 0.021542747 -0.13361925 0.2087667 -0.08780184 0.09494446 -0.25047818 -0.07924239 0.21750642 0.2621652 -0.52888566 0.081884995 -0.20485449 0.18029206 -0.5623824 -0.03897387 0.3213515 0.057455678 -0.26524526 0.14741589 0.1257589 0.04708992 0.026751317 -0.014696863 -0.11038961 0.004459205 -0.01394376 0.091146186 -0.15486309 0.20662159 -0.0987916 -0.07740813 0.009704136 0.28866896 0.3916269 0.35061485 0.31678385 0.43233085 0.44510433</p>
 <p>For these vectors, I used the industry-standard of 300 dimensions. We see each of these dimensions represented by each of the floats, separated by whitespace. As the model passes over the corpus it is being trained on, it hones these numbers and changes them for each word. Over multiple epochs, or generations, it gains a clearer sense of the similarity of words, or at least words that are used in similar contexts.</p>
-</div>
-<div class="section" id="id1">
-<h2><span class="section-number">3.5.6. </span>Why use Word Vectors?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id1">
+<h2><span class="section-number">3.5.6. </span>Why use Word Vectors?<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Once a word vector model is trained, we can do similarity matches very quickly and very reliably. At the start of the notebook, I asked you to consider the word concentration camp. Let’s now use these word vectors to find the 10 most similar words to concentration camp.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,9 +1011,9 @@ love: [&#39;amorousness&#39;, &#39;caring&#39;, &#39;lovingness&#39;, &#39;agape
 <p>As we can see, the words closest to Auchwitz are places assocaited with Auschwitz, such as Birkenau, subcamps (of which Auschwitz had many), other concentration camps (such as Ravensbriick), and the location of the Auschwitz memorial, Oswiecim.</p>
 <p>In other words, we have words closely associated with Auschwitz in particular.</p>
 <p>In the next video, we will be looking closely at how to generate word vectors via the library Gensim. To get a better sense of word vectors, please watch the video below.</p>
-</div>
-<div class="section" id="video">
-<h2><span class="section-number">3.5.7. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="video">
+<h2><span class="section-number">3.5.7. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -980,8 +1029,8 @@ love: [&#39;amorousness&#39;, &#39;caring&#39;, &#39;lovingness&#39;, &#39;agape
 </div>
 </div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1005,9 +1054,11 @@ love: [&#39;amorousness&#39;, &#39;caring&#39;, &#39;lovingness&#39;, &#39;agape
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="03_03_examining_a_spacy_model.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1023,24 +1074,28 @@ love: [&#39;amorousness&#39;, &#39;caring&#39;, &#39;lovingness&#39;, &#39;agape
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By William J.B. Mattingly<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By William J.B. Mattingly<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -87,7 +87,7 @@ nlp.max_length = 5278439
 # In[18]:
 
 
-get_ipython().run_cell_magic('time', '', 'doc = nlp(soup)\nprint (len(list(doc.sents)))\n')
+get_ipython().run_cell_magic('time', '', 'doc = nlp(soup)\nprint (len(list(doc.sents)))')
 
 
 # In[3]:
@@ -100,7 +100,7 @@ nlp2.max_length = 5278439
 # In[24]:
 
 
-get_ipython().run_cell_magic('time', '', 'doc = nlp2(soup)\nprint (len(list(doc.sents)))\n')
+get_ipython().run_cell_magic('time', '', 'doc = nlp2(soup)\nprint (len(list(doc.sents)))')
 
 
 # The difference in time here is remarkable. Our text string was around 5.2 million characters. The blank model with just the Sentencizer completed its task in 7.54 seconds and found around 94k sentences. The small English model, the most efficient one offered by spaCy, did the same task in 46 minutes and 15 seconds and found around 112k sentences. The small English model, in other words, took approximately 380 times longer. 

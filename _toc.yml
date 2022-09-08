@@ -10,10 +10,10 @@ parts:
     - file: 01_intro/01_01-02_introduction_to_python
       title: What is Python?
       
-    - file: 01_intro/01_01-02_installing_python
+    - file: 01_intro/01_01-03_installing_python
       title: Installing Python
     
-    - file: 01_intro/01_01-03_coding_basics
+    - file: 01_intro/01_01-04_coding_basics
       title: Coding Basics
       
   - file: 01_intro/01_02-01_intro
