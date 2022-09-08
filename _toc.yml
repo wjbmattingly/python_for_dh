@@ -9,19 +9,17 @@ parts:
     sections:
     - file: 01_intro/01_01-02_introduction_to_python
       title: What is Python?
-      
     - file: 01_intro/01_01-03_installing_python
       title: Installing Python
-    
     - file: 01_intro/01_01-04_coding_basics
       title: Coding Basics
+      
       
   - file: 01_intro/01_02-01_intro
     title: Working with Data (Work in Progress)
     sections:
     - file: 01_intro/01_02-02_data
       title: Data Types (Work in Progress)
-      
     - file: 01_intro/01_02-03_data_structures
       title: Data Structures (Work in Progress)
       
