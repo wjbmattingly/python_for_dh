@@ -26,7 +26,7 @@ parts:
   - file: 01_intro/01_03-01_intro
     title: Loops and Logic
     sections:
-    - file: 01_intro/03_01-02_loops
+    - file: 01_intro/01_03-02_loops
       title: Introduction to Loops (Work in Progress)
 #     - file: 01_intro/03_02-03_conditionals
 #       title: Introduction to Conditionals (Work in Progress)
