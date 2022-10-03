@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Loops &#8212; Introduction to Python for Humanists</title>
+    <title>3.2. Introduction to Loops &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to Python" href="../02_pandas/02_01_intro.html" />
+    <link rel="prev" title="3. Introduction to Python" href="01_03-01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   The Basics of Python (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01-01_intro.html">
    1. Introduction to Python
@@ -166,16 +168,21 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="01_03-01_intro.html">
    3. Loops and Logic
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -795,32 +802,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   3.2.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-loops">
-   What are Loops?
+   3.2.2. What are Loops?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-loops">
-   For Loops
+   3.2.3. For Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   Operators
+   3.2.4. Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   While Loops
+   3.2.5. While Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   Quiz
+   3.2.6. Quiz
   </a>
  </li>
 </ul>
@@ -844,32 +851,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   3.2.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-loops">
-   What are Loops?
+   3.2.2. What are Loops?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-loops">
-   For Loops
+   3.2.3. For Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   Operators
+   3.2.4. Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   While Loops
+   3.2.5. While Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   Quiz
+   3.2.6. Quiz
   </a>
  </li>
 </ul>
@@ -883,11 +890,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-loops-center">
-<h1><center>Introduction to Loops</center><a class="headerlink" href="#center-introduction-to-loops-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.2. </span><center>Introduction to Loops</center><a class="headerlink" href="#center-introduction-to-loops-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>What are Loops?<br></p></li>
 <li><p>Iterations<br></p></li>
@@ -897,7 +904,7 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="what-are-loops">
-<h2>What are Loops?<a class="headerlink" href="#what-are-loops" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.2. </span>What are Loops?<a class="headerlink" href="#what-are-loops" title="Permalink to this headline">#</a></h2>
 <p>Loops are a fundamental concept in all programming languages. They are essential in nearly every piece of code that I write and my experience is far from unique. Loops are essential because they allow you to systematically iterate over data. <b>Iteration</b> is the process by which you move across a piece of data or collection of data. As we will learn in this chapter, there are two types of loops in Python:</p>
 <ol class="simple">
 <li><p>For Loops</p></li>
@@ -906,7 +913,7 @@ title="Print to PDF"
 <p>While most tasks can be achieved with either loop, the way in which you use them is different. By the end of this chapter, you will understand not only how to construct a loop in Python, but have a general idea about when to use which loop. As you code more and more, you will learn that coders tend to favor one type of loop over the other. For me (pun intended), I prefer the for loop. If you asked me why, I could not give you an answer. Maybe by the end of this chapter, you will have a favorite as well!</p>
 </section>
 <section id="for-loops">
-<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.3. </span>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
 <p>A good way to think about a for loop is to first imagine in your mind a list of names:</p>
 <p>Tom, Nancy, Drew, Steph</p>
 <p>Notice that in our list above, we have four names. Each name is separated by a comma. The for loop allows us to move across this list where each comma occurs. Still to this day, when I write a for loop, I say the following in my mind:</p>
@@ -994,7 +1001,7 @@ Steph Mattingly
 <p>Viola! Like magic, we have brought two different pieces of data together in a for loop. But there is another kind of loop in Python, the while loop.</p>
 </section>
 <section id="operators">
-<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.4. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
 <p>In Chapter 02-01, we met briefly operators. I mentioned them there so that you were aware of them and because they most often associated with numbers, but as we will see, these can be used on all types of data. We will very often in loops need to identify Comparison Operators (equal to, less than, etc). Here is a list of those:</p>
 <ol class="simple">
 <li><p>Equal to (==)</p></li>
@@ -1059,7 +1066,7 @@ Steph Mattingly
 <p>On the surface, it may seem like you would never need to use comparison operators. You know that 1 is not equal to 2. In fact, you will use them all the time because comparison operators allow for you to leverage Boolean logic, or True-False logic. This is particular useful in loops. A good way to demonstrate this is with a while loop.</p>
 </section>
 <section id="while-loops">
-<h2>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.5. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
 <p>These operators allow us to structure complex conditions within our loop. So, we can say that while something is equal to something else, Python should do x. We will see this same concept in the following chapter as we explore conditionals. I think the best way to learn about this concept is to jump in and explore it.</p>
 <p>In the for loop, the loop iterated over a set of data. A while loop is a bit different. In a while loop, the loop will run continuously while something is true. Like the for loop, we create the loop with a set of commands beginning with its name, while. Next we state the condition to be met that will result in breaking, or stoping the loop. Let’s say we wanted to count from 0 to 10. We would create an object named x and set that equal to our start position. Then we would state so long as x != (not equal to) 10, print off x. In order to ensure that x ticks up, we need to make sure that we change the object from x to x+1 so that it moves up by 1 number each time.</p>
 <div class="cell docutils container">
@@ -1113,7 +1120,7 @@ Steph Mattingly
 </div>
 </section>
 <section id="quiz">
-<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.6. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -1992,6 +1999,20 @@ if (typeof version == 'undefined') {
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_03-01_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span><center>Introduction to Python</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../02_pandas/02_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
