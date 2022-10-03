@@ -816,18 +816,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension">
+   3.2.4. List Comprehension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-a-list-with-and-without-enumerate">
+   3.2.5. Indexing a List with and without Enumerate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   3.2.4. Operators
+   3.2.6. Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   3.2.5. While Loops
+   3.2.7. While Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   3.2.6. Quiz
+   3.2.8. Quiz
   </a>
  </li>
 </ul>
@@ -865,18 +875,28 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension">
+   3.2.4. List Comprehension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-a-list-with-and-without-enumerate">
+   3.2.5. Indexing a List with and without Enumerate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   3.2.4. Operators
+   3.2.6. Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-loops">
-   3.2.5. While Loops
+   3.2.7. While Loops
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   3.2.6. Quiz
+   3.2.8. Quiz
   </a>
  </li>
 </ul>
@@ -920,20 +940,21 @@ title="Print to PDF"
 <p>“For each item in this list, do something.”</p>
 <p>Let’s imagine that we wanted to use Python to print off each of the names. I would say in my mind:</p>
 <p>“For each item in this list, print off the name”.</p>
-<p>I have not written a single bit of code, rather expressed a type of logic, or series of operations in regular English. This is known as pseudo-code, or false code. The above statement in English will not work if I wrote it in a Python file, but it allows for me to get the logic of what I want to do down on paper. Next, I would need to write out this logic into normal Python syntax. Let’s try and do that now.</p>
-<p>First, let’s make a list of names by creating an object named namelist.</p>
+<p>I have not written a single bit of code, rather expressed a type of logic, or series of operations in regular English. This is known as <strong>pseudo-code</strong>. Pseudo-code is a great way to thinking about code because it is language-agnostic. By this I mean that the same pseudo-code can be applied to Python and C alike. It is useful to think about psudeo-code because it focuses on the logic of the statements, not the code. As you write more complex programs, you will find that it is not always the programming language that is difficult and produces errors, rather the logic behind how you have rendered that language. Pseduo-code lets you first figure out the logic of what you want to do, then you can focus on the execution of that logic.</p>
+<p>The above statement in English (“For each item in this list, print off the name”.) will not work if I write it in a Python file, but it allows for me to get the logic of what I want to do down on paper. Next, I would need to write out this logic into normal Python syntax. Let’s try and do that now.</p>
+<p>First, let’s make a list of names by creating an object named name_list. You may also want to call this variable nameList. Either convention is fine.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Nancy&quot;</span><span class="p">,</span> <span class="s2">&quot;Drew&quot;</span><span class="p">,</span> <span class="s2">&quot;Steph&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Nancy&quot;</span><span class="p">,</span> <span class="s2">&quot;Drew&quot;</span><span class="p">,</span> <span class="s2">&quot;Steph&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Great! Now that we have our namelist object, let’s try and iterate over it, or pass over each item in that list. To do this in Python, we would write something like this:</p>
+<p>Great! Now that we have our name_list variable, let’s try and iterate over it, or pass over each item in that list. To do this in Python, we would write something like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namelist</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -946,12 +967,12 @@ Steph
 </div>
 </div>
 </div>
-<p>Let’s break down a series of things that are happening here. We start off by writing “for”. This tells Python that we are about to enter a for loop and that it should check for proper syntax. Next, we have the word “name”. This is an object that will be created in memory and changed each time the loop iterates over the next item in the expression, “namelist”. This word “namelist” corresponds to the object name that I want to iterate over. Finally there is a “:”. In Python, this is the way that we note a nested portion of code. We will use these in nearly every script we write because we frequently need to nest items in code. Once Python sees a “:”, it will expect the next line to be indented.</p>
-<p>On the next line, we have an indent followed by print, the function that we met in Part 2. Next, we have what we want to be printed, the object name. In other words, we want each name that is temporarily created in memory to be printed off.</p>
-<p>Notice in the block of code below, I have changed the object “name” to “item”. The name here does not matter. It is simply a word that will indicate the name of the object that you are creating. It is considered Pythonic, or good form, to select a name for the object that makes sense. Because this is a namelist, it makes sense to use the word “name” for that object name so that others who read your code will understand it better.</p>
+<p>Let’s break down a series of things that are happening here. We start off by writing “for”. This tells Python that we are about to enter a for loop and that it should check for proper syntax. Next, we have the word “name”. This is a variable that will point to an object created in memory. It will be changed each time the loop iterates over the next item in the expression, “name_list”. This word “name_list” corresponds to the object name that I want to iterate over. Finally there is a “:”. In Python, this is the way that we note a nested portion of code. We will use these in nearly every script we write because we frequently need to nest items in code. Once Python sees a “:”, it will expect the next line to be indented.</p>
+<p>On the next line, we have an indent followed by print. If you remember correctly, the print function allows us to print something off in our output. Next, we have what we want to be printed, the variable “name”. In other words, we want each name that is temporarily created in memory to be printed off.</p>
+<p>Notice in the block of code below, I have changed the object “name” to “item”. The name here does not matter. It is simply a word that will indicate the name of the object that you are creating. It is considered Pythonic, or good form, to select a name for the object that makes sense. Because this is a name_list, it makes sense to use the word “name” for that object name so that others who read your code will understand it better.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">namelist</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -970,7 +991,7 @@ Steph
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namelist</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; Mattingly&quot;</span><span class="p">)</span>
     <span class="n">new_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; Mattingly&quot;</span><span class="p">)</span>
 </pre></div>
@@ -988,7 +1009,7 @@ Steph Mattingly
 <p>Now that we have executed the cell above, let’s see how our new list looks. Let’s print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -998,10 +1019,88 @@ Steph Mattingly
 </div>
 </div>
 </div>
-<p>Viola! Like magic, we have brought two different pieces of data together in a for loop. But there is another kind of loop in Python, the while loop.</p>
+<p>Viola! Like magic, we have brought two different pieces of data together in a for loop.</p>
+</section>
+<section id="list-comprehension">
+<h2><span class="section-number">3.2.4. </span>List Comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h2>
+<p>Sometimes in someone’s code you will see this same idea expressed in a single line of code. It will look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_names_comprehension</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; Mattingly&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_names_comprehension</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Tom Mattingly&#39;, &#39;Nancy Mattingly&#39;, &#39;Drew Mattingly&#39;, &#39;Steph Mattingly&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is known as <strong>list comprehension</strong>. List comprehension is a way of creating a list on a single line with a loop appearing within the open and close brackets. This single line does precisely the same thing as the four line of code above, but allows a programmer to express it in <strong>tighter code</strong>. Tighter code is a phrase often used to describe code that is more concise. This is often what polished, final code should look like and it is a style in which computer scientists in particular try to write. While tighter code is often considered more polished, it can be more difficult for other humanists or novice programmers to understand. Like writing in a spoken language, the purpose of writing in code is also to be readable. You should know your audience. If your audience are those who are not computer scientists, perhaps writing more verbose code is better.</p>
+<p>Let’s parse out the components of this single line. First, we have the object that we want to create with the variable name “new_names_comprehension” we set this equal to an open bracket. Within this open bracket we state what we want to do to the temporary variable created across the loop. In this case, that variable is again “name”. Again, we specify that we want to add ” Mattingly” to that variable name. Next, we specify the loop, e.g. “for name in name_list”. Finally, we use a closed bracket to indicate the end of that statement.</p>
+<p>For now, focus on being more verbose and writing out your code as seen in the first example. This will help you get the logic down and debug issues as they surface more easily as your bugs will appear on a specific line that caused the error. When you get more comfortable with Python, then try to use list comprehension.</p>
+<p>I am including list comprehension here not so that you use it, but so that you will see it here first in a controlled setting. You will likely see this in GitHub repositories and on StackOverflow with little explanation. Now that you have seen what list comprehension looks like and understand its components, you will be able to parse that code a bit more easily.</p>
+</section>
+<section id="indexing-a-list-with-and-without-enumerate">
+<h2><span class="section-number">3.2.5. </span>Indexing a List with and without Enumerate<a class="headerlink" href="#indexing-a-list-with-and-without-enumerate" title="Permalink to this headline">#</a></h2>
+<p>Often when we create a loop, we need to understand where we are in a specific index of a list. As you will find with programming, there are multiple ways to do this.</p>
+<p>Let’s explore a simple approach first so that you can understand the logic behind the approach. Next, we will see a cleaner, but more complex example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+Tom
+1
+Nancy
+2
+Drew
+3
+Steph
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, everything is nearly identical to our initial for loop with one clear addition, the variable “i”. The name “i” here represents a counter that we are storing outside of our loop. We initially set this variable to 0. As we iterate over our loop, we conclude each pass with the code “i=i+1”. This command says to Python take the object “i” and whatever that number is add 1 to it. This means that each time we pass over our name_list, we know precisely where we are in the index.</p>
+<p>We can write this exact same code, however, by using the built-in function “enumerate”. Enumerate automatically creates a variable for us during our loop and ticks it up each time we pass over an item in the list. We can use enumerate to write cleaner and tighter code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">name_list</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+Tom
+1
+Nancy
+2
+Drew
+3
+Steph
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we have the precise same result as above. Let’s break down precisely what is happening in this example.</p>
+<p>The only thing that has changed is the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">name_list</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Notice the addition of ‘i, name’. This means that we have two variables that we will be creating each time we loop. When using enumerate, the very first variable should always be ‘i’ or something that points to the integer that will count up. Next, we have a comma. This separates the two variables out in the loop. Next, we have the item in the list that we create as we iterate over our data. This is the same variable name that we used before, ‘name’. Finally, we have ‘enumerate(name_list):’ This tells Python to use enumerate on the name_list. The enumerate function is what creates the i for us in memory.</p>
 </section>
 <section id="operators">
-<h2><span class="section-number">3.2.4. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.6. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
 <p>In Chapter 02-01, we met briefly operators. I mentioned them there so that you were aware of them and because they most often associated with numbers, but as we will see, these can be used on all types of data. We will very often in loops need to identify Comparison Operators (equal to, less than, etc). Here is a list of those:</p>
 <ol class="simple">
 <li><p>Equal to (==)</p></li>
@@ -1066,7 +1165,7 @@ Steph Mattingly
 <p>On the surface, it may seem like you would never need to use comparison operators. You know that 1 is not equal to 2. In fact, you will use them all the time because comparison operators allow for you to leverage Boolean logic, or True-False logic. This is particular useful in loops. A good way to demonstrate this is with a while loop.</p>
 </section>
 <section id="while-loops">
-<h2><span class="section-number">3.2.5. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.7. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
 <p>These operators allow us to structure complex conditions within our loop. So, we can say that while something is equal to something else, Python should do x. We will see this same concept in the following chapter as we explore conditionals. I think the best way to learn about this concept is to jump in and explore it.</p>
 <p>In the for loop, the loop iterated over a set of data. A while loop is a bit different. In a while loop, the loop will run continuously while something is true. Like the for loop, we create the loop with a set of commands beginning with its name, while. Next we state the condition to be met that will result in breaking, or stoping the loop. Let’s say we wanted to count from 0 to 10. We would create an object named x and set that equal to our start position. Then we would state so long as x != (not equal to) 10, print off x. In order to ensure that x ticks up, we need to make sure that we change the object from x to x+1 so that it moves up by 1 number each time.</p>
 <div class="cell docutils container">
@@ -1120,7 +1219,7 @@ Steph Mattingly
 </div>
 </section>
 <section id="quiz">
-<h2><span class="section-number">3.2.6. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.8. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
