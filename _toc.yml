@@ -15,41 +15,41 @@ parts:
       title: Coding Basics
       
       
-  - file: 01_intro/01_02-01_intro
-    title: Working with Data (Work in Progress)
-    sections:
-    - file: 01_intro/01_02-02_data
-      title: Data Types (Work in Progress)
-    - file: 01_intro/01_02-03_data_structures
-      title: Data Structures (Work in Progress)
+#   - file: 01_intro/01_02-01_intro
+#     title: Working with Data (Work in Progress)
+#     sections:
+#     - file: 01_intro/01_02-02_data
+#       title: Data Types (Work in Progress)
+#     - file: 01_intro/01_02-03_data_structures
+#       title: Data Structures (Work in Progress)
       
-  - file: 01_intro/01_02_intro
-    title: Loops and Logic
-    sections:
-    - file: 01_intro/03_01_loops
-      title: Introduction to Loops (Work in Progress)
-    - file: 01_intro/03_02_conditionals
-      title: Introduction to Conditionals (Work in Progress)
+#   - file: 01_intro/01_02_intro
+#     title: Loops and Logic
+#     sections:
+#     - file: 01_intro/03_01_loops
+#       title: Introduction to Loops (Work in Progress)
+#     - file: 01_intro/03_02_conditionals
+#       title: Introduction to Conditionals (Work in Progress)
 
-  - file: 01_intro/01_03_intro
-    title: Formal Coding
-    sections:
-    - file: 01_intro/04_01_functitons
-      title: Introduction to Functions (Work in Progress)
-    - file: 01_intro/04_02_classes
-      title: Introduction to Classes (Work in Progress)
-    - file: 01_intro/04_03_libraries
-      title: Introduction to Libraries (Work in Progress)
+#   - file: 01_intro/01_03_intro
+#     title: Formal Coding
+#     sections:
+#     - file: 01_intro/04_01_functitons
+#       title: Introduction to Functions (Work in Progress)
+#     - file: 01_intro/04_02_classes
+#       title: Introduction to Classes (Work in Progress)
+#     - file: 01_intro/04_03_libraries
+#       title: Introduction to Libraries (Work in Progress)
       
-  - file: 01_intro/01_04_intro
-    title: Working with External Data
-    sections:
-    - file: 01_intro/05_01_texts
-      title: Loading and Saving Text Data (Work in Progress)
-    - file: 01_intro/05_02_json
-      title: Loading and Saving JSON Data (Work in Progress)
-    - file: 01_intro/05_03_multiple_files
-      title: Working with Multiple Files (Work in Progress)
+#   - file: 01_intro/01_04_intro
+#     title: Working with External Data
+#     sections:
+#     - file: 01_intro/05_01_texts
+#       title: Loading and Saving Text Data (Work in Progress)
+#     - file: 01_intro/05_02_json
+#       title: Loading and Saving JSON Data (Work in Progress)
+#     - file: 01_intro/05_03_multiple_files
+#       title: Working with Multiple Files (Work in Progress)
 
 
 - caption: Data Analysis with Pandas (Work in Progress)
