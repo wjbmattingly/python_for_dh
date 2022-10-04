@@ -1432,18 +1432,10 @@ title="Print to PDF"
 <li><p>integers</p></li>
 <li><p>floats</p></li>
 </ul>
-<p>As noted above, integers are numbers without a decimal point, whereas floats are numbers with a decimal point. This is am important distinction that you MUST remember, especially when working with data imported from and exported to Excel.</p>
-<p>As digital humanists, you might be thinking to yourself, “I just work with text, why should I care so much about numbers?” The answer? Numbers allow us to perform quantitative analysis. What if you want to know the times a specific author wrote to a colleague or to which places he wrote most frequently, as was the case with the Republic of Letters project at Stanford? In order to perform that kind of analysis, you MUST have a command of how numbers work in Python, how to perform basic mathematical functions on those numbers, and how to interact with them. Further, numbers are essential to understand for performing more advanced functions in Python, such as Loops, explored in Chapter 03.01.</p>
-<p>The way in which you create a number object in Python is the to create an object name, use the equal sign and type the number. If your number has a decimal, Python will automatically consider it a float. If it does not, it will automatically consider it an integer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">num2</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Throughout your DH project, you will very likely need to manipulate numbers through mathematical operations. Here is a list of the common operations:</p>
+<p>As noted above, integers are numbers without a decimal point, whereas floats are numbers with a decimal point. This is am important distinction that you should remember, especially when working with data imported from and exported to Excel.</p>
+<p>As digital humanists, you might be thinking to yourself, “I just work with text, why should I care so much about numbers?” The answer? Numbers allow us to perform quantitative analysis. What if you wished to know the times a specific author wrote to a colleague or to which places he wrote most frequently, as was the case with the Republic of Letters project at Stanford?</p>
+<p>To perform that kind of analysis, you need a command of how numbers work in Python, how to perform basic mathematical functions on those numbers, and how to interact with them. Further, numbers are essential to understand for performing more advanced functions in Python, such as Loops, explored in Chapter 3.</p>
+<p>Throughout your DH project, you will very likely need to manipulate numbers through mathematical operations. Here is a cheatsheet of the common operations:</p>
 <div class="hint admonition">
 <p class="admonition-title">Cheatsheet for Mathematical Operations</p>
 <table class="colwidths-auto table">
@@ -1501,105 +1493,56 @@ title="Print to PDF"
 </tbody>
 </table>
 </div>
+<p>The way in which you create a number object in Python is the to create an object name, use the equal sign and type the number. If your number has a decimal, Python will automatically consider it a float. If it does not, it will automatically consider it an integer. Let’s create an integer and a float.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">an_integer</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">an_integer</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">-</span><span class="n">num2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_float</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_float</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1
 </pre></div>
 </div>
 </div>
 </div>
+<p>In the Trinket application below, try to create a float and an integer and print each off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">*</span><span class="n">num2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://trinket.io/embed/python3/3fe4c8f3f4&#39;</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
+<div class="output text_html">
+<iframe
+    width="700"
+    height="500"
+    src="https://trinket.io/embed/python3/3fe4c8f3f4"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
 </div>
-</div>
-</div>
+<p>Now that you understand how to create a number in memory, let’s try to add two numbers together. In the example below, we will add 1 and 1 together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">/</span><span class="n">num2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>800
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">/</span><span class="n">num2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="o">//</span><span class="n">num2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1609,16 +1552,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>In addition to this, you will very often in loops need to identify Comparison Operators (equal to, less than, etc). Here is a list of those:</p>
-<ol class="simple">
-<li><p>Equal to (==)</p></li>
-<li><p>Greater than (&gt;)</p></li>
-<li><p>Less than (&lt;)</p></li>
-<li><p>Less than or equal to (&lt;=)</p></li>
-<li><p>Greater than or equal to (&gt;=)</p></li>
-<li><p>Not equal to (!=)</p></li>
-</ol>
-<p>We will address these in greater detail in a later chapter as they are particularly useful when you work with loops.</p>
+<p>In the Trinket application above, try to perform the other mathematical operations.</p>
 </section>
 <section id="booleans">
 <h2><span class="section-number">2.2.6. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">#</a></h2>
@@ -1634,38 +1568,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">bool1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bool1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bool2</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bool3</span> <span class="o">=</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">bool3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
