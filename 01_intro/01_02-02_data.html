@@ -1034,75 +1034,15 @@ title="Print to PDF"
 <p>For your convenience, here is a cheatsheet for helping you refer back to these types of data.</p>
 <div class="tip admonition">
 <p class="admonition-title">Cheatsheet for Data Types and Data Structures in Python</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Data Type</p></th>
-<th class="head"><p>Python Type</p></th>
-<th class="head"><p>Category</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Trick for Remembering</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>string</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
-<td><p>text</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code></p></td>
-<td><p>a piece of text</p></td>
-<td><p>quotes</p></td>
-</tr>
-<tr class="row-odd"><td><p>integer</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-<td><p>number</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>a whole number</p></td>
-<td><p>no decimal</p></td>
-</tr>
-<tr class="row-even"><td><p>floating number (decimal)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-<td><p>number</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1.1</span></code></p></td>
-<td><p>a decimal number</p></td>
-<td><p>with decimal</p></td>
-</tr>
-<tr class="row-odd"><td><p>Boolean (True or False)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
-<td><p>boolean</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
-<td><p>a true or false value</p></td>
-<td><p>True or False with caps</p></td>
-</tr>
-<tr class="row-even"><td><p>list</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
-<td><p>sequence</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;]</span></code></p></td>
-<td><p>mutable list of objects</p></td>
-<td><p>brackets []</p></td>
-</tr>
-<tr class="row-odd"><td><p>tuple</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></td>
-<td><p>sequence</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;)</span></code></p></td>
-<td><p>immutable list of objects</p></td>
-<td><p>parentheses ()</p></td>
-</tr>
-<tr class="row-even"><td><p>set</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">set</span></code></p></td>
-<td><p>sequence</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;}</span></code></p></td>
-<td><p>mutable list of unique objects</p></td>
-<td><p>squiggly brackets {}</p></td>
-</tr>
-<tr class="row-odd"><td><p>dictionary</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></td>
-<td><p>mapping</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;name&quot;:</span> <span class="pre">&quot;tom&quot;}</span></code></p></td>
-<td><p>holds key-value relationships</p></td>
-<td><p>squiggly brackets with colon {key:value}</p></td>
-</tr>
-</tbody>
-</table>
+<p>Name	Type	Category	Example	Trick	Mutable
+string	<code class="docutils literal notranslate"><span class="pre">str</span></code>	text	<code class="docutils literal notranslate"><span class="pre">&quot;William&quot;</span></code>	quotes	no
+integer	<code class="docutils literal notranslate"><span class="pre">int</span></code>	number	<code class="docutils literal notranslate"><span class="pre">1</span></code>	no decimal	no
+float	<code class="docutils literal notranslate"><span class="pre">float</span></code>	number	<code class="docutils literal notranslate"><span class="pre">1.1</span></code>	with decimal	no
+Boolean	<code class="docutils literal notranslate"><span class="pre">bool</span></code>	boolean	<code class="docutils literal notranslate"><span class="pre">True</span></code>	True or False	no
+list	<code class="docutils literal notranslate"><span class="pre">list</span></code>	sequence	<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;]</span></code>	[]	yes
+tuple	<code class="docutils literal notranslate"><span class="pre">tuple</span></code>	sequence	<code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;)</span></code>	()	no
+set	<code class="docutils literal notranslate"><span class="pre">set</span></code>	sequence	<code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">1.1,</span> <span class="pre">&quot;one&quot;}</span></code>	{} - unique	yes
+dictionary	<code class="docutils literal notranslate"><span class="pre">dict</span></code>	mapping	<code class="docutils literal notranslate"><span class="pre">{&quot;name&quot;:</span> <span class="pre">&quot;tom&quot;}</span></code>	{key:value}	yes</p>
 </div>
 </section>
 <section id="strings">
