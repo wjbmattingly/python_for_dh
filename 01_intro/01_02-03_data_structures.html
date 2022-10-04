@@ -942,7 +942,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -958,7 +958,7 @@ title="Print to PDF"
 <p>Let’s grab the item at index 0 in first_list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -971,7 +971,7 @@ title="Print to PDF"
 <p>In the cell below try to grab the string “one” from first_list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -986,7 +986,7 @@ title="Print to PDF"
 <p>Let’s say, we wanted to grab the first 3 items from the list, we would want to do something like this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -999,7 +999,7 @@ title="Print to PDF"
 <p>We can also work backwards with indexing. We can, for example, use a -1 to grab the final item in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1012,7 +1012,7 @@ title="Print to PDF"
 <p>We can also use range indexing to grab the final three items. In Python, if you index a list with no end point, it will grab everything up to the end of that list. We can see this in the two examples below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
 </pre></div>
 </div>
 </div>
@@ -1022,9 +1022,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>We can likewise do the same in reverse by grabbing all indices up to the first index. In other words, the item in index 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">first_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1034,21 +1035,41 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>In the Trinket application below, try to create a list and then index it in different places.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://trinket.io/embed/python3/3fe4c8f3f4&#39;</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="500"
+    src="https://trinket.io/embed/python3/3fe4c8f3f4"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 </section>
 <section id="tuples">
 <h2><span class="section-number">2.3.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h2>
-<p><b>Tuples</b> are lists of data that cannot be changed. When we look at lists in Lesson 06, we will see that lists are the exact same thing as tuples, except they can be changed. We can distinguish tuples from lists by the way in which they are formed. While lists use square brackets, tuples use parentheses. We create a tuple, like the example below. Our tuple object is a_tuple and the tuple consist of three items: an integer 1, a float 1.0, and a string of “one”. Lists and tuples can contain all three of these types of data. The way in which we separate items in a tuple is with a comma.</p>
+<p><b>Tuples</b> are lists of data that cannot be changed. When we look at lists above, we will see that lists are the exact same thing as tuples, except they can be changed. We can distinguish tuples from lists by the way in which they are formed. While lists use square brackets, tuples use parentheses. We create a tuple, like the example below. Our tuple object is a_tuple and the tuple consist of three items: an integer 1, a float 1.0, and a string of “one”. Lists and tuples can contain all three of these types of data. The way in which we separate items in a tuple is with a comma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">tuple1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_tuple</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1058,20 +1079,21 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>In the Tricket application above, try to create a tuple and index it.</p>
 </section>
 <section id="mutability-vs-immutability">
 <h2><span class="section-number">2.3.4. </span>Mutability vs Immutability<a class="headerlink" href="#mutability-vs-immutability" title="Permalink to this headline">#</a></h2>
 <p>As noted above, tuples are immutable which means they cannot be changed. Let’s see precisely what this means in practice. Say, we wanted to add to a list. We can do this with the .append() method. This will take one argument, or piece of information placed between the parentheses. You will learn about arguments later when we discuss functions and methods in greater depth. For now, understand that the information passed between the parentheses tells the method or function what is needed to perform the function. In this case, .append() allows us to append, or add, something to a list. The argument that we pass, “one”, tells what we want to append. In this case, the string, “one”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1084,15 +1106,15 @@ title="Print to PDF"
 <p>Notice that we do not have an error. This is because our list is mutable, or changeable. This means that we can add to it, delete items from it, and other operations that allow us to change how it is stored in memory. Tuples, on the other hand, are immutable, or unchangeable. Let’s try and perform the same method on the tuple and see what happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_tuple</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">f0071754b9b9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">first_tuple</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
 
 <span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;
 </pre></div>
@@ -1100,14 +1122,15 @@ title="Print to PDF"
 </div>
 </div>
 <p>Notice that we get an AttributeError. This means that a tuple does not have the ability to use the append method. This does not exist for tuples because they are immutable or unchangeable. The only way to alter the object name, tuple1 is to entirely replace it in memory.</p>
+<p>In the Trinket application above, experiment with append by creating a list and appending data to it.</p>
 </section>
 <section id="sets-bonus-data-structure">
 <h2><span class="section-number">2.3.5. </span>Sets (Bonus Data Structure)<a class="headerlink" href="#sets-bonus-data-structure" title="Permalink to this headline">#</a></h2>
 <p>There is one other data structure similar to lists and tuples and I include it here as a bonus data structure. This is the set. A <b>set</b> is identical to a list. It is mutable, meaning we can update it, but unlike a list, it cannot contain duplicates. This is useful in niche circumstances, such as when you need to remove all duplicates from a list. I include it here just so that you are aware that other types of data structures do exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">}</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">set1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">}</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">first_set</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1123,31 +1146,33 @@ title="Print to PDF"
 <p>Like tuples and lists, dictionaries are a data structure in Python. Like lists, dictionaries are mutable, meaning they can be changed in memory. Unlike tuples and lists, dictionaries are not lists of data. Instead, they have two components: keys and values. These two components are separated by a colon. All of this is contained within squiggly brackets. In the example below, we have a dictionary, a_dict, with a key of “name” and a value of “William”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
          <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Mattingly&quot;</span>
         <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In digital humanities projects, dictionaries are particularly useful for structuring complex data that you may have in Excel with each key being an Excel column and each value being its corresponding value. The dictionary name could be the name of the individual to whom the row corresponds. Like lists and tuples, you can embed data structures within a Python dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;William&#39;, &#39;last_name&#39;: &#39;Mattingly&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first_name&#39;: &#39;William&#39;, &#39;last_name&#39;: &#39;Mattingly&#39;}
 </pre></div>
 </div>
 </div>
 </div>
+<p>In digital humanities projects, dictionaries are particularly useful for structuring complex data that you may have in Excel with each key being an Excel column and each value being its corresponding value. The dictionary name could be the name of the individual to whom the row corresponds. Like lists and tuples, you can embed data structures within a Python dictionary.</p>
+<p>While we could realistically store our data in a list such as the one below (name_list), we would need to be consistent and always place the first name in index 0 and last name in index 1. This introduces potential issues later in a project. Imagine if one programmer left a project. Without good documentation, there is nothing inherent in this list that equates index 0 to first name and index 1 to last name. It is entirely up to the reader of the data to make sense of this data structure.</p>
+<p>Remember, in programming it is always best to be explicit and produce readable code that others can understand. The dictionary allows us to create keys that indicate with greater specificity about the type of data with which we are working. We know from the names dictionary above that “William” is a first name and “Mattingly” is a last name without having to think about which index each string resides. We can do this because the keys of the dictionary are explicit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Mattingly&quot;</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Mattingly&quot;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1157,41 +1182,40 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict1</span><span class="p">[</span><span class="s2">&quot;last_name&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mattingly
-</pre></div>
-</div>
-</div>
-</div>
 <section id="indexing-dictionaries">
 <h3><span class="section-number">2.3.6.1. </span>Indexing Dictionaries<a class="headerlink" href="#indexing-dictionaries" title="Permalink to this headline">#</a></h3>
 <p>In Python, we will frequently need to index a dictionary. Dictionaries, remember, are a bit different from lists and tuples. Rather than being a sequence of items in a list, a dictionary is a collection of keys and corresponding values. To index a dictionary, therefore, we need to work a bit differently. Rather than indexing at a specific point, we index dictionaries at a specific key.</p>
-<p>To understand this, it is best to see it in practice, so let’s go ahead and create a dictionary called dict5.</p>
+<p>To understand this, it is best to see it in practice, so let’s go ahead and try to grab the first name in our dictionary names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephanie&quot;</span><span class="p">,</span> <span class="s2">&quot;Samantha&quot;</span><span class="p">,</span> <span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Sierra&quot;</span><span class="p">]}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This dictionary has one key, “names”. If I wanted to index at the key “names”, I would use the same method of brackets and place the key within the brackets. It would look something like this.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dict5</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="s2">&quot;first_name&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;William&#39;, &#39;Stephanie&#39;, &#39;Samantha&#39;, &#39;Anna&#39;, &#39;Sierra&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>William
 </pre></div>
 </div>
 </div>
+</div>
+<p>In the Trinket application below, create a dictionary and practice indexing it at different keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://trinket.io/embed/python3/3fe4c8f3f4&#39;</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="500"
+    src="https://trinket.io/embed/python3/3fe4c8f3f4"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
 </div>
 </section>
 </section>
