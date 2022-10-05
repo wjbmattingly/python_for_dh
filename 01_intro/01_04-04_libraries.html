@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Libraries in Python &#8212; Introduction to Python for Humanists</title>
+    <title>4.4. Libraries in Python &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to Python" href="../02_pandas/02_01_intro.html" />
+    <link rel="prev" title="4.3. Classes" href="01_04-03_classes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART ONE: The Basics of Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01-01_intro.html">
    1. Introduction to Python
@@ -188,16 +190,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="01_04-01_intro.html">
    4. Formal Coding - Functions, Classes, and Libraries
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_04-02_functions.html">
      4.2. Introduction to Functions (Work in Progress)
@@ -206,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="01_04-03_classes.html">
      4.3. Introduction to Classes (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.4. Introduction to Libraries (Work in Progress)
     </a>
    </li>
   </ul>
@@ -705,22 +712,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   4.4.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-install-python-libraries">
-   How to Install Python Libraries
+   4.4.2. How to Install Python Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-import-a-library">
-   How to Import a Library
+   4.4.3. How to Import a Library
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   4.4.4. Conclusion
   </a>
  </li>
 </ul>
@@ -744,22 +751,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   4.4.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-install-python-libraries">
-   How to Install Python Libraries
+   4.4.2. How to Install Python Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-import-a-library">
-   How to Import a Library
+   4.4.3. How to Import a Library
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   4.4.4. Conclusion
   </a>
  </li>
 </ul>
@@ -773,14 +780,14 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-libraries-in-python-center">
-<h1><center>Libraries in Python</center><a class="headerlink" href="#center-libraries-in-python-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.4. </span><center>Libraries in Python</center><a class="headerlink" href="#center-libraries-in-python-center" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Libraries are common across all programming languages. They allow you to import large amounts of code that contain functions and classes that you can leverage in your own code. A good way to think about a library is as the old expression: “don’t reinvent the wheel”. Use what others have done! Open-source is open for a reason! People who make these libraries do it so that you don’t have to solve certain problems. They’ve done it for you.</p>
 <p>In this chapter, we will learn how to install and import libraries. The reason we are doing this now is because the remainder of this textbook will require external libraries, specifically pandas, requests, and BeautifulSoup.</p>
 </section>
 <section id="how-to-install-python-libraries">
-<h2>How to Install Python Libraries<a class="headerlink" href="#how-to-install-python-libraries" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4.2. </span>How to Install Python Libraries<a class="headerlink" href="#how-to-install-python-libraries" title="Permalink to this headline">#</a></h2>
 <p>Python comes preinstalled with pip. <b>Pip</b> is a package manager. It downloads, installs, and manages different versions of software on your machine. If you are coming to this textbook from windows, this concept might be a bit foreign. Think of pip something that will manage all your libraries for you. If you have installed Python via Anaconda, as I recommended, then pip will be automatically put into your system’s Path. <b>Path</b> on Windows is a way that your computer can understand commands for exe files that you have on your system. If you open the terminal and you type “pip –version”. On Windows, the terminal is command prompt.</p>
 <p>Because I am using JupyterNotebook for this textbook, I can make terminal commands with the “!” before a block of code. When you type “pip –version”, you should see something like the following output.</p>
 <div class="cell docutils container">
@@ -843,7 +850,7 @@ Successfully installed beautifulsoup4-4.10.0 soupsieve-2.3.1
 <p>And that’s it! You have installed 3 new Python libraries! We need to learn one last thing, though, before we conclude this chapter. We need to learn how to import libraries within a Python script.</p>
 </section>
 <section id="how-to-import-a-library">
-<h2>How to Import a Library<a class="headerlink" href="#how-to-import-a-library" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4.3. </span>How to Import a Library<a class="headerlink" href="#how-to-import-a-library" title="Permalink to this headline">#</a></h2>
 <p>To import a library, we use the command import library_name, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -862,7 +869,7 @@ Successfully installed beautifulsoup4-4.10.0 soupsieve-2.3.1
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4.4. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>That’s all we need to cover in this chapter about libraries. You should feel a bit more comfortable about what libraries are, why they are useful, how to install them, and how to import them. As we continue through the final parts of this textbook, you will become more comfortable with libraries.</p>
 </section>
 </section>
@@ -894,6 +901,20 @@ Successfully installed beautifulsoup4-4.10.0 soupsieve-2.3.1
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_04-03_classes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span><center>Classes</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../02_pandas/02_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
