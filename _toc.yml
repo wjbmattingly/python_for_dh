@@ -1,11 +1,11 @@
 format: jb-book
 root: intro
 parts:
-- caption: The Basics of Python (Work in Progress)
+- caption: "PART ONE: The Basics of Python"
   numbered: true
   chapters:
   - file: 01_intro/01_01-01_intro
-    title: "PART ONE: The Basics of Python"
+    title: Introduction to Python
     sections:
     - file: 01_intro/01_01-02_introduction_to_python
       title: What is Python?
