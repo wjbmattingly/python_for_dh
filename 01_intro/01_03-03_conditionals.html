@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Conditionals &#8212; Introduction to Python for Humanists</title>
+    <title>3.3. Conditionals &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to Python" href="../02_pandas/02_01_intro.html" />
+    <link rel="prev" title="3.2. Introduction to Loops" href="01_03-02_loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   The Basics of Python (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01-01_intro.html">
    1. Introduction to Python
@@ -146,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_02-01_intro.html">
-   2. Working with Data (Work in Progress)
+   2. Working with Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -156,29 +158,34 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="01_02-02_data.html">
-     2.2. Data Types (Work in Progress)
+     2.2. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01_02-03_data_structures.html">
-     2.3. Data Structures (Work in Progress)
+     2.3. Data Structures
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="01_03-01_intro.html">
    3. Loops and Logic
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_03-02_loops.html">
      3.2. Introduction to Loops (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.3. Introduction to Conditionals (Work in Progress)
     </a>
    </li>
   </ul>
@@ -634,7 +641,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/03_02_conditionals.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/01_03-03_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -694,7 +701,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/03_02_conditionals.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/01_03-03_conditionals.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -711,7 +718,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/03_02_conditionals.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/01_03-03_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -739,7 +746,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01_intro/03_02_conditionals.ipynb"
+        <a href="../_sources/01_intro/01_03-03_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -800,42 +807,42 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   3.3.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   3.3.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-statement">
-   If Statement
+   3.3.3. If Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#else-statement">
-   Else Statement
+   3.3.4. Else Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#elif-and-the-in-operator-with-strings">
-   Elif and the ‘in’ Operator with Strings
+   3.3.5. Elif and the ‘in’ Operator with Strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditionals-and-lists-with-in-and-not-in">
-   Conditionals and Lists with ‘in’ and ‘not in’
+   3.3.6. Conditionals and Lists with ‘in’ and ‘not in’
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   3.3.7. Conclusion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   Quiz
+   3.3.8. Quiz
   </a>
  </li>
 </ul>
@@ -859,42 +866,42 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   3.3.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   3.3.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if-statement">
-   If Statement
+   3.3.3. If Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#else-statement">
-   Else Statement
+   3.3.4. Else Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#elif-and-the-in-operator-with-strings">
-   Elif and the ‘in’ Operator with Strings
+   3.3.5. Elif and the ‘in’ Operator with Strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditionals-and-lists-with-in-and-not-in">
-   Conditionals and Lists with ‘in’ and ‘not in’
+   3.3.6. Conditionals and Lists with ‘in’ and ‘not in’
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   3.3.7. Conclusion
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quiz">
-   Quiz
+   3.3.8. Quiz
   </a>
  </li>
 </ul>
@@ -908,11 +915,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-conditionals-center">
-<h1><center>Conditionals</center><a class="headerlink" href="#center-conditionals-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.3. </span><center>Conditionals</center><a class="headerlink" href="#center-conditionals-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>What conditional statements are<br></p></li>
 <li><p>What the logic is behind them<br></p></li>
@@ -924,7 +931,7 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Like Loops, Conditionals are an essential component of all programming languages. <b>Conditionals</b> are a type of logic in programming that allow you to control if something happens based on condition that something is true or false. Conditionals are always binary. I always find it useful to think about conditionals in plain English first.</p>
 <p>If something is true, then do this. If that something is not true, then you can specify what should happen if that is the case. In pseudo code, it would look something like this:</p>
 <p>If something is true:</p>
@@ -941,9 +948,30 @@ title="Print to PDF"
 <li><p>else</p></li>
 <li><p>elif (or if)</p></li>
 </ol>
+<div class="hint admonition">
+<p class="admonition-title">Cheatsheet for Conditionals</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>code</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></td>
+<td><p>Functions as the start of a condition.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></td>
+<td><p>Functions as ‘if not’</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></td>
+<td><p>Functions as “or if”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="if-statement">
-<h2>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.3. </span>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">#</a></h2>
 <p>Let’s first practice the if statement. In Python, you will need something to test if it is true. Let’s create an object called x and make it equal to 0. Now, we can say if x is equal to 0, then print it off. Notice in the code below the “:” and the indentation afterwards, just as we saw with loops.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -971,7 +999,7 @@ title="Print to PDF"
 <p>Notice that nothing happens.</p>
 </section>
 <section id="else-statement">
-<h2>Else Statement<a class="headerlink" href="#else-statement" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.4. </span>Else Statement<a class="headerlink" href="#else-statement" title="Permalink to this headline">#</a></h2>
 <p>If we want something to occur if that condition is not met, we can use the Else statement. Think of else as “otherwise” in English. If this condition it met, do this; otherwise, do something else. Let’s write that out in real code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,7 +1019,7 @@ title="Print to PDF"
 <p>Notice that else has the same indentation placement as the if and it too has a “:” followed by indented code. This allows us to create complex logic within our code. You will find yourself using conditional more often than you may realize now.</p>
 </section>
 <section id="elif-and-the-in-operator-with-strings">
-<h2>Elif and the ‘in’ Operator with Strings<a class="headerlink" href="#elif-and-the-in-operator-with-strings" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.5. </span>Elif and the ‘in’ Operator with Strings<a class="headerlink" href="#elif-and-the-in-operator-with-strings" title="Permalink to this headline">#</a></h2>
 <p>I debated including elif in this chapter for fear that it may introduce too many new things at once, but I think it is import to at least be familiar with its existence, even if you will not be using it right away. Elif, in plain English, means “or if”.</p>
 <p>If condition 1 is met:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do this
@@ -1039,7 +1067,7 @@ Susan Found
 <p>The elif statement allows for more robust logic and sequential conditionals to occur.</p>
 </section>
 <section id="conditionals-and-lists-with-in-and-not-in">
-<h2>Conditionals and Lists with ‘in’ and ‘not in’<a class="headerlink" href="#conditionals-and-lists-with-in-and-not-in" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.6. </span>Conditionals and Lists with ‘in’ and ‘not in’<a class="headerlink" href="#conditionals-and-lists-with-in-and-not-in" title="Permalink to this headline">#</a></h2>
 <p>Conditionals are frequently necessary when checking to see if something is in a list. Remember, lists are data structures that contain a list of data. These can be strings, integers, floats, or even other data structures, such as lists, tuples, and dictionaries. You will frequently need to understand what a list contains. To do this, we can use conditionals with the same in operator that we saw above.</p>
 <p>Let’s begin by first making a list called names.</p>
 <div class="cell docutils container">
@@ -1078,11 +1106,11 @@ Susan Found
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>This chapter has introduced the three essential components of conditional statements: if, else, and elif. I would recommend practicing with these on your own data. The best way to learn about conditionals is to use them. Remember, as you write them in Python, speak out loud in English. I still speak aloud (or in my mind) pseudo code as I write in proper Python syntax.</p>
 </section>
 <section id="quiz">
-<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.8. </span>Quiz<a class="headerlink" href="#quiz" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -1979,6 +2007,20 @@ if (typeof version == 'undefined') {
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_03-02_loops.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.2. </span><center>Introduction to Loops</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../02_pandas/02_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
