@@ -1101,8 +1101,8 @@ Susan Found
 </section>
 <section id="conditionals-and-lists-with-in-and-not-in">
 <h2><span class="section-number">3.3.6. </span>Conditionals and Lists with ‘in’ and ‘not in’<a class="headerlink" href="#conditionals-and-lists-with-in-and-not-in" title="Permalink to this headline">#</a></h2>
-<p>Conditionals are frequently necessary when checking to see if something is in a list. Remember, lists are data structures that contain a list of data. These can be strings, integers, floats, or even other data structures, such as lists, tuples, and dictionaries. You will frequently need to understand what a list contains. To do this, we can use conditionals with the same in operator that we saw above.</p>
-<p>Let’s begin by first making a list called names.</p>
+<p>Conditionals are frequently necessary when checking to see if something is in a list. Remember, lists are data structures that contain a list of data. The data contained within a list can be strings, integers, floats, or even other data structures, such as lists, tuples, and dictionaries. You will frequently need to understand what a list contains. To do this, we can use conditionals with the same <code class="docutils literal notranslate"><span class="pre">in</span></code> operator that we saw above.</p>
+<p>Let’s begin by first making a list called <code class="docutils literal notranslate"><span class="pre">names</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Terry&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Joanne&quot;</span><span class="p">]</span>
@@ -1110,6 +1110,18 @@ Susan Found
 </div>
 </div>
 </div>
+<p>Now that we have a list of names, let’s use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to see if the name “Marge” is in names.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reminder
+Remember: Python is case-sensitive.</p>
+</div>
+<p>In pseudo-code, we could write this as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Marge</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">then</span> <span class="nb">print</span> <span class="n">off</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Because Python resembles English syntax so closely, we only have to make a few modifications to make this work in actual code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Marge&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -1123,7 +1135,12 @@ Susan Found
 </div>
 </div>
 </div>
-<p>The in operator has a negative version to, <strong>‘not in’</strong>. This operator functions precisely the same way, but it is the opposite of the in operator. Let’s see it in action.</p>
+<p>This same thing can also be done in reverse. What if we wanted to know if another person was not in <code class="docutils literal notranslate"><span class="pre">names</span></code>. We could write that as pseudo-code that looks something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Tom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">then</span> <span class="nb">print</span> <span class="n">off</span> <span class="n">Tom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Python makes this construction simple because the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator has a negative version to, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>. This operator functions precisely the same way, but it is the opposite of the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator. Let’s see it in action.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Tom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -1136,6 +1153,34 @@ Susan Found
 </pre></div>
 </div>
 </div>
+</div>
+<p>Notice that we have successfully created a conditional statement that checked to see if a string is not in <code class="docutils literal notranslate"><span class="pre">names</span></code>. Both <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> also work with checking if a substring appears in a string. If we wanted to see if a a substring <code class="docutils literal notranslate"><span class="pre">Jerry</span></code> appears in the text <code class="docutils literal notranslate"><span class="pre">Tom</span> <span class="pre">and</span> <span class="pre">Jerry</span></code>, we could create a conditional that looks something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Tom&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Tom and Jerry&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tom found.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tom found.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the Trinket application below, experiment with <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> and conditional statements.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="356"
+    src="https://trinket.io/embed/python3/524597417f"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
 </div>
 </section>
 <section id="conclusion">
