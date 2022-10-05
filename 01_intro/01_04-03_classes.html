@@ -775,7 +775,7 @@ title="Print to PDF"
 <p>Let’s try creating a basic Class. Our class with store data specifically related to emperors, so let’s go ahead and give it the name <code class="docutils literal notranslate"><span class="pre">Emperor</span></code>. We expect each emperor in our dataset to have four attributes: name, birth, coronation, and death.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Emperor</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Emperor</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">birth</span><span class="p">,</span> <span class="n">coronation</span><span class="p">,</span> <span class="n">death</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">birth</span> <span class="o">=</span> <span class="n">birth</span>
@@ -787,7 +787,7 @@ title="Print to PDF"
 </div>
 <p>This is the way this basic class will look. It can be a bit difficult to parse what is happening here when you see it for the first time, so let’s break it down a bit.</p>
 <p>In line one, we state:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Emperor</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Emperor</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>The first word we see is the keyword <code class="docutils literal notranslate"><span class="pre">class</span></code>. Python will see this and expect the syntax for a <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">object</span></code> to follow. This is rather like the function’s <code class="docutils literal notranslate"><span class="pre">def</span></code> which starts to define a new function.</p>
@@ -824,7 +824,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Emperor object at 0x7fdd6c15f5b0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Emperor object at 0x7fdd6c16fc70&gt;
 </pre></div>
 </div>
 </div>
@@ -884,7 +884,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Within this class, we can access the method birth_date(), like so:</p>
+<p>Within this class, we can access the method <code class="docutils literal notranslate"><span class="pre">birth_date()</span></code>, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">charlemagne</span><span class="o">.</span><span class="n">birth_date</span><span class="p">()</span>
