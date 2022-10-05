@@ -31,15 +31,15 @@ parts:
     - file: 01_intro/01_03-03_conditionals
       title: Introduction to Conditionals
 
-#   - file: 01_intro/01_03_intro
-#     title: Formal Coding
-#     sections:
-#     - file: 01_intro/04_01_functitons
-#       title: Introduction to Functions (Work in Progress)
-#     - file: 01_intro/04_02_classes
-#       title: Introduction to Classes (Work in Progress)
-#     - file: 01_intro/04_03_libraries
-#       title: Introduction to Libraries (Work in Progress)
+  - file: 01_intro/01_04-01_intro
+    title: Formal Coding: Functions, Classes, and Libraries
+    sections:
+    - file: 01_intro/01_04-02_functitons
+      title: Introduction to Functions (Work in Progress)
+    # - file: 01_intro/04_02_classes
+    #   title: Introduction to Classes (Work in Progress)
+    # - file: 01_intro/04_03_libraries
+    #   title: Introduction to Libraries (Work in Progress)
       
 #   - file: 01_intro/01_04_intro
 #     title: Working with External Data
