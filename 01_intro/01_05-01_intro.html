@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with Textual Data &#8212; Introduction to Python for Humanists</title>
+    <title>Formal Coding: Functions, Classes, and Libraries &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -544,7 +544,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/05_01_texts.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/01_05-01_intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -604,7 +604,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/05_01_texts.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/01_05-01_intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -621,7 +621,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/05_01_texts.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/01_05-01_intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -649,7 +649,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01_intro/05_01_texts.ipynb"
+        <a href="../_sources/01_intro/01_05-01_intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -686,100 +686,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-with-operator">
-   The With Operator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-open-a-text-file">
-   How to Open a Text File
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
-   How to Write Data to a Text File
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Working with Textual Data</center></h1>
+                <h1><center>Formal Coding: Functions, Classes, and Libraries</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-with-operator">
-   The With Operator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-open-a-text-file">
-   How to Open a Text File
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
-   How to Write Data to a Text File
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -787,90 +710,22 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-textual-data-center">
-<h1><center>Working with Textual Data</center><a class="headerlink" href="#center-working-with-textual-data-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-formal-coding-functions-classes-and-libraries-center">
+<h1><center>Formal Coding: Functions, Classes, and Libraries</center><a class="headerlink" href="#center-formal-coding-functions-classes-and-libraries-center" title="Permalink to this headline">#</a></h1>
+<p>Covered in this Chapter</p>
 <ol class="simple">
 <li><p>Text Files<br></p></li>
 <li><p>The With Operator<br></p></li>
 <li><p>How to Open Text Files in Python<br></p></li>
 <li><p>How to Read from Text Files in Python<br></p></li>
 <li><p>How to Write to Text Files in Python<br></p></li>
+<li><p>JSON data format<br></p></li>
+<li><p>json.dump()<br></p></li>
+<li><p>json.load()<br></p></li>
+<li><p>The glob library<br></p></li>
+<li><p>Working with os<br></p></li>
+<li><p>Walking Directories<br></p></li>
 </ol>
-</section>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Up until now, we have strictly worked with data that we have produced within our own code. Rarely will you ever copy-and-paste data into a Python script. Instead, you will need to interact with external data. Further, you will often need to save data in some way. This chapter is the first of two that walk you through how to interact with external data. We will be working with textual data in this chapter, while in the following chapter we will work with JSON, or JavaScript Object Notation data. In Part 07, Chapter 02, we will work with tabular data.</p>
-</section>
-<section id="the-with-operator">
-<h2>The With Operator<a class="headerlink" href="#the-with-operator" title="Permalink to this headline">#</a></h2>
-<p>The with operator in Python is an essential command that allows for you to do something in memory for so long as the operator is open. This is really important when opening text files. There are several ways to open text files in Python, but I am only showing you this method because it is the most Pythonic. Other methods require you to close the text file in code. If you do not, it will remain open in memory. If you are working with 10,000 text files (I have done this before), and forget to add a close command in your code while iterating over all 10,000 files, your computer will run out of memory and crash. The with operator avoids this problem entirely.</p>
-</section>
-<section id="how-to-open-a-text-file">
-<h2>How to Open a Text File<a class="headerlink" href="#how-to-open-a-text-file" title="Permalink to this headline">#</a></h2>
-<p>Let’s see what it looks like in action and then we will break down what is happening.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The first line in our code is</p>
-<p>with open (file, “r”) as f:</p>
-<p>We can see that we start clearly with the “with” operator. Next, we specify what we are going to do with the with operator. In this case, we will be using the open command. Open tells Python to open a file. Within the parentheses, we pass two arguments. The first argument is a string that corresponds to where the file is located. Here, the file is in our data subfolder and is called “sample.txt”. The final component of this line is “as f”. This tells Python to open that file up temporarily as the object name “f”. The final colon, which we have seen before, indicates that we are about to do something indented.</p>
-<p>The next line is indented because this is a nested bit of code that is being done within the with operator. The line reads:</p>
-<p>data = f.read()</p>
-<p>The name data is the object name that we are assigning to the contents of the file. Next, we see f.read(). This command tells Python to take the f object, in this case the temporary file, open it and read its contents.</p>
-<p>Now, let’s take a look at those contents! We can print them off with the print command.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a sample of a text
-This is another line of the same sample text
-This is a third line.
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can see that the text file contains three lines. It is frequently necessary to split up input data by linebreaks. Sometimes this is necessary when the text file is a list of data with each piece of data stored on a new line. Other times, you need to clean the data so that a paragraph of a scanned book is a continuous string of text. One of the easiest ways to do this is to use the built-in method, splitlines().</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;This is a sample of a text&#39;, &#39;This is another line of the same sample text&#39;, &#39;This is a third line.&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>As you can see, splitlines allows us to convert our string into a list of strings that are separated by linebreaks.</p>
-</section>
-<section id="how-to-write-data-to-a-text-file">
-<h2>How to Write Data to a Text File<a class="headerlink" href="#how-to-write-data-to-a-text-file" title="Permalink to this headline">#</a></h2>
-<p>Just as it is necessary to access external data via Python, you will find yourself frequently needing to storing data outside of a Python script. Let’s take a look at how to do this in the following block of code.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_string</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_string</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This block of code looks very similar to the one above, but with a few exceptions. First, we created a string called new_string. Next, we need to drop that new string into a text file. In this case, we will drop it into data/sample2.txt. Notice, that we have replaced the “r” with “w”. This is because we are telling Python that we want to write to the file, not read it.</p>
-<p>In the indented bit of code, we use f.write(), rather than f.read(). This allows us to write to the f object, rather than read from it. It will take one argument, the string that we want to write to the file. In our case, it is the string object, new_string.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

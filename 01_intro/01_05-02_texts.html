@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with Multiple Files &#8212; Introduction to Python for Humanists</title>
+    <title>Working with Textual Data &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -544,7 +544,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/05_03_multiple_files.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/01_05-02_texts.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -604,7 +604,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/05_03_multiple_files.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/01_05-02_texts.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -621,7 +621,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/05_03_multiple_files.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/01_05-02_texts.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -649,7 +649,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01_intro/05_03_multiple_files.ipynb"
+        <a href="../_sources/01_intro/01_05-02_texts.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -719,23 +719,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-glob">
-   Working with Glob
+  <a class="reference internal nav-link" href="#the-with-operator">
+   The With Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grabbing-multiple-nested-directories">
-   Grabbing Multiple Nested Directories
+  <a class="reference internal nav-link" href="#how-to-open-a-text-file">
+   How to Open a Text File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#walking-a-directory">
-   Walking a Directory
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+  <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
+   How to Write Data to a Text File
   </a>
  </li>
 </ul>
@@ -747,7 +742,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Working with Multiple Files</center></h1>
+                <h1><center>Working with Textual Data</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -768,23 +763,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-glob">
-   Working with Glob
+  <a class="reference internal nav-link" href="#the-with-operator">
+   The With Operator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grabbing-multiple-nested-directories">
-   Grabbing Multiple Nested Directories
+  <a class="reference internal nav-link" href="#how-to-open-a-text-file">
+   How to Open a Text File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#walking-a-directory">
-   Walking a Directory
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+  <a class="reference internal nav-link" href="#how-to-write-data-to-a-text-file">
+   How to Write Data to a Text File
   </a>
  </li>
 </ul>
@@ -797,238 +787,89 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-multiple-files-center">
-<h1><center>Working with Multiple Files</center><a class="headerlink" href="#center-working-with-multiple-files-center" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-textual-data-center">
+<h1><center>Working with Textual Data</center><a class="headerlink" href="#center-working-with-textual-data-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>March 2022</center><section id="covered-in-this-chapter">
+<center>January 2022</center><section id="covered-in-this-chapter">
 <h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
-<li><p>The glob library<br></p></li>
-<li><p>Working with os<br></p></li>
-<li><p>Walking Directories<br></p></li>
+<li><p>Text Files<br></p></li>
+<li><p>The With Operator<br></p></li>
+<li><p>How to Open Text Files in Python<br></p></li>
+<li><p>How to Read from Text Files in Python<br></p></li>
+<li><p>How to Write to Text Files in Python<br></p></li>
 </ol>
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Often times, it is necessary to open multiple files in a Python script. There are multiple ways to do this, but unlike most Python textbooks. I recommend that beginners use the library called glob. <b>Glob</b> comes standard with Python which means you do not have to install it. A good way to think about glob is as a library that allows you to look into a directory and find all potential files based on certain parameters.</p>
+<p>Up until now, we have strictly worked with data that we have produced within our own code. Rarely will you ever copy-and-paste data into a Python script. Instead, you will need to interact with external data. Further, you will often need to save data in some way. This chapter is the first of two that walk you through how to interact with external data. We will be working with textual data in this chapter, while in the following chapter we will work with JSON, or JavaScript Object Notation data. In Part 07, Chapter 02, we will work with tabular data.</p>
 </section>
-<section id="working-with-glob">
-<h2>Working with Glob<a class="headerlink" href="#working-with-glob" title="Permalink to this headline">#</a></h2>
-<p>Working with glob can be a little confusing at first, but let’s break it down. First, we need to import glob.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Next, we need to use the glob class. This will take one argument, the string of files that you want to find. Let’s use the data subfolder as an example. In the example below, we pass one string to this class. This string will be the subfolder in which the data lies followed by a slash followed by an *. This * is known as a wild card. In our case, it looks for all files within this directory.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;data/*&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s print off the files now to see what all is inside the folder.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">files</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/other2&#39;, &#39;data/sample_json.json&#39;, &#39;data/other&#39;, &#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that we have grabbed all files! Most of the time, however, you will only want to grab files that are a specific type, e.g. .txt or .json. To achieve this we can add a .txt after the *. This will grab all the .txt files.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files2</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;data/*.txt&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">files2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+<section id="the-with-operator">
+<h2>The With Operator<a class="headerlink" href="#the-with-operator" title="Permalink to this headline">#</a></h2>
+<p>The with operator in Python is an essential command that allows for you to do something in memory for so long as the operator is open. This is really important when opening text files. There are several ways to open text files in Python, but I am only showing you this method because it is the most Pythonic. Other methods require you to close the text file in code. If you do not, it will remain open in memory. If you are working with 10,000 text files (I have done this before), and forget to add a close command in your code while iterating over all 10,000 files, your computer will run out of memory and crash. The with operator avoids this problem entirely.</p>
 </section>
-<section id="grabbing-multiple-nested-directories">
-<h2>Grabbing Multiple Nested Directories<a class="headerlink" href="#grabbing-multiple-nested-directories" title="Permalink to this headline">#</a></h2>
-<p>If you look in the subdirectory data, you will notice two nested directories called “other” and “other2”. We can grab all files in each directory with the same wildcard *.</p>
+<section id="how-to-open-a-text-file">
+<h2>How to Open a Text File<a class="headerlink" href="#how-to-open-a-text-file" title="Permalink to this headline">#</a></h2>
+<p>Let’s see what it looks like in action and then we will break down what is happening.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files3</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;data/*/*.txt&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">files3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first line in our code is</p>
+<p>with open (file, “r”) as f:</p>
+<p>We can see that we start clearly with the “with” operator. Next, we specify what we are going to do with the with operator. In this case, we will be using the open command. Open tells Python to open a file. Within the parentheses, we pass two arguments. The first argument is a string that corresponds to where the file is located. Here, the file is in our data subfolder and is called “sample.txt”. The final component of this line is “as f”. This tells Python to open that file up temporarily as the object name “f”. The final colon, which we have seen before, indicates that we are about to do something indented.</p>
+<p>The next line is indented because this is a nested bit of code that is being done within the with operator. The line reads:</p>
+<p>data = f.read()</p>
+<p>The name data is the object name that we are assigning to the contents of the file. Next, we see f.read(). This command tells Python to take the f object, in this case the temporary file, open it and read its contents.</p>
+<p>Now, let’s take a look at those contents! We can print them off with the print command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/other2/sample4.txt&#39;, &#39;data/other/sample3.txt&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a sample of a text
+This is another line of the same sample text
+This is a third line.
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can see that the text file contains three lines. It is frequently necessary to split up input data by linebreaks. Sometimes this is necessary when the text file is a list of data with each piece of data stored on a new line. Other times, you need to clean the data so that a paragraph of a scanned book is a continuous string of text. One of the easiest ways to do this is to use the built-in method, splitlines().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;This is a sample of a text&#39;, &#39;This is another line of the same sample text&#39;, &#39;This is a third line.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, splitlines allows us to convert our string into a list of strings that are separated by linebreaks.</p>
 </section>
-<section id="walking-a-directory">
-<h2>Walking a Directory<a class="headerlink" href="#walking-a-directory" title="Permalink to this headline">#</a></h2>
-<p>While glob is easy-to-use, it has certain limitations. One of these is when you need to walk through a directory. Imagine if we needed to grab all the txt files in data, data/other and data/other2. In order to grab all of these, we need to walk through all the subdirectories of data and collect all potential files. This is not possible to do with glob. In these rare circumstances, you should be familiar with the os library.</p>
-<p>The <b>os</b> library allows us to do a lot of more advanced things in Python that I will not cover in this introductory textbook. One of the main things you will use os for is to navigate directories and create directories. For Linux users, a lot of the syntax will be familiar, but for Windows users it can feel a bit foreign. For now, let’s simply import os.</p>
+<section id="how-to-write-data-to-a-text-file">
+<h2>How to Write Data to a Text File<a class="headerlink" href="#how-to-write-data-to-a-text-file" title="Permalink to this headline">#</a></h2>
+<p>Just as it is necessary to access external data via Python, you will find yourself frequently needing to storing data outside of a Python script. Let’s take a look at how to do this in the following block of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_string</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Once we have imported os, we can use the os.walk command. This will take one string. This should correspond to the directory that you want to start walking. Imagine that this is our directory:</p>
-<ul class="simple">
-<li><p>data</p>
-<ul>
-<li><p>other</p></li>
-<li><p>other2</p></li>
-</ul>
-</li>
-</ul>
-<p>We want to get all the text files in data, other, and other2.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walking</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">walking</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object _walk at 0x7fcf42690eb0&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>This above output tells us what what we are looking at is a generator. Generators are a bit beyond this textbook, but think of them as a special kind of object that exists for a single moment in memory. Whenever you see generators, you can usually convert them to a list to work with them. Let’s convert it by using the list() function in Python</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">walking</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">walking</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">walking</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;data/&#39;, [&#39;other2&#39;, &#39;other&#39;], [&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;]), (&#39;data/other2&#39;, [], [&#39;sample4.txt&#39;]), (&#39;data/other&#39;, [], [&#39;sample3.txt&#39;])]
-</pre></div>
-</div>
-</div>
-</div>
-<p>This can be a bit diffult to parse, so let’s iterate over each item in walking.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;data/&#39;, [&#39;other2&#39;, &#39;other&#39;], [&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;])
-(&#39;data/other2&#39;, [], [&#39;sample4.txt&#39;])
-(&#39;data/other&#39;, [], [&#39;sample3.txt&#39;])
-</pre></div>
-</div>
-</div>
-</div>
-<p>As we can see, each item is a tuple with 3 parts:</p>
-<ul class="simple">
-<li><p>root directory</p></li>
-<li><p>subfolders</p></li>
-<li><p>files</p></li>
-</ul>
-<p>For our purposes, we only care about the root directory and the file itself. We can use these two pieces of data. Let’s now modify our loop to grab these two pieces of data and print them off.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_files</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;This is the Root&quot;</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;These are the Files&quot;</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">files</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">()</span>
-    <span class="nb">print</span> <span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is the Root
-data/
-These are the Files
-[&#39;sample_json.json&#39;, &#39;sample2.txt&#39;, &#39;sample.txt&#39;]
-
-
-This is the Root
-data/other2
-These are the Files
-[&#39;sample4.txt&#39;]
-
-
-This is the Root
-data/other
-These are the Files
-[&#39;sample3.txt&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>As we can see, the files are a list. We can then iterate over the files to recombine the root with the files to cultivate a list. With os, we can do this with os.path.join(). This will take two arguments, the root directory and the file. Let’s again modify our loop. We will print off the results.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
-             <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/sample2.txt
-data/sample.txt
-data/other2/sample4.txt
-data/other/sample3.txt
-</pre></div>
-</div>
-</div>
-</div>
-<p>Excellent! Now, we can use this exact same loop to append the file names to an empty list called final_files.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_files</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">walking</span><span class="p">:</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
-             <span class="n">final_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">final_files</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/sample2.txt&#39;, &#39;data/sample.txt&#39;, &#39;data/other2/sample4.txt&#39;, &#39;data/other/sample3.txt&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that we now have all the .txt files in the main directory and all subdirectories. This will be very useful when your files are in multiple subdirectories within multiple subdirectories.</p>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>I would recommend playing around with the code provided to you in this chapter. I cannot emphasize enough how frequently you will need to work with multiple files in a Python project. It is perhaps one of the things you should work hard to commit to memory. Over time, it will become more instinctual.</p>
+<p>This block of code looks very similar to the one above, but with a few exceptions. First, we created a string called new_string. Next, we need to drop that new string into a text file. In this case, we will drop it into data/sample2.txt. Notice, that we have replaced the “r” with “w”. This is because we are telling Python that we want to write to the file, not read it.</p>
+<p>In the indented bit of code, we use f.write(), rather than f.read(). This allows us to write to the f object, rather than read from it. It will take one argument, the string that we want to write to the file. In our case, it is the string object, new_string.</p>
 </section>
 </section>
 
