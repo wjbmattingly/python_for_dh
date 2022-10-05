@@ -32,7 +32,7 @@ parts:
       title: Introduction to Conditionals
 
   - file: 01_intro/01_04-01_intro
-    title: Formal Coding: Functions, Classes, and Libraries
+    title: Formal Coding - Functions, Classes, and Libraries
     sections:
     - file: 01_intro/01_04-02_functitons
       title: Introduction to Functions (Work in Progress)
