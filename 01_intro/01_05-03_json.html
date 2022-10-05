@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with JSON Data &#8212; Introduction to Python for Humanists</title>
+    <title>5.2. Working with JSON Data &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.3. Working with Multiple Files" href="01_05-04_multiple_files.html" />
+    <link rel="prev" title="5.1. Working with Textual Data" href="01_05-02_texts.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART ONE: The Basics of Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01-01_intro.html">
    1. Introduction to Python
@@ -215,6 +217,33 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_05-01_intro.html">
+   5. Working with External Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_05-02_texts.html">
+     5.1. Loading and Saving Text Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.2. Loading and Saving JSON Data (Work in Progress)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_05-04_multiple_files.html">
+     5.3. Working with Multiple Files (Work in Progress)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -226,8 +255,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_01_intro.html">
    1. Introduction to Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -248,8 +277,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_02_intro.html">
    2. Working with Data in Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -275,8 +304,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_03_intro.html">
    3. Searching for Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -302,8 +331,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../02_pandas/02_04_intro.html">
    4. Advanced Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -336,8 +365,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../03_spacy/03_01_intro.html">
    1. Introduction to spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -368,8 +397,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../03_spacy/03_02_intro.html">
    2. Rules-Based spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -405,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../03_spacy/03_03_intro.html">
    3. Machine Learning Named Entity Recognition with spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -452,8 +481,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../03_spacy/03_04_intro.html">
    4. Solving a Domain-Specific Problem - A Case Study with Holocaust NER
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -710,22 +739,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.2.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   5.2.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-dump">
-   json.dump()
+   5.2.3. json.dump()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-load">
-   json.load()
+   5.2.4. json.load()
   </a>
  </li>
 </ul>
@@ -749,22 +778,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.2.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   5.2.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-dump">
-   json.dump()
+   5.2.3. json.dump()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-load">
-   json.load()
+   5.2.4. json.load()
   </a>
  </li>
 </ul>
@@ -778,11 +807,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-json-data-center">
-<h1><center>Working with JSON Data</center><a class="headerlink" href="#center-working-with-json-data-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.2. </span><center>Working with JSON Data</center><a class="headerlink" href="#center-working-with-json-data-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>JSON data format<br></p></li>
 <li><p>json.dump()<br></p></li>
@@ -790,7 +819,7 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, you will meet JSON data. JSON is a data format that is frequently used online. It stands for JavaScript Object Notation. It is the principal way in which data is stored for websites and called by JavaScript. There are two reasons to learn JSON data structures early in your coding career.</p>
 <ol class="simple">
 <li><p>JSON is universally recognized by all browsers.</p></li>
@@ -850,7 +879,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="json-dump">
-<h2>json.dump()<a class="headerlink" href="#json-dump" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.3. </span>json.dump()<a class="headerlink" href="#json-dump" title="Permalink to this headline">#</a></h2>
 <p>Now, let’s try and store that data outside of Python as a JSON file. To do that, we with use the with open operator we learned about in the last chapter. Instead of naming this a .txt file, however, we will name is .json. Next, we will execute the command json.dump(). This will take 2 essential arguments: the data that you want to dump to the file and the object in which you want to dump the data, in this case “f”. The other keyword argument here is indent. I always like to use this because it makes the JSON file easier to read. It indents the data 4 spaces each time it goes deeper into the hierarchy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -862,7 +891,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="json-load">
-<h2>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.4. </span>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">#</a></h2>
 <p>Now that we have dumped the data into a file, let’s try and load it back up. Here, we will open the same JSON file, but this time as readable. We will create a new object, new_data and use json.load(). This will take one argument, the file object that you want to load from. So long as your JSON file is not corrupted, the data will load successfully.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,6 +939,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_05-02_texts.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5.1. </span><center>Working with Textual Data</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01_05-04_multiple_files.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span><center>Working with Multiple Files</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
