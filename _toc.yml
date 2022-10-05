@@ -41,15 +41,15 @@ parts:
     - file: 01_intro/01_04-04_libraries
       title: Introduction to Libraries (Work in Progress)
       
-#   - file: 01_intro/01_04_intro
-#     title: Working with External Data
-#     sections:
-#     - file: 01_intro/05_01_texts
-#       title: Loading and Saving Text Data (Work in Progress)
-#     - file: 01_intro/05_02_json
-#       title: Loading and Saving JSON Data (Work in Progress)
-#     - file: 01_intro/05_03_multiple_files
-#       title: Working with Multiple Files (Work in Progress)
+  - file: 01_intro/01_05_intro
+    title: Working with External Data
+    sections:
+    - file: 01_intro/01_05-02_texts
+      title: Loading and Saving Text Data (Work in Progress)
+    - file: 01_intro/01_05-03_json
+      title: Loading and Saving JSON Data (Work in Progress)
+    - file: 01_intro/01_05-04_multiple_files
+      title: Working with Multiple Files (Work in Progress)
 
 
 - caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
