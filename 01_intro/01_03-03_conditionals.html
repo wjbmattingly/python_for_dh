@@ -934,9 +934,9 @@ title="Print to PDF"
 <h2><span class="section-number">3.3.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Like Loops, Conditionals are an essential component of all programming languages. <b>Conditionals</b> are a type of logic in programming that allow you to control if something happens based on condition that something is true or false. Conditionals are always binary. I always find it useful to think about conditionals in plain English first.</p>
 <p>If something is true, then do this. If that something is not true, then you can specify what should happen if that is the case. In pseudo code, it would look something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">something</span> <span class="ow">is</span> <span class="n">true</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">something</span> <span class="ow">is</span> <span class="n">true</span><span class="p">:</span>
     <span class="n">do</span> <span class="n">this</span>
-<span class="n">If</span> <span class="ow">not</span><span class="p">:</span>
+<span class="k">if</span> <span class="ow">not</span><span class="p">:</span>
     <span class="n">do</span> <span class="n">this</span> <span class="n">instead</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -965,7 +965,7 @@ title="Print to PDF"
 </section>
 <section id="if-statement">
 <h2><span class="section-number">3.3.3. </span>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">#</a></h2>
-<p>Let’s begin with the if statement by first creating an object called <code class="docutils literal notranslate"><span class="pre">x</span></code> and make it equal to 0. Now, we can say <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">0</span></code>, then print it off. Notice in the code below the “:” and the indentation afterwards. Just as we saw with loops, the <code class="docutils literal notranslate"><span class="pre">:</span></code> indicates that the next line should be indented. Whenever you have a line of code that uses a conditional statement, a <code class="docutils literal notranslate"><span class="pre">:</span></code> must always be at the end of the line to indicate to Python where that condition ends. The next line also, must always be indented.</p>
+<p>Let’s begin with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement by first creating an object called <code class="docutils literal notranslate"><span class="pre">x</span></code> and make it equal to 0. Now, we can say <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">0</span></code>, then print it off. Notice in the code below the <code class="docutils literal notranslate"><span class="pre">:</span></code> and the indentation afterwards. Just as we saw with loops, the <code class="docutils literal notranslate"><span class="pre">:</span></code> indicates that the next line should be indented. Whenever you have a line of code that uses a conditional statement, a <code class="docutils literal notranslate"><span class="pre">:</span></code> must always be at the end of the line to indicate to Python where that condition ends. The next line also, must always be indented.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">0</span>
@@ -980,7 +980,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We have successfully printed off <code class="docutils literal notranslate"><span class="pre">x</span></code> variable because the condition we stated is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Let’s try and state the opposite of this. Let’s set our condition to x being equal to 1.</p>
+<p>We have successfully printed off <code class="docutils literal notranslate"><span class="pre">x</span></code> variable because the condition we stated is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Let’s try and state the opposite of this. Let’s set our condition to <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">1</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
@@ -1006,7 +1006,14 @@ title="Print to PDF"
 </section>
 <section id="else-statement">
 <h2><span class="section-number">3.3.4. </span>Else Statement<a class="headerlink" href="#else-statement" title="Permalink to this headline">#</a></h2>
-<p>If we want something to occur if that condition is not met, we can use the Else statement. Think of else as “otherwise” in English. If this condition it met, do this; otherwise, do something else. Let’s write that out in real code.</p>
+<p>If we want something to occur if that condition is not met, we can use the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement. Think of <code class="docutils literal notranslate"><span class="pre">else</span></code>  as “if not” in English. In pseudo-code, <code class="docutils literal notranslate"><span class="pre">else</span></code> would look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">this</span> <span class="n">condition</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">this</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="k">else</span><span class="p">):</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="k">else</span>
+</pre></div>
+</div>
+<p>Let’s write that out in real code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
@@ -1022,21 +1029,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Notice that else has the same indentation placement as the if and it too has a “:” followed by indented code. This allows us to create complex logic within our code. You will find yourself using conditional more often than you may realize now.</p>
+<p>Notice that else has the same indentation placement as the if and it too has a <code class="docutils literal notranslate"><span class="pre">:</span></code> followed by indented code. As noted above, all conditional statement lines must conclude with a colon and the proceeding line be indented.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is important because it allows a programmer to create more complex logic.</p>
 </section>
 <section id="elif-and-the-in-operator-with-strings">
 <h2><span class="section-number">3.3.5. </span>Elif and the ‘in’ Operator with Strings<a class="headerlink" href="#elif-and-the-in-operator-with-strings" title="Permalink to this headline">#</a></h2>
-<p>I debated including elif in this chapter for fear that it may introduce too many new things at once, but I think it is import to at least be familiar with its existence, even if you will not be using it right away. Elif, in plain English, means “or if”.</p>
-<p>If condition 1 is met:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do this
+<p>I debated including <code class="docutils literal notranslate"><span class="pre">elif</span></code> in this chapter for fear that it may introduce too many new things at once, but I think it is import to at least be familiar with its existence, even if you will not be using it right away. In English syntax, <code class="docutils literal notranslate"><span class="pre">elif</span></code> functions rather like “or if”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span> <span class="mi">1</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">this</span>
+<span class="ow">or</span> <span class="k">if</span> <span class="p">(</span><span class="k">elif</span><span class="p">)</span> <span class="n">condition</span> <span class="mi">2</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">this</span> <span class="n">instead</span>
 </pre></div>
 </div>
-<p>Or if condition 2 is met:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do this instead
-</pre></div>
-</div>
-<p>Within this paradigm, it functions a little differently than else in that another condition must be met for it to occur, but it functions a little differently than a regular if statement. Let me demonstrate this in code.</p>
-<p>In the code below, you will see within the conditional the word <strong>“in”</strong>, known as an operator. In Python, in functions rather like the way it functions in English. It is used to test if something is inside a piece of data or a data structure. So, if we want to know if some string is within another string, we can use in to see if that is the case.</p>
+<p>Within this paradigm, it functions a little differently than <code class="docutils literal notranslate"><span class="pre">else</span></code>. In an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement, we perform a specific action if the preceding condition was <code class="docutils literal notranslate"><span class="pre">False</span></code>. With <code class="docutils literal notranslate"><span class="pre">elif</span></code>, we state that another condition must be true.</p>
+<p>On the surface, this may seem to function as two sequential <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, but it functions a little differently than a regular if statement. To understand how, it is best to see the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement in code.</p>
+<p>In the code below, you will see within the conditional the word <code class="docutils literal notranslate"><span class="pre">in</span></code>, known as an operator. In Python, <code class="docutils literal notranslate"><span class="pre">in</span></code> functions rather like the way it functions in English. It is used to test if something is inside a piece of data or a data structure. So, if we want to know if some string is within another string, we can use <code class="docutils literal notranslate"><span class="pre">in</span></code> to see if that is the case.</p>
+<p>In the example below, we want to know if a substring, or a smaller string, appears within the <code class="docutils literal notranslate"><span class="pre">text</span></code> variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I know two people. Marge and Susan.&quot;</span>
@@ -1053,7 +1061,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>This output may appear to be surprising. Both Marge and Susan are in the string, “text”. Why, then, do we not see “Susan Found” printed off? The reason is because elif only is triggered if one of the preceding if or other elif statements has not been triggered. If I wanted to check if both conditions were met, I would, instead, use two if statements, like so:</p>
+<p>This output may appear to be surprising. Both Marge and Susan are in the string, “text”. Why, then, do we not see “Susan Found” printed off? The reason is because <code class="docutils literal notranslate"><span class="pre">elif</span></code> only is triggered if one of the preceding if or other elif statements has not been triggered. If I wanted to check if both conditions were met, I would, instead, use two <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Marge&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
@@ -1070,7 +1078,7 @@ Susan Found
 </div>
 </div>
 </div>
-<p>The elif statement allows for more robust logic and sequential conditionals to occur.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement allows for more robust logic and sequential conditionals to occur. When you first start programming, you may not use <code class="docutils literal notranslate"><span class="pre">elif</span></code> frequently, but it is importan</p>
 </section>
 <section id="conditionals-and-lists-with-in-and-not-in">
 <h2><span class="section-number">3.3.6. </span>Conditionals and Lists with ‘in’ and ‘not in’<a class="headerlink" href="#conditionals-and-lists-with-in-and-not-in" title="Permalink to this headline">#</a></h2>
