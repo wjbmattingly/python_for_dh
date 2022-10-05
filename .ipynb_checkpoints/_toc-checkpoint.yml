@@ -36,8 +36,8 @@ parts:
     sections:
     - file: 01_intro/01_04-02_functions
       title: Introduction to Functions (Work in Progress)
-    # - file: 01_intro/04_02_classes
-    #   title: Introduction to Classes (Work in Progress)
+    - file: 01_intro/01_04-03_classes
+      title: Introduction to Classes (Work in Progress)
     # - file: 01_intro/04_03_libraries
     #   title: Introduction to Libraries (Work in Progress)
       
