@@ -16,20 +16,20 @@ parts:
       
       
   - file: 01_intro/01_02-01_intro
-    title: Working with Data (Work in Progress)
+    title: Working with Data
     sections:
     - file: 01_intro/01_02-02_data
-      title: Data Types (Work in Progress)
+      title: Data Types
     - file: 01_intro/01_02-03_data_structures
-      title: Data Structures (Work in Progress)
+      title: Data Structures
       
   - file: 01_intro/01_03-01_intro
     title: Loops and Logic
     sections:
     - file: 01_intro/01_03-02_loops
       title: Introduction to Loops (Work in Progress)
-#     - file: 01_intro/03_02-03_conditionals
-#       title: Introduction to Conditionals (Work in Progress)
+    - file: 01_intro/01_03-03_conditionals
+      title: Introduction to Conditionals (Work in Progress)
 
 #   - file: 01_intro/01_03_intro
 #     title: Formal Coding
