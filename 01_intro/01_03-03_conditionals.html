@@ -941,12 +941,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Notice again the indentation. As we progress throughout this chapter, you will learn three essential components of conditional statements:</p>
-<ol class="simple">
-<li><p>if</p></li>
-<li><p>else</p></li>
-<li><p>elif (or if)</p></li>
-</ol>
-<p>You can always come back and reference this brief cheatsheet for remembering conditiona</p>
 <div class="hint admonition">
 <p class="admonition-title">Cheatsheet for Conditionals</p>
 <table class="colwidths-auto table">
@@ -971,7 +965,7 @@ title="Print to PDF"
 </section>
 <section id="if-statement">
 <h2><span class="section-number">3.3.3. </span>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">#</a></h2>
-<p>Let’s first practice the if statement. In Python, you will need something to test if it is true. Let’s create an object called x and make it equal to 0. Now, we can say if x is equal to 0, then print it off. Notice in the code below the “:” and the indentation afterwards, just as we saw with loops.</p>
+<p>Let’s begin with the if statement by first creating an object called <code class="docutils literal notranslate"><span class="pre">x</span></code> and make it equal to 0. Now, we can say <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">0</span></code>, then print it off. Notice in the code below the “:” and the indentation afterwards. Just as we saw with loops, the <code class="docutils literal notranslate"><span class="pre">:</span></code> indicates that the next line should be indented. Whenever you have a line of code that uses a conditional statement, a <code class="docutils literal notranslate"><span class="pre">:</span></code> must always be at the end of the line to indicate to Python where that condition ends. The next line also, must always be indented.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">0</span>
@@ -986,7 +980,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s try and state the opposite of this. Let’s set our condition to x being equal to 1.</p>
+<p>We have successfully printed off <code class="docutils literal notranslate"><span class="pre">x</span></code> variable because the condition we stated is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Let’s try and state the opposite of this. Let’s set our condition to x being equal to 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
@@ -995,7 +989,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Notice that nothing happens.</p>
+<p>Notice that nothing happens. This is because our condition is <code class="docutils literal notranslate"><span class="pre">False</span></code>. In the Trinket application below, try to create a conditional statement.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="356"
+    src="https://trinket.io/embed/python3/524597417f"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 <section id="else-statement">
 <h2><span class="section-number">3.3.4. </span>Else Statement<a class="headerlink" href="#else-statement" title="Permalink to this headline">#</a></h2>
