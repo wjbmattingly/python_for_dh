@@ -738,23 +738,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   5.2.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   5.2.2. Introduction
+   5.2.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-dump">
-   5.2.3. json.dump()
+   5.2.2. json.dump()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-load">
-   5.2.4. json.load()
+   5.2.3. json.load()
   </a>
  </li>
 </ul>
@@ -777,23 +772,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   5.2.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   5.2.2. Introduction
+   5.2.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-dump">
-   5.2.3. json.dump()
+   5.2.2. json.dump()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#json-load">
-   5.2.4. json.load()
+   5.2.3. json.load()
   </a>
  </li>
 </ul>
@@ -808,18 +798,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-json-data-center">
 <h1><span class="section-number">5.2. </span><center>Working with JSON Data</center><a class="headerlink" href="#center-working-with-json-data-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><section id="covered-in-this-chapter">
-<h2><span class="section-number">5.2.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>JSON data format<br></p></li>
-<li><p>json.dump()<br></p></li>
-<li><p>json.load()<br></p></li>
-</ol>
-</section>
 <section id="introduction">
-<h2><span class="section-number">5.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, you will meet JSON data. JSON is a data format that is frequently used online. It stands for JavaScript Object Notation. It is the principal way in which data is stored for websites and called by JavaScript. There are two reasons to learn JSON data structures early in your coding career.</p>
 <ol class="simple">
 <li><p>JSON is universally recognized by all browsers.</p></li>
@@ -879,7 +859,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="json-dump">
-<h2><span class="section-number">5.2.3. </span>json.dump()<a class="headerlink" href="#json-dump" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>json.dump()<a class="headerlink" href="#json-dump" title="Permalink to this headline">#</a></h2>
 <p>Now, let’s try and store that data outside of Python as a JSON file. To do that, we with use the with open operator we learned about in the last chapter. Instead of naming this a .txt file, however, we will name is .json. Next, we will execute the command json.dump(). This will take 2 essential arguments: the data that you want to dump to the file and the object in which you want to dump the data, in this case “f”. The other keyword argument here is indent. I always like to use this because it makes the JSON file easier to read. It indents the data 4 spaces each time it goes deeper into the hierarchy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -891,7 +871,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="json-load">
-<h2><span class="section-number">5.2.4. </span>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.3. </span>json.load()<a class="headerlink" href="#json-load" title="Permalink to this headline">#</a></h2>
 <p>Now that we have dumped the data into a file, let’s try and load it back up. Here, we will open the same JSON file, but this time as readable. We will create a new object, new_data and use json.load(). This will take one argument, the file object that you want to load from. So long as your JSON file is not corrupted, the data will load successfully.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
