@@ -1012,7 +1012,7 @@ title="Print to PDF"
 <p>Let’s take a look at a few examples of strings.</p>
 <section id="examples-of-strings">
 <h3><span class="section-number">2.2.2.1. </span>Examples of Strings<a class="headerlink" href="#examples-of-strings" title="Permalink to this headline">#</a></h3>
-<p>In our first example of a string, we will name our first string object with the variable name “first_string”. Notice that we are using an underscore to indicate a separation of two words in our variable name. This is common practice in Python. We cannot use a space in a variable name. Another naming convention could be “firstString”, where the first word is lower cased while the start of each sequential word is capitalized. This naming convention, while acceptable, is more common in other programming languages, such as JavaScript.</p>
+<p>In our first example of a string, we will name our first string object with the variable name <code class="docutils literal notranslate"><span class="pre">first_string</span></code>. Notice that we are using an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) to indicate a separation of two words in our variable name. This is common practice in Python. We cannot use a space in a variable name. Another naming convention could be <code class="docutils literal notranslate"><span class="pre">firstString</span></code>, where the first word is lower cased while the start of each sequential word is capitalized. This naming convention, while acceptable, is more common in other programming languages, such as JavaScript.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_string</span> <span class="o">=</span> <span class="s2">&quot;This is a string.&quot;</span>
@@ -1020,7 +1020,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Now that we have created our first object, let’s try and print it off. We can do this using the print function.</p>
+<p>Now that we have created our first object, let’s try and print it off. We can do this using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first_string</span><span class="p">)</span>
@@ -1033,7 +1033,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s take a look at another example. This time, however, we will use two single-quotation-marks.</p>
+<p>Let’s take a look at another example. This time, however, we will use two <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_string</span> <span class="o">=</span> <span class="s1">&#39;This is a string too.&#39;</span>
@@ -1125,7 +1125,7 @@ title="Print to PDF"
 </div>
 <section id="upper-method">
 <h3><span class="section-number">2.2.3.1. </span>Upper Method<a class="headerlink" href="#upper-method" title="Permalink to this headline">#</a></h3>
-<p>It is not a very clever name, but it will work for our purposes. Now, let’s try to convert the entire string into all uppercase letters. We can do this with the method <b>.upper()</b>. Notice that the .upper() is coming after the string and within the () are no arguments. This is a way you can easily identify a method (as opposed to a function). We will learn more about these distinctions in the chapters on functions and classes.</p>
+<p>It is not a very clever name, but it will work for our purposes. Now, let’s try to convert the entire string into all uppercase letters. We can do this with the method <b><code class="docutils literal notranslate"><span class="pre">.upper()</span></code></b>. Notice that the <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> is coming after the string and within the <code class="docutils literal notranslate"><span class="pre">()</span></code> are no arguments. This is a way you can easily identify a method (as opposed to a function). We will learn more about these distinctions in the chapters on functions and classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -1141,7 +1141,7 @@ title="Print to PDF"
 </section>
 <section id="lower-method">
 <h3><span class="section-number">2.2.3.2. </span>Lower Method<a class="headerlink" href="#lower-method" title="Permalink to this headline">#</a></h3>
-<p>Noice that our string is now all uppercase. We can do the same thing with the <b>.lower()</b> method, but this method will make everything in the string lowercase.</p>
+<p>Noice that our string is now all uppercase. We can do the same thing with the <b><code class="docutils literal notranslate"><span class="pre">.lower()</span></code></b> method, but this method will make everything in the string lowercase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
@@ -1158,7 +1158,7 @@ title="Print to PDF"
 <section id="capitalize-method">
 <h3><span class="section-number">2.2.3.3. </span>Capitalize Method<a class="headerlink" href="#capitalize-method" title="Permalink to this headline">#</a></h3>
 <p>On the surface, these methods may appear to only be useful in niche circumstances. While these methods are useful for making strings look the way you want them to look, they have far greater utility. Imagine if you wanted to search for a name, “William”, in a string. What if the data you are examining is from emails, text messages, etc. William may be capitalized or not. This means that you would have to run two searches for William across a string. If, however, you lowercase the string before you search, you can simply search for “william” and you will find all hits. This is one of the things that happens on the back-end of most search engines to ensure that your search is not strictly case-sensitive. In Python, however, it is important to do this step of data cleaning before running searches over strings.</p>
-<p>Let’s explore another method, <b>.capitalize()</b>. This method will allow you to capitalize a string.</p>
+<p>Let’s explore another method, <b><code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code></b>. This method will allow you to capitalize a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;william&quot;</span>
@@ -1182,9 +1182,11 @@ title="Print to PDF"
 </section>
 <section id="replace-method">
 <h3><span class="section-number">2.2.3.4. </span>Replace Method<a class="headerlink" href="#replace-method" title="Permalink to this headline">#</a></h3>
-<p>Perhaps the most useful string method is .replace(). Notice in the cells below, replace takes a mandatory of two arguments, or things passed between the parentheses. Each is separated by a comma. The first argument is the substring or piece of the string that you want to replace and the second argument is what you want to replace it with. Why is this so useful? If you are using Python to analyze texts, those texts will, I promise, never be well-cleaned. They may have bad encoding, characters that will throw off searches, bad OCR, multiple line breaks, hyphenated characters, the list goes on. The <b>.replace()</b> method allows you to quickly and effectively clean textual data so that it can be standardized.</p>
-<p>Unlike the above methods, for .replace(), we need to put two things within the parentheses. These are known as arguments. This method requires two and they must be in order. The first is the thing that you want to replace and the second is the thing that you want to replace it with. These will be separated by a parentheses and both must be strings. It should, therefore, look something like this:</p>
-<p>.replace(“the thing to replace”, “the thing you want to replace it with”)</p>
+<p>Perhaps the most useful string method is .replace(). Notice in the cells below, replace takes a mandatory of two arguments, or things passed between the parentheses. Each is separated by a comma. The first argument is the substring or piece of the string that you want to replace and the second argument is what you want to replace it with. Why is this so useful? If you are using Python to analyze texts, those texts will, I promise, never be well-cleaned. They may have bad encoding, characters that will throw off searches, bad OCR, multiple line breaks, hyphenated characters, the list goes on. The <b><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></b> method allows you to quickly and effectively clean textual data so that it can be standardized.</p>
+<p>Unlike the above methods, for <code class="docutils literal notranslate"><span class="pre">.replace()</span></code>, we need to put two things within the parentheses. These are known as arguments. This method requires two and they must be in order. The first is the thing that you want to replace and the second is the thing that you want to replace it with. These will be separated by a parentheses and both must be strings. It should, therefore, look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;the thing to replace&quot;</span><span class="p">,</span> <span class="s2">&quot;the thing you want to replace it with&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>In the example below, let’s try and replace the period at the end of “Mattingly.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1205,7 +1207,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Excellent! Now, let’s try and reprint off introduction_sentence and see what happens.</p>
+<p>Excellent! Now, let’s try and reprint off <code class="docutils literal notranslate"><span class="pre">introduction_sentence</span></code> and see what happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">introduction</span><span class="p">)</span>
@@ -1241,7 +1243,7 @@ title="Print to PDF"
 </section>
 <section id="split-method">
 <h3><span class="section-number">2.2.3.5. </span>Split Method<a class="headerlink" href="#split-method" title="Permalink to this headline">#</a></h3>
-<p>Strings have a lot of other useful methods that we will be learning about throughout this textbook, such as the split() method which returns a list of substrings, or smaller strings, that are split by the delimiter, which is the argument of the method. The delimiter tells Python how to split the string. By default, split() will split your string at the whitespace. Let’s try and split the following string.</p>
+<p>Strings have a lot of other useful methods that we will be learning about throughout this textbook, such as the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method which returns a list of substrings, or smaller strings, that are split by the delimiter, which is the argument of the method. The delimiter tells Python how to split the string. By default, <code class="docutils literal notranslate"><span class="pre">split()</span></code> will split your string at the whitespace. Let’s try and split the following string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_name</span> <span class="o">=</span> <span class="s2">&quot;Harry Potter and the Chamber of Secrets&quot;</span>
@@ -1456,7 +1458,7 @@ title="Print to PDF"
 </section>
 <section id="booleans">
 <h2><span class="section-number">2.2.6. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">#</a></h2>
-<p>The term boolean comes from Boolean algebra, which is a type of mathematics that works in binary logic. Binary is the basis for all computers, save for the more nascent quantum computers. Binary is 0 or 1; off or on; true or false. A boolean object in programming languages is either True or False. True is 1, while False is 0. In Python we can express these concepts with capitalized T or F in True or False. Let’s make one such object now.</p>
+<p>The term boolean comes from Boolean algebra, which is a type of mathematics that works in binary logic. Binary is the basis for all computers, save for the more nascent quantum computers. Binary is 0 or 1; off or on; true or false. A boolean object in programming languages is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. True is 1, while False is 0. In Python we can express these concepts with capitalized T or F in True or False. Let’s make one such object now.</p>
 <section id="examples-of-booleans">
 <h3><span class="section-number">2.2.6.1. </span>Examples of Booleans<a class="headerlink" href="#examples-of-booleans" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
@@ -1483,7 +1485,6 @@ title="Print to PDF"
 <section id="conclusion">
 <h2><span class="section-number">2.2.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>This chapter has introduced you two some of the essential types of data: strings, integers, floats, and booleans. It has also introduced you to some of the key methods and operations that you can perform on strings and numbers. Before moving onto the next chapter, I recommend spending some time and testing out these methods on your own data. Try and manipulate an input text to locate and retrieve specific information.</p>
-<p>If you haven’t yet installed Python, that’s okay! There are free compilers online, including the one I have available at https://pythonhumanities.com/lesson-02-storing-data-in-python/. Once you feel comfortable with types of data and how to create and interact with them in Python, feel free to continue into the next chapter as we explore data structures.</p>
 </section>
 <section id="challenge-questions">
 <h2><span class="section-number">2.2.8. </span>Challenge Questions<a class="headerlink" href="#challenge-questions" title="Permalink to this headline">#</a></h2>
