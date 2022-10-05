@@ -41,7 +41,7 @@ parts:
     - file: 01_intro/01_04-04_libraries
       title: Introduction to Libraries (Work in Progress)
       
-  - file: 01_intro/01_05_intro
+  - file: 01_intro/01_05-01_intro
     title: Working with External Data
     sections:
     - file: 01_intro/01_05-02_texts
