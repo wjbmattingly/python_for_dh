@@ -50,7 +50,12 @@ parts:
       title: Loading and Saving JSON Data (Work in Progress)
     - file: 01_intro/01_05-04_multiple_files
       title: Working with Multiple Files (Work in Progress)
-
+      
+  - file: 01_intro/01_06-01_intro
+    title: Working with Data on the Web
+    sections:
+    - file: 01_intro/01_06-02_html
+      title: Parsing HTML with Python and BeautifulSoup
 
 - caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
   numbered: true
