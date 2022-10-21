@@ -15,3 +15,5 @@ html:
   use_issues_button: true
   use_repository_button: true
   use_multitoc_numbering: false
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
