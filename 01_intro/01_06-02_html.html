@@ -899,6 +899,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>With BeautifulSoup imported, we can use the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> class. This class allows us to parse HTML. As we will see throughout this chapter, you will rarely have HTML as a string within your Python script, but for now, since we are starting, let’s try to parse the above <code class="docutils literal notranslate"><span class="pre">html</span></code> string by passing it to the BeautifulSoup class. It is Pythonic to name your BeautifulSoup variable <code class="docutils literal notranslate"><span class="pre">soup</span></code>. If you have a more complex script that is parsing soup objects from multiple websites, you may want to be more original in your naming conventions, but for our purposes,<code class="docutils literal notranslate"><span class="pre">soup</span></code> will serve us well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
@@ -906,6 +907,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>With our soup object created in memory, we can now begin to examine it. If we print it off, we won’t notice anything special about it. It appears as a regular string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
@@ -927,6 +929,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>While it may look like a string, it is not. We can observe this by asking Python what type of object it is with the <code class="docutils literal notranslate"><span class="pre">type</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bs4.BeautifulSoup
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, this is a bs4.BeautifulSoup class. That means that while it may look like a string, it actually contains more data that can be accessed. For example, We can use the <code class="docutils literal notranslate"><span class="pre">.find</span></code> method to find specific the first occurrence of a specific tag. The <code class="docutils literal notranslate"><span class="pre">find</span></code> method has one mandatory argument, a string that will be the tag name that you wish to extract. Let’s grab the first <code class="docutils literal notranslate"><span class="pre">div</span></code> tag.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
@@ -942,6 +958,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>As you can see, we were able to grab the first <code class="docutils literal notranslate"><span class="pre">div</span></code> tag with <code class="docutils literal notranslate"><span class="pre">.find</span></code>, but we know that there are multiple <code class="docutils literal notranslate"><span class="pre">div</span></code> tags in our HTML string. What if we wanted to grab all of them? For that, we can use the <code class="docutils literal notranslate"><span class="pre">.find_all</span></code> method. Like <code class="docutils literal notranslate"><span class="pre">.find</span></code>, <code class="docutils literal notranslate"><span class="pre">.find_all</span></code> takes a single mandatory argument. Again, it is the string of the tag name you wish to extract.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_divs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
@@ -959,6 +976,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">.find</span></code> which returns a single item to us, the <code class="docutils literal notranslate"><span class="pre">.find_all</span></code> method returns a list of tags. What if we did not want all tags? What if we only wanted to grab the <code class="docutils literal notranslate"><span class="pre">div</span></code> tags with a specific class attribute. BeautifulSoup allows us to do this by passing a second argument to <code class="docutils literal notranslate"><span class="pre">.find</span></code> or <code class="docutils literal notranslate"><span class="pre">.find_all</span></code>. This argument will be a dictionary whose keys will be the attributes and whose values will be the attribute names of the tags you wish to extract.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div_other</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;other&quot;</span><span class="p">})</span>
@@ -974,6 +992,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Once we have obtained the specific tag that we want to extract from the HTML, we can then access its nested components. Each <code class="docutils literal notranslate"><span class="pre">bs4.BeautifulSoup</span></code> object functions the same way as the original soup. It contains all children (nested) tags. We can, therefore, grab the <code class="docutils literal notranslate"><span class="pre">p</span></code> tag embedded within the <code class="docutils literal notranslate"><span class="pre">div</span></code> tag that has a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">other</span></code> by using <code class="docutils literal notranslate"><span class="pre">.find(&quot;p&quot;)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paragraph</span> <span class="o">=</span> <span class="n">div_other</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
@@ -987,6 +1006,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>If we are working with textual data, though, we rarely want to retain the HTML, rather we want to extract the text within the HTML. For this, we can access the raw text that falls within the HTML with <code class="docutils literal notranslate"><span class="pre">.text</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">paragraph</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -999,24 +1019,17 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Being able to do this programatically means that we can automate the scraping of HTML files via Python. We can, for example, extract all the text from each <code class="docutils literal notranslate"><span class="pre">div</span></code> tag in our file via the following two lines of code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="n">all_divs</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;content&quot;&gt;
-&lt;p&gt;This is our first content&lt;/p&gt;
-&lt;/div&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is our first content
 
-This is our first content
-
-&lt;div class=&quot;other&quot;&gt;
-&lt;p&gt;This is is another piece of content&lt;/p&gt;
-&lt;/div&gt;
 
 This is is another piece of content
 </pre></div>
