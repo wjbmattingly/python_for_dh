@@ -571,7 +571,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/07_01_html.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/01_06-02_html.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -631,7 +631,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/07_01_html.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/01_06-02_html.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -648,7 +648,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/07_01_html.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/01_06-02_html.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +676,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01_intro/07_01_html.ipynb"
+        <a href="../_sources/01_intro/01_06-02_html.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,11 +736,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
@@ -753,6 +748,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#understanding-attributes">
    Understanding Attributes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-html-with-beautifulsoup">
+   Parsing HTML with BeautifulSoup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -780,11 +780,6 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
@@ -797,6 +792,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#understanding-attributes">
    Understanding Attributes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-html-with-beautifulsoup">
+   Parsing HTML with BeautifulSoup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -816,58 +816,186 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-html-center">
 <h1><center>Introduction to HTML</center><a class="headerlink" href="#center-introduction-to-html-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>HTML<br></p></li>
-<li><p>Tags<br></p></li>
-<li><p>Attributes<br></p></li>
-</ol>
-</section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>In part 7 of this textbook, we will learn about web scraping, one of the more vital skills of a digital humanist. <b>Web scraping</b> is process by which we automate the calling to a server (which hosts a website) and parsing the HTML file. <b>HTML</b> stands for HyperText Markup Language. It is the way in which websites are structured. When we web scrape a website, we write rules for extracting pieces of information from it based on how that data is structured within the HTML. To be competent at web scraping, therefore, one must be able to understand and parse HTML.</p>
-<p>In this chapter, we will break down HTML and you will learn the most common tags, such as div, p, strong, and span. You will also learn about attributes within these tags, such as href, class, and id. It is vital that you understand this before moving onto the next chapter in which we learn how to web scrape with Python.</p>
+<p>In this chapter, we will learn about web scraping, one of the more vital skills of a digital humanist. <strong>Web scraping</strong> is process by which we automate the calling of a server (which hosts a website) and parsing that request which is an HTML file. <strong>HTML</strong> stands for HyperText Markup Language. It is the way in which websites are structured. When we scrape a website, we write rules for extracting pieces of information from it based on how that data is structured within the HTML. To be competent at web scraping, therefore, one must be able to understand and parse HTML.</p>
+<p>In this section, we will break down HTML and you will learn the most common tags, such as div, p, strong, and span. You will also learn about attributes within these tags, such as href, class, and id. It is vital that you understand this before moving onto the next chapter in which we learn how to web scrape with Python.</p>
 </section>
 <section id="diving-into-html">
 <h2>Diving into HTML<a class="headerlink" href="#diving-into-html" title="Permalink to this headline">#</a></h2>
-<p>So why is HTML useful? HTML, like other markup languages, such as XML, or eXstensible Markup Language, allows users to structure data within data. This is achieved by what are known as tags. I think It is best to see what this looks like in practice. Let’s examine a simple HTML file.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html_file</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-
-<span class="s2">&lt;div&gt;</span>
-<span class="s2">    &lt;p&gt;This is a paragraph&lt;/p&gt;</span>
-<span class="s2">&lt;/div&gt;</span>
-
-<span class="s2">&quot;&quot;&quot;</span>
+<p>So why is HTML useful? HTML, like other markup languages, such as <strong>XML</strong>, or eXstensible Markup Language, allows users to structure data within data. This is achieved by what are known as tags. I think It is best to see what this looks like in practice. Let’s examine a simple HTML file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>In the above cell, we see a very simple HTML file structure. Note the use of carrots “&lt;” and “&gt;”. The first thing you may notice is that within the first set of carrots is the word “div”. This is known as a div tag and it is one of the most common types of tags you will see within the HTML of a website. Jump ahead now to the bottom of the string and you will notice another div tag. There is something different with this one, however. Can you spot the difference?</p>
-<p>If you said the “/” after the “&lt;”, you would be right! The first div tag is known as the <b>open tag</b> and the second div tag is known as the <b>close tag</b>. This tells a browser to parse this as a single block of data. Between these two tags, we have one piece of <b>nested data</b> Nested data is data that falls within a collection of tags. In our case, this is a <b>p tag</b>. P tags get their name from “paragraph”. They are one of the essential types of tags you can expect to see. On websites, they are often used in the main content portion of the page and are used to break up texts. P tags allow your browser to understand how to render the HTML for you. When it sees a p tag, it will often separate it out from the paragraph above with a line break.</p>
-<p>While in the early days of the internet, HTML files for websites were fairly simple on their structure, today that is no longer the case. It is very common for websites to have 20+layers deep of nested HTML structure. This is because websites are rarely written out by someone hard coding them. Instead, they are designed with user-friendly apps, such as Wordpress. They take user drag-and-drop input and features and convert it into robust HTML (and CSS - a subject for another day).</p>
+<p>Above, we see a very simple HTML file structure. In the first line of this HTML, we see <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>. Note the use of <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. The opening <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> indicates the start of a tag in HTML. A <strong>tag</strong> is a way of denoting structure within an HTML file. It is a way of saying that what comes after this nested bit of code is this type of data. After the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, we see the word <code class="docutils literal notranslate"><span class="pre">div</span></code>. This word denotes the type of tag that we are using. In this case, we are creating a <code class="docutils literal notranslate"><span class="pre">div</span></code> tag. This is one of the most common types of tags in HTML. After the tag’s name, we see <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. This identifies the end of the tag creation.</p>
+<p>In line 2, we see a nested, or indented bit of HTML. In HTML, unlike Python, indentation is optional. It is, however, good practice to use line breaks and indentation in HTML to make the document easier for humans to parse. Line two begins with a <code class="docutils literal notranslate"><span class="pre">p</span></code> tag. The <code class="docutils literal notranslate"><span class="pre">p</span></code> tag in HTML is used to denote the start of a paragraph.</p>
+<p>After the creation of the <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">tag</span></code>, we see <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">paragraph</span></code>. In HTML, text that lies outside of the tags is text that appears on the web page. In this case, the HTML file would display the text <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">paragraph</span></code>. Immediately after this bit of text we encounter our first close tag. A <code class="docutils literal notranslate"><span class="pre">close</span> <span class="pre">tag</span></code> in HTML indicates that this nested bit of structure is over. In our case, the first close tag is <code class="docutils literal notranslate"><span class="pre">&lt;/p&gt;</span></code>. We know that it is a close tag because of the <code class="docutils literal notranslate"><span class="pre">&lt;/</span></code>, as opposed to <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.</p>
+<p>In our final line, we see a close <code class="docutils literal notranslate"><span class="pre">div</span></code> tag.</p>
 </section>
 <section id="understanding-attributes">
 <h2>Understanding Attributes<a class="headerlink" href="#understanding-attributes" title="Permalink to this headline">#</a></h2>
 <p>Let’s take a look at another block of HTML. This time, we will make one small change. Can you spot it?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;content&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If you said the <code class="docutils literal notranslate"><span class="pre">class=&quot;content&quot;</span></code> portion of the open div tag, then you would be right. This bit is nested within the tag and is known as an <strong>attribute</strong>. In our case, the special attribute used is a <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute (a very common attribute type). This attribute has a value of <code class="docutils literal notranslate"><span class="pre">content</span></code>.</p>
+<p>When scraping websites, you can use these attributes to specify which div tag to grab. There are several common attributes, specifically <code class="docutils literal notranslate"><span class="pre">class</span></code> and <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+</section>
+<section id="parsing-html-with-beautifulsoup">
+<h2>Parsing HTML with BeautifulSoup<a class="headerlink" href="#parsing-html-with-beautifulsoup" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html_file2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-
-<span class="s2">&lt;div class=&quot;content&quot;&gt;</span>
-<span class="s2">    &lt;p&gt;This is a paragraph&lt;/p&gt;</span>
-<span class="s2">&lt;/div&gt;</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;html&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;div class=&quot;content&quot;&gt;</span>
+<span class="s2">            &lt;p&gt;This is our first content&lt;/p&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;div class=&quot;other&quot;&gt;</span>
+<span class="s2">            &lt;p&gt;This is is another piece of content&lt;/p&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
 <span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If you said the class=”content” portion of the open div tag, then you would be right! This bit is nested within the tag and is known as an<b>attribute</b>. These will become your best friend when you try and start web scraping pages. You can use these attributes to specify which div tag to grab. Sometimes there will be multiple div tags with the same attribute name, however, but we will get to that in the next chapter. There are several common attributes, specifically class and id. Some websites will use custom attribute names, but this is quite rare and they are easy to spot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;html&gt;
+&lt;body&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;This is our first content&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;other&quot;&gt;
+&lt;p&gt;This is is another piece of content&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_div</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;This is our first content&lt;/p&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_divs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_divs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;This is our first content&lt;/p&gt;
+&lt;/div&gt;, &lt;div class=&quot;other&quot;&gt;
+&lt;p&gt;This is is another piece of content&lt;/p&gt;
+&lt;/div&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div_other</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;other&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">div_other</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;div class=&quot;other&quot;&gt;
+&lt;p&gt;This is is another piece of content&lt;/p&gt;
+&lt;/div&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paragraph</span> <span class="o">=</span> <span class="n">div_other</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p&gt;This is is another piece of content&lt;/p&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">paragraph</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is is another piece of content
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="n">all_divs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;This is our first content&lt;/p&gt;
+&lt;/div&gt;
+
+This is our first content
+
+&lt;div class=&quot;other&quot;&gt;
+&lt;p&gt;This is is another piece of content&lt;/p&gt;
+&lt;/div&gt;
+
+This is is another piece of content
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="how-to-find-a-website-s-html">
 <h2>How to Find a Website’s HTML<a class="headerlink" href="#how-to-find-a-website-s-html" title="Permalink to this headline">#</a></h2>

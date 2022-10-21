@@ -821,22 +821,26 @@ title="Print to PDF"
 <p>Let’s see what it looks like in action and then we will break down what is happening.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;../data/sample.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>The first line in our code is</p>
-<p>with open (file, “r”) as f:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</pre></div>
+</div>
 <p>We can see that we start clearly with the “with” operator. Next, we specify what we are going to do with the with operator. In this case, we will be using the open command. Open tells Python to open a file. Within the parentheses, we pass two arguments. The first argument is a string that corresponds to where the file is located. Here, the file is in our data subfolder and is called “sample.txt”. The final component of this line is “as f”. This tells Python to open that file up temporarily as the object name “f”. The final colon, which we have seen before, indicates that we are about to do something indented.</p>
 <p>The next line is indented because this is a nested bit of code that is being done within the with operator. The line reads:</p>
-<p>data = f.read()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>The name data is the object name that we are assigning to the contents of the file. Next, we see f.read(). This command tells Python to take the f object, in this case the temporary file, open it and read its contents.</p>
 <p>Now, let’s take a look at those contents! We can print them off with the print command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -851,7 +855,7 @@ This is a third line.
 <p>We can see that the text file contains three lines. It is frequently necessary to split up input data by linebreaks. Sometimes this is necessary when the text file is a list of data with each piece of data stored on a new line. Other times, you need to clean the data so that a paragraph of a scanned book is a continuous string of text. One of the easiest ways to do this is to use the built-in method, splitlines().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +873,7 @@ This is a third line.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_string</span> <span class="o">=</span> <span class="s2">&quot;This is a new string.&quot;</span>
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/sample2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/sample2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_string</span><span class="p">)</span>
 </pre></div>
 </div>
