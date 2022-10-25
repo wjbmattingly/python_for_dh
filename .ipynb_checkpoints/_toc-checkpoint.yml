@@ -1,13 +1,15 @@
 format: jb-book
 root: intro
+
 parts:
 - caption: 'PREFACE'
   numbered: true
   chapters:
   - file: 00_preface/00_01_preface
     title: PREFACE
-
-parts:
+    sections:
+    - file: 00_preface/00_02_breakdown
+    
 - caption: "PART ONE: The Basics of Python"
   numbered: true
   chapters:
