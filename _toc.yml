@@ -4,7 +4,7 @@ parts:
 - caption: 'PREFACE'
   numbered: true
   chapters:
-  - file 00_preface/00_01_preface
+  - file: 00_preface/00_01_preface
 
 parts:
 - caption: "PART ONE: The Basics of Python"
