@@ -170,6 +170,11 @@ parts:
     - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
       title: Creating the Rules-Based Pipeline
 
+- caption: "PART FIVE: DESIGNING AN APPLICATION (Work in Progress)"
+  numbered: true
+  chapters:
+  - file: 05/05_01_01_intro
+    title: Introduction to Streamlit
 
 # - caption: Topic Modeling and Text Classification (Work in Progress)
 #   chapters:
