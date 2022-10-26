@@ -200,7 +200,11 @@ parts:
     #   title: "Core Concepts of LDA Topic Modeling"
   - file: 04_topic_modeling/04_03_01_intro
     title: "Transformer-Based Topic Modeling" 
-
+    sections:
+    - file: 04_topic_modeling/04_03_03_embedding_clustering
+      title: "Embedding, Flattening, and Clustering"    
+    - file: 04_topic_modeling/04_03_04_top2vec
+      title: "Topic Modeling with Top2Vec" 
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
