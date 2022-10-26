@@ -10,10 +10,8 @@ parts:
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT"
   numbered: true
   chapters:
-  - file: 01_intro/01_01-01_intro
-    title: Introduction to Python
-  # - file: 05_streamlit/05_01_01_intro
-  #   title: "Introduction to Streamlit"
+  - file: 05_streamlit/05_01_01_intro
+    title: "Introduction to Streamlit"
 # - caption: "PART ONE: The Basics of Python"
 #   numbered: true
 #   chapters:
