@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Bigrams and Trigrams &#8212; Introduction to Python for Humanists</title>
+    <title>6.2. Scraping Web Pages with Requests and BeautifulSoup &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to Python" href="../02_pandas/02_01_intro.html" />
+    <link rel="prev" title="6.1. Introduction to HTML" href="01_06-02_html.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -128,9 +130,9 @@ const thebe_selector_output = ".output, .cell_output"
   PART ONE: The Basics of Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+  <a class="reference internal" href="01_01-01_intro.html">
    1. Introduction to Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -140,24 +142,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
+    <a class="reference internal" href="01_01-02_introduction_to_python.html">
      1.1. What is Python?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-03_installing_python.html">
+    <a class="reference internal" href="01_01-03_installing_python.html">
      1.2. Installing Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">
+    <a class="reference internal" href="01_01-04_coding_basics.html">
      1.3. Coding Basics
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
+  <a class="reference internal" href="01_02-01_intro.html">
    2. Working with Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -167,19 +169,19 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02-02_data.html">
+    <a class="reference internal" href="01_02-02_data.html">
      2.1. Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
+    <a class="reference internal" href="01_02-03_data_structures.html">
      2.2. Data Structures
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_03-01_intro.html">
+  <a class="reference internal" href="01_03-01_intro.html">
    3. Loops and Logic
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -189,19 +191,19 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_03-02_loops.html">
+    <a class="reference internal" href="01_03-02_loops.html">
      3.1. Introduction to Loops
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_03-03_conditionals.html">
+    <a class="reference internal" href="01_03-03_conditionals.html">
      3.2. Introduction to Conditionals
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_04-01_intro.html">
+  <a class="reference internal" href="01_04-01_intro.html">
    4. Formal Coding: Functions, Classes, and Libraries
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -211,24 +213,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-02_functions.html">
+    <a class="reference internal" href="01_04-02_functions.html">
      4.1. Introduction to Functions (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-03_classes.html">
+    <a class="reference internal" href="01_04-03_classes.html">
      4.2. Introduction to Classes (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
+    <a class="reference internal" href="01_04-04_libraries.html">
      4.3. Introduction to Libraries (Work in Progress)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_05-01_intro.html">
+  <a class="reference internal" href="01_05-01_intro.html">
    5. Working with External Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -238,39 +240,39 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-02_texts.html">
+    <a class="reference internal" href="01_05-02_texts.html">
      5.1. Loading and Saving Text Data (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-03_json.html">
+    <a class="reference internal" href="01_05-03_json.html">
      5.2. Loading and Saving JSON Data (Work in Progress)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
+    <a class="reference internal" href="01_05-04_multiple_files.html">
      5.3. Working with Multiple Files (Work in Progress)
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_06-01_intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_06-01_intro.html">
    6. Working with Data on the Web
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_06-02_html.html">
+    <a class="reference internal" href="01_06-02_html.html">
      6.1. Parsing HTML with Python and BeautifulSoup
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      6.2. Scraping Web Pages with Requests and BeautifulSoup
     </a>
    </li>
@@ -605,7 +607,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/04_topic_modeling/01_03_bigrams_and_trigrams.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/01_intro/01_06-03_scraping_pages.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -623,7 +625,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/04_topic_modeling/01_03_bigrams_and_trigrams.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/01_intro/01_06-03_scraping_pages.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -683,7 +685,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F04_topic_modeling/01_03_bigrams_and_trigrams.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F01_intro/01_06-03_scraping_pages.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -700,7 +702,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/04_topic_modeling/01_03_bigrams_and_trigrams.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/01_intro/01_06-03_scraping_pages.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -728,7 +730,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/04_topic_modeling/01_03_bigrams_and_trigrams.ipynb"
+        <a href="../_sources/01_intro/01_06-03_scraping_pages.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -788,28 +790,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   Key Concepts in this Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   6.2.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bigrams">
-   Bigrams
+  <a class="reference internal nav-link" href="#requests">
+   6.2.2. Requests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#trigrams">
-   Trigrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-are-these-important">
-   Why are these Important?
+  <a class="reference internal nav-link" href="#beautifulsoup">
+   6.2.3. BeautifulSoup
   </a>
  </li>
 </ul>
@@ -821,7 +813,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Bigrams and Trigrams</center></h1>
+                <h1><center>Scraping Web Pages with Requests and BeautifulSoup</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -832,28 +824,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   Key Concepts in this Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   6.2.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bigrams">
-   Bigrams
+  <a class="reference internal nav-link" href="#requests">
+   6.2.2. Requests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#trigrams">
-   Trigrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-are-these-important">
-   Why are these Important?
+  <a class="reference internal nav-link" href="#beautifulsoup">
+   6.2.3. BeautifulSoup
   </a>
  </li>
 </ul>
@@ -866,81 +848,183 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-bigrams-and-trigrams-center">
-<h1><center>Bigrams and Trigrams</center><a class="headerlink" href="#center-bigrams-and-trigrams-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>February 2021</center><section id="key-concepts-in-this-notebook">
-<h2>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>unigrams<br></p></li>
-<li><p>bigrams<br></p></li>
-<li><p>trigrams<br></p></li>
-</ol>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-scraping-web-pages-with-requests-and-beautifulsoup-center">
+<h1><span class="section-number">6.2. </span><center>Scraping Web Pages with Requests and BeautifulSoup</center><a class="headerlink" href="#center-scraping-web-pages-with-requests-and-beautifulsoup-center" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Let’s take a moment and step away from the subject of this textbook, topic modeling. Instead, let’s think about language, the essential medium of topic modeling. This notebook will be exclusively about one aspect of langauge: bigrams and trigrams. When we use words, those words correspond to something distinct.</p>
-<p>If I use the word apple, you likely are thinking of something like this:</p>
-<p style="text-align:center;">
-<img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height="240" align="center"/>
-</p>
-<p>Apple is a simple word, yet it can mean different things in different contexts. What if I said the following: “My Apple is better than a PC.” Now, what image comes to mind? Perhaps this?</p>
-<p style="text-align:center;">
-<img src="https://images-na.ssl-images-amazon.com/images/I/71pheYd9W0L._AC_SX466_.jpg" height="240" align="center"/>
-</p>
-This is an example of textual ambiguity. Syntactical context helps eliminate textual ambiguity. Apple is a single word here that contains a single concept. It's a relatively simple word. Perhaps one of the earliest a native speaker of English learns as a child. And yet it has textual ambiguity. Because "apple" is a single word, it is known as a unigram. A **unigram** is a single word that represents a single concept.
-<p>Textual ambiguity, however, occurs in more dynamic ways when we think about concepts beyond the single span of a single word. In this notebook, we will focus on two such cases that are essential for natural language processing: bigrams and trigrams. <strong>Bigrams</strong> are two words that contain a distinct meaning when used together, while <strong>trigrams</strong> are three words that contain a distinct meaning when used together.</p>
-<p>Understanding bigrams and trigrams are essential because in order for a computer to truly understand langauge the way a human does, it must be able to understand the nuances of a single word and how a word’s meaning not only shifts in context, but shifts in meaning when used in conjunction with other words.</p>
+<h2><span class="section-number">6.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In the last section, we learned about the basics of HTML and the BeautifulSoup library. We were not, however, working with data found on the web, rather our HTML was stored locally. In this section, we will learn how to make calls to a remote server with the requests library and then parse that data with BeautifulSoup.</p>
 </section>
-<section id="bigrams">
-<h2>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
-<p>As noted above, a bigram is a combination of two words that have a distinct meaning. To demonstrate this, let us consider quickly the word “French”. A single word, that may have multiple meanings. Perhaps the word French refers to the language:</p>
-<p style="text-align:center;">
-<img src="https://www.unb.ca/cel/_assets/images/enrichment/ll-fred/ll-french-beginners.jpg" height="240" align="center"/>
-</p>
-Perhaps it references a French person:
-<p style="text-align:center;">
-<img src="https://images.movehub.com/wp-content/uploads/2017/09/15150656/living-in-france.jpg"  height="240" align="center"/>
-</p>
-Let's hold off on the word French for just a moment. Let's now use the word "revolution". Again, there is textual ambiguity, but perhaps I am referencing the concept of revolution in the sense of the Earth.
-<p style="text-align:center;">
-<img src="https://i.ytimg.com/vi/CqkQv617bcw/maxresdefault.jpg" height="240" align="center"/>
-</p>
-<p>Now you may already see where I am going with this, but let’s now think about what happens when I put those two textually ambiguous unigrams together “The French Revolution”. “The” here is a stop word that is frequently dropped in natural language processing, so “French Revolution” is all that we should consider. This two words when combined have a distinct concept. Now, you may be thinking of this:</p>
-<p style="text-align:center;">
-<img src="https://images.immediate.co.uk/production/volatile/sites/7/2018/04/GettyImages-917743986-5ffaa22.jpg?quality=45&resize=768,574" height="240" align="center"/>
-</p>
-But we can think about language in even more nuanced ways.</section>
-<section id="trigrams">
-<h2>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
-<p>Trigrams, as noted above, are the same as bigrams, except with three words, instead of two. Let’s continue with our example of “French”. What might you think about if I used the word “army”. Perhaps something distinct to your own experiences with the word. For me, as a modern American, I think initially about the American Army in the modern sense of the word. So I may picture something like this:</p>
-<p style="text-align:center;">
-<img src="https://www.goarmy.com/content/dam/goarmy/refresh/redesign-nav-images/Desktop_Navigation_IMG_1.jpg" height="240" align="center"/>
-</p>
-For others in other parts of the world, other images may be more relevant. However, when I use the phrase "The French Revolutionary Army", I now have something defined, something distinct. I have this:
-<p style="text-align:center;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Bataille_Jemmapes.jpg" height="240" align="center"/>
-</p>
-This is a trigram, a distinct concept consisting of three words that may have individual meanings when used alone.</section>
-<section id="why-are-these-important">
-<h2>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
-<p>So, why are bigrams and trigrams so important? The reason comes down to getting machines to understand that when certain words are used together, they bear a distinct meaning. In order to produce a good topic model, therefore, the model must be able to understand and process words in this manner, the way we humans use the language we are trying to get the machine to understand.</p>
+<section id="requests">
+<h2><span class="section-number">6.2.2. </span>Requests<a class="headerlink" href="#requests" title="Permalink to this headline">#</a></h2>
+<p>The <strong>requests</strong> library allows us to send a signal via Python to server. A good way to think about requests is as an invisible browser that opens in the background of your computer. Requests does the precise thing your browser does. It sends a signal over the internet to connect to a specific server address. While all servers have a unique IP address. Often the internet links a specific and unique address that can be used as a way to connect to a server without having to type out an IP address. Unlike your browser, however, requests does not will up the results for you to see. Instead, it receives the return signal and simply stores the HTML data in memory.</p>
+<p>To begin learning how requests works, let’s first import the requests library</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/GBQFelgzjKQ&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have imported requests, let’s go ahead and create a string object that will be the website we want to scrape. I always call this string “url” in my code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_French_monarchs&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Excellent! Now we can use the requests library to make a call to this particular page. We will do this via the get function in the requests library. The get function has one mandatory argument: the website that you want to request. In our case, this will be our “url” string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have created a request object, let’s take a look at what this looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GBQFelgzjKQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
 </div>
-</div></div>
 </div>
+</div>
+<p>On the surface, this looks like we may have failed. What is this odd “response 200” and what does it mean? This particular response means that our attempt to connect to a server was successful. There are many types of responses, but 200 is the one we want to see. If you ever see a response that is not 200, you can Google the particular server response and you will find out what is happening. Sometimes, a response indicates that your request was blocked. This may be because the website has anti-web scraping measures in place. In other cases, the page may be protected, meaning that it lies behind a login. There are too many potential errors that may surface that I cannot detail them all in this basic introduction chapter. I will, however, give you a solution to a very common problem that can allow you to get around a common 403 response. For that solution, check out the final section of this chapter.</p>
+</section>
+<section id="beautifulsoup">
+<h2><span class="section-number">6.2.3. </span>BeautifulSoup<a class="headerlink" href="#beautifulsoup" title="Permalink to this headline">#</a></h2>
+<p>Now that we have learned how to make a call to a server and stored the response (the HTML) in memory, we need a way to parse that data. Buried within the s request object is the HTML content. We can access that data by accessing the content method of the response object class. Let’s do that and check out the first 100 characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;&lt;!DOCTYPE html&gt;\n&lt;html class=&quot;client-nojs&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;\n&lt;head&gt;\n&lt;meta charset=&quot;UTF-8&quot;/&gt;\n&lt;title&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that this data is HTML. At this stage, however, we do not have an easy way to take this string and process it as structured data. This is where BeautifulSoup comes into play. BeautifulSoup allows us to convert s.content into structured data that we can then parse. To do this, we first need to import BeautifulSoup. Unlike most libraries, BeautifulSoup installs as bs4 (BeautifulSoup4). Because of this we need to import the BeautifulSoup class from bs4. The command below does this for us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we need to create a new soup object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we don’t see an error, then it means we have successfully created a soup object. Let’s print it off to see what it looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)[:</span><span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html class=&quot;client-nojs&quot; dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;/&gt;
+&lt;title&gt;List of French monarchs - Wikipedia&lt;/title&gt;
+&lt;script&gt;document.documentElement.className=&quot;client-js&quot;;
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the soup object looks precisely the same as the s.content, it is entirely different. It retains the structure of the HTML because BeautifulSoup has parsed it for us. This means that we can use special methods. In this section of the textbook, we will use find and find_all.</p>
+<ul class="simple">
+<li><p>find - this will allow us to find the first instance of a tag being used and grab that tag and all its nested components.</p></li>
+<li><p>find_all - this will return a list of all tags and their nested components that align to this specific tag.</p></li>
+</ul>
+<p>Let’s take a look at a basic example of the find method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we grabbed the first div tag on the page. Div tags, however, are quite common because they are one of the essential building blocks of HTML. Let’s take a look at how many there are on the entire page. We can do this with the find_all method and then count the list size with the len function that we met in chapter 02_02.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_divs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_divs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, if we want to grab a specific div with only find and find_all, we would have to count all the div tags and find the right index and grab it. This would not work at scale because this would vary from page to page, even if the HTML data structure were similar across all pages on a site. We need a better solution. This is where our second optional argument comes in. The find function can also take a dictionary that allows us to pass some specificity to our parsing of the soup object.</p>
+<p>Let’s say I want to grab the main body of the Wikipedia article. If I inspect the page, I will notice that one particular div tag contains all the data corresponding to the body of the Wikipedia article. This div tag has a special unique id attribute. This id attribute’s name is “mw-content-text”. This means that I can pass as a econd argument a dictionary where id is the key and the corresponding id name is the value. This will tell BeautifulSoup to find the first div tag that has an id attribute that matches mw-content-text. Let’s take a look at this in code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;mw-content-text&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have grabbed this body portion of the article, we can print it off with the text method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This article is about French monarchs. For Frankish kings, see List of Frankish kings.
+
+
+ Division of the Frankish Empire at the Treaty of Verdun in 843
+The monarchs of the Kingdom of France ruled from the establishment of the Kingdom of the West Franks in 843 until the fall of the Second French Empire in 1870, with several interruptions. Between the period from King Charles the Bald in 843 to King Louis XVI in 1792, France had 45 kings. Adding the 7 emperors and kings after the French Revolut
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is fantastic! But, what if we wanted to grab the text and maintain the structure of the paragraphs. We can do this by searching the soup object at the body level. The body object that we created is still a soup object that retains all that HTML data, but it only contains the data for the data found under that particular div. We can use find all now to grab all the paragraphs from within the body. We can use find_all on the body object to find all the paragraphs like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paragraphs</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now iterate over the paragraphs. Let’s do that now over the first five paragraphs and print off the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">paragraphs</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">paragraph</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The monarchs of the Kingdom of France ruled from the establishment of the Kingdom of the West Franks in 843 until the fall of the Second French Empire in 1870, with several interruptions. Between the period from King Charles the Bald in 843 to King Louis XVI in 1792, France had 45 kings. Adding the 7 emperors and kings after the French Revolution, this comes to a total of 52 monarchs of France.
+
+In August 843 the Treaty of Verdun divided the Frankish realm into three kingdoms, one of which (Middle Francia) was short-lived; the other two evolved into France (West Francia) and, eventually, Germany (East Francia). By this time, the eastern and western parts of the land had already developed different languages and cultures.
+
+Initially, the kingdom was ruled primarily by two dynasties, the Carolingians and the Robertians, who alternated rule from 843 until 987, when Hugh Capet, the progenitor of the Capetian dynasty, took the throne.  The kings use the title &quot;King of the Franks&quot; until the late twelfth century; the first to adopt the title of &quot;King of France&quot; was Philip II (r. 1180–1223).  The Capetians ruled continuously from 987 to 1792 and again from 1814 to 1848. The branches of the dynasty which ruled after 1328, however, are generally given the specific branch names of Valois (until 1589), Bourbon (from 1589 until 1792 and from 1814 until 1830), and the Orléans (from 1830 until 1848).
+</pre></div>
+</div>
+</div>
+</div>
+<p>Viola! You have now officially webscraped your first page in Python and grabbed some relevant data. Scraping data from the web is never a copy-and-paste task because every website structures its HTML a bit differently. Nevertheless, the mechanics are the same. The basic methods you learned in this chapter should allow you to scrape the majority of static websites.</p>
 </section>
 </section>
 
@@ -957,7 +1041,7 @@ This is a trigram, a distinct concept consisting of three words that may have in
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./04_topic_modeling"
+            path: "./01_intro"
         },
         predefinedOutput: true
     }
@@ -971,6 +1055,20 @@ This is a trigram, a distinct concept consisting of three words that may have in
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_06-02_html.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.1. </span><center>Introduction to HTML</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../02_pandas/02_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
