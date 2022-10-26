@@ -7,176 +7,180 @@ parts:
   chapters:
   - file: 00_preface/00_01_preface
     title: Preface
-    
-- caption: "PART ONE: The Basics of Python"
-  numbered: true
-  chapters:
-  - file: 01_intro/01_01-01_intro
-    title: Introduction to Python
-    sections:
-    - file: 01_intro/01_01-02_introduction_to_python
-      title: What is Python?
-    - file: 01_intro/01_01-03_installing_python
-      title: Installing Python
-    - file: 01_intro/01_01-04_coding_basics
-      title: Coding Basics
-      
-      
-  - file: 01_intro/01_02-01_intro
-    title: Working with Data
-    sections:
-    - file: 01_intro/01_02-02_data
-      title: Data Types
-    - file: 01_intro/01_02-03_data_structures
-      title: Data Structures
-      
-  - file: 01_intro/01_03-01_intro
-    title: Loops and Logic
-    sections:
-    - file: 01_intro/01_03-02_loops
-      title: Introduction to Loops
-    - file: 01_intro/01_03-03_conditionals
-      title: Introduction to Conditionals
-
-  - file: 01_intro/01_04-01_intro
-    title: "Formal Coding: Functions, Classes, and Libraries"
-    sections:
-    - file: 01_intro/01_04-02_functions
-      title: Introduction to Functions (Work in Progress)
-    - file: 01_intro/01_04-03_classes
-      title: Introduction to Classes (Work in Progress)
-    - file: 01_intro/01_04-04_libraries
-      title: Introduction to Libraries (Work in Progress)
-      
-  - file: 01_intro/01_05-01_intro
-    title: Working with External Data
-    sections:
-    - file: 01_intro/01_05-02_texts
-      title: Loading and Saving Text Data (Work in Progress)
-    - file: 01_intro/01_05-03_json
-      title: Loading and Saving JSON Data (Work in Progress)
-    - file: 01_intro/01_05-04_multiple_files
-      title: Working with Multiple Files (Work in Progress)
-      
-  - file: 01_intro/01_06-01_intro
-    title: Working with Data on the Web
-    sections:
-    - file: 01_intro/01_06-02_html
-      title: Parsing HTML with Python and BeautifulSoup
-    - file: 01_intro/01_06-03_scraping_pages
-      title: Scraping Web Pages with Requests and BeautifulSoup
-
-- caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
-  numbered: true
-  chapters:
-  
-  - file: 02_pandas/02_01_intro
-    title: Introduction to Pandas
-    sections:
-    - file: 02_pandas/01_01_introduction_to_pandas
-      title: What is Pandas?
-    - file: 02_pandas/01_02_the_basics
-      title: The Basics of Pandas
-      
-  - file: 02_pandas/02_02_intro
-    title: Working with Data in Pandas
-    sections:
-    - file: 02_pandas/02_01_finding_data
-      title: Finding Data in a DataFrame
-    - file: 02_pandas/02_02_organizing_data
-      title: Organizing Data in Pandas
-    - file: 02_pandas/02_03_cleaning_data
-      title: Cleaning Data with Pandas
-      
-  - file: 02_pandas/02_03_intro
-    title: Searching for Data
-    sections:
-    - file: 02_pandas/03_01_advanced_strings
-      title: Advanced Searching on Strings in DataFrame
-    - file: 02_pandas/03_02_advanced_querying
-      title: Advanced Filtering and Querying
-    - file: 02_pandas/03_03_advanced_grouping
-      title: Advanced Grouping with Groupby
-      
-  - file: 02_pandas/02_04_intro
-    title: Advanced Pandas
-    sections:
-    - file: 02_pandas/04_01_pandas_and_plots
-      title: Basic Plotting with Pandas
-    - file: 02_pandas/04_02_graphing_networks_with_pandas
-      title: Graphing Network Data from Pandas
-
-    - file: 02_pandas/05_01_time_series_data
-      title: Introduction to Time Series Data
-    
-- caption: "PART THREE: Natural Language Processing with spaCy (Work in Progress)"
-  numbered: true
-  chapters:
-  - file: 03_spacy/03_01_intro
-    title: Introduction to spaCy
-    sections:
-    - file: 03_spacy/01_01_install_and_containers
-      title: The Basics of spaCy
-    - file: 03_spacy/01_02_linguistic_annotations
-      title: spaCy Linguistic Annotations
-    - file: 03_spacy/01_03_word_vectors
-      title: Word Vectors and spaCy
-    - file: 03_spacy/01_04_pipelines
-      title: spaCy Pipelines
-      
-  - file: 03_spacy/03_02_intro
-    title: Rules-Based spaCy
-    sections:
-    - file: 03_spacy/02_01_entityruler
-      title: How to use the spaCy EntityRuler
-    - file: 03_spacy/02_02_matcher
-      title: How to use the spaCy Matcher
-    - file: 03_spacy/02_03_phrase_matcher
-      title: How to use the spaCy PhraseMatcher
-    - file: 03_spacy/02_04_custom_component
-      title: Custom Components in spaCy
-    - file: 03_spacy/02_05_simple_regex
-      title: How to use RegEx in spaCy (Basic)
-    - file: 03_spacy/02_06_complex_regex
-      title: How to use RegEx in spaCy (Advanced)
-    
-  - file: 03_spacy/03_03_intro 
-    title: Machine Learning Named Entity Recognition with spaCy
-    sections:
-    - file: 03_spacy/03_01_intro_to_ml
-      title: Introduction to Machine Learning
-    - file: 03_spacy/03_01_create_ner_training_set
-      title: Creating a Training Set
-    - file: 03_spacy/03_02_train_spacy_ner_model
-      title: How to Train a Base NER ML Model
-    - file: 03_spacy/03_03_examining_a_spacy_model
-      title: Examining a spaCy Model in the Folder
-    - file: 03_spacy/03_04_introduction_to_word_vectors
-      title: Introduction to Word Vectors
-    - file: 03_spacy/03_05_generating_custom_word_vectors
-      title: Generating Custom Word Vectors with Gensim
-    - file: 03_spacy/03_06_loading_custom_word_vectors
-      title: Loading Custom Word Vectors into a spaCy Model
-      
-  - file: 03_spacy/03_04_intro
-    title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
-    sections:
-    - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
-      title: Cultivating Good Datasets for Entities
-    - file: 03_spacy/04_02_cultivating_corpus.ipynb
-      title: Cultivating a Corpus
-    - file: 03_spacy/04_03_the_challenges_of_holocaust_ner
-      title: The Challenges of Holocaust NER
-    - file: 03_spacy/04_04_introduction_to_custom_pipes
-      title: Introduction to Custom Pipes
-    - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
-      title: Creating the Rules-Based Pipeline
-
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
   - file: 05_streamlit/05_01_01_intro
-    title: Introduction to Streamlit
+    title: Introduction to Streamlit    
+# - caption: "PART ONE: The Basics of Python"
+#   numbered: true
+#   chapters:
+#   - file: 01_intro/01_01-01_intro
+#     title: Introduction to Python
+#     sections:
+#     - file: 01_intro/01_01-02_introduction_to_python
+#       title: What is Python?
+#     - file: 01_intro/01_01-03_installing_python
+#       title: Installing Python
+#     - file: 01_intro/01_01-04_coding_basics
+#       title: Coding Basics
+      
+      
+#   - file: 01_intro/01_02-01_intro
+#     title: Working with Data
+#     sections:
+#     - file: 01_intro/01_02-02_data
+#       title: Data Types
+#     - file: 01_intro/01_02-03_data_structures
+#       title: Data Structures
+      
+#   - file: 01_intro/01_03-01_intro
+#     title: Loops and Logic
+#     sections:
+#     - file: 01_intro/01_03-02_loops
+#       title: Introduction to Loops
+#     - file: 01_intro/01_03-03_conditionals
+#       title: Introduction to Conditionals
+
+#   - file: 01_intro/01_04-01_intro
+#     title: "Formal Coding: Functions, Classes, and Libraries"
+#     sections:
+#     - file: 01_intro/01_04-02_functions
+#       title: Introduction to Functions (Work in Progress)
+#     - file: 01_intro/01_04-03_classes
+#       title: Introduction to Classes (Work in Progress)
+#     - file: 01_intro/01_04-04_libraries
+#       title: Introduction to Libraries (Work in Progress)
+      
+#   - file: 01_intro/01_05-01_intro
+#     title: Working with External Data
+#     sections:
+#     - file: 01_intro/01_05-02_texts
+#       title: Loading and Saving Text Data (Work in Progress)
+#     - file: 01_intro/01_05-03_json
+#       title: Loading and Saving JSON Data (Work in Progress)
+#     - file: 01_intro/01_05-04_multiple_files
+#       title: Working with Multiple Files (Work in Progress)
+      
+#   - file: 01_intro/01_06-01_intro
+#     title: Working with Data on the Web
+#     sections:
+#     - file: 01_intro/01_06-02_html
+#       title: Parsing HTML with Python and BeautifulSoup
+#     - file: 01_intro/01_06-03_scraping_pages
+#       title: Scraping Web Pages with Requests and BeautifulSoup
+
+# - caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
+#   numbered: true
+#   chapters:
+  
+#   - file: 02_pandas/02_01_intro
+#     title: Introduction to Pandas
+#     sections:
+#     - file: 02_pandas/01_01_introduction_to_pandas
+#       title: What is Pandas?
+#     - file: 02_pandas/01_02_the_basics
+#       title: The Basics of Pandas
+      
+#   - file: 02_pandas/02_02_intro
+#     title: Working with Data in Pandas
+#     sections:
+#     - file: 02_pandas/02_01_finding_data
+#       title: Finding Data in a DataFrame
+#     - file: 02_pandas/02_02_organizing_data
+#       title: Organizing Data in Pandas
+#     - file: 02_pandas/02_03_cleaning_data
+#       title: Cleaning Data with Pandas
+      
+#   - file: 02_pandas/02_03_intro
+#     title: Searching for Data
+#     sections:
+#     - file: 02_pandas/03_01_advanced_strings
+#       title: Advanced Searching on Strings in DataFrame
+#     - file: 02_pandas/03_02_advanced_querying
+#       title: Advanced Filtering and Querying
+#     - file: 02_pandas/03_03_advanced_grouping
+#       title: Advanced Grouping with Groupby
+      
+#   - file: 02_pandas/02_04_intro
+#     title: Advanced Pandas
+#     sections:
+#     - file: 02_pandas/04_01_pandas_and_plots
+#       title: Basic Plotting with Pandas
+#     - file: 02_pandas/04_02_graphing_networks_with_pandas
+#       title: Graphing Network Data from Pandas
+
+#     - file: 02_pandas/05_01_time_series_data
+#       title: Introduction to Time Series Data
+    
+# - caption: "PART THREE: Natural Language Processing with spaCy (Work in Progress)"
+#   numbered: true
+#   chapters:
+#   - file: 03_spacy/03_01_intro
+#     title: Introduction to spaCy
+#     sections:
+#     - file: 03_spacy/01_01_install_and_containers
+#       title: The Basics of spaCy
+#     - file: 03_spacy/01_02_linguistic_annotations
+#       title: spaCy Linguistic Annotations
+#     - file: 03_spacy/01_03_word_vectors
+#       title: Word Vectors and spaCy
+#     - file: 03_spacy/01_04_pipelines
+#       title: spaCy Pipelines
+      
+#   - file: 03_spacy/03_02_intro
+#     title: Rules-Based spaCy
+#     sections:
+#     - file: 03_spacy/02_01_entityruler
+#       title: How to use the spaCy EntityRuler
+#     - file: 03_spacy/02_02_matcher
+#       title: How to use the spaCy Matcher
+#     - file: 03_spacy/02_03_phrase_matcher
+#       title: How to use the spaCy PhraseMatcher
+#     - file: 03_spacy/02_04_custom_component
+#       title: Custom Components in spaCy
+#     - file: 03_spacy/02_05_simple_regex
+#       title: How to use RegEx in spaCy (Basic)
+#     - file: 03_spacy/02_06_complex_regex
+#       title: How to use RegEx in spaCy (Advanced)
+    
+#   - file: 03_spacy/03_03_intro 
+#     title: Machine Learning Named Entity Recognition with spaCy
+#     sections:
+#     - file: 03_spacy/03_01_intro_to_ml
+#       title: Introduction to Machine Learning
+#     - file: 03_spacy/03_01_create_ner_training_set
+#       title: Creating a Training Set
+#     - file: 03_spacy/03_02_train_spacy_ner_model
+#       title: How to Train a Base NER ML Model
+#     - file: 03_spacy/03_03_examining_a_spacy_model
+#       title: Examining a spaCy Model in the Folder
+#     - file: 03_spacy/03_04_introduction_to_word_vectors
+#       title: Introduction to Word Vectors
+#     - file: 03_spacy/03_05_generating_custom_word_vectors
+#       title: Generating Custom Word Vectors with Gensim
+#     - file: 03_spacy/03_06_loading_custom_word_vectors
+#       title: Loading Custom Word Vectors into a spaCy Model
+      
+#   - file: 03_spacy/03_04_intro
+#     title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
+#     sections:
+#     - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
+#       title: Cultivating Good Datasets for Entities
+#     - file: 03_spacy/04_02_cultivating_corpus.ipynb
+#       title: Cultivating a Corpus
+#     - file: 03_spacy/04_03_the_challenges_of_holocaust_ner
+#       title: The Challenges of Holocaust NER
+#     - file: 03_spacy/04_04_introduction_to_custom_pipes
+#       title: Introduction to Custom Pipes
+#     - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
+#       title: Creating the Rules-Based Pipeline
+
+# - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
+#   numbered: true
+#   chapters:
+#   - file: 05_streamlit/05_01_01_intro
+#     title: Introduction to Streamlit
     # sections:
     # - file: 05_streamlit/05_01_02_streamlit
     #   title: Getting Started with Streamlit
