@@ -169,6 +169,12 @@ parts:
       title: Introduction to Custom Pipes
     - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
       title: Creating the Rules-Based Pipeline
+      
+- caption: 'PREFACE'
+  numbered: true
+  chapters:
+  - file: 00_preface/00_01_preface
+    title: PREFACE
 
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
