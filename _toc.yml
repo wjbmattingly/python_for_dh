@@ -175,9 +175,9 @@ parts:
   chapters:
   - file: 05_streamlit/05_01_01_intro
     title: Introduction to Streamlit
-    sections:
-    - file: 05_streamlit/05_01_02_streamlit
-      title: Getting Started with Streamlit
+    # sections:
+    # - file: 05_streamlit/05_01_02_streamlit
+    #   title: Getting Started with Streamlit
 
 # - caption: Topic Modeling and Text Classification (Work in Progress)
 #   chapters:
