@@ -858,8 +858,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   1.3.1. Introduction
+  <a class="reference internal nav-link" href="#textual-ambiguity">
+   1.3.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -897,8 +897,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   1.3.1. Introduction
+  <a class="reference internal nav-link" href="#textual-ambiguity">
+   1.3.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -928,19 +928,19 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-bigrams-and-trigrams-center">
 <h1><span class="section-number">1.3. </span><center>Bigrams and Trigrams</center><a class="headerlink" href="#center-bigrams-and-trigrams-center" title="Permalink to this headline">#</a></h1>
-<section id="introduction">
-<h2><span class="section-number">1.3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Let’s take a moment and step away from the subject of this textbook, topic modeling. Instead, let’s think about language, the essential medium of topic modeling. This notebook will be exclusively about one aspect of langauge: bigrams and trigrams. When we use words, those words correspond to something distinct.</p>
+<p>Let’s take a moment and step away topic modeling. Instead, let’s think about language. The essential medium of topic modeling is texts which are the products of language. And language is nothing more than a collection of words whose usage is rooted around grammar and syntax. A given word’s meaning, in other words, is often defined by how, when, and where it is used in a given text. Words can also mean different things when used collectively.</p>
+<section id="textual-ambiguity">
+<h2><span class="section-number">1.3.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
 <p>If I use the word apple, you likely are thinking of something like this:</p>
 <p style="text-align:center;">
-<img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height="240" align="center"/>
+<img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height=100 align="center"/>
 </p>
 <p>Apple is a simple word, yet it can mean different things in different contexts. What if I said the following: “My Apple is better than a PC.” Now, what image comes to mind? Perhaps this?</p>
 <p style="text-align:center;">
 <img src="https://images-na.ssl-images-amazon.com/images/I/71pheYd9W0L._AC_SX466_.jpg" height="240" align="center"/>
 </p>
 This is an example of textual ambiguity. Syntactical context helps eliminate textual ambiguity. Apple is a single word here that contains a single concept. It's a relatively simple word. Perhaps one of the earliest a native speaker of English learns as a child. And yet it has textual ambiguity. Because "apple" is a single word, it is known as a unigram. A **unigram** is a single word that represents a single concept.
-<p>Textual ambiguity, however, occurs in more dynamic ways when we think about concepts beyond the single span of a single word. In this notebook, we will focus on two such cases that are essential for natural language processing: bigrams and trigrams. <strong>Bigrams</strong> are two words that contain a distinct meaning when used together, while <strong>trigrams</strong> are three words that contain a distinct meaning when used together.</p>
+<p>Textual ambiguity, however, occurs in more dynamic ways when we think about concepts beyond the single span of a single word. In this section, we will focus on two such cases that are essential for natural language processing: bigrams and trigrams. <strong>Bigrams</strong> are two words that contain a distinct meaning when used together, while <strong>trigrams</strong> are three words that contain a distinct meaning when used together.</p>
 <p>Understanding bigrams and trigrams are essential because in order for a computer to truly understand langauge the way a human does, it must be able to understand the nuances of a single word and how a word’s meaning not only shifts in context, but shifts in meaning when used in conjunction with other words.</p>
 </section>
 <section id="bigrams">

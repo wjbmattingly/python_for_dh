@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.3. Bigrams and Trigrams" href="04_01_04_bigrams.html" />
-    <link rel="prev" title="1.1. Introduction to Topic Modeling" href="04_01_02_topic_modeling_concepts.html" />
+    <link rel="prev" title="1.1. What is Topic Modeling?" href="04_01_02_topic_modeling_concepts.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -867,11 +867,6 @@ title="Print to PDF"
    1.2.2. What are Clusters?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#brief-introduction-to-k-means">
-   1.2.3. Brief Introduction to K-Means
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -901,11 +896,6 @@ title="Print to PDF"
    1.2.2. What are Clusters?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#brief-introduction-to-k-means">
-   1.2.3. Brief Introduction to K-Means
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -920,26 +910,52 @@ title="Print to PDF"
 <h1><span class="section-number">1.2. </span><center>Topics and Clusters</center><a class="headerlink" href="#center-topics-and-clusters-center" title="Permalink to this headline">#</a></h1>
 <section id="what-are-topics">
 <h2><span class="section-number">1.2.1. </span>What are Topics?<a class="headerlink" href="#what-are-topics" title="Permalink to this headline">#</a></h2>
-<p><strong>Topics</strong> are labels assigned to textual data that detail the subjects contained within a given text. In topic modeling we try to create computer systems that can assign topics the way a human would. In order to understand this process, it’s best if we take a step back and think about how we assign topics.</p>
+<p><strong>Topics</strong> are labels assigned to textual data that detail the subjects contained within a given text. In topic modeling we try to create computer systems that can assign topics the way a human would. In order to understand this process, it’s best if we take a step back and think about how we assign topics as humans.</p>
 <p>To do this, let’s examine these two texts.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Thomas</span> <span class="n">enjoys</span> <span class="n">playing</span> <span class="n">basketball</span><span class="o">.</span> <span class="n">He</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">exceptionally</span> <span class="n">good</span> <span class="n">point</span> <span class="n">guard</span><span class="o">.</span>
-<span class="n">Text</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Victoria</span> <span class="n">enjoys</span> <span class="n">playing</span> <span class="n">baseball</span><span class="o">.</span> <span class="n">She</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">exceptionally</span> <span class="n">good</span> <span class="n">at</span> <span class="n">playing</span> <span class="n">first</span> <span class="n">base</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>If I asked you to provide two topics to these texts, what might they be? Basketball and baseball are likely two top candidates. Text 1 would have the topic of basketball, while text 2 would have the topic of baseball. Now, let’s consider these same texts, but add two more into the mix.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span> <span class="mi">3</span><span class="p">:</span> <span class="n">John</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">talented</span> <span class="n">chef</span><span class="o">.</span> <span class="n">He</span> <span class="n">enjoys</span> <span class="n">making</span> <span class="n">pasta</span> <span class="n">professionally</span><span class="o">.</span>
-<span class="n">Text</span> <span class="mi">4</span><span class="p">:</span> <span class="n">Jeff</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">talented</span> <span class="n">cook</span><span class="o">.</span> <span class="n">He</span> <span class="n">owns</span> <span class="n">a</span> <span class="n">pizzaria</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>Now, if I asked you to assign two topics to all four texts, what might those topics be? It is likely that your answer changed. No longer are the two topics of baseball and basketball relevant because Text 3 and Text 4 do not align well with those topics. Instead, a better pair of topics might be sports and cooking, or something like that. What changed? The collection of texts in our corpus changed.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Text 1</p></td>
+<td><p>Thomas enjoys playing basketball. He is an exceptionally good point guard.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Text 2</p></td>
+<td><p>Victoria enjoys playing baseball. She is an exceptionally good at playing first base.</p></td>
+</tr>
+</tbody>
+</table>
+<p>If I asked you to provide two topics to these texts, what might they be? Basketball and baseball are likely two top candidates. <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">1</span></code> would have the topic of <code class="docutils literal notranslate"><span class="pre">basketball</span></code>, while <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">2</span></code> would have the topic of <code class="docutils literal notranslate"><span class="pre">baseball</span></code>. Now, let’s consider these same texts, but add two more into the mix.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number</p></th>
+<th class="head"><p>Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Text 1</p></td>
+<td><p>Thomas enjoys playing basketball. He is an exceptionally good point guard.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Text 2</p></td>
+<td><p>Victoria enjoys playing baseball. She is an exceptionally good at playing first base.</p></td>
+</tr>
+<tr class="row-even"><td><p>Text 3</p></td>
+<td><p>John is a talented chef. He enjoys making pasta professionally.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Text 4</p></td>
+<td><p>Jeff is a talented cook. He owns a pizzeria.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Now, if I asked you to assign two topics to all four texts, what might those topics be? It is likely that your answer changed. No longer are the two topics of baseball and basketball relevant because <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">4</span></code> do not align well with those topics. Instead, a better pair of topics might be sports and cooking, or something like that. What changed? The collection of texts in our corpus changed.</p>
 <p>What does this demonstrate? It tells us that topics are corpus-dependent, meaning the topics we assign to texts depend on their context against surrounding texts. The same holds true for topic modeling via computer systems.</p>
 </section>
 <section id="what-are-clusters">
 <h2><span class="section-number">1.2.2. </span>What are Clusters?<a class="headerlink" href="#what-are-clusters" title="Permalink to this headline">#</a></h2>
-<p>In topic modeling, computer systems do not generate topics, rather they generate a list of high concentration words. Texts that share common terms are clustered together by similarity. A <strong>cluster</strong> is nothing more than a collection of similar texts. There are various ways to cluster textual data that we will explore throughout this series, but one of the fundamental ones we will use is k-means.</p>
-</section>
-<section id="brief-introduction-to-k-means">
-<h2><span class="section-number">1.2.3. </span>Brief Introduction to K-Means<a class="headerlink" href="#brief-introduction-to-k-means" title="Permalink to this headline">#</a></h2>
+<p>In topic modeling, computer systems do not generate topics, rather they generate a list of high concentration words. Texts that share common terms are clustered together by similarity. A <strong>cluster</strong> is nothing more than a collection of similar pieces of data. When we are working with texts, a cluster is a collection of texts that have similar overlapping themes.</p>
+<p>There are various ways to cluster textual data that we will explore throughout this part of the textbook, but one of the fundamental ones we will use is k-means.</p>
 <p><strong>K-means</strong> is a common method of clustering in data science and can be easily implemented via the Python library Scikit-Learn (see Part Two of this book). The K-means method of clustering takes in the textual data and places all documens in <em>k</em> number of clusters. In this scenario, the researcher assigns a numerical variable for <em>k</em>, so if the researcher wished to see all texts clustered into 10 topics, or clusters, the k-means algorithm would find the documents with the greatest degree of similarity and place them in the closest mean cluster. The result is a forced clustering of all texts neatly into 10 clusters. We can then discern their topics by examining the words that overlap between texts in each cluster. As we will see in Part Two, this can be tricky and invovles trial and error.</p>
 <p>In the example below, we can see a sample output of K-Means clustering. In this image, there are 3 clusters. Notice how all data (dots on the graph) are clustered into one of the three categories. This is the K-Means clustering method at work. Notice also how the blue dot in the top of the graph and the nearby red dots may have similarity or overlap, yet are clustered differently. This is the result of the absolute nature of K-Means clustering.</p>
 <p style="text-align:center;">
@@ -978,7 +994,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.1. </span><center>Introduction to Topic Modeling</center></p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span><center>What is Topic Modeling?</center></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_01_04_bigrams.html" title="next page">
