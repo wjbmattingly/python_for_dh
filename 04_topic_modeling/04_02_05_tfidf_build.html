@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Setting up TF-IDF in Python and Scikit Learn &#8212; Introduction to Python for Humanists</title>
+    <title>2.4. TF-IDF with Python and Scikit Learn &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -923,7 +923,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Setting up TF-IDF in Python and Scikit Learn</center></h1>
+                <h1><center>TF-IDF with Python and Scikit Learn</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -973,44 +973,117 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-setting-up-tf-idf-in-python-and-scikit-learn-center">
-<h1><span class="section-number">2.4. </span><center>Setting up TF-IDF in Python and Scikit Learn</center><a class="headerlink" href="#center-setting-up-tf-idf-in-python-and-scikit-learn-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>February 2021</center><section id="introduction">
+  <section class="tex2jax_ignore mathjax_ignore" id="center-tf-idf-with-python-and-scikit-learn-center">
+<h1><span class="section-number">2.4. </span><center>TF-IDF with Python and Scikit Learn</center><a class="headerlink" href="#center-tf-idf-with-python-and-scikit-learn-center" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
 <h2><span class="section-number">2.4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>In the last notebook, we learned about Scikit-Learn. In this notebook, we are going to take that knowledge and implement the TF-IDF algorithm from Scikit-Learn, but before we do that, we have to consider one very important thing: the state of our data. Whenever you are using algorithms, it is always <em>essential</em> to think about what form does the algorithm expect. The first part of this notebook will, therefore, be dedicated to explaining the data and preparing it for the TF-IDF algorithm. It is important to note that this notebook will be code-centric.</p>
-<p>Finally, because this notebook is designed to be from beginning to end of a TF-IDF implementation, from preparing the data to cleaning to TF-IDF to Clustering to data visualization, this notebook will be longer than the previous ones.</p>
+<p>Up until now, we have explored the key concepts of TF-IDF. Here, we will begin to implement the TF-IDF algorithm from Scikit-Learn, but before we do that, we have to consider one very important thing: the state of our data. Whenever you are using algorithms, it is always <em>essential</em> to think about what form does the algorithm expect. The first part of this notebook will, therefore, be dedicated to explaining the data and preparing it for the TF-IDF algorithm.</p>
 </section>
 <section id="preparing-the-data">
 <h2><span class="section-number">2.4.2. </span>Preparing the Data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
 <p>In this section of the notebook we will begin importing and manipulating and working with our TRC dataset and in order to do that you need to be familiar with how to import JSON data in Python so in this first block of code we will be doing just that.  I always find that writing out a basic function for reading Json data is always useful because you can use the function throughout your script without having to write 3 lines of code and instead simply writing one. We are going to call this function load_data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-
-
-<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
-    <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>With this function now in place we can import our JSON data that contains our TRC data set which is under the data subfolder. In the next line, we call this function to achieve that task.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trc_data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;data/trc_dn.json&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectId</th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Yr</th>
+      <th>Homeland</th>
+      <th>Province</th>
+      <th>Long</th>
+      <th>Lat</th>
+      <th>HRV</th>
+      <th>ORG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
+      <td>An ANCYL member who was shot and severely inju...</td>
+      <td>Bethulie</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Orange Free State</td>
+      <td>25.97552</td>
+      <td>-30.503290</td>
+      <td>shoot|injure</td>
+      <td>ANC|ANCYL|Police|SAP</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>ABBOTT</td>
+      <td>Montaigne</td>
+      <td>A member of the SADF who was severely injured ...</td>
+      <td>Messina</td>
+      <td>1987.0</td>
+      <td>NaN</td>
+      <td>Transvaal</td>
+      <td>30.039597</td>
+      <td>-22.351308</td>
+      <td>injure</td>
+      <td>SADF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>ABRAHAM</td>
+      <td>Nzaliseko Christopher</td>
+      <td>A COSAS supporter who was kicked and beaten wi...</td>
+      <td>Mdantsane</td>
+      <td>1985.0</td>
+      <td>Ciskei</td>
+      <td>Cape of Good Hope</td>
+      <td>27.6708791</td>
+      <td>-32.958623</td>
+      <td>beat</td>
+      <td>COSAS|Police</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now that we have loaded the data, let’s create two separate objects, one for the anmes in the dataset and another for the descriptions. There are better ways to do this in Python with libraries like Pandas, but I do not want to introduce another library into the mix in this textbook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">trc_data</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">]</span>
-<span class="n">descriptions</span> <span class="o">=</span> <span class="n">trc_data</span><span class="p">[</span><span class="s2">&quot;descriptions&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">descriptions</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Description</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">descriptions</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20834
 </pre></div>
 </div>
 </div>
@@ -1018,18 +1091,12 @@ title="Print to PDF"
 <p>Now that we have the objects created, it’s probably a good idea to print of the first index of each to make sure that they are what we expect and to print off the length of each list to make sure that they are the same length.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">descriptions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">descriptions</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">descriptions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AARON, Thabo Simon
-An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.
-21747
-21747
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.
 </pre></div>
 </div>
 </div>
@@ -1043,6 +1110,24 @@ An ANCYL member who was shot and severely injured by SAP members at Lephoi, Beth
 <p>In English, stop words will be articles, such as ‘the’, ‘an’, and ‘a’ or the verb “to be”. These words are often removed from texts because they occur so frequently that they offer nothing unique about the texts at hand. In other words, they are so common that they do not aid in the clustering of texts. This is because clustering seeks to find particular features of texts and then identify the texts with common overlapping features. Stop words would make all texts overlap significantly. We remove these words to force clustering to focus on the more important words.</p>
 <p>In addition to this, we also often need to develop our own stop words for these specific texts, or a general domain. In our case, these texts have a lot of dates and AC numbers that correspond to other records. While these are significant pieces of metadata, these both throw off the clustering. If we were interested in seeing how dates overlap, there are better ways of performing that task. For those interested, see my <a href="ner.pythonhumanities.com">Named Entity Recognition Textbook</a>.</p>
 <p>The functions below will clean our text in the above mentioned manner. There are annotations to explain each section of the code. If more explanation is needed, please leave a comment on GitHub.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/wjbmattingly/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -1077,12 +1162,6 @@ An ANCYL member who was shot and severely injured by SAP members at Lephoi, Beth
 <span class="k">def</span> <span class="nf">clean_docs</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
     <span class="c1">#gets the NLTK&#39;s stopword list for English</span>
     <span class="n">stops</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
-    
-    <span class="c1">#Grabs all the months from data/months.json</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;data/months.json&quot;</span><span class="p">)</span>
-    
-    <span class="c1">#combines the two to make a master stopword list</span>
-    <span class="n">stops</span> <span class="o">=</span> <span class="n">stops</span><span class="o">+</span><span class="n">months</span>
     
     <span class="c1">#empty new list to store the cleaned docs</span>
     <span class="n">final</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1122,7 +1201,7 @@ An ANCYL member who was shot and severely injured by SAP members at Lephoi, Beth
 An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.
 
 Cleaned Text:
-An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free State OFS Police opened fire gathering ANC supporters house following dispute two neighbours one linked ANC SAP councillor
+An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free State OFS April Police opened fire gathering ANC supporters house following dispute two neighbours one linked ANC SAP councillor
 </pre></div>
 </div>
 </div>
@@ -1178,22 +1257,23 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 <p>Here, we can see the results of the vectors of the first document. This output is a tuple which indicates the keyword and the TF-IDF score. In this form, however, it is a bit hard to decipher.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 5)	0.31417904033665145
-  (0, 37)	0.26764577237075254
-  (0, 92)	0.17885669660417403
-  (0, 2)	0.35997263491995035
-  (0, 71)	0.27507572242905154
-  (0, 54)	0.20314225251689294
-  (0, 77)	0.5249891606885219
-  (0, 42)	0.24755257133949066
-  (0, 80)	0.3047379292177127
-  (0, 82)	0.19595009171387526
-  (0, 53)	0.28809076545860496
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 5)	0.29723901061151475
+  (0, 36)	0.25289259755817356
+  (0, 92)	0.1676996522871345
+  (0, 2)	0.3397934181035764
+  (0, 72)	0.2633613181991394
+  (0, 6)	0.30627778192110294
+  (0, 56)	0.19535436966172204
+  (0, 77)	0.5016519391534785
+  (0, 41)	0.23459044720002845
+  (0, 80)	0.29258951458997623
+  (0, 82)	0.18554060799440944
+  (0, 55)	0.27579282750338985
 </pre></div>
 </div>
 </div>
@@ -1204,11 +1284,17 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/wjbmattingly/anaconda3/lib/python3.9/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
+</pre></div>
+</div>
+</div>
 </div>
 <p>By using the method get_feature_names(), we can get an easier to read text representation of our key words. Let’s look at the most common first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1228,27 +1314,27 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 <p>By using the method todense(), we can convert that vector into a larger representation and each word’s TF-IDF score. Each number corresponds to a word. Those words that are keywords have a TF-IDF score, while those represented by 0 are words that did not make it into our max_features. In other words, they are irrelevant words.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.35997263 0.         0.         0.31417904
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.33979342 0.         0.         0.29723901
+  0.30627778 0.         0.         0.         0.         0.
   0.         0.         0.         0.         0.         0.
   0.         0.         0.         0.         0.         0.
   0.         0.         0.         0.         0.         0.
   0.         0.         0.         0.         0.         0.
+  0.2528926  0.         0.         0.         0.         0.23459045
   0.         0.         0.         0.         0.         0.
-  0.         0.26764577 0.         0.         0.         0.
-  0.24755257 0.         0.         0.         0.         0.
-  0.         0.         0.         0.         0.         0.28809077
-  0.20314225 0.         0.         0.         0.         0.
   0.         0.         0.         0.         0.         0.
-  0.         0.         0.         0.         0.         0.27507572
-  0.         0.         0.         0.         0.         0.52498916
-  0.         0.         0.30473793 0.         0.19595009 0.
+  0.         0.27579283 0.19535437 0.         0.         0.
   0.         0.         0.         0.         0.         0.
-  0.         0.         0.1788567  0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.26336132 0.         0.         0.         0.         0.50165194
+  0.         0.         0.29258951 0.         0.18554061 0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.16769965 0.         0.         0.
   0.         0.         0.         0.        ]]
 </pre></div>
 </div>
@@ -1265,12 +1351,12 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 <p>This is what that same data looks like when printed off as a list. Again, this is our first document represented with its TF-IDF scores for each word.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">denselist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">denselist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0, 0.0, 0.35997263491995035, 0.0, 0.0, 0.31417904033665145, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.26764577237075254, 0.0, 0.0, 0.0, 0.0, 0.24755257133949066, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.28809076545860496, 0.20314225251689294, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.27507572242905154, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5249891606885219, 0.0, 0.0, 0.3047379292177127, 0.0, 0.19595009171387526, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.17885669660417403, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0, 0.0, 0.3397934181035764, 0.0, 0.0, 0.29723901061151475, 0.30627778192110294, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25289259755817356, 0.0, 0.0, 0.0, 0.0, 0.23459044720002845, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.27579282750338985, 0.19535436966172204, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2633613181991394, 0.0, 0.0, 0.0, 0.0, 0.5016519391534785, 0.0, 0.0, 0.29258951458997623, 0.0, 0.18554060799440944, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1676996522871345, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 </pre></div>
 </div>
 </div>
@@ -1310,10 +1396,10 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.
 
 Cleaned Text:
-An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free State OFS Police opened fire gathering ANC supporters house following dispute two neighbours one linked ANC SAP councillor
+An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free State OFS April Police opened fire gathering ANC supporters house following dispute two neighbours one linked ANC SAP councillor
 
 Only Keywords Text:
-[&#39;anc&#39;, &#39;anc supporters&#39;, &#39;house&#39;, &#39;injured&#39;, &#39;member&#39;, &#39;members&#39;, &#39;police&#39;, &#39;sap&#39;, &#39;severely&#39;, &#39;shot&#39;, &#39;supporters&#39;]
+[&#39;anc&#39;, &#39;anc supporters&#39;, &#39;april&#39;, &#39;house&#39;, &#39;injured&#39;, &#39;member&#39;, &#39;members&#39;, &#39;police&#39;, &#39;sap&#39;, &#39;severely&#39;, &#39;shot&#39;, &#39;supporters&#39;]
 </pre></div>
 </div>
 </div>
@@ -1325,7 +1411,6 @@ Only Keywords Text:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true_k</span> <span class="o">=</span> <span class="mi">5</span>
-
 <span class="n">model</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1335,9 +1420,14 @@ Only Keywords Text:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
-
 <span class="n">order_centroids</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">terms</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/wjbmattingly/anaconda3/lib/python3.9/site-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
 </pre></div>
 </div>
 </div>
@@ -1350,31 +1440,31 @@ Only Keywords Text:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[92  2 39 17 64 22 88 35 60 41 37 11 72 43 73 29  6  3  5 49 25 50 87 44
-   9 98  8 47 48 21 89 26  0 52 46 36 93 23 65 38 74 42 40 66 59 18 30 31
-  82 19 75 51 12 32 58 96 28 99 80 68 76 54 70 53 13 14 84 97 20 45 10 69
-   1 71 86 95 90 33 34 24 81 15 83 78 77 16  4 55  7 94 27 61 56 63 62 67
-  79 85 91 57]
- [83 24 82 90  2  4 91 88 39  3 92 60 41 64 22 54 49 72 59 50  5  6 11  0
-  73 96 29 42 46 40 53 84 75 71 43 68 77 66 65 97 30 23 74 31 35 58 93 98
-  44 32 76 20 12 55 51 70 45 99 86 47 48 28 37 69  1 87 80 13 25 17 95 21
-  34 33 56 78 67 38 15 16 36 26 10  8 63 62 61  7 14 18  9 19 52 79 27 81
-  94 89 85 57]
- [85 61 62 63 51 65  8 13 50 49 29 19 18 41 39 17 64 38 92 37 89  3  2 88
-  36 35 22 73 72  6 74 23  9 11 40 26  5 52 82 24 83 93 46 66 90  4 59 43
-   0 76 91 12 14 42 68 87 70 32 25 84 54 44 53 80 58 98 28 71 81 77 10 16
-  34 55 33  1 69 60 47 86 67  7 48 94 45 96 97 95 79 56 15 78 20 21 57 75
-  27 30 31 99]
- [54 77 55 71 20 82 27 14 53 80 94 59 96 81 42  7 15 10 58 88 95  2 97 86
-  84  0 24 83 98 45  3 28 46 99 72 22 78 35  6 76 68 25 75 37 16 64 11 79
-  56 32 73 21 52 87 70 12 60 90 29 92 17 69  8 13 49 26  1  9  4 39  5 50
-  23 33 74 65 34 43 67 47 41 38 48 66 36 30 57 31 44 93 51 40 91 89 85 18
-  61 62 63 19]
- [ 1 56 33 34 67 42 57 46 68 78 54 11 69 96 79 16 53  2 70 82 45 13 64 24
-  39 29 71 12 80 97 58 84 20 83 37 92 95 28 77 98 35 41 86 72 43 88 60  0
-  65 99 10 15 32 25 75 94 49 50 44 22 51 27 40 90 26 73 87  5  3 59 17  6
-  76 30 31  7 52  8 14  9  4 55 66 47 48 21 81 38 91 93 61 89 18 19 23 74
-  36 63 62 85]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[72 56 55 21 28 82 15  2 61 80 16 96 41 78 60 94 95 88 48 54 98 47 81  0
+  10 97 25 45 35 29 11 22 79 17 86 73 26 24 14 46 69  6 83 44  3  1 99 84
+  87 66 77 36 67 92 32  7 31 33 71 34 18 64 12 74 76 58 30 38 13 70  8 62
+  27  5  9 51 42 90 23 68 40 75 49 50 43 65 52 37 39  4 59 91 53 93 57 89
+  20 19 63 85]
+ [38  2 82 92 83 24 88 90 40  3 62  4 91 64 22  5 51 52 41 39 73 87  7  6
+  11 48  0 61 74 76 25 96 84 30 56 54 79 26 35 14 93 42 12 66 46 32 23 69
+  75 97 65 31 67 47 60 55 43 29 44 45 80 72 71 98 53 18 36  1 86 13 77 49
+  50 70 99 34 33 15 57 10 21 78 37 68 63 81  8 17 27 58 95  9 19 20 89 16
+  85 28 94 59]
+ [92 18 64 36 38 30 22 35  2 51 52 42  8 40 88 73 74 11 65  7 85 53 62  9
+  89 43 19  3 20 37  5 32 49 98 54 50 27 23 63 75 13 93  6 25 87  0 48 39
+  44 46 12 26 60 99 69 47 31 61 41 76 82 66 14 79 67 70 80 55 56  1 71 29
+  34 33 96 84 24 72 15 90 83 10 81 16 97 77 45 17 57 21 86  4 95 78 94 68
+  91 28 58 59]
+ [58 68  1 33 34 41 59 48 69 11 96 70 56 71 78 47 17 46 13 55 24 64 82 45
+   2 30 80 72 97 26  6 54 84 38 21 12 83 66 67 77 40 92 60 44 29 95 86 62
+  14 35 32 79 16 36  0 31 76 98 99 88 27 65 42 25 73 94 52 51  7 87 10 74
+  22 43 39 28 61 90 18  8  9  3 57 49 50  5 53 15  4 81 91 85 89 19 75 23
+  63 93 37 20]
+ [57 77 56 82 21 72 15 80 96 28 83 24 94 41 54 86 55 47 81 61 84 88 97 10
+   2 60  0 14  3 45 95 98 73 79 99  6 66 46  7 22 48 76 69 32 90 26 67 44
+  35 64 29 74 36 25 58  4 62 11 70 31 30 91  8 92 18 51 78 38 52 12  9 23
+  87 16 75 17 71  5 27 40 65 49 42 93 50 68 13 37  1 43 59 53 33 34 89 39
+  63 19 20 85]]
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1486,7 @@ Only Keywords Text:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">order_centroids</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">order_centroids</span><span class="p">[:</span><span class="mi">1</span><span class="p">]:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cluster </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">cluster</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
         <span class="nb">print</span> <span class="p">(</span><span class="n">terms</span><span class="p">[</span><span class="n">keyword</span><span class="p">])</span>
@@ -1407,64 +1497,16 @@ Only Keywords Text:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cluster 0
-supporters
-anc
-ifp
-burnt
-near
-conflict
-supporter
-home
-natal
-ifp supporters
-
-Cluster 1
-shot dead
-dead
-shot
-supporter shot
-anc
-anc supporter shot
-supporter shot dead
-supporter
-ifp
-anc supporter
-
-Cluster 2
-sonkombo
-ndwedwe
-ndwedwe kwazulu
-ndwedwe kwazulu near
-kwazulu near durban
-near durban
-arson
-attacks
-kwazulu near
-kwazulu
-
-Cluster 3
-members
-sap
-members sap
 police
-cape
-shot
-detained
-beaten
+members
 member
+cape
+detained
+shot
+beaten
+anc
+named
 severely
-
-Cluster 4
-amnesty
-mk
-granted
-granted amnesty
-operatives
-injured
-mk operatives
-killed
-people
-security
 </pre></div>
 </div>
 </div>
@@ -1477,7 +1519,6 @@ security
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#A lot of this section was obtained from https://stackoverflow.com/questions/27494202/how-do-i-visualize-data-points-of-tf-idf-vectors-for-kmeans-clustering</span>
-
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 </pre></div>
@@ -1506,45 +1547,17 @@ security
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">kmean_indices</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16612b1ddf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f8fe6198970&gt;
 </pre></div>
 </div>
 <img alt="../_images/04_02_05_tfidf_build_62_1.png" src="../_images/04_02_05_tfidf_build_62_1.png" />
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">kmean_indices</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="p">(</span><span class="n">x_axis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_axis</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/04_02_05_tfidf_build_63_0.png" src="../_images/04_02_05_tfidf_build_63_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/B0BkUNMqfSo&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/B0BkUNMqfSo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-</div></div>
 </div>
 </section>
 </section>
