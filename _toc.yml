@@ -63,6 +63,8 @@ parts:
     sections:
     - file: 01_intro/01_06-02_html
       title: Parsing HTML with Python and BeautifulSoup
+    - file: 01_intro/01_06-03_scraping_pages
+      title: Scraping Web Pages with Requests and BeautifulSoup
 
 - caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
   numbered: true
