@@ -6,7 +6,7 @@ parts:
   numbered: true
   chapters:
   - file: 00_preface/00_01_preface
-    title: PREFACE
+    title: Preface
     
 - caption: "PART ONE: The Basics of Python"
   numbered: true
@@ -177,9 +177,9 @@ parts:
   chapters:
   - file: 05_streamlit/05_01_01_intro
     title: Introduction to Streamlit
-    # sections:
-    # - file: 05_streamlit/05_01_02_streamlit
-    #   title: Getting Started with Streamlit
+    sections:
+    - file: 05_streamlit/05_01_02_streamlit
+      title: Getting Started with Streamlit
 
 # - caption: Topic Modeling and Text Classification (Work in Progress)
 #   chapters:
