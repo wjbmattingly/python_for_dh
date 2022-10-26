@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Bigrams and Trigrams &#8212; Introduction to Python for Humanists</title>
+    <title>1.4. Bigrams and Trigrams &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Traditional LDA Topic Modeling" href="04_02_01_intro.html" />
-    <link rel="prev" title="1.2. Topics and Clusters" href="04_01_03_clusters.html" />
+    <link rel="prev" title="1.3. Topics and Clusters" href="04_01_03_clusters.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -567,25 +567,47 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
-     1.1. The Basics of Topic Modeling
+     1.2. The Basics of Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_03_clusters.html">
-     1.2. Clusters and K-Means
+     1.3. Clusters and K-Means
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.3. Bigrams and Trigrams
+     1.4. Bigrams and Trigrams
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="04_02_01_intro.html">
    2. LDA Topic Modeling
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_03_tfidf.html">
+     2.1. Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_04_scikit_learn.html">
+     2.2. What is Scikit Learn?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_05_tfidf_build.html">
+     2.3. Building a TF-IDF with Python and Scikit-Learn
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_03_01_intro.html">
@@ -603,8 +625,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -859,22 +881,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#textual-ambiguity">
-   1.3.1. Textual Ambiguity
+   1.4.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bigrams">
-   1.3.2. Bigrams
+   1.4.2. Bigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trigrams">
-   1.3.3. Trigrams
+   1.4.3. Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-are-these-important">
-   1.3.4. Why are these Important?
+   1.4.4. Why are these Important?
   </a>
  </li>
 </ul>
@@ -898,22 +920,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#textual-ambiguity">
-   1.3.1. Textual Ambiguity
+   1.4.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bigrams">
-   1.3.2. Bigrams
+   1.4.2. Bigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trigrams">
-   1.3.3. Trigrams
+   1.4.3. Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-are-these-important">
-   1.3.4. Why are these Important?
+   1.4.4. Why are these Important?
   </a>
  </li>
 </ul>
@@ -927,10 +949,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-bigrams-and-trigrams-center">
-<h1><span class="section-number">1.3. </span><center>Bigrams and Trigrams</center><a class="headerlink" href="#center-bigrams-and-trigrams-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.4. </span><center>Bigrams and Trigrams</center><a class="headerlink" href="#center-bigrams-and-trigrams-center" title="Permalink to this headline">#</a></h1>
 <p>Let’s take a moment and step away topic modeling. Instead, let’s think about language. The essential medium of topic modeling is texts which are the products of language. And language is nothing more than a collection of words whose usage is rooted around grammar and syntax. A given word’s meaning, in other words, is often defined by how, when, and where it is used in a given text. Words can also mean different things when used collectively.</p>
 <section id="textual-ambiguity">
-<h2><span class="section-number">1.3.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
 <p>If I use the word apple, you likely are thinking of something like this:</p>
 <p style="text-align:center;">
 <img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height=100 align="center"/>
@@ -944,7 +966,7 @@ This is an example of textual ambiguity. Syntactical context helps eliminate tex
 <p>Understanding bigrams and trigrams are essential because in order for a computer to truly understand langauge the way a human does, it must be able to understand the nuances of a single word and how a word’s meaning not only shifts in context, but shifts in meaning when used in conjunction with other words.</p>
 </section>
 <section id="bigrams">
-<h2><span class="section-number">1.3.2. </span>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
 <p>As noted above, a bigram is a combination of two words that have a distinct meaning. To demonstrate this, let us consider quickly the word “French”. A single word, that may have multiple meanings. Perhaps the word French refers to the language:</p>
 <p style="text-align:center;">
 <img src="https://www.unb.ca/cel/_assets/images/enrichment/ll-fred/ll-french-beginners.jpg" height="240" align="center"/>
@@ -963,7 +985,7 @@ Let's hold off on the word French for just a moment. Let's now use the word "rev
 </p>
 But we can think about language in even more nuanced ways.</section>
 <section id="trigrams">
-<h2><span class="section-number">1.3.3. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
 <p>Trigrams, as noted above, are the same as bigrams, except with three words, instead of two. Let’s continue with our example of “French”. What might you think about if I used the word “army”. Perhaps something distinct to your own experiences with the word. For me, as a modern American, I think initially about the American Army in the modern sense of the word. So I may picture something like this:</p>
 <p style="text-align:center;">
 <img src="https://www.goarmy.com/content/dam/goarmy/refresh/redesign-nav-images/Desktop_Navigation_IMG_1.jpg" height="240" align="center"/>
@@ -974,7 +996,7 @@ For others in other parts of the world, other images may be more relevant. Howev
 </p>
 This is a trigram, a distinct concept consisting of three words that may have individual meanings when used alone.</section>
 <section id="why-are-these-important">
-<h2><span class="section-number">1.3.4. </span>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.4. </span>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
 <p>So, why are bigrams and trigrams so important? The reason comes down to getting machines to understand that when certain words are used together, they bear a distinct meaning. In order to produce a good topic model, therefore, the model must be able to understand and process words in this manner, the way we humans use the language we are trying to get the machine to understand.</p>
 </section>
 </section>
@@ -1010,7 +1032,7 @@ This is a trigram, a distinct concept consisting of three words that may have in
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.2. </span><center>Topics and Clusters</center></p>
+            <p class="prev-next-title"><span class="section-number">1.3. </span><center>Topics and Clusters</center></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_02_01_intro.html" title="next page">
