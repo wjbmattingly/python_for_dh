@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Introduction to TF-IDF" href="04_02_03_tfidf.html" />
+    <link rel="next" title="2.2. TF-IDF" href="04_02_03_tfidf.html" />
     <link rel="prev" title="2. Traditional LDA Topic Modeling" href="04_02_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -889,6 +889,16 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="center-what-is-lda-topic-modeling-center">
 <h1><span class="section-number">2.1. </span><center>What is LDA Topic Modeling?</center><a class="headerlink" href="#center-what-is-lda-topic-modeling-center" title="Permalink to this headline">#</a></h1>
 <p>Latent Dirichlet Allocation (LDA) topic modeling originated in population genomics in 2000 as a way to understand larger patterns in genomics data. In 2003, it was applied to machine learning, specifically texts to solve the problem of topic discovery. It leverages statistics to identify topics across a distributed set of data.</p>
+<p>In order to engage in LDA Topic Modeling, one must clean a corpus significantly. Common steps that we will cover in this chapter are:</p>
+<ul class="simple">
+<li><p>removing of stopwords</p></li>
+<li><p>lemmatization</p></li>
+<li><p>removing of punctuation</p></li>
+</ul>
+<p>In addition to cleaning the corpus, one must reduce the documents down to a TF-IDF vector which we will learn how to do via the Scikit-Learn library in Python. Finally, one must pass all TF-IDF vectors to the LDA Topic Model along with a specified amount of topics to identify across the entire corpus. Assigning this number can be quite challenging and will require a series of trial-and-error passes. As we will see in the next chapter, Transformer-Based Topic Modeling, a lot of these issues, from cleaning a corpus to guessing the quantity of topics in the corpus, are eliminated with the use of transformers and more recent machine learning methods and algorithms.</p>
+<p>Once an LDA topic model is trained, it can then be used to interrogate the corpus collectively. One can explore the topics identified and by reading the documents that the model placed in the same category. Depending on the corpus, certain topics can sometimes be difficult to understand. At this stage, the topics do not have actual names, rather they are purely numerical.</p>
+<p>If we want to assign labels to each topic, we have two different options available to us. First, a content expert can look at the results and intuitively assign a label that makes the most sense given the corpus. Another approach is through automation. A researcher can find the most common and unique words that appear in a topic and automatically assign them to the label name.</p>
+<p>By the end of this chapter, we will create a topic model, but before we can do that, we must have a firm grasp of each step in the cleaning process. That means that we must first have a basic understanding of TF-IDF, how it works, and why.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -928,7 +938,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="04_02_03_tfidf.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span><center>Introduction to TF-IDF</center></p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span><center>TF-IDF</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
