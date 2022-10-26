@@ -180,7 +180,12 @@ parts:
     # sections:
     # - file: 05_streamlit/05_01_02_streamlit
     #   title: Getting Started with Streamlit
-
+# - caption: 'PREFACE'
+#   numbered: true
+#   chapters:
+#   - file: 00_preface/00_01_preface
+#     title: Preface
+    
 # - caption: Topic Modeling and Text Classification (Work in Progress)
 #   chapters:
 #   - file: 04_topic_modeling/04_01_intro
