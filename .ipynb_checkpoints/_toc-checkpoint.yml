@@ -178,6 +178,13 @@ parts:
   chapters:
   - file: 04_topic_modeling/04_01_01_intro
     title: "Topic Modeling Concepts and Theory"
+    sections:
+    - file: 04_topic_modeling/04_01_02_topic_modeling_concepts
+      title: "The Basics of Topic Modeling"
+    - file: 04_topic_modeling/04_01_03_clusters
+      title: "Clusters and K-Means"
+    - file: 04_topic_modeling/04_01_04_bigrams
+      title: "Bigrams and Trigrams"
   - file: 04_topic_modeling/04_02_01_intro
     title: "LDA Topic Modeling"    
   - file: 04_topic_modeling/04_03_01_intro
@@ -191,74 +198,3 @@ parts:
     sections:
     - file: 05_streamlit/05_01_02_streamlit
       title: Getting Started with Streamlit
-# - caption: 'PREFACE'
-#   numbered: true
-#   chapters:
-#   - file: 00_preface/00_01_preface
-#     title: Preface
-    
-# - caption: Topic Modeling and Text Classification (Work in Progress)
-#   chapters:
-#   - file: 04_topic_modeling/04_01_intro
-#     title: Introduction to Topic Modeling
-#     sections:
-#     - file: 04_topic_modeling/01_01_introduction_to_topic_modeling
-#       title: What is Topic Modeling?
-#     - file: 04_topic_modeling/01_02_topics_and_clusters
-#       title: Introduction to Topics and Clusters
-#     - file: 04_topic_modeling/01_03_bigrams_and_trigrams
-#       title: Bigrams and Trigrams
-      
-
-#   - file: 04_topic_modeling/04_02_intro
-#     title: TF-IDF and K-Means Clustering
-#     sections:
-#     - file: 04_topic_modeling/02_01_intro_to_tf_idf.ipynb
-#       title: Introduction to TF-IDF
-#     - file: 04_topic_modeling/02_02_intro_to_scikit_learn
-#       title: Introduction to Scikit-Learn
-#     - file: 04_topic_modeling/02_03_setting_up_tf_idf
-#       title: Setting up TF-IDF in Python
-      
-#   - file: 04_topic_modeling/03_03_lda_model_demo
-#     title: LDA Topic Modeling
-
-#   - file: 04_topic_modeling/03_04_top2vec
-#     title: Top2Vec Topic Modeling
-
-# - caption: Optical Character Recognition with OpenCV and PyTesseract (Work in Progress)
-#   chapters:
-#   - file: 05_ocr/05_01_intro
-#     title: Introduction to OCR
-#     sections:
-#     - file: 
-#       title: What is Topic Modeling?
-#     - file: 
-#       title: Introduction to Topics and Clusters
-#     - file: 
-#       title: Bigrams and Trigrams
-      
-
-#   - file: 05_ocr/05_02_intro
-#     title: Cleaning Images for OCR with OpenCV
-#     sections:
-#     - file: 05_ocr/02_02_working with opencv
-#       title: Intro to OpenCV
-#     - file: 05_ocr/03_bounding_boxes_index_ocr
-#       title: Applied OpenCV
-      
-#   - file: 05_ocr/05_03_intro
-#     title: A Real-World Example
-#     sections:
-#     - file: 05_ocr/04_01_get_whole_text
-#       title: Finding the Body of a Text
-#     - file: 05_ocr/04_03_capture_side_notes
-#       title: Finding Marginalia
-#     - file: 05_ocr/04_04_separate_footnotes
-#       title: Finding Footnotes
-
-
-# - caption: Beyond the Notebook: Python Files and the Command Line
-
-
-# - caption: Building a Digital Humanities App with Streamlit
