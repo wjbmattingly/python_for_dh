@@ -186,7 +186,18 @@ parts:
     - file: 04_topic_modeling/04_01_04_bigrams
       title: "Bigrams and Trigrams"
   - file: 04_topic_modeling/04_02_01_intro
-    title: "LDA Topic Modeling"    
+    title: "LDA Topic Modeling"
+    sections:
+    - file: 04_topic_modeling/04_02_02_lda_concept
+      title: "Core Concepts of LDA Topic Modeling"
+    - file: 04_topic_modeling/04_02_03_tfidf
+      title: "Introduction to TF-IDF"
+    - file: 04_topic_modeling/04_02_04_scikit_learn
+      title: "What is Scikit Learn?"
+    - file: 04_topic_modeling/04_02_05_tfidf_build
+      title: "Building a TF-IDF with Python and Scikit-Learn"
+    # - file: 04_topic_modeling/04_02_06_lda
+    #   title: "Core Concepts of LDA Topic Modeling"
   - file: 04_topic_modeling/04_03_01_intro
     title: "Transformer-Based Topic Modeling" 
 
