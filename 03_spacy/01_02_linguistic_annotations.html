@@ -1116,9 +1116,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-getting-started-with-spacy-and-its-linguistic-annotations-center">
 <h1><span class="section-number">1.2. </span><center>Getting Started with spaCy and its Linguistic Annotations</center><a class="headerlink" href="#center-getting-started-with-spacy-and-its-linguistic-annotations-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>August 2021</center><p>In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.</p>
+<p>In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.</p>
 <section id="importing-spacy-and-loading-data">
 <h2><span class="section-number">1.2.1. </span>Importing spaCy and Loading Data<a class="headerlink" href="#importing-spacy-and-loading-data" title="Permalink to this headline">#</a></h2>
 <p>As with all Python libraries, the first thing we need to do is import spaCy. In the last notebook, I walked you through how to install it and download the small English model. If you have followed those steps, you should be able to import it like so:</p>
@@ -1423,19 +1421,48 @@ Making up more than a third of global military spending, it is the foremost mili
 <section id="token-attributes">
 <h2><span class="section-number">1.2.4. </span>Token Attributes<a class="headerlink" href="#token-attributes" title="Permalink to this headline">#</a></h2>
 <p>The token object contains a lot of different attributes that are VITAL do performing NLP in spaCy. We will be working with a few of them, such as:</p>
-<ul class="simple">
-<li><p>.text</p></li>
-<li><p>.head</p></li>
-<li><p>.left_edge</p></li>
-<li><p>.right_edge</p></li>
-<li><p>.ent_type_</p></li>
-<li><p>.iob_</p></li>
-<li><p>.lemma_</p></li>
-<li><p>.morph</p></li>
-<li><p>.pos_</p></li>
-<li><p>.dep_</p></li>
-<li><p>.lang_</p></li>
-</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sent</p></td>
+<td><p>the sentence to which the span blongs</p></td>
+</tr>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>the raw text of the token</p></td>
+</tr>
+<tr class="row-even"><td><p>head</p></td>
+<td><p>the parent of the token</p></td>
+</tr>
+<tr class="row-odd"><td><p>left_edge</p></td>
+<td><p>the left edge of the token’s descendents</p></td>
+</tr>
+<tr class="row-even"><td><p>right_edge</p></td>
+<td><p>the right edge of the token’s descendents</p></td>
+</tr>
+<tr class="row-odd"><td><p>ent_type_</p></td>
+<td><p>the label of the token, if it is an entity</p></td>
+</tr>
+<tr class="row-even"><td><p>lemma_</p></td>
+<td><p>the lemmatized form of the token</p></td>
+</tr>
+<tr class="row-odd"><td><p>morph</p></td>
+<td><p>provides the morphology of the token</p></td>
+</tr>
+<tr class="row-even"><td><p>pos_</p></td>
+<td><p>part of speech</p></td>
+</tr>
+<tr class="row-odd"><td><p>dep_</p></td>
+<td><p>dependency relation</p></td>
+</tr>
+<tr class="row-even"><td><p>lang_</p></td>
+<td><p>the language of the parent document</p></td>
+</tr>
+</tbody>
+</table>
 <p>I will briefly describe these here and show you how to grab each one and what they look like. We will be exploring each of these attributes more deeply in this chapter and future chapters. To demonstrate each of these attributes, we will use one token, “States” which is part of a sequence of tokens that make up “The United States of America”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
