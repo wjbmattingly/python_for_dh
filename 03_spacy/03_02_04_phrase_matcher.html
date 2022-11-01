@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The Challenges of Holocaust NER &#8212; Introduction to Python for Humanists</title>
+    <title>2.3. How to use the spaCy PhraseMatcher &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4. Custom Components in spaCy" href="03_02_05_custom_component.html" />
+    <link rel="prev" title="2.2. How to use the spaCy Matcher" href="03_02_03_matcher.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -392,7 +394,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART THREE: Natural Language Processing with spaCy (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
@@ -420,16 +422,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="03_02_01_intro.html">
    2. Rules-Based spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="03_02_02_entityruler.html">
      2.1. How to use the spaCy EntityRuler
@@ -438,6 +440,58 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="03_02_03_matcher.html">
      2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. How to use the spaCy PhraseMatcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_05_custom_component.html">
+     2.4. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_06_simple_regex.html">
+     2.5. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_07_complex_regex.html">
+     2.6. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_03_01_intro.html">
+   3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_02_cultivating_concentration_camp_dataset.html">
+     3.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_03_cultivating_corpus.html">
+     3.2. Cultivating a Corpus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_04_the_challenges_of_holocaust_ner.html">
+     3.3. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_05_building_holocaust_pipeline_rules_based.html">
+     3.4. Creating the Rules-Based Pipeline
     </a>
    </li>
   </ul>
@@ -453,8 +507,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling Concepts and Theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -480,8 +534,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
    2. LDA Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -512,8 +566,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
    3. Transformer-Based Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -541,8 +595,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -613,7 +667,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/04_03_the_challenges_of_holocaust_ner.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_02_04_phrase_matcher.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -631,7 +685,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/04_03_the_challenges_of_holocaust_ner.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_02_04_phrase_matcher.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -691,7 +745,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/04_03_the_challenges_of_holocaust_ner.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_02_04_phrase_matcher.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -708,7 +762,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/04_03_the_challenges_of_holocaust_ner.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_02_04_phrase_matcher.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,7 +790,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03_spacy/04_03_the_challenges_of_holocaust_ner.ipynb"
+        <a href="../_sources/03_spacy/03_02_04_phrase_matcher.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -773,120 +827,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   Key Concepts in this Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-overview-of-the-problems">
-   An Overview of the Problems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ethical">
-   Ethical
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linguistic">
-   Linguistic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toponyms">
-   Toponyms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   Video
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>The Challenges of Holocaust NER</center></h1>
+                <h1><center>How to use the spaCy PhraseMatcher</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   Key Concepts in this Notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-overview-of-the-problems">
-   An Overview of the Problems
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ethical">
-   Ethical
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linguistic">
-   Linguistic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toponyms">
-   Toponyms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   Video
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -894,50 +851,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-the-challenges-of-holocaust-ner-center">
-<h1><center>The Challenges of Holocaust NER</center><a class="headerlink" href="#center-the-challenges-of-holocaust-ner-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2021</center><section id="key-concepts-in-this-notebook">
-<h2>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>machine learning ethics<br></p></li>
-<li><p>the problem of multilingual/regionally diverse corpora<br></p></li>
-<li><p>toponym<br></p></li>
-<li><p>toponym resolution<br></p></li>
-</ol>
-</section>
-<section id="an-overview-of-the-problems">
-<h2>An Overview of the Problems<a class="headerlink" href="#an-overview-of-the-problems" title="Permalink to this headline">#</a></h2>
-<p>Developing an NER model for Holocaust documents has several issues that must be addressed. They fall into three categories: ethical, linguistic, toponym resolution. This notebook will be divided into these three categories.</p>
-</section>
-<section id="ethical">
-<h2>Ethical<a class="headerlink" href="#ethical" title="Permalink to this headline">#</a></h2>
-<p>When working with documents as sensitive and delicate as those belonging to the Holocaust, any data scientist or NLP/ML practitioner must consider the serious ethical implications of using machine learning. First, there is the issue of privacy. Named Entity Recognition, by definition, finds and extracted <em>named</em> entities. Do the individuals mentioned in the documents wish to be more discoverable? Do they wish to have their names removed from context and stored as metadata? These are some of the ethical quesitons that one should consider. That is not to say that the process cannot go forward, but if it does, it falls on the part of the creator of the NER to explain the ethical considersations that went into the process and the steps taken to remedy them.</p>
-<p>When it comes to names, these can be victims of violence, perpetrators of violence, interviewers of victims, historians, etc. One must ask if it is acceptable to try and use a machine to introduce decisions about the function of the individual in context. Is it ethical or even responsible to try and get a machine to identify victims or perpetrators of violence? Possibly not. It really depends on the desired output and the degree to which the creator of the NER system wishes to justify their actions.</p>
-<p>Further, machine learning is imprecise. This means that mistakes will happen. If your NER is trying to identify PEOPLE, GPE, and custom entities, such as CONC_CAMP (concentration camp) and GHETTO, is it ethically acceptable to have errors that result in a potential victim being labeled as a CONC_CAMP? From a machine learning point-of-view, this kind of error is possible and understandable. But imagine if a victim or family member of a victim is trying to use new technology to learn about their past and they see their own name or that of a friend or family member who was a victim of the Holocaust labeled as a CONC_CAMP. Why did this happen? For various reasons. If we think about this from the perspective of the victim, however, this could have a traumatic effect. For these reasons we have an ethical responsibility to introduce barriers to preven things like this from occuring and/or introducing warnings and explanations for <em>why</em> these types of errors may occur.</p>
-</section>
-<section id="linguistic">
-<h2>Linguistic<a class="headerlink" href="#linguistic" title="Permalink to this headline">#</a></h2>
-<p>In addition to the ethical concerns, there are also linguistic issues that make Holocaust data particularly challenging. First, the Holocaust covered a wide section of Europe and, as a result, those who were involved in or affected by the events surrounding the Holocaust were, necessarily of various linguistic backgrounds. In addition to this, many individuals had two mother tongues or spoke multiple languages. This has resulted in documents in the tens of languages. Furthermore, some documents are multilingual. For example, in the oral testimonies at the USHMM, inviduals may give testimony in English, but then use a Yiddish or Polish word. This sudden change in language may or may not be indicated in the notation.</p>
-<p>Handling documents of multiple languages is a challenging task in NLP. Fortunately, the new advents of BERT and transformer-based machine learning models may provide the key. For now the steps I have taken in this notebook work strictly for single-language documents. If a word appears here or there in a text that is foreign, the steps I have provided will suffice. If, however, the documents are half German and half English, certain preprocessing steps need to be taken to handle each language separately.</p>
-<p>In addition to multiple languages being present in a document, sometimes a document may contain peculiar dialects of a language. This will often return poorer results if an NER model has not been introduced to or experienced such dialectical variances. For example, in oral testimonies, a victim of the Holocaust may refer to their birthplace by a local name that is only used by a select few. It may be a village in Poland that most models will have never encountered. It is important to understand <em>why</em> these issues present problems for models and how to overcome them. As we saw in the previous notebook, the easiest way to overcome these issues, is to incorperate them into the training data.</p>
-</section>
-<section id="toponyms">
-<h2>Toponyms<a class="headerlink" href="#toponyms" title="Permalink to this headline">#</a></h2>
-<p>There is one final problem associated with Holocaust documents and that is the problem of toponyms. <strong>Toponyms</strong> are proper nouns that are identical but have radically different meanings depending on the context in which it is used. For example, were I to say “Paris has an excellent climate this time of year.” Where would I be speaking about? If you read this, then you would probably assume that I was speaking of Paris, France. What if I told you that I made that statement while sitting at a caffee in Lexington, KY. The place in which I made that statement may mean that I was speaking, actually, about Paris, KY, a small town outside of Lexington. But now what if I told you that I made that statement in this context. “I just got back from a trip in Texas. Paris has an excellent climate this time of year.” Now, it is a bit more clear that I may be speaking about Paris, TX.</p>
-<p>Without context, that single sentence could have many different meanings. Paris, in this example, is a toponym. In Holocaust documents, we often experience toponyms for places that have specific entity labels depending on context. Let’s consider this example. Imagine that I have a model that can identify two types of entities: LOCATION and GHETTO.</p>
-<p>“Warsaw is a large city in Poland. During WWII, the Warsaw Ghetto was created.”</p>
-<p>As a human, how would you annotate these two sentences? If you said, consider Warsaw in the first sentence a LOCATION and Warsaw in the second sentence a GHETTO, you’d be right. The trick in NER and NLP is to create systems that can perform this task. Holocaust documents are filled with examples just like this. The way in which we overcome these problems is by including correctly <strong>toponym resolved</strong> training sets, or training sets that have been manually annotated to ensure that toponyms are labeled correctly, to the model so it can learn to identify toponyms correctly.</p>
-</section>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Think about toponyms that exist in your data. How might you resolve them?</p>
-</section>
-<section id="video">
-<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
-<p>Unfortunatley, there is no video for this notebook.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-how-to-use-the-spacy-phrasematcher-center">
+<h1><span class="section-number">2.3. </span><center>How to use the spaCy PhraseMatcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-phrasematcher-center" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
+INFO:tensorflow:Enabling v2 tensorshape
+INFO:tensorflow:Enabling resource variables
+INFO:tensorflow:Enabling tensor equality
+INFO:tensorflow:Enabling control flow v2
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -967,6 +898,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03_02_03_matcher.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span><center>How to use the spaCy Matcher</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_02_05_custom_component.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Custom Components in spaCy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
