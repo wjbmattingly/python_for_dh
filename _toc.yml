@@ -156,19 +156,17 @@ parts:
 #     - file: 03_spacy/03_06_loading_custom_word_vectors
 #       title: Loading Custom Word Vectors into a spaCy Model
       
-#   - file: 03_spacy/03_04_intro
-#     title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
-#     sections:
-#     - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
-#       title: Cultivating Good Datasets for Entities
-#     - file: 03_spacy/04_02_cultivating_corpus.ipynb
-#       title: Cultivating a Corpus
-#     - file: 03_spacy/04_03_the_challenges_of_holocaust_ner
-#       title: The Challenges of Holocaust NER
-#     - file: 03_spacy/04_04_introduction_to_custom_pipes
-#       title: Introduction to Custom Pipes
-#     - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
-#       title: Creating the Rules-Based Pipeline
+  - file: 03_spacy/03_03_01_intro
+    title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
+    sections:
+    - file: 03_spacy/03_03_02_cultivating_concentration_camp_dataset
+      title: Cultivating Good Datasets for Entities
+    - file: 03_spacy/03_03_03_cultivating_corpus.ipynb
+      title: Cultivating a Corpus
+    - file: 03_spacy/03_03_04_the_challenges_of_holocaust_ner
+      title: The Challenges of Holocaust NER
+    - file: 03_spacy/03_04_05_building_holocaust_pipeline_rules_based
+      title: Creating the Rules-Based Pipeline
 
 
 - caption: "PART FOUR: TOPIC MODELING (WIP)"
