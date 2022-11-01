@@ -112,65 +112,63 @@ parts:
 - caption: "PART THREE: Natural Language Processing with spaCy (Work in Progress)"
   numbered: true
   chapters:
-  - file: 03_spacy/03_01_intro
+  - file: 03_spacy/03_01_01_intro
     title: Introduction to spaCy
     sections:
-    - file: 03_spacy/01_01_install_and_containers
+    - file: 03_spacy/03_01_02_install_and_containers
       title: The Basics of spaCy
-    - file: 03_spacy/01_02_linguistic_annotations
+    - file: 03_spacy/03_01_02_linguistic_annotations
       title: spaCy Linguistic Annotations
-    - file: 03_spacy/01_03_word_vectors
-      title: Word Vectors and spaCy
-    - file: 03_spacy/01_04_pipelines
+    - file: 03_spacy/03_01_03_pipelines
       title: spaCy Pipelines
       
-  - file: 03_spacy/03_02_intro
+  - file: 03_spacy/03_02_01_intro
     title: Rules-Based spaCy
     sections:
-    - file: 03_spacy/02_01_entityruler
+    - file: 03_spacy/03_02_01_entityruler
       title: How to use the spaCy EntityRuler
-    - file: 03_spacy/02_02_matcher
+    - file: 03_spacy/03_02_02_matcher
       title: How to use the spaCy Matcher
-    - file: 03_spacy/02_03_phrase_matcher
+    - file: 03_spacy/03_02_03_phrase_matcher
       title: How to use the spaCy PhraseMatcher
-    - file: 03_spacy/02_04_custom_component
+    - file: 03_spacy/03_02_04_custom_component
       title: Custom Components in spaCy
-    - file: 03_spacy/02_05_simple_regex
+    - file: 03_spacy/03_02_05_simple_regex
       title: How to use RegEx in spaCy (Basic)
-    - file: 03_spacy/02_06_complex_regex
+    - file: 03_spacy/03_02_06_complex_regex
       title: How to use RegEx in spaCy (Advanced)
     
-  - file: 03_spacy/03_03_intro 
-    title: Machine Learning Named Entity Recognition with spaCy
-    sections:
-    - file: 03_spacy/03_01_intro_to_ml
-      title: Introduction to Machine Learning
-    - file: 03_spacy/03_01_create_ner_training_set
-      title: Creating a Training Set
-    - file: 03_spacy/03_02_train_spacy_ner_model
-      title: How to Train a Base NER ML Model
-    - file: 03_spacy/03_03_examining_a_spacy_model
-      title: Examining a spaCy Model in the Folder
-    - file: 03_spacy/03_04_introduction_to_word_vectors
-      title: Introduction to Word Vectors
-    - file: 03_spacy/03_05_generating_custom_word_vectors
-      title: Generating Custom Word Vectors with Gensim
-    - file: 03_spacy/03_06_loading_custom_word_vectors
-      title: Loading Custom Word Vectors into a spaCy Model
+#   - file: 03_spacy/03_03_intro 
+#     title: Machine Learning Named Entity Recognition with spaCy
+#     sections:
+#     - file: 03_spacy/03_01_intro_to_ml
+#       title: Introduction to Machine Learning
+#     - file: 03_spacy/03_01_create_ner_training_set
+#       title: Creating a Training Set
+#     - file: 03_spacy/03_02_train_spacy_ner_model
+#       title: How to Train a Base NER ML Model
+#     - file: 03_spacy/03_03_examining_a_spacy_model
+#       title: Examining a spaCy Model in the Folder
+#     - file: 03_spacy/03_04_introduction_to_word_vectors
+#       title: Introduction to Word Vectors
+#     - file: 03_spacy/03_05_generating_custom_word_vectors
+#       title: Generating Custom Word Vectors with Gensim
+#     - file: 03_spacy/03_06_loading_custom_word_vectors
+#       title: Loading Custom Word Vectors into a spaCy Model
       
-  - file: 03_spacy/03_04_intro
-    title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
-    sections:
-    - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
-      title: Cultivating Good Datasets for Entities
-    - file: 03_spacy/04_02_cultivating_corpus.ipynb
-      title: Cultivating a Corpus
-    - file: 03_spacy/04_03_the_challenges_of_holocaust_ner
-      title: The Challenges of Holocaust NER
-    - file: 03_spacy/04_04_introduction_to_custom_pipes
-      title: Introduction to Custom Pipes
-    - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
-      title: Creating the Rules-Based Pipeline
+#   - file: 03_spacy/03_04_intro
+#     title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
+#     sections:
+#     - file: 03_spacy/04_01_cultivating_concentration_camp_dataset
+#       title: Cultivating Good Datasets for Entities
+#     - file: 03_spacy/04_02_cultivating_corpus.ipynb
+#       title: Cultivating a Corpus
+#     - file: 03_spacy/04_03_the_challenges_of_holocaust_ner
+#       title: The Challenges of Holocaust NER
+#     - file: 03_spacy/04_04_introduction_to_custom_pipes
+#       title: Introduction to Custom Pipes
+#     - file: 03_spacy/04_05_building_holocaust_pipeline_rules_based
+#       title: Creating the Rules-Based Pipeline
 
 
 - caption: "PART FOUR: TOPIC MODELING (WIP)"
