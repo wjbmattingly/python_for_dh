@@ -153,7 +153,7 @@ parts:
   numbered: true
   chapters:
   - file: 04_topic_modeling/04_01_01_intro
-    title: "Topic Modeling Concepts and Theory"
+    title: "Topic Modeling in Python"
     sections:
     - file: 04_topic_modeling/04_01_02_topic_modeling_concepts
       title: "The Basics of Topic Modeling"
@@ -173,6 +173,7 @@ parts:
       title: "Embedding, Flattening, and Clustering"    
     - file: 04_topic_modeling/04_03_04_top2vec
       title: "Topic Modeling with Top2Vec"
+      
   - file: 06_sna/06_01_01_intro
     title: "Introduction to Social Network Analysis in Python"
     sections:
@@ -184,6 +185,8 @@ parts:
       title: "SNA with PyVis"
     - file: 06_sna/06_01_05_applied
       title: "Applying SNA on Humanities Data"
+      
+      
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
