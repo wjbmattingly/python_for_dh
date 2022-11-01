@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Finding and Isolating Marginalia &#8212; Introduction to Python for Humanists</title>
+    <title>&lt;no title&gt; &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -573,6 +573,11 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. SNA with NetworkX
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     2.3. SNA with PyVis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -658,7 +663,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_ocr/04_03_capture_side_notes.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/07_ocr/03_ocr_index.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +681,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_ocr/04_03_capture_side_notes.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/07_ocr/03_ocr_index.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,7 +741,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_ocr/04_03_capture_side_notes.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F07_ocr/03_ocr_index.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -753,7 +758,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_ocr/04_03_capture_side_notes.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/07_ocr/03_ocr_index.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -781,7 +786,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/05_ocr/04_03_capture_side_notes.ipynb"
+        <a href="../_sources/07_ocr/03_ocr_index.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -818,23 +823,50 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Finding and Isolating Marginalia</center></h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -842,70 +874,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-finding-and-isolating-marginalia-center">
-<h1><center>Finding and Isolating Marginalia</center><a class="headerlink" href="#center-finding-and-isolating-marginalia-center" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytesseract</span>
-<span class="kn">import</span> <span class="nn">cv2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
 
-
-<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/sample_mgh_2.jpg&#39;</span><span class="p">)</span>
-<span class="n">base_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-<span class="n">blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">thresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">blur</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span> <span class="o">+</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_OTSU</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Create rectangular structuring element and dilate</span>
-<span class="n">kernel</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getStructuringElement</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_RECT</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
-<span class="n">dilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Find contours and draw rectangle</span>
-<span class="n">cnts</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">dilate</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
-<span class="n">cnts</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">cnts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">main_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
-    <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
-        <span class="n">roi</span> <span class="o">=</span> <span class="n">base_image</span><span class="p">[</span><span class="n">y</span><span class="p">:</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">x</span><span class="p">]</span>
-<span class="c1">#         cv2.rectangle(image, (0, y), (x, 0 + h+20), (36,255,12), 2)</span>
-        
-        <span class="n">constant</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">copyMakeBorder</span><span class="p">(</span><span class="n">roi</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">BORDER_CONSTANT</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
-        <span class="n">ocr_result</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">constant</span><span class="p">)</span>
-        <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;temp/output.png&quot;</span><span class="p">,</span> <span class="n">roi</span><span class="p">)</span>
-        
-        <span class="nb">print</span> <span class="p">(</span><span class="n">ocr_result</span><span class="p">)</span>
-<span class="c1">#         print (ocr_result)</span>
-<span class="c1"># cv2.imwrite(&quot;temp/output.png&quot;, image)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>786
-Ez, 13, 5.
-“£117,
-
-Ez. 8, 18. 19.
-
-Toh. 10, 11.
-
-Tudae 12.
-Matth. 25, 21.
-
-1, Petr. 5,3.
-
-&quot;fay.
-
-ef, Luc, 12,
-35.
-
-“col. 578,
-
-Matth.23, 27,
-Matth. 6, 1.
-
+<span class="n">image_file</span> <span class="o">=</span> <span class="s2">&quot;data/index_02.jpg&quot;</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -916,20 +891,239 @@ Matth. 6, 1.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">6</span><span class="n">f996add95e2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ocr_result</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;img&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">ocr_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX NOMINUM.
+
+SCRIPSIT KAROLUS HAMPE.
+
+Maior numerus indicat paginam, minor lineam.
+
+A. v. E.
+
+Aaron 38, 20. 123, 18. 168, 6. 203, 38. |
+
+Abacuc propheta 36,5. 319,29. 373, 23.
+Abagarus rex Edessenorum 382, 13.
+Abdenago 585, 3.
+
+Abel 26, 11.
+
+Abigail 606, 6.
+
+Abraham 26,18. 124,18. 133, 23. 2:
+264. 302, 13. 303, 13. 320, 40. 328, 1.
+496, 22.
+
+Absalon 102, 5.
+
+Acgfredi v. Ecgfridus.
+
+Achab rex 504, 1.
+
+Achaz rex 504,1.
+
+Achiel 606, 19.
+
+Achilon 496, 26.
+
+Adal-, Adel-, Adhel-, Aedel-, Aedel-,
+‘Aedil-, Aed
+Athel-, Athil-, Aethel-, Aethil-,
+Ethel-.
+
+Aedelbaldusabb.S. Petri Wiremuthen-
+sis et S. Pauli Girwensis 110, 28.
+
+Aedilberctus, Aedilberthus ep. Ha-
+gulstadensis, antea ep. Candidae
+casae sive Witernensis 27,43. 72,16.
+
+Adalbertus, Aedilberctus sive Magus,
+discipulus et capellanus Arnonis
+archiep. Salisburg., postea_abb.
+Ferrariensis 254, 1. 320, 41. 322, 19.
+416. 418, 14. 422, 10.
+
+Adalpertabb. [Tegernseensis ?]497,23.
+
+Adalbertus presb. monasterii 8. Mar-
+tini Turonensis 399, 3.
+
+Aedilburga, Edilburga,cognom. Euge-
+nia, abbatissa Flaedanbyrgensis,
+filia Offae regis Merciorum 78, 1.
+148, 32. 149, 33 [?]7 458.
+
+Aethelfleda uxor Aethilredi regis
+Northanhumbrorum, filia Offae
+regis Merciorum 149, 14. 150, 4.
+
+Adalgarius ep. [Trecensis?] 510, 10.
+
+Adelgisa filia Arichis ducis Bene-
+ventani 506, 27.
+
+Adalgisus fil. Desiderii regis Lango-
+bardorum 503, 45.
+
+Epistotae IV.
+
+ 
+
+ 
+
+il-, Edel-, Edil-, Athal-, |
+
+Aethelhardus, Aethilhardus, Athel-
+hardus, Athilhardus, Aedelhardus,
+Aedelhardus, Aedilhardus, Aedil-
+hardus, Ethelardus, Edelardus
+archiep. Cantuariensis Dorovernen-
+sis ecclesiae metropolitanus 46, 9.
+49,9. 128,2. 145, 31, 147,5. 188. 189.
+192, 24. 193, 5[?]. 374376, v9. 377, 4.
+412. 414,1 (2. 448. 449 [2]. 450 [2].
+
+| 451,8([?]. 479. 480. 614, 10. 21. 36.
+
+| Adalhardus , cognom. Antonius, abb.
+Corbeiae veteris, fil. Bernhardi
+eo Caroli Magni 34, 25. 290.
+
+1. 299. 300. 364. 365, 381. 382.
+509. 566,16; frater: Bernarius;
+fratres 381,25; soror: Gundrada.
+
+Adalmondus, Aethelmodus ep. Scire-
+
+| burnensis 29,9.
+
+Adelperga uxor Arichis ducis Bene-
+
+| ventani, filia Desiderii regis Lango-
+
+bardorum 506, 5; liberi: Romual-
+dus, Grimoaldus, Adelgisa.
+
+| Adalpert v, Adalbertus.
+
+Aedelredus, Aedilredus, Aethelredus,
+Aethilredus, Hedilredus rex Nor-
+thanhumbrorum, fil. Aedelwaldi
+Moll regis 33,15. 35,8. 41, 19.
+49, 16. 71, 20. 146,2. 147,10. 150, 6.
+151, 35. 171,17. 377,31; mater:
+Aedilthyda; uxor: Aethelfleda;
+famulus: Torchmundus.
+
+Adhelricus diaconus, discipulus et
+capellanus Arnonis archiep. Salis-
+burg., postea abbas Ferrariensis,
+archiepiscopus Senonensis, 418, 14.
+422, 10.
+
+Aedilthyda, Edilthruda uxor Aethel-
+waldi Moll regis Northanhumbro-
+rum, postea abbatissa 120,12. 151,17.
+152,31 hs filius: Aethelredus rex
+Northanhumbrorum.
+
+Edildryda uxor Ecgfridi regis Nor-
+thanhumbrorum, postea abbatissa
+(t 679) 417,15.
+
+Aedelwaldus, Aethelwoldus Moll rex
+Northanhumbrorum 33, 16; uxor:
+Aedilthyda; filius: Aethelredus,
+
+Adalwinus ep. Reginensis 421, 24.
+422, 21. 424,3.
+
+ 
+
+ 
+
+Aethiluuinus episcopus 28, 2.
+
+Adam 124, 201,1. 226, 7. 264, at.
+379, 29. 466, 36—468, v5. 591, 34.
+Adam abb. monasterii Gemeticensis
+
+579.
+
+Adaula abbatissa Anglica 112, 4.
+
+Adoredus, Hathoredus ep. Hwiccio-
+rum [Wigorniensis] 29, 10.
+
+Adrianus v. Hadrianus.
+
+Adriaticum mare 324, 41.
+
+| Aedel-, Aedil-, v. Adal-.
+
+Aegesippus [#. e. Hegesippus] 501, 11.
+
+Aegil v. Eigil.
+
+Aegyptus, Egyptus 123,19. 554, 17;
+Aegyptii, Aegyptiaci 231. 232, 17.
+467, 36. 567,6. 571,33; Egyptiacae
+divitiae 470, 22; Aegyptiacae tene-
+brae 232, 3; Acgy pit rex: Pharao;
+Aegyptiacascola, Aegyptiaci pueri
+v. Carolus I imperator.
+
+Aeine, Aesne, Esne ep. Herefordensis
+29, 6.
+
+Aelberhtus archiep. Eboracensis, ma-
+
+‘ister Alevini abbatis (162, 24]. 167,s.
+171,19]. [177,5]. [224,20]. [239, 28].
+332, 28]. [377,32]. (378, 31]. [429,27
+
+Aelfvaldus, Aelfwaldus rex Nor-
+thanhymbrorum, [Transhymbranae
+gentis] 20, 27. 28, 11. 43,8. 377, 31.
+
+Aelim v. Alim.
+
+Aeneades 39, 21; v. Virgilius.
+
+Aesculapius, Scolapius 397, 25.
+
+Aesne v. Aeine,
+
+Aethel-, Aethil- v. Adal-.
+
+Aethiopia 478, 5.
+
+Africa 124, 16; Afer: Melchiades
+papa; Africanum concilium 526,33.
+
+Africanus, sc. Scipio Afr. 575, 36.
+
+Agar 584, 3s.
+
+Agareni, Aggareni 32, 19. 601, 21;
+v, Saraceni.
+
+Agathensis synodus 396,
+
+Aginus ep. Constantiensis 117, 32.
+
+129, 19.
+
+8
+
 </pre></div>
 </div>
 </div>
@@ -963,8 +1157,61 @@ Matth. 6, 1.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Abdel-Malek&#39;, &#39;A.&#39;]
+[&#39;Abernethy&#39;, &#39;D. B.&#39;]
+[&#39;Achinger&#39;, &#39;H.&#39;]
+[&#39;Adler&#39;, &#39;M.&#39;]
+[&#39;The affluent worker in the\nclass structure&#39;, &#39;&#39;]
+[&#39;Agarwala&#39;, &#39;S.N.&#39;]
+[]
+[&#39;Agnelli&#39;, &#39;A.&#39;]
+[&#39;Agosti&#39;, &#39;A.&#39;]
+[&#39;Albrecht&#39;, &#39;W.&#39;]
+[&#39;Alexander&#39;, &#39;R. J.&#39;]
+[&#39;Der algerische Sozialismus&#39;]
+[&#39;Almasy&#39;, &#39;E.&#39;]
+[&#39;Alston&#39;, &#39;P. L.&#39;]
+[&#39;Altholz&#39;, &#39;J. L.&#39;]
+[&#39;Ammassari&#39;, &#39;G.&#39;]
+[&#39;Anders&#39;, &#39;K.&#39;]
+[&#39;Anderson&#39;, &#39;E. N.&#39;]
+[&#39;Andréani&#39;, &#39;E.&#39;]
+[&#39;Andréas&#39;, &#39;B.&#39;]
+[&#39;Andreasi&#39;, &#39;A.&#39;]
+[&#39;Andrews&#39;, &#39;W.&#39;]
+[&#39;Angell&#39;, &#39;A.&#39;]
+[&#39;Anikeev&#39;, &#39;V. V.&#39;]
+[&#39;Anklage und Botschaft&#39;]
+[]
+[&#39;Ansart&#39;, &#39;P.&#39;]
+[&#39;Anweiler&#39;, &#39;O.&#39;]
+[&#39;Archiv fiir Sozialgeschichte&#39;, &#39;IX&#39;]
+[&#39;Archives de Jules Humbert-\nDroz&#39;, &#39;I&#39;]
+[]
+[&#39;Arian&#39;, &#39;A.&#39;]
+[&#39;Arima&#39;, &#39;T.&#39;]
+[&#39;Aron&#39;, &#39;Raymond&#39;]
+[&#39;Aronson&#39;, &#39;G.&#39;]
+[&#39;Ashraf&#39;, &#39;A.&#39;]
+[&#39;Ashtor&#39;, &#39;E.&#39;]
+[&#39;INDEX OF NAMES*&#39;]
+[&#39;Asociacién Internacional de\nlos Trabajadores. Actas de\nlos Consejos y Comisién\nFederal de la Regién Es-\npafiola&#39;]
+[&#39;Atkin&#39;, &#39;R.&#39;]
+[&#39;Atkinson&#39;, &#39;A. B.&#39;]
+[&#39;Austromarxismus&#39;]
+[&#39;Auty&#39;, &#39;Ph.&#39;]
+[&#39;Avakumovié&#39;, &#39;I.&#39;]
+[&#39;Avrich&#39;, &#39;P.&#39;]
+[&#39;Azmon&#39;, &#39;Y.&#39;]
+[&#39;Ba Maw&#39;, &#39;G.&#39;, &#39;S.&#39;, &#39;S.&#39;, &#39;H. C.&#39;, &#39;P.&#39;, &#39;M.&#39;, &#39;vide Bakunin&#39;, &#39;M.\nBakunin&#39;, &#39;M.&#39;, &#39;R. J.&#39;, &#39;I.&#39;, &#39;J. A.&#39;, &#39;A.&#39;, &#39;R. H.&#39;, &#39;H.&#39;, &#39;W.&#39;, &#39;N. V.&#39;, &#39;H.&#39;, &#39;R.&#39;, &#39;O.&#39;, &#39;J.&#39;, &#39;R.&#39;, &#39;A.&#39;, &#39;J.&#39;, &#39;F.&#39;, &#39;W.&#39;, &#39;H. J.&#39;, &#39;A. W.&#39;, &#39;B.&#39;, &#39;G.&#39;]
+[&#39;Beradt&#39;, &#39;Ch.&#39;, &#39;P. L.&#39;, &#39;D.&#39;, &#39;M.&#39;, &#39;L.&#39;, &#39;E.&#39;, &#39;E.&#39;, &#39;I.&#39;, &#39;S.&#39;, &#39;J.&#39;, &#39;Ph.&#39;, &#39;L.&#39;, &#39;N.&#39;, &#39;K.&#39;, &#39;C. J.&#39;, &#39;A.&#39;, &#39;A.&#39;, &#39;H. D.&#39;, &#39;E.&#39;, &#39;A. A.&#39;, &#39;H. M.&#39;, &#39;J.&#39;, &#39;V.&#39;, &#39;A.&#39;, &#39;G.-E.&#39;, &#39;M.&#39;, &#39;F.&#39;, &#39;A.&#39;, &#39;G.&#39;, &#39;E.&#39;, &#39;D. M.&#39;, &#39;H.&#39;, &#39;A.&#39;, &#39;Rh.&#39;, &#39;R.&#39;, &#39;G. M.&#39;, &#39;C.&#39;, &#39;S.&#39;, &#39;A.&#39;, &#39;L.&#39;, &#39;V.&#39;, &#39;M. J.&#39;, &#39;M. J.&#39;]
+[&#39;&#39;]
+[&#39;* References to publications listed under the heading of Other Books are printed in italics.&#39;]
+</pre></div>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -979,7 +1226,7 @@ Matth. 6, 1.
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./05_ocr"
+            path: "./07_ocr"
         },
         predefinedOutput: true
     }

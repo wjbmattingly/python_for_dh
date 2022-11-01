@@ -573,6 +573,11 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. SNA with NetworkX
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     2.3. SNA with PyVis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -658,7 +663,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_ocr/03_bounding_boxes_index-Copy1.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/07_ocr/03_bounding_boxes_index_ocr.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +681,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_ocr/03_bounding_boxes_index-Copy1.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/07_ocr/03_bounding_boxes_index_ocr.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,7 +741,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_ocr/03_bounding_boxes_index-Copy1.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F07_ocr/03_bounding_boxes_index_ocr.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -753,7 +758,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_ocr/03_bounding_boxes_index-Copy1.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/07_ocr/03_bounding_boxes_index_ocr.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -781,7 +786,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/05_ocr/03_bounding_boxes_index-Copy1.ipynb"
+        <a href="../_sources/07_ocr/03_bounding_boxes_index_ocr.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1003,98 +1008,18 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span>  <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
         <span class="n">roi</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">y</span><span class="p">:</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">]</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;temp/index_roi.png&quot;</span><span class="p">,</span> <span class="n">roi</span><span class="p">)</span>
         <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">ocr_result</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
-        <span class="n">ocr_result</span> <span class="o">=</span> <span class="n">ocr_result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ocr_result</span><span class="p">:</span>
-            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;temp/index_bbox_new.png&quot;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39; &#39;, &#39;&#39;, &#39;A. v. E.&#39;, &#39;&#39;, &#39;Abdenago 585, 3.&#39;, &#39;&#39;, &#39;Abel 26, 11.&#39;, &#39;&#39;, &#39;Abigail 606, 6.&#39;, &#39;&#39;, &#39;Abraham 26,18. 124,18. 133, 23.&#39;, &#39;264. 302, 13. 303, 13. 320, 40.&#39;, &#39;496, 22.&#39;, &#39;&#39;, &#39;Absalon 102, 5.&#39;, &#39;&#39;, &#39;Acgfredi v. Ecgtridus.&#39;, &#39;&#39;, &#39;Achab rex 504, 1.&#39;, &#39;&#39;, &#39;Achaz rex 504,1.&#39;, &#39;&#39;, &#39;Achiel 606, 19.&#39;, &#39;&#39;, &#39;Achilon 496, 26.&#39;, &#39;&#39;, &#39;Adal-, Adel-, Adhel-, Aedel-, Aed&#39;, &#39;Aedil-,Acdil-, Edel-, Edil-, Ath&#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39;Ethel-.&#39;, &#39;&#39;, &#39;416. 418, 14. 422, 10.&#39;, &#39;&#39;, &#39;tini Turonensis 399, 3.&#39;, &#39;Aedilbur,&#39;, &#39;nia, abbatissa&#39;, &#39;148, 32. 149, 33 [2]7 458.&#39;, &#39;&#39;, &#39;Aethelfleda uxor Aethilredi&#39;, &#39;&#39;, &#39;Northanhumbrorum ,&#39;, &#39;regis Merciorum 149, 14. 150, 4.&#39;, &#39;&#39;, &#39;ventani 506, 27.&#39;, &#39;&#39;, &#39;bardorum 503, 45.&#39;, &#39;Epistozae IV.&#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;    &#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;    &#39;, &#39;    &#39;, &#39;   &#39;, &#39;&#39;, &#39;Aaron 38, 20. 123, 18. 168,6. 203, 38. |)&#39;, &#39;Abacuc propheta 36,5. 319, 29. 373, 23.&#39;, &#39;Abagarus rex Edessenorum 382, 13.&#39;, &#39;&#39;, &#39;‘|||Adalhardus,&#39;, &#39;&#39;, &#39;   &#39;, &#39;  &#39;, &#39;   &#39;, &#39;  &#39;, &#39; &#39;, &#39;&#39;, &#39;Athel-, Athil-, Aethel-, Aethil-,|&#39;, &#39;&#39;, &#39;Aedelbaldusabb.S. Petri Wiremuthen-&#39;, &#39;sis et S. Pauli Girwensis 110, 28.&#39;, &#39;&#39;, &#39;Aedilberctus, Aedilberthus ep. Ha-&#39;, &#39;gulstadensis, antea ep. Candidae|&#39;, &#39;casae sive Witernensis 27,43. 72,16.&#39;, &#39;Adalbertus, Aedilberctus sive Magus,&#39;, &#39;discipulus et capellanus Arnonis)&#39;, &#39;archiep. Salisburg., postea_abb.&#39;, &#39;Ferrariensis 254, 1. 320, 41. 322, 19.)&#39;, &#39;&#39;, &#39;  &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39;      &#39;, &#39;&#39;, &#39;Adalpertabb.[Tegernseensis ?]497,23..&#39;, &#39;Adalbertus presb. monasterii 8. Mar-&#39;, &#39;&#39;, &#39;, Edilburga, cognom. Euge-&#39;, &#39;ljaedanbyrgensis,&#39;, &#39;filia Offae regis Merciorum 78, 1.&#39;, &#39;&#39;, &#39;Adalgarius ep. [Trecensis?] 510, 10,&#39;, &#39;Adelgisa filia Arichis ducis Bene-&#39;, &#39;&#39;, &#39;Adalgisus fil. Desiderii regis Lango-|&#39;, &#39;&#39;, &#39;Aethelhardus, Aethilhardus, Athel-&#39;, &#39;hardus, Athilhardus, Aedelhardus,&#39;, &#39;Aedelhardus, Aedilhardus, Aedil-|&#39;, &#39;hardus, Ethelardus, Edelardus&#39;, &#39;archiep. Cantuariensis Dorovernen-&#39;, &#39;sis ecclesiae metropolitanus 46, 9,&#39;, &#39;49,9. 128,2. 145, 31, 147,5. 188. 189.&#39;, &#39;192, 24. 193, 5 [?]. 374376, v9. 377, 4,&#39;, &#39;412. 414,1 (2) 448. 449 [2]. 450 [2].&#39;, &#39;451, 8 [2]. 479. 480. 614, 10. 21. 36.&#39;, &#39;. Antonius, abb,&#39;, &#39;Corbeiae veteris, fil. Bernhardi&#39;, &#39;ae Caroli Magni 34, 25. 290.&#39;, &#39;1. 299. 300. 364. 365. 381. 382,&#39;, &#39;509. 566,16; frater: Bernarius;&#39;, &#39;fratres 381,25; soror: Gundrada,&#39;, &#39;\\|Adalmondus, Aethelmodus ep. Scire-&#39;, &#39;|| burnensis 29, 9.&#39;, &#39;Adelperga uxor Arichis ducis Bene-&#39;, &#39;ventani, filia Desiderii regis Lango-&#39;, &#39;bardorum 506, 5; liberi: Romual-&#39;, &#39;dus, Grimoaldus, Adelgisa.&#39;, &#39;\\|Adalpert v, Adalbertus.&#39;, &#39;Aedelredus, Aedilredus, Aethelredus,&#39;, &#39;Aethilredus, Hedilredus rex Nor-|&#39;, &#39;thanhumbrorum, fil. Aedelwaldi&#39;, &#39;Moll regis 383,15. 35,8. 41, 19.&#39;, &#39;49,16. 71, 20, 146,2. 147,10. 150, 6.&#39;, &#39;151, 35. 171,17. 377,31; mater:&#39;, &#39;Aedilthyda; uxor: Aethelfleda;&#39;, &#39;famulus: Torchmundus.&#39;, &#39;&#39;, &#39;   &#39;, &#39;      &#39;, &#39;  &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;     &#39;, &#39;   &#39;, &#39;   &#39;, &#39;     &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39; &#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39; &#39;, &#39;&#39;, &#39;capellanus Arnonis archiep. Salis-&#39;, &#39;burg., postea abbas Ferrariensis,&#39;, &#39;archiepiscopus Senonensis, 418, 14.&#39;, &#39;422, 10.&#39;, &#39;&#39;, &#39;edilthyda, Edilthruda uxor Aethel-&#39;, &#39;waldi Moll regis Northanhumbro-&#39;, &#39;rum, postea abbatissa 120,12. 151,17.&#39;, &#39;152,31 (?]; filius: Aethelredus rex&#39;, &#39;Northanhumbrorum.&#39;, &#39;&#39;, &#39;dildryda uxor Ecgfridi regis Nor-&#39;, &#39;thanhumbrorum, postea abbatissa&#39;, &#39;(F679) 417,15.&#39;, &#39;&#39;, &#39;Aedelwaldus, Aethelwoldus Moll rex&#39;, &#39;Northanhumbrorum 33, 16; uxor:)&#39;, &#39;Aedilthyda; filius: Aethelredus,&#39;, &#39;Adalwinus ep. Reginensis 421, 24.&#39;, &#39;422, 21. 424, 3.&#39;, &#39;&#39;, &#39;    &#39;, &#39;  &#39;, &#39;    &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39;     &#39;, &#39;  &#39;, &#39;  &#39;, &#39;    &#39;, &#39; &#39;, &#39;   &#39;, &#39;  &#39;, &#39;   &#39;, &#39;     &#39;, &#39;     &#39;, &#39;  &#39;, &#39;    &#39;, &#39;     &#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39;    &#39;, &#39;  &#39;, &#39;   &#39;, &#39;  &#39;, &#39; &#39;, &#39; &#39;, &#39;   &#39;, &#39;  &#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;   &#39;, &#39;    &#39;, &#39;  &#39;, &#39;    &#39;, &#39;  &#39;, &#39;&#39;, &#39;Aethiluuinus episcopus 28, 2.&#39;, &#39;&#39;, &#39;Adam 124, 201,1. 226,7. 264, 21,&#39;, &#39;379, 29. 466, 36-—468, v5. 591, 34.&#39;, &#39;Adam abb. monasterii Gemeticensis)&#39;, &#39;&#39;, &#39;579.&#39;, &#39;Adaula abbatissa Anglica 112, 4.&#39;, &#39;Adoredus, Hathoredus ep. Hwiccio-|&#39;, &#39;rum [Wigorniensis] 29, 10.&#39;, &#39;Adrianus v. Hadrianus.&#39;, &#39;Adriaticum mare 324, 41.&#39;, &#39;Aedel-, Aedil-, v. Adal-.&#39;, &#39;Aegesippus [i. e. Hegesippus] 501, 11,&#39;, &#39;Aegil v. Eigil.&#39;, &#39;Aegyptus, Egyptus 123,19. 554, 17;&#39;, &#39;‘Aegyptii, Aegyptiaci 231. 232, 17,&#39;, &#39;467, 36. 567,6. 571,33; Egyptiacae’&#39;, &#39;divitiae 470,22; Aegyptiacae tene-)&#39;, &#39;brae 232, 3; Acgy pit rex: Pharao;&#39;, &#39;Aegyptiacascola, Aegyptiaci pueri|&#39;, &#39;v. Carolus I imperator.&#39;, &#39;Aeine, Aesne, Esne ep. Herefordensis|&#39;, &#39;, 6.&#39;, &#39;elberhtus archiep. Eboracensis, ma-&#39;, &#39;‘ister Alcvini abbatis (162, 24]. 167,s.&#39;, &#39;171,19]. [177,5]. [224,20]. [239, 28].&#39;, &#39;332, 28]. [377,32]. (378, 31]. [429,27&#39;, &#39;Aelfvaldus, Aelfwaldus rex Nor-&#39;, &#39;thanhymbrorum, [Transhymbranae&#39;, &#39;gentis] 20, 27. 28, 11. 43, 8. 377, 31.&#39;, &#39;Aelim v. Alim.&#39;, &#39;‘Aeneades 39, 21; v. Virgilius.&#39;, &#39;Aesculapius, Scolapius 397, 25.&#39;, &#39;Aesne v. Aeine.&#39;, &#39;ethel-, Aethil- v. Adal-.&#39;, &#39;ethiopia 478, 5.&#39;, &#39;fricea 124, 16; Afer: Melchiades&#39;, &#39;papa; Africanum concilium 526,33.&#39;, &#39;fricanus, sc. Scipio Afr. 575, 36.&#39;, &#39;gar 584, 38.&#39;, &#39;gareni, Aggareni 32, 19. 601, 21;&#39;, &#39;v, Saraceni.&#39;, &#39;gathensis synodus 396,&#39;, &#39;inus ep. Constantiensis 117, 32.&#39;, &#39;129, 19.&#39;, &#39;&#39;, &#39;     &#39;, &#39;  &#39;, &#39;&#39;, &#39;       &#39;, &#39;  &#39;, &#39;  &#39;, &#39; &#39;, &#39;&#39;, &#39;    &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39; &#39;, &#39;  &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39; &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39; &#39;, &#39;&#39;, &#39;  &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;    &#39;, &#39;  &#39;, &#39;    &#39;, &#39;   &#39;, &#39;    &#39;, &#39;   &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;  &#39;, &#39;&#39;, &#39;  &#39;, &#39;     &#39;, &#39;   &#39;, &#39;   &#39;, &#39;  &#39;, &#39;   &#39;, &#39;   &#39;, &#39;   &#39;, &#39;   &#39;, &#39;   &#39;, &#39; &#39;, &#39;&#39;, &#39;    &#39;, &#39; &#39;, &#39;\x0c&#39;, &#39; &#39;, &#39;&#39;, &#39;Aethelhardus, Aethilhardus, Athel-&#39;, &#39;hardus, Athilhardus, Aedelhardus,&#39;, &#39;Aedelhardus, Aedilhardus, Aedil-|&#39;, &#39;hardus, Ethelardus, Edelardus&#39;, &#39;archiep. Cantuariensis Dorovernen-&#39;, &#39;&#39;, &#39;sis ecclesiae metropolitanus 46, 9,&#39;, &#39;&#39;, &#39;49,9. 128,2. 145, 31, 147,5. 188. 189.&#39;, &#39;&#39;, &#39;192, 24. 193, 5 [?]. 374376, v9. 377, 4,&#39;, &#39;&#39;, &#39;412. 414,1 (2) 448. 449 [2]. 450 [2].&#39;, &#39;&#39;, &#39;451, 8 [2]. 479. 480. 614, 10. 21. 36.&#39;, &#39;&#39;, &#39;Adalhardus, . Antonius, abb,&#39;, &#39;Corbeiae veteris, fil. Bernhardi&#39;, &#39;ae Caroli Magni 34, 25. 290.&#39;, &#39;&#39;, &#39;1. 299. 300. 364. 365, 381. 382,&#39;, &#39;509. 566,16; frater: Bernarius;&#39;, &#39;fratres 381,25; soror: Gundrada,&#39;, &#39;&#39;, &#39;Adalmondus, Aethelmodus ep. Scire-&#39;, &#39;burnensis 29, 9.&#39;, &#39;&#39;, &#39;Adelperga uxor Arichis ducis Bene-&#39;, &#39;ventani, filia Desiderii regis Lango-&#39;, &#39;bardorum 506, 5; liberi: Romual-&#39;, &#39;dus, Grimoaldus, Adelgisa.&#39;, &#39;&#39;, &#39;Adalpert v, Adalbertus.&#39;, &#39;&#39;, &#39;Aedelredus, Aedilredus, Aethelredus,&#39;, &#39;Aethilredus, Hedilredus rex Nor-|&#39;, &#39;thanhumbrorum, fil. Aedelwaldi&#39;, &#39;Moll regis 33,15. 35,8. 41, 19.&#39;, &#39;49,16. 71, 20, 146,2. 147,10. 150, 6.&#39;, &#39;151, 35. 171,17. 377,31; mater:&#39;, &#39;Aedilthyda; uxor: Aethelfleda;&#39;, &#39;famulus: Torchmundus.&#39;, &#39;&#39;, &#39;Adhelricus diaconus, discipulus et)&#39;, &#39;capellanus Arnonis archiep. Salis-&#39;, &#39;burg., postea abbas Ferrariensis,&#39;, &#39;archiepiscopus Senonensis, 418, 14.&#39;, &#39;422, 10.&#39;, &#39;&#39;, &#39;Aedilthyda, Edilthruda uxor Aethel-&#39;, &#39;waldi Moll regis Northanhumbro-&#39;, &#39;rum, postea abbatissa 120,12. 151,17.&#39;, &#39;152,31 (?]; filius: Aethelredus rex&#39;, &#39;Northanhumbrorum.&#39;, &#39;&#39;, &#39;Edildryda uxor Ecgfridi regis Nor-&#39;, &#39;thanhumbrorum, postea abbatissa&#39;, &#39;(F679) 417,15.&#39;, &#39;&#39;, &#39;Aedelwaldus, Aethelwoldus Moll rex’&#39;, &#39;Northanhumbrorum 33, 16; uxor:)&#39;, &#39;Aedilthyda; filius: Aethelredus,&#39;, &#39;&#39;, &#39;Adalwinus ep. Reginensis 421, 24.&#39;, &#39;422, 21. 424, 3.&#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39;Aethiluuinus episcopus 28, 2.&#39;, &#39;&#39;, &#39;Adam 124, 201,1. 226,7. 264, 21,&#39;, &#39;379, 29. 466, 36-—468, v5. 591, 34.&#39;, &#39;&#39;, &#39;Adam abb. monasterii Gemeticensis)&#39;, &#39;579.&#39;, &#39;&#39;, &#39;Adaula abbatissa Anglica 112, 4.&#39;, &#39;&#39;, &#39;Adoredus, Hathoredus ep. Hwiccio-|&#39;, &#39;rum [Wigorniensis] 29, 10.&#39;, &#39;&#39;, &#39;Adrianus v. Hadrianus.&#39;, &#39;&#39;, &#39;Adriaticum mare 324, 41.&#39;, &#39;&#39;, &#39;Aedel-, Aedil-, v. Adal-.&#39;, &#39;&#39;, &#39;Aegesippus [i. e. Hegesippus] 501, 11&#39;, &#39;&#39;, &#39;Aegil v. Eigil.&#39;, &#39;&#39;, &#39;Aegyptus, Egyptus 123,19. 554, 17;&#39;, &#39;‘Aegyptii, Aegyptiaci 231. 232, 17.&#39;, &#39;467, 36. 567,6. 571,33; Egyptiacae’&#39;, &#39;divitiae 470, 22; Aegyptiacae tene-|&#39;, &#39;brae 232, 3; Aegyptt rex: Pharao;&#39;, &#39;Aegyptiacascola, Aegyptiaci pueri|&#39;, &#39;v. Carolus I imperator.&#39;, &#39;&#39;, &#39;Aeine, Aesne, Esne ep. Herefordensis|&#39;, &#39;&#39;, &#39;, 6.&#39;, &#39;elberhtus archiep. Eboracensis, ma-&#39;, &#39;‘ister Alcvini abbatis (162, 24]. 167,s.&#39;, &#39;171,19]. [177,5]. [224,20]. [239, 28].&#39;, &#39;332, 28]. [377,32]. (378, 31]. [429, 27].)&#39;, &#39;&#39;, &#39;Aelfvaldus, Aelfwaldus rex Nor-&#39;, &#39;thanhymbrorum, [Transhymbranae&#39;, &#39;gentis] 20, 27. 28, 11. 43, 8. 377, 31.&#39;, &#39;&#39;, &#39;Aelim v. Alim.&#39;, &#39;&#39;, &#39;‘Aeneades 39, 21; v. Virgilius.&#39;, &#39;&#39;, &#39;Aesculapius, Scolapius 397, 25.&#39;, &#39;&#39;, &#39;Aesne v. Aeine.&#39;, &#39;ethel-, Aethil- v. Adal-.&#39;, &#39;ethiopia 478, 5,&#39;, &#39;fricea 124, 16; Afer: Melchiades&#39;, &#39;papa; Africanum concilium 526,33.&#39;, &#39;fricanus, sc. Scipio Afr. 575, 36.&#39;, &#39;gar 584, 38.&#39;, &#39;gareni, Aggareni 32, 19. 601, 21;&#39;, &#39;v, Saraceni.&#39;, &#39;gathensis synodus 396,&#39;, &#39;&#39;, &#39;inus ep. Constantiensis 117, 32.&#39;, &#39;129, 19.&#39;, &#39;&#39;, &#39; &#39;, &#39;\x0c&#39;, &#39;Aethiluuinus episcopus 28, 2.&#39;, &#39;&#39;, &#39;Adam 124. 201,1. 226,7. 264, 21,]&#39;, &#39;&#39;, &#39;379, 29. 466, 36-—468, v5. 591, 34.&#39;, &#39;&#39;, &#39;Adam abb. monasterii Gemeticensis&#39;, &#39;&#39;, &#39;579.&#39;, &#39;&#39;, &#39;Adaula abbatissa Anglica 112, 4.&#39;, &#39;&#39;, &#39;Adoredus, Hathoredus ep. Hwiccio-|&#39;, &#39;rum [Wigorniensis] 29, 10.&#39;, &#39;&#39;, &#39;Adrianus v. Hadrianus.&#39;, &#39;&#39;, &#39;Adriaticum mare 324, 41.&#39;, &#39;&#39;, &#39;Aedel-, Aedil-, v. Adal-.&#39;, &#39;&#39;, &#39;Aegesippus [i. e. Hegesippus] 501, 11,&#39;, &#39;&#39;, &#39;Aegil v. Eigil.&#39;, &#39;&#39;, &#39;Aegyptus, Egyptus 123,19. 554, 17;&#39;, &#39;‘Aegyptii, Aegyptiaci 231. 232, 17,&#39;, &#39;467, 36. 567,6. 571,33; Egyptiacae’&#39;, &#39;divitiae 470, 22; Aegyptiacae tene-|&#39;, &#39;brae 232, 3; Aegyptt rex: Pharao;&#39;, &#39;Aegyptiacascola, Aegyptiaci pueri&#39;, &#39;v. Carolus I imperator.&#39;, &#39;&#39;, &#39;Aeine, Aesne, Esne ep. Herefordensis’&#39;, &#39;&#39;, &#39;, 6.&#39;, &#39;Aelberhtus archiep. Eboracensis, ma-&#39;, &#39;‘ister Alcvini abbatis (162, 24]. 167,s.&#39;, &#39;171,19]. [177,5]. [224,20]. [239, 28].&#39;, &#39;332, 28]. [377,32]. (378, 31]. [429, 27].)&#39;, &#39;&#39;, &#39;Aelfvaldus, Aelfwaldus rex Nor-&#39;, &#39;thanhymbrorum, [Transhymbranae&#39;, &#39;gentis] 20, 27. 28, 11. 43, 8. 377, 31.&#39;, &#39;&#39;, &#39;Aelim v. Alim.&#39;, &#39;&#39;, &#39;Aeneades 39, 21; v. Virgilius.&#39;, &#39;&#39;, &#39;Aesculapius, Scolapius 397, 25.&#39;, &#39;&#39;, &#39;Aesne v. Aeine.&#39;, &#39;&#39;, &#39;Aethel-, Aethil- v. Adal-.&#39;, &#39;&#39;, &#39;Aethiopia 478, 5,&#39;, &#39;&#39;, &#39;Africa 124, 16; Afer: Melchiades&#39;, &#39;papa; Africanum concilium 526,33.&#39;, &#39;&#39;, &#39;Africanus, se. Scipio Afr. 575, 36.&#39;, &#39;&#39;, &#39;Agar 584, 3s.&#39;, &#39;&#39;, &#39;Agareni, Aggareni 32, 19. 601, 21;&#39;, &#39;v, Saraceni.&#39;, &#39;&#39;, &#39;Agathensis synodus 396,&#39;, &#39;&#39;, &#39;Aginus ep. Constantiensis 117, 32.&#39;, &#39;&#39;, &#39;129, 19.&#39;, &#39;&#39;, &#39; &#39;, &#39;&#39;, &#39; &#39;, &#39;\x0c&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span> <span class="ow">and</span> <span class="s2">&quot;-&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
-            <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-            <span class="n">entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">entities</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Abdenago&#39;, &#39;Abel&#39;, &#39;Abigail&#39;, &#39;Abraham&#39;, &#39;Absalon&#39;, &#39;Acgfredi&#39;, &#39;Achab&#39;, &#39;Achaz&#39;, &#39;Achiel&#39;, &#39;Achilon&#39;, &#39;Aedilbur&#39;, &#39;Aethelfleda&#39;, &#39;Aaron&#39;, &#39;Abacuc&#39;, &#39;Abagarus&#39;, &#39;Aedelbaldusabb&#39;, &#39;Aedilberctus&#39;, &#39;Adalbertus&#39;, &#39;Adalpertabb&#39;, &#39;Adalbertus&#39;, &#39;Adalgarius&#39;, &#39;Adelgisa&#39;, &#39;Adalgisus&#39;, &#39;Aethelhardus&#39;, &#39;Aedelhardus&#39;, &#39;Adelperga&#39;, &#39;Aedelredus&#39;, &#39;Aethilredus&#39;, &#39;Aedilthyda&#39;, &#39;Aedelwaldus&#39;, &#39;Aedilthyda&#39;, &#39;Adalwinus&#39;, &#39;Aethiluuinus&#39;, &#39;Adam&#39;, &#39;Adam&#39;, &#39;Adaula&#39;, &#39;Adoredus&#39;, &#39;Adrianus&#39;, &#39;Adriaticum&#39;, &#39;Aegesippus&#39;, &#39;Aegil&#39;, &#39;Aegyptus&#39;, &#39;Aegyptiacascola&#39;, &#39;Aeine&#39;, &#39;Aelfvaldus&#39;, &#39;Aelim&#39;, &#39;Aesculapius&#39;, &#39;Aesne&#39;, &#39;Aethelhardus&#39;, &#39;Aedelhardus&#39;, &#39;Adalhardus&#39;, &#39;Adalmondus&#39;, &#39;Adelperga&#39;, &#39;Adalpert&#39;, &#39;Aedelredus&#39;, &#39;Aethilredus&#39;, &#39;Aedilthyda&#39;, &#39;Adhelricus&#39;, &#39;Aedilthyda&#39;, &#39;Aedelwaldus&#39;, &#39;Aedilthyda&#39;, &#39;Adalwinus&#39;, &#39;Aethiluuinus&#39;, &#39;Adam&#39;, &#39;Adam&#39;, &#39;Adaula&#39;, &#39;Adoredus&#39;, &#39;Adrianus&#39;, &#39;Adriaticum&#39;, &#39;Aegesippus&#39;, &#39;Aegil&#39;, &#39;Aegyptus&#39;, &#39;Aegyptiacascola&#39;, &#39;Aeine&#39;, &#39;Aelfvaldus&#39;, &#39;Aelim&#39;, &#39;Aesculapius&#39;, &#39;Aesne&#39;, &#39;Aethiluuinus&#39;, &#39;Adam&#39;, &#39;Adam&#39;, &#39;Adaula&#39;, &#39;Adoredus&#39;, &#39;Adrianus&#39;, &#39;Adriaticum&#39;, &#39;Aegesippus&#39;, &#39;Aegil&#39;, &#39;Aegyptus&#39;, &#39;Aegyptiacascola&#39;, &#39;Aeine&#39;, &#39;Aelberhtus&#39;, &#39;Aelfvaldus&#39;, &#39;Aelim&#39;, &#39;Aeneades&#39;, &#39;Aesculapius&#39;, &#39;Aesne&#39;, &#39;Aethiopia&#39;, &#39;Africa&#39;, &#39;Africanus&#39;, &#39;Agar&#39;, &#39;Agareni&#39;, &#39;Agathensis&#39;, &#39;Aginus&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">entities</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">entities</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Adalpertabb&#39;, &#39;Adalgisus&#39;, &#39;Achiel&#39;, &#39;Aedelhardus&#39;, &#39;Aaron&#39;, &#39;Adelgisa&#39;, &#39;Africa&#39;, &#39;Abdenago&#39;, &#39;Abigail&#39;, &#39;Aethilredus&#39;, &#39;Acgfredi&#39;, &#39;Aginus&#39;, &#39;Adalbertus&#39;, &#39;Aedilthyda&#39;, &#39;Aelim&#39;, &#39;Adhelricus&#39;, &#39;Aegesippus&#39;, &#39;Abacuc&#39;, &#39;Achab&#39;, &#39;Adalpert&#39;, &#39;Agareni&#39;, &#39;Aeneades&#39;, &#39;Aedilbur&#39;, &#39;Absalon&#39;, &#39;Aedilberctus&#39;, &#39;Adrianus&#39;, &#39;Adalwinus&#39;, &#39;Aethiluuinus&#39;, &#39;Achilon&#39;, &#39;Aedelbaldusabb&#39;, &#39;Abel&#39;, &#39;Aethelhardus&#39;, &#39;Aedelwaldus&#39;, &#39;Aesculapius&#39;, &#39;Aegyptiacascola&#39;, &#39;Aegyptus&#39;, &#39;Adoredus&#39;, &#39;Aeine&#39;, &#39;Abraham&#39;, &#39;Abagarus&#39;, &#39;Achaz&#39;, &#39;Adalgarius&#39;, &#39;Aelfvaldus&#39;, &#39;Aelberhtus&#39;, &#39;Adalhardus&#39;, &#39;Adaula&#39;, &#39;Aegil&#39;, &#39;Aethiopia&#39;, &#39;Aesne&#39;, &#39;Adalmondus&#39;, &#39;Agar&#39;, &#39;Africanus&#39;, &#39;Aedelredus&#39;, &#39;Adam&#39;, &#39;Agathensis&#39;, &#39;Adelperga&#39;, &#39;Aethelfleda&#39;, &#39;Adriaticum&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">entities</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Aaron&#39;, &#39;Abacuc&#39;, &#39;Abagarus&#39;, &#39;Abdenago&#39;, &#39;Abel&#39;, &#39;Abigail&#39;, &#39;Abraham&#39;, &#39;Absalon&#39;, &#39;Acgfredi&#39;, &#39;Achab&#39;, &#39;Achaz&#39;, &#39;Achiel&#39;, &#39;Achilon&#39;, &#39;Adalbertus&#39;, &#39;Adalgarius&#39;, &#39;Adalgisus&#39;, &#39;Adalhardus&#39;, &#39;Adalmondus&#39;, &#39;Adalpert&#39;, &#39;Adalpertabb&#39;, &#39;Adalwinus&#39;, &#39;Adam&#39;, &#39;Adaula&#39;, &#39;Adelgisa&#39;, &#39;Adelperga&#39;, &#39;Adhelricus&#39;, &#39;Adoredus&#39;, &#39;Adrianus&#39;, &#39;Adriaticum&#39;, &#39;Aedelbaldusabb&#39;, &#39;Aedelhardus&#39;, &#39;Aedelredus&#39;, &#39;Aedelwaldus&#39;, &#39;Aedilberctus&#39;, &#39;Aedilbur&#39;, &#39;Aedilthyda&#39;, &#39;Aegesippus&#39;, &#39;Aegil&#39;, &#39;Aegyptiacascola&#39;, &#39;Aegyptus&#39;, &#39;Aeine&#39;, &#39;Aelberhtus&#39;, &#39;Aelfvaldus&#39;, &#39;Aelim&#39;, &#39;Aeneades&#39;, &#39;Aesculapius&#39;, &#39;Aesne&#39;, &#39;Aethelfleda&#39;, &#39;Aethelhardus&#39;, &#39;Aethilredus&#39;, &#39;Aethiluuinus&#39;, &#39;Aethiopia&#39;, &#39;Africa&#39;, &#39;Africanus&#39;, &#39;Agar&#39;, &#39;Agareni&#39;, &#39;Agathensis&#39;, &#39;Aginus&#39;]
 </pre></div>
 </div>
 </div>
@@ -1113,7 +1038,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./05_ocr"
+            path: "./07_ocr"
         },
         predefinedOutput: true
     }

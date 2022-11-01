@@ -575,6 +575,11 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. SNA with NetworkX
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_01_04_pyvis_basics.html">
+     2.3. SNA with PyVis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -820,12 +825,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminology">
+   2.1.2. Basic Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sna-libraries-in-python">
+   2.1.3. SNA Libraries in Python
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -837,6 +876,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminology">
+   2.1.2. Basic Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sna-libraries-in-python">
+   2.1.3. SNA Libraries in Python
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -846,6 +908,24 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-the-basic-concepts-of-social-network-analysis-center">
 <h1><span class="section-number">2.1. </span><center>The Basic Concepts of Social Network Analysis</center><a class="headerlink" href="#center-the-basic-concepts-of-social-network-analysis-center" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">2.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In this chapter, we will shift away from NLP and examine <strong>Social network analysis</strong> (SNA). SNA is the process by which researchers study the networks of social relationships. These can be familial (parents to children), social (friends), etc. The goal of SNA is to reveal insights about a network or group of individuals by studying them collectively and often through visualization methods.</p>
+<p>Visualized social networks are often studied through <strong>graphs</strong>, or visual representations of relationships. These graphs today stem often from <strong>graph theory</strong>, a branch of mathematics. In graph theory, math is used to study graph-based problems. Believe it or not, we are all beneficiaries of this discipline. Have you ever used Google Maps to go from <code class="docutils literal notranslate"><span class="pre">point</span> <span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">point</span> <span class="pre">B</span></code>? This is graph theory at play. Behind the application is a complex set of relationships that allow Google to recommend certain paths over others to ensure that you have the fastest (or least expensive) route.</p>
+<p>This chapter will not cover all the complexities of SNA, rather give enough of the basic terminology and concepts to see how it works via Python. The chief goal of this chapter is to introduce the process by which we can perform SNA through structured data.</p>
+</section>
+<section id="basic-terminology">
+<h2><span class="section-number">2.1.2. </span>Basic Terminology<a class="headerlink" href="#basic-terminology" title="Permalink to this headline">#</a></h2>
+<p>In a graph, there are a collection of <strong>nodes</strong>. These are dots in the graph that represent each piece of data. In a social network graph, each node would be a person or some kind of entity that a researcher wishes to map. Other entities may include things like businesses or agencies.</p>
+<p>In order to understand how different nodes relate to one another, we represent the relationships between them with <strong>edges</strong>. In a graph, these edges look like lines.</p>
+<p>Because graphs are often drawn with mathematics, it is important to know the <strong>force</strong> of a graph. Force in network theory is the direction of movement between two nodes. If we are mapping how characters move to different places in a graph, all people and places would receive a node in a graph. We would then inflict force with the person doing the movement towards the place. This would position the nodes in a particular way in a graph.</p>
+<p>In a network graph, we can often map multi-modal networks, or networks where different types of relationships are overlapping. Often, we can do this in a graph by representing each type of relationship as a separate edge color.</p>
+<p>Graphs are a useful way to explore complex relationships because in a single image, we can glean information that would otherwise be missed. We can examine our data quantitatively, meaning we can see the frequency that certain nodes appear in our data and, more importantly, the frequency with which that node relates to other nodes in the graph. We could, of course, extract this information for a node relatively easily with Pandas, but a graph let’s us see many different relationships between many different pieces of data all in a single image. For these reasons, it is often useful to be familiar with SNA generally and generally how to map nodal relationships in Python.</p>
+</section>
+<section id="sna-libraries-in-python">
+<h2><span class="section-number">2.1.3. </span>SNA Libraries in Python<a class="headerlink" href="#sna-libraries-in-python" title="Permalink to this headline">#</a></h2>
+<p>Python has several libraries for performing SNA. In this chapter, we will look closely at two: NetworkX (and Matplotlib to visualize the graph) and PyVis. Each has its strengths and weaknesses.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

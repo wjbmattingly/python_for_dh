@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Python &#8212; Introduction to Python for Humanists</title>
+    <title>Finding and Isolating Footnotes &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -573,6 +573,11 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. SNA with NetworkX
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     2.3. SNA with PyVis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -658,7 +663,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_ocr/05_01_intro.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/07_ocr/04_04_separate_footnotes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +681,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_ocr/05_01_intro.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/07_ocr/04_04_separate_footnotes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,7 +741,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_ocr/05_01_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F07_ocr/04_04_separate_footnotes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -753,7 +758,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_ocr/05_01_intro.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/07_ocr/04_04_separate_footnotes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -781,7 +786,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/05_ocr/05_01_intro.ipynb"
+        <a href="../_sources/07_ocr/04_04_separate_footnotes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -818,60 +823,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Introduction to Python</center></h1>
+                <h1><center>Finding and Isolating Footnotes</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -879,21 +847,46 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-python-center">
-<h1><center>Introduction to Python</center><a class="headerlink" href="#center-introduction-to-python-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Why should humanists learn to code?<br></p></li>
-<li><p>Why use Python specifically?<br></p></li>
-<li><p>What is covered in this textbook?<br></p></li>
-<li><p>How to Use Python from this Textbook<br></p></li>
-<li><p>How to Use Python on JupyterOrg<br></p></li>
-<li><p>How to Install Python with Anaconda Navigator and Jupyter-Lab<br></p></li>
-</ol>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-finding-and-isolating-footnotes-center">
+<h1><center>Finding and Isolating Footnotes</center><a class="headerlink" href="#center-finding-and-isolating-footnotes-center" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytesseract</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/sample_mgh.jpg&#39;</span><span class="p">)</span>
+<span class="n">im_h</span><span class="p">,</span> <span class="n">im_w</span><span class="p">,</span> <span class="n">im_d</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">base_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="n">blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">thresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">blur</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span> <span class="o">+</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_OTSU</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Create rectangular structuring element and dilate</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getStructuringElement</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_RECT</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">dilate</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Find contours and draw rectangle</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">dilate</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cnts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cnts</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+        <span class="n">roi</span> <span class="o">=</span> <span class="n">base_image</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="n">im_w</span><span class="p">]</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;temp/output.png&quot;</span><span class="p">,</span> <span class="n">roi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -909,7 +902,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./05_ocr"
+            path: "./07_ocr"
         },
         predefinedOutput: true
     }

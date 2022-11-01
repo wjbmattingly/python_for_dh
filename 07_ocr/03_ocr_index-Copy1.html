@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Python &#8212; Introduction to Python for Humanists</title>
+    <title>&lt;no title&gt; &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -573,6 +573,11 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. SNA with NetworkX
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     2.3. SNA with PyVis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -658,7 +663,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_ocr/05_03_intro.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/07_ocr/03_ocr_index-Copy1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +681,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_ocr/05_03_intro.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/07_ocr/03_ocr_index-Copy1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -736,7 +741,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_ocr/05_03_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F07_ocr/03_ocr_index-Copy1.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -753,7 +758,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_ocr/05_03_intro.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/07_ocr/03_ocr_index-Copy1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -781,7 +786,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/05_ocr/05_03_intro.ipynb"
+        <a href="../_sources/07_ocr/03_ocr_index-Copy1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -839,12 +844,7 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
+        <ul class="simple visible nav section-nav flex-column">
 </ul>
 
     </nav>
@@ -854,7 +854,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Introduction to Python</center></h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -863,12 +863,7 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
-  </a>
- </li>
+                            <ul class="simple visible nav section-nav flex-column">
 </ul>
 
                         </nav>
@@ -879,22 +874,265 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-python-center">
-<h1><center>Introduction to Python</center><a class="headerlink" href="#center-introduction-to-python-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2022</center><section id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Why should humanists learn to code?<br></p></li>
-<li><p>Why use Python specifically?<br></p></li>
-<li><p>What is covered in this textbook?<br></p></li>
-<li><p>How to Use Python from this Textbook<br></p></li>
-<li><p>How to Use Python on JupyterOrg<br></p></li>
-<li><p>How to Install Python with Anaconda Navigator and Jupyter-Lab<br></p></li>
-</ol>
-</section>
-</section>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytesseract</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_file</span> <span class="o">=</span> <span class="s2">&quot;data/index_02.JPG&quot;</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ocr_result</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">ocr_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX NOMINUM.
+
+SCRIPSIT KAROLUS HAMPE.
+
+Maior numerus indicat paginam, minor lineam.
+
+A. v. E.
+
+Aaron 38, 20. 123, 18. 168, 6. 203, 38. |
+
+Abacuc propheta 36,5. 319,29. 373, 23.
+Abagarus rex Edessenorum 382, 13.
+Abdenago 585, 3.
+
+Abel 26, 11.
+
+Abigail 606, 6.
+
+Abraham 26,18. 124,18. 133, 23. 2:
+264. 302, 13. 303, 13. 320, 40. 328, 1.
+496, 22.
+
+Absalon 102, 5.
+
+Acgfredi v. Ecgfridus.
+
+Achab rex 504, 1.
+
+Achaz rex 504,1.
+
+Achiel 606, 19.
+
+Achilon 496, 26.
+
+Adal-, Adel-, Adhel-, Aedel-, Aedel-,
+‘Aedil-, Aed
+Athel-, Athil-, Aethel-, Aethil-,
+Ethel-.
+
+Aedelbaldusabb.S. Petri Wiremuthen-
+sis et S. Pauli Girwensis 110, 28.
+
+Aedilberctus, Aedilberthus ep. Ha-
+gulstadensis, antea ep. Candidae
+casae sive Witernensis 27,43. 72,16.
+
+Adalbertus, Aedilberctus sive Magus,
+discipulus et capellanus Arnonis
+archiep. Salisburg., postea_abb.
+Ferrariensis 254, 1. 320, 41. 322, 19.
+416. 418, 14. 422, 10.
+
+Adalpertabb. [Tegernseensis ?]497,23.
+
+Adalbertus presb. monasterii 8. Mar-
+tini Turonensis 399, 3.
+
+Aedilburga, Edilburga,cognom. Euge-
+nia, abbatissa Flaedanbyrgensis,
+filia Offae regis Merciorum 78, 1.
+148, 32. 149, 33 [?]7 458.
+
+Aethelfleda uxor Aethilredi regis
+Northanhumbrorum, filia Offae
+regis Merciorum 149, 14. 150, 4.
+
+Adalgarius ep. [Trecensis?] 510, 10.
+
+Adelgisa filia Arichis ducis Bene-
+ventani 506, 27.
+
+Adalgisus fil. Desiderii regis Lango-
+bardorum 503, 45.
+
+Epistotae IV.
+
+ 
+
+ 
+
+il-, Edel-, Edil-, Athal-, |
+
+Aethelhardus, Aethilhardus, Athel-
+hardus, Athilhardus, Aedelhardus,
+Aedelhardus, Aedilhardus, Aedil-
+hardus, Ethelardus, Edelardus
+archiep. Cantuariensis Dorovernen-
+sis ecclesiae metropolitanus 46, 9.
+49,9. 128,2. 145, 31, 147,5. 188. 189.
+192, 24. 193, 5[?]. 374376, v9. 377, 4.
+412. 414,1 (2. 448. 449 [2]. 450 [2].
+
+| 451,8([?]. 479. 480. 614, 10. 21. 36.
+
+| Adalhardus , cognom. Antonius, abb.
+Corbeiae veteris, fil. Bernhardi
+eo Caroli Magni 34, 25. 290.
+
+1. 299. 300. 364. 365, 381. 382.
+509. 566,16; frater: Bernarius;
+fratres 381,25; soror: Gundrada.
+
+Adalmondus, Aethelmodus ep. Scire-
+
+| burnensis 29,9.
+
+Adelperga uxor Arichis ducis Bene-
+
+| ventani, filia Desiderii regis Lango-
+
+bardorum 506, 5; liberi: Romual-
+dus, Grimoaldus, Adelgisa.
+
+| Adalpert v, Adalbertus.
+
+Aedelredus, Aedilredus, Aethelredus,
+Aethilredus, Hedilredus rex Nor-
+thanhumbrorum, fil. Aedelwaldi
+Moll regis 33,15. 35,8. 41, 19.
+49, 16. 71, 20. 146,2. 147,10. 150, 6.
+151, 35. 171,17. 377,31; mater:
+Aedilthyda; uxor: Aethelfleda;
+famulus: Torchmundus.
+
+Adhelricus diaconus, discipulus et
+capellanus Arnonis archiep. Salis-
+burg., postea abbas Ferrariensis,
+archiepiscopus Senonensis, 418, 14.
+422, 10.
+
+Aedilthyda, Edilthruda uxor Aethel-
+waldi Moll regis Northanhumbro-
+rum, postea abbatissa 120,12. 151,17.
+152,31 hs filius: Aethelredus rex
+Northanhumbrorum.
+
+Edildryda uxor Ecgfridi regis Nor-
+thanhumbrorum, postea abbatissa
+(t 679) 417,15.
+
+Aedelwaldus, Aethelwoldus Moll rex
+Northanhumbrorum 33, 16; uxor:
+Aedilthyda; filius: Aethelredus,
+
+Adalwinus ep. Reginensis 421, 24.
+422, 21. 424,3.
+
+ 
+
+ 
+
+Aethiluuinus episcopus 28, 2.
+
+Adam 124, 201,1. 226, 7. 264, at.
+379, 29. 466, 36—468, v5. 591, 34.
+Adam abb. monasterii Gemeticensis
+
+579.
+
+Adaula abbatissa Anglica 112, 4.
+
+Adoredus, Hathoredus ep. Hwiccio-
+rum [Wigorniensis] 29, 10.
+
+Adrianus v. Hadrianus.
+
+Adriaticum mare 324, 41.
+
+| Aedel-, Aedil-, v. Adal-.
+
+Aegesippus [#. e. Hegesippus] 501, 11.
+
+Aegil v. Eigil.
+
+Aegyptus, Egyptus 123,19. 554, 17;
+Aegyptii, Aegyptiaci 231. 232, 17.
+467, 36. 567,6. 571,33; Egyptiacae
+divitiae 470, 22; Aegyptiacae tene-
+brae 232, 3; Acgy pit rex: Pharao;
+Aegyptiacascola, Aegyptiaci pueri
+v. Carolus I imperator.
+
+Aeine, Aesne, Esne ep. Herefordensis
+29, 6.
+
+Aelberhtus archiep. Eboracensis, ma-
+
+‘ister Alevini abbatis (162, 24]. 167,s.
+171,19]. [177,5]. [224,20]. [239, 28].
+332, 28]. [377,32]. (378, 31]. [429,27
+
+Aelfvaldus, Aelfwaldus rex Nor-
+thanhymbrorum, [Transhymbranae
+gentis] 20, 27. 28, 11. 43,8. 377, 31.
+
+Aelim v. Alim.
+
+Aeneades 39, 21; v. Virgilius.
+
+Aesculapius, Scolapius 397, 25.
+
+Aesne v. Aeine,
+
+Aethel-, Aethil- v. Adal-.
+
+Aethiopia 478, 5.
+
+Africa 124, 16; Afer: Melchiades
+papa; Africanum concilium 526,33.
+
+Africanus, sc. Scipio Afr. 575, 36.
+
+Agar 584, 3s.
+
+Agareni, Aggareni 32, 19. 601, 21;
+v, Saraceni.
+
+Agathensis synodus 396,
+
+Aginus ep. Constantiensis 117, 32.
+
+129, 19.
+
+8
+
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -909,7 +1147,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./05_ocr"
+            path: "./07_ocr"
         },
         predefinedOutput: true
     }
