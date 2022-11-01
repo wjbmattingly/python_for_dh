@@ -137,24 +137,6 @@ parts:
       title: How to use RegEx in spaCy (Basic)
     - file: 03_spacy/03_02_07_complex_regex
       title: How to use RegEx in spaCy (Advanced)
-    
-#   - file: 03_spacy/03_03_intro 
-#     title: Machine Learning Named Entity Recognition with spaCy
-#     sections:
-#     - file: 03_spacy/03_01_intro_to_ml
-#       title: Introduction to Machine Learning
-#     - file: 03_spacy/03_01_create_ner_training_set
-#       title: Creating a Training Set
-#     - file: 03_spacy/03_02_train_spacy_ner_model
-#       title: How to Train a Base NER ML Model
-#     - file: 03_spacy/03_03_examining_a_spacy_model
-#       title: Examining a spaCy Model in the Folder
-#     - file: 03_spacy/03_04_introduction_to_word_vectors
-#       title: Introduction to Word Vectors
-#     - file: 03_spacy/03_05_generating_custom_word_vectors
-#       title: Generating Custom Word Vectors with Gensim
-#     - file: 03_spacy/03_06_loading_custom_word_vectors
-#       title: Loading Custom Word Vectors into a spaCy Model
       
   - file: 03_spacy/03_03_01_intro
     title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
@@ -169,7 +151,7 @@ parts:
       title: Creating the Rules-Based Pipeline
 
 
-- caption: "PART FOUR: TOPIC MODELING (WIP)"
+- caption: "PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)"
   numbered: true
   chapters:
   - file: 04_topic_modeling/04_01_01_intro
@@ -181,9 +163,6 @@ parts:
       title: "Clusters and K-Means"
     - file: 04_topic_modeling/04_01_04_bigrams
       title: "Bigrams and Trigrams"
-  - file: 04_topic_modeling/04_02_01_intro
-    title: "LDA Topic Modeling"
-    sections:
     - file: 04_topic_modeling/04_02_02_lda_concept
       title: "Core Concepts of LDA Topic Modeling"
     - file: 04_topic_modeling/04_02_03_tfidf
@@ -192,15 +171,11 @@ parts:
       title: "What is Scikit Learn?"
     - file: 04_topic_modeling/04_02_05_tfidf_build
       title: "Building a TF-IDF with Python and Scikit-Learn"
-    # - file: 04_topic_modeling/04_02_06_lda
-    #   title: "Core Concepts of LDA Topic Modeling"
-  - file: 04_topic_modeling/04_03_01_intro
-    title: "Transformer-Based Topic Modeling" 
-    sections:
     - file: 04_topic_modeling/04_03_03_embedding_clustering
       title: "Embedding, Flattening, and Clustering"    
     - file: 04_topic_modeling/04_03_04_top2vec
-      title: "Topic Modeling with Top2Vec" 
+      title: "Topic Modeling with Top2Vec"
+      
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
