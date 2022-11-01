@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.1. Machine Learning NER with spaCy &#8212; Introduction to Python for Humanists</title>
+    <title>Machine Learning NER with spaCy &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.2. Using EntityRuler to Create Training Set" href="03_01_create_ner_training_set.html" />
-    <link rel="prev" title="3. Introduction to Python" href="03_03_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -394,9 +392,9 @@ const thebe_selector_output = ".output, .cell_output"
   PART THREE: Natural Language Processing with spaCy (Work in Progress)
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_01_intro.html">
+  <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -406,29 +404,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_01_install_and_containers.html">
+    <a class="reference internal" href="03_01_02_install_and_containers.html">
      1.1. The Basics of spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_02_linguistic_annotations.html">
-     1.2. spaCy Linguistic Annotations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_03_word_vectors.html">
-     1.3. Word Vectors and spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_04_pipelines.html">
-     1.4. spaCy Pipelines
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_02_intro.html">
+  <a class="reference internal" href="03_02_01_intro.html">
    2. Rules-Based spaCy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -438,112 +421,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_01_entityruler.html">
-     2.1. How to use the spaCy EntityRuler
+    <a class="reference internal" href="03_02_04_custom_component.html">
+     2.1. Custom Components in spaCy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_02_matcher.html">
-     2.2. How to use the spaCy Matcher
+    <a class="reference internal" href="03_02_05_simple_regex.html">
+     2.2. How to use RegEx in spaCy (Basic)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_04_custom_component.html">
-     2.3. Custom Components in spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_05_simple_regex.html">
-     2.4. How to use RegEx in spaCy (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_06_complex_regex.html">
-     2.5. How to use RegEx in spaCy (Advanced)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="03_03_intro.html">
-   3. Machine Learning Named Entity Recognition with spaCy
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.1. Introduction to Machine Learning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_01_create_ner_training_set.html">
-     3.2. Creating a Training Set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
-     3.3. How to Train a Base NER ML Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
-     3.4. Examining a spaCy Model in the Folder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
-     3.5. Introduction to Word Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
-     3.6. Generating Custom Word Vectors with Gensim
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
-     3.7. Loading Custom Word Vectors into a spaCy Model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_04_intro.html">
-   4. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
-     4.1. Cultivating Good Datasets for Entities
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_cultivating_corpus.html">
-     4.2. Cultivating a Corpus
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
-     4.3. The Challenges of Holocaust NER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
-     4.4. Introduction to Custom Pipes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_05_building_holocaust_pipeline_rules_based.html">
-     4.5. Creating the Rules-Based Pipeline
+    <a class="reference internal" href="03_02_06_complex_regex.html">
+     2.3. How to use RegEx in spaCy (Advanced)
     </a>
    </li>
   </ul>
@@ -559,8 +448,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling Concepts and Theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -586,8 +475,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
    2. LDA Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -618,8 +507,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
    3. Transformer-Based Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -647,8 +536,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -719,7 +608,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_01_intro_to_ml.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_03_01_intro_to_ml.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -737,7 +626,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_01_intro_to_ml.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_03_01_intro_to_ml.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -797,7 +686,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_01_intro_to_ml.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_03_01_intro_to_ml.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -814,7 +703,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_01_intro_to_ml.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_03_01_intro_to_ml.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -842,7 +731,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03_spacy/03_01_intro_to_ml.ipynb"
+        <a href="../_sources/03_spacy/03_03_01_intro_to_ml.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -903,47 +792,47 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   3.1.1. Key Concepts in this Notebook
+   Key Concepts in this Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-machine-learning">
-   3.1.2. What is Machine Learning?
+   What is Machine Learning?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#types-of-machine-learning">
-   3.1.3. Types of Machine Learning
+   Types of Machine Learning
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#supervised-learning-in-ner">
-   3.1.4. Supervised Learning in NER
+   Supervised Learning in NER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-does-supervised-learning-work-math-alert">
-   3.1.5. How does Supervised Learning Work? (MATH ALERT!)
+   How does Supervised Learning Work? (MATH ALERT!)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#when-to-use-machine-learning-ner">
-   3.1.6. When to use Machine Learning NER
+   When to use Machine Learning NER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-spacy-s-machine-learning-models">
-   3.1.7. Using spaCy’s Machine Learning Models
+   Using spaCy’s Machine Learning Models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
-   3.1.8. Exercise
+   Exercise
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#video-for-machine-learning-ner">
-   3.1.9. Video for Machine Learning NER
+   Video for Machine Learning NER
   </a>
  </li>
 </ul>
@@ -967,47 +856,47 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   3.1.1. Key Concepts in this Notebook
+   Key Concepts in this Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-machine-learning">
-   3.1.2. What is Machine Learning?
+   What is Machine Learning?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#types-of-machine-learning">
-   3.1.3. Types of Machine Learning
+   Types of Machine Learning
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#supervised-learning-in-ner">
-   3.1.4. Supervised Learning in NER
+   Supervised Learning in NER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-does-supervised-learning-work-math-alert">
-   3.1.5. How does Supervised Learning Work? (MATH ALERT!)
+   How does Supervised Learning Work? (MATH ALERT!)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#when-to-use-machine-learning-ner">
-   3.1.6. When to use Machine Learning NER
+   When to use Machine Learning NER
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-spacy-s-machine-learning-models">
-   3.1.7. Using spaCy’s Machine Learning Models
+   Using spaCy’s Machine Learning Models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise">
-   3.1.8. Exercise
+   Exercise
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#video-for-machine-learning-ner">
-   3.1.9. Video for Machine Learning NER
+   Video for Machine Learning NER
   </a>
  </li>
 </ul>
@@ -1021,11 +910,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-machine-learning-ner-with-spacy-center">
-<h1><span class="section-number">3.1. </span><center>Machine Learning NER with spaCy</center><a class="headerlink" href="#center-machine-learning-ner-with-spacy-center" title="Permalink to this headline">#</a></h1>
+<h1><center>Machine Learning NER with spaCy</center><a class="headerlink" href="#center-machine-learning-ner-with-spacy-center" title="Permalink to this headline">#</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><section id="key-concepts-in-this-notebook">
-<h2><span class="section-number">3.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
+<h2>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Machine Learning<br></p></li>
 <li><p>Statistics<br></p></li>
@@ -1039,7 +928,7 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="what-is-machine-learning">
-<h2><span class="section-number">3.1.2. </span>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">#</a></h2>
+<h2>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">#</a></h2>
 <p><strong>Machine learning</strong> is a branch of Artificial Intelligence. In order to understand artifical intelligence and how modern machine learning is different from its predecessor, I would recomend my video on the subject (a brief cinematic introduction to machine learning from my series on Machine Learning for DH.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1075,13 +964,13 @@ title="Print to PDF"
 </div>
 </section>
 <section id="types-of-machine-learning">
-<h2><span class="section-number">3.1.3. </span>Types of Machine Learning<a class="headerlink" href="#types-of-machine-learning" title="Permalink to this headline">#</a></h2>
+<h2>Types of Machine Learning<a class="headerlink" href="#types-of-machine-learning" title="Permalink to this headline">#</a></h2>
 <p>There are several different types of machine learning: supervised learning, unsupervised learning, and semi-supervised learning. There are others (such as reinforcement learning), but these are the three essential forms.</p>
 <p><strong>Supervised learning</strong> is when we train a system with known data. In the case of NER, we train a system with a series of texts with the entities appropriately annotated with their corresponding labels. <strong>Unsupervised learning</strong> occurs when you don’t know the categories of your data. You give the system a series of data and allow it to learn and identify patterns on its own. This is most popularly used for topic modeling and k-means (beyond the scope of this notebook). Finally, there is <strong>semi-supervised learning</strong> which falls between these two.</p>
 <p>Throughout this series, we will be using supervised learning and for that reason, I would like to explain this process from start to finish and then explain how it works.</p>
 </section>
 <section id="supervised-learning-in-ner">
-<h2><span class="section-number">3.1.4. </span>Supervised Learning in NER<a class="headerlink" href="#supervised-learning-in-ner" title="Permalink to this headline">#</a></h2>
+<h2>Supervised Learning in NER<a class="headerlink" href="#supervised-learning-in-ner" title="Permalink to this headline">#</a></h2>
 <p>As noted above, supervised learning is the process by which a system learns from a set of inputs that have known labels. In order to train properly, the input data is divided into three categories: training data, validation data, and testing data. There is no set percentage to asign to each of these categories. A good rule of thumb, however, is save 20% of all annotated data for testing and then divide the remaining 80% 80/20 (testing/validation) ratio.</p>
 <p>The first two, training data and validation data, are given to the system that is trying to learn. It uses the training data to hone a statistical model via predetermined algorithms. It does this by making guesses about what the proper labels are. It then checks its accuracy against the labels provided and makes adjustments accordingly.</p>
 <p>Once it is finished viewing and guessing across all the training data, the first epoch, or iteration over the data, is finished. At this stage, the model then tests its accuracy against the validation data. These are left out of the training process and give the system a sense of its overall performance.</p>
@@ -1092,7 +981,7 @@ title="Print to PDF"
 <p>A good way to describe it is via the image below from https://bigdata-madesimple.com/. In the image, we see the input of raw data to an algorithm.</p>
 <img src="https://bigdata-madesimple.com/wp-content/uploads/2018/02/Machine-Learning-Explained1.png"></section>
 <section id="how-does-supervised-learning-work-math-alert">
-<h2><span class="section-number">3.1.5. </span>How does Supervised Learning Work? (MATH ALERT!)<a class="headerlink" href="#how-does-supervised-learning-work-math-alert" title="Permalink to this headline">#</a></h2>
+<h2>How does Supervised Learning Work? (MATH ALERT!)<a class="headerlink" href="#how-does-supervised-learning-work-math-alert" title="Permalink to this headline">#</a></h2>
 <p>As the heading indicates, this section will venture into the realm of math, specifically statistics and linear algebra. Even if you are not a fan of math, please do read this section as it contains the foundational principals behind machine learning. I will keep the math to a minimum in order to simply explain <em>how</em> machine learning works and, even more importantly <em>why</em>. This will give you a better sense of not only when to use a machine learning approach to NER, but why you might not get the results you want to see and how to improve them.</p>
 <p>The core concept behind supervised learning is the statistical model, a saved and usable system that can be given an input (a text) and output some sort of structured data (labels for entities). In order to understand what models are and how they work, I recommend watching the brief video below:</p>
 <div class="cell docutils container">
@@ -1128,13 +1017,13 @@ title="Print to PDF"
 </div>
 </section>
 <section id="when-to-use-machine-learning-ner">
-<h2><span class="section-number">3.1.6. </span>When to use Machine Learning NER<a class="headerlink" href="#when-to-use-machine-learning-ner" title="Permalink to this headline">#</a></h2>
+<h2>When to use Machine Learning NER<a class="headerlink" href="#when-to-use-machine-learning-ner" title="Permalink to this headline">#</a></h2>
 <p>In the last notebook, I explained when to use rules-based NER. Machine learning NER is useful when you cannot possible account for all variances of the entities in a corpus or creating such patterns would be so computationally expensive that its accuracy is not worth its use. A good example of this is every potential variation of a person’s name. Consider the immense quantity of names that exist in the world and the combinations and various ways those names can be combined to create a unique entity. Even if we only have 10,000 first names and 10,000 last names, to account for all variations would be 100,000,000 million patterns to match. And there are far more than simple 10,000 of each in the world.</p>
 <p>Another time to consider machine learning is when the data that will be fed to your system will not be entirely cleaned. Consider the example of names once again. Even if you had a system that could account for all 100,000,000 forms of those names, it will miss ones that have poor OCR or ones that have different text encoding because it was a text created prior to UTF-8.</p>
 <p>In these instances machine learning is the right choice because machine learning NER models do not memorize entities. They learn entities. This means that if a model encounters an entity it has never seen before (even if poorly OCRed), it has the ability to <strong>generalize</strong> and identify that entity with the correct label.</p>
 </section>
 <section id="using-spacy-s-machine-learning-models">
-<h2><span class="section-number">3.1.7. </span>Using spaCy’s Machine Learning Models<a class="headerlink" href="#using-spacy-s-machine-learning-models" title="Permalink to this headline">#</a></h2>
+<h2>Using spaCy’s Machine Learning Models<a class="headerlink" href="#using-spacy-s-machine-learning-models" title="Permalink to this headline">#</a></h2>
 <p>Fortunately, as we will see in this series, spaCy makes not only using machine learning models easy, but drastically reduces the complexity of training custom machine learning NER models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1196,11 +1085,11 @@ New Yasdfasasdfrk City GPE
 <p>Notice that despite introducing textual corruption, the model performs precisely the same way. The reason? Because it has learned from context. It has likely seen the word “hosted” before and knows that people typically host. It has seen the word City capitalized often used to describe a GPE. This is why machine learning offers the solution for inconsistent entities or entities that are so vast that incorperating them all into an EntityRuler would be impossible.</p>
 </section>
 <section id="exercise">
-<h2><span class="section-number">3.1.8. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>In the code space provided below try to push the small English model. Make some guesses based on what you’ve learned why the model either succeeds or fails to identify entities despite the textual corruptions you introduce. As you do this, keep in mind that this is the <em>small</em> model. The larger models perform better for reasons that we will explore later in this series.</p>
 </section>
 <section id="video-for-machine-learning-ner">
-<h2><span class="section-number">3.1.9. </span>Video for Machine Learning NER<a class="headerlink" href="#video-for-machine-learning-ner" title="Permalink to this headline">#</a></h2>
+<h2>Video for Machine Learning NER<a class="headerlink" href="#video-for-machine-learning-ner" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -1246,20 +1135,6 @@ New Yasdfasasdfrk City GPE
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03_03_intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span><center>Introduction to Python</center></p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="03_01_create_ner_training_set.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span><center>Using EntityRuler to Create Training Set</center></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. The Basics of spaCy &#8212; Introduction to Python for Humanists</title>
+    <title>How to use the spaCy PhraseMatcher &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. Getting Started with spaCy and its Linguistic Annotations" href="01_02_linguistic_annotations.html" />
-    <link rel="prev" title="1. Introduction to Python" href="03_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -394,41 +392,26 @@ const thebe_selector_output = ".output, .cell_output"
   PART THREE: Natural Language Processing with spaCy (Work in Progress)
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="03_01_intro.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_02_install_and_containers.html">
      1.1. The Basics of spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_02_linguistic_annotations.html">
-     1.2. spaCy Linguistic Annotations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_03_word_vectors.html">
-     1.3. Word Vectors and spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_04_pipelines.html">
-     1.4. spaCy Pipelines
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_02_intro.html">
+  <a class="reference internal" href="03_02_01_intro.html">
    2. Rules-Based spaCy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -438,112 +421,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_01_entityruler.html">
-     2.1. How to use the spaCy EntityRuler
+    <a class="reference internal" href="03_02_04_custom_component.html">
+     2.1. Custom Components in spaCy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_02_matcher.html">
-     2.2. How to use the spaCy Matcher
+    <a class="reference internal" href="03_02_05_simple_regex.html">
+     2.2. How to use RegEx in spaCy (Basic)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_04_custom_component.html">
-     2.3. Custom Components in spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_05_simple_regex.html">
-     2.4. How to use RegEx in spaCy (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_06_complex_regex.html">
-     2.5. How to use RegEx in spaCy (Advanced)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_03_intro.html">
-   3. Machine Learning Named Entity Recognition with spaCy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_01_intro_to_ml.html">
-     3.1. Introduction to Machine Learning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_01_create_ner_training_set.html">
-     3.2. Creating a Training Set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
-     3.3. How to Train a Base NER ML Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
-     3.4. Examining a spaCy Model in the Folder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
-     3.5. Introduction to Word Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
-     3.6. Generating Custom Word Vectors with Gensim
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
-     3.7. Loading Custom Word Vectors into a spaCy Model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_04_intro.html">
-   4. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
-     4.1. Cultivating Good Datasets for Entities
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_cultivating_corpus.html">
-     4.2. Cultivating a Corpus
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
-     4.3. The Challenges of Holocaust NER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
-     4.4. Introduction to Custom Pipes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_05_building_holocaust_pipeline_rules_based.html">
-     4.5. Creating the Rules-Based Pipeline
+    <a class="reference internal" href="03_02_06_complex_regex.html">
+     2.3. How to use RegEx in spaCy (Advanced)
     </a>
    </li>
   </ul>
@@ -559,8 +448,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling Concepts and Theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -586,8 +475,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
    2. LDA Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -618,8 +507,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
    3. Transformer-Based Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -647,8 +536,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -719,7 +608,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/01_01_install_and_containers.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_02_03_phrase_matcher_no.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -737,7 +626,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/01_01_install_and_containers.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_02_03_phrase_matcher_no.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -797,7 +686,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/01_01_install_and_containers.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_02_03_phrase_matcher_no.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -814,7 +703,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/01_01_install_and_containers.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_02_03_phrase_matcher_no.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -842,7 +731,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03_spacy/01_01_install_and_containers.ipynb"
+        <a href="../_sources/03_spacy/03_02_03_phrase_matcher_no.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -879,80 +768,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-spacy">
-   1.1.1. What is spaCy?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-install-spacy">
-   1.1.2. How to Install spaCy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#containers">
-   1.1.3. Containers
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>The Basics of spaCy</center></h1>
+                <h1><center>How to use the spaCy PhraseMatcher</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-spacy">
-   1.1.1. What is spaCy?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-install-spacy">
-   1.1.2. How to Install spaCy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#containers">
-   1.1.3. Containers
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -960,70 +792,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-the-basics-of-spacy-center">
-<h1><span class="section-number">1.1. </span><center>The Basics of spaCy</center><a class="headerlink" href="#center-the-basics-of-spacy-center" title="Permalink to this headline">#</a></h1>
-<p>In this part of the textbook, we will learn how to do natural language processing (NLP) with spaCy. This chapter will approach spaCy top-down. In this way, we will gain an understanding of NLP generally and spaCy’s mechanics specifically. By learning these concepts first, it will make it easier to approach spaCy in code.</p>
-<section id="what-is-spacy">
-<h2><span class="section-number">1.1.1. </span>What is spaCy?<a class="headerlink" href="#what-is-spacy" title="Permalink to this headline">#</a></h2>
-<p>spaCy (yes, spelled with a lowercase “s” and uppercase “C”) is a natural language processing framework. <strong>Natural language processing</strong>, or NLP, is a branch of linguistics that seeks to parse human language in a computer system. This field is generally referred to as computational linguistics, though it has far reaching applications beyond academic linguistic research.</p>
-<p>NLP is used in every sector of industry, from academics who leverage it to aid in research to financial analysts who try and predict the stock market. Lawyers use NLP to help analyze thousands of legal documents in seconds to target their research and medical doctors use it to parse patient charts. NLP has been around for decades, but with the increased promise of deep learning, a subfield of machine learning, that NLP rapidly expanded. This is because, as we shall learn all too well throughout this book, language is inherently ambiguous. By this, I mean that language does not always make perfect sense. In some cases, it is entirely illogical. The double-negative in English is a good example of this. In some contexts, it can be an emphatic positive, as in, “I cannot stress this enough, I do not like pasta.” This is, of course a lie. I love pasta, but you get my point. In other cases, the double negative can be an emphatic negative, as in, “I ain’t not doing that!”</p>
-<p>As humans, especially native speakers of a language, we can parse these complex illogical statements with ease, especially with enough context. For computers, this is not always easy.</p>
-<p>Because NLP is such a complex problem for computers, it requires a complex solution. The answer has been found in artificial neural networks, or ANNs or neural nets for short. These are the primary areas of research for deep learning practitioners. As the field of deep learning (and machine learning in general) expand and advance, so too does NLP. New methods for training, such as transformer models, push the field further.</p>
-</section>
-<section id="how-to-install-spacy">
-<h2><span class="section-number">1.1.2. </span>How to Install spaCy<a class="headerlink" href="#how-to-install-spacy" title="Permalink to this headline">#</a></h2>
-<p>In order to install spaCy, I recommend visiting their website, here: https://spacy.io/usage . They have a nice user-friendly interface. Input your device settings, e.g. Mac or Windows or Linux, and your language, e.g. English, French, or German. The web-app will automatically populate the commands that you need to execute to get started. Since this is a JupyterBook, we can install these with a “!” before in a cell to indicate that we want to run a terminal command. I will be installing spaCy and thee small English model, en_core_web_sm.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install spacy
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python -m spacy download en_core_web_sm
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now that we’ve installed spaCy let’s import it to make sure we installed it correctly.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-how-to-use-the-spacy-phrasematcher-center">
+<h1><center>How to use the spaCy PhraseMatcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-phrasematcher-center" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>Great! Now, let’s make sure we downloaded the model successfully with the command below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
+INFO:tensorflow:Enabling v2 tensorshape
+INFO:tensorflow:Enabling resource variables
+INFO:tensorflow:Enabling tensor equality
+INFO:tensorflow:Enabling control flow v2
 </pre></div>
 </div>
 </div>
 </div>
-<p>Excellent! spaCy is now installed correctly and we have successfully downloaded the small English model. We will pick up here with the code in the next notebook. For now, I want to focus on big-picture items, specifically spaCy “containers”.</p>
-</section>
-<section id="containers">
-<h2><span class="section-number">1.1.3. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">#</a></h2>
-<p>Containers are spaCy objects that contain a large quantity of data about a text. When we analyze texts with the spaCy framework, we create different container objects to do that. Here is a full list of all spaCy containers. We will be focusing on three (emboldened): Doc, Span, and Token.</p>
-<ul class="simple">
-<li><p><b>Doc</b></p></li>
-<li><p>DocBin</p></li>
-<li><p>Example</p></li>
-<li><p>Language</p></li>
-<li><p>Lexeme</p></li>
-<li><p><b>Span</b></p></li>
-<li><p>SpanGroup</p></li>
-<li><p><b>Token</b></p></li>
-</ul>
-<p>I created the image below to show how I visualize spaCy containers in my mind. At the top, we have a Doc container. This is the basis for all spaCy. It is the main object that we create. Within the Doc container are many different attributes and subcontainers. One attribute is the Doc.sents, which contains all the sentences in the Doc container. The doc container (and each sentence generator) is made up of a set of token containers. These are things like words, punctuation, etc.</p>
-<p>Span containers are kind of like token, in that they are a piece of a Doc container. Spans have one thing that makes them unique. They can cross multiple tokens.</p>
-<p>We can give spans a bit more specificity by classifying them into different groups. These are known as SpanGroup containers.</p>
-<a class="bg-primary reference internal image-reference" href="03_spacy/images/spacy_containers.png"><img alt="spacy_arch" class="bg-primary align-center" src="03_spacy/images/spacy_containers.png" style="width: 600px;" /></a>
-<p>If you do not fully understand this dynamic, do not worry. You will get a much better sense of this pyramid as we move forward throughout this book. For now, I recommend keeping this image handy so you can refer back to it as we progress through Part 1 of this book in which we explore the basics of spaCy. In the next chapter, we will start applying these concepts in code by creating a doc object and learning about the different attributes containers have as well as how to find the linguistic annotations.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1053,20 +839,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03_01_intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to Python</center></p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="01_02_linguistic_annotations.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span><center>Getting Started with spaCy and its Linguistic Annotations</center></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

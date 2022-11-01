@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Using SpaCy’s EntityRuler &#8212; Introduction to Python for Humanists</title>
+    <title>2.3. Working with Multi-Word Token Entities and RegEx in spaCy 3 &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. How to use the spaCy Matcher" href="02_02_matcher.html" />
-    <link rel="prev" title="2. Introduction to Python" href="03_02_intro.html" />
+    <link rel="next" title="1. Topic Modeling: Concepts and Theory" href="../04_topic_modeling/04_01_01_intro.html" />
+    <link rel="prev" title="2.2. Using RegEx with spaCy" href="03_02_05_simple_regex.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -396,7 +396,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_01_intro.html">
+  <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -406,29 +406,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01_01_install_and_containers.html">
+    <a class="reference internal" href="03_01_02_install_and_containers.html">
      1.1. The Basics of spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_02_linguistic_annotations.html">
-     1.2. spaCy Linguistic Annotations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_03_word_vectors.html">
-     1.3. Word Vectors and spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_04_pipelines.html">
-     1.4. spaCy Pipelines
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="03_02_intro.html">
+  <a class="reference internal" href="03_02_01_intro.html">
    2. Rules-Based spaCy
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -437,113 +422,19 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_04_custom_component.html">
+     2.1. Custom Components in spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_05_simple_regex.html">
+     2.2. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1. How to use the spaCy EntityRuler
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_02_matcher.html">
-     2.2. How to use the spaCy Matcher
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_04_custom_component.html">
-     2.3. Custom Components in spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_05_simple_regex.html">
-     2.4. How to use RegEx in spaCy (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_06_complex_regex.html">
-     2.5. How to use RegEx in spaCy (Advanced)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_03_intro.html">
-   3. Machine Learning Named Entity Recognition with spaCy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_01_intro_to_ml.html">
-     3.1. Introduction to Machine Learning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_01_create_ner_training_set.html">
-     3.2. Creating a Training Set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_train_spacy_ner_model.html">
-     3.3. How to Train a Base NER ML Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_03_examining_a_spacy_model.html">
-     3.4. Examining a spaCy Model in the Folder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
-     3.5. Introduction to Word Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
-     3.6. Generating Custom Word Vectors with Gensim
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
-     3.7. Loading Custom Word Vectors into a spaCy Model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03_04_intro.html">
-   4. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
-     4.1. Cultivating Good Datasets for Entities
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_cultivating_corpus.html">
-     4.2. Cultivating a Corpus
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
-     4.3. The Challenges of Holocaust NER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
-     4.4. Introduction to Custom Pipes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_05_building_holocaust_pipeline_rules_based.html">
-     4.5. Creating the Rules-Based Pipeline
+     2.3. How to use RegEx in spaCy (Advanced)
     </a>
    </li>
   </ul>
@@ -559,8 +450,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling Concepts and Theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -586,8 +477,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
    2. LDA Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -618,8 +509,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
    3. Transformer-Based Topic Modeling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -647,8 +538,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -719,7 +610,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/02_01_entityruler.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_02_06_complex_regex.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -737,7 +628,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/02_01_entityruler.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_02_06_complex_regex.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -797,7 +688,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/02_01_entityruler.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_02_06_complex_regex.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -814,7 +705,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/02_01_entityruler.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_02_06_complex_regex.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -842,7 +733,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03_spacy/02_01_entityruler.ipynb"
+        <a href="../_sources/03_spacy/03_02_06_complex_regex.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -902,28 +793,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-spacy-s-entityruler">
-   2.1.1. Introduction to Spacy’s EntityRuler
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   2.3.1. Key Concepts in this Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#demonstration-of-entityruler-in-action">
-   2.1.2. Demonstration of EntityRuler in Action
+  <a class="reference internal nav-link" href="#problems-with-multi-word-tokens-in-spacy-as-entities">
+   2.3.2. Problems with Multi-Word Tokens in spaCy as Entities
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced">
-   2.1.3. Introducing Complex Rules and Variance to the EntityRuler (Advanced)
+  <a class="reference internal nav-link" href="#extract-multi-word-tokens">
+   2.3.3. Extract Multi-Word Tokens
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-rules-based-matching-techniques-in-spacy">
-   2.1.4. Other Rules-Based Matching Techniques in spaCy.
+  <a class="reference internal nav-link" href="#reconstruct-spans">
+   2.3.4. Reconstruct Spans
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   2.1.5. Exercise
+  <a class="reference internal nav-link" href="#inject-the-spans-into-the-doc-ents">
+   2.3.5. Inject the Spans into the doc.ents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#give-priority-to-longer-spans">
+   2.3.6. Give priority to Longer Spans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   2.3.7. Video
   </a>
  </li>
 </ul>
@@ -935,7 +836,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Using SpaCy’s EntityRuler</center></h1>
+                <h1><center>Working with Multi-Word Token Entities and RegEx in spaCy 3</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -946,28 +847,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-spacy-s-entityruler">
-   2.1.1. Introduction to Spacy’s EntityRuler
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   2.3.1. Key Concepts in this Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#demonstration-of-entityruler-in-action">
-   2.1.2. Demonstration of EntityRuler in Action
+  <a class="reference internal nav-link" href="#problems-with-multi-word-tokens-in-spacy-as-entities">
+   2.3.2. Problems with Multi-Word Tokens in spaCy as Entities
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced">
-   2.1.3. Introducing Complex Rules and Variance to the EntityRuler (Advanced)
+  <a class="reference internal nav-link" href="#extract-multi-word-tokens">
+   2.3.3. Extract Multi-Word Tokens
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-rules-based-matching-techniques-in-spacy">
-   2.1.4. Other Rules-Based Matching Techniques in spaCy.
+  <a class="reference internal nav-link" href="#reconstruct-spans">
+   2.3.4. Reconstruct Spans
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   2.1.5. Exercise
+  <a class="reference internal nav-link" href="#inject-the-spans-into-the-doc-ents">
+   2.3.5. Inject the Spans into the doc.ents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#give-priority-to-longer-spans">
+   2.3.6. Give priority to Longer Spans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   2.3.7. Video
   </a>
  </li>
 </ul>
@@ -980,248 +891,257 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-using-spacy-s-entityruler-center">
-<h1><span class="section-number">2.1. </span><center>Using SpaCy’s EntityRuler</center><a class="headerlink" href="#center-using-spacy-s-entityruler-center" title="Permalink to this headline">#</a></h1>
-<section id="introduction-to-spacy-s-entityruler">
-<h2><span class="section-number">2.1.1. </span>Introduction to Spacy’s EntityRuler<a class="headerlink" href="#introduction-to-spacy-s-entityruler" title="Permalink to this headline">#</a></h2>
-<p>The Python library spaCy offers a few different methods for performing rules-based NER. One such method is via its EntityRuler.</p>
-<p>The <strong>EntityRuler</strong> is a spaCy factory that allows one to create a set of patterns with corresponding labels. A <strong>factory</strong> in spaCy is a set of classes and functions preloaded in spaCy that perform set tasks. In the case of the EntityRuler, the factory at hand allows the user to create an EntityRuler, give it a set of instructions, and then use this instructions to find and label entities.</p>
-<p>Once the user has created the EntityRuler and given it a set of instructions, the user can then add it to the spaCy pipeline as a new pipe. I have spoken in the past notebooks briefly about pipes, but perhaps it is good to address them in more detail here.</p>
-<p>In this notebook, we will be looking closely at the EntityRuler as a component of a spaCy model’s pipeline. Off-the-shelf spaCy models come preloaded with an NER model; they do not, however, come with an EntityRuler. In order to incorperate an EntityRuler into a spaCy model, it must be created as a new pipe, given instructions, and then added to the model. Once this is complete, the user can save that new model with the EntityRuler to the disk.</p>
-<p>The full documentation of spaCy EntityRuler can be found here: https://spacy.io/api/entityruler .</p>
-<p>This notebook with synthesize this documentation for non-specialists and provide some examples of it in action.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-working-with-multi-word-token-entities-and-regex-in-spacy-3-center">
+<h1><span class="section-number">2.3. </span><center>Working with Multi-Word Token Entities and RegEx in spaCy 3</center><a class="headerlink" href="#center-working-with-multi-word-token-entities-and-regex-in-spacy-3-center" title="Permalink to this headline">#</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><section id="key-concepts-in-this-notebook">
+<h2><span class="section-number">2.3.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Working with Multi-Word Tokens and RegEx in spaCy 3x<br></p></li>
+<li><p>RegEx’s Finditer<br></p></li>
+<li><p>Spans</p></li>
+</ol>
 </section>
-<section id="demonstration-of-entityruler-in-action">
-<h2><span class="section-number">2.1.2. </span>Demonstration of EntityRuler in Action<a class="headerlink" href="#demonstration-of-entityruler-in-action" title="Permalink to this headline">#</a></h2>
-<p>In the code below, we will introduce a new pipe into spaCy’s off-the-shelf small English model. The purpose of this EntityRuler will be to identify small villages in Poland correctly.</p>
+<section id="problems-with-multi-word-tokens-in-spacy-as-entities">
+<h2><span class="section-number">2.3.2. </span>Problems with Multi-Word Tokens in spaCy as Entities<a class="headerlink" href="#problems-with-multi-word-tokens-in-spacy-as-entities" title="Permalink to this headline">#</a></h2>
+<p>As we saw in <strong>01.03: Rules-Based NER</strong>, we can use spaCy’s Matcher to grab multi-word tokens, or tokens that span multiple tokens. The main problem with this, however, is that these multi-word tokens are not placed into the doc.ents. This means that we cannot access them the same way we would other entities. In this notebook, we will figure out how to solve that problem with a simple workflow:</p>
+<ol class="simple">
+<li><p>Extract Multi-Word Tokens with re.finditer()<br></p></li>
+<li><p>Reconstruct the spans in the spaCy doc<br></p></li>
+<li><p>Give priority to longer spans (Optional)<br></p></li>
+<li><p>Inject the Spans into doc.ents</p></li>
+</ol>
+<p>We will cover each of these steps in turn.</p>
+</section>
+<section id="extract-multi-word-tokens">
+<h2><span class="section-number">2.3.3. </span>Extract Multi-Word Tokens<a class="headerlink" href="#extract-multi-word-tokens" title="Permalink to this headline">#</a></h2>
+<p>First, we need to grab the multi-word tokens. In this notebook, we are going to try and grab a multi-word token. In this case, a person whose first name begins with Paul. In the RegEx below, we specify that we are looking for any string that starts with “Paul” and then is followed by a capitalized letter. We then tell it to grab the entire second word until the end of the word.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the requisite library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Paul Newman was an American actor, but Paul Hollywood is a British TV Host. The name Paul is quite common.&quot;</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Paul [A-Z]\w+&quot;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(0, 11), match=&#39;Paul Newman&#39;&gt;
+&lt;re.Match object; span=(39, 53), match=&#39;Paul Hollywood&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we have not grabbed the final “Paul” which is not followed by a last name. In this case, we are not interested in that Paul. Now that we know how to grab the multi-word tokens, we need to have a way to parse them in spaCy.</p>
+</section>
+<section id="reconstruct-spans">
+<h2><span class="section-number">2.3.4. </span>Reconstruct Spans<a class="headerlink" href="#reconstruct-spans" title="Permalink to this headline">#</a></h2>
+<p>This next stage is a bit more complicated, but works quite well once you understand the process. First, we need to import the libraries we will need. Note that we are also adding Span from spacy.tokens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">from</span> <span class="nn">spacy.tokens</span> <span class="kn">import</span> <span class="n">Span</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
+INFO:tensorflow:Enabling v2 tensorshape
+INFO:tensorflow:Enabling resource variables
+INFO:tensorflow:Enabling tensor equality
+INFO:tensorflow:Enabling control flow v2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will do the same thing that we did above with our text and our pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Paul Newman was an American actor, but Paul Hollywood is a British TV Host. The name Paul is quite common.&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Paul [A-Z]\w+&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we will create a blank spaCy English model and create the doc object of the text. It will have no entities in it because we are working with a blank model that does not have an “ner” component.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even though this part is unnecessary, it is good to do it here because in other situations you will have entities. If you do, you need to store them as a separate list to which we will append things.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s iterate over the results from re.finditer(). In this cell, we are goingg to grab the start and end from each match. we will then create a temporary span that will be equal to where the characters start and end in the doc object. This is important because tokens and characters do not always align correctly. Finally, we append to mwt_ents, the start, end, and text. The text is not necessary but it will help with debugging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mwt_ents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+    <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mwt_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inject-the-spans-into-the-doc-ents">
+<h2><span class="section-number">2.3.5. </span>Inject the Spans into the doc.ents<a class="headerlink" href="#inject-the-spans-into-the-doc-ents" title="Permalink to this headline">#</a></h2>
+<p>With that data, we can iterate over each entity and identify where it begins and ends in spaCy. Note, we are using the spaCy Span class. This allows us to create a span object and assign it a custom label. With this data, we can append each Span to original_ents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">mwt_ents</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+    <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;PERSON&quot;</span><span class="p">)</span>
+    <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And finally, we set doc.ents equal to original_ents. This effectively loads the spans back into the spaCy doc.ents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">original_ents</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s iterate over the ents as we normally would.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paul Newman PERSON
+Paul Hollywood PERSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that these are now properly identified entities in our doc.ents class.</p>
+</section>
+<section id="give-priority-to-longer-spans">
+<h2><span class="section-number">2.3.6. </span>Give priority to Longer Spans<a class="headerlink" href="#give-priority-to-longer-spans" title="Permalink to this headline">#</a></h2>
+<p>Sometimes, the situation is not so neat. Sometimes our custom RegEx entities will overlap with spaCy’s Entities</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">spacy</span>
 
-<span class="c1">#Build upon the spaCy Small Model</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Paul Newman was an American actor, but Paul Hollywood is a British TV Host.&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Hollywood&quot;</span>
+
 <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
 
-<span class="c1">#Sample text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The village of Treblinka is in Poland. Treblinka was also an extermination camp.&quot;</span>
-
-<span class="c1">#Create the Doc object</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="c1">#extract entities</span>
 <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Treblinka GPE
-Poland GPE
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paul Newman PERSON
+American NORP
+Paul Hollywood PERSON
+British NORP
 </pre></div>
 </div>
 </div>
 </div>
-<p><em>Depending on the version of model you are using, some results may vary.</em></p>
-<p>The output from the code above demonstrates spaCy’s small model’s to identify Treblinka, which is a small village in Poland. As the sample text indicates, it was also an extermination camp during WWII. In the first sentence, the spaCy model tagged Treblinka as an LOC (location) and in the second it was missed entirely. Both are either imprecise or wrong. I would have accepted ORG for the second sentence, as spaCy’s model does not know how to classify an extermination camp, but what these results demonstrate is the model’s failure to generalize on data. The reason? There are a few, but I suspect the model never encountered the word Treblinka.</p>
-<p>This is a common problem in NLP for specific domains. Often times the domains in which we wish to deploy models, off-the-shelf models will fail because they have not been trained on domain-specific texts. We can resolve this, however, either via spaCy’s EntityRuler or via training a new model. As we will see over the next few notebooks, we can use spaCy’s EntityRuler to easily achieve both.</p>
-<p>For now, let’s first remedy the issue by giving the model instructions for correctly identifying Treblinka. For simplicity, we will use spaCy’s GPE label. In a later notebook, we will teach a model to correctly identify Treblinka in the latter context as a concentration camp.</p>
+<p>Let’s say that we create a new entity. Maybe words associated with Cinema. So, we want to classify Hollywood as a tag “CINEMA”. Now, in the above text, Hollywood is clearly associated with Paul Hollywood, but let’s imagine for a moment that it is not. Let’s try and run the same code as above. If we do, we notice that we get an error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the requisite library</span>
-<span class="kn">import</span> <span class="nn">spacy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mwt_ents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">)</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+    <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mwt_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">mwt_ents</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
+    <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CINEMA&quot;</span><span class="p">)</span>
+    <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
 
-<span class="c1">#Build upon the spaCy Small Model</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">original_ents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(44, 53), match=&#39;Hollywood&#39;&gt;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">425</span><span class="n">d356ded45</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">original_ents</span>
 
-<span class="c1">#Sample text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The village of Treblinka is in Poland. Treblinka was also an extermination camp.&quot;</span>
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\tokens\doc.pyx</span> in <span class="ni">spacy.tokens.doc.Doc.ents.__set__</span><span class="nt">()</span>
 
-<span class="c1">#Create the EntityRuler</span>
-<span class="n">ruler</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;entity_ruler&quot;</span><span class="p">)</span>
+<span class="nn">c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\tokens\doc.pyx</span> in <span class="ni">spacy.tokens.doc.Doc.set_ents</span><span class="nt">()</span>
 
-<span class="c1">#List of Entities and Patterns</span>
-<span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;GPE&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;Treblinka&quot;</span><span class="p">}</span>
-            <span class="p">]</span>
-
-<span class="n">ruler</span><span class="o">.</span><span class="n">add_patterns</span><span class="p">(</span><span class="n">patterns</span><span class="p">)</span>
-
-
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="c1">#extract entities</span>
+<span class="ne">ValueError</span>: [E1010] Unable to set entity information for token 9 which is included in more than one span in entities, blocked, missing or outside.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This error tells us that one of our tokens from the finditer() overlapped with one that our “ner” component found. This is a problem that can be rectified with spaCy’s filter_spans. This gives primacy to longer spans. Notice how we have allowed the Paul Hollywood entity to be a PERSON, rather than CINEMA. This is because Hollywood is shorter than Paul Hollywood.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy.util</span> <span class="kn">import</span> <span class="n">filter_spans</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
 <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Treblinka LOC
-Poland GPE
-Treblinka GPE
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you executed the code above and found that you had the same output, then you did everything correctly. This method has failed. Why? The answer comes back to the concept of pipelines. We created and added the EntityRuler to the spaCy model’s pipeline, but by default, spaCy add’s a new pipe to the end of the pipeline. In order to visualize the pipeline, let’s use spaCy’s analyze_pipes().</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">analyze_pipes</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;summary&#39;: {&#39;tok2vec&#39;: {&#39;assigns&#39;: [&#39;doc.tensor&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [],
-   &#39;retokenizes&#39;: False},
-  &#39;tagger&#39;: {&#39;assigns&#39;: [&#39;token.tag&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [&#39;tag_acc&#39;],
-   &#39;retokenizes&#39;: False},
-  &#39;parser&#39;: {&#39;assigns&#39;: [&#39;token.dep&#39;,
-    &#39;token.head&#39;,
-    &#39;token.is_sent_start&#39;,
-    &#39;doc.sents&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [&#39;dep_uas&#39;,
-    &#39;dep_las&#39;,
-    &#39;dep_las_per_type&#39;,
-    &#39;sents_p&#39;,
-    &#39;sents_r&#39;,
-    &#39;sents_f&#39;],
-   &#39;retokenizes&#39;: False},
-  &#39;attribute_ruler&#39;: {&#39;assigns&#39;: [],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [],
-   &#39;retokenizes&#39;: False},
-  &#39;lemmatizer&#39;: {&#39;assigns&#39;: [&#39;token.lemma&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [&#39;lemma_acc&#39;],
-   &#39;retokenizes&#39;: False},
-  &#39;ner&#39;: {&#39;assigns&#39;: [&#39;doc.ents&#39;, &#39;token.ent_iob&#39;, &#39;token.ent_type&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [&#39;ents_f&#39;, &#39;ents_p&#39;, &#39;ents_r&#39;, &#39;ents_per_type&#39;],
-   &#39;retokenizes&#39;: False},
-  &#39;entity_ruler&#39;: {&#39;assigns&#39;: [&#39;doc.ents&#39;, &#39;token.ent_type&#39;, &#39;token.ent_iob&#39;],
-   &#39;requires&#39;: [],
-   &#39;scores&#39;: [&#39;ents_f&#39;, &#39;ents_p&#39;, &#39;ents_r&#39;, &#39;ents_per_type&#39;],
-   &#39;retokenizes&#39;: False}},
- &#39;problems&#39;: {&#39;tok2vec&#39;: [],
-  &#39;tagger&#39;: [],
-  &#39;parser&#39;: [],
-  &#39;attribute_ruler&#39;: [],
-  &#39;lemmatizer&#39;: [],
-  &#39;ner&#39;: [],
-  &#39;entity_ruler&#39;: []},
- &#39;attrs&#39;: {&#39;token.ent_iob&#39;: {&#39;assigns&#39;: [&#39;ner&#39;, &#39;entity_ruler&#39;],
-   &#39;requires&#39;: []},
-  &#39;token.tag&#39;: {&#39;assigns&#39;: [&#39;tagger&#39;], &#39;requires&#39;: []},
-  &#39;token.dep&#39;: {&#39;assigns&#39;: [&#39;parser&#39;], &#39;requires&#39;: []},
-  &#39;token.is_sent_start&#39;: {&#39;assigns&#39;: [&#39;parser&#39;], &#39;requires&#39;: []},
-  &#39;token.lemma&#39;: {&#39;assigns&#39;: [&#39;lemmatizer&#39;], &#39;requires&#39;: []},
-  &#39;token.ent_type&#39;: {&#39;assigns&#39;: [&#39;ner&#39;, &#39;entity_ruler&#39;], &#39;requires&#39;: []},
-  &#39;doc.sents&#39;: {&#39;assigns&#39;: [&#39;parser&#39;], &#39;requires&#39;: []},
-  &#39;token.head&#39;: {&#39;assigns&#39;: [&#39;parser&#39;], &#39;requires&#39;: []},
-  &#39;doc.tensor&#39;: {&#39;assigns&#39;: [&#39;tok2vec&#39;], &#39;requires&#39;: []},
-  &#39;doc.ents&#39;: {&#39;assigns&#39;: [&#39;ner&#39;, &#39;entity_ruler&#39;], &#39;requires&#39;: []}}}
-</pre></div>
-</div>
-</div>
-</div>
-<p>This can be a bit difficult to read at first, but what it shows us is the order in which our pipes are set up and a few other key pieces of information about each pipe. If we locate “ner”, we notice that “entity_ruler” sits behind it.</p>
-<p>In order for our EntityRuler to have primacy, we have to assign it to after the “ner” pipe, as the example below shows in this line:</p>
-<p>ruler = nlp.add_pipe(“entity_ruler”, <strong>after=”ner”</strong>)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Build upon the spaCy Small Model</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
-
-<span class="c1">#Sample text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The village of Treblinka is in Poland. Treblinka was also an extermination camp.&quot;</span>
-
-<span class="c1">#Create the EntityRuler</span>
-<span class="n">ruler</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;entity_ruler&quot;</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
-
-<span class="c1">#List of Entities and Patterns</span>
-<span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;GPE&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;Treblinka&quot;</span><span class="p">}</span>
-            <span class="p">]</span>
-
-<span class="n">ruler</span><span class="o">.</span><span class="n">add_patterns</span><span class="p">(</span><span class="n">patterns</span><span class="p">)</span>
-
-
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="c1">#extract entities</span>
-<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Treblinka GPE
-Poland GPE
-Treblinka GPE
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice now that our EntityRuler is functioning before the “ner” pipe and is, therefore, prefinding entities and labeling them before the NER gets to them. Because it comes earlier in the pipeline, its metadata holds primacy over the later “ner” pipe.</p>
-</section>
-<section id="introducing-complex-rules-and-variance-to-the-entityruler-advanced">
-<h2><span class="section-number">2.1.3. </span>Introducing Complex Rules and Variance to the EntityRuler (Advanced)<a class="headerlink" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced" title="Permalink to this headline">#</a></h2>
-<p>In some instances, labels may have a set type of variance that follow a distinct pattern or sets of patterns. One such example (included in the spaCy documentation) is phone numbers. In the United States, phone numbers have a few forms. The standard formal method is (xxx)-xxx-xxxx, but it is not uncommon to see xxx-xxx-xxxx or xxxxxxxxxx. If the owner of the phone number is giving that same number to someone outside the US, then +1(xxx)-xxx-xxxx.</p>
-<p>If you are working within a United States domain, you can pass RegEx formulas to the pattern matcher to grab all of these instances.</p>
-<p>The spaCy EntityRuler also allows the user to introduce a variety of complex rules and variances (via, among other things, RegEx) by passing the rules to the pattern. There are many arguments that one can pass to the patterns. For a complete list, see: https://spacy.io/usage/rule-based-matching . To expiremnet with how these work, I recommend using the spaCy Matcher demo: https://explosion.ai/demos/matcher .</p>
-<p>In the example below we work with one example from the spaCy documentation in which we extract a phone number from a text. This same task can be done via RegEx as well.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the requisite library</span>
-<span class="kn">import</span> <span class="nn">spacy</span>
-
-<span class="c1">#Sample text</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is a sample number (555) 555-5555.&quot;</span>
-
-<span class="c1">#Build upon the spaCy Small Model</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
-
-<span class="c1">#Create the Ruler and Add it</span>
-<span class="n">ruler</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;entity_ruler&quot;</span><span class="p">)</span>
-
-<span class="c1">#List of Entities and Patterns (source: https://spacy.io/usage/rule-based-matching)</span>
-<span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;PHONE_NUMBER&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;ORTH&quot;</span><span class="p">:</span> <span class="s2">&quot;(&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;SHAPE&quot;</span><span class="p">:</span> <span class="s2">&quot;ddd&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;ORTH&quot;</span><span class="p">:</span> <span class="s2">&quot;)&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;SHAPE&quot;</span><span class="p">:</span> <span class="s2">&quot;ddd&quot;</span><span class="p">},</span>
-                <span class="p">{</span><span class="s2">&quot;ORTH&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;?&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;SHAPE&quot;</span><span class="p">:</span> <span class="s2">&quot;dddd&quot;</span><span class="p">}]}</span>
-            <span class="p">]</span>
-<span class="c1">#add patterns to ruler</span>
-<span class="n">ruler</span><span class="o">.</span><span class="n">add_patterns</span><span class="p">(</span><span class="n">patterns</span><span class="p">)</span>
-
-
-
-<span class="c1">#create the doc</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="c1">#extract entities</span>
-<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(555) 555-5555 PHONE_NUMBER
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paul Newman PERSON
+American NORP
+Paul Hollywood PERSON
+British NORP
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="other-rules-based-matching-techniques-in-spacy">
-<h2><span class="section-number">2.1.4. </span>Other Rules-Based Matching Techniques in spaCy.<a class="headerlink" href="#other-rules-based-matching-techniques-in-spacy" title="Permalink to this headline">#</a></h2>
-<p>There are two other rules-based methods in spaCy: Matcher and PhraseMatcher. We have already met the Matcher in <strong>01.03: Rules-Based Matching</strong>. We will be meeting other more complex rules-based matching methods in the next few notebooks.</p>
-</section>
-<section id="exercise">
-<h2><span class="section-number">2.1.5. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>For the exercise for this notebook, try and develop a custom EntityRuler to find a custom entity in your own domain-specific texts.</p>
+<section id="video">
+<h2><span class="section-number">2.3.7. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
+<p>Check out the video below on RegEx and Multi-Word Tokens in spaCy 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/wpyCzodvO3A&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1252,17 +1172,17 @@ Treblinka GPE
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="03_02_intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_02_05_simple_regex.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span><center>Introduction to Python</center></p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span><center>Using RegEx with spaCy</center></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_02_matcher.html" title="next page">
+    <a class='right-next' id="next-link" href="../04_topic_modeling/04_01_01_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span><center>How to use the spaCy Matcher</center></p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Topic Modeling: Concepts and Theory</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
