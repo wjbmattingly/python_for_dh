@@ -117,25 +117,25 @@ parts:
     sections:
     - file: 03_spacy/03_01_02_install_and_containers
       title: The Basics of spaCy
-    - file: 03_spacy/03_01_02_linguistic_annotations
+    - file: 03_spacy/03_01_03_linguistic_annotations
       title: spaCy Linguistic Annotations
-    - file: 03_spacy/03_01_03_pipelines
+    - file: 03_spacy/03_01_04_pipelines
       title: spaCy Pipelines
       
   - file: 03_spacy/03_02_01_intro
     title: Rules-Based spaCy
     sections:
-    - file: 03_spacy/03_02_01_entityruler
+    - file: 03_spacy/03_02_02_entityruler
       title: How to use the spaCy EntityRuler
-    - file: 03_spacy/03_02_02_matcher
+    - file: 03_spacy/03_02_03_matcher
       title: How to use the spaCy Matcher
-    - file: 03_spacy/03_02_03_phrase_matcher
+    - file: 03_spacy/03_02_04_phrase_matcher
       title: How to use the spaCy PhraseMatcher
-    - file: 03_spacy/03_02_04_custom_component
+    - file: 03_spacy/03_02_05_custom_component
       title: Custom Components in spaCy
-    - file: 03_spacy/03_02_05_simple_regex
+    - file: 03_spacy/03_02_06_simple_regex
       title: How to use RegEx in spaCy (Basic)
-    - file: 03_spacy/03_02_06_complex_regex
+    - file: 03_spacy/03_02_07_complex_regex
       title: How to use RegEx in spaCy (Advanced)
     
 #   - file: 03_spacy/03_03_intro 
