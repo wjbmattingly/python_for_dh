@@ -182,6 +182,8 @@ parts:
       title: "SNA with NetworkX"
     - file: 06_sna/06_01_04_pyvis_basics
       title: "SNA with PyVis"
+    - file: 06_sna/06_01_05_applied
+      title: "Applying SNA on Humanities Data"
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
