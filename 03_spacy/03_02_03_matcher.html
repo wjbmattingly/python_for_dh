@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How to use the spaCy Matcher &#8212; Introduction to Python for Humanists</title>
+    <title>2.2. How to use the spaCy Matcher &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Topic Modeling: Concepts and Theory" href="../04_topic_modeling/04_01_01_intro.html" />
+    <link rel="prev" title="2.1. Using SpaCy’s EntityRuler" href="03_02_02_entityruler.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -392,7 +394,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART THREE: Natural Language Processing with spaCy (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
@@ -408,31 +410,36 @@ const thebe_selector_output = ".output, .cell_output"
      1.1. The Basics of spaCy
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_03_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_04_pipelines.html">
+     1.3. spaCy Pipelines
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="03_02_01_intro.html">
    2. Rules-Based spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_04_custom_component.html">
-     2.1. Custom Components in spaCy
+    <a class="reference internal" href="03_02_02_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_05_simple_regex.html">
-     2.2. How to use RegEx in spaCy (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_06_complex_regex.html">
-     2.3. How to use RegEx in spaCy (Advanced)
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. How to use the spaCy Matcher
     </a>
    </li>
   </ul>
@@ -792,64 +799,64 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-example">
-   Basic Example
+   2.2.1. Basic Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taken-by-matcher">
-   Attributes Taken by Matcher
+   2.2.2. Attributes Taken by Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applied-matcher">
-   Applied Matcher
+   2.2.3. Applied Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
-   Grabbing all Proper Nouns
+   2.2.4. Grabbing all Proper Nouns
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#improving-it-with-multi-word-tokens">
-     Improving it with Multi-Word Tokens
+     2.2.4.1. Improving it with Multi-Word Tokens
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-keyword-argument">
-     Greedy Keyword Argument
+     2.2.4.2. Greedy Keyword Argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sorting-it-to-apperance">
-     Sorting it to Apperance
+     2.2.4.3. Sorting it to Apperance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-in-sequences">
-     Adding in Sequences
+     2.2.4.4. Adding in Sequences
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-quotes-and-speakers">
-   Finding Quotes and Speakers
+   2.2.5. Finding Quotes and Speakers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-speaker">
-     Find Speaker
+     2.2.5.1. Find Speaker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-with-this-approach">
-     Problem with this Approach
+     2.2.5.2. Problem with this Approach
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-more-patterns">
-     Adding More Patterns
+     2.2.5.3. Adding More Patterns
     </a>
    </li>
   </ul>
@@ -875,64 +882,64 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-example">
-   Basic Example
+   2.2.1. Basic Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taken-by-matcher">
-   Attributes Taken by Matcher
+   2.2.2. Attributes Taken by Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applied-matcher">
-   Applied Matcher
+   2.2.3. Applied Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
-   Grabbing all Proper Nouns
+   2.2.4. Grabbing all Proper Nouns
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#improving-it-with-multi-word-tokens">
-     Improving it with Multi-Word Tokens
+     2.2.4.1. Improving it with Multi-Word Tokens
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-keyword-argument">
-     Greedy Keyword Argument
+     2.2.4.2. Greedy Keyword Argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sorting-it-to-apperance">
-     Sorting it to Apperance
+     2.2.4.3. Sorting it to Apperance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-in-sequences">
-     Adding in Sequences
+     2.2.4.4. Adding in Sequences
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-quotes-and-speakers">
-   Finding Quotes and Speakers
+   2.2.5. Finding Quotes and Speakers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-speaker">
-     Find Speaker
+     2.2.5.1. Find Speaker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-with-this-approach">
-     Problem with this Approach
+     2.2.5.2. Problem with this Approach
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-more-patterns">
-     Adding More Patterns
+     2.2.5.3. Adding More Patterns
     </a>
    </li>
   </ul>
@@ -948,7 +955,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-how-to-use-the-spacy-matcher-center">
-<h1><center>How to use the spaCy Matcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-matcher-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.2. </span><center>How to use the spaCy Matcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-matcher-center" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
@@ -964,7 +971,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="basic-example">
-<h2>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.1. </span>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
@@ -1004,7 +1011,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="attributes-taken-by-matcher">
-<h2>Attributes Taken by Matcher<a class="headerlink" href="#attributes-taken-by-matcher" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.2. </span>Attributes Taken by Matcher<a class="headerlink" href="#attributes-taken-by-matcher" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>ORTH - The exact verbatim of a token (str)</p></li>
 <li><p>TEXT - The exact verbatim of a token (str)</p></li>
@@ -1036,7 +1043,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="applied-matcher">
-<h2>Applied Matcher<a class="headerlink" href="#applied-matcher" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Applied Matcher<a class="headerlink" href="#applied-matcher" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/wiki_mlk.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1055,7 +1062,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="grabbing-all-proper-nouns">
-<h2>Grabbing all Proper Nouns<a class="headerlink" href="#grabbing-all-proper-nouns" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.4. </span>Grabbing all Proper Nouns<a class="headerlink" href="#grabbing-all-proper-nouns" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1086,7 +1093,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="improving-it-with-multi-word-tokens">
-<h3>Improving it with Multi-Word Tokens<a class="headerlink" href="#improving-it-with-multi-word-tokens" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.1. </span>Improving it with Multi-Word Tokens<a class="headerlink" href="#improving-it-with-multi-word-tokens" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1118,7 +1125,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="greedy-keyword-argument">
-<h3>Greedy Keyword Argument<a class="headerlink" href="#greedy-keyword-argument" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.2. </span>Greedy Keyword Argument<a class="headerlink" href="#greedy-keyword-argument" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1150,7 +1157,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="sorting-it-to-apperance">
-<h3>Sorting it to Apperance<a class="headerlink" href="#sorting-it-to-apperance" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.3. </span>Sorting it to Apperance<a class="headerlink" href="#sorting-it-to-apperance" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1183,7 +1190,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="adding-in-sequences">
-<h3>Adding in Sequences<a class="headerlink" href="#adding-in-sequences" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.4. </span>Adding in Sequences<a class="headerlink" href="#adding-in-sequences" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1214,7 +1221,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="finding-quotes-and-speakers">
-<h2>Finding Quotes and Speakers<a class="headerlink" href="#finding-quotes-and-speakers" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.5. </span>Finding Quotes and Speakers<a class="headerlink" href="#finding-quotes-and-speakers" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -1273,7 +1280,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="find-speaker">
-<h3>Find Speaker<a class="headerlink" href="#find-speaker" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.5.1. </span>Find Speaker<a class="headerlink" href="#find-speaker" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speak_lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;think&quot;</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">]</span>
@@ -1299,7 +1306,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="problem-with-this-approach">
-<h3>Problem with this Approach<a class="headerlink" href="#problem-with-this-approach" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.5.2. </span>Problem with this Approach<a class="headerlink" href="#problem-with-this-approach" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]:</span>
@@ -1338,7 +1345,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="adding-more-patterns">
-<h3>Adding More Patterns<a class="headerlink" href="#adding-more-patterns" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.5.3. </span>Adding More Patterns<a class="headerlink" href="#adding-more-patterns" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speak_lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;think&quot;</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">]</span>
@@ -1415,6 +1422,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03_02_02_entityruler.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span><center>Using SpaCy’s EntityRuler</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../04_topic_modeling/04_01_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Topic Modeling: Concepts and Theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

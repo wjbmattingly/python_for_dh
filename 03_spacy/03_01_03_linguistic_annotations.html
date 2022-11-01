@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Getting Started with spaCy and its Linguistic Annotations &#8212; Introduction to Python for Humanists</title>
+    <title>1.2. Getting Started with spaCy and its Linguistic Annotations &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3. spaCy’s Pipelines" href="03_01_04_pipelines.html" />
+    <link rel="prev" title="1.1. The Basics of spaCy" href="03_01_02_install_and_containers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -392,20 +394,30 @@ const thebe_selector_output = ".output, .cell_output"
   PART THREE: Natural Language Processing with spaCy (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="03_01_01_intro.html">
    1. Introduction to spaCy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="03_01_02_install_and_containers.html">
      1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_04_pipelines.html">
+     1.3. spaCy Pipelines
     </a>
    </li>
   </ul>
@@ -421,18 +433,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_04_custom_component.html">
-     2.1. Custom Components in spaCy
+    <a class="reference internal" href="03_02_02_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_05_simple_regex.html">
-     2.2. How to use RegEx in spaCy (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_02_06_complex_regex.html">
-     2.3. How to use RegEx in spaCy (Advanced)
+    <a class="reference internal" href="03_02_03_matcher.html">
+     2.2. How to use the spaCy Matcher
     </a>
    </li>
   </ul>
@@ -792,94 +799,94 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-spacy-and-loading-data">
-   Importing spaCy and Loading Data
+   1.2.1. Importing spaCy and Loading Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-doc-container">
-   Creating a Doc Container
+   1.2.2. Creating a Doc Container
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sentence-boundary-detection-sbd">
-   Sentence Boundary Detection (SBD)
+   1.2.3. Sentence Boundary Detection (SBD)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#token-attributes">
-   Token Attributes
+   1.2.4. Token Attributes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#text">
-     Text
+     1.2.4.1. Text
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#head">
-     Head
+     1.2.4.2. Head
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#left-edge">
-     Left Edge
+     1.2.4.3. Left Edge
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#right-edge">
-     Right Edge
+     1.2.4.4. Right Edge
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#entity-type">
-     Entity Type
+     1.2.4.5. Entity Type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ent-iob">
-     Ent IOB
+     1.2.4.6. Ent IOB
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lemma">
-     Lemma
+     1.2.4.7. Lemma
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#morph">
-     Morph
+     1.2.4.8. Morph
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#part-of-speech">
-     Part of Speech
+     1.2.4.9. Part of Speech
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#syntactic-dependency">
-     Syntactic Dependency
+     1.2.4.10. Syntactic Dependency
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#language">
-     Language
+     1.2.4.11. Language
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-of-speech-tagging-pos">
-   Part of Speech Tagging (POS)
+   1.2.5. Part of Speech Tagging (POS)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#named-entity-recognition">
-   Named Entity Recognition
+   1.2.6. Named Entity Recognition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   1.2.7. Conclusion
   </a>
  </li>
 </ul>
@@ -903,94 +910,94 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-spacy-and-loading-data">
-   Importing spaCy and Loading Data
+   1.2.1. Importing spaCy and Loading Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-doc-container">
-   Creating a Doc Container
+   1.2.2. Creating a Doc Container
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sentence-boundary-detection-sbd">
-   Sentence Boundary Detection (SBD)
+   1.2.3. Sentence Boundary Detection (SBD)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#token-attributes">
-   Token Attributes
+   1.2.4. Token Attributes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#text">
-     Text
+     1.2.4.1. Text
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#head">
-     Head
+     1.2.4.2. Head
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#left-edge">
-     Left Edge
+     1.2.4.3. Left Edge
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#right-edge">
-     Right Edge
+     1.2.4.4. Right Edge
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#entity-type">
-     Entity Type
+     1.2.4.5. Entity Type
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ent-iob">
-     Ent IOB
+     1.2.4.6. Ent IOB
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lemma">
-     Lemma
+     1.2.4.7. Lemma
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#morph">
-     Morph
+     1.2.4.8. Morph
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#part-of-speech">
-     Part of Speech
+     1.2.4.9. Part of Speech
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#syntactic-dependency">
-     Syntactic Dependency
+     1.2.4.10. Syntactic Dependency
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#language">
-     Language
+     1.2.4.11. Language
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-of-speech-tagging-pos">
-   Part of Speech Tagging (POS)
+   1.2.5. Part of Speech Tagging (POS)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#named-entity-recognition">
-   Named Entity Recognition
+   1.2.6. Named Entity Recognition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   1.2.7. Conclusion
   </a>
  </li>
 </ul>
@@ -1004,10 +1011,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-getting-started-with-spacy-and-its-linguistic-annotations-center">
-<h1><center>Getting Started with spaCy and its Linguistic Annotations</center><a class="headerlink" href="#center-getting-started-with-spacy-and-its-linguistic-annotations-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.2. </span><center>Getting Started with spaCy and its Linguistic Annotations</center><a class="headerlink" href="#center-getting-started-with-spacy-and-its-linguistic-annotations-center" title="Permalink to this headline">#</a></h1>
 <p>In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.</p>
 <section id="importing-spacy-and-loading-data">
-<h2>Importing spaCy and Loading Data<a class="headerlink" href="#importing-spacy-and-loading-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>Importing spaCy and Loading Data<a class="headerlink" href="#importing-spacy-and-loading-data" title="Permalink to this headline">#</a></h2>
 <p>As with all Python libraries, the first thing we need to do is import spaCy. In the last notebook, I walked you through how to install it and download the small English model. If you have followed those steps, you should be able to import it like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1065,7 +1072,7 @@ The United States is a highly developed country, accounts for approximately a qu
 </div>
 </section>
 <section id="creating-a-doc-container">
-<h2>Creating a Doc Container<a class="headerlink" href="#creating-a-doc-container" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>Creating a Doc Container<a class="headerlink" href="#creating-a-doc-container" title="Permalink to this headline">#</a></h2>
 <p>With the data loaded in, it’s time to make our first Doc container. Unless you are working with multiple Doc containers, it is best practice to always call this object “doc”, all lowercase. To create a doc container, we will usually just call our nlp object and pass our text to it as a single argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1222,7 +1229,7 @@ USA),
 <p>Let’s see what else this Doc Container holds.</p>
 </section>
 <section id="sentence-boundary-detection-sbd">
-<h2>Sentence Boundary Detection (SBD)<a class="headerlink" href="#sentence-boundary-detection-sbd" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>Sentence Boundary Detection (SBD)<a class="headerlink" href="#sentence-boundary-detection-sbd" title="Permalink to this headline">#</a></h2>
 <p>In NLP, sentence boundary detection, or SBD, is the identification of sentences in a text. Again, this may seem fairly easy to do with rules. One could use split(“.”), but in English we use the period to also denote abbreviation. You could, again, write rules to look for periods not proceeded by a lowercase word, but again, I ask the question, “why bother?”. We can use spaCy and in seconds have all sentences fully separated through SBD.</p>
 <p>To access the sentences in the Doc container, we can use the attribute sents, like so:</p>
 <div class="cell docutils container">
@@ -1308,7 +1315,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>Now we have the first sentence. Now that we have a smaller text, let’s explore spaCy’s other building block, the token.</p>
 </section>
 <section id="token-attributes">
-<h2>Token Attributes<a class="headerlink" href="#token-attributes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.4. </span>Token Attributes<a class="headerlink" href="#token-attributes" title="Permalink to this headline">#</a></h2>
 <p>The token object contains a lot of different attributes that are VITAL do performing NLP in spaCy. We will be working with a few of them, such as:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1367,7 +1374,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </div>
 <section id="text">
-<h3>Text<a class="headerlink" href="#text" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.1. </span>Text<a class="headerlink" href="#text" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Verbatim</span> <span class="pre">text</span> <span class="pre">content.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1383,7 +1390,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </section>
 <section id="head">
-<h3>Head<a class="headerlink" href="#head" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.2. </span>Head<a class="headerlink" href="#head" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">syntactic</span> <span class="pre">parent,</span> <span class="pre">or</span> <span class="pre">“governor”,</span> <span class="pre">of</span> <span class="pre">this</span> <span class="pre">token.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1400,7 +1407,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>This tells to which word it is governed by, in this case, the primary verb, “is”, as it is part of the noun subject.</p>
 </section>
 <section id="left-edge">
-<h3>Left Edge<a class="headerlink" href="#left-edge" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.3. </span>Left Edge<a class="headerlink" href="#left-edge" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"> <span class="pre">The</span> <span class="pre">leftmost</span> <span class="pre">token</span> <span class="pre">of</span> <span class="pre">this</span> <span class="pre">token’s</span> <span class="pre">syntactic</span> <span class="pre">descendants.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1417,7 +1424,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>If part of a sequence of tokens that are collectively meaningful, known as <strong>multi-word tokens</strong>, this will tell us where the multi-word token begins.</p>
 </section>
 <section id="right-edge">
-<h3>Right Edge<a class="headerlink" href="#right-edge" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.4. </span>Right Edge<a class="headerlink" href="#right-edge" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"> <span class="pre">The</span> <span class="pre">rightmost</span> <span class="pre">token</span> <span class="pre">of</span> <span class="pre">this</span> <span class="pre">token’s</span> <span class="pre">syntactic</span> <span class="pre">descendants.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1434,7 +1441,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>This will tell us where the multi-word token ends.</p>
 </section>
 <section id="entity-type">
-<h3>Entity Type<a class="headerlink" href="#entity-type" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.5. </span>Entity Type<a class="headerlink" href="#entity-type" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"> <span class="pre">Named</span> <span class="pre">entity</span> <span class="pre">type.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1464,7 +1471,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>We will learn all about types of entities in our chapter on named entity recognition, or NER. For now, simply understand that GPE is geopolitical entity and is correct.</p>
 </section>
 <section id="ent-iob">
-<h3>Ent IOB<a class="headerlink" href="#ent-iob" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.6. </span>Ent IOB<a class="headerlink" href="#ent-iob" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">IOB</span> <span class="pre">code</span> <span class="pre">of</span> <span class="pre">named</span> <span class="pre">entity</span> <span class="pre">tag.</span> <span class="pre">“B”</span> <span class="pre">means</span> <span class="pre">the</span> <span class="pre">token</span> <span class="pre">begins</span> <span class="pre">an</span> <span class="pre">entity,</span> <span class="pre">“I”</span> <span class="pre">means</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">inside</span> <span class="pre">an</span> <span class="pre">entity,</span> <span class="pre">“O”</span> <span class="pre">means</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">outside</span> <span class="pre">an</span> <span class="pre">entity,</span> <span class="pre">and</span> <span class="pre">&quot;&quot;</span> <span class="pre">means</span> <span class="pre">no</span> <span class="pre">entity</span> <span class="pre">tag</span> <span class="pre">is</span> <span class="pre">set.</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1481,7 +1488,7 @@ Making up more than a third of global military spending, it is the foremost mili
 <p>IOB is a method of annotating a text. In this case, we see “I” because states is inside an entity, that is to say that it is part of the United States of America.</p>
 </section>
 <section id="lemma">
-<h3>Lemma<a class="headerlink" href="#lemma" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.7. </span>Lemma<a class="headerlink" href="#lemma" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Base</span> <span class="pre">form</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">token,</span> <span class="pre">with</span> <span class="pre">no</span> <span class="pre">inflectional</span> <span class="pre">suffixes.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1509,7 +1516,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </section>
 <section id="morph">
-<h3>Morph<a class="headerlink" href="#morph" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.8. </span>Morph<a class="headerlink" href="#morph" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Morphological</span> <span class="pre">analysis</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1525,7 +1532,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </section>
 <section id="part-of-speech">
-<h3>Part of Speech<a class="headerlink" href="#part-of-speech" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.9. </span>Part of Speech<a class="headerlink" href="#part-of-speech" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Coarse-grained</span> <span class="pre">part-of-speech</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">Universal</span> <span class="pre">POS</span> <span class="pre">tag</span> <span class="pre">set.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1541,7 +1548,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </section>
 <section id="syntactic-dependency">
-<h3>Syntactic Dependency<a class="headerlink" href="#syntactic-dependency" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.10. </span>Syntactic Dependency<a class="headerlink" href="#syntactic-dependency" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Syntactic</span> <span class="pre">dependency</span> <span class="pre">relation.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1557,7 +1564,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </section>
 <section id="language">
-<h3>Language<a class="headerlink" href="#language" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.11. </span>Language<a class="headerlink" href="#language" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Language</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">parent</span> <span class="pre">document’s</span> <span class="pre">vocabulary.</span></code> -spaCy docs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1574,7 +1581,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </section>
 </section>
 <section id="part-of-speech-tagging-pos">
-<h2>Part of Speech Tagging (POS)<a class="headerlink" href="#part-of-speech-tagging-pos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.5. </span>Part of Speech Tagging (POS)<a class="headerlink" href="#part-of-speech-tagging-pos" title="Permalink to this headline">#</a></h2>
 <p>In the field of computational linguistics, understanding parts-of-speech is essential. SpaCy offers an easy way to parse a text and identify its parts of speech. Below, we will iterate across each token (word or punctuation) in the text and identify its part of speech.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1978,7 +1985,7 @@ America PROPN pobj
 </div>
 </section>
 <section id="named-entity-recognition">
-<h2>Named Entity Recognition<a class="headerlink" href="#named-entity-recognition" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.6. </span>Named Entity Recognition<a class="headerlink" href="#named-entity-recognition" title="Permalink to this headline">#</a></h2>
 <p>Another essential task of NLP, is named entity recognition, or NER. I spoke about NER in the last notebook. Here, I’d like to demonstrate how to perform basic NER via spaCy. Again, we will iterate over the doc object as we did above, but instead of iterating over doc.sents, we will iterate over doc.ents. For our purposes right now, I simply want to print off each entity’s text (the string itself) and its corresponding label (note the _ after label). I will be explaining this process in much greater detail in the next two notebooks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2472,7 +2479,7 @@ more than a third CARDINAL
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>I recommend spending a little bit of time going through this notebook a few times. The information covered throughout this notebook will be reinforced as we explore each of these areas in more depth with real-world examples of how to implement them to tackle different problems.</p>
 </section>
 </section>
@@ -2504,6 +2511,20 @@ more than a third CARDINAL
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03_01_02_install_and_containers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span><center>The Basics of spaCy</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_01_04_pipelines.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span><center>spaCy’s Pipelines</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
