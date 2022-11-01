@@ -173,7 +173,15 @@ parts:
       title: "Embedding, Flattening, and Clustering"    
     - file: 04_topic_modeling/04_03_04_top2vec
       title: "Topic Modeling with Top2Vec"
-      
+  - file: 06_sna/06_01_01_intro
+    title: "Introduction to Social Network Analysis in Python"
+    sections:
+    - file: 06_sna/06_01_02_basics
+      title: "The Basics of Social Network Analysis"
+    - file: 06_sna/06_01_03_networkx
+      title: "SNA with NetworkX"
+    - file: 06_sna/06_01_04_pyvis_basics
+      title: "SNA with PyVis"
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
   numbered: true
   chapters:
