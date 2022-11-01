@@ -131,8 +131,6 @@ parts:
       title: How to use the spaCy Matcher
     - file: 03_spacy/03_02_04_phrase_matcher
       title: How to use the spaCy PhraseMatcher
-    - file: 03_spacy/03_02_05_custom_component
-      title: Custom Components in spaCy
     - file: 03_spacy/03_02_06_simple_regex
       title: How to use RegEx in spaCy (Basic)
     - file: 03_spacy/03_02_07_complex_regex
