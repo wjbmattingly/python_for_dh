@@ -850,11 +850,6 @@ title="Print to PDF"
    </code>
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#greedy-pattern-matching">
-   2.3.5. Greedy Pattern Matching
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -897,11 +892,6 @@ title="Print to PDF"
      on_match
     </span>
    </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#greedy-pattern-matching">
-   2.3.5. Greedy Pattern Matching
   </a>
  </li>
 </ul>
@@ -974,6 +964,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Again, we will create our matches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
@@ -981,6 +972,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Let’s iterate over our matches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
@@ -999,6 +991,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>And now let’s iterate over our matches and grab a bit more data, including the token spans and the sentence in which a match was found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
@@ -1030,9 +1023,11 @@ Sentence: He is also known as the Boy who Lived.
 </div>
 </div>
 </div>
+<p>As we can tel, the results are good, but we are missing one case. The second example of <code class="docutils literal notranslate"><span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code> was not grabbed because <code class="docutils literal notranslate"><span class="pre">The</span></code> was not capitalized. We can account for this by changing the main attribute of the PhraseMatcher.</p>
 </section>
 <section id="setting-a-custom-attribute">
 <h2><span class="section-number">2.3.3. </span>Setting a Custom Attribute<a class="headerlink" href="#setting-a-custom-attribute" title="Permalink to this headline">#</a></h2>
+<p>Unlike the Matcher, the PhraseMatcher does not let us control how it reads each individual token in the pattern. The way the PhraseMatcher parses the phrase is as the sequence level. By default, the PhraseMatcher reads the entire pattern as <code class="docutils literal notranslate"><span class="pre">ORTH</span></code>, or raw text. In other words, it must be a precise match in order to be flagged and extracted. In some instances, however, it may be important for a pattern to be not just raw text, but also in all forms, both uppercase and lowercase. This is particularly important for phrases, like <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code>, where the word <code class="docutils literal notranslate"><span class="pre">the</span></code> may be capitalized if it is at the start of a sentence. In these instances, we can change the main way the PhraseMatcher works by using the <code class="docutils literal notranslate"><span class="pre">attr</span></code> argument. By using <code class="docutils literal notranslate"><span class="pre">attr=&quot;LOWER&quot;</span></code>, we can make our PhraseMatcher pattern case-agnostic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;LOWER&quot;</span><span class="p">)</span>
@@ -1049,7 +1044,7 @@ Sentence: He is also known as the Boy who Lived.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;the boy who lived&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1071,12 +1066,31 @@ Sentence: He is also known as the Boy who Lived.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HARRY_POTTER the boy who lived
-Sentence: the boy who lived
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HARRY_POTTER Harry
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Harry Potter
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Potter
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Harry
+Sentence: Harry was a normal boy who discovered he was a wizard.
+
+HARRY_POTTER Potter
+Sentence: Ultimately, Potter goes to Hogwarts.
+
+HARRY_POTTER the Boy who Lived
+Sentence: He is also known as the Boy who Lived.
+
+HARRY_POTTER The Boy who Lived
+Sentence: The Boy who Lived has an enemy named Voldemorte who is known as He who Must not be Named.
 </pre></div>
 </div>
 </div>
 </div>
+<p>Notice that now, we have grabbed all ways the phrase <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code> is expressed in our text.</p>
 </section>
 <section id="adding-a-function-with-on-match">
 <h2><span class="section-number">2.3.4. </span>Adding a Function with <code class="docutils literal notranslate"><span class="pre">on_match</span></code><a class="headerlink" href="#adding-a-function-with-on-match" title="Permalink to this headline">#</a></h2>
@@ -1125,35 +1139,6 @@ Sentence: Harry Potter was the main character in the book.
 </div>
 </div>
 <p>Just like the PhraseMatcher, the Matcher also can take the <code class="docutils literal notranslate"><span class="pre">on_match</span></code> keyword argument.</p>
-</section>
-<section id="greedy-pattern-matching">
-<h2><span class="section-number">2.3.5. </span>Greedy Pattern Matching<a class="headerlink" href="#greedy-pattern-matching" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;LOWER&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;HARRY&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;POTTER&quot;</span><span class="p">)],</span> <span class="n">on_match</span><span class="o">=</span><span class="n">on_match</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="s2">&quot;FIRST&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [136],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;HARRY&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;POTTER&quot;</span><span class="p">)],</span> <span class="n">on_match</span><span class="o">=</span><span class="n">on_match</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="s2">&quot;FIRST&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/spacy/matcher/phrasematcher.pyx:158,</span> in <span class="ni">spacy.matcher.phrasematcher.PhraseMatcher.add</span><span class="nt">()</span>
-
-<span class="ne">TypeError</span>: add() got an unexpected keyword argument &#39;greedy&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
