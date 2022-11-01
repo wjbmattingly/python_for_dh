@@ -4,3 +4,11 @@ bs4
 pandas
 jupyterquiz
 jupytercards
+pyvis
+networkx
+matplotlib
+top2vec
+sentence_transformers
+scikit-learn
+umap-learn
+hdbscan
