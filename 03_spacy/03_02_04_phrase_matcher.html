@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.4. Custom Components in spaCy" href="03_02_05_custom_component.html" />
-    <link rel="prev" title="2.2. How to use the spaCy Matcher" href="03_02_03_matcher.html" />
+    <link rel="prev" title="2.2. The spaCy Matcher Component" href="03_02_03_matcher.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -499,7 +499,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART FOUR: TOPIC MODELING (WIP)
+  PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -528,58 +528,34 @@ const thebe_selector_output = ".output, .cell_output"
      1.4. Bigrams and Trigrams
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
-   2. LDA Topic Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
-     2.1. Core Concepts of LDA Topic Modeling
+     1.5. Core Concepts of LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
-     2.2. Introduction to TF-IDF
+     1.6. Introduction to TF-IDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
-     2.3. What is Scikit Learn?
+     1.7. What is Scikit Learn?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
-     2.4. Building a TF-IDF with Python and Scikit-Learn
+     1.8. Building a TF-IDF with Python and Scikit-Learn
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
-   3. Transformer-Based Topic Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
-     3.1. Embedding, Flattening, and Clustering
+     1.9. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
-     3.2. Topic Modeling with Top2Vec
+     1.10. Topic Modeling with Top2Vec
     </a>
    </li>
   </ul>
@@ -595,8 +571,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -827,12 +803,61 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.3.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-example">
+   2.3.2. Basic Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-a-custom-attribute">
+   2.3.3. Setting a Custom Attribute
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-function-with-on-match">
+   2.3.4. Adding a Function with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     on_match
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#greedy-pattern-matching">
+   2.3.5. Greedy Pattern Matching
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -844,6 +869,44 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.3.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-example">
+   2.3.2. Basic Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-a-custom-attribute">
+   2.3.3. Setting a Custom Attribute
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-function-with-on-match">
+   2.3.4. Adding a Function with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     on_match
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#greedy-pattern-matching">
+   2.3.5. Greedy Pattern Matching
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -853,22 +916,245 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-how-to-use-the-spacy-phrasematcher-center">
 <h1><span class="section-number">2.3. </span><center>How to use the spaCy PhraseMatcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-phrasematcher-center" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">2.3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Another rules-based component built into spaCy is the PhraseMatcher. Like the Matcher, the PhraseMatcher does not sit inside a spaCy pipeline. It does not, therefore, align with a spaCy extension, such as <code class="docutils literal notranslate"><span class="pre">doc.ents</span></code>, like the EntityRuler does. Instead, it is meant to run over a Doc container, just like the Matcher. Unlike the Matcher, however, the PhraseMatcher does not function a sequence of linguistic features at the token level, rather it is focused on matching at the phrase level.</p>
+<p>In practice, you would use the Matcher when you need to rely on a sequence of linguistic features at the token level to extract data. This is powerful, but can sometimes be difficult to write robust patterns to match all instances of a the patterns you wish to match. The PhraseMatcher, on the other hand, should be used when you know relatively well how the data will appear in a text. It is easier to use the PhraseMatcher, but it is not as dynamic as the Matcher.</p>
+</section>
+<section id="basic-example">
+<h2><span class="section-number">2.3.2. </span>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
+<p>As with the Matcher, it is best to see the PhraseMatcher in action with a basic example. First, let’s import the <code class="docutils literal notranslate"><span class="pre">PhraseMatcher</span></code> class and load up the default small English pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">from</span> <span class="nn">spacy.matcher</span> <span class="kn">import</span> <span class="n">PhraseMatcher</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s consider a basic example. Let’s consider the text below. Here, we wish to find and extract the instances where Harry Potter appears in the text. Harry appears in four different ways in the text: 1) Harry Potter, 2) Harry, 3) Potter, and 4) The Boy who Lived.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Harry Potter was the main character in the book.</span>
+<span class="s2">Harry was a normal boy who discovered he was a wizard.</span>
+<span class="s2">Ultimately, Potter goes to Hogwarts.</span>
+<span class="s2">He is also known as the Boy who Lived.</span>
+<span class="s2">The Boy who Lived has an enemy named Voldemorte who is known as He who Must not be Named.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;the Boy who Lived&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
-INFO:tensorflow:Enabling v2 tensorshape
-INFO:tensorflow:Enabling resource variables
-INFO:tensorflow:Enabling tensor equality
-INFO:tensorflow:Enabling control flow v2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12243270181114079557, 1, 2)
+(12243270181114079557, 1, 3)
+(12243270181114079557, 2, 3)
+(12243270181114079557, 12, 13)
+(12243270181114079557, 27, 28)
+(12243270181114079557, 38, 42)
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="n">lexeme</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="n">lexeme</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sentence: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">.</span><span class="n">sent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HARRY_POTTER Harry
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Harry Potter
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Potter
+Sentence: Harry Potter was the main character in the book.
+
+HARRY_POTTER Harry
+Sentence: Harry was a normal boy who discovered he was a wizard.
+
+HARRY_POTTER Potter
+Sentence: Ultimately, Potter goes to Hogwarts.
+
+HARRY_POTTER the Boy who Lived
+Sentence: He is also known as the Boy who Lived.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-a-custom-attribute">
+<h2><span class="section-number">2.3.3. </span>Setting a Custom Attribute<a class="headerlink" href="#setting-a-custom-attribute" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;LOWER&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;the Boy who Lived&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;the boy who lived&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="n">lexeme</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="n">lexeme</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sentence: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">.</span><span class="n">sent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HARRY_POTTER the boy who lived
+Sentence: the boy who lived
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-a-function-with-on-match">
+<h2><span class="section-number">2.3.4. </span>Adding a Function with <code class="docutils literal notranslate"><span class="pre">on_match</span></code><a class="headerlink" href="#adding-a-function-with-on-match" title="Permalink to this headline">#</a></h2>
+<p>In production, it can sometimes be difficult to deploy a spaCy-based solution that requires pasting a for loop each time you want to iterate over the results. Usually, you want to automate certain tasks so that when a match is found, some event occurs in your code. The PhraseMatcher allows you to pass an extra argument to your patterns: <code class="docutils literal notranslate"><span class="pre">on_match</span></code>. This keyword argument will take a function which will receive four arguments from the PhraseMatcher: <code class="docutils literal notranslate"><span class="pre">matcher</span></code> (the PhraseMatcher), <code class="docutils literal notranslate"><span class="pre">doc</span></code> (the doc container that the PhraseMatcher just passed over), <code class="docutils literal notranslate"><span class="pre">id</span></code>, and <code class="docutils literal notranslate"><span class="pre">matches</span></code> (the resulting matches from the PhraseMatcher).</p>
+<p>Let’s create a basic function that will iterate over each match and print off the match, its label, and the sentence in which it was found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_match</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">matches</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">lexeme</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="n">lexeme</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sentence: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">.</span><span class="n">sent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just as before, we will create our PhraseMatcher.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;LOWER&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This time, however, when we add our patterns to the PhraseMatcher, we will also add the keyword argument <code class="docutils literal notranslate"><span class="pre">on_match</span></code> that will point to the above function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">)],</span> <span class="n">on_match</span><span class="o">=</span><span class="n">on_match</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All that is left to do is then create the Doc container from the text and then run the PhraseMatcher over the Doc container.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HARRY_POTTER Harry Potter
+Sentence: Harry Potter was the main character in the book.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like the PhraseMatcher, the Matcher also can take the <code class="docutils literal notranslate"><span class="pre">on_match</span></code> keyword argument.</p>
+</section>
+<section id="greedy-pattern-matching">
+<h2><span class="section-number">2.3.5. </span>Greedy Pattern Matching<a class="headerlink" href="#greedy-pattern-matching" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">PhraseMatcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;LOWER&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;HARRY&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;POTTER&quot;</span><span class="p">)],</span> <span class="n">on_match</span><span class="o">=</span><span class="n">on_match</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="s2">&quot;FIRST&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [136],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HARRY_POTTER&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;HARRY&quot;</span><span class="p">),</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;POTTER&quot;</span><span class="p">)],</span> <span class="n">on_match</span><span class="o">=</span><span class="n">on_match</span><span class="p">,</span> <span class="n">greedy</span><span class="o">=</span><span class="s2">&quot;FIRST&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/spacy/matcher/phrasematcher.pyx:158,</span> in <span class="ni">spacy.matcher.phrasematcher.PhraseMatcher.add</span><span class="nt">()</span>
+
+<span class="ne">TypeError</span>: add() got an unexpected keyword argument &#39;greedy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -902,7 +1188,7 @@ INFO:tensorflow:Enabling control flow v2
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span><center>How to use the spaCy Matcher</center></p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span><center>The spaCy Matcher Component</center></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03_02_05_custom_component.html" title="next page">

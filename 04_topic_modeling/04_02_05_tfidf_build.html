@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. TF-IDF with Python and Scikit Learn &#8212; Introduction to Python for Humanists</title>
+    <title>1.8. TF-IDF with Python and Scikit Learn &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Transformer-Based Topic Modeling" href="04_03_01_intro.html" />
-    <link rel="prev" title="2.3. Introduction to Scikit Learn" href="04_02_04_scikit_learn.html" />
+    <link rel="next" title="1.9. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
+    <link rel="prev" title="1.7. Introduction to Scikit Learn" href="04_02_04_scikit_learn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -499,20 +499,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART FOUR: TOPIC MODELING (WIP)
+  PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04_01_01_intro.html">
    1. Topic Modeling Concepts and Theory
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
      1.2. The Basics of Topic Modeling
@@ -528,58 +528,34 @@ const thebe_selector_output = ".output, .cell_output"
      1.4. Bigrams and Trigrams
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="04_02_01_intro.html">
-   2. LDA Topic Modeling
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_02_lda_concept.html">
-     2.1. Core Concepts of LDA Topic Modeling
+     1.5. Core Concepts of LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_03_tfidf.html">
-     2.2. Introduction to TF-IDF
+     1.6. Introduction to TF-IDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_04_scikit_learn.html">
-     2.3. What is Scikit Learn?
+     1.7. What is Scikit Learn?
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Building a TF-IDF with Python and Scikit-Learn
+     1.8. Building a TF-IDF with Python and Scikit-Learn
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="04_03_01_intro.html">
-   3. Transformer-Based Topic Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     3.1. Embedding, Flattening, and Clustering
+     1.9. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     3.2. Topic Modeling with Top2Vec
+     1.10. Topic Modeling with Top2Vec
     </a>
    </li>
   </ul>
@@ -595,8 +571,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -851,32 +827,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   2.4.1. Introduction
+   1.8.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparing-the-data">
-   2.4.2. Preparing the Data
+   1.8.2. Preparing the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cleaning-the-data">
-   2.4.3. Cleaning the Data
+   1.8.3. Cleaning the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementing-tf-idf-in-python">
-   2.4.4. Implementing TF-IDF in Python
+   1.8.4. Implementing TF-IDF in Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#k-means-clustering">
-   2.4.5. K-Means Clustering
+   1.8.5. K-Means Clustering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-the-data">
-   2.4.6. Plotting the Data
+   1.8.6. Plotting the Data
   </a>
  </li>
 </ul>
@@ -900,32 +876,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   2.4.1. Introduction
+   1.8.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparing-the-data">
-   2.4.2. Preparing the Data
+   1.8.2. Preparing the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cleaning-the-data">
-   2.4.3. Cleaning the Data
+   1.8.3. Cleaning the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementing-tf-idf-in-python">
-   2.4.4. Implementing TF-IDF in Python
+   1.8.4. Implementing TF-IDF in Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#k-means-clustering">
-   2.4.5. K-Means Clustering
+   1.8.5. K-Means Clustering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-the-data">
-   2.4.6. Plotting the Data
+   1.8.6. Plotting the Data
   </a>
  </li>
 </ul>
@@ -939,13 +915,13 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-tf-idf-with-python-and-scikit-learn-center">
-<h1><span class="section-number">2.4. </span><center>TF-IDF with Python and Scikit Learn</center><a class="headerlink" href="#center-tf-idf-with-python-and-scikit-learn-center" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.8. </span><center>TF-IDF with Python and Scikit Learn</center><a class="headerlink" href="#center-tf-idf-with-python-and-scikit-learn-center" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">2.4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Up until now, we have explored the key concepts of TF-IDF. Here, we will begin to implement the TF-IDF algorithm from Scikit-Learn, but before we do that, we have to consider one very important thing: the state of our data. Whenever you are using algorithms, it is always <em>essential</em> to think about what form does the algorithm expect. The first part of this notebook will, therefore, be dedicated to explaining the data and preparing it for the TF-IDF algorithm.</p>
 </section>
 <section id="preparing-the-data">
-<h2><span class="section-number">2.4.2. </span>Preparing the Data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.2. </span>Preparing the Data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
 <p>In this section of the notebook we will begin importing and manipulating and working with our TRC dataset and in order to do that you need to be familiar with how to import JSON data in Python so in this first block of code we will be doing just that.  I always find that writing out a basic function for reading Json data is always useful because you can use the function throughout your script without having to write 3 lines of code and instead simply writing one. We are going to call this function load_data.</p>
 <p>With this function now in place we can import our JSON data that contains our TRC data set which is under the data subfolder. In the next line, we call this function to achieve that task.</p>
 <div class="cell docutils container">
@@ -1070,7 +1046,7 @@ title="Print to PDF"
 <p>Below, we will use the names to plot the data on a graph, but for now we will strictly be working with the descriptions list. The reason for this is because these are the texts that we want to cluster through TF-IDF and K-Means.</p>
 </section>
 <section id="cleaning-the-data">
-<h2><span class="section-number">2.4.3. </span>Cleaning the Data<a class="headerlink" href="#cleaning-the-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.3. </span>Cleaning the Data<a class="headerlink" href="#cleaning-the-data" title="Permalink to this headline">#</a></h2>
 <p>Now that we have the data that we need for processing, it is time to start cleaning the data. When cleaning text for TF-IDF and topic modeling, it is often good practice to remove certain things from the text that may throw off the algorithms. The specific things you choose to remove from texts will vary depending on the texts you are working with, but there are generally certain words for each language that you will want to remove. These are called <strong>stop words</strong>.</p>
 <p>In English, stop words will be articles, such as <code class="docutils literal notranslate"><span class="pre">'the',</span> <span class="pre">'an',</span> <span class="pre">and</span> <span class="pre">'a'</span> <span class="pre">or</span> <span class="pre">the</span> <span class="pre">verb</span> <span class="pre">'to</span> <span class="pre">be'</span></code>. These words are often removed from texts because they occur so frequently that they offer nothing unique about the texts at hand. In other words, they are so common that they do not aid in the clustering of texts. This is because clustering seeks to find particular features of texts and then identify the texts with common overlapping features. Stop words would make all texts overlap significantly. We remove these words to force clustering to focus on the more important words.</p>
 <p>In addition to this, we also often need to develop our own stop words for these specific texts, or a general domain. In our case, these texts have a lot of dates and AC numbers that correspond to other records. While these are significant pieces of metadata, these both throw off the clustering. If we were interested in seeing how dates overlap, there are better ways of performing that task. For those interested, see my <a href="ner.pythonhumanities.com">Named Entity Recognition Textbook</a>.</p>
@@ -1175,7 +1151,7 @@ An ANCYL member shot severely injured SAP members Lephoi Bethulie Orange Free St
 <p>As we can see from these two outputs, the original text has been heavily altered and cleaned. Notice, for example, the removal of the date. Now that we have the data fully cleaned, it is time to begin setting up the TF-IDF algorithm with Scikit-Learn.</p>
 </section>
 <section id="implementing-tf-idf-in-python">
-<h2><span class="section-number">2.4.4. </span>Implementing TF-IDF in Python<a class="headerlink" href="#implementing-tf-idf-in-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.4. </span>Implementing TF-IDF in Python<a class="headerlink" href="#implementing-tf-idf-in-python" title="Permalink to this headline">#</a></h2>
 <p>Implementing TF-IDF in Python requires us to import a few things from the Scikit Learn library. Remember, in Python Scikit Learn is “sklearn”. So, let’s import those things now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1391,7 +1367,7 @@ Only Keywords Text:
 </div>
 </section>
 <section id="k-means-clustering">
-<h2><span class="section-number">2.4.5. </span>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.5. </span>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">#</a></h2>
 <p>Now that our data is nothing more than a list of lists of key words for each document, we can use these features to see where there is overlap. This is called clustering and one method of clustering is K-Means which seeks to place every document into a cluster to which it has the most similarity. In the below code, we define true_k as the number of clusters. In this example, I am telling it to find 5 clusters. In the video below, I used 20, but as we will see for plotting it is easier to have 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1497,7 +1473,7 @@ severely
 <p>And Viola, just like that we have all 22,000 descriptions clusterd into 5 categories. I know what you may be thinking, though. How do we see where those documents are. The answer is addressed below when we plot the data. In order to walk through this portion of notebook, check out the video below.</p>
 </section>
 <section id="plotting-the-data">
-<h2><span class="section-number">2.4.6. </span>Plotting the Data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.6. </span>Plotting the Data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">#</a></h2>
 <p>This portion of the notebook is perhaps best illustrated with the video below. The code below has already been executed so that you can see the data plotted out on a graph. Each node on the graph represents a description. Each color represents a cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1576,13 +1552,13 @@ severely
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span><center>Introduction to Scikit Learn</center></p>
+            <p class="prev-next-title"><span class="section-number">1.7. </span><center>Introduction to Scikit Learn</center></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_03_01_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="04_03_03_embedding_clustering.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span><center>Transformer-Based Topic Modeling</center></p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span><center>Embedding, Flattening, and Clustering</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

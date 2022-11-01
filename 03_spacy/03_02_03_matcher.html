@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.2. How to use the spaCy Matcher &#8212; Introduction to Python for Humanists</title>
+    <title>2.2. The spaCy Matcher Component &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -499,7 +499,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART FOUR: TOPIC MODELING (WIP)
+  PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -528,58 +528,34 @@ const thebe_selector_output = ".output, .cell_output"
      1.4. Bigrams and Trigrams
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_topic_modeling/04_02_01_intro.html">
-   2. LDA Topic Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
-     2.1. Core Concepts of LDA Topic Modeling
+     1.5. Core Concepts of LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
-     2.2. Introduction to TF-IDF
+     1.6. Introduction to TF-IDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
-     2.3. What is Scikit Learn?
+     1.7. What is Scikit Learn?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
-     2.4. Building a TF-IDF with Python and Scikit-Learn
+     1.8. Building a TF-IDF with Python and Scikit-Learn
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_topic_modeling/04_03_01_intro.html">
-   3. Transformer-Based Topic Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
-     3.1. Embedding, Flattening, and Clustering
+     1.9. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
-     3.2. Topic Modeling with Top2Vec
+     1.10. Topic Modeling with Top2Vec
     </a>
    </li>
   </ul>
@@ -595,8 +571,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
    1. Introduction to Streamlit
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -850,65 +826,43 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-example">
-   2.2.1. Basic Example
+  <a class="reference internal nav-link" href="#introduction">
+   2.2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-basic-example">
+   2.2.2. A Basic Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taken-by-matcher">
-   2.2.2. Attributes Taken by Matcher
+   2.2.3. Attributes Taken by Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applied-matcher">
-   2.2.3. Applied Matcher
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
-   2.2.4. Grabbing all Proper Nouns
+   2.2.4. Applied Matcher
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
+     2.2.4.1. Grabbing all Proper Nouns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#improving-it-with-multi-word-tokens">
-     2.2.4.1. Improving it with Multi-Word Tokens
+     2.2.4.2. Improving it with Multi-Word Tokens
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-keyword-argument">
-     2.2.4.2. Greedy Keyword Argument
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-it-to-apperance">
-     2.2.4.3. Sorting it to Apperance
+     2.2.4.3. Greedy Keyword Argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-in-sequences">
      2.2.4.4. Adding in Sequences
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-quotes-and-speakers">
-   2.2.5. Finding Quotes and Speakers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#find-speaker">
-     2.2.5.1. Find Speaker
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-with-this-approach">
-     2.2.5.2. Problem with this Approach
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-more-patterns">
-     2.2.5.3. Adding More Patterns
     </a>
    </li>
   </ul>
@@ -922,7 +876,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>How to use the spaCy Matcher</center></h1>
+                <h1><center>The spaCy Matcher Component</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -933,65 +887,43 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-example">
-   2.2.1. Basic Example
+  <a class="reference internal nav-link" href="#introduction">
+   2.2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-basic-example">
+   2.2.2. A Basic Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taken-by-matcher">
-   2.2.2. Attributes Taken by Matcher
+   2.2.3. Attributes Taken by Matcher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applied-matcher">
-   2.2.3. Applied Matcher
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
-   2.2.4. Grabbing all Proper Nouns
+   2.2.4. Applied Matcher
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grabbing-all-proper-nouns">
+     2.2.4.1. Grabbing all Proper Nouns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#improving-it-with-multi-word-tokens">
-     2.2.4.1. Improving it with Multi-Word Tokens
+     2.2.4.2. Improving it with Multi-Word Tokens
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-keyword-argument">
-     2.2.4.2. Greedy Keyword Argument
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-it-to-apperance">
-     2.2.4.3. Sorting it to Apperance
+     2.2.4.3. Greedy Keyword Argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-in-sequences">
      2.2.4.4. Adding in Sequences
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-quotes-and-speakers">
-   2.2.5. Finding Quotes and Speakers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#find-speaker">
-     2.2.5.1. Find Speaker
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-with-this-approach">
-     2.2.5.2. Problem with this Approach
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-more-patterns">
-     2.2.5.3. Adding More Patterns
     </a>
    </li>
   </ul>
@@ -1006,36 +938,73 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-how-to-use-the-spacy-matcher-center">
-<h1><span class="section-number">2.2. </span><center>How to use the spaCy Matcher</center><a class="headerlink" href="#center-how-to-use-the-spacy-matcher-center" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-the-spacy-matcher-component-center">
+<h1><span class="section-number">2.2. </span><center>The spaCy Matcher Component</center><a class="headerlink" href="#center-the-spacy-matcher-component-center" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">2.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>SpaCy’s built in Matcher component is another way a user can leverage spaCy to leverage linguistic annotations to find and extract structured data from unstructured text. Unlike the EntityRuler that we met in the previous section, the Matcher does not assign the identified patterns into an extension, such as <code class="docutils literal notranslate"><span class="pre">doc.ents</span></code>. Instead, the Matcher is designed to be leveraged outside of a spaCy pipeline. Also unlike the EntityRuler, the Matcher will not sit inside a spaCy pipeline, rather it will run over a spaCy Doc container.</p>
+</section>
+<section id="a-basic-example">
+<h2><span class="section-number">2.2.2. </span>A Basic Example<a class="headerlink" href="#a-basic-example" title="Permalink to this headline">#</a></h2>
+<p>To understand how this works, let’s first look at a very basic example of the spaCy Matcher in practice. We will be working with the small spaCy English pipeline in this example, so let’s go ahead and import the <code class="docutils literal notranslate"><span class="pre">Matcher</span></code> class and load up the pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">from</span> <span class="nn">spacy.matcher</span> <span class="kn">import</span> <span class="n">Matcher</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy.matcher</span> <span class="kn">import</span> <span class="n">Matcher</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="basic-example">
-<h2><span class="section-number">2.2.1. </span>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
-<span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
-<span class="n">pattern</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;LIKE_EMAIL&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]</span>
-<span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;EMAIL_ADDRESS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern</span><span class="p">])</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;This is an email address: wmattingly@aol.com&quot;</span><span class="p">)</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now that we have our pipeline loaded up into memory, let’s go ahead and start working with the Matcher component. To load up the Matcher, we will use the Matcher class that we imported above. The Matcher class will take a single argument, the vocabulary of the nlp pipeline. We can access the nlp vocab by using the command <code class="docutils literal notranslate"><span class="pre">nlp.vocab</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With our Matcher now loaded into memory, it is time to create a basic pattern. The pattern that we will want to find and extract from our texts is an email. As we will learn below, there are many token attributes you can leverage to create powerful rules-based pattern matchers in spaCy, rather like the EntityRuler we learned about in the previous section. One attribute we can look for is a Boolean (True or False) that looks to see if a token looks like an e-mail address. This attribute is <code class="docutils literal notranslate"><span class="pre">LIKE_EMAIL</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pattern</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;LIKE_EMAIL&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+            <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with the EntityRuler, we can add these patterns into the Matcher. Unlike our EntityRuler, we will use the <code class="docutils literal notranslate"><span class="pre">.add</span></code> method, rather than <code class="docutils literal notranslate"><span class="pre">.add_patterns</span></code>. This method will take two arguments. First, the label that you want to assign to the matched token(s) and second the patterns themselves. Note that just like the EntityRuler, our patterns must be nested in a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;EMAIL_ADDRESS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the Matcher now loaded in memory with patterns, we can run it over some text. Because the spaCy Matcher is a spaCy component, that text must first be converted into a spaCy Doc container. We can create that Doc container just as we normally would.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;This is an email address: wmattingly@aol.com&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then pass that Doc container to the Matcher as a single argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s go ahead and print off the <code class="docutils literal notranslate"><span class="pre">matches</span></code> object now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">matches</span><span class="p">)</span>
@@ -1048,10 +1017,39 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Lexeme, start token, end token</p>
+<p>This may not be what you were expecting, but let’s dive in and explore what is going on with this output. The output is a list with a single index. Each index will be a tuple. This tuple will consist of three parts: <code class="docutils literal notranslate"><span class="pre">lexeme</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">token</span></code>, and <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">token</span></code>. The lexeme is a numerical representation of our label in the nlp.vocab. We can access the label name by indexing the nlp.vocab at the lexeme index and then accessing the raw text with <code class="docutils literal notranslate"><span class="pre">.text</span></code>.</p>
+<p>Let’s do each of these steps in turn. First, we will create an object called <code class="docutils literal notranslate"><span class="pre">first_match</span></code>. This will be our first hit with the Matcher.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_match</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_match</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16571425990740197027, 6, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we will grab lexeme, which is the first index in our <code class="docutils literal notranslate"><span class="pre">first_match</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lexeme</span> <span class="o">=</span> <span class="n">first_match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lexeme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16571425990740197027
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we will print off the raw text of the label by indexing the nlp.vocab at that specific lexeme numerical value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="n">lexeme</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1061,9 +1059,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>This is the basic idea behind the Matcher. It is a way of finding structured text using a pattern-based matching technique. As with the EntityRuler, there are a lot of token attributes we can leverage.</p>
 </section>
 <section id="attributes-taken-by-matcher">
-<h2><span class="section-number">2.2.2. </span>Attributes Taken by Matcher<a class="headerlink" href="#attributes-taken-by-matcher" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Attributes Taken by Matcher<a class="headerlink" href="#attributes-taken-by-matcher" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>ORTH - The exact verbatim of a token (str)</p></li>
 <li><p>TEXT - The exact verbatim of a token (str)</p></li>
@@ -1095,16 +1094,23 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="applied-matcher">
-<h2><span class="section-number">2.2.3. </span>Applied Matcher<a class="headerlink" href="#applied-matcher" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.4. </span>Applied Matcher<a class="headerlink" href="#applied-matcher" title="Permalink to this headline">#</a></h2>
+<p>Let’s now take a look at a practical application of the Matcher. Say, we had a text. In our case, it will be the following text:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/wiki_mlk.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Harry Potter was the main character in the book.</span>
+<span class="s2">Harry was a normal boy who discovered he was a wizard.</span>
+<span class="s2">Ultimately, Potter goes to Hogwarts.</span>
+<span class="s2">He is also known as the Boy who Lived.</span>
+<span class="s2">The Boy who Lived has an enemy named Voldemorte who is known as He who Must not be Named.</span>
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>print (text)</p>
+<p>Our goal in this exercise is to isolate all proper nouns and extract them. Ideally, we would like to extract proper nouns that are bigrams or trigrams and keep them intact.</p>
+<p>To do this, we will need to load up the spaCy small English pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
@@ -1112,9 +1118,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
 <section id="grabbing-all-proper-nouns">
-<h2><span class="section-number">2.2.4. </span>Grabbing all Proper Nouns<a class="headerlink" href="#grabbing-all-proper-nouns" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">2.2.4.1. </span>Grabbing all Proper Nouns<a class="headerlink" href="#grabbing-all-proper-nouns" title="Permalink to this headline">#</a></h3>
+<p>Our initial pattern will be quite simple. We are simply going to grab all patterns where a single token has a part-of-speech (POS) is “PROPN”, or proper noun.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1129,23 +1135,21 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102
-(3232560085755078826, 0, 1) Martin
-(3232560085755078826, 1, 2) Luther
-(3232560085755078826, 2, 3) King
-(3232560085755078826, 3, 4) Jr.
-(3232560085755078826, 6, 7) Michael
-(3232560085755078826, 7, 8) King
-(3232560085755078826, 8, 9) Jr.
-(3232560085755078826, 10, 11) January
-(3232560085755078826, 14, 15) â€
-(3232560085755078826, 16, 17) April
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+(3232560085755078826, 1, 2) Harry
+(3232560085755078826, 2, 3) Potter
+(3232560085755078826, 12, 13) Harry
+(3232560085755078826, 27, 28) Potter
+(3232560085755078826, 30, 31) Hogwarts
+(3232560085755078826, 52, 53) Voldemorte
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 <section id="improving-it-with-multi-word-tokens">
-<h3><span class="section-number">2.2.4.1. </span>Improving it with Multi-Word Tokens<a class="headerlink" href="#improving-it-with-multi-word-tokens" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.2. </span>Improving it with Multi-Word Tokens<a class="headerlink" href="#improving-it-with-multi-word-tokens" title="Permalink to this headline">#</a></h3>
+<p>While the above output is good, it does not capture multi-word-tokens, such as <code class="docutils literal notranslate"><span class="pre">Harry</span> <span class="pre">Potter</span></code>. Ideally, we would like to find and extract these instances. We can do this by passing in a second argument in our pattern after the POS: <code class="docutils literal notranslate"><span class="pre">OP</span></code> and set it to <code class="docutils literal notranslate"><span class="pre">+</span></code>. This will look for any sequence of proper nouns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1160,24 +1164,23 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>175
-(3232560085755078826, 0, 1) Martin
-(3232560085755078826, 0, 2) Martin Luther
-(3232560085755078826, 1, 2) Luther
-(3232560085755078826, 0, 3) Martin Luther King
-(3232560085755078826, 1, 3) Luther King
-(3232560085755078826, 2, 3) King
-(3232560085755078826, 0, 4) Martin Luther King Jr.
-(3232560085755078826, 1, 4) Luther King Jr.
-(3232560085755078826, 2, 4) King Jr.
-(3232560085755078826, 3, 4) Jr.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+(3232560085755078826, 1, 2) Harry
+(3232560085755078826, 1, 3) Harry Potter
+(3232560085755078826, 2, 3) Potter
+(3232560085755078826, 12, 13) Harry
+(3232560085755078826, 27, 28) Potter
+(3232560085755078826, 30, 31) Hogwarts
+(3232560085755078826, 52, 53) Voldemorte
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="greedy-keyword-argument">
-<h3><span class="section-number">2.2.4.2. </span>Greedy Keyword Argument<a class="headerlink" href="#greedy-keyword-argument" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.4.3. </span>Greedy Keyword Argument<a class="headerlink" href="#greedy-keyword-argument" title="Permalink to this headline">#</a></h3>
+<p>As we can see, this has worked pretty well, but we have a key issue. <code class="docutils literal notranslate"><span class="pre">Harry</span></code> is grabbed as is <code class="docutils literal notranslate"><span class="pre">Harry</span> <span class="pre">Potter</span></code> as is <code class="docutils literal notranslate"><span class="pre">Potter</span></code>. These are all three instances of a single multi-word token: <code class="docutils literal notranslate"><span class="pre">Harry</span> <span class="pre">Potter</span></code>.</p>
+<p>The Matcher can also take another keyword argument when we add patterns: <code class="docutils literal notranslate"><span class="pre">greedy</span></code>. This will take one of two possible arguments: <code class="docutils literal notranslate"><span class="pre">FIRST</span></code> or <code class="docutils literal notranslate"><span class="pre">LONGEST</span></code>. They each define how spaCy will function when it encounters two matches that have overlapping spans. <code class="docutils literal notranslate"><span class="pre">FIRST</span></code> will extract the first hit with overlapping spans, while <code class="docutils literal notranslate"><span class="pre">LONGEST</span></code> will extract only the longest. Let’s consider the same example above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1192,50 +1195,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61
-(3232560085755078826, 84, 89) Martin Luther King Sr.
-(3232560085755078826, 470, 475) Martin Luther King Jr. Day
-(3232560085755078826, 537, 542) Martin Luther King Jr. Memorial
-(3232560085755078826, 0, 4) Martin Luther King Jr.
-(3232560085755078826, 129, 133) Southern Christian Leadership Conference
-(3232560085755078826, 248, 252) Director J. Edgar Hoover
-(3232560085755078826, 6, 9) Michael King Jr.
-(3232560085755078826, 326, 329) Nobel Peace Prize
-(3232560085755078826, 423, 426) James Earl Ray
-(3232560085755078826, 464, 467) Congressional Gold Medal
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="sorting-it-to-apperance">
-<h3><span class="section-number">2.2.4.3. </span>Sorting it to Apperance<a class="headerlink" href="#sorting-it-to-apperance" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
-<span class="n">pattern</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;PROPN&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">}]</span>
-<span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PROPER_NOUNS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern</span><span class="p">],</span> <span class="n">greedy</span><span class="o">=</span><span class="s1">&#39;LONGEST&#39;</span><span class="p">)</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="n">matches</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61
-(3232560085755078826, 0, 4) Martin Luther King Jr.
-(3232560085755078826, 6, 9) Michael King Jr.
-(3232560085755078826, 10, 11) January
-(3232560085755078826, 14, 15) â€
-(3232560085755078826, 16, 17) April
-(3232560085755078826, 24, 25) Baptist
-(3232560085755078826, 50, 51) King
-(3232560085755078826, 70, 72) Mahatma Gandhi
-(3232560085755078826, 84, 89) Martin Luther King Sr.
-(3232560085755078826, 90, 91) King
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+(3232560085755078826, 1, 3) Harry Potter
+(3232560085755078826, 12, 13) Harry
+(3232560085755078826, 27, 28) Potter
+(3232560085755078826, 30, 31) Hogwarts
+(3232560085755078826, 52, 53) Voldemorte
 </pre></div>
 </div>
 </div>
@@ -1243,6 +1208,7 @@ title="Print to PDF"
 </section>
 <section id="adding-in-sequences">
 <h3><span class="section-number">2.2.4.4. </span>Adding in Sequences<a class="headerlink" href="#adding-in-sequences" title="Permalink to this headline">#</a></h3>
+<p>Let’s say I not only wanted to extract these type of instances, but I wanted to look for more robust patterns. What if I wanted to look for places in the text where Harry Potter is followed by a verb of action (not a verb of to be). We can do this by passing a third component to our pattern: <code class="docutils literal notranslate"><span class="pre">POS</span></code> is <code class="docutils literal notranslate"><span class="pre">VERB</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
@@ -1258,191 +1224,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-(3232560085755078826, 50, 52) King advanced
-(3232560085755078826, 90, 92) King participated
-(3232560085755078826, 114, 116) King led
-(3232560085755078826, 168, 170) King helped
-(3232560085755078826, 248, 253) Director J. Edgar Hoover considered
-(3232560085755078826, 323, 325) King won
-(3232560085755078826, 486, 489) United States beginning
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="finding-quotes-and-speakers">
-<h2><span class="section-number">2.2.5. </span>Finding Quotes and Speakers<a class="headerlink" href="#finding-quotes-and-speakers" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/alice.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, `and what is the use of a book,&#39; thought Alice `without pictures or conversation?&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, &#39;and what is the use of a book,&#39; thought Alice &#39;without pictures or conversation?&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
-<span class="n">pattern</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">}]</span>
-<span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PROPER_NOUNS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern</span><span class="p">],</span> <span class="n">greedy</span><span class="o">=</span><span class="s1">&#39;LONGEST&#39;</span><span class="p">)</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="n">matches</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-(3232560085755078826, 47, 58) &#39;and what is the use of a book,&#39;
-(3232560085755078826, 60, 67) &#39;without pictures or conversation?&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<section id="find-speaker">
-<h3><span class="section-number">2.2.5.1. </span>Find Speaker<a class="headerlink" href="#find-speaker" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speak_lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;think&quot;</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">]</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-<span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
-<span class="n">pattern1</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;VERB&quot;</span><span class="p">,</span> <span class="s2">&quot;LEMMA&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;IN&quot;</span><span class="p">:</span> <span class="n">speak_lemmas</span><span class="p">}},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;PROPN&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">}]</span>
-<span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PROPER_NOUNS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern1</span><span class="p">],</span> <span class="n">greedy</span><span class="o">=</span><span class="s1">&#39;LONGEST&#39;</span><span class="p">)</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="n">matches</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-(3232560085755078826, 47, 67) &#39;and what is the use of a book,&#39; thought Alice &#39;without pictures or conversation?&#39;
+(3232560085755078826, 27, 29) Potter goes
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="problem-with-this-approach">
-<h3><span class="section-number">2.2.5.2. </span>Problem with this Approach<a class="headerlink" href="#problem-with-this-approach" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="n">matches</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-(3232560085755078826, 47, 67) &#39;and what is the use of a book,&#39; thought Alice &#39;without pictures or conversation?&#39;
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-more-patterns">
-<h3><span class="section-number">2.2.5.3. </span>Adding More Patterns<a class="headerlink" href="#adding-more-patterns" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speak_lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;think&quot;</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">]</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-<span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
-<span class="n">pattern1</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;VERB&quot;</span><span class="p">,</span> <span class="s2">&quot;LEMMA&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;IN&quot;</span><span class="p">:</span> <span class="n">speak_lemmas</span><span class="p">}},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;PROPN&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">}]</span>
-<span class="n">pattern2</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;VERB&quot;</span><span class="p">,</span> <span class="s2">&quot;LEMMA&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;IN&quot;</span><span class="p">:</span> <span class="n">speak_lemmas</span><span class="p">}},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;PROPN&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">}]</span>
-<span class="n">pattern3</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;PROPN&quot;</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;VERB&quot;</span><span class="p">,</span> <span class="s2">&quot;LEMMA&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;IN&quot;</span><span class="p">:</span> <span class="n">speak_lemmas</span><span class="p">}},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_ALPHA&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;IS_PUNCT&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;OP&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ORTH&#39;</span><span class="p">:</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">}]</span>
-<span class="n">matcher</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PROPER_NOUNS&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">pattern1</span><span class="p">,</span> <span class="n">pattern2</span><span class="p">,</span> <span class="n">pattern3</span><span class="p">],</span> <span class="n">greedy</span><span class="o">=</span><span class="s1">&#39;LONGEST&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">matches</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="n">matches</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="n">doc</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-(3232560085755078826, 47, 67) &#39;and what is the use of a book,&#39; thought Alice &#39;without pictures or conversation?&#39;
-0
-0
-0
-0
-0
-1
-(3232560085755078826, 0, 6) &#39;Well!&#39; thought Alice
-0
-0
-0
-0
-0
-0
-0
-1
-(3232560085755078826, 57, 68) &#39;which certainly was not here before,&#39; said Alice
-0
-0
-</pre></div>
-</div>
-</div>
-</div>
+<p>And just like this, we were able to extract an instance of Harry Potter’s name followed by a verb of action. In our case, <code class="docutils literal notranslate"><span class="pre">goes</span></code>. While this example is quite simple, the Matcher allows for robust pattern matching with spaCy containers. The patterns that we looked at here can also be used and applied to the EntityRuler.</p>
 </section>
 </section>
 </section>
