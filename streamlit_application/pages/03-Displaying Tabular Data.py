@@ -12,7 +12,7 @@ st.write("---")
 
 # Displaying data with st.dataframe()
 st.header("Displaying a Table with st.dataframe()")
-st.dataframe(st.dataframe(df, height=750))
+st.dataframe(df, height=750)
 st.code("""st.dataframe(df, height=750)""", language="python")
 st.write("---")
 
