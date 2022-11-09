@@ -1230,19 +1230,25 @@ title="Print to PDF"
 <section id="st-title">
 <h3><span class="section-number">1.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">st.title</span></code><a class="headerlink" href="#st-title" title="Permalink to this headline">#</a></h3>
 <p>Every application needs a name. If you want the title of your application to stand out on the page, you can use <code class="docutils literal notranslate"><span class="pre">st.title()</span></code> to output a title on your application page. This will take one argument, a string which will be your application title. It is entirely optional to have a title. To add the title, you would place the following line into your Python file.</p>
-<p><code class="docutils literal notranslate"><span class="pre">st.title(&quot;This</span> <span class="pre">a</span> <span class="pre">Title.&quot;)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;This a Title.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Once you have added this to your Python file, you can hit refresh in your Streamlit application, and you should see a title page now appear at the top of your page.</p>
 </section>
 <section id="st-header">
 <h3><span class="section-number">1.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">st.header</span></code><a class="headerlink" href="#st-header" title="Permalink to this headline">#</a></h3>
 <p>Now that we have a title, we can add some extra layers to our application, rather like a traditional HTML website. We can add headers, for example, with <code class="docutils literal notranslate"><span class="pre">st.header()</span></code>. Again, this will take a single argument, the text that you wish to display as a header. You can add a header to your application by adding the following line to the same Python file and hitting refresh:</p>
-<p><code class="docutils literal notranslate"><span class="pre">st.header(&quot;This</span> <span class="pre">a</span> <span class="pre">Header.&quot;)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;This a Header.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Notice that our header appears below our title. This is because Streamlit reads the Python file top-to-bottom as it reruns in the background. If you want an item to appear higher in the application, you must place it earlier in your Python file. Additionally, you can use containers which we will meet later in this chapter.</p>
 </section>
 <section id="st-subheader">
 <h3><span class="section-number">1.2.1.3. </span><code class="docutils literal notranslate"><span class="pre">st.subheader</span></code><a class="headerlink" href="#st-subheader" title="Permalink to this headline">#</a></h3>
 <p>Just like <code class="docutils literal notranslate"><span class="pre">st.header</span></code>, <code class="docutils literal notranslate"><span class="pre">st.subheader</span></code> adds a subheading to your application to allow you to have even greater nested structure. If you add the following line to your Python file and hit refresh, you will see a subheading appear.</p>
-<p><code class="docutils literal notranslate"><span class="pre">st.header(&quot;This</span> <span class="pre">a</span> <span class="pre">Subheader.&quot;)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">subheader</span><span class="p">(</span><span class="s2">&quot;This a Subheader.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="st-write">
 <h3><span class="section-number">1.2.1.4. </span><code class="docutils literal notranslate"><span class="pre">st.write</span></code><a class="headerlink" href="#st-write" title="Permalink to this headline">#</a></h3>
