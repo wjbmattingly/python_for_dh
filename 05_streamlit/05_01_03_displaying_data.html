@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3. Streamlit Input Widgets" href="05_01_04_input_widgets.html" />
     <link rel="prev" title="1.1. Creating Our First App" href="05_01_02_streamlit.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -616,6 +617,11 @@ const thebe_selector_output = ".output, .cell_output"
      1.2. Displaying Data in Streamlit
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_01_04_input_widgets.html">
+     1.3. Getting User Data with Input Widgets
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1000,6 +1006,28 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">
+   1.2.4. Displaying Multimedia in Streamlit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     1.2.4.1. Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#audio">
+     1.2.4.2. Audio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video">
+     1.2.4.3. Video
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -1160,6 +1188,28 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">
+   1.2.4. Displaying Multimedia in Streamlit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     1.2.4.1. Images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#audio">
+     1.2.4.2. Audio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video">
+     1.2.4.3. Video
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -1172,7 +1222,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="displaying-data-in-streamlit">
 <h1><span class="section-number">1.2. </span>Displaying Data in Streamlit<a class="headerlink" href="#displaying-data-in-streamlit" title="Permalink to this headline">#</a></h1>
-<p>Streamlit offers numerous ways to display different types of data. In this section, we will be looking at a few of those methods from raw text, to structured markdown, to Pandas DataFrames.</p>
+<p>Streamlit offers numerous ways to display different types of data. In this section, we will be looking at a few of those methods from raw text, to structured markdown, to Pandas DataFrames, and even images.</p>
 <section id="displaying-text-to-users">
 <h2><span class="section-number">1.2.1. </span>Displaying Text to Users<a class="headerlink" href="#displaying-text-to-users" title="Permalink to this headline">#</a></h2>
 <p>Once you have imported streamlit, you can use the Streamlit library to create an application with just a few lines of code. To follow along in the repository, you can view the <code class="docutils literal notranslate"><span class="pre">01-Displaying</span> <span class="pre">Data.py</span></code> file or the <code class="docutils literal notranslate"><span class="pre">Displaying</span> <span class="pre">Data</span></code> page of the application.</p>
@@ -1266,7 +1316,33 @@ title="Print to PDF"
 <section id="tabular-data-with-st-markdown">
 <h3><span class="section-number">1.2.3.4. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code><a class="headerlink" href="#tabular-data-with-st-markdown" title="Permalink to this headline">#</a></h3>
 <p>A key limitation of both the <code class="docutils literal notranslate"><span class="pre">st.table()</span></code> and <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code> is that they do not offer a way to display images. With markdown, we can easily display images within our tables. This, however, comes at the cost of not being able to sort the output. We will learn how to do this later when we work with custom HTML in our Streamlit application. For now, understand that you can convert a Pandas DataFrame to markdown by using the <code class="docutils literal notranslate"><span class="pre">to_markdown()</span></code> method.</p>
-<p><code class="docutils literal notranslate"><span class="pre">st.markdown(df.to_markdown())</span></code>st.markdown(df.to_markdown())</p>
+<p><code class="docutils literal notranslate"><span class="pre">st.markdown(df.to_markdown())</span></code></p>
+</section>
+</section>
+<section id="displaying-multimedia-in-streamlit">
+<h2><span class="section-number">1.2.4. </span>Displaying Multimedia in Streamlit<a class="headerlink" href="#displaying-multimedia-in-streamlit" title="Permalink to this headline">#</a></h2>
+<p>Streamlit also offers the ability to easily add multimedia into your application. For all three types of media (images, audio, and video), Streamlit allows you to place the media in the app in four ways:</p>
+<ul class="simple">
+<li><p>file path</p></li>
+<li><p>from a url</p></li>
+<li><p>from a NumPy Array</p></li>
+<li><p>from bytes</p></li>
+</ul>
+<p>Each of these has its own uses. If the media you have is available locally within the app (such as logos and design elements), from file path usually makes the most sense. If your data sits on a server on the Web, then url is the right choice. These will be images that do not sit within the code of your application or in the local directory. When you have a user input media data into the app (via file upload), you will want to load the data via NumPy Array or Bytes. We will see these last two in action during the final chapter of this section when we apply Streamlit to develop real digital humanities applications.</p>
+<section id="images">
+<h3><span class="section-number">1.2.4.1. </span>Images<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h3>
+<p>If we are working with images, we can load a local image with the following line:</p>
+<p><code class="docutils literal notranslate"><span class="pre">st.image(path_to_image)</span></code></p>
+</section>
+<section id="audio">
+<h3><span class="section-number">1.2.4.2. </span>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">#</a></h3>
+<p>For audio, we would use the following line</p>
+<p><code class="docutils literal notranslate"><span class="pre">st.audio(path_to_image)</span></code></p>
+</section>
+<section id="video">
+<h3><span class="section-number">1.2.4.3. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h3>
+<p>For video we would use the following line:</p>
+<p><code class="docutils literal notranslate"><span class="pre">st.video(path_to_image)</span></code></p>
 </section>
 </section>
 </section>
@@ -1304,6 +1380,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">1.1. </span>Creating Our First App</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="05_01_04_input_widgets.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Streamlit Input Widgets</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
