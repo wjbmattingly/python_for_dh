@@ -612,6 +612,11 @@ const thebe_selector_output = ".output, .cell_output"
      1.1. Getting Started with Streamlit
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_03_displaying_data.html">
+     1.2. Displaying Data in Streamlit
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -833,12 +838,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-basics-of-pyvis">
+   2.3.1. The Basics of PyVis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-filters">
+   2.3.2. Creating Filters
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -850,6 +884,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-basics-of-pyvis">
+   2.3.1. The Basics of PyVis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-filters">
+   2.3.2. Creating Filters
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -859,6 +911,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-producing-dynamic-graphs-with-pyvis-center">
 <h1><span class="section-number">2.3. </span><center>Producing Dynamic Graphs with PyVis</center><a class="headerlink" href="#center-producing-dynamic-graphs-with-pyvis-center" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://pyvis.readthedocs.io/en/latest/index.html">PyVis</a> is a powerful Python library that is capable of outputting an HTML file which contains the data and JavaScript necessary for users to view and engage with network data. It has a fairly large community and is well-supported. One of its largest advantages over NetworkX and Matplotlib is in the dynamic nature of the graphs.</p>
+<p>Dynamic graphs, or those that can be manipulated by a user in some capacity, are better suited than static graphs for networks that a large or more complex.</p>
+<section id="the-basics-of-pyvis">
+<h2><span class="section-number">2.3.1. </span>The Basics of PyVis<a class="headerlink" href="#the-basics-of-pyvis" title="Permalink to this headline">#</a></h2>
+<p>Once you have installed PyVis, you will want to import the Network class. We can do so with the following line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
@@ -866,6 +923,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>The Network class holds all of the data that will be used to create the graph. Since we are working within a Jupyter Notebook, we will want to set the keyword argument <code class="docutils literal notranslate"><span class="pre">notebook</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>. This will ensure that when we create our network graph, it will not only output as an HTML file, but also load within the notebook.</p>
+<p>We can create a Network object and load it into memory with the following command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -878,6 +937,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Again, we will work with the same toy data here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rels</span> <span class="o">=</span> <span class="p">[</span>
@@ -893,6 +953,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>In PyVis, we want to create each node in the graph individually and then populate the edge between the two nodes in the relationship. Therefore, we will want to iterate over each relationship with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. We will use the <code class="docutils literal notranslate"><span class="pre">.add_node</span></code> method for each node in the graph and the <code class="docutils literal notranslate"><span class="pre">.add_edge()</span></code> method to create an edge between the two nodes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rel</span> <span class="ow">in</span> <span class="n">rels</span><span class="p">:</span>
@@ -904,6 +965,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Once we have populated the Network class with all our date, we can visualize it with theo method <code class="docutils literal notranslate"><span class="pre">.show()</span></code>. This will take a single argument, a string that will be the file created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/sample_graph.html&quot;</span><span class="p">)</span>
@@ -922,6 +984,11 @@ title="Print to PDF"
 ></iframe>
 </div></div>
 </div>
+<p>In the graph above, try to interact with the data. You will notice that you can drag-and-drop nodes. You can zoom in and out in the graph. This is a good demonstration of the power PyVis has over NetworkX and Matplotlib.</p>
+</section>
+<section id="creating-filters">
+<h2><span class="section-number">2.3.2. </span>Creating Filters<a class="headerlink" href="#creating-filters" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

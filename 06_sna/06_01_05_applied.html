@@ -612,6 +612,11 @@ const thebe_selector_output = ".output, .cell_output"
      1.1. Getting Started with Streamlit
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_03_displaying_data.html">
+     1.2. Displaying Data in Streamlit
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -867,6 +872,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#introduction">
    2.5. Introduction
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examining-the-data">
+     2.5.1. Examining the Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+     2.5.2. Adding Colors to Nodes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+     2.5.3. Adding Metadata to Nodes
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -899,6 +921,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#introduction">
    2.5. Introduction
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examining-the-data">
+     2.5.1. Examining the Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+     2.5.2. Adding Colors to Nodes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+     2.5.3. Adding Metadata to Nodes
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -916,6 +955,409 @@ title="Print to PDF"
 <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1><span class="section-number">2.5. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring victim relationships to specific organizations in their description. It is important to note here, that we do not in this approach know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization.</p>
+<section id="examining-the-data">
+<h2><span class="section-number">2.5.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectId</th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Yr</th>
+      <th>Homeland</th>
+      <th>Province</th>
+      <th>Long</th>
+      <th>Lat</th>
+      <th>HRV</th>
+      <th>ORG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
+      <td>An ANCYL member who was shot and severely inju...</td>
+      <td>Bethulie</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Orange Free State</td>
+      <td>25.97552</td>
+      <td>-30.503290</td>
+      <td>shoot|injure</td>
+      <td>ANC|ANCYL|Police|SAP</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>ABBOTT</td>
+      <td>Montaigne</td>
+      <td>A member of the SADF who was severely injured ...</td>
+      <td>Messina</td>
+      <td>1987.0</td>
+      <td>NaN</td>
+      <td>Transvaal</td>
+      <td>30.039597</td>
+      <td>-22.351308</td>
+      <td>injure</td>
+      <td>SADF</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>ABRAHAM</td>
+      <td>Nzaliseko Christopher</td>
+      <td>A COSAS supporter who was kicked and beaten wi...</td>
+      <td>Mdantsane</td>
+      <td>1985.0</td>
+      <td>Ciskei</td>
+      <td>Cape of Good Hope</td>
+      <td>27.6708791</td>
+      <td>-32.958623</td>
+      <td>beat</td>
+      <td>COSAS|Police</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>ABRAHAMS</td>
+      <td>Achmat Fardiel</td>
+      <td>Was shot and blinded in one eye by members of ...</td>
+      <td>Athlone</td>
+      <td>1985.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>18.50214</td>
+      <td>-33.967220</td>
+      <td>shoot|blind</td>
+      <td>SAP</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>ABRAHAMS</td>
+      <td>Annalene Mildred</td>
+      <td>Was shot and injured by members of the SAP in ...</td>
+      <td>Robertson</td>
+      <td>1990.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>19.883611</td>
+      <td>-33.802220</td>
+      <td>shoot|injure</td>
+      <td>Police|SAP</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20829</th>
+      <td>20888</td>
+      <td>XUZA</td>
+      <td>Mandla</td>
+      <td>Was severely injured when he was stoned by a f...</td>
+      <td>Carletonville</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Transvaal</td>
+      <td>27.397673</td>
+      <td>-26.360943</td>
+      <td>injure|stone</td>
+      <td>ANC</td>
+    </tr>
+    <tr>
+      <th>20830</th>
+      <td>20889</td>
+      <td>YAKA</td>
+      <td>Mbangomuni</td>
+      <td>An IFP supporter and acting induna who was sho...</td>
+      <td>Mvutshini</td>
+      <td>1993.0</td>
+      <td>KwaZulu</td>
+      <td>Natal</td>
+      <td>30.28172</td>
+      <td>-30.868900</td>
+      <td>shoot</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20831</th>
+      <td>20890</td>
+      <td>YALI</td>
+      <td>Khayalethu</td>
+      <td>Was shot by members of the SAP in Lingelihle, ...</td>
+      <td>Cradock</td>
+      <td>1986.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>25.619176</td>
+      <td>-32.164221</td>
+      <td>shoot</td>
+      <td>SAP</td>
+    </tr>
+    <tr>
+      <th>20832</th>
+      <td>20891</td>
+      <td>YALO</td>
+      <td>Bikiwe</td>
+      <td>An IFP supporter whose house and possessions w...</td>
+      <td>Port Shepstone</td>
+      <td>1994.0</td>
+      <td>NaN</td>
+      <td>Natal</td>
+      <td>30.4297304</td>
+      <td>-30.752126</td>
+      <td>destroy</td>
+      <td>ANC</td>
+    </tr>
+    <tr>
+      <th>20833</th>
+      <td>20892</td>
+      <td>YALOLO-BOOYSEN</td>
+      <td>Geoffrey Yali</td>
+      <td>An ANC supporter and youth activist who was to...</td>
+      <td>George</td>
+      <td>1986.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>22.459722</td>
+      <td>-33.964440</td>
+      <td>torture|detain|torture</td>
+      <td>ANC|SAP</td>
+    </tr>
+  </tbody>
+</table>
+<p>20834 rows × 12 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="600px"
+    src="../data/trc_graph.html"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="adding-colors-to-nodes">
+<h2><span class="section-number">2.5.2. </span>Adding Colors to Nodes<a class="headerlink" href="#adding-colors-to-nodes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00ff1e&quot;</span><span class="p">)</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/graphs/trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
+</pre></div>
+</div>
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="600px"
+    src="../data/graphs/trc_graph.html"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="adding-metadata-to-nodes">
+<h2><span class="section-number">2.5.3. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">df_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">Last</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">Description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00ff1e&quot;</span><span class="p">)</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
+    
+<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/graphs/trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
+</pre></div>
+</div>
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="600px"
+    src="../data/graphs/trc_graph.html"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectId</th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Yr</th>
+      <th>Homeland</th>
+      <th>Province</th>
+      <th>Long</th>
+      <th>Lat</th>
+      <th>HRV</th>
+      <th>ORG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
+      <td>An ANCYL member who was shot and severely inju...</td>
+      <td>Bethulie</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Orange Free State</td>
+      <td>25.97552</td>
+      <td>-30.50329</td>
+      <td>shoot|injure</td>
+      <td>ANC|ANCYL|Police|SAP</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
