@@ -195,3 +195,5 @@ parts:
     sections:
     - file: 05_streamlit/05_01_02_streamlit
       title: Getting Started with Streamlit
+    - file: 05_streamlit/05_01_03_displaying_data
+      title: Displaying Data in Streamlit

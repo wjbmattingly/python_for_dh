@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "0_Thabo Simon AARON", "label": "0_Thabo Simon AARON", "shape": "dot", "title": "Thabo Simon Aaron: An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter\u0027s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor."}, {"color": "#00ff1e", "id": "ANC", "label": "ANC", "shape": "dot"}, {"color": "#00ff1e", "id": "ANCYL", "label": "ANCYL", "shape": "dot"}, {"color": "#00ff1e", "id": "Police", "label": "Police", "shape": "dot"}, {"color": "#00ff1e", "id": "SAP", "label": "SAP", "shape": "dot"}, {"color": "#97c2fc", "id": "1_Montaigne ABBOTT", "label": "1_Montaigne ABBOTT", "shape": "dot", "title": "Montaigne Abbott: A member of the SADF who was severely injured in a landmine explosion in Messina, Transvaal, on 5 May 1987."}, {"color": "#00ff1e", "id": "SADF", "label": "SADF", "shape": "dot"}, {"color": "#97c2fc", "id": "2_Nzaliseko Christopher ABRAHAM", "label": "2_Nzaliseko Christopher ABRAHAM", "shape": "dot", "title": "Nzaliseko Christopher Abraham: A COSAS supporter who was kicked and beaten with batons and rifle-butts by members of the Ciskei Police during protests against the Ciskei government at Zwelitsha and Mdantsane, Ciskei, in September 1985."}, {"color": "#00ff1e", "id": "COSAS", "label": "COSAS", "shape": "dot"}, {"color": "#97c2fc", "id": "3_Achmat Fardiel ABRAHAMS", "label": "3_Achmat Fardiel ABRAHAMS", "shape": "dot", "title": "Achmat Fardiel Abrahams: Was shot and blinded in one eye by members of the SAP in Athlone, Cape Town, in August 1976, after the Soweto uprising."}, {"color": "#97c2fc", "id": "4_Annalene Mildred ABRAHAMS", "label": "4_Annalene Mildred ABRAHAMS", "shape": "dot", "title": "Annalene Mildred Abrahams: Was shot and injured by members of the SAP in Robertson, Cape, on 11 April 1990. Police fired teargas into a crowded hall where residents were meeting. Over one hundred people were treated for injuries relating to the subsequent stampede and shootings."}, {"color": "#97c2fc", "id": "5_Ashraf ABRAHAMS", "label": "5_Ashraf ABRAHAMS", "shape": "dot", "title": "Ashraf Abrahams: Was shot and injured by members of the Railway Police on 15 October 1985 in Athlone, in the Trojan Horse incident, Cape Town."}, {"color": "#00ff1e", "id": "Railway Police", "label": "Railway Police", "shape": "dot"}, {"color": "#97c2fc", "id": "6_Derrek ABRAHAMS", "label": "6_Derrek ABRAHAMS", "shape": "dot", "title": "Derrek Abrahams: A street committee member who was shot dead by members of the SAP at Gelvandale, Port Elizabeth, on 3 September 1990."}, {"color": "#97c2fc", "id": "7_Moegsien ABRAHAMS", "label": "7_Moegsien ABRAHAMS", "shape": "dot", "title": "Moegsien Abrahams: Was stabbed and stoned to death by a group of UDF supporters in Mitchells Plain, Cape Town, on 25 May 1986, during a UDF rally following allegations that he was an informer. UDF leaders attempted to shield him from attack, but Mr Abrahams fled the venue. He was then pursued and killed."}, {"color": "#00ff1e", "id": "UDF", "label": "UDF", "shape": "dot"}, {"color": "#97c2fc", "id": "8_Rashid ABRAHAMS", "label": "8_Rashid ABRAHAMS", "shape": "dot", "title": "Rashid Abrahams: Was burnt to death, together with a colleague, when their vehicle was stoned and petrol bombed by protesting youths near Crossroads, Cape Town, on 28 April 1986. Both were employees of an electrical firm and were returning to their office when they were attacked."}, {"color": "#97c2fc", "id": "9_Toyer ABRAHAMS", "label": "9_Toyer ABRAHAMS", "shape": "dot", "title": "Toyer Abrahams: Was shot and injured by members of the Railway Police on 15 October 1985 in Athlone, Cape Town, during the Trojan Horse incident. See Trojan Horse incident, Cape Town. "}, {"color": "#97c2fc", "id": "10_EM ACHHURST", "label": "10_EM ACHHURST", "shape": "dot", "title": "EM Achhurst: Was severely injured when MK operatives detonated an explosive outside the South African Air Force (SAAF) headquarters in Church Street, Pretoria, on 20 May 1983. Twenty one people were killed and two hundred and seventeen were injured. The overall commander of MK\u2019s Special Operations Unit and two MK operatives were granted amnesty (AC/2001/003 and AC/2001/023). See Church Street Bombing, Pretoria. "}, {"color": "#00ff1e", "id": "MK", "label": "MK", "shape": "dot"}, {"color": "#00ff1e", "id": "SAAF", "label": "SAAF", "shape": "dot"}, {"color": "#97c2fc", "id": "11_David Jacobus ACKERMAN", "label": "11_David Jacobus ACKERMAN", "shape": "dot", "title": "David Jacobus Ackerman: Was injured when APLA operatives threw hand grenades at and opened fire on the congregation of St James\u2019 Church, Kenilworth, Cape Town, on 25 July 1993. Eleven people were killed and fifty eight wounded in the attack.  Three of four APLA members were granted amnesty for the attack. The fourth had his application struck off the roll for failing to attend the amnesty hearing (AC/1998/0018). See APLA attacks. "}, {"color": "#00ff1e", "id": "APLA", "label": "APLA", "shape": "dot"}, {"color": "#97c2fc", "id": "12_Marita ACKERMAN", "label": "12_Marita ACKERMAN", "shape": "dot", "title": "Marita Ackerman: Was shot and killed when APLA operatives threw hand grenades at and opened fire on the congregation of St James\u2019 Church, Kenilworth, Cape Town, on 25 July 1993. Eleven people were killed and fifty eight wounded in the attack. Three of four APLA members were granted amnesty for the attack. The fourth had his application struck off the roll for failing to attend the amnesty hearing (AC/1998/0018). See APLA attacks. "}, {"color": "#97c2fc", "id": "13_Gerhardus Oliver ACKERMANN", "label": "13_Gerhardus Oliver ACKERMANN", "shape": "dot", "title": "Gerhardus Oliver Ackermann: Was injured when MK operatives detonated an explosive in a car outside the South African Air Force (SAAF) headquarters in Church Street, Pretoria, on 20 May 1983. Twenty one people were killed and two hundred and seventeen were injured. The overall commander of MK\u2019s Special Operations Unit and two MK operatives were granted amnesty (AC/2001/003 and AC/2001/023). See Church Street Bombing, Pretoria.)"}, {"color": "#97c2fc", "id": "14_Alfred Mawonga ADAM", "label": "14_Alfred Mawonga ADAM", "shape": "dot", "title": "Alfred Mawonga Adam: A UDF supporter who was shot dead by members of the Municipal Police at New Brighton, Port Elizabeth, on 14 February 1987."}, {"color": "#97c2fc", "id": "15_Alfred Mawonga ADAM", "label": "15_Alfred Mawonga ADAM", "shape": "dot", "title": "Alfred Mawonga Adam: A UDF supporter who was shot dead by members of the Municipal Police at New Brighton, Port Elizabeth, on 14 February 1987."}, {"color": "#97c2fc", "id": "16_Zwelinzima Sidwell ADAMS", "label": "16_Zwelinzima Sidwell ADAMS", "shape": "dot", "title": "Zwelinzima Sidwell Adams: Was severely beaten and shot in the leg in Guguletu, Cape Town, in 1986, during political conflict between Witdoeke vigilantes from Crossroads and UDF supporters in KTC."}, {"color": "#97c2fc", "id": "17_Koos ADAMS", "label": "17_Koos ADAMS", "shape": "dot", "title": "Koos Adams: A UDF organiser who was detained for three days during a consumer boycott in Graaff-Reinet, Cape, in June 1985. In detention he was beaten by named members of the SAP. From June to December 1985, he was held at Middelburg Prison, Cape."}, {"color": "#97c2fc", "id": "18_Magadien ADAMS", "label": "18_Magadien ADAMS", "shape": "dot", "title": "Magadien Adams: Was injured when the car in which he was travelling was petrol bombed in Khayelitsha, Cape Town, on 15 April 1993, during widespread protest and unrest following the killing of SACP leader, Chris Hani. His brother-in-law was burnt to death and one person was injured in the attack."}, {"color": "#97c2fc", "id": "19_Noel ADAMS", "label": "19_Noel ADAMS", "shape": "dot", "title": "Noel Adams: A UDF supporter who was subjected to psychological torture by members of the SAP while in police custody in Graaff-Reinet, Cape, during the 1985 school boycotts."}, {"color": "#97c2fc", "id": "20_Sandra Joyce ADAMS", "label": "20_Sandra Joyce ADAMS", "shape": "dot", "title": "Sandra Joyce Adams: Was shot dead by members of the SAP in Athlone, Cape Town, on 16 September 1976, while she was standing on the balcony of her third floor flat watching police action against protesters after the Soweto uprising."}, {"color": "#97c2fc", "id": "21_Motlalepule Sunnyboy Slovo ADONIS", "label": "21_Motlalepule Sunnyboy Slovo ADONIS", "shape": "dot", "title": "Motlalepule Sunnyboy Slovo Adonis: An ANCYL supporter who was detained and severely beaten by members of the SAP at the Grootvlei police station in Reddersburg, Orange Free State, in May 1990. This took place during a local boycott, during which time several youth activists were assaulted and tortured by the police."}, {"color": "#97c2fc", "id": "22_Sandra Noreen ADONIS", "label": "22_Sandra Noreen ADONIS", "shape": "dot", "title": "Sandra Noreen Adonis: A member of the BMW who was arrested in Bonteheuwel, Cape Town, in 1988, and tortured by named members of a special police Unrest Investigation Unit."}, {"color": "#00ff1e", "id": "BMW", "label": "BMW", "shape": "dot"}, {"color": "#97c2fc", "id": "23_Phineus Zenzile ADOONS", "label": "23_Phineus Zenzile ADOONS", "shape": "dot", "title": "Phineus Zenzile Adoons: An ANC supporter who was shot and injured when members of the SAP opened fire on a crowd of people participating in a protest march in Olifantshoek, Cape, on 16 June 1992."}, {"color": "#97c2fc", "id": "24_Noel John ADRIAANSE", "label": "24_Noel John ADRIAANSE", "shape": "dot", "title": "Noel John Adriaanse: Was shot dead by members of the SAP in Hanover Park, Cape Town, on 2 September 1976. He was on his way to buy bread during the political unrest following the Soweto uprising."}, {"color": "#97c2fc", "id": "25_Sipho Victor AFRICANDER", "label": "25_Sipho Victor AFRICANDER", "shape": "dot", "title": "Sipho Victor Africander: A cleric and chairperson of the Pietermaritzburg Council of Churches who was shot dead in Imbali, Pietermaritzburg, on 4 May 1990 while taking his child to school. A named Inkatha member was convicted for the murder, but was later acquitted on appeal."}, {"color": "#00ff1e", "id": "Inkatha", "label": "Inkatha", "shape": "dot"}, {"color": "#97c2fc", "id": "26_Anna AFRIKA", "label": "26_Anna AFRIKA", "shape": "dot", "title": "Anna Afrika: Was shot and injured by a named SAP member in Kakamas, Cape, on 13 February 1988. The perpetrator opened fire on residents outside a house being raided by police. Two children were shot dead and thirteen people injured."}, {"color": "#97c2fc", "id": "27_Dick AFRIKA", "label": "27_Dick AFRIKA", "shape": "dot", "title": "Dick Afrika: Was detained by alleged members of the SAP at Ipelegeng, Schweizer-Reneke, Transvaal, in March 1990."}, {"color": "#97c2fc", "id": "28_Jan AFRIKA", "label": "28_Jan AFRIKA", "shape": "dot", "title": "Jan Afrika: Was shot and injured by named SAP members during a legal protest march in Wolseley, Cape, on 24 November 1990."}, {"color": "#97c2fc", "id": "29_Pieter AFRIKA", "label": "29_Pieter AFRIKA", "shape": "dot", "title": "Pieter Afrika: Was shot dead by members of the SAP in Montagu, Cape, on 11 September 1976. He was in a vehicle with other protesters when he was shot at after the Soweto uprising had spread to a number of rural Cape towns."}, {"color": "#97c2fc", "id": "30_Joyce AGGETT", "label": "30_Joyce AGGETT", "shape": "dot", "title": "Joyce Aggett: As the mother of Neil Aggett, who died in detention, Joyce was subjected to an unlawful search of her home in Somerset West, Cape, in her absence, by the Witwatersrand Security Branch, during April 1982. One Security Branch operative was granted amnesty for the unlawful search (AC/2001/005). He testified that he had been gathering evidence to be used at the inquest into Dr Aggett\u2019s death, in order to support the Security Police\u2019s contention that Dr Aggett had committed suicide."}, {"color": "#00ff1e", "id": "Security", "label": "Security", "shape": "dot"}, {"color": "#97c2fc", "id": "31_Neil Hudson AGGETT", "label": "31_Neil Hudson AGGETT", "shape": "dot", "title": "Neil Hudson Aggett: Died in detention at John Vorster Square, Johannesburg, on 5 February 1982, following a period of torture, including sixty consecutive hours of interrogation and two months of solitary confinement. Mr Aggett was the Transvaal Secretary for the Food and Allied Workers Union. "}, {"color": "#97c2fc", "id": "32_Wezeka Getrude ALA", "label": "32_Wezeka Getrude ALA", "shape": "dot", "title": "Wezeka Getrude Ala: Was beaten by members of the SAP in April 1985 during consumer boycotts at Jansenville, Cape."}, {"color": "#97c2fc", "id": "33_Wezeka Getrude ALA", "label": "33_Wezeka Getrude ALA", "shape": "dot", "title": "Wezeka Getrude Ala: Was beaten by members of the SAP in April 1985 during consumer boycotts at Jansenville, Cape."}, {"color": "#97c2fc", "id": "34_Nombuyiselo Francis ALBERT", "label": "34_Nombuyiselo Francis ALBERT", "shape": "dot", "title": "Nombuyiselo Francis Albert: Was beaten and stabbed to death on 10 December 1992 in Entshawini, KwaZulu, near Stanger, Natal, by named IFP supporters who thought she was an ANC supporter."}, {"color": "#97c2fc", "id": "35_Tammas Edward ALEXANDER", "label": "35_Tammas Edward ALEXANDER", "shape": "dot", "title": "Tammas Edward Alexander: An ANC supporter who suffered extensive damage to his home and business premises in an explosion triggered by the opening of a booby-trapped computer on 2 October 1990 in Durban. One person was killed in the attack, allegedly carried out by named right-wing extremists."}, {"color": "#97c2fc", "id": "36_Nomthandazo Amelia ALFRED", "label": "36_Nomthandazo Amelia ALFRED", "shape": "dot", "title": "Nomthandazo Amelia Alfred: Was arrested after arson attacks on the homes of vigilantes in Zolani, Ashton, Cape, on 20 November 1985. She was convicted of arson and public violence in September 1986 and sentenced to eight years\u2019 imprisonment."}, {"color": "#97c2fc", "id": "37_Abdurahman ALLIE", "label": "37_Abdurahman ALLIE", "shape": "dot", "title": "Abdurahman Allie: Was shot dead by members of the SAP in Ravensmead, Cape Town, on 7 September 1976, after the Soweto uprising."}, {"color": "#97c2fc", "id": "38_Beverly Meryl ALLISON", "label": "38_Beverly Meryl ALLISON", "shape": "dot", "title": "Beverly Meryl Allison: Was injured when MK operatives detonated a limpet mine in a dustbin at the Vanderbijl Square bus terminus, Johannesburg, on 21 September 1988. Nineteen people were injured and a number of vehicles and buildings were damaged. Two MK Special Operations operatives were granted amnesty (AC/2000/056). A late application by a third MK operative was dismissed."}, {"color": "#97c2fc", "id": "39_Walter Titus (aka \u2018Shakes Lerumo\u2019) ALSET", "label": "39_Walter Titus (aka \u2018Shakes Lerumo\u2019) ALSET", "shape": "dot", "title": "Walter Titus (aka \u2018Shakes Lerumo\u2019) Alset: He was an MK operative who was shot dead in an ambush at Alldays, Transvaal, near the Botswana border, on 10 July 1986 by a joint team comprising SADF Special Forces and Far Northern Transvaal Security Branch members. Fourteen Security Branch operatives, including the divisional commander, applied for amnesty. Nine of these applications were refused (AC/1999/0176)."}, {"color": "#97c2fc", "id": "40_Sandile Alfred AM", "label": "40_Sandile Alfred AM", "shape": "dot", "title": "Sandile Alfred Am: A UDF supporter who was burnt to death by a named perpetrator during a consumer boycott in KwaNobuhle, Uitenhage, Cape, on 14 September 1985, after he was accused of being a state collaborator."}, {"color": "#97c2fc", "id": "41_Jonathan Maurice AMERICA", "label": "41_Jonathan Maurice AMERICA", "shape": "dot", "title": "Jonathan Maurice America: Was injured in a hand grenade explosion in Kimberley, Cape, on 25 May 1993, during an ANC protest march to the Bophuthatswana consulate. Two MK operatives threw a hand grenade at the building, but it bounced back into the crowd, killing one person and injuring forty one others. Two ANC members were wrongly convicted of the killing. Four MK and ANC members, two of whom denied guilt, applied for amnesty, which was refused (AC/2000/053 and AC/2000/241)."}, {"color": "#97c2fc", "id": "42_Felicity AMOD", "label": "42_Felicity AMOD", "shape": "dot", "title": "Felicity Amod: Was injured when members of MK\u2019s Special Operations Unit detonated an explosive in a car outside the SADF Witwatersrand Command headquarters in Johannesburg on 30 July 1987. At least sixty eight people were injured. Three MK operatives and one UDF supporter linked to MK were granted amnesty for their roles in this attack (AC/2001/0003 and AC/2000/248)."}, {"color": "#97c2fc", "id": "43_Billy Veli AMTHENJA", "label": "43_Billy Veli AMTHENJA", "shape": "dot", "title": "Billy Veli Amthenja: Amthenja disappeared with his brother, Eric Msimango, while travelling from Tokoza, Transvaal, to Pretoria, on 20 November 1993. An IFP march from Johannesburg to Pretoria was in progress at the time. He has never been seen since and is presumed dead."}, {"color": "#97c2fc", "id": "44_Cynthia Valerie ANDERSON", "label": "44_Cynthia Valerie ANDERSON", "shape": "dot", "title": "Cynthia Valerie Anderson: Was shot dead in the Silverton bank siege in Pretoria, on 25 January 1980. Three MK members held her hostage during a raid on the bank. Ms Anderson, one other civilian and the three MK members were all killed during a gunfight after police stormed the bank. Several other people were injured."}, {"color": "#97c2fc", "id": "45_Gavin ANDERSON", "label": "45_Gavin ANDERSON", "shape": "dot", "title": "Gavin Anderson: A trade unionist in Johannesburg who was banned in 1976 and subjected to ongoing harassment during March 1977. A Witwatersrand Security Branch operative was granted amnesty for harassment (AC/2001/005)."}, {"color": "#97c2fc", "id": "46_Peter ANDERSON", "label": "46_Peter ANDERSON", "shape": "dot", "title": "Peter Anderson: Was shot and killed when APLA operatives threw hand grenades at and opened fire on the congregation of St James\u2019 Church, Kenilworth, Cape Town, on 25 July 1993. Eleven people were killed and fifty eight wounded in the attack. Three of four APLA members were granted amnesty for the attack. The fourth had his application struck off the roll for failing to attend the amnesty hearing (AC/1998/0018). See APLA attacks. "}, {"color": "#97c2fc", "id": "47_Sapper A ANDERSON", "label": "47_Sapper A ANDERSON", "shape": "dot", "title": "Sapper A Anderson: Was injured when MK operatives detonated an explosive in a car outside the South African Air Force (SAAF) headquarters in Church Street, Pretoria, on 20 May 1983. Twenty one people were killed and two hundred and seventeen injured. The overall commander of MK\u2019s Special Operations Unit and two MK operatives were granted amnesty (AC/2001/003 and AC/2001/023). See Church Street Bombing, Pretoria. "}, {"color": "#97c2fc", "id": "48_Niklaas ANDREAS", "label": "48_Niklaas ANDREAS", "shape": "dot", "title": "Niklaas Andreas: Was arrested with ten friends on 16 June 1986 in Carnavon, Cape, for wearing black ties commemorating those who died in the Soweto uprising. He was repeatedly beaten by named members of the SAP at the police station and detained for seventy two days under emergency regulations in Carnarvon, and then in Victor Verster prison, Paarl, Cape. See police brutality."}, {"color": "#97c2fc", "id": "49_Daniel ANDREWS", "label": "49_Daniel ANDREWS", "shape": "dot", "title": "Daniel Andrews: A municipal policeman who was shot dead by UDF and ANC supporters near the Langa police station, Uitenhage, Cape, on 20 April 1990. Two UDF/ANC supporters were granted amnesty for the incident (AC/99/0280)."}]);
+                  edges = new vis.DataSet([{"from": "0_Thabo Simon AARON", "to": "ANC"}, {"from": "0_Thabo Simon AARON", "to": "ANCYL"}, {"from": "0_Thabo Simon AARON", "to": "Police"}, {"from": "0_Thabo Simon AARON", "to": "SAP"}, {"from": "1_Montaigne ABBOTT", "to": "SADF"}, {"from": "2_Nzaliseko Christopher ABRAHAM", "to": "COSAS"}, {"from": "2_Nzaliseko Christopher ABRAHAM", "to": "Police"}, {"from": "3_Achmat Fardiel ABRAHAMS", "to": "SAP"}, {"from": "4_Annalene Mildred ABRAHAMS", "to": "Police"}, {"from": "4_Annalene Mildred ABRAHAMS", "to": "SAP"}, {"from": "5_Ashraf ABRAHAMS", "to": "Police"}, {"from": "5_Ashraf ABRAHAMS", "to": "Railway Police"}, {"from": "6_Derrek ABRAHAMS", "to": "SAP"}, {"from": "7_Moegsien ABRAHAMS", "to": "UDF"}, {"from": "9_Toyer ABRAHAMS", "to": "Police"}, {"from": "9_Toyer ABRAHAMS", "to": "Railway Police"}, {"from": "10_EM ACHHURST", "to": "MK"}, {"from": "10_EM ACHHURST", "to": "SAAF"}, {"from": "11_David Jacobus ACKERMAN", "to": "APLA"}, {"from": "12_Marita ACKERMAN", "to": "APLA"}, {"from": "13_Gerhardus Oliver ACKERMANN", "to": "MK"}, {"from": "13_Gerhardus Oliver ACKERMANN", "to": "SAAF"}, {"from": "14_Alfred Mawonga ADAM", "to": "UDF"}, {"from": "14_Alfred Mawonga ADAM", "to": "Police"}, {"from": "15_Alfred Mawonga ADAM", "to": "UDF"}, {"from": "15_Alfred Mawonga ADAM", "to": "Police"}, {"from": "16_Zwelinzima Sidwell ADAMS", "to": "UDF"}, {"from": "17_Koos ADAMS", "to": "UDF"}, {"from": "17_Koos ADAMS", "to": "SAP"}, {"from": "19_Noel ADAMS", "to": "UDF"}, {"from": "19_Noel ADAMS", "to": "SAP"}, {"from": "20_Sandra Joyce ADAMS", "to": "SAP"}, {"from": "21_Motlalepule Sunnyboy Slovo ADONIS", "to": "ANC"}, {"from": "21_Motlalepule Sunnyboy Slovo ADONIS", "to": "ANCYL"}, {"from": "21_Motlalepule Sunnyboy Slovo ADONIS", "to": "SAP"}, {"from": "22_Sandra Noreen ADONIS", "to": "BMW"}, {"from": "23_Phineus Zenzile ADOONS", "to": "ANC"}, {"from": "23_Phineus Zenzile ADOONS", "to": "SAP"}, {"from": "24_Noel John ADRIAANSE", "to": "SAP"}, {"from": "25_Sipho Victor AFRICANDER", "to": "Inkatha"}, {"from": "26_Anna AFRIKA", "to": "SAP"}, {"from": "27_Dick AFRIKA", "to": "SAP"}, {"from": "28_Jan AFRIKA", "to": "SAP"}, {"from": "29_Pieter AFRIKA", "to": "SAP"}, {"from": "30_Joyce AGGETT", "to": "Police"}, {"from": "30_Joyce AGGETT", "to": "Security"}, {"from": "32_Wezeka Getrude ALA", "to": "SAP"}, {"from": "33_Wezeka Getrude ALA", "to": "SAP"}, {"from": "34_Nombuyiselo Francis ALBERT", "to": "ANC"}, {"from": "35_Tammas Edward ALEXANDER", "to": "ANC"}, {"from": "37_Abdurahman ALLIE", "to": "SAP"}, {"from": "38_Beverly Meryl ALLISON", "to": "MK"}, {"from": "39_Walter Titus (aka \u2018Shakes Lerumo\u2019) ALSET", "to": "MK"}, {"from": "39_Walter Titus (aka \u2018Shakes Lerumo\u2019) ALSET", "to": "SADF"}, {"from": "39_Walter Titus (aka \u2018Shakes Lerumo\u2019) ALSET", "to": "Security"}, {"from": "40_Sandile Alfred AM", "to": "UDF"}, {"from": "41_Jonathan Maurice AMERICA", "to": "ANC"}, {"from": "41_Jonathan Maurice AMERICA", "to": "MK"}, {"from": "42_Felicity AMOD", "to": "MK"}, {"from": "42_Felicity AMOD", "to": "UDF"}, {"from": "42_Felicity AMOD", "to": "SADF"}, {"from": "44_Cynthia Valerie ANDERSON", "to": "MK"}, {"from": "45_Gavin ANDERSON", "to": "Security"}, {"from": "46_Peter ANDERSON", "to": "APLA"}, {"from": "47_Sapper A ANDERSON", "to": "MK"}, {"from": "47_Sapper A ANDERSON", "to": "SAAF"}, {"from": "48_Niklaas ANDREAS", "to": "SAP"}, {"from": "49_Daniel ANDREWS", "to": "ANC"}, {"from": "49_Daniel ANDREWS", "to": "UDF"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
