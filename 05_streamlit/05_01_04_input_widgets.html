@@ -1083,6 +1083,63 @@ title="Print to PDF"
 <li><p>boolean input</p></li>
 <li><p>selection input</p></li>
 </ul>
+<div class="admonition-cheatsheet-for-widgets-in-streamlit admonition">
+<p class="admonition-title">Cheatsheet for Widgets in Streamlit</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Widget</p></th>
+<th class="head"><p>Return</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text_input</p></td>
+<td><p>string</p></td>
+<td><p>A small text region</p></td>
+</tr>
+<tr class="row-odd"><td><p>text_area</p></td>
+<td><p>string</p></td>
+<td><p>A large text region</p></td>
+</tr>
+<tr class="row-even"><td><p>number_input</p></td>
+<td><p>integer or float</p></td>
+<td><p>A typed number input</p></td>
+</tr>
+<tr class="row-odd"><td><p>slider</p></td>
+<td><p>integer or float</p></td>
+<td><p>A slider for number input</p></td>
+</tr>
+<tr class="row-even"><td><p>date_input</p></td>
+<td><p>timeseries</p></td>
+<td><p>A calendar for selecting a date</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_input</p></td>
+<td><p>timeseries</p></td>
+<td><p>A dropdown menu for selecting a time</p></td>
+</tr>
+<tr class="row-even"><td><p>checkbox</p></td>
+<td><p>Boolean</p></td>
+<td><p>A checkbox for marking something as true or false</p></td>
+</tr>
+<tr class="row-odd"><td><p>button</p></td>
+<td><p>Boolean</p></td>
+<td><p>A button for triggering an event</p></td>
+</tr>
+<tr class="row-even"><td><p>radio</p></td>
+<td><p>string</p></td>
+<td><p>A selection for a single option</p></td>
+</tr>
+<tr class="row-odd"><td><p>selectbox</p></td>
+<td><p>string</p></td>
+<td><p>A selection for a single option (dropdown menu)</p></td>
+</tr>
+<tr class="row-even"><td><p>multiselect</p></td>
+<td><p>list</p></td>
+<td><p>A selection for multiple options (dropdown menu)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <section id="text-input-widgets">
 <h2><span class="section-number">1.3.1. </span>Text Input Widgets<a class="headerlink" href="#text-input-widgets" title="Permalink to this headline">#</a></h2>
 <p>Streamlit offers two ways to allow users to input textual data into an application. You can either use <code class="docutils literal notranslate"><span class="pre">st.text_input()</span></code> or <code class="docutils literal notranslate"><span class="pre">st.text_area()</span></code>. Both essentially do precisely the same thing, that is, return a string from the user; but each should be used in specific situations. Streamlit’s <code class="docutils literal notranslate"><span class="pre">st.text_input()</span></code> is designed for shorter text (such as names, queries, etc.), while <code class="docutils literal notranslate"><span class="pre">st.text_area()</span></code> should be used for longer string input data, such as text that can be processed via a spaCy pipeline.</p>
