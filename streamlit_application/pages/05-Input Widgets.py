@@ -112,3 +112,20 @@ user_date = st.date_input("Select your Date",
 
 st.write(user_date)
 st.write("---")
+
+
+#Getting user input from st.time_input()
+st.subheader("Date Input with st.time_input()")
+time_input_code = """
+import datetime
+user_time = st.time_input("Select your Time",
+                            value = datetime.time(6, 12),
+                            )
+st.write(user_time)
+"""
+st.code(time_input_code, language="python")
+user_time = st.time_input("Select your Time",
+                            value = datetime.time(6, 12),
+                            )
+st.write(user_time)
+st.write("---")
