@@ -24,7 +24,6 @@ def check_rows(column, options):
 
 st.title("Demo DataFrame Query App")
 
-
 df, survival_options, p_class_options, sex_options, embark_options, min_fare, max_fare, min_age, max_age = load_df()
 res = df
 
