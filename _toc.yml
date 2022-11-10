@@ -199,3 +199,19 @@ parts:
       title: Displaying Data in Streamlit
     - file: 05_streamlit/05_01_04_input_widgets
       title: Getting User Data with Input Widgets
+  - file: 05_streamlit/05_02_01_intro
+    title: Advanced Streamlit Features
+    sections:
+    - file: 05_streamlit/05_02_02_charts
+      title: Data Visualization
+    - file: 05_streamlit/05_02_03_layout_design
+      title: Layout Design
+    - file: 05_streamlit/05_02_04_cache
+      title: Cache
+    - file: 05_streamlit/05_02_05_custom_html
+      title: Custom HTML
+  - file: 05_streamlit/05_03_01_intro
+    title: Building a Streamlit Application
+    sections:
+    - file: 05_streamlit/05_03_02_database_query_app
+      title: Database Query App
