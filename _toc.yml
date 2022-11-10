@@ -199,8 +199,8 @@ parts:
       title: Displaying Data in Streamlit
     - file: 05_streamlit/05_01_04_input_widgets
       title: Getting User Data with Input Widgets
-  # - file: 05_streamlit/05_02_01_intro
-  #   title: Advanced Streamlit Features
+  - file: 05_streamlit/05_02_01_intro
+    title: Advanced Streamlit Features
   #   sections:
   #   - file: 05_streamlit/05_02_02_charts
   #     title: Data Visualization
