@@ -105,7 +105,6 @@ parts:
       title: Basic Plotting with Pandas
     - file: 02_pandas/02_04_03_graphing_networks_with_pandas
       title: Graphing Network Data from Pandas
-
     - file: 02_pandas/02_04_04_time_series_data
       title: Introduction to Time Series Data
 
