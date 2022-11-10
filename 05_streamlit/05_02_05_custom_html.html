@@ -923,6 +923,20 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="custom-html">
 <h1><span class="section-number">2.5. </span>Custom HTML<a class="headerlink" href="#custom-html" title="Permalink to this headline">#</a></h1>
+<p>Adding custom HTML in Streamlit allows you to develop more customized applications that fit your need. While it is not always necessary, it is useful to understand how to embed HTML within an application.</p>
+<p>Custom HTML can be added via <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code>. In order for your HTML to appear on the page, however, you must pass a keyword argument <code class="docutils literal notranslate"><span class="pre">unsafe_allow_html=True</span></code>. This allows the HTML to be rendered. Let’s look at a basic example where we want to display text with a background color of yellow. We can do this by wrapping our text in an <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">tag</span></code> in HTML and setting the style’s background color to yellow.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;a style=&#39;background:yellow&#39;&gt;This text has a yellow background&lt;/a&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Without unsafe_allow_html=True&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we do not set <code class="docutils literal notranslate"><span class="pre">unsafe_allow_html</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>, then our result will look like this:</p>
+<p><img alt="custom html in streamlit without argument" src="images/streamlit/custom_html1.png" /></p>
+<p>If we do set it to <code class="docutils literal notranslate"><span class="pre">True</span></code>, then our result will look like this:</p>
+<p><img alt="custom html in streamlit with argument" src="images/streamlit/custom_html2.png" /></p>
+<p>While this lets you design more robust apps, it does introduce certain security issues.</p>
 </section>
 
     <script type="text/x-thebe-config">
