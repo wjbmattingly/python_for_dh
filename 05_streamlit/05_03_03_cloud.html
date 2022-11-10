@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Putting Your App in the Cloud with Streamlit Share &#8212; Introduction to Python for Humanists</title>
+    <title>3.2. Deploying an App in the Cloud with Streamlit Share &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3.1. Building a Database Query Application" href="05_03_02_database_query_app.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -594,7 +595,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="05_01_01_intro.html">
    1. Introduction to Streamlit
@@ -659,19 +660,24 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="05_03_01_intro.html">
    3. Building a Streamlit Application
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
   <label for="toctree-checkbox-18">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="05_03_02_database_query_app.html">
      3.1. Database Query App
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Deploying an App in the Cloud with Streamlit Share
     </a>
    </li>
   </ul>
@@ -895,23 +901,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-github-account">
+   3.2.1. Create a GitHub Account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upload-application-to-github">
+   3.2.2. Upload Application to GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-streamlit-share-to-your-github">
+   3.2.3. Connect Streamlit Share to your GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-app">
+   3.2.4. Create a New App
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-custom-domain">
+   3.2.5. Set Custom Domain
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Putting Your App in the Cloud with Streamlit Share</h1>
+                <h1>Deploying an App in the Cloud with Streamlit Share</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-github-account">
+   3.2.1. Create a GitHub Account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upload-application-to-github">
+   3.2.2. Upload Application to GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-streamlit-share-to-your-github">
+   3.2.3. Connect Streamlit Share to your GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-app">
+   3.2.4. Create a New App
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-custom-domain">
+   3.2.5. Set Custom Domain
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -919,8 +1002,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="putting-your-app-in-the-cloud-with-streamlit-share">
-<h1>Putting Your App in the Cloud with Streamlit Share<a class="headerlink" href="#putting-your-app-in-the-cloud-with-streamlit-share" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deploying-an-app-in-the-cloud-with-streamlit-share">
+<h1><span class="section-number">3.2. </span>Deploying an App in the Cloud with Streamlit Share<a class="headerlink" href="#deploying-an-app-in-the-cloud-with-streamlit-share" title="Permalink to this headline">#</a></h1>
+<p>Once you have designed an application and have tested it locally, it comes time to share it with others. We can do this with Streamlit by leveraging several different cloud-based services. Fortunately, Streamlit offers a free Streamlit Share service that lets users share their apps for free. This section of the notebook will walk you through this process.</p>
+<section id="create-a-github-account">
+<h2><span class="section-number">3.2.1. </span>Create a GitHub Account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">#</a></h2>
+<p>In order to deploy your application, you will need a place to store your application’s source code. The easiest way to do this is via GitHub which Streamlit and many other application hosting services support.</p>
+</section>
+<section id="upload-application-to-github">
+<h2><span class="section-number">3.2.2. </span>Upload Application to GitHub<a class="headerlink" href="#upload-application-to-github" title="Permalink to this headline">#</a></h2>
+<p>Once you have created your GitHub account, you can create a repository and upload the code into the repository. If you are just starting out with GitHub, getting used to Git can be a bit daunting. Git is powerful, but has a steep learning curve. It allows you to maintain your code, especially in teams, and version control everything. This means that your code is always backed up and you can access previous versions of your code at any single time.</p>
+<p>To upload your application formally, you would want to be familiar with Git and how to perform basic tasks, such as cloning a repository, adding files to it, committing those changes, and then pushing them to the repository. While this is the better approach, it is not the only one. For now, you can get your application up and running entirely in your browser.</p>
+<p>First, we will create a new repository.</p>
+<p>Next, we need upload our application and data to our repository.</p>
+</section>
+<section id="connect-streamlit-share-to-your-github">
+<h2><span class="section-number">3.2.3. </span>Connect Streamlit Share to your GitHub<a class="headerlink" href="#connect-streamlit-share-to-your-github" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="create-a-new-app">
+<h2><span class="section-number">3.2.4. </span>Create a New App<a class="headerlink" href="#create-a-new-app" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="set-custom-domain">
+<h2><span class="section-number">3.2.5. </span>Set Custom Domain<a class="headerlink" href="#set-custom-domain" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -950,6 +1054,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05_03_02_database_query_app.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.1. </span>Building a Database Query Application</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
