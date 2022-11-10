@@ -1059,15 +1059,117 @@ title="Print to PDF"
 <p>By the end of this chapter, you will be able to understand and parse each line of this code.</p>
 <section id="importing-the-libraries">
 <h2><span class="section-number">3.1.1. </span>Importing the Libraries<a class="headerlink" href="#importing-the-libraries" title="Permalink to this headline">#</a></h2>
+<p>At the start of our Python file, we first import the required libraries. We are using Streamlit for the app development and Pandas for working with our data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
 </section>
 <section id="caching-data">
 <h2><span class="section-number">3.1.2. </span>Caching Data<a class="headerlink" href="#caching-data" title="Permalink to this headline">#</a></h2>
+<p>Let’s examine the next section of code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">load_df</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/titanic.csv&quot;</span><span class="p">)</span>
+    <span class="n">survival_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">p_class_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Pclass</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">sex_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">embark_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+
+    <span class="n">min_fare</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_fare</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">min_age</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_age</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">survival_options</span><span class="p">,</span> <span class="n">p_class_options</span><span class="p">,</span> <span class="n">sex_options</span><span class="p">,</span> <span class="n">embark_options</span><span class="p">,</span> <span class="n">min_fare</span><span class="p">,</span> <span class="n">max_fare</span><span class="p">,</span> <span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span>
+</pre></div>
+</div>
+<p>The first line is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This decorator followed by <code class="docutils literal notranslate"><span class="pre">st.cache()</span></code> establishes that resulting objects from the function that proceeds it should be cached into memory.</p>
+<p>The next line begins the creation of our function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_df</span><span class="p">():</span>
+</pre></div>
+</div>
+<p>Once we have defined our function we begin working with our data. First, we load the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/titanic.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, our application will leverage four <code class="docutils literal notranslate"><span class="pre">st.multiselect()</span></code> widgets for four different columns in our dataframe. In order to populate a list of options for users to select, we need to know the unique values of each column. We can grab each unique value with <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> on each column.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">survival_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">p_class_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Pclass</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">sex_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Sex</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">embark_options</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Next, our application will also leverage two sliders: one for <code class="docutils literal notranslate"><span class="pre">Age</span></code> and one for <code class="docutils literal notranslate"><span class="pre">Fare</span></code>. These will allow a user to find results based on a person’s age or the fare of their ticket. We need to know the max value and the minimum value for each of these so that we can automatically set the slider minimum and maximum values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">min_fare</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_fare</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">min_age</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_age</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally, we return all of these values so that when the function is called each of these will be returned.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">survival_options</span><span class="p">,</span> <span class="n">p_class_options</span><span class="p">,</span> <span class="n">sex_options</span><span class="p">,</span> <span class="n">embark_options</span><span class="p">,</span> <span class="n">min_fare</span><span class="p">,</span> <span class="n">max_fare</span><span class="p">,</span> <span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span>
+</pre></div>
+</div>
+<p>Once we have created this function, we can call it and create all the objects that we need with the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">,</span> <span class="n">survival_options</span><span class="p">,</span> <span class="n">p_class_options</span><span class="p">,</span> <span class="n">sex_options</span><span class="p">,</span> <span class="n">embark_options</span><span class="p">,</span> <span class="n">min_fare</span><span class="p">,</span> <span class="n">max_fare</span><span class="p">,</span> <span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span> <span class="o">=</span> <span class="n">load_df</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We will also create another object whose variable name will be <code class="docutils literal notranslate"><span class="pre">res</span></code>. This will be the dataframe that gets manipulated by the user and populates the results in the app.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">df</span>
+</pre></div>
+</div>
 </section>
 <section id="creating-our-app-layout">
 <h2><span class="section-number">3.1.3. </span>Creating our App Layout<a class="headerlink" href="#creating-our-app-layout" title="Permalink to this headline">#</a></h2>
+<p>After preparing all the data, now comes the time to design the general layout of our application. We use the following code to that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name_query</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&quot;String match for Name&quot;</span><span class="p">)</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">survival</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">survival_options</span><span class="p">)</span>
+<span class="n">p_class</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Passenger Class&quot;</span><span class="p">,</span> <span class="n">p_class_options</span><span class="p">)</span>
+<span class="n">sex</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">sex_options</span><span class="p">)</span>
+<span class="n">embark</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="n">embark_options</span><span class="p">)</span>
+
+<span class="n">range_cols</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">min_fare_range</span><span class="p">,</span> <span class="n">max_fare_range</span> <span class="o">=</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Lowest Fare&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">min_fare</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_fare</span><span class="p">),</span>
+                                        <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">min_fare</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_fare</span><span class="p">)])</span>
+<span class="n">min_age_range</span><span class="p">,</span> <span class="n">max_age_range</span> <span class="o">=</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Lowest Age&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">min_age</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_age</span><span class="p">),</span>
+                                        <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">min_age</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_age</span><span class="p">)])</span>
+</pre></div>
+</div>
 </section>
 <section id="using-user-inputs-to-produce-a-new-dataframe">
 <h2><span class="section-number">3.1.4. </span>Using User Inputs to Produce a New DataFrame<a class="headerlink" href="#using-user-inputs-to-produce-a-new-dataframe" title="Permalink to this headline">#</a></h2>
+<p>With the general layout designed, we can then work with the input from the user to modify our <code class="docutils literal notranslate"><span class="pre">res</span></code> dataframe. The following code manipulates the dataframe through a set of conditions we generate from the user input.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">name_query</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name_query</span><span class="p">)]</span>
+
+<span class="k">if</span> <span class="n">survival</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">survival</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_class</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">p_class</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">sex</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">sex</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">embark</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="n">embark</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">&quot;Use Fare Range&quot;</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">res</span><span class="o">.</span><span class="n">Fare</span> <span class="o">&gt;</span> <span class="n">min_fare_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&lt;</span> <span class="n">max_fare_range</span><span class="p">)]</span>
+<span class="k">if</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">&quot;Use Age Range&quot;</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&gt;</span> <span class="n">min_age_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&lt;</span> <span class="n">max_age_range</span><span class="p">)]</span>
+<span class="n">removal_columns</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Select Columns to Remove&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">removal_columns</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
