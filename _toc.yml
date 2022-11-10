@@ -210,6 +210,8 @@ parts:
       title: Cache
     - file: 05_streamlit/05_02_05_custom_html
       title: Custom HTML
+    - file: 05_streamlit/05_02_06_multiple_pages
+      title: "Multi-Page Applications"
   - file: 05_streamlit/05_03_01_intro
     title: Building a Streamlit Application
     sections:
