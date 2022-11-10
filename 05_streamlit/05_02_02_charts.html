@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Humanists</title>
+    <title>2.1. Working with Charts in Streamlit &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Layout Design" href="05_02_03_layout_design.html" />
+    <link rel="prev" title="2. Advanced Streamlit Features" href="05_02_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -594,7 +596,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="05_01_01_intro.html">
    1. Introduction to Streamlit
@@ -618,6 +620,55 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="05_01_04_input_widgets.html">
      1.3. Getting User Data with Input Widgets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="05_02_01_intro.html">
+   2. Advanced Streamlit Features
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Data Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_03_layout_design.html">
+     2.2. Layout Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_04_cache.html">
+     2.3. Cache
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_05_custom_html.html">
+     2.4. Custom HTML
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05_03_01_intro.html">
+   3. Building a Streamlit Application
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_03_02_database_query_app.html">
+     3.1. Database Query App
     </a>
    </li>
   </ul>
@@ -862,7 +913,46 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-basic-graphs-with-streamlit">
+   2.1.1. Plotting Basic Graphs with Streamlit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-charts-with-st-line-chart">
+     2.1.1.1. Line Charts with st.line_chart()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-charts-with-st-bar-chart">
+     2.1.1.2. Bar Charts with st.bar_chart()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#area-charts-with-st-area-chart">
+     2.1.1.3. Area Charts with st.area_chart()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-charts">
+   2.1.2. Map Charts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-maps-with-st-map">
+     2.1.2.1. Creating Maps with st.map()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#third-party-maps-an-example-with-pydeck">
+     2.1.2.2. Third-Party Maps - An Example with PyDeck
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -872,7 +962,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Working with Charts in Streamlit</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -881,7 +971,46 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-basic-graphs-with-streamlit">
+   2.1.1. Plotting Basic Graphs with Streamlit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-charts-with-st-line-chart">
+     2.1.1.1. Line Charts with st.line_chart()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-charts-with-st-bar-chart">
+     2.1.1.2. Bar Charts with st.bar_chart()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#area-charts-with-st-area-chart">
+     2.1.1.3. Area Charts with st.area_chart()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-charts">
+   2.1.2. Map Charts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-maps-with-st-map">
+     2.1.2.1. Creating Maps with st.map()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#third-party-maps-an-example-with-pydeck">
+     2.1.2.2. Third-Party Maps - An Example with PyDeck
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -892,7 +1021,109 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="working-with-charts-in-streamlit">
+<h1><span class="section-number">2.1. </span>Working with Charts in Streamlit<a class="headerlink" href="#working-with-charts-in-streamlit" title="Permalink to this headline">#</a></h1>
+<p>When working with large quantities of data, it can often be difficult to present that data in a way that makes sense to non-experts. In these situations, we often rely on some form of chart to represent our data. Creating quality graphs in Python requires a lot of practice, but quality charts can be produced with Matplotlib, Altair, PyDeck, PyVis, Plotly, and Bokeh. Each has their own strengths. In this section, we will not go into these libraries, rather we will focus on how to present these different types of graphs in Streamlit.</p>
+<p>In Streamlit, we can leverage these libraries to produce visually appealing charts in just a few lines of code. We will focus on three types of graphs: Basic Plot Graphs, Map Graphs, and Network Graphs.</p>
+<section id="plotting-basic-graphs-with-streamlit">
+<h2><span class="section-number">2.1.1. </span>Plotting Basic Graphs with Streamlit<a class="headerlink" href="#plotting-basic-graphs-with-streamlit" title="Permalink to this headline">#</a></h2>
+<p>We can plot basic graphs in Streamlit by passing a Pandas dataframe to different chart widgets in Streamlit. The first basic plot we can create is a line chart which we can create with the Streamlit widget <code class="docutils literal notranslate"><span class="pre">st.line_chart()</span></code>. We will be working with the Titanic dataset here that we first met in Part Two of this textbook. To prepare the data for visualization, we need to modify it a bit and group everything by the specific value that we want to plot. In our case, we want to visualize the number of survivors for different age groups on the Titanic. We can prepare our dataframe with the code below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]]</span>
+<span class="n">chart_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Age&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">chart_df</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chart_df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+<section id="line-charts-with-st-line-chart">
+<h3><span class="section-number">2.1.1.1. </span>Line Charts with st.line_chart()<a class="headerlink" href="#line-charts-with-st-line-chart" title="Permalink to this headline">#</a></h3>
+<p>Once we have created our new <code class="docutils literal notranslate"><span class="pre">chart_df</span></code>, we can pass it to <code class="docutils literal notranslate"><span class="pre">st.line_chart()</span></code>. Here, we will pass the entire dataframe as the first argument and specify our x axis and y axis on the graph. In our case, we want to view the <code class="docutils literal notranslate"><span class="pre">Age</span></code> column on the x axis and the <code class="docutils literal notranslate"><span class="pre">Survived</span></code> column on the y axis.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="line_chart widget in Streamlit" src="../_images/line_chart.png" /></p>
+</section>
+<section id="bar-charts-with-st-bar-chart">
+<h3><span class="section-number">2.1.1.2. </span>Bar Charts with st.bar_chart()<a class="headerlink" href="#bar-charts-with-st-bar-chart" title="Permalink to this headline">#</a></h3>
+<p>Likewise, we can present this same data as a bar_chart with the widget <code class="docutils literal notranslate"><span class="pre">st.bar_chart()</span></code>. This will take the same arguments as above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">bar_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="bar_chart widget in Streamlit" src="../_images/bar_chart.png" /></p>
+</section>
+<section id="area-charts-with-st-area-chart">
+<h3><span class="section-number">2.1.1.3. </span>Area Charts with st.area_chart()<a class="headerlink" href="#area-charts-with-st-area-chart" title="Permalink to this headline">#</a></h3>
+<p>And finally we can also use the same arguments to create an area chart with the <code class="docutils literal notranslate"><span class="pre">st.area_char()</span></code> widget.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">area_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="area_chart widget in Streamlit" src="../_images/area_chart.png" /></p>
+</section>
+</section>
+<section id="map-charts">
+<h2><span class="section-number">2.1.2. </span>Map Charts<a class="headerlink" href="#map-charts" title="Permalink to this headline">#</a></h2>
+<p>A lot of digital humanities data is geospatial, or data that can be plotted on a map. Streamlit affords the ability to map geospatial data in several different ways; first, via the standard <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> widget and second via the third-party chart libraries. Regardless of the library used, you will want to prepare your data well where your coordinates are labeled as either <code class="docutils literal notranslate"><span class="pre">lat</span></code> or <code class="docutils literal notranslate"><span class="pre">latitude</span></code> for the latitude and <code class="docutils literal notranslate"><span class="pre">lon</span></code> or <code class="docutils literal notranslate"><span class="pre">longitude</span></code> for the longitude. For this demonstration, we will be working with data from South Africa’s Truth and Reconciliation Commission that we met in Part Four of this textbook when we explores Social Network Analysis.</p>
+<p>In order to prepare the dataframe, we can use the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="s2">&quot;data/trc&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;full_name&quot;</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">]]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;lat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;lat&quot;</span><span class="p">],</span> <span class="n">downcast</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;long&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;long&quot;</span><span class="p">],</span> <span class="n">downcast</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;full_name&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<section id="creating-maps-with-st-map">
+<h3><span class="section-number">2.1.2.1. </span>Creating Maps with st.map()<a class="headerlink" href="#creating-maps-with-st-map" title="Permalink to this headline">#</a></h3>
+<p>Once the data is prepared properly, we can then graph it with the standard Streamlit widget <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> with a single line of code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output will look like this:
+<img alt="basic_map widget in Streamlit" src="../_images/basic_map.png" /></p>
+<p>Each node on this graph is a row in the dataframe. This is an interactive map that users can zoom in to each node on the graph. While this is useful for users to get a sense of the geospatial data quickly, the Streamlit <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> widget is limited in what it can do.</p>
+</section>
+<section id="third-party-maps-an-example-with-pydeck">
+<h3><span class="section-number">2.1.2.2. </span>Third-Party Maps - An Example with PyDeck<a class="headerlink" href="#third-party-maps-an-example-with-pydeck" title="Permalink to this headline">#</a></h3>
+<p>For more advanced mapping features, you will need to rely on third-party libraries. Fortunately, Stremalit has wrappers pre-designed so that you can leverage the power and versatility of these other libraries all within your application Python file.</p>
+<p>For our purposes, we will use Streamlit’s built in PyDeck wrapper with the <code class="docutils literal notranslate"><span class="pre">st.pydeck_chart()</span></code> widget. The code below will create a similar graph, but note that because we are creating a PyDeck map, rather than a standard Streamlit map, we can leverage the full power of the PyDeck library, including giving tooltips that pop out for each node, the radius of our nodes, the degree to which they come off the map in 3 dimensional space, the bitch of the map, and the default zoom.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">pydeck_chart</span><span class="p">(</span><span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span>
+    <span class="n">map_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">initial_view_state</span><span class="o">=</span><span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
+        <span class="n">latitude</span><span class="o">=-</span><span class="mf">25.97</span><span class="p">,</span>
+        <span class="n">longitude</span><span class="o">=</span><span class="mf">30.50</span><span class="p">,</span>
+        <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">pitch</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">layers</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+            <span class="s2">&quot;ScatterplotLayer&quot;</span><span class="p">,</span>
+            <span class="n">df</span><span class="p">,</span>
+            <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+            <span class="n">stroked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">filled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">radius_scale</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+            <span class="n">radius_min_pixels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">radius_max_pixels</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+            <span class="n">line_width_min_pixels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">get_position</span><span class="o">=</span><span class="s2">&quot;[lon, lat]&quot;</span><span class="p">,</span>
+            <span class="n">get_radius</span><span class="o">=</span><span class="s2">&quot;radius&quot;</span><span class="p">,</span>
+            <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                <span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">))</span>
+
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="pydeck_map widget in Streamlit" src="../_images/pydeck_map.png" /></p>
+</section>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -920,6 +1151,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05_02_01_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Advanced Streamlit Features</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05_02_03_layout_design.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Layout Design</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
