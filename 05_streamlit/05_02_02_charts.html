@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Working with Charts in Streamlit &#8212; Introduction to Python for Humanists</title>
+    <title>2.1. Data Visualization &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -915,40 +915,45 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metrics">
+   2.1.1. Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-basic-graphs-with-streamlit">
-   2.1.1. Plotting Basic Graphs with Streamlit
+   2.1.2. Plotting Basic Graphs with Streamlit
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#line-charts-with-st-line-chart">
-     2.1.1.1. Line Charts with st.line_chart()
+     2.1.2.1. Line Charts with st.line_chart()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bar-charts-with-st-bar-chart">
-     2.1.1.2. Bar Charts with st.bar_chart()
+     2.1.2.2. Bar Charts with st.bar_chart()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#area-charts-with-st-area-chart">
-     2.1.1.3. Area Charts with st.area_chart()
+     2.1.2.3. Area Charts with st.area_chart()
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#map-charts">
-   2.1.2. Map Charts
+   2.1.3. Map Charts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-maps-with-st-map">
-     2.1.2.1. Creating Maps with st.map()
+     2.1.3.1. Creating Maps with st.map()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#third-party-maps-an-example-with-pydeck">
-     2.1.2.2. Third-Party Maps - An Example with PyDeck
+     2.1.3.2. Third-Party Maps - An Example with PyDeck
     </a>
    </li>
   </ul>
@@ -962,7 +967,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Working with Charts in Streamlit</h1>
+                <h1>Data Visualization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -973,40 +978,45 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metrics">
+   2.1.1. Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting-basic-graphs-with-streamlit">
-   2.1.1. Plotting Basic Graphs with Streamlit
+   2.1.2. Plotting Basic Graphs with Streamlit
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#line-charts-with-st-line-chart">
-     2.1.1.1. Line Charts with st.line_chart()
+     2.1.2.1. Line Charts with st.line_chart()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bar-charts-with-st-bar-chart">
-     2.1.1.2. Bar Charts with st.bar_chart()
+     2.1.2.2. Bar Charts with st.bar_chart()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#area-charts-with-st-area-chart">
-     2.1.1.3. Area Charts with st.area_chart()
+     2.1.2.3. Area Charts with st.area_chart()
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#map-charts">
-   2.1.2. Map Charts
+   2.1.3. Map Charts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-maps-with-st-map">
-     2.1.2.1. Creating Maps with st.map()
+     2.1.3.1. Creating Maps with st.map()
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#third-party-maps-an-example-with-pydeck">
-     2.1.2.2. Third-Party Maps - An Example with PyDeck
+     2.1.3.2. Third-Party Maps - An Example with PyDeck
     </a>
    </li>
   </ul>
@@ -1021,12 +1031,38 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="working-with-charts-in-streamlit">
-<h1><span class="section-number">2.1. </span>Working with Charts in Streamlit<a class="headerlink" href="#working-with-charts-in-streamlit" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualization">
+<h1><span class="section-number">2.1. </span>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">#</a></h1>
 <p>When working with large quantities of data, it can often be difficult to present that data in a way that makes sense to non-experts. In these situations, we often rely on some form of chart to represent our data. Creating quality graphs in Python requires a lot of practice, but quality charts can be produced with Matplotlib, Altair, PyDeck, PyVis, Plotly, and Bokeh. Each has their own strengths. In this section, we will not go into these libraries, rather we will focus on how to present these different types of graphs in Streamlit.</p>
 <p>In Streamlit, we can leverage these libraries to produce visually appealing charts in just a few lines of code. We will focus on three types of graphs: Basic Plot Graphs, Map Graphs, and Network Graphs.</p>
+<section id="metrics">
+<h2><span class="section-number">2.1.1. </span>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">#</a></h2>
+<p>Before we address plots, we should spend a brief moment and think about how we display raw numerical quantitative data. We could display the length of a dataframe or the word count of some text <code class="docutils literal notranslate"><span class="pre">st.write()</span></code>. Again, while this would be quick to do, it would not allow you to display other important information, such as how that number has changed from a previous state. Nor would it allow you to easily represent the change in a positive or negative direction without complex JavaScript and HTML. In these scenarios, we would want to use <code class="docutils literal notranslate"><span class="pre">st.metric()</span></code>.</p>
+<p>By default, the metric will display a numerical output of some sort. This number could also be a string representation of a number, e.g. temperature. Let’s say, we wanted to create a simple application where a user could copy-and-paste some text into a <code class="docutils literal notranslate"><span class="pre">st.text_area()</span></code> field. The app would split up the words at every white space and then provide the user with the total word count.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s2">&quot;Paste text here to get word count.&quot;</span><span class="p">,</span> <span class="s2">&quot;This is some default text.&quot;</span><span class="p">)</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Word Count&quot;</span><span class="p">,</span> <span class="n">word_count</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="metric1 widget in Streamlit" src="../_images/metrics1.png" /></p>
+<p>Since we are using the <code class="docutils literal notranslate"><span class="pre">st.metric()</span></code> widget, however, we can also pass in a keyword argument that displays the degree to which the metric changed from the previous state. To do this, we will need to leverage the Streamlit Session State, which we will meet later in this chapter. This allows us to store a variable across different runs of the application. For now, we can ignore this bit of the code below and focus on the third argument that we passed to metric, <code class="docutils literal notranslate"><span class="pre">change</span></code>. This will display a change feature in the widget that will show the up or down trend of the change in green and red color, respectively.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;prev_word_count&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;prev_word_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s2">&quot;Paste text here to get word count.&quot;</span><span class="p">,</span> <span class="s2">&quot;This is some default text.&quot;</span><span class="p">)</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">change</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">-</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Word Count&quot;</span><span class="p">,</span> <span class="n">word_count</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span> <span class="o">=</span> <span class="n">word_count</span>
+</pre></div>
+</div>
+<p>The output will look like this:</p>
+<p><img alt="metric1 widget in Streamlit" src="../_images/metrics2.png" /></p>
+<p>Metric is a useful feature that allows us to create apps that display numerical data in easy-to-understand ways. But in other situations, a single qualitative number may not be appropriate. Here is where charts come in handy.</p>
+</section>
 <section id="plotting-basic-graphs-with-streamlit">
-<h2><span class="section-number">2.1.1. </span>Plotting Basic Graphs with Streamlit<a class="headerlink" href="#plotting-basic-graphs-with-streamlit" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.2. </span>Plotting Basic Graphs with Streamlit<a class="headerlink" href="#plotting-basic-graphs-with-streamlit" title="Permalink to this headline">#</a></h2>
 <p>We can plot basic graphs in Streamlit by passing a Pandas dataframe to different chart widgets in Streamlit. The first basic plot we can create is a line chart which we can create with the Streamlit widget <code class="docutils literal notranslate"><span class="pre">st.line_chart()</span></code>. We will be working with the Titanic dataset here that we first met in Part Two of this textbook. To prepare the data for visualization, we need to modify it a bit and group everything by the specific value that we want to plot. In our case, we want to visualize the number of survivors for different age groups on the Titanic. We can prepare our dataframe with the code below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]]</span>
@@ -1035,7 +1071,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="line-charts-with-st-line-chart">
-<h3><span class="section-number">2.1.1.1. </span>Line Charts with st.line_chart()<a class="headerlink" href="#line-charts-with-st-line-chart" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.2.1. </span>Line Charts with st.line_chart()<a class="headerlink" href="#line-charts-with-st-line-chart" title="Permalink to this headline">#</a></h3>
 <p>Once we have created our new <code class="docutils literal notranslate"><span class="pre">chart_df</span></code>, we can pass it to <code class="docutils literal notranslate"><span class="pre">st.line_chart()</span></code>. Here, we will pass the entire dataframe as the first argument and specify our x axis and y axis on the graph. In our case, we want to view the <code class="docutils literal notranslate"><span class="pre">Age</span></code> column on the x axis and the <code class="docutils literal notranslate"><span class="pre">Survived</span></code> column on the y axis.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
 </pre></div>
@@ -1044,7 +1080,7 @@ title="Print to PDF"
 <p><img alt="line_chart widget in Streamlit" src="../_images/line_chart.png" /></p>
 </section>
 <section id="bar-charts-with-st-bar-chart">
-<h3><span class="section-number">2.1.1.2. </span>Bar Charts with st.bar_chart()<a class="headerlink" href="#bar-charts-with-st-bar-chart" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.2.2. </span>Bar Charts with st.bar_chart()<a class="headerlink" href="#bar-charts-with-st-bar-chart" title="Permalink to this headline">#</a></h3>
 <p>Likewise, we can present this same data as a bar_chart with the widget <code class="docutils literal notranslate"><span class="pre">st.bar_chart()</span></code>. This will take the same arguments as above.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">bar_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
 </pre></div>
@@ -1053,7 +1089,7 @@ title="Print to PDF"
 <p><img alt="bar_chart widget in Streamlit" src="../_images/bar_chart.png" /></p>
 </section>
 <section id="area-charts-with-st-area-chart">
-<h3><span class="section-number">2.1.1.3. </span>Area Charts with st.area_chart()<a class="headerlink" href="#area-charts-with-st-area-chart" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.2.3. </span>Area Charts with st.area_chart()<a class="headerlink" href="#area-charts-with-st-area-chart" title="Permalink to this headline">#</a></h3>
 <p>And finally we can also use the same arguments to create an area chart with the <code class="docutils literal notranslate"><span class="pre">st.area_char()</span></code> widget.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">area_chart</span><span class="p">(</span><span class="n">chart_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Survived&quot;</span><span class="p">])</span>
 </pre></div>
@@ -1063,7 +1099,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="map-charts">
-<h2><span class="section-number">2.1.2. </span>Map Charts<a class="headerlink" href="#map-charts" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.3. </span>Map Charts<a class="headerlink" href="#map-charts" title="Permalink to this headline">#</a></h2>
 <p>A lot of digital humanities data is geospatial, or data that can be plotted on a map. Streamlit affords the ability to map geospatial data in several different ways; first, via the standard <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> widget and second via the third-party chart libraries. Regardless of the library used, you will want to prepare your data well where your coordinates are labeled as either <code class="docutils literal notranslate"><span class="pre">lat</span></code> or <code class="docutils literal notranslate"><span class="pre">latitude</span></code> for the latitude and <code class="docutils literal notranslate"><span class="pre">lon</span></code> or <code class="docutils literal notranslate"><span class="pre">longitude</span></code> for the longitude. For this demonstration, we will be working with data from South Africa’s Truth and Reconciliation Commission that we met in Part Four of this textbook when we explores Social Network Analysis.</p>
 <p>In order to prepare the dataframe, we can use the following code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="s2">&quot;data/trc&quot;</span><span class="p">)</span>
@@ -1075,7 +1111,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="creating-maps-with-st-map">
-<h3><span class="section-number">2.1.2.1. </span>Creating Maps with st.map()<a class="headerlink" href="#creating-maps-with-st-map" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.3.1. </span>Creating Maps with st.map()<a class="headerlink" href="#creating-maps-with-st-map" title="Permalink to this headline">#</a></h3>
 <p>Once the data is prepared properly, we can then graph it with the standard Streamlit widget <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> with a single line of code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -1085,7 +1121,7 @@ title="Print to PDF"
 <p>Each node on this graph is a row in the dataframe. This is an interactive map that users can zoom in to each node on the graph. While this is useful for users to get a sense of the geospatial data quickly, the Streamlit <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> widget is limited in what it can do.</p>
 </section>
 <section id="third-party-maps-an-example-with-pydeck">
-<h3><span class="section-number">2.1.2.2. </span>Third-Party Maps - An Example with PyDeck<a class="headerlink" href="#third-party-maps-an-example-with-pydeck" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.3.2. </span>Third-Party Maps - An Example with PyDeck<a class="headerlink" href="#third-party-maps-an-example-with-pydeck" title="Permalink to this headline">#</a></h3>
 <p>For more advanced mapping features, you will need to rely on third-party libraries. Fortunately, Stremalit has wrappers pre-designed so that you can leverage the power and versatility of these other libraries all within your application Python file.</p>
 <p>For our purposes, we will use Streamlit’s built in PyDeck wrapper with the <code class="docutils literal notranslate"><span class="pre">st.pydeck_chart()</span></code> widget. The code below will create a similar graph, but note that because we are creating a PyDeck map, rather than a standard Streamlit map, we can leverage the full power of the PyDeck library, including giving tooltips that pop out for each node, the radius of our nodes, the degree to which they come off the map in 3 dimensional space, the bitch of the map, and the default zoom.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">pydeck_chart</span><span class="p">(</span><span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span>
