@@ -58,9 +58,6 @@ if range_cols[0].checkbox("Use Fare Range"):
     res = res.loc[(res.Fare > min_fare_range) & (res.Age < max_fare_range)]
 if range_cols[2].checkbox("Use Age Range"):
     res = res.loc[(res.Age > min_age_range) & (res.Age < max_age_range)]
-
-
-st.header("Result")
 removal_columns = st.multiselect("Select Columns to Remove", df.columns.tolist())
 for column in removal_columns:
     res = res.drop(column, axis=1)
