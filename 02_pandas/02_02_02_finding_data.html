@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Pandas Textbook for Digital Humanities &#8212; Introduction to Python for Humanists</title>
+    <title>2.1. Finding Data in DataFrame &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.2. Organizing the DataFrame" href="02_02_03_organizing_data.html" />
-    <link rel="prev" title="2. Introduction to Python" href="02_02_01_intro.html" />
+    <link rel="prev" title="2. Working with Data in Pandas" href="02_02_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -335,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_03_intro.html">
+  <a class="reference internal" href="02_03_01_intro.html">
    3. Searching for Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -345,24 +345,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_advanced_strings.html">
+    <a class="reference internal" href="02_03_02_advanced_strings.html">
      3.1. Advanced Searching on Strings in DataFrame
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_advanced_querying.html">
+    <a class="reference internal" href="02_03_03_advanced_querying.html">
      3.2. Advanced Filtering and Querying
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_03_advanced_grouping.html">
+    <a class="reference internal" href="02_03_04_advanced_grouping.html">
      3.3. Advanced Grouping with Groupby
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_04_intro.html">
+  <a class="reference internal" href="02_04_01_intro.html">
    4. Advanced Pandas
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -372,17 +372,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_01_pandas_and_plots.html">
+    <a class="reference internal" href="02_04_02_pandas_and_plots.html">
      4.1. Basic Plotting with Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_02_graphing_networks_with_pandas.html">
+    <a class="reference internal" href="02_04_03_graphing_networks_with_pandas.html">
      4.2. Graphing Network Data from Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_01_time_series_data.html">
+    <a class="reference internal" href="02_04_04_time_series_data.html">
      4.3. Introduction to Time Series Data
     </a>
    </li>
@@ -920,53 +920,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-three-finding-data-in-dataframe">
-   2.1.1. Chapter Three: Finding Data in DataFrame
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   2.1.2. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   2.1.3. Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-the-titanic-dataset">
-   2.1.4. About the Titanic Dataset
+   2.1.1. About the Titanic Dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-find-column-data">
-   2.1.5. How to Find Column Data
+   2.1.2. How to Find Column Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-get-a-quick-sense-of-the-dataset-with-df-head">
-   2.1.6. How to Get a Quick Sense of the Dataset with df.head()
+   2.1.3. How to Get a Quick Sense of the Dataset with df.head()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-range-of-rows-with-df-iloc">
-   2.1.7. How to Grab a Specific Range of Rows with df.iloc[]
+   2.1.4. How to Grab a Specific Range of Rows with df.iloc[]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-get-a-quick-quantitative-understanding-of-the-dataset-with-describe">
-   2.1.8. How to Get a Quick Quantitative Understanding of the Dataset with Describe()
+   2.1.5. How to Get a Quick Quantitative Understanding of the Dataset with Describe()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-find-specific-information-in-the-dataset-with-df-loc">
-   2.1.9. How to Find Specific Information in the Dataset with df.loc
+   2.1.6. How to Find Specific Information in the Dataset with df.loc
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-query-with-or-on-a-dataframe">
-   2.1.10. How to Query with “OR” (|) on a DataFrame
+   2.1.7. How to Query with “OR” (|) on a DataFrame
   </a>
  </li>
 </ul>
@@ -978,7 +963,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Pandas Textbook for Digital Humanities</h1>
+                <h1>Finding Data in DataFrame</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -989,53 +974,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-three-finding-data-in-dataframe">
-   2.1.1. Chapter Three: Finding Data in DataFrame
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   2.1.2. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   2.1.3. Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-the-titanic-dataset">
-   2.1.4. About the Titanic Dataset
+   2.1.1. About the Titanic Dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-find-column-data">
-   2.1.5. How to Find Column Data
+   2.1.2. How to Find Column Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-get-a-quick-sense-of-the-dataset-with-df-head">
-   2.1.6. How to Get a Quick Sense of the Dataset with df.head()
+   2.1.3. How to Get a Quick Sense of the Dataset with df.head()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-range-of-rows-with-df-iloc">
-   2.1.7. How to Grab a Specific Range of Rows with df.iloc[]
+   2.1.4. How to Grab a Specific Range of Rows with df.iloc[]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-get-a-quick-quantitative-understanding-of-the-dataset-with-describe">
-   2.1.8. How to Get a Quick Quantitative Understanding of the Dataset with Describe()
+   2.1.5. How to Get a Quick Quantitative Understanding of the Dataset with Describe()
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-find-specific-information-in-the-dataset-with-df-loc">
-   2.1.9. How to Find Specific Information in the Dataset with df.loc
+   2.1.6. How to Find Specific Information in the Dataset with df.loc
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-query-with-or-on-a-dataframe">
-   2.1.10. How to Query with “OR” (|) on a DataFrame
+   2.1.7. How to Query with “OR” (|) on a DataFrame
   </a>
  </li>
 </ul>
@@ -1048,42 +1018,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas-textbook-for-digital-humanities">
-<h1><span class="section-number">2.1. </span>Pandas Textbook for Digital Humanities<a class="headerlink" href="#pandas-textbook-for-digital-humanities" title="Permalink to this headline">#</a></h1>
-<section id="chapter-three-finding-data-in-dataframe">
-<h2><span class="section-number">2.1.1. </span>Chapter Three: Finding Data in DataFrame<a class="headerlink" href="#chapter-three-finding-data-in-dataframe" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="covered-in-this-chapter">
-<h2><span class="section-number">2.1.2. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>How to Find Column Names<br></p></li>
-<li><p>How to Get a Quick Sense of the Dataset<br></p></li>
-<li><p>How to Grab a Specific Range of Rows<br></p></li>
-<li><p>How to Get a Quick Quantitative Understanding of the Dataset<br></p></li>
-<li><p>How to Find Specific Information in the Dataset<br></p></li>
-<li><p>How to use Or in a DataFrame query<br></p></li>
-</ol>
-</section>
-<section id="video">
-<h2><span class="section-number">2.1.3. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/IFVkOCnH_Qs&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IFVkOCnH_Qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-</div></div>
-</div>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="finding-data-in-dataframe">
+<h1><span class="section-number">2.1. </span>Finding Data in DataFrame<a class="headerlink" href="#finding-data-in-dataframe" title="Permalink to this headline">#</a></h1>
 <section id="about-the-titanic-dataset">
-<h2><span class="section-number">2.1.4. </span>About the Titanic Dataset<a class="headerlink" href="#about-the-titanic-dataset" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.1. </span>About the Titanic Dataset<a class="headerlink" href="#about-the-titanic-dataset" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1104,7 +1042,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-find-column-data">
-<h2><span class="section-number">2.1.5. </span>How to Find Column Data<a class="headerlink" href="#how-to-find-column-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.2. </span>How to Find Column Data<a class="headerlink" href="#how-to-find-column-data" title="Permalink to this headline">#</a></h2>
 <p>Let’s presume that we just obtained this dataset. Let’s also presume we know nothing about it. Our first job is to get a sense of the data. Maybe we want to know all the columns that the dataset contains. To find this information, we can use df.columns</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1153,7 +1091,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-get-a-quick-sense-of-the-dataset-with-df-head">
-<h2><span class="section-number">2.1.6. </span>How to Get a Quick Sense of the Dataset with df.head()<a class="headerlink" href="#how-to-get-a-quick-sense-of-the-dataset-with-df-head" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.3. </span>How to Get a Quick Sense of the Dataset with df.head()<a class="headerlink" href="#how-to-get-a-quick-sense-of-the-dataset-with-df-head" title="Permalink to this headline">#</a></h2>
 <p>Another way to get a quick sense of the data is to use df.head(). This allows us to return to top pieces of information from the dataset. By default, head returns the top 5 rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1621,7 +1559,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-grab-a-specific-range-of-rows-with-df-iloc">
-<h2><span class="section-number">2.1.7. </span>How to Grab a Specific Range of Rows with df.iloc[]<a class="headerlink" href="#how-to-grab-a-specific-range-of-rows-with-df-iloc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.4. </span>How to Grab a Specific Range of Rows with df.iloc[]<a class="headerlink" href="#how-to-grab-a-specific-range-of-rows-with-df-iloc" title="Permalink to this headline">#</a></h2>
 <p>Sometimes, however, you need to grab a specific range of rows. Let’s say I am interested in rows 5-20. To grab this data, we can use the df.iloc[] command that we met in the last notebook. This will allow us to pass a specific index range like a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1894,7 +1832,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-get-a-quick-quantitative-understanding-of-the-dataset-with-describe">
-<h2><span class="section-number">2.1.8. </span>How to Get a Quick Quantitative Understanding of the Dataset with Describe()<a class="headerlink" href="#how-to-get-a-quick-quantitative-understanding-of-the-dataset-with-describe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.5. </span>How to Get a Quick Quantitative Understanding of the Dataset with Describe()<a class="headerlink" href="#how-to-get-a-quick-quantitative-understanding-of-the-dataset-with-describe" title="Permalink to this headline">#</a></h2>
 <p>When working with numerical, quantitative data, we can automatically grab all numerical rows and learn a lot about the data with df.describe(). This will return the count, mean, standard deviation, minimum, maximum, etc. of our quantitative data. Sometimes, this data is useful to compute in such a way, such as the column Survived. Here, we can see that roughly .38 or 38% of the passengers (in this dataset) survived. Other numerical data does not really lend itself well to this kind of analysis, e.g. PassengerId which a unique numerical number corresponding to each passenger.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2017,7 +1955,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-find-specific-information-in-the-dataset-with-df-loc">
-<h2><span class="section-number">2.1.9. </span>How to Find Specific Information in the Dataset with df.loc<a class="headerlink" href="#how-to-find-specific-information-in-the-dataset-with-df-loc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.6. </span>How to Find Specific Information in the Dataset with df.loc<a class="headerlink" href="#how-to-find-specific-information-in-the-dataset-with-df-loc" title="Permalink to this headline">#</a></h2>
 <p>As researchers, however, we often need to find targeted information in our dataset. Let’s say I am researching female passengers on the Titanic. I can achieve this fairly easily in Excel and in Python with Pandas. To do this in Pandas, you can use df.loc[] to pass a specific argument. In the example below, we are stating that we are looking for the columns in the DataFrame of “Sex” that match the string “female”. Try to recreate this and find all males in the dataset on your own. Note at the bottom of the DataFrame 314x12. This is the dimensions of the DataFrame. We can see that we have 314 results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2982,7 +2920,7 @@ title="Print to PDF"
 <p>Although we can achieve this same analysis in Excel, doing this in Python allows us to leverage the power of an entire programming language with the data at hand. This is a simple example of the power of Pandas over Excel. As we move forward in the next notebooks, you will see more examples of this.</p>
 </section>
 <section id="how-to-query-with-or-on-a-dataframe">
-<h2><span class="section-number">2.1.10. </span>How to Query with “OR” (|) on a DataFrame<a class="headerlink" href="#how-to-query-with-or-on-a-dataframe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.7. </span>How to Query with “OR” (|) on a DataFrame<a class="headerlink" href="#how-to-query-with-or-on-a-dataframe" title="Permalink to this headline">#</a></h2>
 <p>Above we saw how to use df.loc to structure logical arguments for finding two specific conditions with “&amp;”. This indicated that both conditions must be true to be returned as a result. In case you don’t remember it, it looked like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3439,7 +3377,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span><center>Introduction to Python</center></p>
+            <p class="prev-next-title"><span class="section-number">2. </span><center>Working with Data in Pandas</center></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="02_02_03_organizing_data.html" title="next page">

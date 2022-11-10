@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Graphing Network Data with Pandas" href="04_02_graphing_networks_with_pandas.html" />
-    <link rel="prev" title="4. Introduction to Python" href="02_04_intro.html" />
+    <link rel="next" title="4.2. Graphing Network Data with Pandas" href="02_04_03_graphing_networks_with_pandas.html" />
+    <link rel="prev" title="4. Advanced Pandas" href="02_04_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -335,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_03_intro.html">
+  <a class="reference internal" href="02_03_01_intro.html">
    3. Searching for Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -345,24 +345,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_advanced_strings.html">
+    <a class="reference internal" href="02_03_02_advanced_strings.html">
      3.1. Advanced Searching on Strings in DataFrame
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_advanced_querying.html">
+    <a class="reference internal" href="02_03_03_advanced_querying.html">
      3.2. Advanced Filtering and Querying
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_03_advanced_grouping.html">
+    <a class="reference internal" href="02_03_04_advanced_grouping.html">
      3.3. Advanced Grouping with Groupby
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="02_04_intro.html">
+  <a class="reference internal" href="02_04_01_intro.html">
    4. Advanced Pandas
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -377,12 +377,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_02_graphing_networks_with_pandas.html">
+    <a class="reference internal" href="02_04_03_graphing_networks_with_pandas.html">
      4.2. Graphing Network Data from Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_01_time_series_data.html">
+    <a class="reference internal" href="02_04_04_time_series_data.html">
      4.3. Introduction to Time Series Data
     </a>
    </li>
@@ -737,7 +737,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/02_pandas/04_01_pandas_and_plots.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/02_pandas/02_04_02_pandas_and_plots.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -755,7 +755,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/02_pandas/04_01_pandas_and_plots.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/02_pandas/02_04_02_pandas_and_plots.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -815,7 +815,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F02_pandas/04_01_pandas_and_plots.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F02_pandas/02_04_02_pandas_and_plots.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -832,7 +832,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/02_pandas/04_01_pandas_and_plots.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/02_pandas/02_04_02_pandas_and_plots.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -860,7 +860,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/02_pandas/04_01_pandas_and_plots.ipynb"
+        <a href="../_sources/02_pandas/02_04_02_pandas_and_plots.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -920,28 +920,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   4.1.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-dataframe">
-   4.1.2. Importing the DataFrame
+   4.1.1. Importing the DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bar-and-barh-charts-with-pandas">
-   4.1.3. Bar and Barh Charts with Pandas
+   4.1.2. Bar and Barh Charts with Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pie-charts-with-pandas">
-   4.1.4. Pie Charts with Pandas
+   4.1.3. Pie Charts with Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scatter-plots-with-pandas">
-   4.1.5. Scatter Plots with Pandas
+   4.1.4. Scatter Plots with Pandas
   </a>
  </li>
 </ul>
@@ -964,28 +959,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   4.1.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-dataframe">
-   4.1.2. Importing the DataFrame
+   4.1.1. Importing the DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bar-and-barh-charts-with-pandas">
-   4.1.3. Bar and Barh Charts with Pandas
+   4.1.2. Bar and Barh Charts with Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pie-charts-with-pandas">
-   4.1.4. Pie Charts with Pandas
+   4.1.3. Pie Charts with Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scatter-plots-with-pandas">
-   4.1.5. Scatter Plots with Pandas
+   4.1.4. Scatter Plots with Pandas
   </a>
  </li>
 </ul>
@@ -1000,19 +990,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-plotting-data-with-pandas-center">
 <h1><span class="section-number">4.1. </span><center>Plotting Data with Pandas</center><a class="headerlink" href="#center-plotting-data-with-pandas-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>August 2021</center><section id="covered-in-this-chapter">
-<h2><span class="section-number">4.1.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Key Ways to Plot Data in Pandas<br></p></li>
-<li><p>How to Create a Bar or Barh Graph<br></p></li>
-<li><p>How to Create a Pie Chart<br></p></li>
-<li><p>How to Plot Data in a Scatter Plot</p></li>
-</ol>
-</section>
 <section id="importing-the-dataframe">
-<h2><span class="section-number">4.1.2. </span>Importing the DataFrame<a class="headerlink" href="#importing-the-dataframe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.1. </span>Importing the DataFrame<a class="headerlink" href="#importing-the-dataframe" title="Permalink to this headline">#</a></h2>
 <p>This notebook begins Part 3 of this textbook. Here, we will build upon our skills from Parts 1 and 2, and begin exploring how to visualize data in Pandas. Pandas sits on top of Matplotlib, one of the standard libraries used by data scientists for plotting data. As we will see in the next notebooks, you can also leverage other, more robust graphing libraries through Pandas. For now, though, let’s start with the basics. In this notebook, we will explore how to create three types of graphs: bar (and barh), pie, and scatter. I will also introduce you to some of the more recent features of Pandas 1.3.0, that allow you to control the graph a bit more.</p>
 <p>Before we do any of that, however, let’s import pandas and our data.</p>
 <div class="cell docutils container">
@@ -1241,7 +1220,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="bar-and-barh-charts-with-pandas">
-<h2><span class="section-number">4.1.3. </span>Bar and Barh Charts with Pandas<a class="headerlink" href="#bar-and-barh-charts-with-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.2. </span>Bar and Barh Charts with Pandas<a class="headerlink" href="#bar-and-barh-charts-with-pandas" title="Permalink to this headline">#</a></h2>
 <p>With our data imported successfully, let’s jump right in with bar charts. Bar charts a great way to visualize qualitative data quantitatively. To demonstrate what I mean by this, let’s consider if we wanted to know how many male passengers were on the Titanic relative to female passengers. I could grab all the value counts and look at the numbers by calling .value_counts(), as in the example below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1268,7 +1247,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_13_1.png" src="../_images/04_01_pandas_and_plots_13_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_10_1.png" src="../_images/02_04_02_pandas_and_plots_10_1.png" />
 </div>
 </div>
 <p>Not bad, but this chart is quite staid. For one thing, we don’t even have a title! Let’s fix that. We can pass a keyword argument of title. This will take a string.</p>
@@ -1282,7 +1261,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Passengers on the Titanic&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_15_1.png" src="../_images/04_01_pandas_and_plots_15_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_12_1.png" src="../_images/02_04_02_pandas_and_plots_12_1.png" />
 </div>
 </div>
 <p>We have another serious issue, though. Both types of gender are represented with the same color. This can be difficult for audiences to decipher in some instances, so let’s change that. We can pass the keyword argument of color which will take a list of colors.</p>
@@ -1296,7 +1275,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Passengers on the Titanic&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_17_1.png" src="../_images/04_01_pandas_and_plots_17_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_14_1.png" src="../_images/02_04_02_pandas_and_plots_14_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1309,7 +1288,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Passengers on the Titanic&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_18_1.png" src="../_images/04_01_pandas_and_plots_18_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_15_1.png" src="../_images/02_04_02_pandas_and_plots_15_1.png" />
 </div>
 </div>
 <p>We can do the same thing with a barh graph, or a bar-horizontal graph.</p>
@@ -1323,12 +1302,12 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Passengers on the Titanic&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_20_1.png" src="../_images/04_01_pandas_and_plots_20_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_17_1.png" src="../_images/02_04_02_pandas_and_plots_17_1.png" />
 </div>
 </div>
 </section>
 <section id="pie-charts-with-pandas">
-<h2><span class="section-number">4.1.4. </span>Pie Charts with Pandas<a class="headerlink" href="#pie-charts-with-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.3. </span>Pie Charts with Pandas<a class="headerlink" href="#pie-charts-with-pandas" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">()</span>
@@ -1339,7 +1318,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Sex&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_23_1.png" src="../_images/04_01_pandas_and_plots_23_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_20_1.png" src="../_images/02_04_02_pandas_and_plots_20_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1352,7 +1331,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Sex&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_24_1.png" src="../_images/04_01_pandas_and_plots_24_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_21_1.png" src="../_images/02_04_02_pandas_and_plots_21_1.png" />
 </div>
 </div>
 <p>Let’s say I was interested in the title of the genders not being lowercase. I can add in some custom labels to the data as a keyword argument, labels, which takes a list.</p>
@@ -1366,7 +1345,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Sex&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_26_1.png" src="../_images/04_01_pandas_and_plots_26_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_23_1.png" src="../_images/02_04_02_pandas_and_plots_23_1.png" />
 </div>
 </div>
 <p>Now that we have our labels as we want them, let’s give thee audience a bit of a better experience. Let’s allow them to easily see the percentage of each gender, not just visually, but quantitatively. To do this, we can pass the keyword argument, autopct, which will take a string. In this case, we can pass in the argument “%.2f” which is a formatted string. This argument will convert our data into a percentage.</p>
@@ -1380,12 +1359,12 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Sex&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_28_1.png" src="../_images/04_01_pandas_and_plots_28_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_25_1.png" src="../_images/02_04_02_pandas_and_plots_25_1.png" />
 </div>
 </div>
 </section>
 <section id="scatter-plots-with-pandas">
-<h2><span class="section-number">4.1.5. </span>Scatter Plots with Pandas<a class="headerlink" href="#scatter-plots-with-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.4. </span>Scatter Plots with Pandas<a class="headerlink" href="#scatter-plots-with-pandas" title="Permalink to this headline">#</a></h2>
 <p>Scatter plots allow us to plot qualitative data quantitatively in relation to two numerical attributes. Let’s imagine that we are interested in exploring all passengers, something qualitative. Now, we want to know how each passenger relates to other passengers on two numerical, or quantitative attributes, e.g. the age of the passenger and the fare that they paid. Both of these are quantitative. We can therefore represent each person as a point on the scatter plot and plot them in relation to their fare (vertical, or y axis) and age (horizontal, or x axis) on the graph.</p>
 <p>In Pandas we can do this by passing two keyword arguments, x and y and set them both equal to the DataFramee column we want, e.g. “Age” and “Fare”.</p>
 <div class="cell docutils container">
@@ -1398,7 +1377,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_31_1.png" src="../_images/04_01_pandas_and_plots_31_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_28_1.png" src="../_images/02_04_02_pandas_and_plots_28_1.png" />
 </div>
 </div>
 <p>That looks good, but we can do better. Let’s try to color coordinate this data. Let’s say we are interested in seeing not only the passenger’s age and fare, but we’re also interested in color-coordinating the graph so that their Pclass effects the color of each plot. We can do this by passing a few new keyword arguments.</p>
@@ -1416,7 +1395,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_33_1.png" src="../_images/04_01_pandas_and_plots_33_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_30_1.png" src="../_images/02_04_02_pandas_and_plots_30_1.png" />
 </div>
 </div>
 <p>This is starting to look a lot better now. But let’s say we didn’t want to represent our data as a series of marginally changing numbers. When we pass a DataFrame column to c as a set of numbers, Pandas presumes that that number corresponds to a gradient change in color. But passenger class is not a gradient change, it is a integral change, meaning no one will be Pclass 1.2. They will be 1, 2, or 3. In order to fix this graph, we can make a few changes. First, we can use df.loc that we met in a previous notebook to grab all classes. Now, we know there are three. We can convert these from numerical representations of the class into string representations, e.g. First, Second, and Third.</p>
@@ -1852,7 +1831,7 @@ Name: Sex, dtype: int64
 <span class="s2"> &#39;Second&#39; &#39;First&#39; &#39;Third&#39; &#39;First&#39; &#39;Third&#39;]</span>
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_39_1.png" src="../_images/04_01_pandas_and_plots_39_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_36_1.png" src="../_images/02_04_02_pandas_and_plots_36_1.png" />
 </div>
 </div>
 <p>Keeping this massive error in the textbook is essential, despite its size being rather annoying. It tells us a lot of information about the problem. When we try and pass a keyword argument of c, Pandas is expecting a series of numbers (which will correspond to gradient shifts in the cmap), a list of colors, or a Pandas Categorical column. To change our data to a list of colors, let’s convert our data into three different colors.</p>
@@ -1875,7 +1854,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_42_1.png" src="../_images/04_01_pandas_and_plots_42_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_39_1.png" src="../_images/02_04_02_pandas_and_plots_39_1.png" />
 </div>
 </div>
 <p>Now, our plots are all color coordinated. But I don’t like this. It doesn’t have a nice ledger to read. Instead, we should convert this data into a Categorical Column. To do this, let’s first get our data back into First, Second, and Third class format.</p>
@@ -1906,7 +1885,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_47_1.png" src="../_images/04_01_pandas_and_plots_47_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_44_1.png" src="../_images/02_04_02_pandas_and_plots_44_1.png" />
 </div>
 </div>
 <p>Now, like magic, we have precisely what we want to see. But we can do even better! Let’s say we don’t like the size of the nodes (points) on the graph. We want to see smaller nodes to distinguish better between the points. We can pass another keyword argument, s, which stands for size. This expects an integer.</p>
@@ -1920,7 +1899,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_49_1.png" src="../_images/04_01_pandas_and_plots_49_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_46_1.png" src="../_images/02_04_02_pandas_and_plots_46_1.png" />
 </div>
 </div>
 <p>To make it a bit easier to read, let’s also adjust the size a bit. We can do this by passing the keyword argument, figsize, that we saw above with pie chars.</p>
@@ -1934,7 +1913,7 @@ Name: Sex, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Fare&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_01_pandas_and_plots_51_1.png" src="../_images/04_01_pandas_and_plots_51_1.png" />
+<img alt="../_images/02_04_02_pandas_and_plots_48_1.png" src="../_images/02_04_02_pandas_and_plots_48_1.png" />
 </div>
 </div>
 <p>By now, you should have a good sense of how to create simple bar, pie, and scatter charts. In the next few notebooks, we will be looking at other ways of leveraging Pandas to produce visualizations, such as using plotly and social networks with networkx.</p>
@@ -1968,14 +1947,14 @@ Name: Sex, dtype: int64
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_04_intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_04_01_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span><center>Introduction to Python</center></p>
+            <p class="prev-next-title"><span class="section-number">4. </span><center>Advanced Pandas</center></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_02_graphing_networks_with_pandas.html" title="next page">
+    <a class='right-next' id="next-link" href="02_04_03_graphing_networks_with_pandas.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">4.2. </span><center>Graphing Network Data with Pandas</center></p>

@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Introduction to spaCy" href="../03_spacy/03_01_01_intro.html" />
-    <link rel="prev" title="4.2. Graphing Network Data with Pandas" href="04_02_graphing_networks_with_pandas.html" />
+    <link rel="prev" title="4.2. Graphing Network Data with Pandas" href="02_04_03_graphing_networks_with_pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -335,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_03_intro.html">
+  <a class="reference internal" href="02_03_01_intro.html">
    3. Searching for Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -345,24 +345,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_advanced_strings.html">
+    <a class="reference internal" href="02_03_02_advanced_strings.html">
      3.1. Advanced Searching on Strings in DataFrame
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_advanced_querying.html">
+    <a class="reference internal" href="02_03_03_advanced_querying.html">
      3.2. Advanced Filtering and Querying
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_03_advanced_grouping.html">
+    <a class="reference internal" href="02_03_04_advanced_grouping.html">
      3.3. Advanced Grouping with Groupby
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="02_04_intro.html">
+  <a class="reference internal" href="02_04_01_intro.html">
    4. Advanced Pandas
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -372,12 +372,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="04_01_pandas_and_plots.html">
+    <a class="reference internal" href="02_04_02_pandas_and_plots.html">
      4.1. Basic Plotting with Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_02_graphing_networks_with_pandas.html">
+    <a class="reference internal" href="02_04_03_graphing_networks_with_pandas.html">
      4.2. Graphing Network Data from Pandas
     </a>
    </li>
@@ -737,7 +737,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/02_pandas/05_01_time_series_data.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/02_pandas/02_04_04_time_series_data.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -755,7 +755,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/02_pandas/05_01_time_series_data.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/02_pandas/02_04_04_time_series_data.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -815,7 +815,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F02_pandas/05_01_time_series_data.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F02_pandas/02_04_04_time_series_data.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -832,7 +832,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/02_pandas/05_01_time_series_data.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/02_pandas/02_04_04_time_series_data.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -860,7 +860,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/02_pandas/05_01_time_series_data.ipynb"
+        <a href="../_sources/02_pandas/02_04_04_time_series_data.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -920,28 +920,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   4.3.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-time-series-data">
-   4.3.2. What is Time Series Data
+   4.3.1. What is Time Series Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-the-dataset">
-   4.3.3. About the Dataset
+   4.3.2. About the Dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cleaning-the-data-from-float-to-int">
-   4.3.4. Cleaning the Data from Float to Int
+   4.3.3. Cleaning the Data from Float to Int
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convert-to-time-series-datetime-in-pandas">
-   4.3.5. Convert to Time Series DateTime in Pandas
+   4.3.4. Convert to Time Series DateTime in Pandas
   </a>
  </li>
 </ul>
@@ -964,28 +959,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   4.3.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-time-series-data">
-   4.3.2. What is Time Series Data
+   4.3.1. What is Time Series Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-the-dataset">
-   4.3.3. About the Dataset
+   4.3.2. About the Dataset
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cleaning-the-data-from-float-to-int">
-   4.3.4. Cleaning the Data from Float to Int
+   4.3.3. Cleaning the Data from Float to Int
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convert-to-time-series-datetime-in-pandas">
-   4.3.5. Convert to Time Series DateTime in Pandas
+   4.3.4. Convert to Time Series DateTime in Pandas
   </a>
  </li>
 </ul>
@@ -1000,25 +990,14 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-time-series-data-center">
 <h1><span class="section-number">4.3. </span><center>Time Series Data</center><a class="headerlink" href="#center-time-series-data-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>August 2021</center><section id="covered-in-this-chapter">
-<h2><span class="section-number">4.3.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>How to Work with Time Series Data</p></li>
-<li><p>How to Work with NaN in Time Series Data</p></li>
-<li><p>How to Convert Floats and Ints into Time Series Data</p></li>
-<li><p>How to Plot Time Series Data</p></li>
-</ol>
-</section>
 <section id="what-is-time-series-data">
-<h2><span class="section-number">4.3.2. </span>What is Time Series Data<a class="headerlink" href="#what-is-time-series-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3.1. </span>What is Time Series Data<a class="headerlink" href="#what-is-time-series-data" title="Permalink to this headline">#</a></h2>
 <p><strong>Time series data</strong> is data that reflects either time or dates. In Pandas this type of data is known as datetime. If you are working with time series data, as we shall see, there are significant reasons to ensure that Pandas understands that the data at hand is a date or a time. It allows for easily manipulation and cleaning of inconsistent data formatting. Let us consider a simple example. Imagine we were given dates from one source as 01/02/2002 and another as 01.02.2002. Both are valid date formats, but they are structured entirely differently. Imagine now you had a third dataset that organized the data as 2 January 2002. Your task is to merge all these datasets together.</p>
 <p>If you wanted to do that, you could write out some Python and script them into alignment, but Pandas offers the ability to do that automatically. In order to leverage that ability, however, you must tell Pandas that the data at hand is datetime data. Exactly how you do that, we will learn in this chapter.</p>
 <p>Time series data is important for many different aspects of industry and academia. In the financial sector, time series data allows for one to understand the past performance of a stock. This is particularly useful in machine learning predictions which need to understand the past to predict accurately the future. More importantly, they need to understand the past a sequence of data. In the humanities, time series data is important for understand historical context and, as we shall see, plotting data temporally. Understanding how to work with time series data, therefore, in Pandas is absolutely essential.</p>
 </section>
 <section id="about-the-dataset">
-<h2><span class="section-number">4.3.3. </span>About the Dataset<a class="headerlink" href="#about-the-dataset" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3.2. </span>About the Dataset<a class="headerlink" href="#about-the-dataset" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, we will be working with an early version of a dataset I helped cultivate at the <em>Bitter Aloe Project</em>, a digital humanities project that explores apartheid violence in South Africa during the 20th century. This dataset comes from Vol. 7 of the Truth and Reconciliation Commission’s <em>Final Report</em>. I am using not our final, well-cleaned version of this dataset, rather an earlier version for one key reason. It contains problematic cells and structure. This is more reflective of real-world data, which will often times come from multiple sources and need to be cleaned and structured. As such, it is good practice in this chapter to try and address some of the common problems that you will encounter with time series data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1268,12 +1247,12 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_12_1.png" src="../_images/05_01_time_series_data_12_1.png" />
+<img alt="../_images/02_04_04_time_series_data_9_1.png" src="../_images/02_04_04_time_series_data_9_1.png" />
 </div>
 </div>
 </section>
 <section id="cleaning-the-data-from-float-to-int">
-<h2><span class="section-number">4.3.4. </span>Cleaning the Data from Float to Int<a class="headerlink" href="#cleaning-the-data-from-float-to-int" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3.3. </span>Cleaning the Data from Float to Int<a class="headerlink" href="#cleaning-the-data-from-float-to-int" title="Permalink to this headline">#</a></h2>
 <p>Let’s first try and convert our float column into an integer column. If we execute the command below which would normally achieve this task, we get the following error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1454,7 +1433,7 @@ Name: Yr, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_25_1.png" src="../_images/05_01_time_series_data_25_1.png" />
+<img alt="../_images/02_04_04_time_series_data_22_1.png" src="../_images/02_04_04_time_series_data_22_1.png" />
 </div>
 </div>
 <p>What do you notice that is horribly wrong about our bar graph? If you noticed that it is not chronological, you’d be right. It would be quite odd to present our data in this format. When we are examining time series data, we need to visualize that data chronologically (usually). We can fix this, by adding sort_index().</p>
@@ -1522,7 +1501,7 @@ Name: Yr, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_29_1.png" src="../_images/05_01_time_series_data_29_1.png" />
+<img alt="../_images/02_04_04_time_series_data_26_1.png" src="../_images/02_04_04_time_series_data_26_1.png" />
 </div>
 </div>
 <p>We have a potential issue, however. That first row, 0, is throwing off our bar graph. What if I didn’t want to represent 0, or no date, in the graph. I can solve this problem a few different ways. Let’s first create a new dataframe called val_year.</p>
@@ -1591,13 +1570,13 @@ Name: Yr, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_33_1.png" src="../_images/05_01_time_series_data_33_1.png" />
+<img alt="../_images/02_04_04_time_series_data_30_1.png" src="../_images/02_04_04_time_series_data_30_1.png" />
 </div>
 </div>
 <p>Although we have been able to now plot our time series data chronologically, Pandas has not seen this as a datetime type. Instead, it has viewed these years solely as integers. In order to work with the years as time series data formally, we need to convert the integers into datetime format.</p>
 </section>
 <section id="convert-to-time-series-datetime-in-pandas">
-<h2><span class="section-number">4.3.5. </span>Convert to Time Series DateTime in Pandas<a class="headerlink" href="#convert-to-time-series-datetime-in-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3.4. </span>Convert to Time Series DateTime in Pandas<a class="headerlink" href="#convert-to-time-series-datetime-in-pandas" title="Permalink to this headline">#</a></h2>
 <p>Our goal here will be to create a new column that will store Yr as a datetime type. One might think that we could easily just convert everything to datetime. Normally the following command would work, but instead we get this error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1716,7 +1695,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_42_1.png" src="../_images/05_01_time_series_data_42_1.png" />
+<img alt="../_images/02_04_04_time_series_data_39_1.png" src="../_images/02_04_04_time_series_data_39_1.png" />
 </div>
 </div>
 <p>While this data is now plotted as Pandas-structured time series data, it does not look good. Our dates are rendered in the long, full format that has both the date (in its entirety) and the time. Let’s fix this by first, extracting the relevant data. In this case, the year and the counts.</p>
@@ -1949,7 +1928,7 @@ Name: Dates, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/05_01_time_series_data_52_1.png" src="../_images/05_01_time_series_data_52_1.png" />
+<img alt="../_images/02_04_04_time_series_data_49_1.png" src="../_images/02_04_04_time_series_data_49_1.png" />
 </div>
 </div>
 <p>And thus we have successfully plotted our datetime data after properly formatting it in Pandas. While working with time series data in Pandas as a datetime can be a bit more complex in the beginning, it allows for you to more advanced things, such as we saw above by calling the year with .year. As we will see in the next few chapters, there are other advantages as well.</p>
@@ -1983,7 +1962,7 @@ Name: Dates, dtype: int64
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04_02_graphing_networks_with_pandas.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_04_03_graphing_networks_with_pandas.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>

@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Introduction to Python" href="02_02_01_intro.html" />
+    <link rel="next" title="2. Working with Data in Pandas" href="02_02_01_intro.html" />
     <link rel="prev" title="1.1. Introduction to Pandas" href="02_01_02_introduction_to_pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -335,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_03_intro.html">
+  <a class="reference internal" href="02_03_01_intro.html">
    3. Searching for Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -345,24 +345,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_advanced_strings.html">
+    <a class="reference internal" href="02_03_02_advanced_strings.html">
      3.1. Advanced Searching on Strings in DataFrame
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_02_advanced_querying.html">
+    <a class="reference internal" href="02_03_03_advanced_querying.html">
      3.2. Advanced Filtering and Querying
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_03_advanced_grouping.html">
+    <a class="reference internal" href="02_03_04_advanced_grouping.html">
      3.3. Advanced Grouping with Groupby
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="02_04_intro.html">
+  <a class="reference internal" href="02_04_01_intro.html">
    4. Advanced Pandas
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -372,17 +372,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_01_pandas_and_plots.html">
+    <a class="reference internal" href="02_04_02_pandas_and_plots.html">
      4.1. Basic Plotting with Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_02_graphing_networks_with_pandas.html">
+    <a class="reference internal" href="02_04_03_graphing_networks_with_pandas.html">
      4.2. Graphing Network Data from Pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_01_time_series_data.html">
+    <a class="reference internal" href="02_04_04_time_series_data.html">
      4.3. Introduction to Time Series Data
     </a>
    </li>
@@ -920,63 +920,53 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   1.2.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   1.2.2. Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-create-a-dataframe-from-a-dictionary">
-   1.2.3. How to Create a DataFrame from a Dictionary
+   1.2.1. How to Create a DataFrame from a Dictionary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-display-a-dataframe">
-   1.2.4. How to Display a DataFrame
+   1.2.2. How to Display a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-save-dataframe-to-csv">
-   1.2.5. How to Save DataFrame to CSV
+   1.2.3. How to Save DataFrame to CSV
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-read-dataframe-from-csv">
-   1.2.6. How to Read DataFrame from CSV
+   1.2.4. How to Read DataFrame from CSV
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-save-dataframe-to-json">
-   1.2.7. How to Save DataFrame to JSON
+   1.2.5. How to Save DataFrame to JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-add-a-column-to-the-dataframe">
-   1.2.8. How to Add a Column to the DataFrame
+   1.2.6. How to Add a Column to the DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-column">
-   1.2.9. How to Grab a Specific Column
+   1.2.7. How to Grab a Specific Column
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-convert-a-column-to-a-list">
-   1.2.10. How to Convert a Column to a List
+   1.2.8. How to Convert a Column to a List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe">
-   1.2.11. How to Grab a Specific Row of a DataFrame
+   1.2.9. How to Grab a Specific Row of a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.12. Conclusion
+   1.2.10. Conclusion
   </a>
  </li>
 </ul>
@@ -999,63 +989,53 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   1.2.1. Covered in this Chapter
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   1.2.2. Video
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-create-a-dataframe-from-a-dictionary">
-   1.2.3. How to Create a DataFrame from a Dictionary
+   1.2.1. How to Create a DataFrame from a Dictionary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-display-a-dataframe">
-   1.2.4. How to Display a DataFrame
+   1.2.2. How to Display a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-save-dataframe-to-csv">
-   1.2.5. How to Save DataFrame to CSV
+   1.2.3. How to Save DataFrame to CSV
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-read-dataframe-from-csv">
-   1.2.6. How to Read DataFrame from CSV
+   1.2.4. How to Read DataFrame from CSV
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-save-dataframe-to-json">
-   1.2.7. How to Save DataFrame to JSON
+   1.2.5. How to Save DataFrame to JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-add-a-column-to-the-dataframe">
-   1.2.8. How to Add a Column to the DataFrame
+   1.2.6. How to Add a Column to the DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-column">
-   1.2.9. How to Grab a Specific Column
+   1.2.7. How to Grab a Specific Column
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-convert-a-column-to-a-list">
-   1.2.10. How to Convert a Column to a List
+   1.2.8. How to Convert a Column to a List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe">
-   1.2.11. How to Grab a Specific Row of a DataFrame
+   1.2.9. How to Grab a Specific Row of a DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.12. Conclusion
+   1.2.10. Conclusion
   </a>
  </li>
 </ul>
@@ -1070,42 +1050,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-the-basics-of-pandas-center">
 <h1><span class="section-number">1.2. </span><center>The Basics of Pandas</center><a class="headerlink" href="#center-the-basics-of-pandas-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>August 2021</center><section id="covered-in-this-chapter">
-<h2><span class="section-number">1.2.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>How to Create a DataFrame from a Dictionary<br></p></li>
-<li><p>How to Display a DataFrame<br></p></li>
-<li><p>How to Save a DataFrame to CSV<br></p></li>
-<li><p>How to Create a DataFrame from a CSV File<br></p></li>
-<li><p>How to Create a DataFrame from a JSON File<br></p></li>
-<li><p>How to Add a Column to a DataFrame<br></p></li>
-<li><p>How to Grab a Specific Column of a DataFrame<br></p></li>
-<li><p>How to Convert a Column to a List<br></p></li>
-<li><p>How to Grab a Specific Row of a DataFrame</p></li>
-</ol>
-</section>
-<section id="video">
-<h2><span class="section-number">1.2.2. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/dMoXe8DUQ7E&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dMoXe8DUQ7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-</div></div>
-</div>
-</section>
 <section id="how-to-create-a-dataframe-from-a-dictionary">
-<h2><span class="section-number">1.2.3. </span>How to Create a DataFrame from a Dictionary<a class="headerlink" href="#how-to-create-a-dataframe-from-a-dictionary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>How to Create a DataFrame from a Dictionary<a class="headerlink" href="#how-to-create-a-dataframe-from-a-dictionary" title="Permalink to this headline">#</a></h2>
 <p>As we noted in the last notebook, we need to first import pandas. To do that we will import pandas as pd.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1153,7 +1099,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-display-a-dataframe">
-<h2><span class="section-number">1.2.4. </span>How to Display a DataFrame<a class="headerlink" href="#how-to-display-a-dataframe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>How to Display a DataFrame<a class="headerlink" href="#how-to-display-a-dataframe" title="Permalink to this headline">#</a></h2>
 <p>Loading the data as DataFrame is not the end of our work. It is often times essential to view that data in a Jupyter notebook or terminal. To see what it looks like, you can use the following command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1234,7 +1180,7 @@ title="Print to PDF"
 <p>Notice, however, that the formatting of the data in the output is a bit different. When we print off a DataFrame, we do not see the nice formatting, such as the row highlighting and column header emboldening. It is for these reasons, that I recommend using the command “df” rather than print (df)</p>
 </section>
 <section id="how-to-save-dataframe-to-csv">
-<h2><span class="section-number">1.2.5. </span>How to Save DataFrame to CSV<a class="headerlink" href="#how-to-save-dataframe-to-csv" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>How to Save DataFrame to CSV<a class="headerlink" href="#how-to-save-dataframe-to-csv" title="Permalink to this headline">#</a></h2>
 <p>Often times when you convert your data into a DataFrame, you will process it and then ultimately save it to disk. To do this, we have a few different options, such as CSV and JSON. We will meet this process with JSON a bit later. For now, let’s focus on one file type: CSV, or comma separated value. To save your DataFrame to a CSV file, you can write the following command</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1246,7 +1192,7 @@ title="Print to PDF"
 <p>As we will see a little later, there are different arguments that you can pass here (and should!) For now, let’s focus on that single argument that we used: a string. This string should correspond to the file that you want to create. In this case, we are putting it into the data subfolder under the name “names.csv”.</p>
 </section>
 <section id="how-to-read-dataframe-from-csv">
-<h2><span class="section-number">1.2.6. </span>How to Read DataFrame from CSV<a class="headerlink" href="#how-to-read-dataframe-from-csv" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.4. </span>How to Read DataFrame from CSV<a class="headerlink" href="#how-to-read-dataframe-from-csv" title="Permalink to this headline">#</a></h2>
 <p>Now that we have the data saved to a CSV file, let’s create a new DataFrame, df2, and read that data. We can do this with the command pd.read_csv(). As with to_csv, we can pass multiple arguments here, but for now, we will stick with the one mandatory one, a string of the file that we wish to open. In this case, it is the same file we just created. Let’s open it and print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1395,7 +1341,7 @@ title="Print to PDF"
 <p>Like magic, now we have a DataFrame that represents our original data.</p>
 </section>
 <section id="how-to-save-dataframe-to-json">
-<h2><span class="section-number">1.2.7. </span>How to Save DataFrame to JSON<a class="headerlink" href="#how-to-save-dataframe-to-json" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.5. </span>How to Save DataFrame to JSON<a class="headerlink" href="#how-to-save-dataframe-to-json" title="Permalink to this headline">#</a></h2>
 <p>In Pandas, we are not limited to CSV files, we can do this same process with JSON files, which are JavaScript Object Notation files. These are a bit different from CSV files and are used to store more complex data, specifically data that is used on the web because all browsers can interpret JSON data off-the-shelf. To save our data to a JSON file, we can use the to_json(). Note that we are not passing the index argument here. When our data is stored as a JSON file this is not necessary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1471,7 +1417,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="how-to-add-a-column-to-the-dataframe">
-<h2><span class="section-number">1.2.8. </span>How to Add a Column to the DataFrame<a class="headerlink" href="#how-to-add-a-column-to-the-dataframe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.6. </span>How to Add a Column to the DataFrame<a class="headerlink" href="#how-to-add-a-column-to-the-dataframe" title="Permalink to this headline">#</a></h2>
 <p>When working with DataFrames, you will almost always need to manipulate the data in some way. This means adding columns, deleting columns, performing permutations on data in columns, etc. We are going to cover all these things throughout this textbook. For now, let’s start with the basics. Imagine we got the names of individuals from one source and their ages from another. We now need to add those ages into our DataFrame. We can approach the DataFrame as something like a dictionary here. We can add a column by creating it with df4[“ages”]. This allows us to make that equal to the new data. The command below essentially adds a column to our DataFrame. Let’s execute the command and print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1547,7 +1493,7 @@ title="Print to PDF"
 <p>Notice that we now have our second column. I want to stress right now, that to do this we needed data that matched the length of the names. If we tried to do this same act, but with 5 ages, rather than 6, we would have received an error.</p>
 </section>
 <section id="how-to-grab-a-specific-column">
-<h2><span class="section-number">1.2.9. </span>How to Grab a Specific Column<a class="headerlink" href="#how-to-grab-a-specific-column" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.7. </span>How to Grab a Specific Column<a class="headerlink" href="#how-to-grab-a-specific-column" title="Permalink to this headline">#</a></h2>
 <p>When working with a DataFrame, you will often need to grab a single column of data. To do that, we can navigate the column data rather like a Python Class. Let’s create a new object, names, and grab just the names column by stating df4.names. This command tells Pandas to grab the “names” column. Note, this is case sensitive. After we grab it, let’s print it off too.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1602,7 +1548,7 @@ Name: ages, dtype: int64
 </div>
 </section>
 <section id="how-to-convert-a-column-to-a-list">
-<h2><span class="section-number">1.2.10. </span>How to Convert a Column to a List<a class="headerlink" href="#how-to-convert-a-column-to-a-list" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.8. </span>How to Convert a Column to a List<a class="headerlink" href="#how-to-convert-a-column-to-a-list" title="Permalink to this headline">#</a></h2>
 <p>When you are working with a DataFame, you will often times need to work with that data not as a column, rather as a list. To do this, you will want to convert that data into a list. You can do this, by calling the method .tolist() after the data in question. Let’s try it with ages and print off a list of ages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1626,7 +1572,7 @@ Name: ages, dtype: int64
 <p>While this may not seem necessary on the surface, it is. One of the main reasons that this is essential is for processing large quantities of data. It is often times computationally less expensive to work with that data as a list or, better yet, as a NumPy array.</p>
 </section>
 <section id="how-to-grab-a-specific-row-of-a-dataframe">
-<h2><span class="section-number">1.2.11. </span>How to Grab a Specific Row of a DataFrame<a class="headerlink" href="#how-to-grab-a-specific-row-of-a-dataframe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.9. </span>How to Grab a Specific Row of a DataFrame<a class="headerlink" href="#how-to-grab-a-specific-row-of-a-dataframe" title="Permalink to this headline">#</a></h2>
 <p>It will often times be necessary to grab a DataFrame by row, not column. We have a lot of different ways to grab a row, but for now let’s imagine we want to just grab a specific row by index. (We can grab all rows that have a certain value in a certain column also, but we will see that a bit later.) To grab a row by index, you can use the iloc command. This stands for Index Location. Index Location can be indexed rather like a list, as in the code below. The index you choose should correspond to the row index (starting with 0).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1651,7 +1597,7 @@ Name: 1, dtype: object
 </div>
 </section>
 <section id="conclusion">
-<h2><span class="section-number">1.2.12. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.10. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>You should now feel comfortable with creating, reading, and saving DataFrames. You should also be comfortable with adding columns and indexing by rows. In the next notebooks, we will dive into more complex features of DataFrames.</p>
 </section>
 </section>
@@ -1693,7 +1639,7 @@ Name: 1, dtype: object
     <a class='right-next' id="next-link" href="02_02_01_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span><center>Introduction to Python</center></p>
+        <p class="prev-next-title"><span class="section-number">2. </span><center>Working with Data in Pandas</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
