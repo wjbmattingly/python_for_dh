@@ -989,7 +989,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="building-a-database-query-application">
 <h1><span class="section-number">3.1. </span>Building a Database Query Application<a class="headerlink" href="#building-a-database-query-application" title="Permalink to this headline">#</a></h1>
-<p>Throughout this section, we will be working with the following code:</p>
+<p>Throughout this section, we will be developing an application in Streamlit that looks like this:</p>
+<p><img alt="streamlit demo application" src="images/streamlit/dataframe_app.png" /></p>
+<p>We will be working with the following code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -1145,13 +1147,38 @@ title="Print to PDF"
                                         <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">min_age</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_age</span><span class="p">)])</span>
 </pre></div>
 </div>
+<p>Let’s break down this section of the code. In the first line, we create an object <code class="docutils literal notranslate"><span class="pre">name_query</span></code>. This will be a string that is returned from a <code class="docutils literal notranslate"><span class="pre">st.text_input()</span></code> widget. We will use this input to query the <code class="docutils literal notranslate"><span class="pre">Name</span></code> field in the dataframe.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name_query</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&quot;String match for Name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we will create four columns that we can populate with our <code class="docutils literal notranslate"><span class="pre">st.multiselect()</span></code> widgets.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now that we have our columns, we can create our four <code class="docutils literal notranslate"><span class="pre">st.multiselect()</span></code> widgets. The user will be able to select which items that want to see returned for each field in the dataframe. Each of these will return a list of options. We will gather data for four fields: <code class="docutils literal notranslate"><span class="pre">Survived</span></code>, <code class="docutils literal notranslate"><span class="pre">Pclass</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, and <code class="docutils literal notranslate"><span class="pre">Embarked</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">survival</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">survival_options</span><span class="p">)</span>
+<span class="n">p_class</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Passenger Class&quot;</span><span class="p">,</span> <span class="n">p_class_options</span><span class="p">)</span>
+<span class="n">sex</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">sex_options</span><span class="p">)</span>
+<span class="n">embark</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="n">embark_options</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we need three new columns so that we can populate our two range sliders. We are using three columns here so that there is a large gap between the two sliders.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">range_cols</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will populate the first and last slider, we will place two <code class="docutils literal notranslate"><span class="pre">st.slider()</span></code> widgets. We will use the minimum and maximum values for the Age and Fare fields in the dataframe.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">min_fare_range</span><span class="p">,</span> <span class="n">max_fare_range</span> <span class="o">=</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Lowest Fare&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">min_fare</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_fare</span><span class="p">),</span>
+                                        <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">min_fare</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_fare</span><span class="p">)])</span>
+<span class="n">min_age_range</span><span class="p">,</span> <span class="n">max_age_range</span> <span class="o">=</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Lowest Age&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">min_age</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_age</span><span class="p">),</span>
+                                        <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">min_age</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">max_age</span><span class="p">)])</span>
+</pre></div>
+</div>
 </section>
 <section id="using-user-inputs-to-produce-a-new-dataframe">
 <h2><span class="section-number">3.1.4. </span>Using User Inputs to Produce a New DataFrame<a class="headerlink" href="#using-user-inputs-to-produce-a-new-dataframe" title="Permalink to this headline">#</a></h2>
 <p>With the general layout designed, we can then work with the input from the user to modify our <code class="docutils literal notranslate"><span class="pre">res</span></code> dataframe. The following code manipulates the dataframe through a set of conditions we generate from the user input.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">name_query</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name_query</span><span class="p">)]</span>
-
 <span class="k">if</span> <span class="n">survival</span><span class="p">:</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">survival</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">p_class</span><span class="p">:</span>
@@ -1168,6 +1195,39 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">removal_columns</span><span class="p">:</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>First, we check to see if the user has written anything in the <code class="docutils literal notranslate"><span class="pre">st.text_input()</span></code> widget. If it is, then we will narrow the dataframe down to anything that matches the user’s string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">name_query</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name_query</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>For each of the <code class="docutils literal notranslate"><span class="pre">st.multiselect()</span></code> widget inputs, we check to see if the user has selected how to narrow the dataframe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">survival</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">survival</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_class</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">p_class</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">sex</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">sex</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">embark</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">check_rows</span><span class="p">(</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="n">embark</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we will use the input from the minimum and maximum values of the sliders for <code class="docutils literal notranslate"><span class="pre">Age</span></code> and <code class="docutils literal notranslate"><span class="pre">Fare</span></code>. So that we do not ignore results where <code class="docutils literal notranslate"><span class="pre">Age</span></code> or <code class="docutils literal notranslate"><span class="pre">Fare</span></code> are <code class="docutils literal notranslate"><span class="pre">NaN</span></code> in the dataset, we want to give the user the ability to check an <code class="docutils literal notranslate"><span class="pre">st.checkbox()</span></code> widget. This will allow the user to activate or deactivate the sliders.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">&quot;Use Fare Range&quot;</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">res</span><span class="o">.</span><span class="n">Fare</span> <span class="o">&gt;</span> <span class="n">min_fare_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&lt;</span> <span class="n">max_fare_range</span><span class="p">)]</span>
+<span class="k">if</span> <span class="n">range_cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="s2">&quot;Use Age Range&quot;</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&gt;</span> <span class="n">min_age_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Age</span> <span class="o">&lt;</span> <span class="n">max_age_range</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>We also want to give the user one final input, the ability to narrow down and delete columns from the dataset. The reason for this is because not all fields will be relevant to every user and since this is a large dataset, it makes sense to give them the ability to limit which fields they are seeing to the ones they want.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">removal_columns</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s2">&quot;Select Columns to Remove&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">removal_columns</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As we have manipulated the <code class="docutils literal notranslate"><span class="pre">res</span></code> dataframe throughout each of these lines, we are finally ready to display the data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
