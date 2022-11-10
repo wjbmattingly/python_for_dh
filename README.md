@@ -1,10 +1,9 @@
 # INTRODUCTION TO PYTHON FOR HUMANISTS
-This course is an introduction to Python. It presumes no knowledge on the part of the reader about programming in general or knowledge of data.
+This repository is a free JupyterBook that introduces readers to Python. It presumes no knowledge on the part of the reader about programming in general or knowledge of data.
 
 
 # Table of Contents
 PREFACE
-   1. Preface
 
 PART ONE: The Basics of Python
    1. Introduction to Python
