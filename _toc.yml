@@ -88,25 +88,25 @@ parts:
     - file: 02_pandas/02_02_04_cleaning_data
       title: Cleaning Data with Pandas
 
-  - file: 02_pandas/02_03_intro
+  - file: 02_pandas/02_03_01_intro
     title: Searching for Data
     sections:
-    - file: 02_pandas/03_01_advanced_strings
+    - file: 02_pandas/02_03_02_advanced_strings
       title: Advanced Searching on Strings in DataFrame
-    - file: 02_pandas/03_02_advanced_querying
+    - file: 02_pandas/02_03_03_advanced_querying
       title: Advanced Filtering and Querying
-    - file: 02_pandas/03_03_advanced_grouping
+    - file: 02_pandas/02_03_04_advanced_grouping
       title: Advanced Grouping with Groupby
 
-  - file: 02_pandas/02_04_intro
+  - file: 02_pandas/02_04_01_intro
     title: Advanced Pandas
     sections:
-    - file: 02_pandas/04_01_pandas_and_plots
+    - file: 02_pandas/02_04_02_pandas_and_plots
       title: Basic Plotting with Pandas
-    - file: 02_pandas/04_02_graphing_networks_with_pandas
+    - file: 02_pandas/02_04_03_graphing_networks_with_pandas
       title: Graphing Network Data from Pandas
 
-    - file: 02_pandas/05_01_time_series_data
+    - file: 02_pandas/02_04_04_time_series_data
       title: Introduction to Time Series Data
 
 - caption: "PART THREE: Natural Language Processing with spaCy (Work in Progress)"
