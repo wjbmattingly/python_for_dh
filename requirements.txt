@@ -12,4 +12,4 @@ sentence_transformers
 scikit-learn
 umap-learn
 hdbscan
-pdk
+pydeck
