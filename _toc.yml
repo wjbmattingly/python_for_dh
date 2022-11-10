@@ -216,3 +216,5 @@ parts:
     sections:
     - file: 05_streamlit/05_03_02_database_query_app
       title: Database Query App
+    - file: 05_streamlit/05_03_03_cloud
+      title: Deploying an App in the Cloud with Streamlit Share
