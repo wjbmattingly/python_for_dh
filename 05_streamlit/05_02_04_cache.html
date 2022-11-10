@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. Custom HTML" href="05_02_05_custom_html.html" />
+    <link rel="next" title="2.5. Custom HTML" href="05_02_05_custom_html.html" />
     <link rel="prev" title="2.2. Layout Design" href="05_02_03_layout_design.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -646,17 +646,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. Cache
+     2.3. Streamlit Cache and Session States
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_02_05_custom_html.html">
-     2.4. Custom HTML
+     2.5. Custom HTML
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_02_06_multiple_pages.html">
-     2.5. Multi-Page Applications
+     2.6. Multi-Page Applications
     </a>
    </li>
   </ul>
@@ -897,12 +897,48 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.3. Streamlit Cache and Session States
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caching-data-with-st-cache">
+     2.3.1. Caching Data with st.cache`
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storing-data-with-st-session-state">
+   2.4. Storing Data with st.session_state
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -914,6 +950,31 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.3. Streamlit Cache and Session States
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caching-data-with-st-cache">
+     2.3.1. Caching Data with st.cache`
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storing-data-with-st-session-state">
+   2.4. Storing Data with st.session_state
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -923,6 +984,53 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="streamlit-cache-and-session-states">
 <h1><span class="section-number">2.3. </span>Streamlit Cache and Session States<a class="headerlink" href="#streamlit-cache-and-session-states" title="Permalink to this headline">#</a></h1>
+<p>Being able to make more modular, custom, and dynamic applications means getting to know how to leverage advanced features in Streamlit when it comes to working with data stored in memory. In Streamlit, we have two ways to store data in memory, either by caching the data with <code class="docutils literal notranslate"><span class="pre">&#64;st.cache()</span></code> or with the <code class="docutils literal notranslate"><span class="pre">st.session_state</span></code>.</p>
+<section id="caching-data-with-st-cache">
+<h2><span class="section-number">2.3.1. </span>Caching Data with st.cache`<a class="headerlink" href="#caching-data-with-st-cache" title="Permalink to this headline">#</a></h2>
+<p>When working with large data-driven projects, run time will become an issue with Streamlit. This is because Streamlit reruns the Python file each time something changes in the application. With large datasets, this means that each time a user does anything within your application, Streamlit will need to reload all the data. For this reason, it is essential to know how to store large datasets (or models) in cache so that Streamlit does not need to reload large memory-intensive data or models each item it reruns.</p>
+<p>We can cache our data with an <code class="docutils literal notranslate"><span class="pre">&#64;st.cache()</span></code> above a function that loads the data. If we wanted to load our Titanic dataset and store it in memory, therefore, we would use the following code snippet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">load_df</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/titanic.csv&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+<p>This is precisely the code that we will walk through when we create our first application in Streamlit later in this part of the textbook.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="storing-data-with-st-session-state">
+<h1><span class="section-number">2.4. </span>Storing Data with st.session_state<a class="headerlink" href="#storing-data-with-st-session-state" title="Permalink to this headline">#</a></h1>
+<p>Aside from storing large data with cache, we can also store previous states of data with the <code class="docutils literal notranslate"><span class="pre">st.session_state</span></code>. The Streamlit Session State gives greater flexibility to an application. It functions as a dictionary that stores data that remains the same during any given state of the app. This means that if your app is rerun by the user because they interacted with the application, then the variable stored in the session state would remain the same.</p>
+<p>This is essential for more complex data-driven applications. Let’s consider the simple example that we saw earlier in this chapter when we examined the <code class="docutils literal notranslate"><span class="pre">st.metric()</span></code> widget.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;prev_word_count&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;prev_word_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s2">&quot;Paste text here to get word count.&quot;</span><span class="p">,</span> <span class="s2">&quot;This is some default text.&quot;</span><span class="p">)</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">change</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">-</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Word Count&quot;</span><span class="p">,</span> <span class="n">word_count</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span> <span class="o">=</span> <span class="n">word_count</span>
+</pre></div>
+</div>
+<p>In this sample, we start off with a conditional:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;prev_word_count&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>This line looks to see if a variable name that we want to use is stored in our session state. If it is not stored there, then we want to create that new key. We do that with the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;prev_word_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Here we are setting the <code class="docutils literal notranslate"><span class="pre">prev_word_count</span></code> key to 5.</p>
+<p>Next, we give the user the ability to input some text for which they wish to receive a word count. In order for the metric to know if the new metric is higher or lower than the previous one, we must store the previous text’s total word count. To do this, we access the previous session state in the final line of the snippet below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s2">&quot;Paste text here to get word count.&quot;</span><span class="p">,</span> <span class="s2">&quot;This is some default text.&quot;</span><span class="p">)</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">change</span> <span class="o">=</span> <span class="n">word_count</span><span class="o">-</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span>
+</pre></div>
+</div>
+<p>Once we have populated those results, we then can update the <code class="docutils literal notranslate"><span class="pre">st.session_state.previous_word_count</span></code> value to the new value. This allows us to always know the state of the previous word count, so that when we display the change value, we know precisely how much our metric has changed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s2">&quot;Word Count&quot;</span><span class="p">,</span> <span class="n">word_count</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">prev_word_count</span> <span class="o">=</span> <span class="n">word_count</span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -962,7 +1070,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="05_02_05_custom_html.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Custom HTML</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Custom HTML</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
