@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. Cultivating a Corpus &#8212; Introduction to Python for Humanists</title>
+    <title>3.2. The Challenges of Holocaust NER &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.3. The Challenges of Holocaust NER" href="03_03_04_the_challenges_of_holocaust_ner.html" />
+    <link rel="next" title="3.3. Creating Rules-Based Pipeline for Holocaust Documents" href="03_03_04_building_holocaust_pipeline_rules_based.html" />
     <link rel="prev" title="3.1. Cultivating Good Datasets for Entities" href="03_03_02_cultivating_concentration_camp_dataset.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -214,17 +214,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_04-02_functions.html">
-     4.1. Introduction to Functions (Work in Progress)
+     4.1. Introduction to Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_04-03_classes.html">
-     4.2. Introduction to Classes (Work in Progress)
+     4.2. Introduction to Classes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
-     4.3. Introduction to Libraries (Work in Progress)
+     4.3. Introduction to Libraries
     </a>
    </li>
   </ul>
@@ -241,17 +241,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_05-02_texts.html">
-     5.1. Loading and Saving Text Data (Work in Progress)
+     5.1. Loading and Saving Text Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_05-03_json.html">
-     5.2. Loading and Saving JSON Data (Work in Progress)
+     5.2. Loading and Saving JSON Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
-     5.3. Working with Multiple Files (Work in Progress)
+     5.3. Working with Multiple Files
     </a>
    </li>
   </ul>
@@ -391,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART THREE: Natural Language Processing with spaCy (Work in Progress)
+  PART THREE: Natural Language Processing with spaCy
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -476,17 +476,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.2. Cultivating a Corpus
+     3.2. The Challenges of Holocaust NER
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_03_04_the_challenges_of_holocaust_ner.html">
-     3.3. The Challenges of Holocaust NER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_04_05_building_holocaust_pipeline_rules_based.html">
-     3.4. Creating the Rules-Based Pipeline
+    <a class="reference internal" href="03_03_04_building_holocaust_pipeline_rules_based.html">
+     3.3. Creating the Rules-Based Pipeline
     </a>
    </li>
   </ul>
@@ -494,7 +489,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)
+  PART FOUR: OTHER APPLICATIONS OF PYTHON
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -593,7 +588,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)
+  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -742,7 +737,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_03_03_cultivating_corpus.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/03_spacy/03_03_03_challenges.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -760,7 +755,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_03_03_cultivating_corpus.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/03_spacy/03_03_03_challenges.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -820,7 +815,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_03_03_cultivating_corpus.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F03_spacy/03_03_03_challenges.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -837,7 +832,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_03_03_cultivating_corpus.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/03_spacy/03_03_03_challenges.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -865,7 +860,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03_spacy/03_03_03_cultivating_corpus.ipynb"
+        <a href="../_sources/03_spacy/03_03_03_challenges.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -930,38 +925,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.2.2. Introduction
+  <a class="reference internal nav-link" href="#an-overview-of-the-problems">
+   3.2.2. An Overview of the Problems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variety">
-   3.2.3. Variety
+  <a class="reference internal nav-link" href="#ethical">
+   3.2.3. Ethical
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-the-corpus">
-   3.2.4. Preparing the Corpus
+  <a class="reference internal nav-link" href="#linguistic">
+   3.2.4. Linguistic
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-lemmatize-or-not-to-lemmatize">
-   3.2.5. To Lemmatize or Not to Lemmatize
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#segment-the-corpus">
-   3.2.6. Segment the Corpus
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   3.2.7. Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   3.2.8. Video
+  <a class="reference internal nav-link" href="#toponyms">
+   3.2.5. Toponyms
   </a>
  </li>
 </ul>
@@ -973,7 +953,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Cultivating a Corpus</center></h1>
+                <h1><center>The Challenges of Holocaust NER</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -989,38 +969,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.2.2. Introduction
+  <a class="reference internal nav-link" href="#an-overview-of-the-problems">
+   3.2.2. An Overview of the Problems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variety">
-   3.2.3. Variety
+  <a class="reference internal nav-link" href="#ethical">
+   3.2.3. Ethical
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preparing-the-corpus">
-   3.2.4. Preparing the Corpus
+  <a class="reference internal nav-link" href="#linguistic">
+   3.2.4. Linguistic
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-lemmatize-or-not-to-lemmatize">
-   3.2.5. To Lemmatize or Not to Lemmatize
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#segment-the-corpus">
-   3.2.6. Segment the Corpus
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   3.2.7. Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video">
-   3.2.8. Video
+  <a class="reference internal nav-link" href="#toponyms">
+   3.2.5. Toponyms
   </a>
  </li>
 </ul>
@@ -1033,157 +998,39 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-cultivating-a-corpus-center">
-<h1><span class="section-number">3.2. </span><center>Cultivating a Corpus</center><a class="headerlink" href="#center-cultivating-a-corpus-center" title="Permalink to this headline">#</a></h1>
-<center>Dr. W.J.B. Mattingly</center>
-<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
-<center>January 2021</center><section id="key-concepts-in-this-notebook">
+  <section class="tex2jax_ignore mathjax_ignore" id="center-the-challenges-of-holocaust-ner-center">
+<h1><span class="section-number">3.2. </span><center>The Challenges of Holocaust NER</center><a class="headerlink" href="#center-the-challenges-of-holocaust-ner-center" title="Permalink to this headline">#</a></h1>
+<section id="key-concepts-in-this-notebook">
 <h2><span class="section-number">3.2.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
-<li><p>What to look for in a corpus<br></p></li>
+<li><p>machine learning ethics<br></p></li>
+<li><p>the problem of multilingual/regionally diverse corpora<br></p></li>
+<li><p>toponym<br></p></li>
+<li><p>toponym resolution<br></p></li>
 </ol>
 </section>
-<section id="introduction">
-<h2><span class="section-number">3.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>This notebook has a single purpose, to provide the steps I took to cultivate a corpus to run an EntityRuler across to cultivate a large training set. I will use this as a case study for what to look for in a corpus.</p>
+<section id="an-overview-of-the-problems">
+<h2><span class="section-number">3.2.2. </span>An Overview of the Problems<a class="headerlink" href="#an-overview-of-the-problems" title="Permalink to this headline">#</a></h2>
+<p>Developing an NER pipeline (especially if using a machine learning approach) for Holocaust documents has several issues that must be addressed. They fall into three categories: ethical, linguistic, toponym resolution.</p>
 </section>
-<section id="variety">
-<h2><span class="section-number">3.2.3. </span>Variety<a class="headerlink" href="#variety" title="Permalink to this headline">#</a></h2>
-<p>The goal of machine learning models is to be able to generalize well on unseen data. The best way to get the model to generalize well on all unseen data (or at least a lot of it), is to give the model texts is a wide variety. Variety is key when training because variety allows for a model to learn different things from different types of texts, which are written in different styles, dialects, contexts, etc. So the first thing you need to consider when putting together a corpus to generate training data from is, variety. So, with that in mind, give the model as much textual data as you can.</p>
+<section id="ethical">
+<h2><span class="section-number">3.2.3. </span>Ethical<a class="headerlink" href="#ethical" title="Permalink to this headline">#</a></h2>
+<p>When working with documents as sensitive and delicate as those belonging to the Holocaust, any data scientist or NLP/ML practitioner must consider the serious ethical implications of using machine learning. First, there is the issue of privacy. Named Entity Recognition, by definition, finds and extracted <em>named</em> entities. Do the individuals mentioned in the documents wish to be more discoverable? Do they wish to have their names removed from context and stored as metadata? These are some of the ethical quesitons that one should consider. That is not to say that the process cannot go forward, but if it does, it falls on the part of the creator of the NER to explain the ethical considersations that went into the process and the steps taken to remedy them.</p>
+<p>When it comes to names, these can be victims of violence, perpetrators of violence, interviewers of victims, historians, etc. One must ask if it is acceptable to try and use a machine to introduce decisions about the function of the individual in context. Is it ethical or even responsible to try and get a machine to identify victims or perpetrators of violence? Possibly not. It really depends on the desired output and the degree to which the creator of the NER system wishes to justify their actions.</p>
+<p>Further, machine learning is imprecise. This means that mistakes will happen. If your NER is trying to identify PEOPLE, GPE, and custom entities, such as CONC_CAMP (concentration camp) and GHETTO, is it ethically acceptable to have errors that result in a potential victim being labeled as a CONC_CAMP? From a machine learning point-of-view, this kind of error is possible and understandable. But imagine if a victim or family member of a victim is trying to use new technology to learn about their past and they see their own name or that of a friend or family member who was a victim of the Holocaust labeled as a CONC_CAMP. Why did this happen? For various reasons. If we think about this from the perspective of the victim, however, this could have a traumatic effect. For these reasons we have an ethical responsibility to introduce barriers to preven things like this from occuring and/or introducing warnings and explanations for <em>why</em> these types of errors may occur.</p>
 </section>
-<section id="preparing-the-corpus">
-<h2><span class="section-number">3.2.4. </span>Preparing the Corpus<a class="headerlink" href="#preparing-the-corpus" title="Permalink to this headline">#</a></h2>
-<p>Once you have compiled documents from various sources that represent a wide range of styles, dialects, and contexts, it’s time to begin preparing that corpus. At this stage, the NLP practitioner must consider <em>how</em> they want to prepare the corpus. How one prepares the corpus radically alters <em>what</em> a model learns.</p>
-<p>Let’s consider these few sentences:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent1</span> <span class="o">=</span> <span class="s2">&quot;My name is William Mattingly.&quot;</span>
-<span class="n">sent2</span> <span class="o">=</span> <span class="s2">&quot;My name is William Mattingly&quot;</span>
-<span class="n">sent3</span> <span class="o">=</span> <span class="s2">&quot;my name is william mattingly&quot;</span>
-<span class="n">sent4</span> <span class="o">=</span> <span class="s2">&quot;MY NAME IS WILLIAM MATTINGLY&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>While each of these sentences is identical to humans, but to a machine they are entirely different. Let me demonstrate what I mean.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[</span><span class="n">sent1</span><span class="p">,</span> <span class="n">sent2</span><span class="p">,</span> <span class="n">sent3</span><span class="p">,</span> <span class="n">sent4</span><span class="p">]</span>
-
-<span class="n">all_words</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sents</span><span class="p">:</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="n">all_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-
-<span class="n">no_duplicates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">all_words</span><span class="p">))</span>
-<span class="n">no_duplicates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">no_duplicates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;IS&#39;, &#39;MATTINGLY&#39;, &#39;MY&#39;, &#39;Mattingly&#39;, &#39;Mattingly.&#39;, &#39;My&#39;, &#39;NAME&#39;, &#39;WILLIAM&#39;, &#39;William&#39;, &#39;is&#39;, &#39;mattingly&#39;, &#39;my&#39;, &#39;name&#39;, &#39;william&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>In the above code, we combined all sentences into a bag of words and then removed duplicates. Notice, however, that despite removing duplicates, each word appears multiple times. This is because the computer does not see “WILLIAM”, “William”, or “william” as the same word. How you clean and prepare your training data will affect how your model understands its world. In other words, if you clean your data and expect your model to be given unclean data, it will not perform well. If you lowercase all your training data and your model encounters capitalized words, it will not perform well.</p>
-<p>Cleaning and preparing data are fundamental steps in natural language processing, but when it comes to training, you, as the creator of your model, must understand how those steps will affect the performance of your model and should you take the steps to clean your data in a specific way, you should let your users know the steps you took and how data should be given to your model. You may even want to provide a few functions or classes to your users to help them clean their data and structure it in a way that you did for training.</p>
-<p>Let’s take a brief look at how we might achieve this with the code below. It is identical to the code above, except each sentence is lowercased and the period removed before being appended to the all_words list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[</span><span class="n">sent1</span><span class="p">,</span> <span class="n">sent2</span><span class="p">,</span> <span class="n">sent3</span><span class="p">,</span> <span class="n">sent4</span><span class="p">]</span>
-
-<span class="n">all_words</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sents</span><span class="p">:</span>
-    <span class="c1">#New line in which we lowercase and remove the period punctuation.</span>
-    <span class="n">sent</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">sent</span><span class="p">)</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="n">all_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-
-<span class="n">no_duplicates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">all_words</span><span class="p">))</span>
-<span class="n">no_duplicates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">no_duplicates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is william mattingly
-my name is william mattingly
-my name is william mattingly
-my name is william mattingly
-[&#39;is&#39;, &#39;mattingly&#39;, &#39;my&#39;, &#39;name&#39;, &#39;william&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>By cleaning the text, we’ve succcessfully eliminated. However, in doing this, our model will never encounter data where proper nouns are uppercased. It will never encounter periods, either. In cleaning your data, therefore, be mindful of this.</p>
+<section id="linguistic">
+<h2><span class="section-number">3.2.4. </span>Linguistic<a class="headerlink" href="#linguistic" title="Permalink to this headline">#</a></h2>
+<p>In addition to the ethical concerns, there are also linguistic issues that make Holocaust data particularly challenging. First, the Holocaust covered a wide section of Europe and, as a result, those who were involved in or affected by the events surrounding the Holocaust were, necessarily of various linguistic backgrounds. In addition to this, many individuals had two mother tongues or spoke multiple languages. This has resulted in documents in the tens of languages. Furthermore, some documents are multilingual. For example, in the oral testimonies at the USHMM, inviduals may give testimony in English, but then use a Yiddish or Polish word. This sudden change in language may or may not be indicated in the notation.</p>
+<p>Handling documents of multiple languages is a challenging task in NLP. Fortunately, the new advents of BERT and transformer-based machine learning models may provide the key. For now the steps I have taken in this notebook work strictly for single-language documents. If a word appears here or there in a text that is foreign, the steps I have provided will suffice. If, however, the documents are half German and half English, certain preprocessing steps need to be taken to handle each language separately.</p>
+<p>In addition to multiple languages being present in a document, sometimes a document may contain peculiar dialects of a language. This will often return poorer results if an NER model has not been introduced to or experienced such dialectical variances. For example, in oral testimonies, a victim of the Holocaust may refer to their birthplace by a local name that is only used by a select few. It may be a village in Poland that most models will have never encountered. It is important to understand <em>why</em> these issues present problems for models and how to overcome them. As we saw in the previous notebook, the easiest way to overcome these issues, is to incorperate them into the training data.</p>
 </section>
-<section id="to-lemmatize-or-not-to-lemmatize">
-<h2><span class="section-number">3.2.5. </span>To Lemmatize or Not to Lemmatize<a class="headerlink" href="#to-lemmatize-or-not-to-lemmatize" title="Permalink to this headline">#</a></h2>
-<p>Next, we must consider the question of lemmatization. We met lemmatization in notebook 01.02, but perhaps it is worth describing it again here. Lemmatization is the process by which we reduce all words to their lemma, or root. There are different libraries that perform lemmatization differently. For our purposes, we will use spaCy. Let’s look at a new example in the sentences below.</p>
-<p>In both sentences, we have almost the same meaning except the concept of time and one being entirely uppercase. Lemmatization offers the ability to make these both sentences identical.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
-
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
-
-<span class="n">sent1</span> <span class="o">=</span> <span class="s2">&quot;The ball is his.&quot;</span>
-<span class="n">sent2</span> <span class="o">=</span> <span class="s2">&quot;THE BALL WAS HIS.&quot;</span>
-
-<span class="n">sents</span> <span class="o">=</span> <span class="p">[</span><span class="n">sent1</span><span class="p">,</span> <span class="n">sent2</span><span class="p">]</span>
-
-<span class="n">all_words</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sents</span><span class="p">:</span>
-    <span class="n">sent</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s2">&quot;-&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">token</span><span class="o">.</span><span class="n">lemma_</span><span class="p">:</span>
-            <span class="n">new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">lemma_</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">sent</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">sent</span><span class="p">)</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">sent</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="n">all_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-
-<span class="n">no_duplicates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">all_words</span><span class="p">))</span>
-<span class="n">no_duplicates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">no_duplicates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the ball be his
-the ball be his
-[&#39;ball&#39;, &#39;be&#39;, &#39;his&#39;, &#39;the&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>By performing lemmatization on the sentences, we were able to entirely eliminate the temporal difference between these two texts. This is occasionally a useful step in cleaning textual data for various NLP tasks, and sometimes it is good to introduce this simplified forms to texts, depending on what you want the model to do. Again, by doing this, it means a model will never encounter “was” or any non-lemmatized forms of words. Again, what you give the model, is what the model will learn.</p>
-</section>
-<section id="segment-the-corpus">
-<h2><span class="section-number">3.2.6. </span>Segment the Corpus<a class="headerlink" href="#segment-the-corpus" title="Permalink to this headline">#</a></h2>
-<p>A final note before we wrap up this notebook is on segmentation. Text segmentation is the process by which you break up the large corpus (sometimes millions of documents) into managable sizes delinated in a single text file by line breaks (my preference). I find it is always good to think about the size of training data I want to give the model. If I am working with Latin texts, I choose a segment size that is a chapter (usually 4-20 sentences). If I am working with USHMM oral testimonies, I segment the corpus by blocks of question-answer. If I am working with regular textual data, I may segment the text at individual sentences.</p>
-<p>Think about the size of the training data you want to give the model. I find for the process of automating a rules-based EntityRuler for generating training data, smaller sizes eliminates the potential for false negatives.</p>
-</section>
-<section id="exercise">
-<h2><span class="section-number">3.2.7. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>For the exercise in this notebook, find a corpus that meets the requirements I mentioned above and expirement with different methods of cleaning that corpus.</p>
-</section>
-<section id="video">
-<h2><span class="section-number">3.2.8. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
-<p>I do not have a video for this notebook, unfortunately.</p>
+<section id="toponyms">
+<h2><span class="section-number">3.2.5. </span>Toponyms<a class="headerlink" href="#toponyms" title="Permalink to this headline">#</a></h2>
+<p>There is one final problem associated with Holocaust documents and that is the problem of toponyms. <strong>Toponyms</strong> are proper nouns that are identical but have radically different meanings depending on the context in which it is used. For example, were I to say “Paris has an excellent climate this time of year.” Where would I be speaking about? If you read this, then you would probably assume that I was speaking of Paris, France. What if I told you that I made that statement while sitting at a caffee in Lexington, KY. The place in which I made that statement may mean that I was speaking, actually, about Paris, KY, a small town outside of Lexington. But now what if I told you that I made that statement in this context. “I just got back from a trip in Texas. Paris has an excellent climate this time of year.” Now, it is a bit more clear that I may be speaking about Paris, TX.</p>
+<p>Without context, that single sentence could have many different meanings. Paris, in this example, is a toponym. In Holocaust documents, we often experience toponyms for places that have specific entity labels depending on context. Let’s consider this example. Imagine that I have a model that can identify two types of entities: LOCATION and GHETTO.</p>
+<p>“Warsaw is a large city in Poland. During WWII, the Warsaw Ghetto was created.”</p>
+<p>As a human, how would you annotate these two sentences? If you said, consider Warsaw in the first sentence a LOCATION and Warsaw in the second sentence a GHETTO, you’d be right. The trick in NER and NLP is to create systems that can perform this task. Holocaust documents are filled with examples just like this. The way in which we overcome these problems is by including correctly <strong>toponym resolved</strong> training sets, or training sets that have been manually annotated to ensure that toponyms are labeled correctly, to the model so it can learn to identify toponyms correctly.</p>
 </section>
 </section>
 
@@ -1221,10 +1068,10 @@ the ball be his
             <p class="prev-next-title"><span class="section-number">3.1. </span><center>Cultivating Good Datasets for Entities</center></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03_03_04_the_challenges_of_holocaust_ner.html" title="next page">
+    <a class='right-next' id="next-link" href="03_03_04_building_holocaust_pipeline_rules_based.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span><center>The Challenges of Holocaust NER</center></p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
