@@ -1,0 +1,38 @@
+British Royal Navy,British Women's Royal Naval Service,German Kriegsmarine,Italian Regia Marina,Japanese Navy,US Navy
+Admiral of the Fleet,N/A,"Großadmiral, Grand Admiral",N/A,N/A,Fleet Admiral
+N/A,N/A,"Generaladmiral, General Admiral",N/A,N/A,N/A
+Admiral,N/A,Admiral,Ammiraglio d'armata,"Taisho, Admiral",Admiral
+Vice Admiral,N/A,"Vizeadmiral, Vice Admiral",Ammiraglio di squadra,"Chujo, Vice Admiral",Vice Admiral
+Rear Admiral,Director,"Konteradmiral, Counter Admiral",Ammiraglio di divisione,"Shosho, Rear Admiral",Rear Admiral
+"Commodore, 1st Class",N/A,Kommodore,Contraammiraglio,N/A,Commodore
+"Commodore, 2nd Class",Deputy Director,N/A,N/A,N/A,N/A
+Captain,Superintendent,"Kapitän zur See, Captain",Capitano di Vascello,"Daisa, Captain",Captain
+Commander,Chief Officer,"Fregattenkapitän, Commander (""Frigate Captain"")","Capitano di Fregata, Commander (""Frigate Captain"")","Chusa, Commander",Commander
+Lieutenant Commander,First Officer,"Korvettenkapitän, Lieutenant Commander (""Corvette Captain"")","Capitano di Corvetta, Lieutenant Commander (""Corvette Captain"")","Shosa, Lieutenant Commander",Lieutenant Commander
+N/A,N/A,Stabskapitänleutnant,Primo Tenente di Vascello,N/A,N/A
+Lieutenant or Acting Lieutenant,Second Officer,"Kapitänleutnant, Lieutenant Captain",Tenente di Vascello,"Daii, Lieutenant",Lieutenant
+Sub Lieutenant or Acting Sub Lieutenant,Third Officer,"Oberleutnant zur See, Upper Lieutenant",Sottotenente di Vascello,"Chui, Lieutenant (jg)",Lieutenant (jg)
+Ensign,N/A,"Leutnant zur See, Lieutenant",Guardiamarina,Ensign,Ensign
+Midshipman,N/A,Oberfähnrich zur See,N/A,"Shoi, Midshipman",Midshipman
+N/A,N/A,Fähnrich zur See,N/A,N/A,N/A
+Warrant Officer 1st Class,N/A,Stabsoberfeldwebel,N/A,N/A,Warrant Officer 1st Class
+Warrant Officer 2nd Class,N/A,N/A,N/A,N/A,Warrant Officer 2nd Class
+N/A,N/A,N/A,N/A,N/A,Warrant Officer 3rd Class
+N/A,N/A,Oberfeldwebel,N/A,N/A,Warrant Officer 4th Class
+Chief Petty Officer,N/A,Stabsfeldwebel,N/A,"Ittoheiso, NCO 1st Class
+(Jotoheiso post-1942, NCO Upper Class)",Chief Petty Officer
+N/A,N/A,Feldwebel,N/A,"Nitoheiso, NCO 2nd Class
+(Ittoheiso post-1942, NCO 1st Class)",Petty Officer 1st Class
+Senior Petty Officer,N/A,Obermaat,N/A,N/A,Petty Officer 2nd Class
+Petty Officer,N/A,Maat,N/A,N/A,Petty Officer 3rd Class
+N/A,N/A,Matrosenstabsgefreiter,N/A,N/A,N/A
+Leading Seaman,N/A,N/A,N/A,"Santoheiso, NCO 3rd Class
+(Nitoheiso post-1942, NCO 2nd Class)",N/A
+Able Seaman,N/A,Matrosenhaupgefreiter,N/A,"Ittosuihei, Seaman 1st Class
+(Suiheicho post-1942, Seaman Leader)",Seaman 1st Class
+Ordinary Seaman 1st Class,N/A,Matrosengefreiter,N/A,"Nitosuihei, Seaman 2nd Class
+(Jotosuihei post-1942, Seaman Upper Class)",Seaman 2nd Class
+Ordinary Seaman 2nd Class,N/A,Matrose,N/A,"Santoheihei, Seaman 3rd Class
+(Ittosuihei post-1942, Seaman 1st Class)",Seaman 3rd Class
+N/A,N/A,N/A,N/A,"Yontosuihei, Seaman 4th Class
+(Nitosuihei post-1942, Seaman 2nd Class)",N/A

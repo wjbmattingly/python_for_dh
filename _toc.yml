@@ -42,21 +42,21 @@ parts:
     title: "Formal Coding: Functions, Classes, and Libraries"
     sections:
     - file: 01_intro/01_04-02_functions
-      title: Introduction to Functions (Work in Progress)
+      title: Introduction to Functions
     - file: 01_intro/01_04-03_classes
-      title: Introduction to Classes (Work in Progress)
+      title: Introduction to Classes
     - file: 01_intro/01_04-04_libraries
-      title: Introduction to Libraries (Work in Progress)
+      title: Introduction to Libraries
 
   - file: 01_intro/01_05-01_intro
     title: Working with External Data
     sections:
     - file: 01_intro/01_05-02_texts
-      title: Loading and Saving Text Data (Work in Progress)
+      title: Loading and Saving Text Data
     - file: 01_intro/01_05-03_json
-      title: Loading and Saving JSON Data (Work in Progress)
+      title: Loading and Saving JSON Data
     - file: 01_intro/01_05-04_multiple_files
-      title: Working with Multiple Files (Work in Progress)
+      title: Working with Multiple Files
 
   - file: 01_intro/01_06-01_intro
     title: Working with Data on the Web
@@ -108,7 +108,7 @@ parts:
     - file: 02_pandas/02_04_04_time_series_data
       title: Introduction to Time Series Data
 
-- caption: "PART THREE: Natural Language Processing with spaCy (Work in Progress)"
+- caption: "PART THREE: Natural Language Processing with spaCy"
   numbered: true
   chapters:
   - file: 03_spacy/03_01_01_intro
@@ -140,15 +140,13 @@ parts:
     sections:
     - file: 03_spacy/03_03_02_cultivating_concentration_camp_dataset
       title: Cultivating Good Datasets for Entities
-    - file: 03_spacy/03_03_03_cultivating_corpus.ipynb
-      title: Cultivating a Corpus
-    - file: 03_spacy/03_03_04_the_challenges_of_holocaust_ner
+    - file: 03_spacy/03_03_03_challenges
       title: The Challenges of Holocaust NER
-    - file: 03_spacy/03_04_05_building_holocaust_pipeline_rules_based
+    - file: 03_spacy/03_03_04_building_holocaust_pipeline_rules_based
       title: Creating the Rules-Based Pipeline
 
 
-- caption: "PART FOUR: OTHER APPLICATIONS OF PYTHON(WIP)"
+- caption: "PART FOUR: OTHER APPLICATIONS OF PYTHON "
   numbered: true
   chapters:
   - file: 04_topic_modeling/04_01_01_intro
@@ -186,7 +184,7 @@ parts:
       title: "Applying SNA on Humanities Data"
 
 
-- caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT (Work in Progress)"
+- caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT"
   numbered: true
   chapters:
   - file: 05_streamlit/05_01_01_intro

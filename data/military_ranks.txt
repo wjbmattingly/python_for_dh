@@ -1,0 +1,317 @@
+1st Class
+2nd Class
+Able Seaman
+Acting Corporal
+Acting Pilot Officer
+Admiral
+Admiral of the Fleet
+Air Chief Marshal
+Air Commodore
+Air Marshal
+Air Vice-Marshal
+Aircraftman First Class
+Aircraftman Second Class
+Aiutante
+Aiutante Capo
+Ammiraglio d'armata
+Ammiraglio di divisione
+Ammiraglio di squadra
+Aviere
+Aviere Scello
+Blackshirt
+Brigadeführer
+Brigadier General
+Brigadier Lieutenant
+Camicia Nera
+Camicia Nera Scelta
+Capitano
+Capitano di Corvetta
+Capitano di Fregata
+Capitano di Vascello
+Capo Manipolo
+Capo Squadra
+Captain
+Centurione
+Chief Officer
+Chief Petty Officer
+Chief Warrant Officer
+Chui
+Chujo
+Chusa
+Colonel
+Colonel General
+Colonnello
+Comandante Generale
+Commander
+Commander "Frigate Captain"
+Commodore
+Console
+Console Generale
+Contraammiraglio
+Corporal
+Counter Admiral
+Daii
+Daisa
+Deputy Director
+Director
+Ensign
+Erdengbing
+Erji Shangjiang
+Fahnenjunker
+Feldwebel
+Field Marshal
+First Lieutenant
+First Marshal of the Empire
+First Officer
+First Sergeant
+Fleet Admiral
+Flieger
+Flight Cadet
+Flight Lieutenant
+Flight Sergeant
+Flying Officer
+Fregattenkapitän
+Fähnrich
+Fähnrich zur See
+Gefreiter
+General
+General Admiral
+General Commissar of State Security
+General First Class
+General Second Class
+General der Fallschirmtruppe
+General der Flakartillerie
+General der Flieger
+General der Luftnachrichtentruppe
+General der Luftwaffe
+General der [type of unit]
+General of [type of unit]
+General of the Army
+General of the Army *
+Generaladmiral
+Generale d'Armata
+Generale di Brigata
+Generale di Corpo d'Armata
+Generale di Divisione
+Generale di armata aerea
+Generale di brigata aerea
+Generale di divisione aerea
+Generale di squadra aerea
+Generalfeldmarschall
+Generalleutnant
+Generalmajor
+Generaloberst
+Gensui
+Gocho
+Gocho Kimmu Jotohei
+Grand Admiral
+Grenadier
+Group Captain
+Großadmiral
+Gruppenführer
+Guardiamarina
+Gunnery Sergeant
+Gunso
+Hauptgefreiter until 1944
+Hauptmann
+Hauptscharführer
+Hauptsturmführer
+Head Warrant Officer
+Heicho
+Ittohei
+Ittoheiso
+Ittoheiso post-1942
+Ittosuihei
+Ittosuihei post-1942
+Jotohei Kimmusha Acting Superior Private
+Jotohei Superior Private
+Jotoheiso post-1942
+Jotosuihei post-1942
+Juni
+Kapitän zur See
+Kapitänleutnant
+Kommodore
+Konteradmiral
+Korvettenkapitän
+Lance Corporal
+Leading Aircraftman
+Leading Seaman
+Leutnant
+Leutnant zur See
+Lieutenant
+Lieutenant Captain
+Lieutenant Colonel
+Lieutenant Commander
+Lieutenant Commander "Corvette Captain"
+Lieutenant General
+Lieutenant jg
+Lieutenant or Acting Lieutenant
+Luogotenente Generale
+Maat
+Maggiore
+Major
+Major General
+Maresciallo d'Italia
+Maresciallo di prima classe
+Maresciallo di seconda classe
+Maresciallo di terza classe
+Marshal of Italy
+Marshal of [type of unit]
+Marshal of the Empire
+Marshal of the RAF
+Marshal of the Soviet Union
+Master Gunnery Sergeant
+Master Sergeant
+Matrose
+Matrosengefreiter
+Matrosenhaupgefreiter
+Matrosenstabsgefreiter
+Midshipman
+NCO 1st Class
+NCO 2nd Class
+NCO 3rd Class
+NCO Upper Class
+Nitohei
+Nitoheiso
+Nitoheiso post-1942
+Nitosuihei
+Nitosuihei post-1942
+Oberfeldwebel
+Oberfähnrich
+Oberfähnrich zur See
+Oberführer
+Obergefreiter
+Obergrenadier
+Oberleutnant
+Oberleutnant zur See
+Obermaat
+Oberscharführer
+Oberschütze
+Oberst
+Oberstgruppenführer
+Oberstleutnant
+Obersturmbannführer
+Obersturmführer
+Officer Cadet
+Ordinary Seaman 1st Class
+Ordinary Seaman 2nd Class
+Petty Officer
+Petty Officer 1st Class
+Petty Officer 2nd Class
+Petty Officer 3rd Class
+Pilot Officer
+Primo Aiutante
+Primo Aviere
+Primo Capo Manipolo
+Primo Capo Squadra
+Primo Centurione
+Primo Maresciallo dell'Impero
+Primo Seniore
+Primo Tenente
+Primo Tenente di Vascello
+Private
+Private First Class
+Private Second Class
+Private Upper Class
+Rear Admiral
+Reichsführer
+Reichsmarschall
+Rottenführer
+Santoheihei
+Santoheiso
+Scharführer
+Schütze
+Seaman 1st Class
+Seaman 2nd Class
+Seaman 3rd Class
+Seaman 4th Class
+Seaman Leader
+Seaman Upper Class
+Second Lieutenant
+Second Officer
+Senior Aircraftman
+Senior Lieutenant
+Senior Petty Officer
+Seniore
+Sergeant
+Sergeant Major
+Sergente
+Sergente maggiore
+Shangdengbing
+Shangshi
+Shangwei
+Shangxiao
+Shaojiang
+Shaowei
+Shaoxiao
+Shoi
+Shosa
+Shosho
+Socho
+Sotto Capo Manipolo
+Sottotenente
+Sottotenente di Vascello
+Squadron Leader
+Stabfeldwebel
+Stabsfeldwebel
+Stabsgefreiter from 1944
+Stabskapitänleutnant
+Stabsoberfeldwebel
+Staff Sergeant
+Standarten-Oberjunker
+Standartenführer
+Standartenjunker
+State Security Captain
+State Security Colonel
+State Security Commissar
+State Security Commissar of 1st Rank
+State Security Commissar of 2nd Rank
+State Security Commissar of 3rd Rank
+State Security Junior Lieutenant
+State Security Lieutenant
+State Security Lieutenant Colonel
+State Security Major
+State Security Senior Lieutenant
+State Security Sergeant
+Sturmann
+Sturmbannführer
+Sturmscharführer
+Sub Lieutenant or Acting Sub Lieutenant
+Sub-Colonel
+Sub-Lieutenant
+Sub-Sergeant
+Suiheicho post-1942
+Superintendent
+Taii
+Taisa
+Taisho
+Technical Sergeant
+Tenente
+Tenente Colonnello
+Tenente di Vascello
+Third Officer
+Unterfeldwebel
+Unteroffizier
+Unterscharführer
+Untersturmführer
+Upper Lieutenant
+Upper Sergeant
+Vice Admiral
+Vice Capo Squadra
+Vizeadmiral
+Warrant Officer
+Warrant Officer 1st Class
+Warrant Officer 2nd Class
+Warrant Officer 3rd Class
+Warrant Officer 4th Class
+Wing Commander
+Xiashi
+Yidengbing
+Yiji Shangjiang
+Yontosuihei
+Zhongjiang
+Zhongshi
+Zhongwei
+Zhongxiao
+Zhunjiang
+Zhunwei
