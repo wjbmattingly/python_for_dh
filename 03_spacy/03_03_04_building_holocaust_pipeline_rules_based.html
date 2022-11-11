@@ -955,48 +955,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
-   3.3.8. Creating a Pipe for Finding Ghettos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-a-military-personel">
-   3.3.9. Create Pipe for Identifying a Military Personel
+   3.3.8. Create Pipe for Identifying a Military Personel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-spouses">
-   3.3.10. Create Pipe for Identifying Spouses
+   3.3.9. Create Pipe for Identifying Spouses
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-concentration-camp-pipe">
-   3.3.11. Creating Concentration Camp Pipe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-revolutionary-groups-pipe">
-   3.3.12. Creating Revolutionary Groups Pipe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-places-pipe">
-   3.3.13. Creating a Places Pipe
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
+   3.3.10. Creating a Pipe for Finding Ghettos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-geography-pipe">
-   3.3.14. Creating a Geography Pipe
+   3.3.11. Creating a Geography Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#seeing-the-pipes-at-work">
-   3.3.15. Seeing the Pipes at Work
+   3.3.12. Seeing the Pipes at Work
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-a-spacy-model">
-   3.3.16. Saving a spaCy Model
+   3.3.13. Saving a spaCy Model
   </a>
  </li>
 </ul>
@@ -1054,48 +1039,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
-   3.3.8. Creating a Pipe for Finding Ghettos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-a-military-personel">
-   3.3.9. Create Pipe for Identifying a Military Personel
+   3.3.8. Create Pipe for Identifying a Military Personel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-spouses">
-   3.3.10. Create Pipe for Identifying Spouses
+   3.3.9. Create Pipe for Identifying Spouses
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-concentration-camp-pipe">
-   3.3.11. Creating Concentration Camp Pipe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-revolutionary-groups-pipe">
-   3.3.12. Creating Revolutionary Groups Pipe
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-places-pipe">
-   3.3.13. Creating a Places Pipe
+  <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
+   3.3.10. Creating a Pipe for Finding Ghettos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-geography-pipe">
-   3.3.14. Creating a Geography Pipe
+   3.3.11. Creating a Geography Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#seeing-the-pipes-at-work">
-   3.3.15. Seeing the Pipes at Work
+   3.3.12. Seeing the Pipes at Work
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-a-spacy-model">
-   3.3.16. Saving a spaCy Model
+   3.3.13. Saving a spaCy Model
   </a>
  </li>
 </ul>
@@ -1362,26 +1332,9 @@ title="Print to PDF"
 </section>
 <section id="creating-a-pipe-for-finding-ships">
 <h2><span class="section-number">3.3.7. </span>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">#</a></h2>
-<p>The very first pipe I want to create is a pipe that can find ships, specifically transport ships. In order to achieve this objective, this pipe does several things at once. First, it leverages RegEx to find known patterns that are always ships, e.g. multi-word tokens that may or may not begin with “S.S.”, “SS”, or “The”, followed by a list of known ships. I have opted to not use a spaCy EntityRuler here primarily because I want to expand this pipe in the future and it allows me to find matches that are more varied. Were I to implement this in an EntityRuler pipe, I would need to have many patterns sit in its knowledge-base.</p>
-<p>But finding one of these patterns isn’t enough. I want to ensure that the thing referenced is in fact a ship. Many of these terms could easily be toponyms, or entities that share the same spelling but mean different things in different contexts, e.g. the Ile de France, could easily be a GPE that refers to the area around Paris. General Hosey could easily be a PERSON. To ensure toponym disambiguation, I set up several contextual clues, e.g. the list of nautical terms. If any of these words appear in area around the hit, then the heuristics assign that token the label of SHIP. If not, it ignores it and allows later pipes or the machine learning model to annotate it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ships_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(S\.*S\.*|The|U\.*S\.*\S.*)((?=\s[A-Z])(?:\s[A-Z][a-z\.]+)+)&quot;</span>
-<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ships&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">find_ships</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-    <span class="n">nautical</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;boat&quot;</span><span class="p">,</span> <span class="s2">&quot;sail&quot;</span><span class="p">,</span> <span class="s2">&quot;captain&quot;</span><span class="p">,</span> <span class="s2">&quot;sea&quot;</span><span class="p">,</span> <span class="s2">&quot;harbor&quot;</span><span class="p">,</span> <span class="s2">&quot;aboard&quot;</span><span class="p">,</span> <span class="s2">&quot;admiral&quot;</span><span class="p">,</span> <span class="s2">&quot;liner&quot;</span><span class="p">]</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="n">regex_match</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">ships_pattern</span><span class="p">,</span> <span class="s2">&quot;SHIP&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">context_list</span><span class="o">=</span><span class="n">nautical</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ships&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>USS Minow SHIP
-</pre></div>
-</div>
-</div>
-</div>
+<p>Ships frequently appear in Holocaust documents. We could provide a list of ships to an EntityRuler, but finding one of these patterns isn’t enough. We want to ensure that the thing referenced is in fact a ship. Many of these terms could easily be toponyms, or entities that share the same spelling but mean different things in different contexts, e.g. the Ile de France, could easily be a GPE that refers to the area around Paris. General Hosey could easily be a PERSON. These are also known ships. To ensure toponym disambiguation, I set up several contextual clues, e.g. the list of nautical terms. If any of these words appear in area around the hit, then the heuristics assign that token the label of SHIP. If not, it ignores it and allows later pipes or the machine learning model to annotate it.</p>
+<p>We can gather a list of known WWII ships from the WWII Database (https://ww2db.com/). One of the problems with the lists available here is that they are not utf-8 encoded. This means that the text is not normalized. Inside this repository is a csv file with a normalized version of these ship names. This CSV file also stores metadata about ships, namely their class, country of origin, and the year they were built.</p>
+<p>In spaCy, we can store this metadata inside the entity Span container with a custom extension. This is done via a function known as a <code class="docutils literal notranslate"><span class="pre">getter</span></code> function that maps the data to the custom extension. Let’s see how this works in practice. We will use a synthetic sentence in which the <code class="docutils literal notranslate"><span class="pre">Activity</span></code>, a British vessel, is referenced as is <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">York</span></code>, a place as well as a US ship active during WWII.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ship_metadata_getter</span><span class="p">(</span><span class="n">ent</span><span class="p">):</span>
@@ -1393,7 +1346,7 @@ title="Print to PDF"
             <span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;year_built&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">year</span><span class="p">}</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
@@ -1423,49 +1376,47 @@ New York GPE False
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">]</span>
-<span class="n">row</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">country</span>
+<p>There is a lot happening in this section of code, so let’s break down the different components here. The first function is our <code class="docutils literal notranslate"><span class="pre">getter</span></code> function: <code class="docutils literal notranslate"><span class="pre">ship_metadata_getter()</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ship_metadata_getter</span><span class="p">(</span><span class="n">ent</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/wwii-ships.csv&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span> <span class="o">==</span> <span class="s2">&quot;SHIP&quot;</span><span class="p">:</span>
+        <span class="n">ship_name</span> <span class="o">=</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;The&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="n">ship_name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;year_built&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">year</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;United States&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="creating-a-pipe-for-finding-ghettos">
-<h2><span class="section-number">3.3.8. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">#</a></h2>
-<p>As of the time of pushing this notebook, August 13, 2021, I have yet to receive a comprehensive dataset of ghettos. In the near future, this pipe will be vastly improved, similar to the concentration camp pipe below. For now, this pipe functions precisely the same way our earlier ship pipe function. Here, we’re looking for the use of the word ghetto around one of these known cities that had ghettos. This is absolutely necessary because any of these cities could be a GPE in general. The use of the word ghetto within a small contextual window is a good heuristic for assigning this city the label of GHETTO over GPE.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ghettos_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[A-Z]\w+((-| )*[A-Z]\w+)* (g|G)hetto&quot;</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
-<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">find_ghettos</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="n">regex_match</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">ghettos_pattern</span><span class="p">,</span> <span class="s2">&quot;GHETTO&quot;</span><span class="p">)</span>
+<p>This function takes a single argument, the entity identified from the RegEx match. Here, we strip out the <code class="docutils literal notranslate"><span class="pre">The</span></code> from the entity’s name and check to see if the ship found appears in our dataset of known ships. We then isolate the ship’s metadata in the dataset and return that data as a dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/wwii-ships.csv&quot;</span><span class="p">)</span>
+
+<span class="n">named_ships_pattern</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;(The|the) (</span><span class="si">{</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;named_ships&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">named_ships</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">nautical</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;boat&quot;</span><span class="p">,</span> <span class="s2">&quot;sail&quot;</span><span class="p">,</span> <span class="s2">&quot;captain&quot;</span><span class="p">,</span> <span class="s2">&quot;sea&quot;</span><span class="p">,</span> <span class="s2">&quot;harbor&quot;</span><span class="p">,</span> <span class="s2">&quot;aboard&quot;</span><span class="p">,</span> <span class="s2">&quot;admiral&quot;</span><span class="p">,</span> <span class="s2">&quot;liner&quot;</span><span class="p">]</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">regex_match</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">named_ships_pattern</span><span class="p">,</span> <span class="s2">&quot;SHIP&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">context_list</span><span class="o">=</span><span class="n">nautical</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span> <span class="o">==</span> <span class="s2">&quot;SHIP&quot;</span><span class="p">:</span>
+            <span class="n">ent</span><span class="o">.</span><span class="n">set_extension</span><span class="p">(</span><span class="s1">&#39;ship_metadata&#39;</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">ship_metadata_getter</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;The Warsaw Ghetto was in Poland&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this next section of code, we load up the dataset to construct our pattern of names to find via our RegEx function. As we iterate over each entity in our Doc container, we check to see if that entity’s label is a <code class="docutils literal notranslate"><span class="pre">SHIP</span></code>. If it is, then we set the extension of <code class="docutils literal notranslate"><span class="pre">ship_metadata</span></code> via the <code class="docutils literal notranslate"><span class="pre">getter</span></code> function referenced above.</p>
+<p>Finally, we add our pipe to the spaCy pipeline and test the model with our constructed sentence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;named_ships&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;The Activity set sail from New York&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">ship_metadata</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Warsaw Ghetto GHETTO
-Poland GPE
-</pre></div>
-</div>
-</div>
-</div>
-<p>As we can see, the pipe is working. We’ve grabbed three instances of Warsaw in data/new_ocr\RG-50.030.0001_trs_en.txt.</p>
 </section>
 <section id="create-pipe-for-identifying-a-military-personel">
-<h2><span class="section-number">3.3.9. </span>Create Pipe for Identifying a Military Personel<a class="headerlink" href="#create-pipe-for-identifying-a-military-personel" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.8. </span>Create Pipe for Identifying a Military Personel<a class="headerlink" href="#create-pipe-for-identifying-a-military-personel" title="Permalink to this headline">#</a></h2>
 <p>For PERSON, we will be leveraging spaCy’s small model, but we can add some heuristics that will greatly improve the results. The heuristics here is any known salutation capitalized followed by a series of proper nouns. This RegEx “(?:[A-Z]\w+[ -]?)+)” allows us to grab all continuous capital words and then break when it encounters a non capital letter followed by a space. In English, these will always be PERSON entities.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1500,7 +1451,7 @@ Poland GPE
 </div>
 </section>
 <section id="create-pipe-for-identifying-spouses">
-<h2><span class="section-number">3.3.10. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.9. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">#</a></h2>
 <p>Often times in historical documents the identity of people are referenced collectively. In some instances, such as those of spouses, this results in the name of the woman being attached to the name of her husband. The purpose of this SPOUSAL entity is to identify such constructs so that users can manipulate the output and reconstruct each individual singularly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1525,52 +1476,33 @@ Poland GPE
 </div>
 </div>
 </section>
-<section id="creating-concentration-camp-pipe">
-<h2><span class="section-number">3.3.11. </span>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">#</a></h2>
-<p>The correct identification of camp is one of the most important pipes in this pipeline. There are two concentration camp pipes. The first pipe looks at all known camps and subcamps and then looks for surrounding words to identify the context. The second pipe is less strict. It looks for all known main concentration camps without context. The reason for this is because sometimes the subcamps have the same names as frequently cited cities, e.g. Berlin or Neustadt. This is particularly true of the subcamps. The main camps, however, are frequently referenced to the camp itself. Both pipes are activated by default, but a user can deactivate one or other.</p>
-<p>Throughout this pipe, you will see many functions that contain the name “getter”. These are custom functions that allow us to add special attributes to our entity spans. If you scroll down to the bottom of this section, you will see that we can use the HGC dataset for conentration camps to retrieve other salient information, such as the subcamp’s main camp, its longitude and latitude, opening date, closing date, etc.</p>
-</section>
-<section id="creating-revolutionary-groups-pipe">
-<h2><span class="section-number">3.3.12. </span>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">#</a></h2>
-<p>The purpose of this pipe is to find known Revolutionary Groups. Again, this pipe is not an EntityRuler because I intend to do a few extra things with it in the future beyond the limitations of the EntityRuler.</p>
+<section id="creating-a-pipe-for-finding-ghettos">
+<h2><span class="section-number">3.3.10. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">groups_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Ethnikon Apeleutherotikon Metopon|Weisse Rose|Rote Kapelle|Affiche rouge|Edelweisspiraten|White Rose|Bielski|Nekamah|Voroshilov|OEuvre de secours aux enfants|Union des juifs pour la résistance et l&#39;entraide|Zorin Unit|Komsomolski|Fareynikte|Korzh|Zhukov|Budenny|Parkhomenko|Sixième)((-)*[A-Z]\S+)*( (Brigade|brothers|group))*&quot;</span>
-<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_groups&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">find_groups</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span>
-    <span class="n">camp_ents</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">original_ents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">groups_pattern</span><span class="p">,</span> <span class="n">doc</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
-        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
-        <span class="n">span</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">char_span</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">camp_ents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">camp_ents</span><span class="p">:</span>
-        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ent</span>
-        <span class="n">per_ent</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GROUP&quot;</span><span class="p">)</span>
-        <span class="n">original_ents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">per_ent</span><span class="p">)</span>
-    <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter_spans</span><span class="p">(</span><span class="n">original_ents</span><span class="p">)</span>
-    <span class="n">doc</span><span class="o">.</span><span class="n">ents</span> <span class="o">=</span> <span class="n">filtered</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ghettos_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[A-Z]\w+((-| )*[A-Z]\w+)* (g|G)hetto&quot;</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<span class="nd">@Language</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">find_ghettos</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">regex_match</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">ghettos_pattern</span><span class="p">,</span> <span class="s2">&quot;GHETTO&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_ghettos&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;The Warsaw Ghetto was in Poland&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Warsaw Ghetto GHETTO
+Poland GPE
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;find_groups&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="creating-a-places-pipe">
-<h2><span class="section-number">3.3.13. </span>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">#</a></h2>
-<p>The ML model will capture place fairly well. Nevertheless, if you can write a simple rule, write a simple rule.</p>
 </section>
 <section id="creating-a-geography-pipe">
-<h2><span class="section-number">3.3.14. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.11. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">general_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z]\w+) (River|Mountain|Mountains|Forest|Forests|Sea|Ocean)*&quot;</span>
@@ -1619,37 +1551,10 @@ Poland GPE
 </div>
 </section>
 <section id="seeing-the-pipes-at-work">
-<h2><span class="section-number">3.3.15. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">#</a></h2>
-<p>Now that we have assembled all these pipes into a pipeline, let’s see how they perform on a real testimony.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import glob</span>
-<span class="c1"># from spacy import displacy</span>
-<span class="c1"># hits = []</span>
-<span class="c1"># files = glob.glob(&quot;data/new_ocr/*trs_en.txt&quot;)</span>
-<span class="c1"># all_data = {}</span>
-<span class="c1"># for file in files[5:6]:</span>
-<span class="c1">#     all_hits = []</span>
-<span class="c1">#     with open (file, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span>
-<span class="c1">#         print (file)</span>
-<span class="c1">#         text = f.read().replace(&quot;(ph)&quot;, &quot;&quot;)</span>
-<span class="c1">#         while &quot;  &quot; in text:</span>
-<span class="c1">#             text =  text.replace(&quot;  &quot;, &quot; &quot;)</span>
-<span class="c1">#         doc = nlp(text)</span>
-<span class="c1">#         colors = {&quot;CAMP&quot;: &quot;#FF5733&quot;, &quot;GHETTO&quot;: &quot;#1F9D12&quot;, &quot;SHIP&quot;: &quot;#557DB4&quot;, &quot;SPOUSAL&quot;: &quot;#55B489&quot;, &quot;GPE&quot;:&quot;#17B4C2&quot;, &quot;RIVER&quot;: &quot;#9017C2&quot;, &quot;MOUNTAIN&quot;: &quot;#878787&quot;, &quot;SEA-OCEAN&quot;: &quot;#0A6DF5&quot;, &quot;FOREST&quot;: &quot;#1F541D&quot;}</span>
-<span class="c1">#         options = {&quot;ents&quot;: [&quot;CAMP&quot;, &quot;GHETTO&quot;, &quot;SHIP&quot;, &quot;SPOUSAL&quot;, &quot;GPE&quot;, &quot;RIVER&quot;, &quot;MOUNTAIN&quot;, &quot;SEA-OCEAN&quot;, &quot;FOREST&quot;], &quot;colors&quot;:colors}</span>
-<span class="c1">#         displacy.render(doc, style=&quot;ent&quot;, jupyter=True)</span>
-<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;This is Berlinstrasse, which is also known as Berlin Street or Berlin St. That Ghetto and The Ghetto. The Warsaw Ghetto&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This result is not perfect, but again, that’s not the point here. Here we are less interested in catching all entities as much as not catching any false positives. At a quick glance, we have achieved that. Now that were are tentatively happy, wan save our pipeline to disk, but first, let’s add some metadata.</p>
+<h2><span class="section-number">3.3.12. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="saving-a-spacy-model">
-<h2><span class="section-number">3.3.16. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.13. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ushmm&quot;</span>
