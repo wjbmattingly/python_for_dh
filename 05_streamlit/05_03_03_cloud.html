@@ -944,8 +944,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-custom-domain">
-   3.2.5. Set Custom Domain
+  <a class="reference internal nav-link" href="#set-custom-subdomain">
+   3.2.5. Set Custom Subdomain
   </a>
  </li>
 </ul>
@@ -988,8 +988,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-custom-domain">
-   3.2.5. Set Custom Domain
+  <a class="reference internal nav-link" href="#set-custom-subdomain">
+   3.2.5. Set Custom Subdomain
   </a>
  </li>
 </ul>
@@ -1004,7 +1004,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="deploying-an-app-in-the-cloud-with-streamlit-share">
 <h1><span class="section-number">3.2. </span>Deploying an App in the Cloud with Streamlit Share<a class="headerlink" href="#deploying-an-app-in-the-cloud-with-streamlit-share" title="Permalink to this headline">#</a></h1>
-<p>Once you have designed an application and have tested it locally, it comes time to share it with others. We can do this with Streamlit by leveraging several different cloud-based services. Fortunately, Streamlit offers a free Streamlit Share service that lets users share their apps for free. This section of the notebook will walk you through this process.</p>
+<p>Once you have designed an application and have tested it locally, it comes time to share it with others. We can do this with Streamlit by leveraging several different cloud-based services. Fortunately, Streamlit offers a free Streamlit Share service that lets users share their apps for free.</p>
 <section id="create-a-github-account">
 <h2><span class="section-number">3.2.1. </span>Create a GitHub Account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">#</a></h2>
 <p>In order to deploy your application, you will need a place to store your application’s source code. The easiest way to do this is via GitHub which Streamlit and many other application hosting services support.</p>
@@ -1013,18 +1013,40 @@ title="Print to PDF"
 <h2><span class="section-number">3.2.2. </span>Upload Application to GitHub<a class="headerlink" href="#upload-application-to-github" title="Permalink to this headline">#</a></h2>
 <p>Once you have created your GitHub account, you can create a repository and upload the code into the repository. If you are just starting out with GitHub, getting used to Git can be a bit daunting. Git is powerful, but has a steep learning curve. It allows you to maintain your code, especially in teams, and version control everything. This means that your code is always backed up and you can access previous versions of your code at any single time.</p>
 <p>To upload your application formally, you would want to be familiar with Git and how to perform basic tasks, such as cloning a repository, adding files to it, committing those changes, and then pushing them to the repository. While this is the better approach, it is not the only one. For now, you can get your application up and running entirely in your browser.</p>
-<p>First, we will create a new repository.</p>
-<p>Next, we need upload our application and data to our repository.</p>
+<p>First, we will create a new repository. To do this, we will go to our GitHub main page and select <code class="docutils literal notranslate"><span class="pre">New</span></code>, found in the top-left side of your screen.</p>
+<p><img alt="streamlit share login" src="../_images/github_new.png" /></p>
+<p>Once you click <code class="docutils literal notranslate"><span class="pre">New</span></code>, you will see the following screen:</p>
+<p><img alt="streamlit share login" src="../_images/github_create.png" /></p>
+<p>Here, we will fill out the details of our repository. We need to first give it a unique name. We can keep all other settings the default for now. Once done, we will click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code>. After this, you will see a new screen that looks like this:</p>
+<p><img alt="github create repository setup page" src="../_images/github_setup.png" /></p>
+<p>You will now select <code class="docutils literal notranslate"><span class="pre">creating</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">file</span></code>. Once you do, you will see a screen that looks like this:</p>
+<p><img alt="github create repository commit page" src="../_images/github_commit.png" /></p>
+<p>Here, you will create a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and assign some text to it. This will ideally describe your application. It will be what users see when they visit your GitHub repository. Once you have a description you are happy with, click <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">new</span> <span class="pre">file</span></code>. This will lead to a final new screen.</p>
+<p><img alt="github create repository setup adding files" src="../_images/github_addfiles.png" /></p>
+<p>Next, we need upload our application and data to our repository. To do this, we will click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> and upload our local files that are necessary for running our Streamlit application. You will also want to make a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file lists all required libraries, such as Pandas.</p>
 </section>
 <section id="connect-streamlit-share-to-your-github">
 <h2><span class="section-number">3.2.3. </span>Connect Streamlit Share to your GitHub<a class="headerlink" href="#connect-streamlit-share-to-your-github" title="Permalink to this headline">#</a></h2>
-<p>Now that we have our repository created, we need to link Streamlit Share to our GitHub.</p>
+<p>Now that we have our repository created, we need to link Streamlit Share to our GitHub. To do so, you will need to visit <code class="docutils literal notranslate"><span class="pre">https://share.streamlit.io/</span></code> Once on this page, you will see a screen that looks like this:</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_signin.png" /></p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Continue</span> <span class="pre">with</span> <span class="pre">GitHub</span></code> and use your GitHub credentials for login verification. Once you are logged in, you will see a screen that looks like this at the top:</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_mainpage.png" /></p>
 </section>
 <section id="create-a-new-app">
 <h2><span class="section-number">3.2.4. </span>Create a New App<a class="headerlink" href="#create-a-new-app" title="Permalink to this headline">#</a></h2>
+<p>Select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">App</span></code>. After a few seconds, you will be taken to a page that looks like this:</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_deployapp.png" /></p>
+<p>Click on each of these fields. First, select your repository. Streamlit will be connected to your GitHub, so you will be able to see all your repositories, both private and public. Next, select the branch of your repository. We have not covered branches in this textbook. Branches are a function of Git. By default, your application will be on the main branch of your repository. Finally, select the main Python file in which your application rests. Once you have filled out these three fields, click <code class="docutils literal notranslate"><span class="pre">Deploy!</span></code>.</p>
 </section>
-<section id="set-custom-domain">
-<h2><span class="section-number">3.2.5. </span>Set Custom Domain<a class="headerlink" href="#set-custom-domain" title="Permalink to this headline">#</a></h2>
+<section id="set-custom-subdomain">
+<h2><span class="section-number">3.2.5. </span>Set Custom Subdomain<a class="headerlink" href="#set-custom-subdomain" title="Permalink to this headline">#</a></h2>
+<p>It will take several minutes (depending on the complexity of your application and the number of required libraries you wish to have installed). At this point, Streamlit Share is building an environment on a server to host your application in the cloud. Once complete, it will provide you with a unique domain for your application with the extension. This will be based on your repository name and your GitHub username. We can create a custom subdomain for free by returning to our Streamlit Share homepage and selecting the three dots next to our application’s name.</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_changeurl.png" /></p>
+<p>Once here, select <code class="docutils literal notranslate"><span class="pre">Settings</span></code> and you will see a page that looks like this:</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_oldurl.png" /></p>
+<p>Note that in the middle of the screen, you will see your long subdomain. You can now change it to something unique and easier to remember for distributing to users. After you change your subdomain, click <code class="docutils literal notranslate"><span class="pre">Save</span></code>.</p>
+<p><img alt="streamlit share login" src="../_images/streamlit_newurl.png" /></p>
+<p>Now, your app is in the cloud with a unique and easy-to-remember subdomain!</p>
 </section>
 </section>
 
