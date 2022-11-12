@@ -1776,7 +1776,7 @@ title="Print to PDF"
 <p>523 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>While this works, imagine if we had 20 or 30 different conditions! That would be a very long piece of code to write and while it would work, it is always best practice to write shorter, tighter code. So, let’s do the same thing, but with RegEx. We can add the Or-condition into the `str.contains() argument. This is a RegEx command. To ensure that RegEx is registered, it may be necessary to pass it as an argument.</p>
+<p>While this works, imagine if we had 20 or 30 different conditions! That would be a very long piece of code to write and while it would work, it is always best practice to write shorter, tighter code. So, let’s do the same thing, but with RegEx. We can add the Or-condition into the <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> argument. This is a RegEx command. To ensure that RegEx is registered, it may be necessary to pass it as an argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Rev\.|Mr\.&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
@@ -1991,7 +1991,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Rev.|Mr.&quot;</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Rev\.|Mr\.&quot;</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2045,36 +2045,6 @@ title="Print to PDF"
       <td>S</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
-      <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>113803</td>
-      <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
-    </tr>
-    <tr>
       <th>4</th>
       <td>5</td>
       <td>0</td>
@@ -2105,6 +2075,36 @@ title="Print to PDF"
       <td>Q</td>
     </tr>
     <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+      <td>McCarthy, Mr. Timothy J</td>
+      <td>male</td>
+      <td>54.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17463</td>
+      <td>51.8625</td>
+      <td>E46</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Saundercock, Mr. William Henry</td>
+      <td>male</td>
+      <td>20.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>A/5. 2151</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -2120,6 +2120,21 @@ title="Print to PDF"
       <td>...</td>
     </tr>
     <tr>
+      <th>883</th>
+      <td>884</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Banfield, Mr. Frederick James</td>
+      <td>male</td>
+      <td>28.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>C.A./SOTON 34068</td>
+      <td>10.5000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
       <th>884</th>
       <td>885</td>
       <td>0</td>
@@ -2133,21 +2148,6 @@ title="Print to PDF"
       <td>7.0500</td>
       <td>NaN</td>
       <td>S</td>
-    </tr>
-    <tr>
-      <th>885</th>
-      <td>886</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Rice, Mrs. William (Margaret Norton)</td>
-      <td>female</td>
-      <td>39.0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>382652</td>
-      <td>29.1250</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>886</th>
@@ -2196,7 +2196,7 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-<p>654 rows × 12 columns</p>
+<p>523 rows × 12 columns</p>
 </div></div></div>
 </div>
 </section>
