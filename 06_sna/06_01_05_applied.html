@@ -1249,16 +1249,21 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Place</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
         <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()]:</span>
+                <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">org</span><span class="p">)</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1270,152 +1275,428 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/trc_graph.html&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># net.toggle_physics(False)</span>
+<span class="c1"># net.show_buttons(filter_=[&#39;physics&#39;])</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="600px"
-    src="../data/trc_graph.html"
-    frameborder="0"
-    allowfullscreen
+<div class="output text_html"><html>
+    <head>
+        <meta charset="utf-8">
 
-></iframe>
-</div></div>
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+
+
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+
+
+
+
+
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+
+                                    <option value="0_Thabo Simon AARON">0_Thabo Simon AARON</option>
+
+                                    <option value="ANC">ANC</option>
+
+                                    <option value="ANCYL">ANCYL</option>
+
+                                    <option value="Police">Police</option>
+
+                                    <option value="SAP">SAP</option>
+
+                                    <option value="1_Montaigne ABBOTT">1_Montaigne ABBOTT</option>
+
+                                    <option value="SADF">SADF</option>
+
+                                    <option value="2_Nzaliseko Christopher ABRAHAM">2_Nzaliseko Christopher ABRAHAM</option>
+
+                                    <option value="COSAS">COSAS</option>
+
+                                    <option value="3_Achmat Fardiel ABRAHAMS">3_Achmat Fardiel ABRAHAMS</option>
+
+                                    <option value="4_Annalene Mildred ABRAHAMS">4_Annalene Mildred ABRAHAMS</option>
+
+                                    <option value="5_Ashraf ABRAHAMS">5_Ashraf ABRAHAMS</option>
+
+                                    <option value="Railway Police">Railway Police</option>
+
+                                    <option value="6_Derrek ABRAHAMS">6_Derrek ABRAHAMS</option>
+
+                                    <option value="7_Moegsien ABRAHAMS">7_Moegsien ABRAHAMS</option>
+
+                                    <option value="UDF">UDF</option>
+
+                                    <option value="8_Rashid ABRAHAMS">8_Rashid ABRAHAMS</option>
+
+                                    <option value="9_Toyer ABRAHAMS">9_Toyer ABRAHAMS</option>
+
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+
+
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+
+
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+
+
+
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "0_Thabo Simon AARON", "label": "0_Thabo Simon AARON", "place": "Bethulie", "shape": "dot", "title": "0_Thabo Simon AARON"}, {"color": "red", "id": "ANC", "label": "ANC", "shape": "dot", "title": "ANC"}, {"color": "red", "id": "ANCYL", "label": "ANCYL", "shape": "dot", "title": "ANCYL"}, {"color": "red", "id": "Police", "label": "Police", "shape": "dot", "title": "Police"}, {"color": "red", "id": "SAP", "label": "SAP", "shape": "dot", "title": "SAP"}, {"color": "#97c2fc", "id": "1_Montaigne ABBOTT", "label": "1_Montaigne ABBOTT", "place": "Messina", "shape": "dot", "title": "1_Montaigne ABBOTT"}, {"color": "red", "id": "SADF", "label": "SADF", "shape": "dot", "title": "SADF"}, {"color": "#97c2fc", "id": "2_Nzaliseko Christopher ABRAHAM", "label": "2_Nzaliseko Christopher ABRAHAM", "place": "Mdantsane", "shape": "dot", "title": "2_Nzaliseko Christopher ABRAHAM"}, {"color": "red", "id": "COSAS", "label": "COSAS", "shape": "dot", "title": "COSAS"}, {"color": "#97c2fc", "id": "3_Achmat Fardiel ABRAHAMS", "label": "3_Achmat Fardiel ABRAHAMS", "place": "Athlone", "shape": "dot", "title": "3_Achmat Fardiel ABRAHAMS"}, {"color": "#97c2fc", "id": "4_Annalene Mildred ABRAHAMS", "label": "4_Annalene Mildred ABRAHAMS", "place": "Robertson", "shape": "dot", "title": "4_Annalene Mildred ABRAHAMS"}, {"color": "#97c2fc", "id": "5_Ashraf ABRAHAMS", "label": "5_Ashraf ABRAHAMS", "place": "Athlone", "shape": "dot", "title": "5_Ashraf ABRAHAMS"}, {"color": "red", "id": "Railway Police", "label": "Railway Police", "shape": "dot", "title": "Railway Police"}, {"color": "#97c2fc", "id": "6_Derrek ABRAHAMS", "label": "6_Derrek ABRAHAMS", "place": "Gelvandale", "shape": "dot", "title": "6_Derrek ABRAHAMS"}, {"color": "#97c2fc", "id": "7_Moegsien ABRAHAMS", "label": "7_Moegsien ABRAHAMS", "place": "Cape Town", "shape": "dot", "title": "7_Moegsien ABRAHAMS"}, {"color": "red", "id": "UDF", "label": "UDF", "shape": "dot", "title": "UDF"}, {"color": "#97c2fc", "id": "8_Rashid ABRAHAMS", "label": "8_Rashid ABRAHAMS", "place": "Cape Town", "shape": "dot", "title": "8_Rashid ABRAHAMS"}, {"color": "#97c2fc", "id": "9_Toyer ABRAHAMS", "label": "9_Toyer ABRAHAMS", "place": "Athlone", "shape": "dot", "title": "9_Toyer ABRAHAMS"}]);
+                  edges = new vis.DataSet([{"from": "0_Thabo Simon AARON", "place": "Bethulie", "to": "ANC"}, {"from": "0_Thabo Simon AARON", "place": "Bethulie", "to": "ANCYL"}, {"from": "0_Thabo Simon AARON", "place": "Bethulie", "to": "Police"}, {"from": "0_Thabo Simon AARON", "place": "Bethulie", "to": "SAP"}, {"from": "1_Montaigne ABBOTT", "place": "Messina", "to": "SADF"}, {"from": "2_Nzaliseko Christopher ABRAHAM", "place": "Mdantsane", "to": "COSAS"}, {"from": "2_Nzaliseko Christopher ABRAHAM", "place": "Mdantsane", "to": "Police"}, {"from": "3_Achmat Fardiel ABRAHAMS", "place": "Athlone", "to": "SAP"}, {"from": "4_Annalene Mildred ABRAHAMS", "place": "Robertson", "to": "Police"}, {"from": "4_Annalene Mildred ABRAHAMS", "place": "Robertson", "to": "SAP"}, {"from": "5_Ashraf ABRAHAMS", "place": "Athlone", "to": "Police"}, {"from": "5_Ashraf ABRAHAMS", "place": "Athlone", "to": "Railway Police"}, {"from": "6_Derrek ABRAHAMS", "place": "Gelvandale", "to": "SAP"}, {"from": "7_Moegsien ABRAHAMS", "place": "Cape Town", "to": "UDF"}, {"from": "9_Toyer ABRAHAMS", "place": "Athlone", "to": "Police"}, {"from": "9_Toyer ABRAHAMS", "place": "Athlone", "to": "Railway Police"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -80000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+
+
+
+
+
+                  network = new vis.Network(container, data, options);
+
+
+
+
+                    network.on("selectNode", neighbourhoodHighlight);
+
+
+
+
+
+
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html></div></div>
 </div>
 </section>
 <section id="adding-colors-to-nodes">
 <h2><span class="section-number">2.5.2. </span>Adding Colors to Nodes<a class="headerlink" href="#adding-colors-to-nodes" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00ff1e&quot;</span><span class="p">)</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/graphs/trc_graph.html&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
-</pre></div>
-</div>
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="600px"
-    src="../data/graphs/trc_graph.html"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
 </section>
 <section id="adding-metadata-to-nodes">
 <h2><span class="section-number">2.5.3. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">df_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">Last</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">df_data</span><span class="o">.</span><span class="n">Description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00ff1e&quot;</span><span class="p">)</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">)</span>
-    
-<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;../data/graphs/trc_graph.html&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
-</pre></div>
-</div>
-<div class="output text_html">
-<iframe
-    width="100%"
-    height="600px"
-    src="../data/graphs/trc_graph.html"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ObjectId</th>
-      <th>Last</th>
-      <th>First</th>
-      <th>Description</th>
-      <th>Place</th>
-      <th>Yr</th>
-      <th>Homeland</th>
-      <th>Province</th>
-      <th>Long</th>
-      <th>Lat</th>
-      <th>HRV</th>
-      <th>ORG</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>AARON</td>
-      <td>Thabo Simon</td>
-      <td>An ANCYL member who was shot and severely inju...</td>
-      <td>Bethulie</td>
-      <td>1991.0</td>
-      <td>NaN</td>
-      <td>Orange Free State</td>
-      <td>25.97552</td>
-      <td>-30.50329</td>
-      <td>shoot|injure</td>
-      <td>ANC|ANCYL|Police|SAP</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 </section>
 </section>
 
