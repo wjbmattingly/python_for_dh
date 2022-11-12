@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.6. Applying SNA on Humanities Data" href="06_01_06_applied.html" />
+    <link rel="next" title="2.5. Applying SNA on Humanities Data" href="06_01_06_applied.html" />
     <link rel="prev" title="2.3. Producing Dynamic Graphs with PyVis" href="06_01_04_pyvis_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -582,7 +582,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_06_applied.html">
-     2.6.
+     2.5.
      <center>
       Applying SNA on Humanities Data
      </center>
@@ -902,41 +902,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2.4. NetworkX and PyVis
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
-   2.5. Adding Metadata to Nodes
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -948,24 +919,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2.4. NetworkX and PyVis
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
-   2.5. Adding Metadata to Nodes
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -973,7 +926,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="networkx-and-pyvis">
+  <section class="tex2jax_ignore mathjax_ignore" id="networkx-and-pyvis">
 <h1><span class="section-number">2.4. </span>NetworkX and PyVis<a class="headerlink" href="#networkx-and-pyvis" title="Permalink to this headline">#</a></h1>
 <p>While this works, we don’t have all the advantages that NetworkX afforded us. PyVis, it is important to note, while useful, is primarily a wrapper for producing JavaScript graphs. It is not as robust as NetworkX when it comes to handling and querying complex network relationships. We cannot generate, for example, metrics for things like centrality. For these reasons, it is best to combine the best of NetworkX and PyVis by first passing your network data to NetworkX, creating the graph, and then passing the NetworkX graph to PyVis for conversion to an interactive graph.</p>
 <div class="cell docutils container">
@@ -983,6 +936,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Just as we did in the previous section, we will create a NetworkX <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> and populate it with our relationships.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
@@ -1004,6 +958,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Now that we have our NetworkX Graph, we can create a PyVis <code class="docutils literal notranslate"><span class="pre">Network</span></code> class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
@@ -1011,6 +966,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">from_nx()</span></code> method, which will take a single argument, our NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code>, or <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -1018,6 +974,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>With the data now populated, we can save and view our PyVis <code class="docutils literal notranslate"><span class="pre">Network</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;networkx-pyvis.html&quot;</span><span class="p">)</span>
@@ -1188,49 +1145,7 @@ title="Print to PDF"
     </body>
 </html></div></div>
 </div>
-</section>
-<section id="adding-metadata-to-nodes">
-<h1><span class="section-number">2.5. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schools</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;school&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;UF&quot;</span><span class="p">,</span> <span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;UF&quot;</span><span class="p">,</span> <span class="s2">&quot;UNC&quot;</span><span class="p">],</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">]}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">schools</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">rel</span> <span class="ow">in</span> <span class="n">rels</span><span class="p">:</span>
-    <span class="n">source</span><span class="p">,</span> <span class="n">dest</span> <span class="o">=</span> <span class="n">rel</span>
-    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
-    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">metadata_net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-    <span class="n">school</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">school</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;school&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">school</span>
-    <span class="k">if</span> <span class="n">school</span> <span class="o">==</span> <span class="s2">&quot;USF&quot;</span><span class="p">:</span>
-        <span class="n">node</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
-    <span class="k">elif</span> <span class="n">school</span><span class="o">==</span><span class="s2">&quot;UF&quot;</span><span class="p">:</span>
-        <span class="n">node</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-<span class="c1"># metadata_net.show(&quot;simple_graph_selection.html&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
-</pre></div>
-</div>
-</div>
-</div>
+<p>Notice that our graph is rendered precisely just as it had been with  NetworkX and Matplotlib, but now that same data is dynamic. In other words, we were able to leverage the best of NetworkX and PyVis with this approach.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1270,7 +1185,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="06_01_06_applied.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span><center>Applying SNA on Humanities Data</center></p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span><center>Applying SNA on Humanities Data</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
