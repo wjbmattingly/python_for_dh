@@ -170,7 +170,8 @@ parts:
       title: "Embedding, Flattening, and Clustering"
     - file: 04_topic_modeling/04_03_04_top2vec
       title: "Topic Modeling with Top2Vec"
-  - file: 04_topic_modeling/04_01_01_intro
+
+  - file: 08_booknlp/01_01_intro
   - title: Text Analaysis with BookNLP
     sections:
     - file: 08_booknlp/01_intro
