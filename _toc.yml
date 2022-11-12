@@ -172,7 +172,7 @@ parts:
       title: "Topic Modeling with Top2Vec"
 
   - file: 08_booknlp/01_01_intro
-  - title: Text Analaysis with BookNLP
+    title: Text Analaysis with BookNLP
     sections:
     - file: 08_booknlp/01_intro
       title: Introduction to BookNLP
