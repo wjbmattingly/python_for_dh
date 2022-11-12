@@ -1211,7 +1211,7 @@ title="Print to PDF"
 <p>891 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>In this scenario, I am interested in sorting the data (rather like Excel). Rather than using the sort feature in Excel, we can use the df.sort_values() method in Python. This will take one argument, specifically the column that you want to organize by. By default, this will be ascending. Let’s do this by class. In other words, sort the DataFrame so that those who were in first class appear first and those in third class appear last. We will do this by passing the argument “Pclass”, the column name corresponding to Passenger Class.</p>
+<p>In this scenario, I am interested in sorting the data (rather like Excel). Rather than using the sort feature in Excel, we can use the <code class="docutils literal notranslate"><span class="pre">df.sort_values()</span></code> method in Python. This will take one argument, specifically the column that you want to organize by. By default, this will be ascending. Let’s do this by class. In other words, sort the DataFrame so that those who were in first class appear first and those in third class appear last. We will do this by passing the argument “Pclass”, the column name corresponding to Passenger Class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">)</span>
@@ -1425,7 +1425,7 @@ title="Print to PDF"
 </section>
 <section id="how-to-reverse-sort-data-by-single-column">
 <h2><span class="section-number">2.2.2. </span>How to Reverse Sort Data by Single Column<a class="headerlink" href="#how-to-reverse-sort-data-by-single-column" title="Permalink to this headline">#</a></h2>
-<p>As we can see, our data is now appearing as expected. We can pass additional keyword arguments to sort the data in the opposite direction, or descending by setting ascending to False. See the example below.</p>
+<p>As we can see, our data is now appearing as expected. We can pass additional keyword arguments to sort the data in the opposite direction, or descending by setting <code class="docutils literal notranslate"><span class="pre">ascending</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">False</span></code>. See the example below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2486,7 +2486,7 @@ title="Print to PDF"
 <p>891 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>As we move forward throughout this textbook, we will explore more robust ways to sort and organize our data. For now, you should feel comfortable with how to use sort_values() to do fairly robust tasks quickly.</p>
+<p>As we move forward throughout this textbook, we will explore more robust ways to sort and organize our data. For now, you should feel comfortable with how to use <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> to do fairly robust tasks quickly.</p>
 </section>
 </section>
 

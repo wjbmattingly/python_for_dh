@@ -960,13 +960,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe">
-   1.2.9. How to Grab a Specific Row of a DataFrame
+  <a class="reference internal nav-link" href="#isolating-unique-values-in-a-column">
+   1.2.9. Isolating Unique Values in a Column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe-with-iloc">
+   1.2.10. How to Grab a Specific Row of a DataFrame with iloc
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.10. Conclusion
+   1.2.11. Conclusion
   </a>
  </li>
 </ul>
@@ -1029,13 +1034,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe">
-   1.2.9. How to Grab a Specific Row of a DataFrame
+  <a class="reference internal nav-link" href="#isolating-unique-values-in-a-column">
+   1.2.9. Isolating Unique Values in a Column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-grab-a-specific-row-of-a-dataframe-with-iloc">
+   1.2.10. How to Grab a Specific Row of a DataFrame with iloc
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.10. Conclusion
+   1.2.11. Conclusion
   </a>
  </li>
 </ul>
@@ -1052,7 +1062,7 @@ title="Print to PDF"
 <h1><span class="section-number">1.2. </span><center>The Basics of Pandas</center><a class="headerlink" href="#center-the-basics-of-pandas-center" title="Permalink to this headline">#</a></h1>
 <section id="how-to-create-a-dataframe-from-a-dictionary">
 <h2><span class="section-number">1.2.1. </span>How to Create a DataFrame from a Dictionary<a class="headerlink" href="#how-to-create-a-dataframe-from-a-dictionary" title="Permalink to this headline">#</a></h2>
-<p>As we noted in the last notebook, we need to first import pandas. To do that we will import pandas as pd.</p>
+<p>As we noted in the last section, we need to first import pandas. To do that we will import pandas as pd.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1076,7 +1086,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Normally in Python, we would work with this data as an object. I could do something like the following to get the value of names:</p>
+<p>Normally in Python, we would work with this data as a dictionary. I could do something like the following to get the value of names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">names_dict</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">])</span>
@@ -1089,7 +1099,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>But this is a textbook on Pandas and DataFrames. We want to do more! We want to work strictly with our data as a DataFrame. In order to do this, we need to convert the data into a Pandas DataFrame. To do that, we can use the line of code below. The pd.DataFrame can take numerous arguments. We won’t get into all of them right now. For now, understand that there is one essential argument that you must pass: the data that you wish to convert into a DataFrame. In our case, we will be converting the single-column dictionary into a DataFrame, so we pass that object as the only argument. We can see this in the code below.</p>
+<p>But this is a chapter on Pandas and DataFrames. We want to do more! We want to work strictly with our data as a DataFrame. To do that, we can use the line of code below. The <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code> class can take numerous arguments. We won’t get into all of them right now. For now, understand that there is one essential argument that you must pass: the data that you wish to convert into a DataFrame. In our case, we will be converting the single-column dictionary into a DataFrame, so we pass that object as the only argument. We can see this in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">names_dict</span><span class="p">)</span>
@@ -1158,10 +1168,10 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>Note that we are not printing off the data. This is because we are working within a Jupyter notebook. Were we working within an IDE, such as Atom, we would need to use the following command:</p>
+<p>Note that we are not printing off the data with <code class="docutils literal notranslate"><span class="pre">print()</span></code>. This is because we are working within a Jupyter notebook. Were we working within an IDE, such as Atom, we would need to use the following command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1184,7 +1194,7 @@ title="Print to PDF"
 <p>Often times when you convert your data into a DataFrame, you will process it and then ultimately save it to disk. To do this, we have a few different options, such as CSV and JSON. We will meet this process with JSON a bit later. For now, let’s focus on one file type: CSV, or comma separated value. To save your DataFrame to a CSV file, you can write the following command</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/names.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/names.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1196,7 +1206,7 @@ title="Print to PDF"
 <p>Now that we have the data saved to a CSV file, let’s create a new DataFrame, df2, and read that data. We can do this with the command pd.read_csv(). As with to_csv, we can pass multiple arguments here, but for now, we will stick with the one mandatory one, a string of the file that we wish to open. In this case, it is the same file we just created. Let’s open it and print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/names.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/names.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1265,10 +1275,10 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>This doesn’t look right. Notice that this DataFrame looks a bit off from what we saved to disk. Why is that? It is because of <em>how</em> we saved the file. If we don’t specify an index, Pandas will automatically create one for us. In order to correctly save our file, we need to pass an extra keyword argument, specifically index=False. Let’s try and save this file again under a different name: “names_no_index.csv”.</p>
+<p>This doesn’t look right. Notice that this DataFrame looks a bit off from what we saved to disk. Why is that? It is because of <em>how</em> we saved the file. If we don’t specify an index, Pandas will automatically create one for us. In order to correctly save our file, we need to pass an extra keyword argument, specifically <code class="docutils literal notranslate"><span class="pre">index=False</span></code>. Let’s try and save this file again under a different name: <code class="docutils literal notranslate"><span class="pre">names_no_index.csv</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/names_no_index.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/names_no_index.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1286,7 @@ title="Print to PDF"
 <p>Let’s create a new DataFrame, df3, and reopen and print off the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/names_no_index.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/names_no_index.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1345,7 +1355,7 @@ title="Print to PDF"
 <p>In Pandas, we are not limited to CSV files, we can do this same process with JSON files, which are JavaScript Object Notation files. These are a bit different from CSV files and are used to store more complex data, specifically data that is used on the web because all browsers can interpret JSON data off-the-shelf. To save our data to a JSON file, we can use the to_json(). Note that we are not passing the index argument here. When our data is stored as a JSON file this is not necessary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;data/names.json&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;../data/names.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1363,7 @@ title="Print to PDF"
 <p>Now, let’s open that same data as a new DataFrame, df4. We can do the same thing as we did with the CSV file, except use read_json() and then print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;data/names.json&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;../data/names.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1418,7 +1428,7 @@ title="Print to PDF"
 </section>
 <section id="how-to-add-a-column-to-the-dataframe">
 <h2><span class="section-number">1.2.6. </span>How to Add a Column to the DataFrame<a class="headerlink" href="#how-to-add-a-column-to-the-dataframe" title="Permalink to this headline">#</a></h2>
-<p>When working with DataFrames, you will almost always need to manipulate the data in some way. This means adding columns, deleting columns, performing permutations on data in columns, etc. We are going to cover all these things throughout this textbook. For now, let’s start with the basics. Imagine we got the names of individuals from one source and their ages from another. We now need to add those ages into our DataFrame. We can approach the DataFrame as something like a dictionary here. We can add a column by creating it with df4[“ages”]. This allows us to make that equal to the new data. The command below essentially adds a column to our DataFrame. Let’s execute the command and print it off.</p>
+<p>When working with DataFrames, you will almost always need to manipulate the data in some way. This means adding columns, deleting columns, performing permutations on data in columns, etc. We are going to cover all these things throughout this textbook. For now, let’s start with the basics. Imagine we got the names of individuals from one source and their ages from another. We now need to add those ages into our DataFrame. We can approach the DataFrame as something like a dictionary here. We can add a column by creating it with <code class="docutils literal notranslate"><span class="pre">df4[&quot;ages&quot;]</span></code>. This allows us to make that equal to the new data. The command below essentially adds a column to our DataFrame. Let’s execute the command and print it off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span><span class="p">[</span><span class="s2">&quot;ages&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
@@ -1571,8 +1581,25 @@ Name: ages, dtype: int64
 </div>
 <p>While this may not seem necessary on the surface, it is. One of the main reasons that this is essential is for processing large quantities of data. It is often times computationally less expensive to work with that data as a list or, better yet, as a NumPy array.</p>
 </section>
-<section id="how-to-grab-a-specific-row-of-a-dataframe">
-<h2><span class="section-number">1.2.9. </span>How to Grab a Specific Row of a DataFrame<a class="headerlink" href="#how-to-grab-a-specific-row-of-a-dataframe" title="Permalink to this headline">#</a></h2>
+<section id="isolating-unique-values-in-a-column">
+<h2><span class="section-number">1.2.9. </span>Isolating Unique Values in a Column<a class="headerlink" href="#isolating-unique-values-in-a-column" title="Permalink to this headline">#</a></h2>
+<p>We can also isolate the unique values in a column with <code class="docutils literal notranslate"><span class="pre">.uniques()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_ages</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">ages</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_ages</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20 26 18 52 40]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-grab-a-specific-row-of-a-dataframe-with-iloc">
+<h2><span class="section-number">1.2.10. </span>How to Grab a Specific Row of a DataFrame with iloc<a class="headerlink" href="#how-to-grab-a-specific-row-of-a-dataframe-with-iloc" title="Permalink to this headline">#</a></h2>
 <p>It will often times be necessary to grab a DataFrame by row, not column. We have a lot of different ways to grab a row, but for now let’s imagine we want to just grab a specific row by index. (We can grab all rows that have a certain value in a certain column also, but we will see that a bit later.) To grab a row by index, you can use the iloc command. This stands for Index Location. Index Location can be indexed rather like a list, as in the code below. The index you choose should correspond to the row index (starting with 0).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1597,8 +1624,8 @@ Name: 1, dtype: object
 </div>
 </section>
 <section id="conclusion">
-<h2><span class="section-number">1.2.10. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>You should now feel comfortable with creating, reading, and saving DataFrames. You should also be comfortable with adding columns and indexing by rows. In the next notebooks, we will dive into more complex features of DataFrames.</p>
+<h2><span class="section-number">1.2.11. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>You should now feel comfortable with creating, reading, and saving DataFrames. You should also be comfortable with adding columns and indexing by rows. In the next chapters, we will dive into more complex features of DataFrames.</p>
 </section>
 </section>
 

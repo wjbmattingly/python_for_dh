@@ -1034,7 +1034,7 @@ title="Print to PDF"
 <p>In this notebook, we are strictly interested in finding key data in the DataFrame. By the end of the notebook, you should have a good understanding of why working with CSV data in Python via Pandas is far more powerful and easy than using Excel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data obtained from =&gt; https://github.com/datasciencedojo/datasets , but originally from Kaggle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data obtained from =&gt; https://github.com/datasciencedojo/datasets</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1058,7 +1058,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>With our knowledge from the last notebook, we now know how to convert this into a list!</p>
+<p>With our knowledge from the last chapter, we now know how to convert this into a list!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -2167,7 +2167,7 @@ title="Print to PDF"
 <p>314 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>But that’s not all df.loc[] can do. We can add multiple arguments to our search query here, rather like SQL. In the example below, note the addition of the parentheses around df[“Sex”] == “female” this denotes one parameter of our search. We then use the &amp; to add a second parameter. In this case, we are interested in not only returning those that are female, but also those who are in Pclass, or Passenger Class 1, i.e. First Class. When we execute the command below, we see that we have found 94 results.</p>
+<p>But that’s not all <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code> can do. We can add multiple arguments to our search query here, rather like SQL. In the example below, note the addition of the parentheses around <code class="docutils literal notranslate"><span class="pre">df[&quot;Sex&quot;]</span> <span class="pre">==</span> <span class="pre">&quot;female&quot;</span></code> this denotes one parameter of our search. We then use the &amp; to add a second parameter. In this case, we are interested in not only returning those that are female, but also those who are in Pclass, or Passenger Class 1, i.e. First Class. When we execute the command below, we see that we have found 94 results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
@@ -2916,12 +2916,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>In this case, x is the death rate for a first class female, whereas y is the death rate for those not in first class and female. The result is clear. The chance for survival was significantly greater for those identified as female if they were in first class, roughly 32.5% difference. Were there other factors at play, possibly. But that is beyond the point here. I am simply trying to illustrate how to obtain data to begin framing the research question at hand.</p>
-<p>Although we can achieve this same analysis in Excel, doing this in Python allows us to leverage the power of an entire programming language with the data at hand. This is a simple example of the power of Pandas over Excel. As we move forward in the next notebooks, you will see more examples of this.</p>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">x</span></code> is the death rate for a first class female, whereas <code class="docutils literal notranslate"><span class="pre">y</span></code> is the death rate for those not in first class and female. The result is clear. The chance for survival was significantly greater for those identified as female if they were in first class, roughly 32.5% difference. Were there other factors at play, possibly. But that is beyond the point here. I am simply trying to illustrate how to obtain data to begin framing the research question at hand.</p>
+<p>Although we can achieve this same analysis in Excel, doing this in Python allows us to leverage the power of an entire programming language with the data at hand. This is a simple example of the power of Pandas over Excel. As we move forward in the next sections, you will see more examples of this.</p>
 </section>
 <section id="how-to-query-with-or-on-a-dataframe">
 <h2><span class="section-number">2.1.7. </span>How to Query with “OR” (|) on a DataFrame<a class="headerlink" href="#how-to-query-with-or-on-a-dataframe" title="Permalink to this headline">#</a></h2>
-<p>Above we saw how to use df.loc to structure logical arguments for finding two specific conditions with “&amp;”. This indicated that both conditions must be true to be returned as a result. In case you don’t remember it, it looked like this:</p>
+<p>Above we saw how to use <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> to structure logical arguments for finding two specific conditions with “&amp;”. This indicated that both conditions must be true to be returned as a result. In case you don’t remember it, it looked like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)]</span>
@@ -3132,7 +3132,7 @@ title="Print to PDF"
 <p>220 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>We can do the same conditional approach, but rather than using and, we can also tell Pandas “Or” with the “|”, that vertical character you probably never use located above the “Enter” button on a standard American keyboard. Let’s try and grab all first and second class passengers. We can specify if the Pclass is either 1 OR 2.</p>
+<p>We can do the same conditional approach, but rather than using and, we can also tell Pandas “Or” with the <code class="docutils literal notranslate"><span class="pre">|</span></code>; this is known as a <strong>pipe</strong>. Let’s try and grab all first and second class passengers. We can specify if the Pclass is either 1 OR 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span>
@@ -3343,6 +3343,7 @@ title="Print to PDF"
 <p>400 rows × 12 columns</p>
 </div></div></div>
 </div>
+<p>By learning to use Pandas in this way and structuring Pandas-based queries, we can generate the data necessary to begin answering research questions about our data. Pandas can do more, however; it can also let us organize our data.</p>
 </section>
 </section>
 

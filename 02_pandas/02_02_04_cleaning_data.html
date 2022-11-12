@@ -939,6 +939,11 @@ title="Print to PDF"
    2.3.4. How to Convert DataFrame Data Types (from Float to Int)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.3.5. Conclusion
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -978,6 +983,11 @@ title="Print to PDF"
    2.3.4. How to Convert DataFrame Data Types (from Float to Int)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.3.5. Conclusion
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -995,7 +1005,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/titanic.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1204,7 +1214,7 @@ title="Print to PDF"
 <p>891 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>With our data loaded, let’s go ahead and jump right into the chapter. Imagine that we have a large DataFrame, but we are not interested in a couple columns. This is especially import when your DataFrame has 10s or 100s of columns. In these instances, you need to examine the DataFrame without the useless data. Imagine that we wanted to study the Titanic data but knew that Parch and Ticket were categories that we did not need. We can use df.drop() to pass an argument to remove those specific columns.</p>
+<p>Imagine that we have a large DataFrame, but we are not interested in a couple columns. This is especially import when your DataFrame has 10s or 100s of columns. In these instances, you need to examine the DataFrame without the useless data. Imagine that we wanted to study the Titanic data but knew that Parch and Ticket were categories that we did not need. We can use df.drop() to pass an argument to remove those specific columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Parch&quot;</span><span class="p">,</span> <span class="s2">&quot;Ticket&quot;</span><span class="p">])</span>
@@ -1391,6 +1401,98 @@ title="Print to PDF"
 <p>891 rows × 10 columns</p>
 </div></div></div>
 </div>
+<p>Likewise, we can do the opposite. Rather than dropping certain columns, we can keep certain columns with the example code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Braund, Mr. Owen Harris</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Heikkinen, Miss. Laina</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>Allen, Mr. William Henry</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>Montvila, Rev. Juozas</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>0</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>0</td>
+      <td>Dooley, Mr. Patrick</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>Note the use of double brackets here, e.g. <code class="docutils literal notranslate"><span class="pre">[[]]</span></code>.</p>
 </section>
 <section id="how-to-remove-rows-that-have-nan-in-any-column">
 <h2><span class="section-number">2.3.2. </span>How to Remove Rows that have NaN in any Column<a class="headerlink" href="#how-to-remove-rows-that-have-nan-in-any-column" title="Permalink to this headline">#</a></h2>
@@ -1830,7 +1932,7 @@ title="Print to PDF"
 </section>
 <section id="how-to-convert-dataframe-data-types-from-float-to-int">
 <h2><span class="section-number">2.3.4. </span>How to Convert DataFrame Data Types (from Float to Int)<a class="headerlink" href="#how-to-convert-dataframe-data-types-from-float-to-int" title="Permalink to this headline">#</a></h2>
-<p>In other instances, it may be important not to simply remove a column, but alter it into a different type of data. In this dataset, Age is a float. This is to account for infants who were below the age of 1 on the Titanic. Let’s presume that we want to convert all these floats to integers. To do that we can use the .astype() method on a specific row.</p>
+<p>In other instances, it may be important not to simply remove a column, but alter it into a different type of data. In this dataset, Age is a float. This is to account for infants who were below the age of 1 on the Titanic. Let’s presume that we want to convert all these floats to integers. To do that we can use the <code class="docutils literal notranslate"><span class="pre">.astype()</span></code> method on a specific row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">Age</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -1838,12 +1940,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\pandas\core\generic.py:5494: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_708450/3009824114.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self[name] = value
+  df2.Age = df2.Age.astype(int)
 </pre></div>
 </div>
 </div>
@@ -2059,6 +2161,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div></div></div>
 </div>
 <p>Now our Age column is no longer a float, rather an integer.</p>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">2.3.5. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Sorting, cleaning, and organizing data in Pandas can require practice. Even after years of using Pandas, you will still find yourself looking things up on Stackoverflow or other resources online. The power of Pandas comes at the cost of making it difficult to master quickly. With regular practice, however, Pandas does get easier to use over time. Once you have a command of Pandas, you can do quick data cleaning and analysis all in Python. In the next chapter, we will look at how leverage Pandas to do more advanced searching methods.</p>
 </section>
 </section>
 
