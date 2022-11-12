@@ -1251,7 +1251,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
-<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1275,8 +1275,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># net.toggle_physics(False)</span>
-<span class="c1"># net.show_buttons(filter_=[&#39;physics&#39;])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show_buttons</span><span class="p">(</span><span class="n">filter_</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">])</span>
 <span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>

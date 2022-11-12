@@ -925,8 +925,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#limitations-of-networkx">
-   2.2.2. Limitations of NetworkX
+  <a class="reference internal nav-link" href="#asymmetrical-networks">
+   2.2.2. Asymmetrical Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-shortest-distance">
+   2.2.3. Calculating Shortest Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-connections">
+   2.2.4. Calculating Connections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-of-matplotlib-and-networkx">
+   2.2.5. Limitations of Matplotlib and NetworkX¶
   </a>
  </li>
 </ul>
@@ -954,8 +969,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#limitations-of-networkx">
-   2.2.2. Limitations of NetworkX
+  <a class="reference internal nav-link" href="#asymmetrical-networks">
+   2.2.2. Asymmetrical Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-shortest-distance">
+   2.2.3. Calculating Shortest Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-connections">
+   2.2.4. Calculating Connections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-of-matplotlib-and-networkx">
+   2.2.5. Limitations of Matplotlib and NetworkX¶
   </a>
  </li>
 </ul>
@@ -1041,8 +1071,93 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="limitations-of-networkx">
-<h2><span class="section-number">2.2.2. </span>Limitations of NetworkX<a class="headerlink" href="#limitations-of-networkx" title="Permalink to this headline">#</a></h2>
+<section id="asymmetrical-networks">
+<h2><span class="section-number">2.2.2. </span>Asymmetrical Networks<a class="headerlink" href="#asymmetrical-networks" title="Permalink to this headline">#</a></h2>
+<p>The above examples are all cases of <code class="docutils literal notranslate"><span class="pre">symmetrical</span></code> networks. This is where each node has an equal attraction to the other. The best example of this is with colleagues. If Ginny is a colleague with Harry, then Harry is a colleague with Ginny. Not all relationships work in this manner. Some relationships are <code class="docutils literal notranslate"><span class="pre">asymmetrical</span></code>. This is where one person has a unique relationship with another that cannot be the same in reverse. A good example of this is with parents and children. If Fred is the father of George, then George cannot possibly be the father of Fred.</p>
+<p>NetworkX affords us the ability to draw these types of relationships with a different graph class called a <code class="docutils literal notranslate"><span class="pre">DiGraph</span></code>. We can use the precise same code as above, but rather than using <code class="docutils literal notranslate"><span class="pre">.nx.Graph()</span></code>, we will use <code class="docutils literal notranslate"><span class="pre">nx.DiGraph()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">rels</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_01_03_networkx_15_0.png" src="../_images/06_01_03_networkx_15_0.png" />
+</div>
+</div>
+<p>Note the salient change in our graph, specifically the arrows that point towards specific nodes. These arrows in a graph indicate the direction, or <strong>force</strong>, between two nodes in a graph. In the graph above, for example, we can see that Harry has a different relationship to Rita than Rita does with Harry.</p>
+</section>
+<section id="calculating-shortest-distance">
+<h2><span class="section-number">2.2.3. </span>Calculating Shortest Distance<a class="headerlink" href="#calculating-shortest-distance" title="Permalink to this headline">#</a></h2>
+<p>The above example is rather simple. Let’s create a more complex graph with a few more relationships.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rels</span> <span class="o">=</span> <span class="p">[</span>
+    
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Frank&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">]</span>
+    
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">rels</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_01_03_networkx_20_0.png" src="../_images/06_01_03_networkx_20_0.png" />
+</div>
+</div>
+<p>A common problem in graph theory is calculating the shortest distance to individuals. A good way to think about this is with the classic game <code class="docutils literal notranslate"><span class="pre">Seven</span> <span class="pre">Degrees</span> <span class="pre">of</span> <span class="pre">Kevin</span> <span class="pre">Bacon</span></code>. If we wanted to know the shortest distance between Fred and Rita, we could realistically look at the graph above and figure that out. But what if we had thousands of nodes? What about millions? These are real-world problems that cannot be solved practically by simple human observation. NetworkX preserves the network as a graph that it can walk to easily identify the shortest path between two nodes at any given point. To calculate this, we cna use <code class="docutils literal notranslate"><span class="pre">nx.shortest_path()</span></code>. This will take three arguments, the graph in which the nodes are found and the source node and target node. The result will be a list of the source node, followed by all <strong>brokers</strong> or intermediaries between the source and target node. These brokers will be followed by the target node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Marge&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fred&#39;, &#39;Rita&#39;, &#39;Marge&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-connections">
+<h2><span class="section-number">2.2.4. </span>Calculating Connections<a class="headerlink" href="#calculating-connections" title="Permalink to this headline">#</a></h2>
+<p>Another common task in graph analysis is understanding the <strong>degree</strong>, or number of connections, a node as at any given moment. This allows us to understand the role an individual plays within a network. Nodes with higher degree values often indicate a higher degree of importance in the data, though this is not always the case. In humanities-based inquiry, we frequently work with imperfect or incomplete data due to losses in the historical record. It is important, therefore, to understand a degree value as a reflection of extant data, not a reflection of certain importance.</p>
+<p>We can calculate a node’s degree value with <code class="docutils literal notranslate"><span class="pre">nx.degree()</span></code> which will take two arguments, the graph in which the node is found and the node for whom we seek a degree value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="limitations-of-matplotlib-and-networkx">
+<h2><span class="section-number">2.2.5. </span>Limitations of Matplotlib and NetworkX¶<a class="headerlink" href="#limitations-of-matplotlib-and-networkx" title="Permalink to this headline">#</a></h2>
 <p>While NetworkX is quite useful for producing quick and (with practice) quality graphs, it is largely suited to smaller networks. Often, when we are working with larger datasets of networks it will be important to visualize those networks more dynamically, where users can zoom in, zoom out, and select certain nodes. Most of these types of graphs are designed and implemented in JavaScript.</p>
 <p>The graphs designed in JavaScript have the advantage of being able to be opened in any browser and distributed across the web or embedded in any website. Fortunately, the Python library PyVis allows us to produce JavaScript-based graphs with Python code.</p>
 </section>
