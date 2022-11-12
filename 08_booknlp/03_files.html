@@ -1,0 +1,2242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.3. The Output Files &#8212; Introduction to Python for Humanists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4. Character Analysis" href="04_character_analysis.html" />
+    <link rel="prev" title="2.2. Getting Started with BookNLP" href="02_starting.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/chapman-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <p align="center">INTRODUCTION TO PYTHON FOR HUMANISTS</p>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PREFACE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_preface/00_01_preface.html">
+   1. Preface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART ONE: The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
+     1.1. What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-03_installing_python.html">
+     1.2. Installing Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">
+     1.3. Coding Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-02_data.html">
+     2.1. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
+     2.2. Data Structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03-01_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-02_loops.html">
+     3.1. Introduction to Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-03_conditionals.html">
+     3.2. Introduction to Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04-01_intro.html">
+   4. Formal Coding: Functions, Classes, and Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-02_functions.html">
+     4.1. Introduction to Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-03_classes.html">
+     4.2. Introduction to Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
+     4.3. Introduction to Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_05-01_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-02_texts.html">
+     5.1. Loading and Saving Text Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-03_json.html">
+     5.2. Loading and Saving JSON Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
+     5.3. Working with Multiple Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_06-01_intro.html">
+   6. Working with Data on the Web
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-02_html.html">
+     6.1. Parsing HTML with Python and BeautifulSoup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">
+     6.2. Scraping Web Pages with Requests and BeautifulSoup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART TWO: Data Analysis with Pandas (Work in Progress)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_02_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_03_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_01_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_02_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_03_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_04_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_01_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_02_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_03_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_04_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_01_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_02_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_03_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_04_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART THREE: Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_01_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_02_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_03_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_04_pipelines.html">
+     1.3. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_02_01_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_02_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_03_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_04_phrase_matcher.html">
+     2.3. How to use the spaCy PhraseMatcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_06_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_07_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_03_01_intro.html">
+   3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_02_cultivating_concentration_camp_dataset.html">
+     3.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_03_challenges.html">
+     3.2. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_04_building_holocaust_pipeline_rules_based.html">
+     3.3. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FOUR: OTHER APPLICATIONS OF PYTHON
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
+   1. Topic Modeling in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">
+     1.2. The Basics of Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">
+     1.3. Clusters and K-Means
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_04_bigrams.html">
+     1.4. Bigrams and Trigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
+     1.5. Core Concepts of LDA Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
+     1.6. Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
+     1.7. What is Scikit Learn?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
+     1.8. Building a TF-IDF with Python and Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
+     1.9. Embedding, Flattening, and Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
+     1.10. Topic Modeling with Top2Vec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_01_intro.html">
+   2. Text Analaysis with BookNLP
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intro.html">
+     2.1. Introduction to BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_starting.html">
+     2.2. Getting Started with BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. The Output Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_character_analysis.html">
+     2.4. Character Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_events.html">
+     2.5. Event Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_sna/06_01_01_intro.html">
+   3. Introduction to Social Network Analysis in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_02_basics.html">
+     3.1. The Basics of Social Network Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
+     3.2. SNA with NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     3.3. SNA with PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_05_networkx_pyvis.html">
+     3.4. NetworkX and PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_06_applied.html">
+     3.5.
+     <center>
+      Applying SNA on Humanities Data
+     </center>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
+   1. Introduction to Streamlit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_02_streamlit.html">
+     1.1. Getting Started with Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_03_displaying_data.html">
+     1.2. Displaying Data in Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_04_input_widgets.html">
+     1.3. Getting User Data with Input Widgets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_02_01_intro.html">
+   2. Advanced Streamlit Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_02_charts.html">
+     2.1. Data Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_03_layout_design.html">
+     2.2. Layout Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_04_cache.html">
+     2.3. Streamlit Cache and Session States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_05_custom_html.html">
+     2.5. Custom HTML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_06_multiple_pages.html">
+     2.6. Multi-Page Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_03_01_intro.html">
+   3. Building a Streamlit Application
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_02_database_query_app.html">
+     3.1. Database Query App
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_03_cloud.html">
+     3.2. Deploying an App in the Cloud with Streamlit Share
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/08_booknlp/03_files.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/08_booknlp/03_files.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F08_booknlp/03_files.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/08_booknlp/03_files.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/08_booknlp/03_files.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tokens-file">
+   2.3.1. The .tokens File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-entities-file">
+   2.3.2. The .entities File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-quotes-file">
+   2.3.3. The .quotes File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-supersense-file">
+   2.3.4. The .supersense file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-file">
+   2.3.5. The .book File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-html-file">
+   2.3.6. The .book.html File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.3.7. Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>The Output Files</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tokens-file">
+   2.3.1. The .tokens File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-entities-file">
+   2.3.2. The .entities File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-quotes-file">
+   2.3.3. The .quotes File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-supersense-file">
+   2.3.4. The .supersense file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-file">
+   2.3.5. The .book File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-html-file">
+   2.3.6. The .book.html File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.3.7. Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="center-the-output-files-center">
+<h1><span class="section-number">2.3. </span><center>The Output Files</center><a class="headerlink" href="#center-the-output-files-center" title="Permalink to this headline">#</a></h1>
+<p>The output from the BookNLP pipeline is three types of files: TSV files (.tokens, .entities, .quotes, .supersense), a JSON file (.book) and an HTML file (.book.html). A good way to think about a TSV is as a CSV where tabs are used to separate tabular data, rather than commas. Essentially, this is a dataset that can be viewed and analyzed in Excel. A JSON file is a bit different. It stores data as you would expect to see it in Python, e.g. dictionaries, lists, etc.</p>
+<p>The goal of this chapter is to explain what each of these files contains so that in the next few chapters, we can start extracting important data from them.</p>
+<section id="the-tokens-file">
+<h2><span class="section-number">2.3.1. </span>The .tokens File<a class="headerlink" href="#the-tokens-file" title="Permalink to this headline">#</a></h2>
+<p>The very first file that we should analyze is the .tokens file. Essentially, this is a tab separated value file (TSV) that contains all the tokens on each line of the file and some important data about those tokens. A token is a word or punctuation mark within a text. The very first line of the file will look something like this:</p>
+<p>paragraph_ID	sentence_ID	token_ID_within_sentence	token_ID_within_document	word	lemma	byte_onset	byte_offset	POS_tag	fine_POS_tag	dependency_relation	syntactic_head_ID	event</p>
+<p>As this can be a bit difficult to parse, I am going to load it up as a TSV file through Pandas so we can analyze it a bit better.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.tokens&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>paragraph_ID</th>
+      <th>sentence_ID</th>
+      <th>token_ID_within_sentence</th>
+      <th>token_ID_within_document</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>byte_onset</th>
+      <th>byte_offset</th>
+      <th>POS_tag</th>
+      <th>fine_POS_tag</th>
+      <th>dependency_relation</th>
+      <th>syntactic_head_ID</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Mr.</td>
+      <td>Mr.</td>
+      <td>0</td>
+      <td>3</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>nsubj</td>
+      <td>12</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>and</td>
+      <td>and</td>
+      <td>4</td>
+      <td>7</td>
+      <td>CCONJ</td>
+      <td>CC</td>
+      <td>cc</td>
+      <td>0</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Mrs.</td>
+      <td>Mrs.</td>
+      <td>8</td>
+      <td>12</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>compound</td>
+      <td>3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Dursley</td>
+      <td>Dursley</td>
+      <td>13</td>
+      <td>20</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>conj</td>
+      <td>0</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>,</td>
+      <td>,</td>
+      <td>20</td>
+      <td>21</td>
+      <td>PUNCT</td>
+      <td>,</td>
+      <td>punct</td>
+      <td>0</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99251</th>
+      <td>2995</td>
+      <td>6885</td>
+      <td>10</td>
+      <td>99251</td>
+      <td>Dudley</td>
+      <td>Dudley</td>
+      <td>438929</td>
+      <td>438935</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>pobj</td>
+      <td>99250</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99252</th>
+      <td>2995</td>
+      <td>6885</td>
+      <td>11</td>
+      <td>99252</td>
+      <td>this</td>
+      <td>this</td>
+      <td>438936</td>
+      <td>438940</td>
+      <td>DET</td>
+      <td>DT</td>
+      <td>det</td>
+      <td>99253</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99253</th>
+      <td>2995</td>
+      <td>6885</td>
+      <td>12</td>
+      <td>99253</td>
+      <td>summer</td>
+      <td>summer</td>
+      <td>438941</td>
+      <td>438947</td>
+      <td>NOUN</td>
+      <td>NN</td>
+      <td>npadvmod</td>
+      <td>99245</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99254</th>
+      <td>2995</td>
+      <td>6885</td>
+      <td>13</td>
+      <td>99254</td>
+      <td>....</td>
+      <td>....</td>
+      <td>438947</td>
+      <td>438951</td>
+      <td>PUNCT</td>
+      <td>.</td>
+      <td>punct</td>
+      <td>99243</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99255</th>
+      <td>2995</td>
+      <td>6885</td>
+      <td>14</td>
+      <td>99255</td>
+      <td>\t</td>
+      <td>438951</td>
+      <td>438952</td>
+      <td>PUNCT</td>
+      <td>''</td>
+      <td>punct</td>
+      <td>99243</td>
+      <td>O</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>99256 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>If you don’t know what the block of code above does, please do not be concerned. We will not be dealing with Pandas in this textbook. If you are interested in Pandas, though, I have a free textbook on it entitled <a href="pandas.pythonhumanities.com">Introduction to Pandas</a>.</p>
+<p>As you can see from the output above, we have something that looks like Excel, or tabular data. Let’s break this down a bit and explain what each column represents:</p>
+<ul class="simple">
+<li><p>paragraph_ID - the index of the paragraph, starting at paragraph 1 being 0 and moving up to 3031 in our case.</p></li>
+<li><p>sentence_ID - same as the paragraph_ID, but with sentences</p></li>
+<li><p>token_ID_within_sentence - same as a the two above, but with a token count by sentence, resetting with each sentence.</p></li>
+<li><p>token_ID_within_document - same as above, but where tokens keep going up in value throughout the whole document, starting at 0 and ending, in our case, at 99400.</p></li>
+<li><p>word - this is the raw text of the word</p></li>
+<li><p>lemma - this is the root of the word</p></li>
+<li><p>byte_onset - think of this as the start character index</p></li>
+<li><p>byte_offset - think of this as the concluding character index</p></li>
+<li><p>POS_tag = the Part of Speech (based on spaCy)</p></li>
+<li><p>fine_POS_tag - a more granular understanding of the Part of Speech</p></li>
+<li><p>dependency_relation - this is equivalent to spaCy’s dep tag.</p></li>
+<li><p>syntactic_head_ID - This points to the head of the current token so that you can understand how a token relates to other words in the sentence</p></li>
+<li><p>event = this tells you if the token is a trigger for an EVENT or not. You will see, 0, EVENT, or NaN here.</p></li>
+</ul>
+</section>
+<section id="the-entities-file">
+<h2><span class="section-number">2.3.2. </span>The .entities File<a class="headerlink" href="#the-entities-file" title="Permalink to this headline">#</a></h2>
+<p>Let’s do the same thing with the .entities file now!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.entities&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df_entities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COREF</th>
+      <th>start_token</th>
+      <th>end_token</th>
+      <th>prop</th>
+      <th>cat</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>364</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Mr.</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92</td>
+      <td>2</td>
+      <td>3</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Mrs. Dursley</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>PROP</td>
+      <td>FAC</td>
+      <td>Privet Drive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>365</td>
+      <td>17</td>
+      <td>17</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>they</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>366</td>
+      <td>23</td>
+      <td>23</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>you</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15858</th>
+      <td>2355</td>
+      <td>99227</td>
+      <td>99227</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>They</td>
+    </tr>
+    <tr>
+      <th>15859</th>
+      <td>2351</td>
+      <td>99231</td>
+      <td>99231</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>we</td>
+    </tr>
+    <tr>
+      <th>15860</th>
+      <td>441</td>
+      <td>99239</td>
+      <td>99239</td>
+      <td>NOM</td>
+      <td>FAC</td>
+      <td>home</td>
+    </tr>
+    <tr>
+      <th>15861</th>
+      <td>98</td>
+      <td>99241</td>
+      <td>99241</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <th>15862</th>
+      <td>95</td>
+      <td>99251</td>
+      <td>99251</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Dudley</td>
+    </tr>
+  </tbody>
+</table>
+<p>15863 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>If you get an error that looks like this:</p>
+<a class="bg-primary reference internal image-reference" href="../_images/booknlp_error.PNG"><img alt="jupyter_org" class="bg-primary align-center" src="../_images/booknlp_error.PNG" style="width: 500px;" /></a>
+<p>Fear not! This happens sometimes when the .entities file is corrupted with something like a ” mark. You simply need to go into the file and remove the character that is causing the error. Use the row number as an indicator of where to go in the text file. Remember, add one row because row 1 is the header data.</p>
+<p>Before:</p>
+<a class="bg-primary reference internal image-reference" href="../_images/booknlp_solution.PNG"><img alt="jupyter_org" class="bg-primary align-center" src="../_images/booknlp_solution.PNG" style="width: 500px;" /></a>
+<p>After:</p>
+<a class="bg-primary reference internal image-reference" href="../_images/booknlp_solution2.PNG"><img alt="jupyter_org" class="bg-primary align-center" src="../_images/booknlp_solution2.PNG" style="width: 500px;" /></a>
+<p>Let’s return to our data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COREF</th>
+      <th>start_token</th>
+      <th>end_token</th>
+      <th>prop</th>
+      <th>cat</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>364</td>
+      <td>0</td>
+      <td>0</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Mr.</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92</td>
+      <td>2</td>
+      <td>3</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Mrs. Dursley</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>PROP</td>
+      <td>FAC</td>
+      <td>Privet Drive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>365</td>
+      <td>17</td>
+      <td>17</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>they</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>366</td>
+      <td>23</td>
+      <td>23</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>you</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15858</th>
+      <td>2355</td>
+      <td>99227</td>
+      <td>99227</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>They</td>
+    </tr>
+    <tr>
+      <th>15859</th>
+      <td>2351</td>
+      <td>99231</td>
+      <td>99231</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>we</td>
+    </tr>
+    <tr>
+      <th>15860</th>
+      <td>441</td>
+      <td>99239</td>
+      <td>99239</td>
+      <td>NOM</td>
+      <td>FAC</td>
+      <td>home</td>
+    </tr>
+    <tr>
+      <th>15861</th>
+      <td>98</td>
+      <td>99241</td>
+      <td>99241</td>
+      <td>PRON</td>
+      <td>PER</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <th>15862</th>
+      <td>95</td>
+      <td>99251</td>
+      <td>99251</td>
+      <td>PROP</td>
+      <td>PER</td>
+      <td>Dudley</td>
+    </tr>
+  </tbody>
+</table>
+<p>15863 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Here we see all the entities found within the text. In our case, wee have 15,863 entities in the entire book. It is important to remember that some of these are, of course. Before we get to that, though, let’s break down the columns.</p>
+<ul class="simple">
+<li><p>COREF - This is a COREF id that is a unique identifier for the person. This number will be used elsewhere to reference a person, such as in the .quotes file, to link the speaker with the block of text. It should be noted, that COREF is one of the more challenging problems in NLP. Expect this to not be even close to 90% accurate, rather around the 70% accuracy range, particularly when pronouns are used for the entity.</p></li>
+<li><p>start_token - this is the start token of the entity name</p></li>
+<li><p>end_token - this is the end token of the entity name. Single token entities will have the same start and end, while multi-word tokens (MWTs) will increase by one for each additional token</p></li>
+<li><p>prop - this will tlel you if it is a PROP (proper noun) or PROPN (pronoun), or other categories</p></li>
+<li><p>cat - cat will be the entity type (in spaCy terms. BookNLP includes a few other useful categories, notable VEH for vehicle.</p></li>
+<li><p>text - this is the raw text that corresponds to the entity.</p></li>
+</ul>
+</section>
+<section id="the-quotes-file">
+<h2><span class="section-number">2.3.3. </span>The .quotes File<a class="headerlink" href="#the-quotes-file" title="Permalink to this headline">#</a></h2>
+<p>The .quotes file will contain all the quotes in the book. Let’s take a look at this data like we did above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_quotes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.quotes&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df_quotes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>quote_start</th>
+      <th>quote_end</th>
+      <th>mention_start</th>
+      <th>mention_end</th>
+      <th>mention_phrase</th>
+      <th>char_id</th>
+      <th>quote</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>434</td>
+      <td>438</td>
+      <td>443</td>
+      <td>443</td>
+      <td>he</td>
+      <td>93</td>
+      <td>Little tyke ,</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1089</td>
+      <td>1108</td>
+      <td>1085</td>
+      <td>1085</td>
+      <td>they</td>
+      <td>417</td>
+      <td>The Potters , that 's right , that 's what I ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1343</td>
+      <td>1346</td>
+      <td>1347</td>
+      <td>1347</td>
+      <td>he</td>
+      <td>93</td>
+      <td>Sorry ,</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1416</td>
+      <td>1460</td>
+      <td>1405</td>
+      <td>1405</td>
+      <td>he</td>
+      <td>435</td>
+      <td>Do n't be sorry , my dear sir , for nothing c...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1603</td>
+      <td>1606</td>
+      <td>1608</td>
+      <td>1609</td>
+      <td>Mr. Dursley</td>
+      <td>93</td>
+      <td>Shoo !</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2322</th>
+      <td>99133</td>
+      <td>99146</td>
+      <td>99147</td>
+      <td>99147</td>
+      <td>He</td>
+      <td>119</td>
+      <td>Hurry up , boy , we have n't got all day .</td>
+    </tr>
+    <tr>
+      <th>2323</th>
+      <td>99163</td>
+      <td>99172</td>
+      <td>99161</td>
+      <td>99161</td>
+      <td>Hermione</td>
+      <td>220</td>
+      <td>See you over the summer , then .</td>
+    </tr>
+    <tr>
+      <th>2324</th>
+      <td>99173</td>
+      <td>99184</td>
+      <td>99186</td>
+      <td>99186</td>
+      <td>Hermione</td>
+      <td>220</td>
+      <td>Hope you have -- er -- a good holiday ,</td>
+    </tr>
+    <tr>
+      <th>2325</th>
+      <td>99202</td>
+      <td>99208</td>
+      <td>99210</td>
+      <td>99210</td>
+      <td>Harry</td>
+      <td>98</td>
+      <td>Oh , I will ,</td>
+    </tr>
+    <tr>
+      <th>2326</th>
+      <td>99226</td>
+      <td>99255</td>
+      <td>99210</td>
+      <td>99210</td>
+      <td>Harry</td>
+      <td>98</td>
+      <td>They do n't know we 're not allowed to use ma...</td>
+    </tr>
+  </tbody>
+</table>
+<p>2327 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>In our case, we have 2,326 quotes in the entire book. Each quote contains some important metadata:</p>
+<ul class="simple">
+<li><p>quote_start - the start token of the quote</p></li>
+<li><p>quote_end - the end token of the quote</p></li>
+<li><p>mention_start - this is the start token of the speaker entity</p></li>
+<li><p>mention_end - this is the end token of the speaker entity</p></li>
+<li><p>char_id - this will be the unique identifier we saw above in the .entities file so that you can perform COREF and find all dialogues for a single character. Remember, there WILL LIKELY BE ERRORS here. Sometimes you may need to manually align two entity ids as a single character (as we will see)</p></li>
+<li><p>quote - this is the raw text of the quote.</p></li>
+</ul>
+</section>
+<section id="the-supersense-file">
+<h2><span class="section-number">2.3.4. </span>The .supersense file<a class="headerlink" href="#the-supersense-file" title="Permalink to this headline">#</a></h2>
+<p>The final TSV file that we have is the .supersense file. This is something that I think is quite unique to BookNLP and an absolute delight to have.  Here we have all supersense text found. A good way to think about supersense is as a more broadly defined entities file. Here, we not only have entities, like people, places, etc, but also things like “perception”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_supersense</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.supersense&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df_supersense</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>start_token</th>
+      <th>end_token</th>
+      <th>supersense_category</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>noun.person</td>
+      <td>Mr.</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>3</td>
+      <td>noun.person</td>
+      <td>Mrs. Dursley</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6</td>
+      <td>6</td>
+      <td>noun.quantity</td>
+      <td>number</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7</td>
+      <td>7</td>
+      <td>noun.quantity</td>
+      <td>four</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>10</td>
+      <td>noun.location</td>
+      <td>Privet Drive</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>29313</th>
+      <td>99239</td>
+      <td>99239</td>
+      <td>noun.location</td>
+      <td>home</td>
+    </tr>
+    <tr>
+      <th>29314</th>
+      <td>99245</td>
+      <td>99245</td>
+      <td>verb.perception</td>
+      <td>have</td>
+    </tr>
+    <tr>
+      <th>29315</th>
+      <td>99249</td>
+      <td>99249</td>
+      <td>noun.act</td>
+      <td>fun</td>
+    </tr>
+    <tr>
+      <th>29316</th>
+      <td>99251</td>
+      <td>99251</td>
+      <td>noun.person</td>
+      <td>Dudley</td>
+    </tr>
+    <tr>
+      <th>29317</th>
+      <td>99253</td>
+      <td>99253</td>
+      <td>noun.time</td>
+      <td>summer</td>
+    </tr>
+  </tbody>
+</table>
+<p>29318 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>We can see that we have 29,318 different supersense items with four pieces of data:</p>
+<ul class="simple">
+<li><p>start_token - this is the start token for the supersense text</p></li>
+<li><p>end_token - this is the end token for the supersense text</p></li>
+<li><p>supersense_category - this is the part of speech and category to which the supersense belongs</p></li>
+<li><p>text - this is the raw text of the supersense</p></li>
+</ul>
+</section>
+<section id="the-book-file">
+<h2><span class="section-number">2.3.5. </span>The .book File<a class="headerlink" href="#the-book-file" title="Permalink to this headline">#</a></h2>
+<p>Now that we have looked at all the TSV files, let’s take a look at the .book file. This is a large JSON file that contains information structured around the characters. In the next few chapters, we will learn a lot more about this file, but for now, let’s explore how it is structured.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.book&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">book_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">book_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;characters&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is a giant dictionary with one key: characters. The value of characters is a list. Let’s check out it’s length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>723
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, we have 723 unique characters throughout the book. Again, expect errors here. For each character, we have a dictionary with 8 keys:;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;agent&#39;, &#39;patient&#39;, &#39;mod&#39;, &#39;poss&#39;, &#39;id&#39;, &#39;g&#39;, &#39;count&#39;, &#39;mentions&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>These keys are as follows:</p>
+<ul class="simple">
+<li><p>agent - actions that character does</p></li>
+<li><p>patient - actions done to that character</p></li>
+<li><p>mod - adjectives that describe them in the text</p></li>
+<li><p>poss - things the entity has (very broadly defined), e.g. relatives like aunt, uncle; or parts of the body, e.g. head, back, etc.</p></li>
+<li><p>id - their unique id (as seen above)</p></li>
+<li><p>g - analysis about gender pronouns used</p></li>
+<li><p>count - number of times the entity appears</p></li>
+<li><p>mentions - how the character is referenced</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;agent&quot;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;patient&quot;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mod&quot;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;poss&quot;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;g&quot;</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+<span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mentions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;proper&#39;, &#39;common&#39;, &#39;pronoun&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mod&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;w&#39;: &#39;name&#39;, &#39;i&#39;: 1206},
+ {&#39;w&#39;: &#39;older&#39;, &#39;i&#39;: 4370},
+ {&#39;w&#39;: &#39;famous&#39;, &#39;i&#39;: 4423},
+ {&#39;w&#39;: &#39;ready&#39;, &#39;i&#39;: 4533},
+ {&#39;w&#39;: &#39;special&#39;, &#39;i&#39;: 5645},
+ {&#39;w&#39;: &#39;famous&#39;, &#39;i&#39;: 5651},
+ {&#39;w&#39;: &#39;asleep&#39;, &#39;i&#39;: 5935},
+ {&#39;w&#39;: &#39;fast&#39;, &#39;i&#39;: 6318},
+ {&#39;w&#39;: &#39;small&#39;, &#39;i&#39;: 6338},
+ {&#39;w&#39;: &#39;skinny&#39;, &#39;i&#39;: 6340}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;poss&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;w&#39;: &#39;aunt&#39;, &#39;i&#39;: 4356},
+ {&#39;w&#39;: &#39;uncle&#39;, &#39;i&#39;: 4358},
+ {&#39;w&#39;: &#39;name&#39;, &#39;i&#39;: 4461},
+ {&#39;w&#39;: &#39;blankets&#39;, &#39;i&#39;: 5622},
+ {&#39;w&#39;: &#39;cousin&#39;, &#39;i&#39;: 5698},
+ {&#39;w&#39;: &#39;Petunia&#39;, &#39;i&#39;: 5947},
+ {&#39;w&#39;: &#39;aunt&#39;, &#39;i&#39;: 5981},
+ {&#39;w&#39;: &#39;back&#39;, &#39;i&#39;: 6020},
+ {&#39;w&#39;: &#39;aunt&#39;, &#39;i&#39;: 6062},
+ {&#39;w&#39;: &#39;aunt&#39;, &#39;i&#39;: 6133}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>98
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the g category, we see a few different keys:</p>
+<ul class="simple">
+<li><p>inference - the pronouns for the entity in order of highest frequency to lowest</p></li>
+<li><p>argmax - the likely pronoun/gender for the entity</p></li>
+<li><p>max - the degree to which that pronoun set is used compared to others, e.g. the percentage</p></li>
+<li><p>total (not entirely sure about this)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;g&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;inference&#39;: {&#39;he/him/his&#39;: 0.811,
+  &#39;she/her&#39;: 0.112,
+  &#39;they/them/their&#39;: 0.077,
+  &#39;xe/xem/xyr/xir&#39;: 0.0,
+  &#39;ze/zem/zir/hir&#39;: 0.0},
+ &#39;argmax&#39;: &#39;he/him/his&#39;,
+ &#39;max&#39;: 0.811,
+ &#39;total&#39;: 200311.834}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2005
+</pre></div>
+</div>
+</div>
+</div>
+<p>For mentions, we have three special keys:</p>
+<ul class="simple">
+<li><p>proper - the way they are referenced as proper nouns</p></li>
+<li><p>common - informal names</p></li>
+<li><p>pronoun - the pronouns used to refer to them in prose and dialogue</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mentions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;proper&#39;, &#39;common&#39;, &#39;pronoun&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mentions&quot;</span><span class="p">][</span><span class="s2">&quot;proper&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;c&#39;: 664, &#39;n&#39;: &#39;Harry&#39;},
+ {&#39;c&#39;: 46, &#39;n&#39;: &#39;Potter&#39;},
+ {&#39;c&#39;: 23, &#39;n&#39;: &#39;Harry Potter&#39;},
+ {&#39;c&#39;: 11, &#39;n&#39;: &#39;Mr. Potter&#39;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &#39;Mr. Harry Potter&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;Harry Hunting&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;Cokeworth Harry&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;Both Harry&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;The Harry Potter&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;HARRY POTTER&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;Even Harry&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;POTTER&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;the famous Harry Potter&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mentions&quot;</span><span class="p">][</span><span class="s2">&quot;common&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mentions&quot;</span><span class="p">][</span><span class="s2">&quot;pronoun&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;c&#39;: 303, &#39;n&#39;: &#39;he&#39;},
+ {&#39;c&#39;: 217, &#39;n&#39;: &#39;his&#39;},
+ {&#39;c&#39;: 172, &#39;n&#39;: &#39;you&#39;},
+ {&#39;c&#39;: 144, &#39;n&#39;: &#39;He&#39;},
+ {&#39;c&#39;: 107, &#39;n&#39;: &#39;him&#39;},
+ {&#39;c&#39;: 99, &#39;n&#39;: &#39;I&#39;},
+ {&#39;c&#39;: 34, &#39;n&#39;: &#39;me&#39;},
+ {&#39;c&#39;: 30, &#39;n&#39;: &#39;your&#39;},
+ {&#39;c&#39;: 27, &#39;n&#39;: &#39;yeh&#39;},
+ {&#39;c&#39;: 27, &#39;n&#39;: &#39;You&#39;},
+ {&#39;c&#39;: 18, &#39;n&#39;: &#39;yer&#39;},
+ {&#39;c&#39;: 16, &#39;n&#39;: &#39;himself&#39;},
+ {&#39;c&#39;: 14, &#39;n&#39;: &#39;my&#39;},
+ {&#39;c&#39;: 12, &#39;n&#39;: &#39;His&#39;},
+ {&#39;c&#39;: 5, &#39;n&#39;: &#39;Your&#39;},
+ {&#39;c&#39;: 3, &#39;n&#39;: &#39;Yeh&#39;},
+ {&#39;c&#39;: 3, &#39;n&#39;: &#39;Yer&#39;},
+ {&#39;c&#39;: 3, &#39;n&#39;: &#39;My&#39;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &quot;yeh&#39;ve&quot;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &quot;yeh&#39;d&quot;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &#39;ter&#39;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &#39;myself&#39;},
+ {&#39;c&#39;: 2, &#39;n&#39;: &#39;yourself&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;YOU&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;mine&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;yours&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &quot;Yeh&#39;d&quot;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &#39;yerself&#39;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &quot;Yeh&#39;ve&quot;},
+ {&#39;c&#39;: 1, &#39;n&#39;: &quot;yeh&#39;ll&quot;}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-book-html-file">
+<h2><span class="section-number">2.3.6. </span>The .book.html File<a class="headerlink" href="#the-book-html-file" title="Permalink to this headline">#</a></h2>
+<p>The final file that is outputted from BookNLP is the .book.html file. This is a nicely organized, easy-to-read, html file that should open in your browser. For this file, I am going to be covering it exclusively in the attached video as there is too much to realistically display in this notebook. If you find the video inaccessible, please let me know and I will add some text here with screenshots as a future update.</p>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">2.3.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>It is my goal that this chapter has helped you understand the large quantity of data and files outputted by the BookNLP pipeline. Getting this data and understanding it is only half the battle. In the coming chapters, we will use what we learned here to gain some valuable insight about the new data that we have generated.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./08_booknlp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="02_starting.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span><center>Getting Started with BookNLP</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_character_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span><center>Character Analysis</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By William J.B. Mattingly<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

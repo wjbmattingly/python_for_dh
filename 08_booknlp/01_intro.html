@@ -1,0 +1,1220 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.1. Introduction to BookNLP &#8212; Introduction to Python for Humanists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Getting Started with BookNLP" href="02_starting.html" />
+    <link rel="prev" title="2. Text Analysis with BookNLP" href="01_01_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/chapman-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <p align="center">INTRODUCTION TO PYTHON FOR HUMANISTS</p>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PREFACE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_preface/00_01_preface.html">
+   1. Preface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART ONE: The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
+     1.1. What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-03_installing_python.html">
+     1.2. Installing Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">
+     1.3. Coding Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-02_data.html">
+     2.1. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
+     2.2. Data Structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03-01_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-02_loops.html">
+     3.1. Introduction to Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-03_conditionals.html">
+     3.2. Introduction to Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04-01_intro.html">
+   4. Formal Coding: Functions, Classes, and Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-02_functions.html">
+     4.1. Introduction to Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-03_classes.html">
+     4.2. Introduction to Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
+     4.3. Introduction to Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_05-01_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-02_texts.html">
+     5.1. Loading and Saving Text Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-03_json.html">
+     5.2. Loading and Saving JSON Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
+     5.3. Working with Multiple Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_06-01_intro.html">
+   6. Working with Data on the Web
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-02_html.html">
+     6.1. Parsing HTML with Python and BeautifulSoup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">
+     6.2. Scraping Web Pages with Requests and BeautifulSoup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART TWO: Data Analysis with Pandas (Work in Progress)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_02_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_03_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_01_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_02_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_03_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_04_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_01_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_02_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_03_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_04_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_01_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_02_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_03_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_04_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART THREE: Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_01_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_02_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_03_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_04_pipelines.html">
+     1.3. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_02_01_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_02_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_03_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_04_phrase_matcher.html">
+     2.3. How to use the spaCy PhraseMatcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_06_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_07_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_03_01_intro.html">
+   3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_02_cultivating_concentration_camp_dataset.html">
+     3.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_03_challenges.html">
+     3.2. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_04_building_holocaust_pipeline_rules_based.html">
+     3.3. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FOUR: OTHER APPLICATIONS OF PYTHON
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
+   1. Topic Modeling in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">
+     1.2. The Basics of Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">
+     1.3. Clusters and K-Means
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_04_bigrams.html">
+     1.4. Bigrams and Trigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
+     1.5. Core Concepts of LDA Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
+     1.6. Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
+     1.7. What is Scikit Learn?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
+     1.8. Building a TF-IDF with Python and Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
+     1.9. Embedding, Flattening, and Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
+     1.10. Topic Modeling with Top2Vec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_01_intro.html">
+   2. Text Analaysis with BookNLP
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Introduction to BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_starting.html">
+     2.2. Getting Started with BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_files.html">
+     2.3. The Output Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_character_analysis.html">
+     2.4. Character Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_events.html">
+     2.5. Event Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_sna/06_01_01_intro.html">
+   3. Introduction to Social Network Analysis in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_02_basics.html">
+     3.1. The Basics of Social Network Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
+     3.2. SNA with NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     3.3. SNA with PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_05_networkx_pyvis.html">
+     3.4. NetworkX and PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_06_applied.html">
+     3.5.
+     <center>
+      Applying SNA on Humanities Data
+     </center>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
+   1. Introduction to Streamlit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_02_streamlit.html">
+     1.1. Getting Started with Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_03_displaying_data.html">
+     1.2. Displaying Data in Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_04_input_widgets.html">
+     1.3. Getting User Data with Input Widgets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_02_01_intro.html">
+   2. Advanced Streamlit Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_02_charts.html">
+     2.1. Data Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_03_layout_design.html">
+     2.2. Layout Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_04_cache.html">
+     2.3. Streamlit Cache and Session States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_05_custom_html.html">
+     2.5. Custom HTML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_06_multiple_pages.html">
+     2.6. Multi-Page Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_03_01_intro.html">
+   3. Building a Streamlit Application
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_02_database_query_app.html">
+     3.1. Database Query App
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_03_cloud.html">
+     3.2. Deploying an App in the Cloud with Streamlit Share
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/08_booknlp/01_intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/08_booknlp/01_intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F08_booknlp/01_intro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/08_booknlp/01_intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/08_booknlp/01_intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-booknlp">
+   2.1.1. What is BookNLP?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-books-and-larger-documents">
+   2.1.2. Why Books and Larger Documents?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp">
+   2.1.3. How to Install BookNLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
+   2.1.4. How to Install BookNLP on Mac M1
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Introduction to BookNLP</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-booknlp">
+   2.1.1. What is BookNLP?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-books-and-larger-documents">
+   2.1.2. Why Books and Larger Documents?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp">
+   2.1.3. How to Install BookNLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
+   2.1.4. How to Install BookNLP on Mac M1
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="center-introduction-to-booknlp-center">
+<h1><span class="section-number">2.1. </span><center>Introduction to BookNLP</center><a class="headerlink" href="#center-introduction-to-booknlp-center" title="Permalink to this headline">#</a></h1>
+<section id="what-is-booknlp">
+<h2><span class="section-number">2.1.1. </span>What is BookNLP?<a class="headerlink" href="#what-is-booknlp" title="Permalink to this headline">#</a></h2>
+<p><a href="https://github.com/booknlp/booknlp">BookNLP</a> is a new Python library created by <a href="https://github.com/dbamman">David Bamman</a>. It was originally created as a Java library in 2014 under the same name, <a href="https://github.com/dbamman/book-nlp">BookNLP</a> by David Bamman, Ted Underwood, and Noah Smith (see, David Bamman, Ted Underwood and Noah Smith, “A Bayesian Mixed Effects Model of Literary Character,” ACL 2014). While Java is a powerful coding language, both in speed and ease-of-use, not many digital humanists code in Java primarily. I suspect (I want to emphasize I could be wrong) the reason for the Python library was to address the larger Python-coding community both in general and specifically within the digital humanities. This textbook will deal strictly with the Python library.</p>
+<p>In the documentation, Bamman states:</p>
+<p>“BookNLP is a natural language processing pipeline that scales to books and other long documents (in English), including:</p>
+<ul class="simple">
+<li><p>Part-of-speech tagging</p></li>
+<li><p>Dependency parsing</p></li>
+<li><p>Entity recognition</p></li>
+<li><p>Character name clustering (e.g., “Tom”, “Tom Sawyer”, “Mr. Sawyer”, “Thomas Sawyer” -&gt; TOM_SAWYER) and coreference resolution</p></li>
+<li><p>Quotation speaker identification</p></li>
+<li><p>Supersense tagging (e.g., “animal”, “artifact”, “body”, “cognition”, etc.)</p></li>
+<li><p>Event tagging</p></li>
+<li><p>Referential gender inference (TOM_SAWYER -&gt; he/him/his)”</p></li>
+</ul>
+<p>Unlike its predecessor, the Java library, the Python library leverages the Python NLP library, <a href="https://spacy.io/">spaCy</a>, and the Python Transformer library from <a href="https://huggingface.co/">HuggingFace</a>, rather than Stanford, to perform many of these tasks. In the last few years, spaCy has proven itself as a dominate force within the NLP community, outperforming many of its predecessors in accuracy and in its ability to perform at scale. HuggingFace is a library that allows one to create and leverage large and powerful transformer language models. It also allows users to store these models in the cloud which are too large to store within GitHub or other comparable repositories. I have two textbooks on <a href="http://spacy.pythonhumanities.com/intro.html">spaCy</a>, both for the library generally, and one for <a href="http://ner.pythonhumanities.com/intro.html">named entity recognition</a>, specifically.</p>
+<p>BookNLP delivers in all the things it sets out to do, though it currently only supports English. Because it leverages transformer models, BookNLP’s results can generalize well on non-standard English. I have seen it perform quite well with the South African dialect of English, by correctly identifying out-of-vocabulary (OOV) words, specifically the correct labeling of Afrikaans words for minivans as vehicles.</p>
+<p>Although only available in English as if March 2022, there are clear plans to expand the library to include Spanish, Japanese, Russian, and Germran, as per their recent <a href="https://securegrants.neh.gov/publicquery/main.aspx?f=1&gn=HAA-271654-20">NEH grant</a>, awarded in September 2020.</p>
+<p>Throughout this book, we will use BookNLP to do what it was intended to do, analyze large fictional works. We will also, however, push it to analyze larger historical documents.</p>
+</section>
+<section id="why-books-and-larger-documents">
+<h2><span class="section-number">2.1.2. </span>Why Books and Larger Documents?<a class="headerlink" href="#why-books-and-larger-documents" title="Permalink to this headline">#</a></h2>
+<p>Both the documentation and this textbook emphasize the word <i>large</i> here. The reason? Because most language models do not perform well with larger documents. Old RNN-based language models had a hard time remembering earlier words and while newer transformer-based models, such as BERT, have a larger memory and can look forwards and backwards, the size of the input they can take in is only 512 words. For larger documents, therefore, different solutions (and libraries) should be considered. This is where BookNLP comes in. It also addresses several problems associated with books and larger documents, such as:</p>
+<ul class="simple">
+<li><p>Characters (and people) are referenced by different names. BookNLP solves this problem with name clustering and coreference resolution. This is a task in NLP where we try and find all uses a name and correctly assign them to the same identifier, such as Harry, Harry Potter, and Mr. Harry Potter all being the same person, Harry Potter.</p></li>
+<li><p>An adjacent problem is referential gender inferencing. Like coreference resolution, often times in a book or larger document, a person will be referred to as a pronoun. This is where referential gender inferencing comes in. This allows a user to correctly assign the antecedent or postcedent to the correct pronoun. When done successfully, this also allows you to make decisions about the gender of the character or person based on how they are referenced in the text. Because this task is so delicate, given the delicate nature of assigning gender, BookNLP fortunately gives users the data with each pronoun used to reference a character and also includes non-binary pronouns.</p></li>
+<li><p>Another issue is quotation speaker identification. This is when we need to understand who is speaking, so that we can correctly link characters to their dialogues. It is possible to do this with spaCy, but it is extremely difficult to do well. BookNLP does a remarkable job of handling this problem and it does it with a fair degree of accuracy, from what I have seen.</p></li>
+<li><p>Event tagging is another key issue with longer documents and books. There are machine learning models that find events and you can easily cultivate a list of domain-specific events to improve a pipeline, but for BookNLP event is defined more broadly. From my experience, it is more based around key actions, rather than named events (as it is in named entity recognition). This has a tangential benefit known as triple extraction. In my opinion, it might be a bit better to view BookNLP events through this lens. Triple extraction is when we try and extract three pieces of information, such as (Actor, Action, Recipient) or (Actor, IS, Something). With these types of tuples, we can construct a knowledge tree about a corpus fairly easily. This a very challenging problem in NLP because triple extraction can be very domain-specific. BookNLP provides a great starting place for triple extraction with its events.</p></li>
+</ul>
+</section>
+<section id="how-to-install-booknlp">
+<h2><span class="section-number">2.1.3. </span>How to Install BookNLP<a class="headerlink" href="#how-to-install-booknlp" title="Permalink to this headline">#</a></h2>
+<p>If you are using Linux (and I believe Mac - for Mac M1, see below), installation will be easy. Use pip install booknlp. You can opt to create a custom environment (recommended but not necessary). If you are using Windows, however, as of March 3 2022, you will need to do a few additional steps which I have documented in this video below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3l5ERF3QX0M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/wjbmattingly/anaconda3/envs/python-textbook/lib/python3.9/site-packages/IPython/core/display.py:431: UserWarning: Consider using IPython.display.IFrame instead
+  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
+</pre></div>
+</div>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/3l5ERF3QX0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</section>
+<section id="how-to-install-booknlp-on-mac-m1">
+<h2><span class="section-number">2.1.4. </span>How to Install BookNLP on Mac M1<a class="headerlink" href="#how-to-install-booknlp-on-mac-m1" title="Permalink to this headline">#</a></h2>
+<p>This section was kindly written by Joel Lee, Fellow at the United States Holocaust Memorial Museum.</p>
+<p>When running on M1, you may run into a “zsh: illegal hardware instruction” when trying to run spacy or booknlp commands after pip installing booknlp, or you may run into some dependency errors when trying to pip install booknlp. This is my workaround for that, where we download the dependencies (spacy, tensorflow, pytorch, and transformers) stated in the setup.py manually and then running pip install booknlp without its dependencies.</p>
+<ul class="simple">
+<li><p>First, if you do not already have an Anaconda or miniconda for your local Python development, start with a conda install, we will follow this guide to use miniforge.</p>
+<ul>
+<li><p>https://www.mrdbourke.com/setup-apple-m1-pro-and-m1-max-for-machine-learning-and-data-science/</p>
+<ul>
+<li><p>Instant Download Link for Miniforge3 (Conda installer) for macOS arm64 chips (M1, M1 Pro, M1 Max).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">~/Downloads/Miniforge3-MacOSX-arm64.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">~/Downloads/Miniforge3-MacOSX-arm64.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/miniforge3/bin/activate</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>With your existing or newly installed conda environment installed, continue in your Terminal or Anaconda Prompt session.</p>
+<ul>
+<li><p>To ensure the conda environment you will create uses the MacOS native <code class="docutils literal notranslate"><span class="pre">osx-arm64</span></code> version of Python packages for your M1 Apple Silicon computer, execute this command in your Terminal or Anaconda Prompt session before following the rest of this recipe.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">config</span> <span class="pre">vars</span> <span class="pre">set</span> <span class="pre">CONDA_SUBDIR=osx-arm64</span></code></p></li>
+</ul>
+</li>
+<li><p>Now create and activate a new conda virtual environment that you will use for the BookNLP course:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">booknlp</span> <span class="pre">python=3.8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">booknlp</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Installing tensorflow.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">apple</span> <span class="pre">tensorflow-deps</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-macos</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-metal</span></code></p></li>
+</ul>
+</li>
+<li><p>Installing spacy.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">spacy</span></code></p></li>
+</ul>
+</li>
+<li><p>Installing transformers.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">transformers</span></code> OR</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers</span></code></p></li>
+</ul>
+</li>
+<li><p>Installing pytorch.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pytorch</span> <span class="pre">pytorch</span></code> OR, if this gives you installation troubles, try</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">pytorch</span></code></p></li>
+</ul>
+</li>
+<li><p>Now if we were to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">booknlp</span></code> we would very likely get a conflicting dependency error or ResolutionImpossible error between booknlp and tensorflow. Fortunately, because we have installed the dependencies ourselves, we can run the pip install <em>without</em> including the already installed dependencies.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--no-dependencies</span> <span class="pre">booknlp</span></code> (Note the option parameter starts with two-dash characters.)</p></li>
+</ul>
+</li>
+<li><p>Now we can download the spacy pipeline and should be able to follow the rest of the booknlp repo.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">spacy</span> <span class="pre">download</span> <span class="pre">en_core_web_sm</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Congratulations! Your M1-based Macintosh should now be ready to use as you take the BookNLP course.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./08_booknlp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_01_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Text Analysis with BookNLP</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_starting.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span><center>Getting Started with BookNLP</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By William J.B. Mattingly<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

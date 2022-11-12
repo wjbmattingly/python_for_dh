@@ -1,0 +1,2177 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.5. Events Analysis &#8212; Introduction to Python for Humanists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Social Network Analysis in Python" href="../06_sna/06_01_01_intro.html" />
+    <link rel="prev" title="2.4. Character Analysis" href="04_character_analysis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/chapman-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <p align="center">INTRODUCTION TO PYTHON FOR HUMANISTS</p>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PREFACE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_preface/00_01_preface.html">
+   1. Preface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART ONE: The Basics of Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
+   1. Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
+     1.1. What is Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-03_installing_python.html">
+     1.2. Installing Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">
+     1.3. Coding Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
+   2. Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-02_data.html">
+     2.1. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
+     2.2. Data Structures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_03-01_intro.html">
+   3. Loops and Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-02_loops.html">
+     3.1. Introduction to Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_03-03_conditionals.html">
+     3.2. Introduction to Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_04-01_intro.html">
+   4. Formal Coding: Functions, Classes, and Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-02_functions.html">
+     4.1. Introduction to Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-03_classes.html">
+     4.2. Introduction to Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
+     4.3. Introduction to Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_05-01_intro.html">
+   5. Working with External Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-02_texts.html">
+     5.1. Loading and Saving Text Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-03_json.html">
+     5.2. Loading and Saving JSON Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
+     5.3. Working with Multiple Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_intro/01_06-01_intro.html">
+   6. Working with Data on the Web
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-02_html.html">
+     6.1. Parsing HTML with Python and BeautifulSoup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">
+     6.2. Scraping Web Pages with Requests and BeautifulSoup
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART TWO: Data Analysis with Pandas (Work in Progress)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_01_01_intro.html">
+   1. Introduction to Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_02_introduction_to_pandas.html">
+     1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_01_03_the_basics.html">
+     1.2. The Basics of Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_02_01_intro.html">
+   2. Working with Data in Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_02_finding_data.html">
+     2.1. Finding Data in a DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_03_organizing_data.html">
+     2.2. Organizing Data in Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_02_04_cleaning_data.html">
+     2.3. Cleaning Data with Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_03_01_intro.html">
+   3. Searching for Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_02_advanced_strings.html">
+     3.1. Advanced Searching on Strings in DataFrame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_03_advanced_querying.html">
+     3.2. Advanced Filtering and Querying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_03_04_advanced_grouping.html">
+     3.3. Advanced Grouping with Groupby
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_pandas/02_04_01_intro.html">
+   4. Advanced Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_02_pandas_and_plots.html">
+     4.1. Basic Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_03_graphing_networks_with_pandas.html">
+     4.2. Graphing Network Data from Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_pandas/02_04_04_time_series_data.html">
+     4.3. Introduction to Time Series Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART THREE: Natural Language Processing with spaCy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_01_01_intro.html">
+   1. Introduction to spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_02_install_and_containers.html">
+     1.1. The Basics of spaCy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_03_linguistic_annotations.html">
+     1.2. spaCy Linguistic Annotations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_01_04_pipelines.html">
+     1.3. spaCy Pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_02_01_intro.html">
+   2. Rules-Based spaCy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_02_entityruler.html">
+     2.1. How to use the spaCy EntityRuler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_03_matcher.html">
+     2.2. How to use the spaCy Matcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_04_phrase_matcher.html">
+     2.3. How to use the spaCy PhraseMatcher
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_06_simple_regex.html">
+     2.4. How to use RegEx in spaCy (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_02_07_complex_regex.html">
+     2.5. How to use RegEx in spaCy (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_spacy/03_03_01_intro.html">
+   3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_02_cultivating_concentration_camp_dataset.html">
+     3.1. Cultivating Good Datasets for Entities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_03_challenges.html">
+     3.2. The Challenges of Holocaust NER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_spacy/03_03_04_building_holocaust_pipeline_rules_based.html">
+     3.3. Creating the Rules-Based Pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FOUR: OTHER APPLICATIONS OF PYTHON
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
+   1. Topic Modeling in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">
+     1.2. The Basics of Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">
+     1.3. Clusters and K-Means
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_01_04_bigrams.html">
+     1.4. Bigrams and Trigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
+     1.5. Core Concepts of LDA Topic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
+     1.6. Introduction to TF-IDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
+     1.7. What is Scikit Learn?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
+     1.8. Building a TF-IDF with Python and Scikit-Learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
+     1.9. Embedding, Flattening, and Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
+     1.10. Topic Modeling with Top2Vec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_01_intro.html">
+   2. Text Analaysis with BookNLP
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intro.html">
+     2.1. Introduction to BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_starting.html">
+     2.2. Getting Started with BookNLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_files.html">
+     2.3. The Output Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_character_analysis.html">
+     2.4. Character Analysis
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.5. Event Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_sna/06_01_01_intro.html">
+   3. Introduction to Social Network Analysis in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_02_basics.html">
+     3.1. The Basics of Social Network Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
+     3.2. SNA with NetworkX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
+     3.3. SNA with PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_05_networkx_pyvis.html">
+     3.4. NetworkX and PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_sna/06_01_06_applied.html">
+     3.5.
+     <center>
+      Applying SNA on Humanities Data
+     </center>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_01_01_intro.html">
+   1. Introduction to Streamlit
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_02_streamlit.html">
+     1.1. Getting Started with Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_03_displaying_data.html">
+     1.2. Displaying Data in Streamlit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_01_04_input_widgets.html">
+     1.3. Getting User Data with Input Widgets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_02_01_intro.html">
+   2. Advanced Streamlit Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_02_charts.html">
+     2.1. Data Visualization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_03_layout_design.html">
+     2.2. Layout Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_04_cache.html">
+     2.3. Streamlit Cache and Session States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_05_custom_html.html">
+     2.5. Custom HTML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_02_06_multiple_pages.html">
+     2.6. Multi-Page Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_streamlit/05_03_01_intro.html">
+   3. Building a Streamlit Application
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_02_database_query_app.html">
+     3.1. Database Query App
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_streamlit/05_03_03_cloud.html">
+     3.2. Deploying an App in the Cloud with Streamlit Share
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/08_booknlp/05_events.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/08_booknlp/05_events.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F08_booknlp/05_events.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/08_booknlp/05_events.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/08_booknlp/05_events.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-the-tokens-file">
+   2.5.1. Exploring the Tokens File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grabbing-the-events">
+   2.5.2. Grabbing the Events
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyzing-events-words-and-lemmas">
+   2.5.3. Analyzing Events Words and Lemmas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grabbing-event-sentences">
+   2.5.4. Grabbing Event Sentences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bringing-everything-together">
+   2.5.5. Bringing Everything Together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-events-file">
+   2.5.6. Creating a .events File.
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Events Analysis</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-the-tokens-file">
+   2.5.1. Exploring the Tokens File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grabbing-the-events">
+   2.5.2. Grabbing the Events
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyzing-events-words-and-lemmas">
+   2.5.3. Analyzing Events Words and Lemmas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grabbing-event-sentences">
+   2.5.4. Grabbing Event Sentences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bringing-everything-together">
+   2.5.5. Bringing Everything Together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-events-file">
+   2.5.6. Creating a .events File.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="center-events-analysis-center">
+<h1><span class="section-number">2.5. </span><center>Events Analysis</center><a class="headerlink" href="#center-events-analysis-center" title="Permalink to this headline">#</a></h1>
+<p>The only output file that details event data is the .tokens file. As a result, this file will be the focus of this chapter. Each section of this chapter will analyze the .tokens file in a deeper way to identify and extract event data. At the end of the chapter, we will bring everything together with a single function that can recreate these results on any BookNLP output .tokens file.</p>
+<section id="exploring-the-tokens-file">
+<h2><span class="section-number">2.5.1. </span>Exploring the Tokens File<a class="headerlink" href="#exploring-the-tokens-file" title="Permalink to this headline">#</a></h2>
+<p>Let’s first go ahead and open up the .tokens file and take a look at it so we can remember precisely what the .tsv file looks like. If you remember from chapter 3, we can analyze the files a bit more easily, if we use pandas, a tabular data analysis library in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.tokens&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>paragraph_ID</th>
+      <th>sentence_ID</th>
+      <th>token_ID_within_sentence</th>
+      <th>token_ID_within_document</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>byte_onset</th>
+      <th>byte_offset</th>
+      <th>POS_tag</th>
+      <th>fine_POS_tag</th>
+      <th>dependency_relation</th>
+      <th>syntactic_head_ID</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Mr.</td>
+      <td>Mr.</td>
+      <td>0</td>
+      <td>3</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>nmod</td>
+      <td>3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>and</td>
+      <td>and</td>
+      <td>4</td>
+      <td>7</td>
+      <td>CCONJ</td>
+      <td>CC</td>
+      <td>cc</td>
+      <td>0</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Mrs.</td>
+      <td>Mrs.</td>
+      <td>8</td>
+      <td>12</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>compound</td>
+      <td>3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Dursley</td>
+      <td>Dursley</td>
+      <td>13</td>
+      <td>20</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>nsubj</td>
+      <td>12</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>,</td>
+      <td>,</td>
+      <td>20</td>
+      <td>21</td>
+      <td>PUNCT</td>
+      <td>,</td>
+      <td>punct</td>
+      <td>3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99251</th>
+      <td>2995</td>
+      <td>6172</td>
+      <td>10</td>
+      <td>99251</td>
+      <td>Dudley</td>
+      <td>Dudley</td>
+      <td>438929</td>
+      <td>438935</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>pobj</td>
+      <td>99250</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99252</th>
+      <td>2995</td>
+      <td>6172</td>
+      <td>11</td>
+      <td>99252</td>
+      <td>this</td>
+      <td>this</td>
+      <td>438936</td>
+      <td>438940</td>
+      <td>DET</td>
+      <td>DT</td>
+      <td>det</td>
+      <td>99253</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99253</th>
+      <td>2995</td>
+      <td>6172</td>
+      <td>12</td>
+      <td>99253</td>
+      <td>summer</td>
+      <td>summer</td>
+      <td>438941</td>
+      <td>438947</td>
+      <td>NOUN</td>
+      <td>NN</td>
+      <td>npadvmod</td>
+      <td>99245</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99254</th>
+      <td>2995</td>
+      <td>6172</td>
+      <td>13</td>
+      <td>99254</td>
+      <td>....</td>
+      <td>....</td>
+      <td>438947</td>
+      <td>438951</td>
+      <td>PUNCT</td>
+      <td>.</td>
+      <td>punct</td>
+      <td>99243</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99255</th>
+      <td>2995</td>
+      <td>6172</td>
+      <td>14</td>
+      <td>99255</td>
+      <td>\t</td>
+      <td>438951</td>
+      <td>438952</td>
+      <td>PUNCT</td>
+      <td>''</td>
+      <td>punct</td>
+      <td>99243</td>
+      <td>O</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>99256 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>We have approximately 99,000 rows and 13 columns of data. Throughout this chapter, we will focus on only four columns in particular:</p>
+<ul class="simple">
+<li><p>sentence_ID</p></li>
+<li><p>word</p></li>
+<li><p>lemma</p></li>
+<li><p>event</p></li>
+</ul>
+<p>As such, let’s go ahead and remove all the extra data for now so that we can just view the columns we care about.</p>
+<p>df = df[[“sentence_ID”, “word”, “lemma”,  “event”]]
+df</p>
+<p>Excellent! Now we can analyze this event column a bit more easily.</p>
+</section>
+<section id="grabbing-the-events">
+<h2><span class="section-number">2.5.2. </span>Grabbing the Events<a class="headerlink" href="#grabbing-the-events" title="Permalink to this headline">#</a></h2>
+<p>One of the things we can see above is that some event columns contain NaN. Ideally, we want to ignore these entirely. We can do this in pandas by using the isnull() method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">events</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sentence_ID</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Mr.</td>
+      <td>Mr.</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>and</td>
+      <td>and</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>Mrs.</td>
+      <td>Mrs.</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>Dursley</td>
+      <td>Dursley</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>,</td>
+      <td>,</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99250</th>
+      <td>6172</td>
+      <td>with</td>
+      <td>with</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99251</th>
+      <td>6172</td>
+      <td>Dudley</td>
+      <td>Dudley</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99252</th>
+      <td>6172</td>
+      <td>this</td>
+      <td>this</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99253</th>
+      <td>6172</td>
+      <td>summer</td>
+      <td>summer</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99254</th>
+      <td>6172</td>
+      <td>....</td>
+      <td>....</td>
+      <td>O</td>
+    </tr>
+  </tbody>
+</table>
+<p>94498 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>As we can see this eliminated roughly 5,000 rows. Let’s take a closer look at the column event and see what kind of data we can expect to see here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_options</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">event_options</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EVENT&#39;, &#39;O&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>By converting this column to a list and then to a set (which eliminates the duplicates), we can see that we have two types of data in the event column:</p>
+<ul class="simple">
+<li><p>EVENT</p></li>
+<li><p>O</p></li>
+</ul>
+<p>If a row has “EVENT” in the column then it means the corresponding word was identified by the BookNLP pipeline as being an event-triggering word. Now that we know this, let’s take a look at only the rows that have EVENT in the event column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">real_events</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;EVENT&quot;</span><span class="p">]</span>
+<span class="n">real_events</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sentence_ID</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>242</th>
+      <td>9</td>
+      <td>shuddered</td>
+      <td>shudder</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>12</td>
+      <td>woke</td>
+      <td>wake</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>13</td>
+      <td>hummed</td>
+      <td>hum</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>349</th>
+      <td>13</td>
+      <td>picked</td>
+      <td>pick</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>13</td>
+      <td>gossiped</td>
+      <td>gossip</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99152</th>
+      <td>6167</td>
+      <td>hung</td>
+      <td>hang</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>99185</th>
+      <td>6169</td>
+      <td>said</td>
+      <td>say</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>99209</th>
+      <td>6170</td>
+      <td>said</td>
+      <td>say</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>99215</th>
+      <td>6170</td>
+      <td>surprised</td>
+      <td>surprised</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>99218</th>
+      <td>6170</td>
+      <td>grin</td>
+      <td>grin</td>
+      <td>EVENT</td>
+    </tr>
+  </tbody>
+</table>
+<p>6029 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>We now have only 6,029 rows to analyze!</p>
+</section>
+<section id="analyzing-events-words-and-lemmas">
+<h2><span class="section-number">2.5.3. </span>Analyzing Events Words and Lemmas<a class="headerlink" href="#analyzing-events-words-and-lemmas" title="Permalink to this headline">#</a></h2>
+<p>Let’s dig a little deeper. Let’s try to analyze the words and lemmas of these rows to see how many unique words and lemmas we have.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">real_events</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">event_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1501
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_lemmas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">real_events</span><span class="o">.</span><span class="n">lemma</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+<span class="n">event_lemmas</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">event_lemmas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1021
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">event_lemmas</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;BOOM&#39;, &#39;Bludger&#39;, &#39;Pompously&#39;, &#39;Scowling&#39;, &#39;Smelting&#39;, &#39;Whispers&#39;, &#39;aback&#39;, &#39;accept&#39;, &#39;ache&#39;, &#39;act&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>While we have 1501 unique words, we only have 1021 unique lemmas. If we were interested in seeing the type of event words and lemmas appear in Harry Potter, we can now do that, but something I notice quickly is that some lemmas are capitalized. Let’s eliminate all duplicates by lowering all lemmas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_lemmas</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">lemma</span> <span class="ow">in</span> <span class="n">event_lemmas</span><span class="p">:</span>
+    <span class="n">lemma</span> <span class="o">=</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">lemma</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">final_lemmas</span><span class="p">:</span>
+        <span class="n">final_lemmas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemma</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">final_lemmas</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">final_lemmas</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1020
+[&#39;boom&#39;, &#39;bludger&#39;, &#39;pompously&#39;, &#39;scowling&#39;, &#39;smelting&#39;, &#39;whispers&#39;, &#39;aback&#39;, &#39;accept&#39;, &#39;ache&#39;, &#39;act&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We eliminated only one duplicate.</p>
+</section>
+<section id="grabbing-event-sentences">
+<h2><span class="section-number">2.5.4. </span>Grabbing Event Sentences<a class="headerlink" href="#grabbing-event-sentences" title="Permalink to this headline">#</a></h2>
+<p>Now that we know how to grab individual event-triggering words, what about the sentences that contain events? To analyze this, we can use the sentence_ID column which contains a unique number for each sentence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentences</span> <span class="o">=</span> <span class="n">real_events</span><span class="o">.</span><span class="n">sentence_ID</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">real_events</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">sentences</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">events</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 12, 13, 13, 13, 13, 13, 14, 15, 15]
+[&#39;shuddered&#39;, &#39;woke&#39;, &#39;hummed&#39;, &#39;picked&#39;, &#39;gossiped&#39;, &#39;wrestled&#39;, &#39;screaming&#39;, &#39;flutter&#39;, &#39;picked&#39;, &#39;pecked&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that some sentences appear multiple times. This is because they contain multiple words that are event-triggering.</p>
+<p>Let’s take a look at our initial DataFrame once again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sentence_ID</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Mr.</td>
+      <td>Mr.</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>and</td>
+      <td>and</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>Mrs.</td>
+      <td>Mrs.</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>Dursley</td>
+      <td>Dursley</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>,</td>
+      <td>,</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99251</th>
+      <td>6172</td>
+      <td>Dudley</td>
+      <td>Dudley</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99252</th>
+      <td>6172</td>
+      <td>this</td>
+      <td>this</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99253</th>
+      <td>6172</td>
+      <td>summer</td>
+      <td>summer</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99254</th>
+      <td>6172</td>
+      <td>....</td>
+      <td>....</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99255</th>
+      <td>6172</td>
+      <td>\t</td>
+      <td>438951</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>99256 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Let’s say we were interested in grabbing the first sentence from the first event, we can grab all rows that have a matching sentence_ID.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence1</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sentence_ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sentence_ID</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>240</th>
+      <td>9</td>
+      <td>The</td>
+      <td>the</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>9</td>
+      <td>Dursleys</td>
+      <td>Dursleys</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>9</td>
+      <td>shuddered</td>
+      <td>shudder</td>
+      <td>EVENT</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>9</td>
+      <td>to</td>
+      <td>to</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>9</td>
+      <td>think</td>
+      <td>think</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>9</td>
+      <td>what</td>
+      <td>what</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>9</td>
+      <td>the</td>
+      <td>the</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>9</td>
+      <td>neighbors</td>
+      <td>neighbor</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>9</td>
+      <td>would</td>
+      <td>would</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>9</td>
+      <td>say</td>
+      <td>say</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>9</td>
+      <td>if</td>
+      <td>if</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>9</td>
+      <td>the</td>
+      <td>the</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>9</td>
+      <td>Potters</td>
+      <td>Potters</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>9</td>
+      <td>arrived</td>
+      <td>arrive</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>9</td>
+      <td>in</td>
+      <td>in</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>9</td>
+      <td>the</td>
+      <td>the</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>9</td>
+      <td>street</td>
+      <td>street</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>9</td>
+      <td>.</td>
+      <td>.</td>
+      <td>O</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>With this data, we can then grab all the words and reconstruct the sentence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">resentence</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">resentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Dursleys shuddered to think what the neighbors would say if the Potters arrived in the street .
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bringing-everything-together">
+<h2><span class="section-number">2.5.5. </span>Bringing Everything Together<a class="headerlink" href="#bringing-everything-together" title="Permalink to this headline">#</a></h2>
+<p>Let’s now bring everything together we just learned in this chapter and make it into a function. This function will receive a file that corresponds to the .tokens file. It will find the relevant event rows and then reconstruct the sentences that correspond to each event word. The output will be a list of dictionaries that are event-centric. Each dictionary will have 3 keys:</p>
+<ul class="simple">
+<li><p>event_word = the event-triggering word</p></li>
+<li><p>event_lemma = the event_word’s lemma</p></li>
+<li><p>sentence = the sentence that the event-triggering word is in</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grab_event_sentences</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">real_events</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;EVENT&quot;</span><span class="p">]</span>
+    <span class="n">sentences</span> <span class="o">=</span> <span class="n">real_events</span><span class="o">.</span><span class="n">sentence_ID</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">event_words</span> <span class="o">=</span> <span class="n">real_events</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">event_lemmas</span> <span class="o">=</span> <span class="n">real_events</span><span class="o">.</span><span class="n">lemma</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">final_sentences</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sentence_ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">resentence</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+        <span class="n">final_sentences</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;event_word&quot;</span><span class="p">:</span> <span class="n">event_words</span><span class="p">[</span><span class="n">x</span><span class="p">],</span>
+                                <span class="s2">&quot;event_lemma&quot;</span><span class="p">:</span> <span class="n">event_lemmas</span><span class="p">[</span><span class="n">x</span><span class="p">],</span>
+                                <span class="s2">&quot;sentence&quot;</span><span class="p">:</span> <span class="n">resentence</span>
+                                   
+                               <span class="p">})</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">final_sentences</span>
+    
+    
+<span class="n">event_data</span> <span class="o">=</span> <span class="n">grab_event_sentences</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.tokens&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at the output now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;event_word&#39;: &#39;shuddered&#39;, &#39;event_lemma&#39;: &#39;shudder&#39;, &#39;sentence&#39;: &#39;The Dursleys shuddered to think what the neighbors would say if the Potters arrived in the street .&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-events-file">
+<h2><span class="section-number">2.5.6. </span>Creating a .events File.<a class="headerlink" href="#creating-a-events-file" title="Permalink to this headline">#</a></h2>
+<p>This allows us to now analyze the events identified in the BookNLP pipeline a bit more easily. Since we don’t have a .events output file, this is currently one way that we can simulate the same result by creating a special events-centric output. With this data, we can now create a new DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">event_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>event_word</th>
+      <th>event_lemma</th>
+      <th>sentence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>shuddered</td>
+      <td>shudder</td>
+      <td>The Dursleys shuddered to think what the neigh...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>woke</td>
+      <td>wake</td>
+      <td>When Mr. and Mrs. Dursley woke up on the dull ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>hummed</td>
+      <td>hum</td>
+      <td>Mr. Dursley hummed as he picked out his most b...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>picked</td>
+      <td>pick</td>
+      <td>Mr. Dursley hummed as he picked out his most b...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gossiped</td>
+      <td>gossip</td>
+      <td>Mr. Dursley hummed as he picked out his most b...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6024</th>
+      <td>hung</td>
+      <td>hang</td>
+      <td>Harry hung back for a last word with Ron and H...</td>
+    </tr>
+    <tr>
+      <th>6025</th>
+      <td>said</td>
+      <td>say</td>
+      <td>\t \t Hope you have -- er -- a good holiday , ...</td>
+    </tr>
+    <tr>
+      <th>6026</th>
+      <td>said</td>
+      <td>say</td>
+      <td>\t Oh , I will , \t said Harry , and they were...</td>
+    </tr>
+    <tr>
+      <th>6027</th>
+      <td>surprised</td>
+      <td>surprised</td>
+      <td>\t Oh , I will , \t said Harry , and they were...</td>
+    </tr>
+    <tr>
+      <th>6028</th>
+      <td>grin</td>
+      <td>grin</td>
+      <td>\t Oh , I will , \t said Harry , and they were...</td>
+    </tr>
+  </tbody>
+</table>
+<p>6029 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>We can also output it to the same subdirectory as the other files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.events&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now you have a .events file!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./08_booknlp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_character_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.4. </span><center>Character Analysis</center></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../06_sna/06_01_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span><center>Social Network Analysis in Python</center></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By William J.B. Mattingly<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
