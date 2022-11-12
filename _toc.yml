@@ -172,13 +172,17 @@ parts:
       title: "Topic Modeling with Top2Vec"
 
   - caption: Text Analaysis with BookNLP
-    numbered: true
     sections:
     - file: 08_booknlp/01_intro
       title: Introduction to BookNLP
     - file: 08_booknlp/02_starting
       title: Getting Started with BookNLP
-
+    - file: 08_booknlp/03_files
+      title: The Output Files
+    - file: 08_booknlp/04_character_analysis
+      title: Character Analysis
+    - file: 08_booknlp/05_events
+      title: Event Analysis
 
   - file: 06_sna/06_01_01_intro
     title: "Introduction to Social Network Analysis in Python"
