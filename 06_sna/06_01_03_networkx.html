@@ -940,8 +940,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifying-major-actors-in-a-network">
+   2.2.5. Identifying Major Actors in a Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limitations-of-matplotlib-and-networkx">
-   2.2.5. Limitations of Matplotlib and NetworkX¶
+   2.2.6. Limitations of Matplotlib and NetworkX¶
   </a>
  </li>
 </ul>
@@ -984,8 +989,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifying-major-actors-in-a-network">
+   2.2.5. Identifying Major Actors in a Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limitations-of-matplotlib-and-networkx">
-   2.2.5. Limitations of Matplotlib and NetworkX¶
+   2.2.6. Limitations of Matplotlib and NetworkX¶
   </a>
  </li>
 </ul>
@@ -1156,8 +1166,32 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+<section id="identifying-major-actors-in-a-network">
+<h2><span class="section-number">2.2.5. </span>Identifying Major Actors in a Network<a class="headerlink" href="#identifying-major-actors-in-a-network" title="Permalink to this headline">#</a></h2>
+<p>Another way to understand a specific node’s role in a network, is to calculate a node’s <strong>centrality</strong>, or degree of focus, in a network. We can calculate and grab the centrality of all nodes in our graph with <code class="docutils literal notranslate"><span class="pre">nx.degree_centrality()</span></code>. This will take a single argument, our graph. It will return a dictionary whose keys are each node and whose values are each node’s centrality score. The higher the number, the more significant role that particular node plays in the graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">centrality</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Fred&#39;: 0.42857142857142855,
+ &#39;George&#39;: 0.2857142857142857,
+ &#39;Harry&#39;: 0.42857142857142855,
+ &#39;Rita&#39;: 0.42857142857142855,
+ &#39;Ginny&#39;: 0.5714285714285714,
+ &#39;Tom&#39;: 0.14285714285714285,
+ &#39;Frank&#39;: 0.14285714285714285,
+ &#39;Marge&#39;: 0.14285714285714285}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="limitations-of-matplotlib-and-networkx">
-<h2><span class="section-number">2.2.5. </span>Limitations of Matplotlib and NetworkX¶<a class="headerlink" href="#limitations-of-matplotlib-and-networkx" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.6. </span>Limitations of Matplotlib and NetworkX¶<a class="headerlink" href="#limitations-of-matplotlib-and-networkx" title="Permalink to this headline">#</a></h2>
 <p>While NetworkX is quite useful for producing quick and (with practice) quality graphs, it is largely suited to smaller networks. Often, when we are working with larger datasets of networks it will be important to visualize those networks more dynamically, where users can zoom in, zoom out, and select certain nodes. Most of these types of graphs are designed and implemented in JavaScript.</p>
 <p>The graphs designed in JavaScript have the advantage of being able to be opened in any browser and distributed across the web or embedded in any website. Fortunately, the Python library PyVis allows us to produce JavaScript-based graphs with Python code.</p>
 </section>
