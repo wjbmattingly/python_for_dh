@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Applying SNA on Humanities Data &#8212; Introduction to Python for Humanists</title>
+    <title>2.4. NetworkX and PyVis &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Introduction to Streamlit" href="../05_streamlit/05_01_01_intro.html" />
+    <link rel="next" title="2.6. Applying SNA on Humanities Data" href="06_01_06_applied.html" />
     <link rel="prev" title="2.3. Producing Dynamic Graphs with PyVis" href="06_01_04_pyvis_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -577,7 +577,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4.
+     2.4. NetworkX and PyVis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_01_06_applied.html">
+     2.6.
      <center>
       Applying SNA on Humanities Data
      </center>
@@ -737,7 +742,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_05_applied.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_05_networkx_pyvis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -755,7 +760,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_05_applied.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_05_networkx_pyvis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -815,7 +820,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_05_applied.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_05_networkx_pyvis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -832,7 +837,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_05_applied.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_05_networkx_pyvis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -860,7 +865,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06_sna/06_01_05_applied.ipynb"
+        <a href="../_sources/06_sna/06_01_05_networkx_pyvis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -921,33 +926,13 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.4.
-   <center>
-    Applying SNA on Humanities Data
-   </center>
+   2.4. NetworkX and PyVis
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   2.5. Introduction
+  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+   2.5. Adding Metadata to Nodes
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     2.5.1. Examining the Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
-     2.5.2. Adding Colors to Nodes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
-     2.5.3. Adding Metadata to Nodes
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -958,7 +943,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Applying SNA on Humanities Data</center></h1>
+                <h1>NetworkX and PyVis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -970,33 +955,13 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.4.
-   <center>
-    Applying SNA on Humanities Data
-   </center>
+   2.4. NetworkX and PyVis
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   2.5. Introduction
+  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+   2.5. Adding Metadata to Nodes
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     2.5.1. Examining the Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
-     2.5.2. Adding Colors to Nodes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
-     2.5.3. Adding Metadata to Nodes
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1008,14 +973,224 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-applying-sna-on-humanities-data-center">
-<h1><span class="section-number">2.4. </span><center>Applying SNA on Humanities Data</center><a class="headerlink" href="#center-applying-sna-on-humanities-data-center" title="Permalink to this headline">#</a></h1>
+  <section id="networkx-and-pyvis">
+<h1><span class="section-number">2.4. </span>NetworkX and PyVis<a class="headerlink" href="#networkx-and-pyvis" title="Permalink to this headline">#</a></h1>
+<p>While this works, we don’t have all the advantages that NetworkX afforded us. PyVis, it is important to note, while useful, is primarily a wrapper for producing JavaScript graphs. It is not as robust as NetworkX when it comes to handling and querying complex network relationships. We cannot generate, for example, metrics for things like centrality. For these reasons, it is best to combine the best of NetworkX and PyVis by first passing your network data to NetworkX, creating the graph, and then passing the NetworkX graph to PyVis for conversion to an interactive graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">rels</span> <span class="o">=</span> <span class="p">[</span>
+    
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Frank&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">]</span>
+    
+<span class="p">]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">rels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;networkx-pyvis.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;networkx-pyvis.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>
+    <head>
+        <meta charset="utf-8">
+
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+
+
+
+
+
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+
+
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+
+
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+
+
+
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Fred", "label": "Fred", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "George", "label": "George", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ginny", "label": "Ginny", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Rita", "label": "Rita", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Harry", "label": "Harry", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Marge", "label": "Marge", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tom", "label": "Tom", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Frank", "label": "Frank", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Fred", "to": "George", "width": 1}, {"from": "Fred", "to": "Ginny", "width": 1}, {"from": "Fred", "to": "Rita", "width": 1}, {"from": "George", "to": "Harry", "width": 1}, {"from": "Harry", "to": "Rita", "width": 1}, {"from": "Harry", "to": "Ginny", "width": 1}, {"from": "Rita", "to": "Marge", "width": 1}, {"from": "Ginny", "to": "Tom", "width": 1}, {"from": "Ginny", "to": "Frank", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+
+
+
+
+
+                  network = new vis.Network(container, data, options);
+
+
+
+
+
+
+
+
+
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html></div></div>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1><span class="section-number">2.5. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring victim relationships to specific organizations in their description. It is important to note here, that we do not in this approach know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization.</p>
-<section id="examining-the-data">
-<h2><span class="section-number">2.5.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
+<section id="adding-metadata-to-nodes">
+<h1><span class="section-number">2.5. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1025,245 +1200,28 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schools</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;school&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;UF&quot;</span><span class="p">,</span> <span class="s2">&quot;USF&quot;</span><span class="p">,</span> <span class="s2">&quot;UF&quot;</span><span class="p">,</span> <span class="s2">&quot;UNC&quot;</span><span class="p">],</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Ginny&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Rita&quot;</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">schools</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ObjectId</th>
-      <th>Last</th>
-      <th>First</th>
-      <th>Description</th>
-      <th>Place</th>
-      <th>Yr</th>
-      <th>Homeland</th>
-      <th>Province</th>
-      <th>Long</th>
-      <th>Lat</th>
-      <th>HRV</th>
-      <th>ORG</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>AARON</td>
-      <td>Thabo Simon</td>
-      <td>An ANCYL member who was shot and severely inju...</td>
-      <td>Bethulie</td>
-      <td>1991.0</td>
-      <td>NaN</td>
-      <td>Orange Free State</td>
-      <td>25.97552</td>
-      <td>-30.503290</td>
-      <td>shoot|injure</td>
-      <td>ANC|ANCYL|Police|SAP</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>ABBOTT</td>
-      <td>Montaigne</td>
-      <td>A member of the SADF who was severely injured ...</td>
-      <td>Messina</td>
-      <td>1987.0</td>
-      <td>NaN</td>
-      <td>Transvaal</td>
-      <td>30.039597</td>
-      <td>-22.351308</td>
-      <td>injure</td>
-      <td>SADF</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>ABRAHAM</td>
-      <td>Nzaliseko Christopher</td>
-      <td>A COSAS supporter who was kicked and beaten wi...</td>
-      <td>Mdantsane</td>
-      <td>1985.0</td>
-      <td>Ciskei</td>
-      <td>Cape of Good Hope</td>
-      <td>27.6708791</td>
-      <td>-32.958623</td>
-      <td>beat</td>
-      <td>COSAS|Police</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>ABRAHAMS</td>
-      <td>Achmat Fardiel</td>
-      <td>Was shot and blinded in one eye by members of ...</td>
-      <td>Athlone</td>
-      <td>1985.0</td>
-      <td>NaN</td>
-      <td>Cape of Good Hope</td>
-      <td>18.50214</td>
-      <td>-33.967220</td>
-      <td>shoot|blind</td>
-      <td>SAP</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>ABRAHAMS</td>
-      <td>Annalene Mildred</td>
-      <td>Was shot and injured by members of the SAP in ...</td>
-      <td>Robertson</td>
-      <td>1990.0</td>
-      <td>NaN</td>
-      <td>Cape of Good Hope</td>
-      <td>19.883611</td>
-      <td>-33.802220</td>
-      <td>shoot|injure</td>
-      <td>Police|SAP</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>20829</th>
-      <td>20888</td>
-      <td>XUZA</td>
-      <td>Mandla</td>
-      <td>Was severely injured when he was stoned by a f...</td>
-      <td>Carletonville</td>
-      <td>1991.0</td>
-      <td>NaN</td>
-      <td>Transvaal</td>
-      <td>27.397673</td>
-      <td>-26.360943</td>
-      <td>injure|stone</td>
-      <td>ANC</td>
-    </tr>
-    <tr>
-      <th>20830</th>
-      <td>20889</td>
-      <td>YAKA</td>
-      <td>Mbangomuni</td>
-      <td>An IFP supporter and acting induna who was sho...</td>
-      <td>Mvutshini</td>
-      <td>1993.0</td>
-      <td>KwaZulu</td>
-      <td>Natal</td>
-      <td>30.28172</td>
-      <td>-30.868900</td>
-      <td>shoot</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>20831</th>
-      <td>20890</td>
-      <td>YALI</td>
-      <td>Khayalethu</td>
-      <td>Was shot by members of the SAP in Lingelihle, ...</td>
-      <td>Cradock</td>
-      <td>1986.0</td>
-      <td>NaN</td>
-      <td>Cape of Good Hope</td>
-      <td>25.619176</td>
-      <td>-32.164221</td>
-      <td>shoot</td>
-      <td>SAP</td>
-    </tr>
-    <tr>
-      <th>20832</th>
-      <td>20891</td>
-      <td>YALO</td>
-      <td>Bikiwe</td>
-      <td>An IFP supporter whose house and possessions w...</td>
-      <td>Port Shepstone</td>
-      <td>1994.0</td>
-      <td>NaN</td>
-      <td>Natal</td>
-      <td>30.4297304</td>
-      <td>-30.752126</td>
-      <td>destroy</td>
-      <td>ANC</td>
-    </tr>
-    <tr>
-      <th>20833</th>
-      <td>20892</td>
-      <td>YALOLO-BOOYSEN</td>
-      <td>Geoffrey Yali</td>
-      <td>An ANC supporter and youth activist who was to...</td>
-      <td>George</td>
-      <td>1986.0</td>
-      <td>NaN</td>
-      <td>Cape of Good Hope</td>
-      <td>22.459722</td>
-      <td>-33.964440</td>
-      <td>torture|detain|torture</td>
-      <td>ANC|SAP</td>
-    </tr>
-  </tbody>
-</table>
-<p>20834 rows × 12 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
-<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Place</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
-    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()]:</span>
-                <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">org</span><span class="p">)</span>
-            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rel</span> <span class="ow">in</span> <span class="n">rels</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">,</span> <span class="n">dest</span> <span class="o">=</span> <span class="n">rel</span>
+    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+    <span class="n">metadata_net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">metadata_net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">school</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">school</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;school&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">school</span>
+    <span class="k">if</span> <span class="n">school</span> <span class="o">==</span> <span class="s2">&quot;USF&quot;</span><span class="p">:</span>
+        <span class="n">node</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+    <span class="k">elif</span> <span class="n">school</span><span class="o">==</span><span class="s2">&quot;UF&quot;</span><span class="p">:</span>
+        <span class="n">node</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="c1"># metadata_net.show(&quot;simple_graph_selection.html&quot;)</span>
 </pre></div>
 </div>
 </div>
@@ -1273,41 +1231,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">show_buttons</span><span class="p">(</span><span class="n">filter_</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">])</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="1000"
-    height="1000"
-    src="trc_graph.html"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-</section>
-<section id="adding-colors-to-nodes">
-<h2><span class="section-number">2.5.2. </span>Adding Colors to Nodes<a class="headerlink" href="#adding-colors-to-nodes" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="adding-metadata-to-nodes">
-<h2><span class="section-number">2.5.3. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h2>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1344,10 +1267,10 @@ title="Print to PDF"
             <p class="prev-next-title"><span class="section-number">2.3. </span><center>Producing Dynamic Graphs with PyVis</center></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../05_streamlit/05_01_01_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="06_01_06_applied.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Streamlit</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span><center>Applying SNA on Humanities Data</center></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
