@@ -180,7 +180,9 @@ parts:
       title: "SNA with NetworkX"
     - file: 06_sna/06_01_04_pyvis_basics
       title: "SNA with PyVis"
-    - file: 06_sna/06_01_05_applied
+    - file: 06_sna/06_01_05_networkx_pyvis
+      title: "NetworkX and PyVis"
+    - file: 06_sna/06_01_06_applied
       title: "Applying SNA on Humanities Data"
 
 
