@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Adding Color to Nodes &#8212; Introduction to Python for Humanists</title>
+    <title>3.6. Applying SNA on Humanities Data &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to Streamlit" href="../05_streamlit/05_01_01_intro.html" />
+    <link rel="prev" title="3.5. Adding Color to Nodes" href="06_01_06_node_color.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -490,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART FOUR: OTHER APPLICATIONS OF PYTHON
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling in Python
@@ -585,16 +587,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="06_01_01_intro.html">
    3. Introduction to Social Network Analysis in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_02_basics.html">
      3.1. The Basics of Social Network Analysis
@@ -616,8 +618,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06_01_06_applied.html">
-     3.5.
+    <a class="reference internal" href="06_01_06_node_color.html">
+     3.5. Adding Color to Nodes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.6.
      <center>
       Applying SNA on Humanities Data
      </center>
@@ -777,7 +784,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_07_node_colors.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_07_applied.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -795,7 +802,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_07_node_colors.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_07_applied.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -855,7 +862,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_07_node_colors.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_07_applied.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -872,7 +879,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_07_node_colors.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_07_applied.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -900,7 +907,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06_sna/06_01_07_node_colors.ipynb"
+        <a href="../_sources/06_sna/06_01_07_applied.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -937,23 +944,110 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.6.
+   <center>
+    Applying SNA on Humanities Data
+   </center>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.7. Introduction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examining-the-data">
+     3.7.1. Examining the Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+     3.7.2. Adding Colors to Nodes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+     3.7.3. Adding Metadata to Nodes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Adding Color to Nodes</h1>
+                <h1><center>Applying SNA on Humanities Data</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.6.
+   <center>
+    Applying SNA on Humanities Data
+   </center>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.7. Introduction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examining-the-data">
+     3.7.1. Examining the Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+     3.7.2. Adding Colors to Nodes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+     3.7.3. Adding Metadata to Nodes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -961,24 +1055,32 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="adding-color-to-nodes">
-<h1>Adding Color to Nodes<a class="headerlink" href="#adding-color-to-nodes" title="Permalink to this headline">#</a></h1>
-<p>Graphs where every node is the same color can be difficult to interpret. For this reason, we may want to represent each node as a distinct color given some trait of that node. In the example below, we will use a simple list of Harry Potter characters. We will use their houses to denote node color. Let’s import the same libraries we have worked with so far in this chapter and throughout this textbook.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="center-applying-sna-on-humanities-data-center">
+<h1><span class="section-number">3.6. </span><center>Applying SNA on Humanities Data</center><a class="headerlink" href="#center-applying-sna-on-humanities-data-center" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1><span class="section-number">3.7. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring victim relationships to specific organizations in their description. It is important to note here, that we do not in this approach know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization.</p>
+<section id="examining-the-data">
+<h2><span class="section-number">3.7.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Our data is stored as a csv file which we can load with Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/hp - nodes.csv&quot;</span><span class="p">)</span>
-<span class="n">node_df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+<span class="c1"># df = df[[&quot;Last&quot;, &quot;First&quot;, &quot;Description&quot;,&quot;ORG&quot;, &quot;Place&quot;]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -1001,196 +1103,246 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>name</th>
-      <th>house</th>
-      <th>color</th>
+      <th>ObjectId</th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Yr</th>
+      <th>Homeland</th>
+      <th>Province</th>
+      <th>Long</th>
+      <th>Lat</th>
+      <th>HRV</th>
+      <th>ORG</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Harry</td>
-      <td>Gryffindor</td>
-      <td>red</td>
+      <td>1</td>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
+      <td>An ANCYL member who was shot and severely inju...</td>
+      <td>Bethulie</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Orange Free State</td>
+      <td>25.97552</td>
+      <td>-30.503290</td>
+      <td>shoot|injure</td>
+      <td>ANC|ANCYL|Police|SAP</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Hermione</td>
-      <td>Gryffindor</td>
-      <td>red</td>
+      <td>2</td>
+      <td>ABBOTT</td>
+      <td>Montaigne</td>
+      <td>A member of the SADF who was severely injured ...</td>
+      <td>Messina</td>
+      <td>1987.0</td>
+      <td>NaN</td>
+      <td>Transvaal</td>
+      <td>30.039597</td>
+      <td>-22.351308</td>
+      <td>injure</td>
+      <td>SADF</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Ron</td>
-      <td>Gryffindor</td>
-      <td>red</td>
+      <td>3</td>
+      <td>ABRAHAM</td>
+      <td>Nzaliseko Christopher</td>
+      <td>A COSAS supporter who was kicked and beaten wi...</td>
+      <td>Mdantsane</td>
+      <td>1985.0</td>
+      <td>Ciskei</td>
+      <td>Cape of Good Hope</td>
+      <td>27.6708791</td>
+      <td>-32.958623</td>
+      <td>beat</td>
+      <td>COSAS|Police</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Drako</td>
-      <td>Slytherine</td>
-      <td>green</td>
+      <td>4</td>
+      <td>ABRAHAMS</td>
+      <td>Achmat Fardiel</td>
+      <td>Was shot and blinded in one eye by members of ...</td>
+      <td>Athlone</td>
+      <td>1985.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>18.50214</td>
+      <td>-33.967220</td>
+      <td>shoot|blind</td>
+      <td>SAP</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Snape</td>
-      <td>Slytherine</td>
-      <td>green</td>
+      <td>5</td>
+      <td>ABRAHAMS</td>
+      <td>Annalene Mildred</td>
+      <td>Was shot and injured by members of the SAP in ...</td>
+      <td>Robertson</td>
+      <td>1990.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>19.883611</td>
+      <td>-33.802220</td>
+      <td>shoot|injure</td>
+      <td>Police|SAP</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Sedric</td>
-      <td>Hufflepuff</td>
-      <td>yellow</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Luna</td>
-      <td>Ravenclaw</td>
-      <td>blue</td>
+      <th>20829</th>
+      <td>20888</td>
+      <td>XUZA</td>
+      <td>Mandla</td>
+      <td>Was severely injured when he was stoned by a f...</td>
+      <td>Carletonville</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Transvaal</td>
+      <td>27.397673</td>
+      <td>-26.360943</td>
+      <td>injure|stone</td>
+      <td>ANC</td>
+    </tr>
+    <tr>
+      <th>20830</th>
+      <td>20889</td>
+      <td>YAKA</td>
+      <td>Mbangomuni</td>
+      <td>An IFP supporter and acting induna who was sho...</td>
+      <td>Mvutshini</td>
+      <td>1993.0</td>
+      <td>KwaZulu</td>
+      <td>Natal</td>
+      <td>30.28172</td>
+      <td>-30.868900</td>
+      <td>shoot</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20831</th>
+      <td>20890</td>
+      <td>YALI</td>
+      <td>Khayalethu</td>
+      <td>Was shot by members of the SAP in Lingelihle, ...</td>
+      <td>Cradock</td>
+      <td>1986.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>25.619176</td>
+      <td>-32.164221</td>
+      <td>shoot</td>
+      <td>SAP</td>
+    </tr>
+    <tr>
+      <th>20832</th>
+      <td>20891</td>
+      <td>YALO</td>
+      <td>Bikiwe</td>
+      <td>An IFP supporter whose house and possessions w...</td>
+      <td>Port Shepstone</td>
+      <td>1994.0</td>
+      <td>NaN</td>
+      <td>Natal</td>
+      <td>30.4297304</td>
+      <td>-30.752126</td>
+      <td>destroy</td>
+      <td>ANC</td>
+    </tr>
+    <tr>
+      <th>20833</th>
+      <td>20892</td>
+      <td>YALOLO-BOOYSEN</td>
+      <td>Geoffrey Yali</td>
+      <td>An ANC supporter and youth activist who was to...</td>
+      <td>George</td>
+      <td>1986.0</td>
+      <td>NaN</td>
+      <td>Cape of Good Hope</td>
+      <td>22.459722</td>
+      <td>-33.964440</td>
+      <td>torture|detain|torture</td>
+      <td>ANC|SAP</td>
     </tr>
   </tbody>
 </table>
+<p>20834 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>Now that we have our data loaded, we can iterate over each Pandas row and populate a list of nodes. Notice, that when we append to <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, we are not appending a string, rather a tuple. Index 0 of the tuple is the character name, while index 1 is a dictionary. This is where we can store special attributes associated with the node. Think of this as metadata. In our case, we want two pieces of metadata, <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">house</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">node_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;house&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">house</span><span class="p">}))</span>
-<span class="n">nodes</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Place</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
+    <span class="n">homeland</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Homeland</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">homeland</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Homeland</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node_id</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">}))</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">})</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">org</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">}))</span>
+            <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">,</span> <span class="s2">&quot;homeland&quot;</span><span class="p">:</span> <span class="n">homeland</span><span class="p">}))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edge_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Harry&#39;, {&#39;color&#39;: &#39;red&#39;, &#39;house&#39;: &#39;Gryffindor&#39;})]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;0_Thabo Simon AARON&#39;, {&#39;color&#39;: &#39;green&#39;, &#39;place&#39;: &#39;Bethulie&#39;})]
+[(&#39;0_Thabo Simon AARON&#39;, &#39;ANC&#39;, {&#39;place&#39;: &#39;Bethulie&#39;, &#39;homeland&#39;: None})]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now that we have our node list created, let’s populate it into a NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>From here, we can do the same thing with our edge list, which is also stored in a Pandas dataframe. NetworkX has built-in ways of creating a graph from a Pandas edge list, but we will do this manually here.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rel_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/hp - rels.csv&quot;</span><span class="p">)</span>
-<span class="n">rel_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>source</th>
-      <th>target</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Harry</td>
-      <td>Hermione</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Hermione</td>
-      <td>Ron</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Ron</td>
-      <td>Harry</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Drako</td>
-      <td>Harry</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Snape</td>
-      <td>Sedric</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Sedric</td>
-      <td>Harry</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Luna</td>
-      <td>Harry</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Snape</td>
-      <td>Harry</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Luna</td>
-      <td>Hermione</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Ron</td>
-      <td>Drako</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rel_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">row</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
-<span class="n">edge_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Harry&#39;, &#39;Hermione&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now that we have our edge list, we can inject it into the same <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>At this stage, our NetworkX <code class="docutils literal notranslate"><span class="pre">Graph</span></code> is complete with all the data. We can now repeat the steps from the previous section and create our PyVis visualization from the data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show_buttons</span><span class="p">(</span><span class="n">filter_</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1202,182 +1354,72 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;hp_network.html&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;hp_network.html&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
+<span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">small_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Place</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">()]:</span>
+                <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">org</span><span class="p">)</span>
+            <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">org</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="n">place</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>
-    <head>
-        <meta charset="utf-8">
-
-            <script src="lib/bindings/utils.js"></script>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-<center>
-<h1></h1>
-</center>
-
-<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
-<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-          crossorigin="anonymous"
-        />
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-          crossorigin="anonymous"
-        ></script>
-
-
-        <center>
-          <h1></h1>
-        </center>
-        <style type="text/css">
-
-             #mynetwork {
-                 width: 100%;
-                 height: 500px;
-                 background-color: #ffffff;
-                 border: 1px solid lightgray;
-                 position: relative;
-                 float: left;
-             }
-
-
-
-
-
-
-        </style>
-    </head>
-
-
-    <body>
-        <div class="card" style="width: 100%">
-
-
-            <div id="mynetwork" class="card-body"></div>
-        </div>
-
-
-
-
-        <script type="text/javascript">
-
-              // initialize global variables.
-              var edges;
-              var nodes;
-              var allNodes;
-              var allEdges;
-              var nodeColors;
-              var originalNodes;
-              var network;
-              var container;
-              var options, data;
-              var filter = {
-                  item : '',
-                  property : '',
-                  value : []
-              };
-
-
-
-
-
-              // This method is responsible for drawing the graph, returns the drawn network
-              function drawGraph() {
-                  var container = document.getElementById('mynetwork');
-
-
-
-                  // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "red", "house": "Gryffindor", "id": "Harry", "label": "Harry", "shape": "dot", "size": 10}, {"color": "red", "house": "Gryffindor", "id": "Hermione", "label": "Hermione", "shape": "dot", "size": 10}, {"color": "red", "house": "Gryffindor", "id": "Ron", "label": "Ron", "shape": "dot", "size": 10}, {"color": "green", "house": "Slytherine", "id": "Drako", "label": "Drako", "shape": "dot", "size": 10}, {"color": "yellow", "house": "Hufflepuff", "id": "Sedric", "label": "Sedric", "shape": "dot", "size": 10}, {"color": "blue", "house": "Ravenclaw", "id": "Luna", "label": "Luna", "shape": "dot", "size": 10}, {"color": "green", "house": "Slytherine", "id": "Snape", "label": "Snape", "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"from": "Harry", "to": "Hermione", "width": 1}, {"from": "Harry", "to": "Ron", "width": 1}, {"from": "Harry", "to": "Drako", "width": 1}, {"from": "Harry", "to": "Sedric", "width": 1}, {"from": "Harry", "to": "Luna", "width": 1}, {"from": "Harry", "to": "Snape", "width": 1}, {"from": "Hermione", "to": "Ron", "width": 1}, {"from": "Hermione", "to": "Luna", "width": 1}, {"from": "Ron", "to": "Drako", "width": 1}, {"from": "Snape", "to": "Sedric", "width": 1}]);
-
-                  nodeColors = {};
-                  allNodes = nodes.get({ returnType: "Object" });
-                  for (nodeId in allNodes) {
-                    nodeColors[nodeId] = allNodes[nodeId].color;
-                  }
-                  allEdges = edges.get({ returnType: "Object" });
-                  // adding nodes and edges to the graph
-                  data = {nodes: nodes, edges: edges};
-
-                  var options = {
-    "configure": {
-        "enabled": false
-    },
-    "edges": {
-        "color": {
-            "inherit": true
-        },
-        "smooth": {
-            "enabled": true,
-            "type": "dynamic"
-        }
-    },
-    "interaction": {
-        "dragNodes": true,
-        "hideEdgesOnDrag": false,
-        "hideNodesOnDrag": false
-    },
-    "physics": {
-        "enabled": true,
-        "stabilization": {
-            "enabled": true,
-            "fit": true,
-            "iterations": 1000,
-            "onlyDynamicEdges": false,
-            "updateInterval": 50
-        }
-    }
-};
-
-
-
-
-
-
-                  network = new vis.Network(container, data, options);
-
-
-
-
-
-
-
-
-
-
-                  return network;
-
-              }
-              drawGraph();
-        </script>
-    </body>
-</html></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
+</pre></div>
 </div>
-<p>We now have a graph with nodes represented with different colors. Notice that the source node controls the edge color by default. NetworkX and PyVis both allow us to control the edge color in the same way as it did with nodes, but instead of adding <code class="docutils literal notranslate"><span class="pre">color</span></code> as an attribute of the <code class="docutils literal notranslate"><span class="pre">node</span></code>, we could also assign this to the <code class="docutils literal notranslate"><span class="pre">edge</span></code> as an attribute.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show_buttons</span><span class="p">(</span><span class="n">filter_</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;physics&#39;</span><span class="p">])</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="1000"
+    src="trc_graph.html"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="adding-colors-to-nodes">
+<h2><span class="section-number">3.7.2. </span>Adding Colors to Nodes<a class="headerlink" href="#adding-colors-to-nodes" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="adding-metadata-to-nodes">
+<h2><span class="section-number">3.7.3. </span>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1407,6 +1449,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="06_01_06_node_color.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.5. </span>Adding Color to Nodes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05_streamlit/05_01_01_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Streamlit</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
