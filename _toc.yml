@@ -196,7 +196,8 @@ parts:
       title: "SNA with PyVis"
     - file: 06_sna/06_01_05_networkx_pyvis
       title: "NetworkX and PyVis"
-    - file: 06_sna/06_01_06_applied
+    - file: 06_sna/06_01_06_node_color
+    - file: 06_sna/06_01_07_applied
       title: "Applying SNA on Humanities Data"
 
 
