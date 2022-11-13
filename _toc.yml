@@ -172,30 +172,19 @@ parts:
       title: "Topic Modeling with Top2Vec"
 
   - file: 08_booknlp/01_01_intro
-    title: Text Analaysis with BookNLP
     sections:
     - file: 08_booknlp/01_intro
-      title: Introduction to BookNLP
     - file: 08_booknlp/02_starting
-      title: Getting Started with BookNLP
     - file: 08_booknlp/03_files
-      title: The Output Files
     - file: 08_booknlp/04_character_analysis
-      title: Character Analysis
     - file: 08_booknlp/05_events
-      title: Event Analysis
 
   - file: 06_sna/06_01_01_intro
-    title: "Introduction to Social Network Analysis in Python"
     sections:
     - file: 06_sna/06_01_02_basics
-      title: "The Basics of Social Network Analysis"
     - file: 06_sna/06_01_03_networkx
-      title: "SNA with NetworkX"
     - file: 06_sna/06_01_04_pyvis_basics
-      title: "SNA with PyVis"
     - file: 06_sna/06_01_05_networkx_pyvis
-      title: "NetworkX and PyVis"
     - file: 06_sna/06_01_06_node_color
     - file: 06_sna/06_01_07_applied
 
@@ -204,31 +193,18 @@ parts:
   numbered: true
   chapters:
   - file: 05_streamlit/05_01_01_intro
-    # title: Introduction to Streamlit
     sections:
     - file: 05_streamlit/05_01_02_streamlit
-      # title: Getting Started with Streamlit
     - file: 05_streamlit/05_01_03_displaying_data
-      # title: Displaying Data in Streamlit
     - file: 05_streamlit/05_01_04_input_widgets
-      # title: Getting User Data with Input Widgets
   - file: 05_streamlit/05_02_01_intro
-    # title: Advanced Streamlit Features
     sections:
     - file: 05_streamlit/05_02_02_charts
-      # title: Data Visualization
     - file: 05_streamlit/05_02_03_layout_design
-      # title: Layout Design
     - file: 05_streamlit/05_02_04_cache
-      # title: Cache
     - file: 05_streamlit/05_02_05_custom_html
-      # title: Custom HTML
     - file: 05_streamlit/05_02_06_multiple_pages
-      # title: "Multi-Page Applications"
   - file: 05_streamlit/05_03_01_intro
-    # title: Building a Streamlit Application
     sections:
     - file: 05_streamlit/05_03_02_database_query_app
-      # title: Database Query App
     - file: 05_streamlit/05_03_03_cloud
-      # title: Deploying an App in the Cloud with Streamlit Share
