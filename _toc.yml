@@ -12,101 +12,55 @@ parts:
   numbered: true
   chapters:
   - file: 01_intro/01_01-01_intro
-    title: Introduction to Python
     sections:
     - file: 01_intro/01_01-02_introduction_to_python
-      title: What is Python?
     - file: 01_intro/01_01-03_installing_python
-      title: Installing Python
     - file: 01_intro/01_01-04_coding_basics
-      title: Coding Basics
-
-
   - file: 01_intro/01_02-01_intro
-    title: Working with Data
     sections:
     - file: 01_intro/01_02-02_data
-      title: Data Types
     - file: 01_intro/01_02-03_data_structures
-      title: Data Structures
-
   - file: 01_intro/01_03-01_intro
-    title: Loops and Logic
     sections:
     - file: 01_intro/01_03-02_loops
-      title: Introduction to Loops
     - file: 01_intro/01_03-03_conditionals
-      title: Introduction to Conditionals
-
   - file: 01_intro/01_04-01_intro
-    title: "Formal Coding: Functions, Classes, and Libraries"
     sections:
     - file: 01_intro/01_04-02_functions
-      title: Introduction to Functions
     - file: 01_intro/01_04-03_classes
-      title: Introduction to Classes
     - file: 01_intro/01_04-04_libraries
-      title: Introduction to Libraries
-
   - file: 01_intro/01_05-01_intro
-    title: Working with External Data
     sections:
     - file: 01_intro/01_05-02_texts
-      title: Loading and Saving Text Data
     - file: 01_intro/01_05-03_json
-      title: Loading and Saving JSON Data
     - file: 01_intro/01_05-04_multiple_files
-      title: Working with Multiple Files
-
   - file: 01_intro/01_06-01_intro
-    title: Working with Data on the Web
     sections:
     - file: 01_intro/01_06-02_html
-      title: Parsing HTML with Python and BeautifulSoup
     - file: 01_intro/01_06-03_scraping_pages
-      title: Scraping Web Pages with Requests and BeautifulSoup
 
 - caption: "PART TWO: Data Analysis with Pandas (Work in Progress)"
   numbered: true
   chapters:
-
   - file: 02_pandas/02_01_01_intro
-    title: Introduction to Pandas
     sections:
     - file: 02_pandas/02_01_02_introduction_to_pandas
-      title: What is Pandas?
     - file: 02_pandas/02_01_03_the_basics
-      title: The Basics of Pandas
-
   - file: 02_pandas/02_02_01_intro
-    title: Working with Data in Pandas
     sections:
     - file: 02_pandas/02_02_02_finding_data
-      title: Finding Data in a DataFrame
     - file: 02_pandas/02_02_03_organizing_data
-      title: Organizing Data in Pandas
     - file: 02_pandas/02_02_04_cleaning_data
-      title: Cleaning Data with Pandas
-
   - file: 02_pandas/02_03_01_intro
-    title: Searching for Data
     sections:
     - file: 02_pandas/02_03_02_advanced_strings
-      title: Advanced Searching on Strings in DataFrame
     - file: 02_pandas/02_03_03_advanced_querying
-      title: Advanced Filtering and Querying
     - file: 02_pandas/02_03_04_advanced_grouping
-      title: Advanced Grouping with Groupby
-
   - file: 02_pandas/02_04_01_intro
-    title: Advanced Pandas
     sections:
     - file: 02_pandas/02_04_02_pandas_and_plots
-      title: Basic Plotting with Pandas
     - file: 02_pandas/02_04_03_graphing_networks_with_pandas
-      title: Graphing Network Data from Pandas
     - file: 02_pandas/02_04_04_time_series_data
-      title: Introduction to Time Series Data
 
 - caption: "PART THREE: Natural Language Processing with spaCy"
   numbered: true
@@ -115,35 +69,22 @@ parts:
     title: Introduction to spaCy
     sections:
     - file: 03_spacy/03_01_02_install_and_containers
-      title: The Basics of spaCy
     - file: 03_spacy/03_01_03_linguistic_annotations
-      title: spaCy Linguistic Annotations
     - file: 03_spacy/03_01_04_pipelines
-      title: spaCy Pipelines
-
   - file: 03_spacy/03_02_01_intro
     title: Rules-Based spaCy
     sections:
     - file: 03_spacy/03_02_02_entityruler
-      title: How to use the spaCy EntityRuler
     - file: 03_spacy/03_02_03_matcher
-      title: How to use the spaCy Matcher
     - file: 03_spacy/03_02_04_phrase_matcher
-      title: How to use the spaCy PhraseMatcher
     - file: 03_spacy/03_02_06_simple_regex
-      title: How to use RegEx in spaCy (Basic)
     - file: 03_spacy/03_02_07_complex_regex
-      title: How to use RegEx in spaCy (Advanced)
-
   - file: 03_spacy/03_03_01_intro
     title: "Solving a Domain-Specific Problem: A Case Study with Holocaust NER"
     sections:
     - file: 03_spacy/03_03_02_cultivating_concentration_camp_dataset
-      title: Cultivating Good Datasets for Entities
     - file: 03_spacy/03_03_03_challenges
-      title: The Challenges of Holocaust NER
     - file: 03_spacy/03_03_04_building_holocaust_pipeline_rules_based
-      title: Creating the Rules-Based Pipeline
 
 
 - caption: "PART FOUR: OTHER APPLICATIONS OF PYTHON "
