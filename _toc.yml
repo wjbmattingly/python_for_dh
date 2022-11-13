@@ -3,10 +3,9 @@ root: intro
 
 parts:
 - caption: 'PREFACE'
-  numbered: true
+  numbered: false
   chapters:
   - file: 00_preface/00_01_preface
-    title: Preface
 
 - caption: "PART ONE: The Basics of Python"
   numbered: true
