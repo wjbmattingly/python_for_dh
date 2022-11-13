@@ -552,7 +552,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08_booknlp/01_01_intro.html">
-   2. Text Analaysis with BookNLP
+   2. Text Analysis with BookNLP
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -562,34 +562,52 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_booknlp/01_intro.html">
-     2.1. Introduction to BookNLP
+     2.1.
+     <center>
+      Introduction to BookNLP
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_booknlp/02_starting.html">
-     2.2. Getting Started with BookNLP
+     2.2.
+     <center>
+      Getting Started with BookNLP
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_booknlp/03_files.html">
-     2.3. The Output Files
+     2.3.
+     <center>
+      The Output Files
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_booknlp/04_character_analysis.html">
-     2.4. Character Analysis
+     2.4.
+     <center>
+      Character Analysis
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_booknlp/05_events.html">
-     2.5. Event Analysis
+     2.5.
+     <center>
+      Events Analysis
+     </center>
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06_sna/06_01_01_intro.html">
-   3. Introduction to Social Network Analysis in Python
+   3.
+   <center>
+    Social Network Analysis in Python
+   </center>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -599,17 +617,26 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_02_basics.html">
-     3.1. The Basics of Social Network Analysis
+     3.1.
+     <center>
+      The Basic Concepts of Social Network Analysis
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
-     3.2. SNA with NetworkX
+     3.2.
+     <center>
+      Introduction to NetworkX
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
-     3.3. SNA with PyVis
+     3.3.
+     <center>
+      Producing Dynamic Graphs with PyVis
+     </center>
     </a>
    </li>
    <li class="toctree-l2">
@@ -1017,8 +1044,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterating-over-a-dataframe-with-df-iterrows">
+   1.2.11. Iterating over a DataFrame with df.iterrows()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.11. Conclusion
+   1.2.12. Conclusion
   </a>
  </li>
 </ul>
@@ -1091,8 +1123,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterating-over-a-dataframe-with-df-iterrows">
+   1.2.11. Iterating over a DataFrame with df.iterrows()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   1.2.11. Conclusion
+   1.2.12. Conclusion
   </a>
  </li>
 </ul>
@@ -1117,7 +1154,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>With pandas now loaded correctly, we can begin to work with the library. Normally, you will create a Pandas DataFrame from a CSV or some external data file. We will see examples of that below. To begin, though, let’s start with the basics. Below we have a dictionary. A good way to think of this dictionary is as an Excel Spreadsheet. Each key in the dictionary is a column and its value is a list which contains each cell in that column. We will see an example of a two-column dataset below, but for now let’s work with the single column dataset, “names”. In this column, we have a list of 6 names.</p>
+<p>With pandas now loaded correctly, we can begin to work with the library. Normally, you will create a Pandas DataFrame from a CSV or some external data file. We will see examples of that below. To begin, though, let’s start with the basics. Below we have a dictionary. A good way to think of this dictionary is as an Excel Spreadsheet.</p>
+<p><img alt="a sample of data as a spreadsheet" src="images/excel_sample.png" /></p>
+<p>Each key in the dictionary is a column and its value is a list which contains each cell in that column. We will see an example of a two-column dataset below, but for now let’s work with the single column dataset, “names”. In this column, we have a list of 6 names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;names&quot;</span><span class="p">:</span>
@@ -1136,7 +1175,7 @@ title="Print to PDF"
 <p>Normally in Python, we would work with this data as a dictionary. I could do something like the following to get the value of names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">names_dict</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">names_dict</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1561,7 +1600,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1616,7 +1655,7 @@ Name: ages, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">ages_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ages_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1670,8 +1709,62 @@ Name: 1, dtype: object
 </div>
 </div>
 </section>
+<section id="iterating-over-a-dataframe-with-df-iterrows">
+<h2><span class="section-number">1.2.11. </span>Iterating over a DataFrame with df.iterrows()<a class="headerlink" href="#iterating-over-a-dataframe-with-df-iterrows" title="Permalink to this headline">#</a></h2>
+<p>Often, we will need to iterate over an entire DataFrame. We can do that with <code class="docutils literal notranslate"><span class="pre">df.iterrows()</span></code> in a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code>. It is important to note that we will need two variables to do this, the index (<code class="docutils literal notranslate"><span class="pre">idx</span></code>) and the row (<code class="docutils literal notranslate"><span class="pre">row</span></code>). This will iterate down a DataFrame row by row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df4</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>names    Tom
+ages      20
+Name: 0, dtype: object
+names    Mary
+ages       26
+Name: 1, dtype: object
+names    Jeff
+ages       20
+Name: 2, dtype: object
+names    Rose
+ages       18
+Name: 3, dtype: object
+names    Stephanie
+ages            52
+Name: 4, dtype: object
+names    Rodger
+ages         40
+Name: 5, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can isolate the values of each row by indexing the row at each column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df4</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;ages&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tom 20
+Mary 26
+Jeff 20
+Rose 18
+Stephanie 52
+Rodger 40
+</pre></div>
+</div>
+</div>
+</div>
+<p>This allows you to iterate over an entire DataFrame and isolate each row individually in a loop. As we will learn throughout this part of the textbook, we do not always need to iterate over each row to isolate specific data from a DataFrame.</p>
+</section>
 <section id="conclusion">
-<h2><span class="section-number">1.2.11. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.12. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>You should now feel comfortable with creating, reading, and saving DataFrames. You should also be comfortable with adding columns and indexing by rows. In the next chapters, we will dive into more complex features of DataFrames.</p>
 </section>
 </section>
