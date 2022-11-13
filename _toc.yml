@@ -153,23 +153,15 @@ parts:
     title: "Topic Modeling in Python"
     sections:
     - file: 04_topic_modeling/04_01_02_topic_modeling_concepts
-      title: "The Basics of Topic Modeling"
     - file: 04_topic_modeling/04_01_03_clusters
-      title: "Clusters and K-Means"
     - file: 04_topic_modeling/04_01_04_bigrams
-      title: "Bigrams and Trigrams"
     - file: 04_topic_modeling/04_02_02_lda_concept
-      title: "Core Concepts of LDA Topic Modeling"
     - file: 04_topic_modeling/04_02_03_tfidf
-      title: "Introduction to TF-IDF"
     - file: 04_topic_modeling/04_02_04_scikit_learn
-      title: "What is Scikit Learn?"
     - file: 04_topic_modeling/04_02_05_tfidf_build
-      title: "Building a TF-IDF with Python and Scikit-Learn"
     - file: 04_topic_modeling/04_03_03_embedding_clustering
-      title: "Embedding, Flattening, and Clustering"
     - file: 04_topic_modeling/04_03_04_top2vec
-      title: "Topic Modeling with Top2Vec"
+
 
   - file: 08_booknlp/01_01_intro
     sections:
