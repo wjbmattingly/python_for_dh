@@ -198,38 +198,37 @@ parts:
       title: "NetworkX and PyVis"
     - file: 06_sna/06_01_06_node_color
     - file: 06_sna/06_01_07_applied
-      title: "Applying SNA on Humanities Data"
 
 
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT"
   numbered: true
   chapters:
   - file: 05_streamlit/05_01_01_intro
-    title: Introduction to Streamlit
+    # title: Introduction to Streamlit
     sections:
     - file: 05_streamlit/05_01_02_streamlit
-      title: Getting Started with Streamlit
+      # title: Getting Started with Streamlit
     - file: 05_streamlit/05_01_03_displaying_data
-      title: Displaying Data in Streamlit
+      # title: Displaying Data in Streamlit
     - file: 05_streamlit/05_01_04_input_widgets
-      title: Getting User Data with Input Widgets
+      # title: Getting User Data with Input Widgets
   - file: 05_streamlit/05_02_01_intro
-    title: Advanced Streamlit Features
+    # title: Advanced Streamlit Features
     sections:
     - file: 05_streamlit/05_02_02_charts
-      title: Data Visualization
+      # title: Data Visualization
     - file: 05_streamlit/05_02_03_layout_design
-      title: Layout Design
+      # title: Layout Design
     - file: 05_streamlit/05_02_04_cache
-      title: Cache
+      # title: Cache
     - file: 05_streamlit/05_02_05_custom_html
-      title: Custom HTML
+      # title: Custom HTML
     - file: 05_streamlit/05_02_06_multiple_pages
-      title: "Multi-Page Applications"
+      # title: "Multi-Page Applications"
   - file: 05_streamlit/05_03_01_intro
-    title: Building a Streamlit Application
+    # title: Building a Streamlit Application
     sections:
     - file: 05_streamlit/05_03_02_database_query_app
-      title: Database Query App
+      # title: Database Query App
     - file: 05_streamlit/05_03_03_cloud
-      title: Deploying an App in the Cloud with Streamlit Share
+      # title: Deploying an App in the Cloud with Streamlit Share
