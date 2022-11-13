@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.2. Introduction to NetworkX" href="06_01_03_networkx.html" />
-    <link rel="prev" title="3. Social Network Analysis in Python" href="06_01_01_intro.html" />
+    <link rel="prev" title="3. Social Network Analysis" href="06_01_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -505,12 +505,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">
-     1.2. The Basics of Topic Modeling
+     1.2. What is Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">
-     1.3. Clusters and K-Means
+     1.3. Topics and Clusters
     </a>
    </li>
    <li class="toctree-l2">
@@ -520,22 +520,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
-     1.5. Core Concepts of LDA Topic Modeling
+     1.5. What is LDA Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_03_tfidf.html">
-     1.6. Introduction to TF-IDF
+     1.6. TF-IDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_04_scikit_learn.html">
-     1.7. What is Scikit Learn?
+     1.7. Scikit Learn
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_02_05_tfidf_build.html">
-     1.8. Building a TF-IDF with Python and Scikit-Learn
+     1.8. TF-IDF with Scikit Learn
     </a>
    </li>
    <li class="toctree-l2">
@@ -545,7 +545,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
-     1.10. Topic Modeling with Top2Vec
+     1.10. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -589,10 +589,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="06_01_01_intro.html">
-   3.
-   <center>
-    Social Network Analysis in Python
-   </center>
+   3. Social Network Analysis
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -602,26 +599,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.1.
-     <center>
-      The Basic Concepts of Social Network Analysis
-     </center>
+     3.1. The Basic Concepts of Social Network Analysis
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_03_networkx.html">
-     3.2.
-     <center>
-      Introduction to NetworkX
-     </center>
+     3.2. Introduction to NetworkX
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_04_pyvis_basics.html">
-     3.3.
-     <center>
-      Producing Dynamic Graphs with PyVis
-     </center>
+     3.3. Producing Dynamic Graphs with PyVis
     </a>
    </li>
    <li class="toctree-l2">
@@ -636,10 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_07_applied.html">
-     3.6.
-     <center>
-      SNA on Humanities Data
-     </center>
+     3.6. SNA on Humanities Data
     </a>
    </li>
   </ul>
@@ -979,18 +964,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.1.1. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-terminology">
-   3.1.2. Basic Terminology
+   3.1.1. Basic Terminology
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sna-libraries-in-python">
-   3.1.3. SNA Libraries in Python
+   3.1.2. SNA Libraries in Python
   </a>
  </li>
 </ul>
@@ -1002,7 +982,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>The Basic Concepts of Social Network Analysis</center></h1>
+                <h1>The Basic Concepts of Social Network Analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1013,18 +993,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.1.1. Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-terminology">
-   3.1.2. Basic Terminology
+   3.1.1. Basic Terminology
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sna-libraries-in-python">
-   3.1.3. SNA Libraries in Python
+   3.1.2. SNA Libraries in Python
   </a>
  </li>
 </ul>
@@ -1037,16 +1012,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-the-basic-concepts-of-social-network-analysis-center">
-<h1><span class="section-number">3.1. </span><center>The Basic Concepts of Social Network Analysis</center><a class="headerlink" href="#center-the-basic-concepts-of-social-network-analysis-center" title="Permalink to this headline">#</a></h1>
-<section id="introduction">
-<h2><span class="section-number">3.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>In this chapter, we will shift away from NLP and examine <strong>Social network analysis</strong> (SNA). SNA is the process by which researchers study the networks of social relationships. These can be familial (parents to children), social (friends), etc. The goal of SNA is to reveal insights about a network or group of individuals by studying them collectively and often through visualization methods.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-basic-concepts-of-social-network-analysis">
+<h1><span class="section-number">3.1. </span>The Basic Concepts of Social Network Analysis<a class="headerlink" href="#the-basic-concepts-of-social-network-analysis" title="Permalink to this headline">#</a></h1>
+<section id="basic-terminology">
+<h2><span class="section-number">3.1.1. </span>Basic Terminology<a class="headerlink" href="#basic-terminology" title="Permalink to this headline">#</a></h2>
 <p>Visualized social networks are often studied through <strong>graphs</strong>, or visual representations of relationships in a network. These graphs today stem often from <strong>graph theory</strong>, a branch of mathematics. In graph theory, mathematics is used to study graph-based problems. Believe it or not, we are all beneficiaries of this discipline. Have you ever used Google Maps to go from <code class="docutils literal notranslate"><span class="pre">point</span> <span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">point</span> <span class="pre">B</span></code>? This is graph theory at play. Behind the scenes is a complex set of relationships that allow Google to recommend certain paths over others to ensure that you have the fastest (or least expensive) route.</p>
 <p>This chapter will not cover all the complexities of SNA, rather give enough of the basic terminology and concepts so that all readers can learn how to leverage Python to perform SNA. The chief goal of this chapter is to introduce the process by which we can perform SNA through structured data.</p>
-</section>
-<section id="basic-terminology">
-<h2><span class="section-number">3.1.2. </span>Basic Terminology<a class="headerlink" href="#basic-terminology" title="Permalink to this headline">#</a></h2>
 <p>In a graph, there are a collection of <strong>nodes</strong>. These are dots in the graph that represent each piece of data. In a social network graph, each node would be a person or some kind of entity that a researcher wishes to map. Other entities may include things like businesses or agencies.</p>
 <p>In order to understand how different nodes relate to one another, we represent the relationships between them with <strong>edges</strong>. In a graph, these edges look like lines.</p>
 <p>Because graphs are often drawn with mathematics, it is important to know the <strong>force</strong> of a graph. Force in network theory is the direction of movement between two nodes. If we are mapping how characters move to different places in a graph, all people and places would receive a node in a graph. We would then inflict force with the person doing the movement towards the place. This would position the nodes in a particular way in a graph.</p>
@@ -1054,7 +1025,7 @@ title="Print to PDF"
 <p>Graphs are a useful way to explore complex relationships because in a single image, we can glean information that would otherwise be missed. We can examine our data quantitatively, meaning we can see the frequency that certain nodes appear in our data and, more importantly, the frequency with which that node relates to other nodes in the graph. We could, of course, extract this information for a node relatively easily with Pandas, but a graph let’s us see many different relationships between many different pieces of data all in a single image. For these reasons, it is often useful to be familiar with SNA generally and generally how to map nodal relationships in Python.</p>
 </section>
 <section id="sna-libraries-in-python">
-<h2><span class="section-number">3.1.3. </span>SNA Libraries in Python<a class="headerlink" href="#sna-libraries-in-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1.2. </span>SNA Libraries in Python<a class="headerlink" href="#sna-libraries-in-python" title="Permalink to this headline">#</a></h2>
 <p>Python has several libraries for performing SNA. In this chapter, we will look closely at two: NetworkX (and Matplotlib to visualize the graph) and PyVis. Each has its strengths and weaknesses.</p>
 </section>
 </section>
@@ -1090,13 +1061,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span><center>Social Network Analysis in Python</center></p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Social Network Analysis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="06_01_03_networkx.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span><center> Introduction to NetworkX</center></p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Introduction to NetworkX</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -505,12 +505,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
-     1.2. The Basics of Topic Modeling
+     1.2. What is Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_03_clusters.html">
-     1.3. Clusters and K-Means
+     1.3. Topics and Clusters
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -520,22 +520,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_02_lda_concept.html">
-     1.5. Core Concepts of LDA Topic Modeling
+     1.5. What is LDA Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_03_tfidf.html">
-     1.6. Introduction to TF-IDF
+     1.6. TF-IDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_04_scikit_learn.html">
-     1.7. What is Scikit Learn?
+     1.7. Scikit Learn
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_05_tfidf_build.html">
-     1.8. Building a TF-IDF with Python and Scikit-Learn
+     1.8. TF-IDF with Scikit Learn
     </a>
    </li>
    <li class="toctree-l2">
@@ -545,7 +545,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.10. Topic Modeling with Top2Vec
+     1.10. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -589,10 +589,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06_sna/06_01_01_intro.html">
-   3.
-   <center>
-    Social Network Analysis in Python
-   </center>
+   3. Social Network Analysis
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -602,26 +599,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_02_basics.html">
-     3.1.
-     <center>
-      The Basic Concepts of Social Network Analysis
-     </center>
+     3.1. The Basic Concepts of Social Network Analysis
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
-     3.2.
-     <center>
-      Introduction to NetworkX
-     </center>
+     3.2. Introduction to NetworkX
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
-     3.3.
-     <center>
-      Producing Dynamic Graphs with PyVis
-     </center>
+     3.3. Producing Dynamic Graphs with PyVis
     </a>
    </li>
    <li class="toctree-l2">
@@ -636,10 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_07_applied.html">
-     3.6.
-     <center>
-      SNA on Humanities Data
-     </center>
+     3.6. SNA on Humanities Data
     </a>
    </li>
   </ul>
@@ -1007,7 +992,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Bigrams and Trigrams</center></h1>
+                <h1>Bigrams and Trigrams</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1047,53 +1032,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="center-bigrams-and-trigrams-center">
-<h1><span class="section-number">1.4. </span><center>Bigrams and Trigrams</center><a class="headerlink" href="#center-bigrams-and-trigrams-center" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bigrams-and-trigrams">
+<h1><span class="section-number">1.4. </span>Bigrams and Trigrams<a class="headerlink" href="#bigrams-and-trigrams" title="Permalink to this headline">#</a></h1>
 <p>Let’s take a moment and step away topic modeling. Instead, let’s think about language. The essential medium of topic modeling is texts which are the products of language. And language is nothing more than a collection of words whose usage is rooted around grammar and syntax. A given word’s meaning, in other words, is often defined by how, when, and where it is used in a given text. Words can also mean different things when used collectively.</p>
 <section id="textual-ambiguity">
 <h2><span class="section-number">1.4.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
-<p>If I use the word apple, you likely are thinking of something like this:</p>
-<p style="text-align:center;">
-<img src="https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?fit=641%2C618&ssl=1" height=100 align="center"/>
-</p>
-<p>Apple is a simple word, yet it can mean different things in different contexts. What if I said the following: “My Apple is better than a PC.” Now, what image comes to mind? Perhaps this?</p>
-<p style="text-align:center;">
-<img src="https://images-na.ssl-images-amazon.com/images/I/71pheYd9W0L._AC_SX466_.jpg" height="240" align="center"/>
-</p>
-This is an example of textual ambiguity. Syntactical context helps eliminate textual ambiguity. Apple is a single word here that contains a single concept. It's a relatively simple word. Perhaps one of the earliest a native speaker of English learns as a child. And yet it has textual ambiguity. Because "apple" is a single word, it is known as a unigram. A **unigram** is a single word that represents a single concept.
+<p>If I use the word apple, you likely are thinking of something like the fruit. Apple is a simple word, yet it can mean different things in different contexts. What if I said the following: “My Apple is better than a PC.” Now, what image comes to mind? Perhaps the computer product.</p>
+<p>This is an example of textual ambiguity. Syntactical context helps eliminate textual ambiguity. Apple is a single word here that contains a single concept. It’s a relatively simple word. Perhaps one of the earliest a native speaker of English learns as a child. And yet it has textual ambiguity. Because “apple” is a single word, it is known as a unigram. A <strong>unigram</strong> is a single word that represents a single concept.</p>
 <p>Textual ambiguity, however, occurs in more dynamic ways when we think about concepts beyond the single span of a single word. In this section, we will focus on two such cases that are essential for natural language processing: bigrams and trigrams. <strong>Bigrams</strong> are two words that contain a distinct meaning when used together, while <strong>trigrams</strong> are three words that contain a distinct meaning when used together.</p>
 <p>Understanding bigrams and trigrams are essential because in order for a computer to truly understand langauge the way a human does, it must be able to understand the nuances of a single word and how a word’s meaning not only shifts in context, but shifts in meaning when used in conjunction with other words.</p>
 </section>
 <section id="bigrams">
 <h2><span class="section-number">1.4.2. </span>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
-<p>As noted above, a bigram is a combination of two words that have a distinct meaning. To demonstrate this, let us consider quickly the word “French”. A single word, that may have multiple meanings. Perhaps the word French refers to the language:</p>
-<p style="text-align:center;">
-<img src="https://www.unb.ca/cel/_assets/images/enrichment/ll-fred/ll-french-beginners.jpg" height="240" align="center"/>
-</p>
-Perhaps it references a French person:
-<p style="text-align:center;">
-<img src="https://images.movehub.com/wp-content/uploads/2017/09/15150656/living-in-france.jpg"  height="240" align="center"/>
-</p>
-Let's hold off on the word French for just a moment. Let's now use the word "revolution". Again, there is textual ambiguity, but perhaps I am referencing the concept of revolution in the sense of the Earth.
-<p style="text-align:center;">
-<img src="https://i.ytimg.com/vi/CqkQv617bcw/maxresdefault.jpg" height="240" align="center"/>
-</p>
-<p>Now you may already see where I am going with this, but let’s now think about what happens when I put those two textually ambiguous unigrams together “The French Revolution”. “The” here is a stop word that is frequently dropped in natural language processing, so “French Revolution” is all that we should consider. This two words when combined have a distinct concept. Now, you may be thinking of this:</p>
-<p style="text-align:center;">
-<img src="https://images.immediate.co.uk/production/volatile/sites/7/2018/04/GettyImages-917743986-5ffaa22.jpg?quality=45&resize=768,574" height="240" align="center"/>
-</p>
-But we can think about language in even more nuanced ways.</section>
+<p>As noted above, a bigram is a combination of two words that have a distinct meaning. To demonstrate this, let us consider quickly the word “French”. A single word, that may have multiple meanings. Perhaps the word French refers to the language, perhaps it references a French person.</p>
+<p>Let’s hold off on the word French for just a moment. Let’s now use the word “revolution”. Again, there is textual ambiguity, but perhaps I am referencing the concept of revolution in the sense of the Earth.</p>
+<p>Now you may already see where I am going with this, but let’s now think about what happens when I put those two textually ambiguous unigrams together “The French Revolution”. “The” here is a stop word that is frequently dropped in natural language processing, so “French Revolution” is all that we should consider. These two words when combined have a distinct concept.</p>
+<p>But we can think about language in even more nuanced ways.</p>
+</section>
 <section id="trigrams">
 <h2><span class="section-number">1.4.3. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
-<p>Trigrams, as noted above, are the same as bigrams, except with three words, instead of two. Let’s continue with our example of “French”. What might you think about if I used the word “army”. Perhaps something distinct to your own experiences with the word. For me, as a modern American, I think initially about the American Army in the modern sense of the word. So I may picture something like this:</p>
-<p style="text-align:center;">
-<img src="https://www.goarmy.com/content/dam/goarmy/refresh/redesign-nav-images/Desktop_Navigation_IMG_1.jpg" height="240" align="center"/>
-</p>
-For others in other parts of the world, other images may be more relevant. However, when I use the phrase "The French Revolutionary Army", I now have something defined, something distinct. I have this:
-<p style="text-align:center;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Bataille_Jemmapes.jpg" height="240" align="center"/>
-</p>
-This is a trigram, a distinct concept consisting of three words that may have individual meanings when used alone.</section>
+<p>Trigrams, as noted above, are the same as bigrams, except with three words, instead of two. Let’s continue with our example of “French”. What might you think about if I used the word “army”. Perhaps something distinct to your own experiences with the word. For me, as a modern American, I think initially about the American Army in the modern sense of the word. So I may picture something like modern soldiers in my mind’s eye.</p>
+<p>For others in other parts of the world, other images may be more relevant. However, when I use the phrase “The French Revolutionary Army”, I now have something defined, something distinct. This is a trigram, a distinct concept consisting of three words that may have individual meanings when used alone.</p>
+</section>
 <section id="why-are-these-important">
 <h2><span class="section-number">1.4.4. </span>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
 <p>So, why are bigrams and trigrams so important? The reason comes down to getting machines to understand that when certain words are used together, they bear a distinct meaning. In order to produce a good topic model, therefore, the model must be able to understand and process words in this manner, the way we humans use the language we are trying to get the machine to understand.</p>
@@ -1131,13 +1091,13 @@ This is a trigram, a distinct concept consisting of three words that may have in
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.3. </span><center>Topics and Clusters</center></p>
+            <p class="prev-next-title"><span class="section-number">1.3. </span>Topics and Clusters</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_02_02_lda_concept.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span><center>What is LDA Topic Modeling?</center></p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>What is LDA Topic Modeling?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
