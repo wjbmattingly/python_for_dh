@@ -976,11 +976,6 @@ title="Print to PDF"
    2.1.3. How to Install BookNLP
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
-   2.1.4. How to Install BookNLP on Mac M1
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -1015,11 +1010,6 @@ title="Print to PDF"
    2.1.3. How to Install BookNLP
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
-   2.1.4. How to Install BookNLP on Mac M1
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -1047,10 +1037,9 @@ title="Print to PDF"
 <li><p>Event tagging</p></li>
 <li><p>Referential gender inference (TOM_SAWYER -&gt; he/him/his)”</p></li>
 </ul>
-<p>Unlike its predecessor, the Java library, the Python library leverages the Python NLP library, <a href="https://spacy.io/">spaCy</a>, and the Python Transformer library from <a href="https://huggingface.co/">HuggingFace</a>, rather than Stanford, to perform many of these tasks. In the last few years, spaCy has proven itself as a dominate force within the NLP community, outperforming many of its predecessors in accuracy and in its ability to perform at scale. HuggingFace is a library that allows one to create and leverage large and powerful transformer language models. It also allows users to store these models in the cloud which are too large to store within GitHub or other comparable repositories. I have two textbooks on <a href="http://spacy.pythonhumanities.com/intro.html">spaCy</a>, both for the library generally, and one for <a href="http://ner.pythonhumanities.com/intro.html">named entity recognition</a>, specifically.</p>
+<p>Unlike its predecessor, the Java library, the Python library leverages the Python NLP library, <a href="https://spacy.io/">spaCy</a>, and the Python Transformer library from <a href="https://huggingface.co/">HuggingFace</a>, rather than Stanford, to perform many of these tasks. In the last few years, spaCy has proven itself as a dominate force within the NLP community, outperforming many of its predecessors in accuracy and in its ability to perform at scale. HuggingFace is a library that allows one to create and leverage large and powerful transformer language models. It also allows users to store these models in the cloud which are too large to store within GitHub or other comparable repositories.</p>
 <p>BookNLP delivers in all the things it sets out to do, though it currently only supports English. Because it leverages transformer models, BookNLP’s results can generalize well on non-standard English. I have seen it perform quite well with the South African dialect of English, by correctly identifying out-of-vocabulary (OOV) words, specifically the correct labeling of Afrikaans words for minivans as vehicles.</p>
 <p>Although only available in English as if March 2022, there are clear plans to expand the library to include Spanish, Japanese, Russian, and Germran, as per their recent <a href="https://securegrants.neh.gov/publicquery/main.aspx?f=1&gn=HAA-271654-20">NEH grant</a>, awarded in September 2020.</p>
-<p>Throughout this book, we will use BookNLP to do what it was intended to do, analyze large fictional works. We will also, however, push it to analyze larger historical documents.</p>
 </section>
 <section id="why-books-and-larger-documents">
 <h2><span class="section-number">2.1.2. </span>Why Books and Larger Documents?<a class="headerlink" href="#why-books-and-larger-documents" title="Permalink to this headline">#</a></h2>
@@ -1064,7 +1053,9 @@ title="Print to PDF"
 </section>
 <section id="how-to-install-booknlp">
 <h2><span class="section-number">2.1.3. </span>How to Install BookNLP<a class="headerlink" href="#how-to-install-booknlp" title="Permalink to this headline">#</a></h2>
-<p>If you are using Linux (and I believe Mac - for Mac M1, see below), installation will be easy. Use pip install booknlp. You can opt to create a custom environment (recommended but not necessary). If you are using Windows, however, as of March 3 2022, you will need to do a few additional steps which I have documented in this video below:</p>
+<p>If you are using Linux, installation will be easy. Use</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">booknlp</span></code></p>
+<p>You can opt to create a custom environment (recommended but not necessary). If you are using Windows, however, as of March 3 2022, you will need to do a few additional steps which I have documented in this video below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -1073,81 +1064,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/wjbmattingly/anaconda3/envs/python-textbook/lib/python3.9/site-packages/IPython/core/display.py:431: UserWarning: Consider using IPython.display.IFrame instead
-  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
-</pre></div>
-</div>
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/3l5ERF3QX0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
 </div>
-</section>
-<section id="how-to-install-booknlp-on-mac-m1">
-<h2><span class="section-number">2.1.4. </span>How to Install BookNLP on Mac M1<a class="headerlink" href="#how-to-install-booknlp-on-mac-m1" title="Permalink to this headline">#</a></h2>
-<p>This section was kindly written by Joel Lee, Fellow at the United States Holocaust Memorial Museum.</p>
-<p>When running on M1, you may run into a “zsh: illegal hardware instruction” when trying to run spacy or booknlp commands after pip installing booknlp, or you may run into some dependency errors when trying to pip install booknlp. This is my workaround for that, where we download the dependencies (spacy, tensorflow, pytorch, and transformers) stated in the setup.py manually and then running pip install booknlp without its dependencies.</p>
-<ul class="simple">
-<li><p>First, if you do not already have an Anaconda or miniconda for your local Python development, start with a conda install, we will follow this guide to use miniforge.</p>
-<ul>
-<li><p>https://www.mrdbourke.com/setup-apple-m1-pro-and-m1-max-for-machine-learning-and-data-science/</p>
-<ul>
-<li><p>Instant Download Link for Miniforge3 (Conda installer) for macOS arm64 chips (M1, M1 Pro, M1 Max).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">~/Downloads/Miniforge3-MacOSX-arm64.sh</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">~/Downloads/Miniforge3-MacOSX-arm64.sh</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/miniforge3/bin/activate</span></code></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>With your existing or newly installed conda environment installed, continue in your Terminal or Anaconda Prompt session.</p>
-<ul>
-<li><p>To ensure the conda environment you will create uses the MacOS native <code class="docutils literal notranslate"><span class="pre">osx-arm64</span></code> version of Python packages for your M1 Apple Silicon computer, execute this command in your Terminal or Anaconda Prompt session before following the rest of this recipe.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">config</span> <span class="pre">vars</span> <span class="pre">set</span> <span class="pre">CONDA_SUBDIR=osx-arm64</span></code></p></li>
-</ul>
-</li>
-<li><p>Now create and activate a new conda virtual environment that you will use for the BookNLP course:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">booknlp</span> <span class="pre">python=3.8</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">booknlp</span></code></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Installing tensorflow.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">apple</span> <span class="pre">tensorflow-deps</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-macos</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-metal</span></code></p></li>
-</ul>
-</li>
-<li><p>Installing spacy.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">spacy</span></code></p></li>
-</ul>
-</li>
-<li><p>Installing transformers.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">transformers</span></code> OR</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">transformers</span></code></p></li>
-</ul>
-</li>
-<li><p>Installing pytorch.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pytorch</span> <span class="pre">pytorch</span></code> OR, if this gives you installation troubles, try</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">pytorch</span></code></p></li>
-</ul>
-</li>
-<li><p>Now if we were to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">booknlp</span></code> we would very likely get a conflicting dependency error or ResolutionImpossible error between booknlp and tensorflow. Fortunately, because we have installed the dependencies ourselves, we can run the pip install <em>without</em> including the already installed dependencies.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--no-dependencies</span> <span class="pre">booknlp</span></code> (Note the option parameter starts with two-dash characters.)</p></li>
-</ul>
-</li>
-<li><p>Now we can download the spacy pipeline and should be able to follow the rest of the booknlp repo.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">spacy</span> <span class="pre">download</span> <span class="pre">en_core_web_sm</span></code></p></li>
-</ul>
-</li>
-</ul>
-<p>Congratulations! Your M1-based Macintosh should now be ready to use as you take the BookNLP course.</p>
 </section>
 </section>
 

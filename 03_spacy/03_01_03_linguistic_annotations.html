@@ -1176,22 +1176,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="center-getting-started-with-spacy-and-its-linguistic-annotations-center">
 <h1><span class="section-number">1.2. </span><center>Getting Started with spaCy and its Linguistic Annotations</center><a class="headerlink" href="#center-getting-started-with-spacy-and-its-linguistic-annotations-center" title="Permalink to this headline">#</a></h1>
-<p>In this chapter, we will start working with spaCy directly. The goals of this chapter are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this chapter with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.</p>
+<p>The goal of this section are twofold. First, it is my hope that you understand the basic spaCy syntax for creating a Doc container and how to call specific attributes of that container. Second, it is my hope that you leave this section with a basic understanding of the vast linguistic annotations available in spaCy. While we will not explore all attributes, we will deal with many of the most important ones, such as lemmas, parts-of-speech, and named entities. By the time you are finished with this chapter, you should have enough of a basic understanding of spaCy to begin applying it to your own texts.</p>
 <section id="importing-spacy-and-loading-data">
 <h2><span class="section-number">1.2.1. </span>Importing spaCy and Loading Data<a class="headerlink" href="#importing-spacy-and-loading-data" title="Permalink to this headline">#</a></h2>
 <p>As with all Python libraries, the first thing we need to do is import spaCy. In the last notebook, I walked you through how to install it and download the small English model. If you have followed those steps, you should be able to import it like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
-INFO:tensorflow:Enabling v2 tensorshape
-INFO:tensorflow:Enabling resource variables
-INFO:tensorflow:Enabling tensor equality
-INFO:tensorflow:Enabling control flow v2
 </pre></div>
 </div>
 </div>
@@ -1207,7 +1198,7 @@ INFO:tensorflow:Enabling control flow v2
 <p>Great! With the model loaded, let’s go ahead and import our text. For this chapter, we will be working with the opening description from the Wikipedia article on the United States. In this repo, it is found in the subfolder data and is entitled wiki_us.txt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;data/wiki_us.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/wiki_us.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1216,20 +1207,12 @@ INFO:tensorflow:Enabling control flow v2
 <p>Now, let’s see what this text looks like. It can be a bit difficult to read in a JupyterBook, but notice the horizontal slider below. You don’t neeed to read this in its entirety.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America. It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j] At 3.8 million square miles (9.8 million square kilometers), it is the world&#39;s third- or fourth-largest country by total area.[d] The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22] With a population of more than 331 million people, it is the third most populous country in the world. The national capital is Washington, D.C., and the most populous city is New York.
-
-Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century. The United States emerged from the thirteen British colonies established along the East Coast. Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775â€“1783), which established independence. In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent. Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition. The Spanishâ€“American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
-
-During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union. The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon. The Soviet Union&#39;s dissolution in 1991 ended the Cold War, leaving the United States as the world&#39;s sole superpower.
-
-The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature. It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations. It is a permanent member of the United Nations Security Council. Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration. The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption. However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
-
-The United States is a highly developed country, accounts for approximately a quarter of global GDP, and is the world&#39;s largest economy. By value, the United States is the world&#39;s largest importer and the second-largest exporter of goods. Although its population is only 4.2% of the world&#39;s total, it holds 29.4% of the total wealth in the world, the largest share held by any country. Making up more than a third of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country located in North America. It consists of 50 states, a federal district, five major unincorporated territories, nine Minor Outlying Islands, and 326 Indian reservations. It is the third-largest country by both land and total area. The United States shares land borders with Canada to its north and with Mexico to its south. It has maritime borders with the Bahamas, Cuba, Russia, and other nations. With a population of over 331 million, it is the third most populous country in the world. The national capital is Washington, D.C., and the most populous city and financial center is New York City.
 </pre></div>
 </div>
 </div>
@@ -1253,15 +1236,7 @@ The United States is a highly developed country, accounts for approximately a qu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America. It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j] At 3.8 million square miles (9.8 million square kilometers), it is the world&#39;s third- or fourth-largest country by total area.[d] The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22] With a population of more than 331 million people, it is the third most populous country in the world. The national capital is Washington, D.C., and the most populous city is New York.
-
-Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century. The United States emerged from the thirteen British colonies established along the East Coast. Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775â€“1783), which established independence. In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent. Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition. The Spanishâ€“American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
-
-During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union. The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon. The Soviet Union&#39;s dissolution in 1991 ended the Cold War, leaving the United States as the world&#39;s sole superpower.
-
-The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature. It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations. It is a permanent member of the United Nations Security Council. Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration. The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption. However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
-
-The United States is a highly developed country, accounts for approximately a quarter of global GDP, and is the world&#39;s largest economy. By value, the United States is the world&#39;s largest importer and the second-largest exporter of goods. Although its population is only 4.2% of the world&#39;s total, it holds 29.4% of the total wealth in the world, the largest share held by any country. Making up more than a third of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country located in North America. It consists of 50 states, a federal district, five major unincorporated territories, nine Minor Outlying Islands, and 326 Indian reservations. It is the third-largest country by both land and total area. The United States shares land borders with Canada to its north and with Mexico to its south. It has maritime borders with the Bahamas, Cuba, Russia, and other nations. With a population of over 331 million, it is the third most populous country in the world. The national capital is Washington, D.C., and the most populous city and financial center is New York City.
 </pre></div>
 </div>
 </div>
@@ -1275,13 +1250,13 @@ The United States is a highly developed country, accounts for approximately a qu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>652
-3525
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>146
+716
 </pre></div>
 </div>
 </div>
 </div>
-<p>Hmm… What’s going on here? Same text, but different length. Why does this occur? To answer that, let’s explore it more deeply and try and print off each item in each object.</p>
+<p>What’s going on here? It is the same text, but different length. Why does this occur? To answer that, let’s explore it more deeply and try and print off each item in each object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
@@ -1404,74 +1379,27 @@ USA),
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
-It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j]
-At 3.8 million square miles (9.8 million square kilometers), it is the world&#39;s third- or fourth-largest country by total area.[d] The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22] With a population of more than 331 million people, it is the third most populous country in the world.
-The national capital is Washington, D.C., and the most populous city is New York.
-
-
-Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century.
-The United States emerged from the thirteen British colonies established along the East Coast.
-Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775â€“1783), which established independence.
-In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent.
-Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition.
-The Spanishâ€“American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
-
-
-
-During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union.
-The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon.
-The Soviet Union&#39;s dissolution in 1991 ended the Cold War, leaving the United States as the world&#39;s sole superpower.
-
-
-
-The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature.
-It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations.
-It is a permanent member of the United Nations Security Council.
-Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration.
-The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption.
-However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
-
-
-
-The United States is a highly developed country, accounts for approximately a quarter of global GDP, and is the world&#39;s largest economy.
-By value, the United States is the world&#39;s largest importer and the second-largest exporter of goods.
-Although its population is only 4.2% of the world&#39;s total, it holds 29.4% of the total wealth in the world, the largest share held by any country.
-Making up more than a third of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country located in North America.
+It consists of 50 states, a federal district, five major unincorporated territories, nine Minor Outlying Islands, and 326 Indian reservations.
+It is the third-largest country by both land and total area.
+The United States shares land borders with Canada to its north and with Mexico to its south.
+It has maritime borders with the Bahamas, Cuba, Russia, and other nations.
+With a population of over 331 million, it is the third most populous country in the world.
+The national capital is Washington, D.C., and the most populous city and financial center is New York City.
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s move forward with just one of these sentences. Let’s try and grab index 0 in this attribute.</p>
+<p>We got an error. That is because the sents attribute is a Span container that is stored as a generator. Generators are beyond the scope of this textbook, but in short generators will <code class="docutils literal notranslate"><span class="pre">yield</span></code> results from functions rather than <code class="docutils literal notranslate"><span class="pre">return</span></code> results. While you can iterate over a generator like a list, they are not the same thing. Instead of populating all results in memory, a generator lets us only load one result at a time. We can use <code class="docutils literal notranslate"><span class="pre">next</span></code> to grab the first sentence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence1</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">sentence1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">925</span><span class="n">a537c08a9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sentence1</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span> <span class="p">(</span><span class="n">sentence1</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;generator&#39; object is not subscriptable
-</pre></div>
-</div>
-</div>
-</div>
-<p>Uh oh! We got an error. That is because the sents attribute is a generator. In python, we can usually iterate over generators by converting them into a list. So, let’s do that.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">sentence1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country located in North America.
 </pre></div>
 </div>
 </div>
@@ -1597,7 +1525,7 @@ Making up more than a third of global military spending, it is the foremost mili
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>America
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>,
 </pre></div>
 </div>
 </div>
@@ -1783,7 +1711,6 @@ America PROPN conj
 is AUX ROOT
 a DET det
 country NOUN attr
-primarily ADV advmod
 located VERB acl
 in ADP prep
 North PROPN compound
@@ -1793,357 +1720,85 @@ America PROPN pobj
 </div>
 </div>
 </div>
-<p>Here, we can see two vital pieces of information: the string and the corresponding part-of-speech (pos). For a complete list of the pos labels, see the spaCy documentation (https://spacy.io/api/annotation#pos-tagging). Most of these, however, should be apparent, i.e. PROPN is proper noun, AUX is an auxiliary verb, ADJ, is adjective, etc. We can visualize this sentence with a diagram through spaCy’s displaCy Notebook feature.</p>
+<p>Here, we can see two vital pieces of information: the string and the corresponding part-of-speech (pos). For a complete list of the pos labels, see the spaCy documentation (https://spacy.io/api/annotation#pos-tagging). Most of these, however, should be apparent, i.e. PROPN is proper noun, AUX is an auxiliary verb, ADJ, is adjective, etc. We can visualize this sentence with a diagram through spaCy’s displaCy Notebook feature. To make this easier to read in a book, we will be using a different, smaller sentence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">sentence1</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dep&quot;</span><span class="p">)</span>
+<span class="n">sample_doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;The dog ran over the fence.&quot;</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">sample_doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dep&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;compact&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="9106692ad2b24df9bbc8c6b9e4738a51-0" class="displacy" width="4775" height="749.5" direction="ltr" style="max-width: none; height: 749.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
+<div class="output text_html"><span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="552e56a5f5864ceaa2bc88c551011cbe-0" class="displacy" width="950" height="287.0" direction="ltr" style="max-width: none; height: 287.0px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
     <tspan class="displacy-word" fill="currentColor" x="50">The</tspan>
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">DET</tspan>
 </text>
 
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="225">United</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="225">PROPN</tspan>
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
+    <tspan class="displacy-word" fill="currentColor" x="200">dog</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="200">NOUN</tspan>
 </text>
 
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="400">States</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">PROPN</tspan>
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
+    <tspan class="displacy-word" fill="currentColor" x="350">ran</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="350">VERB</tspan>
 </text>
 
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="575">of</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="575">ADP</tspan>
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
+    <tspan class="displacy-word" fill="currentColor" x="500">over</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="500">ADP</tspan>
 </text>
 
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="750">America (</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="750">PROPN</tspan>
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
+    <tspan class="displacy-word" fill="currentColor" x="650">the</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="650">DET</tspan>
 </text>
 
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="925">U.S.A.</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="925">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1100">or</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1100">CCONJ</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1275">USA),</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1275">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1450">commonly</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1450">ADV</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1625">known</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1625">VERB</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1800">as</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1800">ADP</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="1975">the</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1975">DET</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="2150">United</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="2150">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="2325">States (</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="2325">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="2500">U.S.</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="2500">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="2675">or</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="2675">CCONJ</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="2850">US)</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="2850">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3025">or</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3025">CCONJ</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3200">America,</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3200">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3375">is</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3375">AUX</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3550">a</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3550">DET</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3725">country</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3725">NOUN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="3900">primarily</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="3900">ADV</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="4075">located</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="4075">VERB</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="4250">in</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="4250">ADP</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="4425">North</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="4425">PROPN</tspan>
-</text>
-
-<text class="displacy-token" fill="currentColor" text-anchor="middle" y="659.5">
-    <tspan class="displacy-word" fill="currentColor" x="4600">America.</tspan>
-    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="4600">PROPN</tspan>
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="197.0">
+    <tspan class="displacy-word" fill="currentColor" x="800">fence.</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="800">NOUN</tspan>
 </text>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-0" stroke-width="2px" d="M70,614.5 C70,439.5 375.0,439.5 375.0,614.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-552e56a5f5864ceaa2bc88c551011cbe-0-0" stroke-width="2px" d="M62,152.0 62,127.0 197.0,127.0 197.0,152.0" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">det</textPath>
+        <textPath xlink:href="#arrow-552e56a5f5864ceaa2bc88c551011cbe-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">det</textPath>
     </text>
-    <path class="displacy-arrowhead" d="M70,616.5 L62,604.5 78,604.5" fill="currentColor"/>
+    <path class="displacy-arrowhead" d="M62,154.0 L58,146.0 66,146.0" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-1" stroke-width="2px" d="M245,614.5 C245,527.0 370.0,527.0 370.0,614.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-552e56a5f5864ceaa2bc88c551011cbe-0-1" stroke-width="2px" d="M212,152.0 212,127.0 347.0,127.0 347.0,152.0" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
+        <textPath xlink:href="#arrow-552e56a5f5864ceaa2bc88c551011cbe-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
     </text>
-    <path class="displacy-arrowhead" d="M245,616.5 L237,604.5 253,604.5" fill="currentColor"/>
+    <path class="displacy-arrowhead" d="M212,154.0 L208,146.0 216,146.0" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-2" stroke-width="2px" d="M420,614.5 C420,2.0 3375.0,2.0 3375.0,614.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-552e56a5f5864ceaa2bc88c551011cbe-0-2" stroke-width="2px" d="M362,152.0 362,127.0 497.0,127.0 497.0,152.0" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+        <textPath xlink:href="#arrow-552e56a5f5864ceaa2bc88c551011cbe-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
     </text>
-    <path class="displacy-arrowhead" d="M420,616.5 L412,604.5 428,604.5" fill="currentColor"/>
+    <path class="displacy-arrowhead" d="M497.0,154.0 L501.0,146.0 493.0,146.0" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-3" stroke-width="2px" d="M420,614.5 C420,527.0 545.0,527.0 545.0,614.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-552e56a5f5864ceaa2bc88c551011cbe-0-3" stroke-width="2px" d="M662,152.0 662,127.0 797.0,127.0 797.0,152.0" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
+        <textPath xlink:href="#arrow-552e56a5f5864ceaa2bc88c551011cbe-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">det</textPath>
     </text>
-    <path class="displacy-arrowhead" d="M545.0,616.5 L553.0,604.5 537.0,604.5" fill="currentColor"/>
+    <path class="displacy-arrowhead" d="M662,154.0 L658,146.0 666,146.0" fill="currentColor"/>
 </g>
 
 <g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-4" stroke-width="2px" d="M595,614.5 C595,527.0 720.0,527.0 720.0,614.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-552e56a5f5864ceaa2bc88c551011cbe-0-4" stroke-width="2px" d="M512,152.0 512,102.0 800.0,102.0 800.0,152.0" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
+        <textPath xlink:href="#arrow-552e56a5f5864ceaa2bc88c551011cbe-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
     </text>
-    <path class="displacy-arrowhead" d="M720.0,616.5 L728.0,604.5 712.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-5" stroke-width="2px" d="M420,614.5 C420,352.0 905.0,352.0 905.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">appos</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M905.0,616.5 L913.0,604.5 897.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-6" stroke-width="2px" d="M945,614.5 C945,527.0 1070.0,527.0 1070.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">cc</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1070.0,616.5 L1078.0,604.5 1062.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-7" stroke-width="2px" d="M945,614.5 C945,439.5 1250.0,439.5 1250.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">conj</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1250.0,616.5 L1258.0,604.5 1242.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-8" stroke-width="2px" d="M1470,614.5 C1470,527.0 1595.0,527.0 1595.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">advmod</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1470,616.5 L1462,604.5 1478,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-9" stroke-width="2px" d="M420,614.5 C420,89.5 1620.0,89.5 1620.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-9" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">acl</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1620.0,616.5 L1628.0,604.5 1612.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-10" stroke-width="2px" d="M1645,614.5 C1645,527.0 1770.0,527.0 1770.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-10" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1770.0,616.5 L1778.0,604.5 1762.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-11" stroke-width="2px" d="M1995,614.5 C1995,439.5 2300.0,439.5 2300.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-11" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">det</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M1995,616.5 L1987,604.5 2003,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-12" stroke-width="2px" d="M2170,614.5 C2170,527.0 2295.0,527.0 2295.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-12" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M2170,616.5 L2162,604.5 2178,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-13" stroke-width="2px" d="M1820,614.5 C1820,352.0 2305.0,352.0 2305.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-13" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M2305.0,616.5 L2313.0,604.5 2297.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-14" stroke-width="2px" d="M2345,614.5 C2345,527.0 2470.0,527.0 2470.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-14" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">appos</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M2470.0,616.5 L2478.0,604.5 2462.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-15" stroke-width="2px" d="M2520,614.5 C2520,527.0 2645.0,527.0 2645.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-15" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">cc</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M2645.0,616.5 L2653.0,604.5 2637.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-16" stroke-width="2px" d="M2520,614.5 C2520,439.5 2825.0,439.5 2825.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-16" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">conj</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M2825.0,616.5 L2833.0,604.5 2817.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-17" stroke-width="2px" d="M2345,614.5 C2345,264.5 3010.0,264.5 3010.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-17" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">cc</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M3010.0,616.5 L3018.0,604.5 3002.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-18" stroke-width="2px" d="M2345,614.5 C2345,177.0 3190.0,177.0 3190.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-18" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">conj</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M3190.0,616.5 L3198.0,604.5 3182.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-19" stroke-width="2px" d="M3570,614.5 C3570,527.0 3695.0,527.0 3695.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-19" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">det</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M3570,616.5 L3562,604.5 3578,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-20" stroke-width="2px" d="M3395,614.5 C3395,439.5 3700.0,439.5 3700.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-20" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">attr</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M3700.0,616.5 L3708.0,604.5 3692.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-21" stroke-width="2px" d="M3920,614.5 C3920,527.0 4045.0,527.0 4045.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-21" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">advmod</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M3920,616.5 L3912,604.5 3928,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-22" stroke-width="2px" d="M3745,614.5 C3745,439.5 4050.0,439.5 4050.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-22" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">acl</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M4050.0,616.5 L4058.0,604.5 4042.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-23" stroke-width="2px" d="M4095,614.5 C4095,527.0 4220.0,527.0 4220.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-23" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">prep</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M4220.0,616.5 L4228.0,604.5 4212.0,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-24" stroke-width="2px" d="M4445,614.5 C4445,527.0 4570.0,527.0 4570.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-24" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">compound</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M4445,616.5 L4437,604.5 4453,604.5" fill="currentColor"/>
-</g>
-
-<g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-25" stroke-width="2px" d="M4270,614.5 C4270,439.5 4575.0,439.5 4575.0,614.5" fill="none" stroke="currentColor"/>
-    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-9106692ad2b24df9bbc8c6b9e4738a51-0-25" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">pobj</textPath>
-    </text>
-    <path class="displacy-arrowhead" d="M4575.0,616.5 L4583.0,604.5 4567.0,604.5" fill="currentColor"/>
+    <path class="displacy-arrowhead" d="M800.0,154.0 L804.0,146.0 796.0,146.0" fill="currentColor"/>
 </g>
 </svg></span></div></div>
 </div>
@@ -2169,74 +1824,22 @@ America GPE
 North America LOC
 50 CARDINAL
 five CARDINAL
+nine CARDINAL
+Minor Outlying Islands PERSON
 326 CARDINAL
 Indian NORP
-3.8 million square miles QUANTITY
-9.8 million square kilometers QUANTITY
-fourth ORDINAL
+third ORDINAL
 The United States GPE
 Canada GPE
 Mexico GPE
 Bahamas GPE
 Cuba GPE
-more than 331 million CARDINAL
+Russia GPE
+over 331 million MONEY
 third ORDINAL
 Washington GPE
 D.C. GPE
-New York GPE
-Paleo-Indians NORP
-Siberia LOC
-North American NORP
-at least 12,000 years ago DATE
-European NORP
-the 16th century DATE
-The United States GPE
-thirteen CARDINAL
-British NORP
-the East Coast LOC
-Great Britain GPE
-the American Revolutionary War ORG
-the late 18th century DATE
-U.S. GPE
-North America LOC
-Native Americans NORP
-1848 DATE
-the United States GPE
-United States GPE
-the second half of the 19th century DATE
-the American Civil War EVENT
-The Spanishâ€“American War and World War EVENT
-U.S. GPE
-World War II EVENT
-the Cold War EVENT
-the United States GPE
-the Korean War EVENT
-the Vietnam War EVENT
-the Soviet Union GPE
-two CARDINAL
-the Space Race FAC
-1969 DATE
-first ORDINAL
-The Soviet Union&#39;s GPE
-1991 DATE
-the Cold War EVENT
-the United States GPE
-The United States GPE
-three CARDINAL
-the United Nations ORG
-World Bank ORG
-International Monetary Fund ORG
-Organization of American States ORG
-NATO ORG
-the United Nations Security Council ORG
-centuries DATE
-The United States GPE
-approximately a quarter DATE
-the United States GPE
-second ORDINAL
-only 4.2% PERCENT
-29.4% PERCENT
-more than a third CARDINAL
+New York City GPE
 </pre></div>
 </div>
 </div>
@@ -2284,7 +1887,7 @@ more than a third CARDINAL
     America
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
-, is a country primarily located in 
+, is a country located in 
 <mark class="entity" style="background: #ff9561; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     North America
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOC</span>
@@ -2301,6 +1904,16 @@ more than a third CARDINAL
 </mark>
  major unincorporated territories, 
 <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    nine
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
+</mark>
+
+<mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Minor Outlying Islands
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span>
+</mark>
+, and 
+<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     326
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
 </mark>
@@ -2309,37 +1922,27 @@ more than a third CARDINAL
     Indian
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
 </mark>
- reservations, and some minor possessions.[j] At 
+ reservations. It is the 
 <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    3.8 million square miles
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">QUANTITY</span>
-</mark>
- (
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    9.8 million square kilometers
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">QUANTITY</span>
-</mark>
-), it is the world's third- or 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    fourth
+    third
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORDINAL</span>
 </mark>
--largest country by total area.[d] 
+-largest country by both land and total area. 
 <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     The United States
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
- shares significant land borders with 
+ shares land borders with 
 <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     Canada
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
- to the north and 
+ to its north and with 
 <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     Mexico
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
- to the south, as well as limited maritime borders with the 
+ to its south. It has maritime borders with the 
 <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     Bahamas
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
@@ -2349,12 +1952,17 @@ more than a third CARDINAL
     Cuba
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
-, and Russia.[22] With a population of 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    more than 331 million
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
+, 
+<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Russia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
- people, it is the 
+, and other nations. With a population of 
+<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    over 331 million
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span>
+</mark>
+, it is the 
 <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     third
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORDINAL</span>
@@ -2369,277 +1977,12 @@ more than a third CARDINAL
     D.C.
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
-, and the most populous city is 
+, and the most populous city and financial center is 
 <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    New York
+    New York City
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
 </mark>
-.</br></br>
-<mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Paleo-Indians
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
-</mark>
- migrated from 
-<mark class="entity" style="background: #ff9561; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Siberia
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOC</span>
-</mark>
- to the 
-<mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    North American
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
-</mark>
- mainland 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    at least 12,000 years ago
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
-, and 
-<mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    European
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
-</mark>
- colonization began in 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the 16th century
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
-. 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    The United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- emerged from the 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    thirteen
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
-</mark>
-
-<mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    British
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
-</mark>
- colonies established along 
-<mark class="entity" style="background: #ff9561; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the East Coast
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOC</span>
-</mark>
-. Disputes over taxation and political representation with 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Great Britain
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- led to 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the American Revolutionary War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
- (1775â€“1783), which established independence. In 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the late 18th century
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
-, the 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    U.S.
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- began expanding across 
-<mark class="entity" style="background: #ff9561; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    North America
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOC</span>
-</mark>
-, gradually obtaining new territories, sometimes through war, frequently displacing 
-<mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Native Americans
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span>
-</mark>
-, and admitting new states; by 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    1848
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
-, 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- spanned the continent. Slavery was legal in the southern 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- until 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the second half of the 19th century
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
- when 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the American Civil War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
- led to its abolition. 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    The Spanishâ€“American War and World War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
- I established the 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    U.S.
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- as a world power, a status confirmed by the outcome of 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    World War II
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
-.</br></br>During 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Cold War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
-, 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- fought 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Korean War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
- and 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Vietnam War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
- but avoided direct military conflict with 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Soviet Union
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
-. The 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    two
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
-</mark>
- superpowers competed in 
-<mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Space Race
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">FAC</span>
-</mark>
-, culminating in the 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    1969
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
- spaceflight that 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    first
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORDINAL</span>
-</mark>
- landed humans on the Moon. 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    The Soviet Union's
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- dissolution in 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    1991
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
- ended 
-<mark class="entity" style="background: #ffeb80; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the Cold War
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">EVENT</span>
-</mark>
-, leaving 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- as the world's sole superpower.</br></br>
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    The United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- is a federal republic and a representative democracy with 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    three
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
-</mark>
- separate branches of government, including a bicameral legislature. It is a founding member of 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United Nations
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-, 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    World Bank
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-, 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    International Monetary Fund
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-, 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    Organization of American States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-, 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    NATO
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-, and other international organizations. It is a permanent member of 
-<mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United Nations Security Council
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span>
-</mark>
-. Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    centuries
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
- of immigration. The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption. However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.</br></br>
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    The United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- is a highly developed country, accounts for 
-<mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    approximately a quarter
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span>
-</mark>
- of global GDP, and is the world's largest economy. By value, 
-<mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    the United States
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span>
-</mark>
- is the world's largest importer and the 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    second
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORDINAL</span>
-</mark>
--largest exporter of goods. Although its population is 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    only 4.2%
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERCENT</span>
-</mark>
- of the world's total, it holds 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    29.4%
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERCENT</span>
-</mark>
- of the total wealth in the world, the largest share held by any country. Making up 
-<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
-    more than a third
-    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span>
-</mark>
- of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]</div></span></div></div>
+.</div></span></div></div>
 </div>
 </section>
 <section id="conclusion">
