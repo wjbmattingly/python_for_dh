@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.10. Top2Vec in Python &#8212; Introduction to Python for Humanists</title>
+    <title>&lt;no title&gt; &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Text Analysis with BookNLP" href="../08_booknlp/01_01_intro.html" />
-    <link rel="prev" title="1.9. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -492,17 +490,17 @@ const thebe_selector_output = ".output, .cell_output"
   PART FOUR: OTHER APPLICATIONS OF PYTHON
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="04_01_01_intro.html">
    1. Topic Modeling in Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
      1.2. What is Topic Modeling?
@@ -543,8 +541,8 @@ const thebe_selector_output = ".output, .cell_output"
      1.9. Embedding, Flattening, and Clustering
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_04_top2vec.html">
      1.10. Top2Vec in Python
     </a>
    </li>
@@ -781,7 +779,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/04_topic_modeling/04_03_04_top2vec.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/04_topic_modeling/testing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -799,7 +797,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/04_topic_modeling/04_03_04_top2vec.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/04_topic_modeling/testing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -859,7 +857,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F04_topic_modeling/04_03_04_top2vec.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F04_topic_modeling/testing.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -876,7 +874,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/04_topic_modeling/04_03_04_top2vec.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/04_topic_modeling/testing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -904,7 +902,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/04_topic_modeling/04_03_04_top2vec.ipynb"
+        <a href="../_sources/04_topic_modeling/testing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -962,27 +960,7 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-top2vec-model">
-   1.10.1. Creating a Top2Vec Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyzing-our-topic-model">
-   1.10.2. Analyzing our Topic Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-bigrams-and-trigrams">
-   1.10.3. Working with Bigrams and Trigrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#saving-and-loading-a-top2vec-model">
-   1.10.4. Saving and Loading a Top2Vec Model
-  </a>
- </li>
+        <ul class="simple visible nav section-nav flex-column">
 </ul>
 
     </nav>
@@ -992,7 +970,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Top2Vec in Python</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1001,27 +979,7 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-top2vec-model">
-   1.10.1. Creating a Top2Vec Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyzing-our-topic-model">
-   1.10.2. Analyzing our Topic Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-bigrams-and-trigrams">
-   1.10.3. Working with Bigrams and Trigrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#saving-and-loading-a-top2vec-model">
-   1.10.4. Saving and Loading a Top2Vec Model
-  </a>
- </li>
+                            <ul class="simple visible nav section-nav flex-column">
 </ul>
 
                         </nav>
@@ -1032,13 +990,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="top2vec-in-python">
-<h1><span class="section-number">1.10. </span>Top2Vec in Python<a class="headerlink" href="#top2vec-in-python" title="Permalink to this headline">#</a></h1>
-<p>Now that we understand the primary concepts behind leveraging transformers and sentence embeddings to perform topic modeling, let’s examine a key library and making this entire workflow simplified with just a single line of Python. That library is Top2Vec.</p>
-<p>Unlike a traditional topic modeling approach or even the manual approach with transformers that we saw in the previous section, Top2Vec will embed not only all the sentences, but all the words used in your corpus. In addition to this, it will also embed the topics themselves. This means that words, documents, and topics all occupy the same higher-dimensional space. On the surface, this may not seem that important, but it allows us to understand the relationship between three interconnected pieces of the process in topic modeling mathematically. This means, for example, Top2Vec let’s us know the mathematical similarity between a given word and a document or a topic in general. Understanding these relationships lets us understand broader patterns in our topics that may otherwise be missed.</p>
-<p>That said, Top2Vec does have several drawbacks. First, it will produce a high number of outliers. These are documents that do not fit neatly into any one topic. Top2Vec has a rather unique way of handling outliers, however. It generate an embedding for the topics 0 and above and then assign outliers to their nearest topic embedding. This means that outliers may be quite pronounced for certain topics. For some workflows, this may not be an issue. Second, Top2Vec can produce results that are occasionally difficult to understand. Certain topics may not seem to have any coherency. This is common in all approaches to topic modeling, however.</p>
-<p>In order to model our data, we once again need to load it. Again, we will use pandas.</p>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
@@ -1047,8 +999,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/wjbmattingly/bap_sent_embedding/main/data/vol7.json&quot;</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1071,92 +1023,47 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>names</th>
-      <th>descriptions</th>
+      <th>ObjectId</th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Yr</th>
+      <th>Homeland</th>
+      <th>Province</th>
+      <th>Long</th>
+      <th>Lat</th>
+      <th>HRV</th>
+      <th>ORG</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>AARON, Thabo Simon</td>
+      <td>1</td>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
       <td>An ANCYL member who was shot and severely inju...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABBOTT, Montaigne</td>
-      <td>A member of the SADF who was severely injured ...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABDUL WAHAB, Zakier</td>
-      <td>A member of QIBLA who disappeared in September...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ABRAHAM, Nzaliseko Christopher</td>
-      <td>A COSAS supporter who was kicked and beaten wi...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ABRAHAMS, Achmat Fardiel</td>
-      <td>Was shot and blinded in one eye by members of ...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>21742</th>
-      <td>ZWENI, Ernest</td>
-      <td>One of two South African Police (SAP) members ...</td>
-    </tr>
-    <tr>
-      <th>21743</th>
-      <td>ZWENI, Lebuti</td>
-      <td>An ANC supporter who was shot dead by a named ...</td>
-    </tr>
-    <tr>
-      <th>21744</th>
-      <td>ZWENI, Louis</td>
-      <td>Was shot dead in Tokoza, Transvaal, on 22 May ...</td>
-    </tr>
-    <tr>
-      <th>21745</th>
-      <td>ZWENI, Mpantesa William</td>
-      <td>His home was lost in an arson attack by Witdoe...</td>
-    </tr>
-    <tr>
-      <th>21746</th>
-      <td>ZWENI, Xolile Milton</td>
-      <td>A Transkei Defence Force (TDF) soldier who was...</td>
+      <td>Bethulie</td>
+      <td>1991.0</td>
+      <td>NaN</td>
+      <td>Orange Free State</td>
+      <td>25.97552</td>
+      <td>-30.50329</td>
+      <td>shoot|injure</td>
+      <td>ANC|ANCYL|Police|SAP</td>
     </tr>
   </tbody>
 </table>
-<p>21747 rows × 2 columns</p>
 </div></div></div>
 </div>
-<p>Once again, we will convert all our descriptions into a single list of documents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">descriptions</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">docs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="creating-a-top2vec-model">
-<h2><span class="section-number">1.10.1. </span>Creating a Top2Vec Model<a class="headerlink" href="#creating-a-top2vec-model" title="Permalink to this headline">#</a></h2>
-<p>Now that we have our data, we can get started with Top2Vec. First, you will need to install the library onto your system. In order to do this, you can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> with the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">top2vec</span>
-</pre></div>
-</div>
-<p>This will install Top2Vec as well as all its dependencies. Once it is installed, you will be able to import the Top2Vec class with the following line:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">top2vec</span> <span class="kn">import</span> <span class="n">Top2Vec</span>
@@ -1170,387 +1077,171 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Once we have imported the Top2Vec class, we can create our Top2Vec topic model with just one line of Python. We can pass many key word arguments to our Top2Vec class, but the result from the default settings is usually quite good. It may take several minutes or even hours to run the code below, depending on your system requirements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Top2Vec</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Top2Vec</span><span class="p">(</span><span class="n">new_df</span><span class="o">.</span><span class="n">Description</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-13 13:58:09,857 - top2vec - INFO - Pre-processing documents for training
-2022-11-13 13:58:11,379 - top2vec - INFO - Creating joint document/word embedding
-2022-11-13 13:58:53,163 - top2vec - INFO - Creating lower dimension embedding of documents
-2022-11-13 13:59:16,683 - top2vec - INFO - Finding dense areas of documents
-2022-11-13 13:59:18,018 - top2vec - INFO - Finding topics
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-13 13:47:11,000 - top2vec - INFO - Pre-processing documents for training
+2022-11-13 13:47:11,071 - top2vec - INFO - Creating joint document/word embedding
+2022-11-13 13:47:12,622 - top2vec - INFO - Creating lower dimension embedding of documents
+2022-11-13 13:47:20,454 - top2vec - INFO - Finding dense areas of documents
+2022-11-13 13:47:20,478 - top2vec - INFO - Finding topics
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HDBSCAN(min_cluster_size=15)
+Before: [ 1  1 -1  1 -1  0  1  0 -1 -1  1 -1  1  1  0  0  1 -1  1  0 -1  1 -1  1
+ -1  0  1 -1 -1 -1  1  1 -1  1  0  1  0  0  1 -1  1  1  1  1  1  1 -1  1
+  1 -1  1 -1  1  1  1 -1  1 -1  1 -1  1  1 -1 -1  0  0  1  0  1  1  1  1
+ -1 -1  0  1 -1 -1  1  1 -1  1 -1 -1  1 -1  0  1  1 -1 -1  1  1  1  1  1
+  1  1 -1 -1  1  1  0 -1  1  1 -1  0 -1  1  0  1  1 -1  0 -1 -1  0 -1 -1
+  0 -1 -1  0  1  0 -1  1  0  1  1  0 -1 -1  1 -1  1  0 -1  1 -1  1 -1 -1
+  1  1  1 -1 -1  0 -1  0  1 -1 -1  0  1  1  1  1 -1 -1  1  1  1  0  1  0
+  1  1  1 -1  1  0 -1 -1  0  0  0 -1 -1  1  1 -1  1 -1  1  0  1  1  0 -1
+ -1  1 -1  1  1  1  1 -1  1  1  1 -1 -1  1  1  1  1  1  1  1  1  1  1  1
+ -1  1  1  1  1  1  1  0  1  1  1 -1  1 -1 -1  0 -1 -1  0 -1  1  1  1 -1
+  0 -1  1  1 -1 -1  1 -1  1  1 -1  1 -1  1 -1  1  1 -1  0 -1  1  1  1  0
+ -1 -1  1  1  1  1 -1  1  1 -1  1  1  0 -1  1  0  1 -1  1  1 -1 -1  0  1
+  1 -1 -1  1  1  1 -1  1  1 -1  1  1  0  1  1  1  1 -1  1  1  0  1 -1 -1
+  1 -1 -1 -1  1 -1  1  1 -1  1  1 -1 -1  0  1  1 -1  1  1  1  1  0  1  1
+  1  0  0  1  1  1  1  1  1  1  1 -1  1 -1  1  1 -1 -1  1 -1  1  1 -1 -1
+  1  0  1 -1  1  1  1  1  1  1  1 -1 -1  0  0  1  1  1 -1  1  0  0 -1 -1
+  1  0 -1 -1  1  1  0 -1  1 -1  1  1  0 -1  1 -1 -1  1  1  1 -1 -1 -1 -1
+  1  1  1 -1 -1  1 -1  0  0  1 -1  0  0 -1  1 -1 -1 -1  1 -1 -1 -1  1  0
+  0 -1  1 -1 -1 -1  1  0  0  1 -1  1  0  1 -1  1  1  1  1 -1  0  1 -1  1
+  1  1  0  0  1  0  1  1 -1 -1  1  1  0 -1  0 -1  0  1  1 -1  1 -1  1  1
+  1  1 -1  1 -1  1  1 -1 -1  1  1  1  1  1  1  0  1  1 -1 -1 -1  1 -1 -1
+  1 -1 -1  1  0 -1  1  0 -1 -1  0 -1  1  1 -1  0  0  1  0  1  0 -1  1  0
+  1  0  1  1 -1  0 -1  1  1  1  1 -1  1 -1  1  1 -1  1 -1  1 -1  1  1  1
+  1  1  1  1  0  1  1  1  1  0  0 -1 -1  1  1 -1  1  1  1 -1 -1 -1  1  1
+ -1  0  1  1 -1 -1  0  0  1  0  0 -1 -1 -1 -1  0 -1 -1 -1 -1  0  0  1  1
+ -1  0 -1  1 -1  1  0 -1  1 -1 -1 -1  1 -1 -1  1  1 -1 -1 -1  0  1  0 -1
+ -1  0  1  1 -1  0  1 -1  1  1 -1 -1  1 -1  0  0  1  1  1 -1  1  1  1 -1
+  1 -1  1  1  0 -1  1  0  1 -1 -1 -1  1  0  1  0  1  1  1 -1  1  1  0  1
+ -1 -1  0  1 -1  0 -1  1  1  1  1  1  1 -1 -1  1  0 -1 -1  0 -1  1  1  1
+  1  0 -1  0  1  1  1  1  1  0  1 -1 -1  1 -1  1 -1  1 -1  1  1  1 -1 -1
+  1 -1  0 -1 -1 -1  0 -1  1 -1 -1 -1  0  0  0  1 -1 -1  1  1 -1 -1  0  1
+ -1 -1 -1 -1 -1  1 -1  1  1 -1 -1  1  1 -1  1 -1  1  0  1  0  0  1  0  0
+ -1  0 -1 -1 -1  1  0  0  1  0  1 -1  0  1  0  1  1  1  1  0  0  0  1  1
+ -1 -1  1  1  1  1 -1  1  0 -1  0 -1  1  1 -1  0  1  1  0  1  1  1  1  1
+ -1 -1 -1 -1 -1 -1  1 -1  1 -1 -1 -1  1  1  1  1 -1 -1  1 -1 -1  1 -1 -1
+  1  1  1  1  1 -1  1 -1  0  0 -1  1  0 -1 -1  1  1 -1 -1  1  0  1  1  1
+  1  1  1  0  1  1 -1  1 -1 -1  0  1  0  1  1  1  1  0  1 -1 -1  1  1  1
+  1 -1  0  0  1  0  1  0  1  1  1  1  1 -1  1  1  1  1  1  1  0  1  1 -1
+ -1  1  1  0 -1  0  1 -1  1  1 -1  1 -1  1  1  1  0 -1  1  1  0  1  1  1
+  1 -1  0  0 -1  1  1 -1  1  0 -1  0 -1  1 -1  0  1 -1 -1  1  1 -1  0  1
+ -1  0 -1  0  0 -1  1  1 -1  0  1  1  0  1 -1  0  1  1 -1  1  0 -1 -1  1
+  1  1 -1  1 -1 -1  0  1  1  1 -1  0  1  0  0  1]
+An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor. 1
+0 175
+1 488
+-1 337
+After [1 1 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 0
+ 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 0 0 0 1 0 1 1 1 1 1 1
+ 0 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 1 0
+ 1 1 1 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 0
+ 1 0 1 0 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 0 1 1 1 1 1 0 1 1 0 0 0 1 1 1 1 1 1
+ 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
+ 1 0 1 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1
+ 1 0 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1
+ 0 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1
+ 1 1 0 0 0 1 1 1 0 1 0 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1
+ 0 1 0 1 1 1 1 0 0 0 1 1 0 0 1 1 1 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1
+ 0 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 1 0 1 0 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 0 1 1 0 0 1 1
+ 1 0 0 1 0 1 0 1 1 0 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1
+ 1 0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 0 0 1 0 0 1 1 1 1 0
+ 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 1 1 0 0 1 1 0 1 1 1 1 1 1 0 1 0 1 1 0 1 1 0
+ 0 1 1 1 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 0 1 1 1 1 1 0 1 0 1 1
+ 1 1 1 1 0 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 1 1 1
+ 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 0 0 1 1 0 1 1
+ 1 1 0 1 1 0 1 1 1 1 1 1 1 0 0 1 1 1 1 0 1 0 1 0 0 1 0 0 1 0 1 1 1 1 0 0 1
+ 0 1 1 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 0 1 0 1 0 0 1 1 1 0 1 1 0 1 1 1
+ 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1
+ 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1 0 1 1 1 1 0 1 1 1 1 1 1
+ 1 1 0 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1
+ 1 1 1 0 1 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 1 0
+ 1 0 0 0 1 1 1 0 1 1 0 1 1 0 1 1 1 1 0 1 0 1 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0
+ 1]
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="analyzing-our-topic-model">
-<h2><span class="section-number">1.10.2. </span>Analyzing our Topic Model<a class="headerlink" href="#analyzing-our-topic-model" title="Permalink to this headline">#</a></h2>
-<p>Once our Top2Vec topic model has finished training, we can then analyze the results. A good first step is to analyze the topic sizes. We can do so with the model <code class="docutils literal notranslate"><span class="pre">.get_topic_sizes()</span></code>. This method will return a list of two lists: the size of each topic and its number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_sizes</span><span class="p">,</span> <span class="n">topic_nums</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_topic_sizes</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can better understand these results by zipping the two lists together and iterating over the first five topics to see how large they are.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">topic_size</span><span class="p">,</span> <span class="n">topic_num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">topic_sizes</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">topic_nums</span><span class="p">[:</span><span class="mi">5</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topic Num </span><span class="si">{</span><span class="n">topic_num</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="n">topic_size</span><span class="si">}</span><span class="s2"> documents.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_topic_sizes</span><span class="p">()</span>
+<span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic Num 0 has 763 documents.
-Topic Num 1 has 346 documents.
-Topic Num 2 has 247 documents.
-Topic Num 3 has 232 documents.
-Topic Num 4 has 231 documents.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice that the higher number the topic number, the smaller the quantity of documents. This is because Top2Vec organizes the topics by size. Remember that <code class="docutils literal notranslate"><span class="pre">Topic</span> <span class="pre">0</span></code> will be a collection of outliers.</p>
-<p>We can use the <code class="docutils literal notranslate"><span class="pre">.get_topics()</span></code> method to extract information about our topics from the model. This will take one argument, the quantity of topics you want to examine. It will return 3 items: a list of words for each topic, a list of word scores for each list, and a list of the topic numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_words</span><span class="p">,</span> <span class="n">word_scores</span><span class="p">,</span> <span class="n">topics</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s now examine the data for topic 1.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">topic_words</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">word_scores</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">topics</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topic </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 1
-matlala 0.8607659
-bk 0.8543051
-gamatlala 0.8241883
-proposed 0.794874
-lebowa 0.74230933
-resisted 0.67116654
-independence 0.65576303
-africa 0.6098439
-chief 0.49963036
-she 0.39457357
-because 0.3908882
-goederede 0.36000514
-february 0.3470583
-mahlangu 0.34650403
-home 0.34591654
-down 0.34060025
-south 0.33364677
-dennilton 0.3321176
-burnt 0.32735756
-would 0.3133811
-supported 0.31247702
-incorporation 0.3080003
-stolen 0.28846616
-from 0.28013867
-had 0.27430868
-it 0.2732216
-lost 0.2716071
-kwandebele 0.266503
-congress 0.26175743
-allegedly 0.25916496
-supporters 0.25534543
-village 0.25463325
-her 0.25239387
-mr 0.2508838
-homeland 0.24748528
-spite 0.24678819
-about 0.24613273
-maboloko 0.24536304
-resulted 0.24119411
-into 0.24059604
-opposed 0.23594634
-pietersburg 0.23558588
-alleged 0.22179778
-possessions 0.21927707
-many 0.21916199
-house 0.21861681
-imbokodo 0.21361831
-leeuwfontein 0.21190558
-tribal 0.21142614
-zeerust 0.21082786
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
 </pre></div>
 </div>
 </div>
 </div>
-<p>This gives us a word list of 50 words most closely associated with <code class="docutils literal notranslate"><span class="pre">Topic</span> <span class="pre">1</span></code>. Each word has a score. Remember, words, documents, and topics all occupy the same higher-dimensional space. This is an example of this advantage in practice. We are able to calculate the degree to which a word is relevant to a topic because of its proximity to the center of a topic. The higher the score, the closer a word is to a topic’s center and, therefore, in theory more closely represents that cluster.</p>
-<p>We can also use the <code class="docutils literal notranslate"><span class="pre">search_documents_by_topic()</span></code> method to learn about the documents that reside within a topic. This method takes two arguments: <code class="docutils literal notranslate"><span class="pre">topic_num</span></code> (the number of the topic you wish to examine) and <code class="docutils literal notranslate"><span class="pre">num_docs</span></code> (the number of documents you want to return). This method will return three things: the documents, the scores, or the degree to which they represent the topic, and their unique ids.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents</span><span class="p">,</span> <span class="n">document_scores</span><span class="p">,</span> <span class="n">document_ids</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">search_documents_by_topic</span><span class="p">(</span><span class="n">topic_num</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_docs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">doc_top</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now that we have our data, we can iterate them all simultaneously with the example provided in the Top2Vec README on GitHub.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">doc</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">doc_id</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span> <span class="n">document_scores</span><span class="p">,</span> <span class="n">document_ids</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document: </span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s2">, Score: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniques</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cluster_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">uniques</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">cluster_labels</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Document: 15060, Score: 0.9702943563461304
------------
-An ANC supporter who had her house burnt down by IFP supporters in Sonkombo, Ndwedwe, KwaZulu, near Durban, on 16 March 1994. See Sonkombo arson attacks. 
------------
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">uniques</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">cluster_labels</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
 
-Document: 5686, Score: 0.965286374092102
------------
-She lost her house in Sonkombo, Ndwedwe, KwaZulu, near Durban, in an arson attack by IFP supporters on 16 March 1994. See Sonkombo arson attacks.
------------
-
-Document: 21471, Score: 0.9650641083717346
------------
-An ANC supporter whose house was burnt down by IFP supporters in Sonkombo, Ndwedwe, KwaZulu, near Durban, on 16 March 1994. See Sonkombo arson attacks. 
------------
-
-Document: 2957, Score: 0.9647031426429749
------------
-His home was burnt down by IFP supporters on 16 March 1994 at Sonkombo, Ndwedwe, KwaZulu, near Durban, in intense political conflict in the area. See Sonkombo arson attacks.
------------
-
-Document: 714, Score: 0.9634069204330444
------------
-An ANC supporter who had her home burnt down by IFP supporters at Sonkombo, Ndwedwe, KwaZulu, near Durban, on 16 March 1994. See Sonkombo arson attacks.
------------
-
-Document: 9855, Score: 0.9628040194511414
------------
-He had his house burnt down by IFP supporters in Sonkombo, Ndwedwe, KwaZulu, near Durban, on 16 March 1994. See Sonkombo arson attacks. 
------------
-
-Document: 759, Score: 0.9617692232131958
------------
-Had her home burnt down by IFP supporters at Sonkombo, Ndwedwe, KwaZulu, near Durban, on 16 March 1994. See Sonkombo arson attacks.
------------
-
-Document: 519, Score: 0.9617335796356201
------------
-An ANC supporter who had her house burnt down by IFP supporters on 16 March 1994 at Sonkombo, Ndwedwe, KwaZulu, near Durban, in intense political conflict in the area. See Sonkombo arson attacks.
------------
-
-Document: 3424, Score: 0.9609926342964172
------------
-An ANC supporter whose home was burnt down by IFP supporters on 20 March 1994 at Sonkombo, Ndwedwe, KwaZulu, near Durban. See Sonkombo arson attacks.
------------
-
-Document: 12659, Score: 0.9603915810585022
------------
-An ANC supporter who had her house burnt down by IFP supporters in Sonkombo, Ndwedwe, KwaZulu, near Durban, on 20 March 1994. See Sonkombo arson attacks. 
------------
-</pre></div>
-</div>
-</div>
-</div>
-<p>These results are good. These are all individuals who have near identical descriptions in the TRC Volume 7 Final Report. In other words, Top2Vec has clearly isolated documents of identical or overlapping similarity.</p>
-</section>
-<section id="working-with-bigrams-and-trigrams">
-<h2><span class="section-number">1.10.3. </span>Working with Bigrams and Trigrams<a class="headerlink" href="#working-with-bigrams-and-trigrams" title="Permalink to this headline">#</a></h2>
-<p>Top2Vec also wraps around the Gensim library and allows users to automatically create bigrams and trigrams. We can initiate this process by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">ngram_vocba</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_ngram</span> <span class="o">=</span> <span class="n">Top2Vec</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">ngram_vocab</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-13 13:59:18,293 - top2vec - INFO - Pre-processing documents for training
-2022-11-13 13:59:19,889 - top2vec - INFO - Creating joint document/word embedding
-2022-11-13 14:00:07,661 - top2vec - INFO - Creating lower dimension embedding of documents
-2022-11-13 14:00:19,175 - top2vec - INFO - Finding dense areas of documents
-2022-11-13 14:00:19,748 - top2vec - INFO - Finding topics
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now that we have our <code class="docutils literal notranslate"><span class="pre">model_ngram</span></code> trained, let’s explore topic 1 once again.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_sizes_ngram</span><span class="p">,</span> <span class="n">topic_nums_ngram</span> <span class="o">=</span> <span class="n">model_ngram</span><span class="o">.</span><span class="n">get_topic_sizes</span><span class="p">()</span>
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;count&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_words_ngram</span><span class="p">,</span> <span class="n">word_scores_ngram</span><span class="p">,</span> <span class="n">topics_ngram</span> <span class="o">=</span> <span class="n">model_ngram</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">topic_words_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">word_scores_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">topics_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topic </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 1
-island 0.7406236
-imprisonment 0.7383562
-years 0.7350636
-robben 0.73397404
-half years 0.7247492
-years imprisonment 0.7206887
-sentenced 0.6986825
-served 0.695978
-arrested 0.66353947
-charged 0.66336066
-banned 0.66275764
-imprisoned 0.6580816
-five years 0.6498868
-suspended sentence 0.6363463
-prison sentence 0.6340719
-trial 0.6326254
-sentence 0.62952983
-activist 0.6273678
-months 0.62542427
-detained 0.6249351
-prison 0.6236554
-until 0.6223862
-poqo 0.6147149
-custody 0.6120131
-year sentence 0.6114016
-held 0.6040434
-worcester 0.60011864
-pac 0.5935757
-released 0.5893775
-poqo activities 0.58773917
-charges 0.5808439
-zwelethemba worcester 0.57607645
-zweletemba worcester 0.575092
-arrest 0.5745207
-robben island 0.571052
-under 0.56998795
-worcester cape 0.56770444
-detention 0.5670366
-with public 0.56048626
-ashton 0.55939454
-later acquitted 0.5478358
-tortured 0.5445701
-charged with 0.54265773
-act 0.5392955
-interrogation 0.5369543
-without 0.53288996
-paarl 0.53190106
-public 0.5305038
-prison paarl 0.5296649
-year prison 0.5292457
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>It is important to note that this Topic 1 is entirely different from the Topic 1 of our first model as both the initialization of the process is random and the data used for embedding documents is also altered (because we are accepting bigrams). Our data does reflect a deeper representation of our corpus. <code class="docutils literal notranslate"><span class="pre">Prison</span> <span class="pre">sentence</span></code>, for example, is a collective word that has a distinct meaning.</p>
-</section>
-<section id="saving-and-loading-a-top2vec-model">
-<h2><span class="section-number">1.10.4. </span>Saving and Loading a Top2Vec Model<a class="headerlink" href="#saving-and-loading-a-top2vec-model" title="Permalink to this headline">#</a></h2>
-<p>Once we have a model that we are happy with, we can save it using the <code class="docutils literal notranslate"><span class="pre">save()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_ngram</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;../data/top2vec_ngram&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_labels</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Likewise, we can load up our previous model with <code class="docutils literal notranslate"><span class="pre">load()</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_model</span> <span class="o">=</span> <span class="n">Top2Vec</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;../data/top2vec_ngram&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>And for good measure we can run the same code as above to print off our bigrams once again.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_words_ngram</span><span class="p">,</span> <span class="n">word_scores_ngram</span><span class="p">,</span> <span class="n">topics_ngram</span> <span class="o">=</span> <span class="n">new_model</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">topic_words_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">word_scores_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">topics_ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topic </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 1
-island 0.7406236
-imprisonment 0.7383562
-years 0.7350636
-robben 0.73397404
-half years 0.7247492
-years imprisonment 0.7206887
-sentenced 0.6986825
-served 0.695978
-arrested 0.66353947
-charged 0.66336066
-banned 0.66275764
-imprisoned 0.6580816
-five years 0.6498868
-suspended sentence 0.6363463
-prison sentence 0.6340719
-trial 0.6326254
-sentence 0.62952983
-activist 0.6273678
-months 0.62542427
-detained 0.6249351
-prison 0.6236554
-until 0.6223862
-poqo 0.6147149
-custody 0.6120131
-year sentence 0.6114016
-held 0.6040434
-worcester 0.60011864
-pac 0.5935757
-released 0.5893775
-poqo activities 0.58773917
-charges 0.5808439
-zwelethemba worcester 0.57607645
-zweletemba worcester 0.575092
-arrest 0.5745207
-robben island 0.571052
-under 0.56998795
-worcester cape 0.56770444
-detention 0.5670366
-with public 0.56048626
-ashton 0.55939454
-later acquitted 0.5478358
-tortured 0.5445701
-charged with 0.54265773
-act 0.5392955
-interrogation 0.5369543
-without 0.53288996
-paarl 0.53190106
-public 0.5305038
-prison paarl 0.5296649
-year prison 0.5292457
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you are working with topic modeling or just want to get a general sense of how your documents align in a large corpus, then Top2Vec is a great solution to your situation. It offers a lot of features for a single line of code. There are other options available that do similar things, notable BerTopic. One should never rely on a single topic modeling approach, nor should one rest arguments heavily upon the results. Topic modeling, regardless of method, is imperfect. It is, however, a great way to explore your data and begin finding patterns that you may otherwise not notice.</p>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1579,20 +1270,6 @@ year prison 0.5292457
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04_03_03_embedding_clustering.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.9. </span>Embedding, Flattening, and Clustering</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../08_booknlp/01_01_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Text Analysis with BookNLP</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
