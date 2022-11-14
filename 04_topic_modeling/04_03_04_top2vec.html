@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.11. Top2Vec in Python &#8212; Introduction to Python for Humanists</title>
+    <title>1.8. Top2Vec in Python &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Text Analysis with BookNLP" href="../08_booknlp/01_01_intro.html" />
-    <link rel="prev" title="1.10. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
+    <link rel="prev" title="1.7. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -524,33 +524,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_02_03_tfidf.html">
-     1.6. TF-IDF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_04_scikit_learn.html">
-     1.7. Scikit Learn
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_05_tfidf_build.html">
-     1.8. TF-IDF with Scikit Learn
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_02_06_lda.html">
-     1.9. Implementing LDA in Python
+     1.6. Implementing LDA in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.10. Embedding, Flattening, and Clustering
+     1.7. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.11. Top2Vec in Python
+     1.8. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -970,22 +955,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-top2vec-model">
-   1.11.1. Creating a Top2Vec Model
+   1.8.1. Creating a Top2Vec Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-our-topic-model">
-   1.11.2. Analyzing our Topic Model
+   1.8.2. Analyzing our Topic Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-with-bigrams-and-trigrams">
-   1.11.3. Working with Bigrams and Trigrams
+   1.8.3. Working with Bigrams and Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-and-loading-a-top2vec-model">
-   1.11.4. Saving and Loading a Top2Vec Model
+   1.8.4. Saving and Loading a Top2Vec Model
   </a>
  </li>
 </ul>
@@ -1009,22 +994,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-top2vec-model">
-   1.11.1. Creating a Top2Vec Model
+   1.8.1. Creating a Top2Vec Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-our-topic-model">
-   1.11.2. Analyzing our Topic Model
+   1.8.2. Analyzing our Topic Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-with-bigrams-and-trigrams">
-   1.11.3. Working with Bigrams and Trigrams
+   1.8.3. Working with Bigrams and Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-and-loading-a-top2vec-model">
-   1.11.4. Saving and Loading a Top2Vec Model
+   1.8.4. Saving and Loading a Top2Vec Model
   </a>
  </li>
 </ul>
@@ -1038,7 +1023,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="top2vec-in-python">
-<h1><span class="section-number">1.11. </span>Top2Vec in Python<a class="headerlink" href="#top2vec-in-python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.8. </span>Top2Vec in Python<a class="headerlink" href="#top2vec-in-python" title="Permalink to this headline">#</a></h1>
 <p>Now that we understand the primary concepts behind leveraging transformers and sentence embeddings to perform topic modeling, let’s examine a key library and making this entire workflow simplified with just a single line of Python. That library is Top2Vec.</p>
 <p>Unlike a traditional topic modeling approach or even the manual approach with transformers that we saw in the previous section, Top2Vec will embed not only all the sentences, but all the words used in your corpus. In addition to this, it will also embed the topics themselves. This means that words, documents, and topics all occupy the same higher-dimensional space. On the surface, this may not seem that important, but it allows us to understand the relationship between three interconnected pieces of the process in topic modeling mathematically. This means, for example, Top2Vec let’s us know the mathematical similarity between a given word and a document or a topic in general. Understanding these relationships lets us understand broader patterns in our topics that may otherwise be missed.</p>
 <p>That said, Top2Vec does have several drawbacks. First, it will produce a high number of outliers. These are documents that do not fit neatly into any one topic. Top2Vec has a rather unique way of handling outliers, however. It generate an embedding for the topics 0 and above and then assign outliers to their nearest topic embedding. This means that outliers may be quite pronounced for certain topics. For some workflows, this may not be an issue. Second, Top2Vec can produce results that are occasionally difficult to understand. Certain topics may not seem to have any coherency. This is common in all approaches to topic modeling, however.</p>
@@ -1156,7 +1141,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="creating-a-top2vec-model">
-<h2><span class="section-number">1.11.1. </span>Creating a Top2Vec Model<a class="headerlink" href="#creating-a-top2vec-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.1. </span>Creating a Top2Vec Model<a class="headerlink" href="#creating-a-top2vec-model" title="Permalink to this headline">#</a></h2>
 <p>Now that we have our data, we can get started with Top2Vec. First, you will need to install the library onto your system. In order to do this, you can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> with the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">top2vec</span>
 </pre></div>
@@ -1194,7 +1179,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="analyzing-our-topic-model">
-<h2><span class="section-number">1.11.2. </span>Analyzing our Topic Model<a class="headerlink" href="#analyzing-our-topic-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.2. </span>Analyzing our Topic Model<a class="headerlink" href="#analyzing-our-topic-model" title="Permalink to this headline">#</a></h2>
 <p>Once our Top2Vec topic model has finished training, we can then analyze the results. A good first step is to analyze the topic sizes. We can do so with the model <code class="docutils literal notranslate"><span class="pre">.get_topic_sizes()</span></code>. This method will return a list of two lists: the size of each topic and its number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1374,7 +1359,7 @@ An ANC supporter who had her house burnt down by IFP supporters in Sonkombo, Ndw
 <p>These results are good. These are all individuals who have near identical descriptions in the TRC Volume 7 Final Report. In other words, Top2Vec has clearly isolated documents of identical or overlapping similarity.</p>
 </section>
 <section id="working-with-bigrams-and-trigrams">
-<h2><span class="section-number">1.11.3. </span>Working with Bigrams and Trigrams<a class="headerlink" href="#working-with-bigrams-and-trigrams" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.3. </span>Working with Bigrams and Trigrams<a class="headerlink" href="#working-with-bigrams-and-trigrams" title="Permalink to this headline">#</a></h2>
 <p>Top2Vec also wraps around the Gensim library and allows users to automatically create bigrams and trigrams. We can initiate this process by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">ngram_vocba</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1469,7 +1454,7 @@ year prison 0.5292457
 <p>It is important to note that this Topic 1 is entirely different from the Topic 1 of our first model as both the initialization of the process is random and the data used for embedding documents is also altered (because we are accepting bigrams). Our data does reflect a deeper representation of our corpus. <code class="docutils literal notranslate"><span class="pre">Prison</span> <span class="pre">sentence</span></code>, for example, is a collective word that has a distinct meaning.</p>
 </section>
 <section id="saving-and-loading-a-top2vec-model">
-<h2><span class="section-number">1.11.4. </span>Saving and Loading a Top2Vec Model<a class="headerlink" href="#saving-and-loading-a-top2vec-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.8.4. </span>Saving and Loading a Top2Vec Model<a class="headerlink" href="#saving-and-loading-a-top2vec-model" title="Permalink to this headline">#</a></h2>
 <p>Once we have a model that we are happy with, we can save it using the <code class="docutils literal notranslate"><span class="pre">save()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1588,7 +1573,7 @@ year prison 0.5292457
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.10. </span>Embedding, Flattening, and Clustering</p>
+            <p class="prev-next-title"><span class="section-number">1.7. </span>Embedding, Flattening, and Clustering</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../08_booknlp/01_01_intro.html" title="next page">

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.9. Implementing LDA in Python &#8212; Introduction to Python for Humanists</title>
+    <title>1.6. Implementing LDA in Python &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.10. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
-    <link rel="prev" title="1.8. TF-IDF with Scikit Learn" href="04_02_05_tfidf_build.html" />
+    <link rel="next" title="1.7. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
+    <link rel="prev" title="1.5. What is LDA Topic Modeling?" href="04_02_02_lda_concept.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -523,34 +523,19 @@ const thebe_selector_output = ".output, .cell_output"
      1.5. What is LDA Topic Modeling?
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_03_tfidf.html">
-     1.6. TF-IDF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_04_scikit_learn.html">
-     1.7. Scikit Learn
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_05_tfidf_build.html">
-     1.8. TF-IDF with Scikit Learn
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.9. Implementing LDA in Python
+     1.6. Implementing LDA in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.10. Embedding, Flattening, and Clustering
+     1.7. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.11. Top2Vec in Python
+     1.8. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -970,32 +955,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   1.9.1. Introduction
+   1.6.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-required-libraries">
-   1.9.2. Importing the Required Libraries
+   1.6.2. Importing the Required Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-id-word-index">
-   1.9.3. Create ID-Word Index
+   1.6.3. Create ID-Word Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-lda-topic-model">
-   1.9.4. Creating LDA Topic Model
+   1.6.4. Creating LDA Topic Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-a-document">
-   1.9.5. Analyze a Document
+   1.6.5. Analyze a Document
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-the-topic-model">
-   1.9.6. Analyze the Topic Model
+   1.6.6. Analyze the Topic Model
   </a>
  </li>
 </ul>
@@ -1019,32 +1004,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   1.9.1. Introduction
+   1.6.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-required-libraries">
-   1.9.2. Importing the Required Libraries
+   1.6.2. Importing the Required Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-id-word-index">
-   1.9.3. Create ID-Word Index
+   1.6.3. Create ID-Word Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-lda-topic-model">
-   1.9.4. Creating LDA Topic Model
+   1.6.4. Creating LDA Topic Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-a-document">
-   1.9.5. Analyze a Document
+   1.6.5. Analyze a Document
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-the-topic-model">
-   1.9.6. Analyze the Topic Model
+   1.6.6. Analyze the Topic Model
   </a>
  </li>
 </ul>
@@ -1058,12 +1043,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="implementing-lda-in-python">
-<h1><span class="section-number">1.9. </span>Implementing LDA in Python<a class="headerlink" href="#implementing-lda-in-python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.6. </span>Implementing LDA in Python<a class="headerlink" href="#implementing-lda-in-python" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">1.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="importing-the-required-libraries">
-<h2><span class="section-number">1.9.2. </span>Importing the Required Libraries<a class="headerlink" href="#importing-the-required-libraries" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.2. </span>Importing the Required Libraries<a class="headerlink" href="#importing-the-required-libraries" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1254,7 +1239,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="create-id-word-index">
-<h2><span class="section-number">1.9.3. </span>Create ID-Word Index<a class="headerlink" href="#create-id-word-index" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.3. </span>Create ID-Word Index<a class="headerlink" href="#create-id-word-index" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id2word</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">cleaned_docs</span><span class="p">)</span>
@@ -1348,7 +1333,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-lda-topic-model">
-<h2><span class="section-number">1.9.4. </span>Creating LDA Topic Model<a class="headerlink" href="#creating-lda-topic-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.4. </span>Creating LDA Topic Model<a class="headerlink" href="#creating-lda-topic-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_nums</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1372,7 +1357,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="analyze-a-document">
-<h2><span class="section-number">1.9.5. </span>Analyze a Document<a class="headerlink" href="#analyze-a-document" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.5. </span>Analyze a Document<a class="headerlink" href="#analyze-a-document" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">get_document_topics</span><span class="p">(</span><span class="n">id_docs</span><span class="p">)</span>
@@ -1440,7 +1425,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="analyze-the-topic-model">
-<h2><span class="section-number">1.9.6. </span>Analyze the Topic Model<a class="headerlink" href="#analyze-the-topic-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6.6. </span>Analyze the Topic Model<a class="headerlink" href="#analyze-the-topic-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim_models</span>
@@ -1535,17 +1520,17 @@ if(typeof(LDAvis) !== "undefined"){
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04_02_05_tfidf_build.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04_02_02_lda_concept.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.8. </span>TF-IDF with Scikit Learn</p>
+            <p class="prev-next-title"><span class="section-number">1.5. </span>What is LDA Topic Modeling?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_03_03_embedding_clustering.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.10. </span>Embedding, Flattening, and Clustering</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Embedding, Flattening, and Clustering</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
