@@ -941,12 +941,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-of-this-textbook">
+   Limitations of this Textbook
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -958,6 +982,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations-of-this-textbook">
+   Limitations of this Textbook
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -969,15 +1006,18 @@ title="Print to PDF"
 <h1>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">#</a></h1>
 <p>I designed this textbook to serve two functions. First, it will function as a primer to Python for humanists (or, more generally, those without coding experience or a background in computer science). In this regard, readers will acquire a basic understanding of necessary background information, such as data and data structures, as well as the basics of Python.</p>
 <p>Second, this textbook is designed to not only provide the reader with a basic understanding of Python and how to use it, but how to apply it specifically to humanities-based problems. The book particularly explores applying Python in data analysis with Pandas, natural language processing (NLP) with spaCy, topic modeling with Gensim (for LDA topic modeling) and Top2Vec (for modern topic modeling). It also teaches readers how to design quick applications with Streamlit and deploy them in the cloud with Streamlit Share.</p>
-<p>While this book will provide a cursory overview of Python, it will not provide you with all aspects of the language or how to use it. This book is designed to get you up and running with Python as quickly as possible, giving you the essential tools you need to read and write in the language to solve tasks quickly and effectively. This textbook is not designed for computer scientists who wish to explore the depths of the programming language, rather humanists who need Python to automate certain tasks in their workflow. Explanation of certain aspects of the language are, therefore, kept to a minimum.</p>
-<p>It is important to note that this book is entirely designed in Jupyter Notebooks (discussed in Part One, Chapter One). This means that you will not receive exposure to the command line or receive proper training in writing a Python script (.py) file. These are useful skills to have, but not necessary to begin working with data. Despite these limitations of the textbook, this book will give you the tools necessary to begin learning on your own.</p>
 <p>Part One of the textbook introduces the reader to the basics of Python. Here, we will learn about the basics of coding (Chapter 1) and the essentials about data and data structures and how to work with them via Python (Chapter 2). These chapters will provide the necessary foundation for exploring key programming basics, such as loops and conditionals (Chapter 3), functions, classes, and libraries (Chapter 4), and working with external data, such as text files and JSON (Chapter 5). The final chapter of Part One will introduce the reader to the basics of web scraping and working with data found on the web.</p>
 <p>After Part One, the reader will have a basic understanding of Python, its syntax, and be able to begin working with data to design projects. The remainder of the textbook is designed to reinforce all of the skills acquired in Part One. Each of the following parts of the textbook will also introduce the reader to the key libraries associated with their respective subjects.</p>
 <p>In Part Two, we will take a deep dive into data analysis. In Python, the essential library for working with data, specifically tabular data, is Pandas. We will learn the basics while working with the open-source Titanic dataset. By the end of Part Two, the reader will have a basic understanding of Pandas and be able to leverage it in their own projects.</p>
-<p>Part Three shifts focus to text analysis. Here, we will learn about natural language processing (NLP) and how to use Python and the library spaCy to engage in NLP. This part of the textbook presumes no knowledge on the part of the reader about NLP or linguistics. It will, therefore, provide all the basic information needed to begin working with texts in more robust ways. The reader will learn about two different approaches to NLP, specifically rules-based (heuristics) and machine learning-based. Both serve different functions and should be used in different situations. By the end of this part, the reader will have a basic understanding of each and know when to use them. The final chapter of this part of the textbook will look at a real-world problem, creating a rules-based heuristic pipeline to identify and extract specific types of entities from texts.</p>
-<p>Part Four shifts to other applications of Python to humanities-based problems. In Chapter One of this part of the textbook, we will learn how to do topic modeling, specifically Latent Dierlicht Allocation (LDA) topic modeling so that they will have an understanding of the basic concepts and the history of the field. After this, we will learn about more recent approaches to topic modeling using machine learning with the library Top2Vec. In Chapter 2, we will look at Social Network Analysis with NetworkX and Matplotlib to produce static maps. We will also learn how to create dynamic JavaScript and HTML network maps with the Python library PyVis.</p>
+<p>Part Three shifts focus to text analysis. Here, we will learn about natural language processing (NLP) and how to use Python and the library spaCy to engage in NLP. This part of the textbook presumes no knowledge on the part of the reader about NLP or linguistics. It will, therefore, provide all the basic information needed to begin working with texts in more robust ways. The reader will learn about two different approaches to NLP, specifically rules-based (heuristics) and machine learning-based. Both serve different functions and should be used in different situations. By the end of this part, the reader will have a basic understanding of each and know when to use them. While the machine learning-based approaches will be based in using off-the-shelf spaCy models, the rules-based approach will be rooted in custom solutions. The final chapter of this part of the textbook will look at a real-world problem, creating a rules-based heuristic pipeline to identify and extract specific types of entities from texts.</p>
+<p>Part Four shifts to other applications of Python to humanities-based problems. In Chapter One of this part of the textbook, we will learn how to do topic modeling, specifically Latent Dierlicht Allocation (LDA) topic modeling so that they will have an understanding of the basic concepts and the history of the field. After this, we will learn about more recent approaches to topic modeling using machine learning with the library Top2Vec. Chapter 2 will look at performing text analysis on larger documents with BookNLP. In Chapter 3, we will look at Social Network Analysis with NetworkX and Matplotlib to produce static maps. We will also learn how to create dynamic JavaScript and HTML network maps with the Python library PyVis.</p>
 <p>Part Five of the textbook will introduce the reader to app development with the Streamlit library. Readers will gain an understanding of the basics of Streamlit and how to leverage its components to create custom apps within just a few hours that can be hosted in the cloud. The purpose of this part is to help the reader take an idea from concept to reality in as short of time as possible.</p>
 <p>After completing this textbook, you will have a strong enough command of Python to begin leveraging it in your own projects. You will also have a broad exposure to different ways that Python can be applied to humanities-based problems. Finally, you will have the resources necessary for continuing your education.</p>
+<section id="limitations-of-this-textbook">
+<h2>Limitations of this Textbook<a class="headerlink" href="#limitations-of-this-textbook" title="Permalink to this headline">#</a></h2>
+<p>While this book will provide a cursory overview of Python, it will not provide you with all aspects of the language or how to use it. This book is designed to get you up and running with Python as quickly as possible, giving you the essential tools you need to read and write in the language to solve tasks quickly and effectively. This textbook is not designed for computer scientists who wish to explore the depths of the programming language, rather humanists who need Python to automate certain tasks in their workflow. Explanation of certain aspects of the language are, therefore, kept to a minimum.</p>
+<p>It is important to note that this book is entirely designed in Jupyter Notebooks (discussed in Part One, Chapter One). This means that you will not receive exposure to the command line or receive proper training in writing a Python script (.py) file. These are useful skills to have, but not necessary to begin working with data. Despite these limitations of the textbook, this book will give you the tools necessary to begin learning on your own.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
