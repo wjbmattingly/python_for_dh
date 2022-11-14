@@ -120,6 +120,8 @@ parts:
     - file: 06_sna/06_01_05_networkx_pyvis
     - file: 06_sna/06_01_06_node_color
     - file: 06_sna/06_01_07_applied
+    - file: 06_sna/06_01_08_applied1
+
 
 
 - caption: "PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT"
