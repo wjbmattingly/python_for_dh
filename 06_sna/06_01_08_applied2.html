@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.6. SNA on Humanities Data &#8212; Introduction to Python for Humanists</title>
+    <title>SNA on Humanities Data &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Introduction to Streamlit" href="../05_streamlit/05_01_01_intro.html" />
-    <link rel="prev" title="3.5. Adding Color to Nodes" href="06_01_06_node_color.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -492,7 +490,7 @@ const thebe_selector_output = ".output, .cell_output"
   PART FOUR: OTHER APPLICATIONS OF PYTHON
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
    1. Topic Modeling in Python
@@ -577,16 +575,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="06_01_01_intro.html">
    3. Social Network Analysis
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_02_basics.html">
      3.1. The Basic Concepts of Social Network Analysis
@@ -612,8 +610,8 @@ const thebe_selector_output = ".output, .cell_output"
      3.5. Adding Color to Nodes
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_01_07_applied.html">
      3.6. SNA on Humanities Data
     </a>
    </li>
@@ -771,7 +769,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_07_applied.ipynb"
+        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/06_sna/06_01_08_applied2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -789,7 +787,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_07_applied.ipynb"
+        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/06_sna/06_01_08_applied2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -849,7 +847,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_07_applied.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F06_sna/06_01_08_applied2.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -866,7 +864,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_07_applied.ipynb"
+        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/06_sna/06_01_08_applied2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -894,7 +892,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06_sna/06_01_07_applied.ipynb"
+        <a href="../_sources/06_sna/06_01_08_applied2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -953,22 +951,15 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+   Adding Colors to Nodes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.7. Introduction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+   Adding Metadata to Nodes
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     3.7.1. Examining the Data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -989,22 +980,15 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-colors-to-nodes">
+   Adding Colors to Nodes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.7. Introduction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-metadata-to-nodes">
+   Adding Metadata to Nodes
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     3.7.1. Examining the Data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1017,193 +1001,25 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="sna-on-humanities-data">
-<h1><span class="section-number">3.6. </span>SNA on Humanities Data<a class="headerlink" href="#sna-on-humanities-data" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1><span class="section-number">3.7. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring victim relationships to specific organizations in their description. It is important to note here, that we do not in this approach know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization.</p>
-<section id="examining-the-data">
-<h2><span class="section-number">3.7.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
+<h1>SNA on Humanities Data<a class="headerlink" href="#sna-on-humanities-data" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
-<span class="c1"># df = df.dropna()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span><span class="s2">&quot;ORG&quot;</span><span class="p">,</span> <span class="s2">&quot;Place&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/nodes.csv&quot;</span><span class="p">)</span>
+<span class="n">edges_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/edges.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Last</th>
-      <th>First</th>
-      <th>Description</th>
-      <th>ORG</th>
-      <th>Place</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AARON</td>
-      <td>Thabo Simon</td>
-      <td>An ANCYL member who was shot and severely inju...</td>
-      <td>ANC|ANCYL|Police|SAP</td>
-      <td>Bethulie</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABBOTT</td>
-      <td>Montaigne</td>
-      <td>A member of the SADF who was severely injured ...</td>
-      <td>SADF</td>
-      <td>Messina</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABRAHAM</td>
-      <td>Nzaliseko Christopher</td>
-      <td>A COSAS supporter who was kicked and beaten wi...</td>
-      <td>COSAS|Police</td>
-      <td>Mdantsane</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ABRAHAMS</td>
-      <td>Achmat Fardiel</td>
-      <td>Was shot and blinded in one eye by members of ...</td>
-      <td>SAP</td>
-      <td>Athlone</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ABRAHAMS</td>
-      <td>Annalene Mildred</td>
-      <td>Was shot and injured by members of the SAP in ...</td>
-      <td>Police|SAP</td>
-      <td>Robertson</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>995</th>
-      <td>CELE</td>
-      <td>Nompumelelo Iris ‘Magwaza’</td>
-      <td>An ANC district organiser for southern Natal w...</td>
-      <td>ANC</td>
-      <td>Ndwedwe</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>CELE</td>
-      <td>Nomvula Eunice</td>
-      <td>Her home was burnt down by IFP supporters in U...</td>
-      <td>ANC</td>
-      <td>Umbumbulu</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>CELE</td>
-      <td>Nonhlanhla Evelina</td>
-      <td>An IFP supporter who was killed by ANC support...</td>
-      <td>ANC</td>
-      <td>Umzimkulu</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>CELE</td>
-      <td>Nozimpahla</td>
-      <td>Her home was burnt down by IFP supporters on 2...</td>
-      <td>NaN</td>
-      <td>Sonkombo</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>DLAMINI</td>
-      <td>Cedric Bongani</td>
-      <td>An ANC supporter who was shot dead by IFP supp...</td>
-      <td>ANC</td>
-      <td>Durban</td>
-    </tr>
-  </tbody>
-</table>
-<p>1000 rows × 5 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">found_orgs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
-    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">}))</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">found_orgs</span><span class="p">:</span>
-                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;0123456789ABCDEF&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
-                <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">})</span>
-            <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">})</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">edge_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;name&#39;: &#39;0_Thabo Simon AARON&#39;, &#39;color&#39;: &#39;green&#39;, &#39;place&#39;: &#39;Bethulie&#39;}]
-[{&#39;source&#39;: &#39;ANC&#39;, &#39;target&#39;: &#39;0_Thabo Simon AARON&#39;, &#39;place&#39;: &#39;Bethulie&#39;}]
-2172
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
-<span class="n">node_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/nodes.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">node_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1244,9 +1060,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
-<span class="n">edge_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/edges.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">edge_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1285,6 +1099,98 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">nodes_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">place</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]}))</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">edges_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">row</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">place</span><span class="p">}))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">pos</span><span class="p">[</span><span class="s1">&#39;2_Nzaliseko Christopher ABRAHAM&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.15405589,  0.00438501])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
+
+<span class="n">neighbor_map</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_adj_list</span><span class="p">()</span>
+
+<span class="c1"># add neighbor data to node hover data</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]]</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="c1"># node[&quot;title&quot;] += &quot; Neighbors:\n&quot; + &quot;\n&quot;.join(neighbor_map[node[&quot;id&quot;]])</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+<span class="c1"># net.force_atlas_2based()</span>
+<span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
+1021
+</pre></div>
+</div>
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="600px"
+    src="trc_graph.html"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<section id="adding-colors-to-nodes">
+<h2>Adding Colors to Nodes<a class="headerlink" href="#adding-colors-to-nodes" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="adding-metadata-to-nodes">
+<h2>Adding Metadata to Nodes<a class="headerlink" href="#adding-metadata-to-nodes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># net.to_json()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1315,20 +1221,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="06_01_06_node_color.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.5. </span>Adding Color to Nodes</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../05_streamlit/05_01_01_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Streamlit</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
