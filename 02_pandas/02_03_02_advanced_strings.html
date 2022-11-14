@@ -1020,6 +1020,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/titanic.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Name&quot;</span><span class="p">]]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1043,189 +1044,57 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
       <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
-      <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
       <td>Heikkinen, Miss. Laina</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
-      <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
       <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>113803</td>
-      <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>887</th>
-      <td>888</td>
-      <td>1</td>
-      <td>1</td>
       <td>Graham, Miss. Margaret Edith</td>
-      <td>female</td>
-      <td>19.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>112053</td>
-      <td>30.0000</td>
-      <td>B42</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>888</th>
-      <td>889</td>
-      <td>0</td>
-      <td>3</td>
       <td>Johnston, Miss. Catherine Helen "Carrie"</td>
-      <td>female</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>W./C. 6607</td>
-      <td>23.4500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>891 rows × 12 columns</p>
+<p>891 rows × 1 columns</p>
 </div></div></div>
 </div>
 <p>When I am looking at the df, I notice that there is a “Rev.” in index 886. As a historian, I find this fascinating. Now, I start to wonder, how many reverends were there on the Titanic? Is this individual unique? If I wanted to ask this question outside of Pandas, I could do the following:</p>
@@ -1272,110 +1141,33 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>149</th>
-      <td>150</td>
-      <td>0</td>
-      <td>2</td>
       <td>Byles, Rev. Thomas Roussel Davids</td>
-      <td>male</td>
-      <td>42.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>244310</td>
-      <td>13.000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>150</th>
-      <td>151</td>
-      <td>0</td>
-      <td>2</td>
       <td>Bateman, Rev. Robert James</td>
-      <td>male</td>
-      <td>51.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>S.O.P. 1166</td>
-      <td>12.525</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>249</th>
-      <td>250</td>
-      <td>0</td>
-      <td>2</td>
       <td>Carter, Rev. Ernest Courtenay</td>
-      <td>male</td>
-      <td>54.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>244252</td>
-      <td>26.000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>626</th>
-      <td>627</td>
-      <td>0</td>
-      <td>2</td>
       <td>Kirkland, Rev. Charles Leonard</td>
-      <td>male</td>
-      <td>57.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>219533</td>
-      <td>12.350</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>848</th>
-      <td>849</td>
-      <td>0</td>
-      <td>2</td>
       <td>Harper, Rev. John</td>
-      <td>male</td>
-      <td>28.0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>248727</td>
-      <td>33.000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
   </tbody>
 </table>
@@ -1411,189 +1203,57 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
       <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
-      <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
       <td>Heikkinen, Miss. Laina</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
-      <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
       <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>113803</td>
-      <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>885</th>
-      <td>886</td>
-      <td>0</td>
-      <td>3</td>
       <td>Rice, Mrs. William (Margaret Norton)</td>
-      <td>female</td>
-      <td>39.0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>382652</td>
-      <td>29.1250</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>887</th>
-      <td>888</td>
-      <td>1</td>
-      <td>1</td>
       <td>Graham, Miss. Margaret Edith</td>
-      <td>female</td>
-      <td>19.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>112053</td>
-      <td>30.0000</td>
-      <td>B42</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>888</th>
-      <td>889</td>
-      <td>0</td>
-      <td>3</td>
       <td>Johnston, Miss. Catherine Helen "Carrie"</td>
-      <td>female</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>W./C. 6607</td>
-      <td>23.4500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>885 rows × 12 columns</p>
+<p>885 rows × 1 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1625,189 +1285,57 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>0</td>
-      <td>3</td>
       <td>Moran, Mr. James</td>
-      <td>male</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>330877</td>
-      <td>8.4583</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>7</td>
-      <td>0</td>
-      <td>1</td>
       <td>McCarthy, Mr. Timothy J</td>
-      <td>male</td>
-      <td>54.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>17463</td>
-      <td>51.8625</td>
-      <td>E46</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>13</td>
-      <td>0</td>
-      <td>3</td>
       <td>Saundercock, Mr. William Henry</td>
-      <td>male</td>
-      <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>A/5. 2151</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>883</th>
-      <td>884</td>
-      <td>0</td>
-      <td>2</td>
       <td>Banfield, Mr. Frederick James</td>
-      <td>male</td>
-      <td>28.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>C.A./SOTON 34068</td>
-      <td>10.5000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>884</th>
-      <td>885</td>
-      <td>0</td>
-      <td>3</td>
       <td>Sutehall, Mr. Henry Jr</td>
-      <td>male</td>
-      <td>25.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/OQ 392076</td>
-      <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>523 rows × 12 columns</p>
+<p>523 rows × 1 columns</p>
 </div></div></div>
 </div>
 <p>While this works, imagine if we had 20 or 30 different conditions! That would be a very long piece of code to write and while it would work, it is always best practice to write shorter, tighter code. So, let’s do the same thing, but with RegEx. We can add the Or-condition into the <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> argument. This is a RegEx command. To ensure that RegEx is registered, it may be necessary to pass it as an argument.</p>
@@ -1836,189 +1364,57 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>0</td>
-      <td>3</td>
       <td>Moran, Mr. James</td>
-      <td>male</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>330877</td>
-      <td>8.4583</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>7</td>
-      <td>0</td>
-      <td>1</td>
       <td>McCarthy, Mr. Timothy J</td>
-      <td>male</td>
-      <td>54.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>17463</td>
-      <td>51.8625</td>
-      <td>E46</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>13</td>
-      <td>0</td>
-      <td>3</td>
       <td>Saundercock, Mr. William Henry</td>
-      <td>male</td>
-      <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>A/5. 2151</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>883</th>
-      <td>884</td>
-      <td>0</td>
-      <td>2</td>
       <td>Banfield, Mr. Frederick James</td>
-      <td>male</td>
-      <td>28.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>C.A./SOTON 34068</td>
-      <td>10.5000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>884</th>
-      <td>885</td>
-      <td>0</td>
-      <td>3</td>
       <td>Sutehall, Mr. Henry Jr</td>
-      <td>male</td>
-      <td>25.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/OQ 392076</td>
-      <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>523 rows × 12 columns</p>
+<p>523 rows × 1 columns</p>
 </div></div></div>
 </div>
 <p>In some instances, we may have uncleaned data and the use of “Rev.” may be lowercase in one instance. To ensure that we grab both upper and lowercase forms of this sequence, let’s ignore the case by using the case keyword and setting it to False.</p>
@@ -2048,189 +1444,57 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>0</td>
-      <td>3</td>
       <td>Moran, Mr. James</td>
-      <td>male</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>330877</td>
-      <td>8.4583</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>7</td>
-      <td>0</td>
-      <td>1</td>
       <td>McCarthy, Mr. Timothy J</td>
-      <td>male</td>
-      <td>54.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>17463</td>
-      <td>51.8625</td>
-      <td>E46</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>13</td>
-      <td>0</td>
-      <td>3</td>
       <td>Saundercock, Mr. William Henry</td>
-      <td>male</td>
-      <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>A/5. 2151</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>883</th>
-      <td>884</td>
-      <td>0</td>
-      <td>2</td>
       <td>Banfield, Mr. Frederick James</td>
-      <td>male</td>
-      <td>28.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>C.A./SOTON 34068</td>
-      <td>10.5000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>884</th>
-      <td>885</td>
-      <td>0</td>
-      <td>3</td>
       <td>Sutehall, Mr. Henry Jr</td>
-      <td>male</td>
-      <td>25.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/OQ 392076</td>
-      <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
-      <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
-      <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
-      <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>523 rows × 12 columns</p>
+<p>523 rows × 1 columns</p>
 </div></div></div>
 </div>
 </section>
