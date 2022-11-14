@@ -61,4 +61,5 @@ if range_cols[2].checkbox("Use Age Range"):
 removal_columns = st.multiselect("Select Columns to Remove", df.columns.tolist())
 for column in removal_columns:
     res = res.drop(column, axis=1)
+
 st.write(res)
