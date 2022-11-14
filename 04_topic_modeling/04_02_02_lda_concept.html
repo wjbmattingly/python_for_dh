@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
+    <link rel="next" title="1.5. Transformer Models" href="04_03_03_embedding_clustering.html" />
     <link rel="prev" title="1.3. Bigrams and Trigrams" href="04_01_04_bigrams.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -525,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.5. Embedding, Flattening, and Clustering
+     1.5. Transformer Models
     </a>
    </li>
    <li class="toctree-l2">
@@ -963,6 +963,11 @@ title="Print to PDF"
    1.4.3. Applying a Topic Model
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-key-issues-with-lda-topic-modeling">
+   1.4.4. Summary of Key Issues with LDA Topic Modeling
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -995,6 +1000,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applying-a-topic-model">
    1.4.3. Applying a Topic Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-key-issues-with-lda-topic-modeling">
+   1.4.4. Summary of Key Issues with LDA Topic Modeling
   </a>
  </li>
 </ul>
@@ -1077,7 +1087,10 @@ title="Print to PDF"
 <h2><span class="section-number">1.4.3. </span>Applying a Topic Model<a class="headerlink" href="#applying-a-topic-model" title="Permalink to this headline">#</a></h2>
 <p>Once an LDA topic model is trained, it can then be used to interrogate the corpus collectively. One can explore the topics identified and by reading the documents that the model placed in the same category. Depending on the corpus, certain topics can sometimes be difficult to understand. At this stage, the topics do not have actual names, rather they are purely numerical.</p>
 <p>If we want to assign labels to each topic, we have two different options available to us. First, a content expert can look at the results and intuitively assign a label that makes the most sense given the corpus. Another approach is through automation. A researcher can find the most common and unique words that appear in a topic and automatically assign them to the label name.</p>
-<p>By the end of this chapter, we will create a topic model via Top2Vec.</p>
+</section>
+<section id="summary-of-key-issues-with-lda-topic-modeling">
+<h2><span class="section-number">1.4.4. </span>Summary of Key Issues with LDA Topic Modeling<a class="headerlink" href="#summary-of-key-issues-with-lda-topic-modeling" title="Permalink to this headline">#</a></h2>
+<p>In summary, the concept of topic modeling is a worthwhile endeavor for many text-based classification problems. It is particularly useful when trying to understand large corpora that cannot possibly be read in a reasonable amount of time. It is also suited to understanding how documents cluster together in those corpora to understand large, latent (hidden) themes. LDA Topic Modeling, however, presents many limitations in this process, notably it requires a good deal of preprocessing, knowledge about the quantity of topics one wants to find in the corpus, and the inability to retain semantic and syntactic meaning. As we will see over the remainder of the chapter, other libraries and approaches that leverage state of the art language models are perhaps better suited to finding and extracting topics from your corpus.</p>
 </section>
 </section>
 
@@ -1118,7 +1131,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="04_03_03_embedding_clustering.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Embedding, Flattening, and Clustering</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Transformer Models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

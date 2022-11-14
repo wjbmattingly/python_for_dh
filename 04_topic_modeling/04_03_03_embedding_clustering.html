@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.5. Embedding, Flattening, and Clustering &#8212; Introduction to Python for Humanists</title>
+    <title>1.5. Transformer Models &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -525,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.5. Embedding, Flattening, and Clustering
+     1.5. Transformer Models
     </a>
    </li>
    <li class="toctree-l2">
@@ -949,23 +949,33 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-libraries-and-gathering-data">
+   1.5.1. Importing Libraries and Gathering Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#embedding-the-documents">
-   1.5.1. Embedding the Documents
+   1.5.2. Embedding the Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flattening-the-data">
-   1.5.2. Flattening the Data
+   1.5.3. Flattening the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#isolating-clusters-with-hdbscan">
-   1.5.3. Isolating Clusters with HDBScan
+   1.5.4. Isolating Clusters with HDBScan
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-the-labels">
-   1.5.4. Analyzing the Labels
+   1.5.5. Analyzing the Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outliers-noise">
+   1.5.6. Outliers (Noise)
   </a>
  </li>
 </ul>
@@ -977,7 +987,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Embedding, Flattening, and Clustering</h1>
+                <h1>Transformer Models</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -988,23 +998,33 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-libraries-and-gathering-data">
+   1.5.1. Importing Libraries and Gathering Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#embedding-the-documents">
-   1.5.1. Embedding the Documents
+   1.5.2. Embedding the Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flattening-the-data">
-   1.5.2. Flattening the Data
+   1.5.3. Flattening the Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#isolating-clusters-with-hdbscan">
-   1.5.3. Isolating Clusters with HDBScan
+   1.5.4. Isolating Clusters with HDBScan
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-the-labels">
-   1.5.4. Analyzing the Labels
+   1.5.5. Analyzing the Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outliers-noise">
+   1.5.6. Outliers (Noise)
   </a>
  </li>
 </ul>
@@ -1017,8 +1037,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="embedding-flattening-and-clustering">
-<h1><span class="section-number">1.5. </span>Embedding, Flattening, and Clustering<a class="headerlink" href="#embedding-flattening-and-clustering" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="transformer-models">
+<h1><span class="section-number">1.5. </span>Transformer Models<a class="headerlink" href="#transformer-models" title="Permalink to this headline">#</a></h1>
+<p>Transformer models are robust machine learning language models that are capable of solving many complex problems. It is beyond the scope of this textbook to explain the architecture of transformers or how they work precisely. Nevertheless, it is important to understand a few things. First, transformer models are particularly suited for working with multi-lingual documents. Second, they are powerful, but slow. Third, the way they represent texts is different from other language models in that they are able to change the vector, or numerical representation, of an individual word based on context.</p>
+<p>This makes them particularly suited to the problem of topic modeling because they can convert each document into a numerical representation that is not a sequence of numbers that correspond to the presence of an individual word. Instead, transformer models can convert a document into a deeply semantic representation that retains the context and syntax.</p>
+<p>In order to leverage transformer models, we need to install SentenceTransformers (from HuggingFace). We can do that with pip via the command below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sentence_transformers</span>
+</pre></div>
+</div>
+<p>In this section, we will also be working with two other libraries: umap (for representing our complex numerical representation of documents in 2-dimensional space) and hdbscan (for finding clusters). UMAP has gained popularity in recent years as a quick, effectively, and fairly accurate way to represent higher dimensional data in lower dimensions. In Python, we can access the UMAP algorithm through the UMAP library which can be installed with pip by typing the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">umap-learn</span></code></p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">-learn</span></code> after <code class="docutils literal notranslate"><span class="pre">umap</span></code>. This is very important as <code class="docutils literal notranslate"><span class="pre">umap</span></code> is an entirely different library.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">hdbscan</span>
+</pre></div>
+</div>
+<p>Now that our libraries are installed, we can begin importing them.</p>
+<section id="importing-libraries-and-gathering-data">
+<h2><span class="section-number">1.5.1. </span>Importing Libraries and Gathering Data<a class="headerlink" href="#importing-libraries-and-gathering-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
@@ -1028,11 +1063,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/wjbmattingly/anaconda3/envs/python-textbook/lib/python3.9/site-packages/tqdm/auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
 </div>
 <p>Before we begin leveraging advanced transformer-based topic modeling libraries, like Top2Vec, we should have a good understanding about how they work. Top2Vec leverages three libraries: Sentence Transformers, UMAP, and HDBScan. Here, we will explore each of these so that the reader will have a basic understanding of the theory and methods behind Top2Vec</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">]]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1056,35 +1098,17 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ObjectId</th>
       <th>Last</th>
       <th>First</th>
       <th>Description</th>
-      <th>Place</th>
-      <th>Yr</th>
-      <th>Homeland</th>
-      <th>Province</th>
-      <th>Long</th>
-      <th>Lat</th>
-      <th>HRV</th>
-      <th>ORG</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
       <td>AARON</td>
       <td>Thabo Simon</td>
       <td>An ANCYL member who was shot and severely inju...</td>
-      <td>Bethulie</td>
-      <td>1991.0</td>
-      <td>NaN</td>
-      <td>Orange Free State</td>
-      <td>25.97552</td>
-      <td>-30.50329</td>
-      <td>shoot|injure</td>
-      <td>ANC|ANCYL|Police|SAP</td>
     </tr>
   </tbody>
 </table>
@@ -1097,9 +1121,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
 <section id="embedding-the-documents">
-<h2><span class="section-number">1.5.1. </span>Embedding the Documents<a class="headerlink" href="#embedding-the-documents" title="Permalink to this headline">#</a></h2>
-<p>The first step in using transformers in topic modeling is to convert the text into a vector. We met vectors when we explored LDA topic modeling in the previous chapter. Arrays for LDA topic modeling were rooted in a TF-IDF index. This index, while computationally light, did not retain semantic meaning or word order.</p>
+<h2><span class="section-number">1.5.2. </span>Embedding the Documents<a class="headerlink" href="#embedding-the-documents" title="Permalink to this headline">#</a></h2>
+<p>The first step in using transformers in topic modeling is to convert the text into a vector. We met vectors when we explored LDA topic modeling in the previous chapter. Arrays for LDA topic modeling were rooted in a bag-of-word (BOW) index. This index, while computationally light, did not retain semantic meaning or word order.</p>
 <p>When we are working with transformers, we can create a vector for each document in our dataset. This vector is not an index of the words used, rather it is an embedding for the entire document that contains its semantic usages of words. It also preserves in this same vector space the word order to a degree. This document vector is similar to the word vector that we met in Part Three of this textbook. Instead of embedding a single word, however, the entire document receives an embedding. This allows us to mathematically compare documents across an entire corpus.</p>
 <p>To convert our documents into vectors, we first need a transformer model. Fortunately, the Sentence Transformer library from HuggingFace allows us to easily load robust pre-trained language models. In our case, we will be using the <code class="docutils literal notranslate"><span class="pre">all-MiniLM-L6-v2</span></code> model. We can load this model by calling the Sentence Transformer class from the sentence_transformers library.</p>
 <div class="cell docutils container">
@@ -1125,8 +1150,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.07123438,  0.00332592, -0.05571467,  0.08363085,  0.09066872,
-        0.055036  ,  0.08029196,  0.0137071 ,  0.05912024,  0.06226279],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.07123438,  0.00332599, -0.05571468,  0.08363082,  0.09066874,
+        0.05503598,  0.08029197,  0.01370712,  0.05912026,  0.06226278],
       dtype=float32)
 </pre></div>
 </div>
@@ -1135,10 +1160,7 @@ title="Print to PDF"
 <p>As we can see, this looks remarkably similar to our word embeddings. While this is useful for examining mathematically comparing the similarity between documents, it can be difficult to parse this numerical data visually. For this reason, it is useful to flatten the data into 2 or 3 dimensions. This allows the data to be graphed. In the previous chapter, we learned how to flatten data with PCA. In this chapter, we will meet a new dimensionality reduction algorithm, UMAP.</p>
 </section>
 <section id="flattening-the-data">
-<h2><span class="section-number">1.5.2. </span>Flattening the Data<a class="headerlink" href="#flattening-the-data" title="Permalink to this headline">#</a></h2>
-<p>UMAP has gained popularity in recent years as a quick, effectively, and fairly accurate way to represent higher dimensional data in lower dimensions. In Python, we can access the UMAP algorithm through the UMAP library which can be installed with pip by typing the following command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">umap-learn</span></code></p>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">-learn</span></code> after <code class="docutils literal notranslate"><span class="pre">umap</span></code>. This is very important as <code class="docutils literal notranslate"><span class="pre">umap</span></code> is an entirely different library.</p>
+<h2><span class="section-number">1.5.3. </span>Flattening the Data<a class="headerlink" href="#flattening-the-data" title="Permalink to this headline">#</a></h2>
 <p>Once you have installed UMAP correctly, you can access the <code class="docutils literal notranslate"><span class="pre">UMAP</span></code> class. This will take several parameters that can be adjusted to yield different results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1151,7 +1173,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="isolating-clusters-with-hdbscan">
-<h2><span class="section-number">1.5.3. </span>Isolating Clusters with HDBScan<a class="headerlink" href="#isolating-clusters-with-hdbscan" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.5.4. </span>Isolating Clusters with HDBScan<a class="headerlink" href="#isolating-clusters-with-hdbscan" title="Permalink to this headline">#</a></h2>
 <p>Once our data has been flattened, we can automatically identify the number of clusters within it and assign documents to each cluster with the HDBScan algorithm.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1161,7 +1183,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2355
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2317
 </pre></div>
 </div>
 </div>
@@ -1194,18 +1216,9 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ObjectId</th>
       <th>Last</th>
       <th>First</th>
       <th>Description</th>
-      <th>Place</th>
-      <th>Yr</th>
-      <th>Homeland</th>
-      <th>Province</th>
-      <th>Long</th>
-      <th>Lat</th>
-      <th>HRV</th>
-      <th>ORG</th>
       <th>x</th>
       <th>y</th>
       <th>topic</th>
@@ -1214,20 +1227,11 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
       <td>AARON</td>
       <td>Thabo Simon</td>
       <td>An ANCYL member who was shot and severely inju...</td>
-      <td>Bethulie</td>
-      <td>1991.0</td>
-      <td>NaN</td>
-      <td>Orange Free State</td>
-      <td>25.97552</td>
-      <td>-30.50329</td>
-      <td>shoot|injure</td>
-      <td>ANC|ANCYL|Police|SAP</td>
-      <td>3.326068</td>
-      <td>6.641037</td>
+      <td>7.330942</td>
+      <td>-0.935302</td>
       <td>-1</td>
     </tr>
   </tbody>
@@ -1236,7 +1240,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="analyzing-the-labels">
-<h2><span class="section-number">1.5.4. </span>Analyzing the Labels<a class="headerlink" href="#analyzing-the-labels" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.5.5. </span>Analyzing the Labels<a class="headerlink" href="#analyzing-the-labels" title="Permalink to this headline">#</a></h2>
 <p>Now that we have the labels loaded into our DataFrame, we can use Pandas to interrogate that data. Let’s grab a topic and examine it. Here, we will examine topic 100.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1247,22 +1251,182 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Dikwankwetla National Party (DNP) supporter and member of the QwaQwa parliament, had his house burnt down in Botshabelo, near Bloemfontein, on 19 August 1987. His home was again petrol-bombed in June 1990.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041).
 
-A Dikwankwetla National Party (DNP) supporter who had her house burnt down by UDF supporters in Botshabelo, near Bloemfontein, on 16 July 1989, allegedly because of her support for the DNP.
+An ANC supporter who was shot dead on 6 April 1990 when a group of Inkatha supporters attacked UDF supporters and residents at Mpumalanga, KwaZulu, near Durban, in spite of a heavy police and military presence. Fourteen people were killed and at least one hundred and twenty homes were burnt down. One former IFP member was granted amnesty (AC/1999/0332).
 
-A local councillor and member of the Dikwankwetla National Party (DNP) who had his house burnt down by unidentified persons in Winburg, OFS, on 30 March 1990, allegedly because of his support for the DNP.
+An ANC supporter who was shot and killed when a group of Inkatha supporters and Caprivi trainees attacked a UDF meeting in a house at Mpumalanga, KwaZulu, near Durban, on 18 January 1988. Nine people were killed and an estimated two hundred people were injured in the attack. The group went on to destroy around eight houses. One former Inkatha member was granted amnesty (AC/1999/0332).
 
-A councilor and a member of the Dikwankwetla National Party (DNP) who was seriously injured when he was stabbed, beaten and burnt by ANC supporters in Botshabelo, near Bloemfontein, on 29 January 1990. DNP members were frequently attacked at this time, allegedly because of the party’s support for the QwaQwa homeland government.
+An ANC supporter who was shot and killed when a group of Inkatha supporters and Caprivi trainees attacked a UDF meeting in a house at Mpumalanga, KwaZulu, near Durban, on 18 January 1988. Nine people were killed and an estimated two hundred people were injured in the attack. The group went on to destroy around eight houses. One former Inkatha member was granted amnesty (AC/1999/0332).
 
-A supporter of the Dikwankwetla National Party (DNP) who lost her home in an arson attack and was burnt when petrol  was thrown at her and she was set alight by ANC supporters in Botshabelo, near Bloemfontein, on 29 January 1990. DNP members were frequently attacked at this time, allegedly because of the party’s support for the QwaQwa homeland government.
+An ANC supporter who was shot dead on 18 January 1988 when a group of Inkatha supporters, including some Caprivi trainees, opened fire on a UDF meeting in a house at Mpumalanga, KwaZulu, near Durban. Nine people were killed and an estimated two hundred people were injured. The group went on to destroy about eight houses. Amnesty applications were received for this incident.
 
-He had his house and shop in Botshabelo, near Bloemfontein, damaged in an arson attack by unidentified persons in 1977, allegedly because he did not support the Dikwankwetla National Party (DNP). 
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041).
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041).
+
+Was abducted, interrogated and stabbed to death by UDF and ANC supporters at Mpumalanga, Natal, in July 1989. He was believed to be an Inkatha member. One UDF and ANC supporter was granted amnesty (AC/200/011).
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041).
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041).
+
+An Inkatha supporter who was stabbed and severely injured by named ANC supporters in Mtwalume, near Umzinto, Natal, in political conflict in the area on 4 February 1990 following the unbanning of political organisations two days earlier. Two UDF supporters were granted amnesty for the attack (AC/2000/041).
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041). 
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041). 
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041). 
+
+Was one of thirteen people killed in an attack by UDF and ANC supporters on Inkatha supporters in the Mahwaqa area, near Port Shepstone, Natal, on 24 March 1990. Two UDF supporters were granted amnesty (AC/2000/041). 
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice that topic 100 has 6 different documents in it. They are all a bit different, but clearly match in a few ways. First, they all involve the Dikwankwetla National Party (DNP). Second, they all involve the concept of arson or burning in some way. In some cases, this is to physical property, but in others it is to persons.</p>
+<p>Notice that these results for <code class="docutils literal notranslate"><span class="pre">Topic</span> <span class="pre">100</span></code> all clearly have overlapping similarity. In some cases, these are identical, in others they are quite similar.  Nevertheless, we have one major limitation to this approach, outliers or noise. Let’s examine <code class="docutils literal notranslate"><span class="pre">Topic</span> <span class="pre">-1</span></code>.</p>
+</section>
+<section id="outliers-noise">
+<h2><span class="section-number">1.5.6. </span>Outliers (Noise)<a class="headerlink" href="#outliers-noise" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">topic</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Last</th>
+      <th>First</th>
+      <th>Description</th>
+      <th>x</th>
+      <th>y</th>
+      <th>topic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AARON</td>
+      <td>Thabo Simon</td>
+      <td>An ANCYL member who was shot and severely inju...</td>
+      <td>7.330942</td>
+      <td>-0.935302</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ABRAHAMS</td>
+      <td>Moegsien</td>
+      <td>Was stabbed and stoned to death by a group of ...</td>
+      <td>5.861767</td>
+      <td>10.907988</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>ADAMS</td>
+      <td>Zwelinzima Sidwell</td>
+      <td>Was severely beaten and shot in the leg in Gug...</td>
+      <td>5.548826</td>
+      <td>9.517207</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>AGGETT</td>
+      <td>Neil Hudson</td>
+      <td>Died in detention at John Vorster Square, Joha...</td>
+      <td>11.213459</td>
+      <td>8.340458</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>ALBERT</td>
+      <td>Nombuyiselo Francis</td>
+      <td>Was beaten and stabbed to death on 10 December...</td>
+      <td>6.867918</td>
+      <td>2.346848</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20804</th>
+      <td>XULU</td>
+      <td>Josephina</td>
+      <td>An IFP supporter who had three rondavels burnt...</td>
+      <td>2.483765</td>
+      <td>3.955176</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>20810</th>
+      <td>XULU</td>
+      <td>Mzomonje Phineas</td>
+      <td>Was stabbed to death in Inchanga, Natal, on 15...</td>
+      <td>5.103362</td>
+      <td>11.622403</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>20820</th>
+      <td>XULU</td>
+      <td>Sipho Aubrey</td>
+      <td>An ANC supporter who was shot and fatally woun...</td>
+      <td>7.560771</td>
+      <td>0.817540</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>20821</th>
+      <td>XULU</td>
+      <td>Sipho Brigitte</td>
+      <td>An MK operative who was executed in Pretoria C...</td>
+      <td>3.011799</td>
+      <td>-0.359574</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>20830</th>
+      <td>YAKA</td>
+      <td>Mbangomuni</td>
+      <td>An IFP supporter and acting induna who was sho...</td>
+      <td>8.195865</td>
+      <td>2.783923</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+<p>4579 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>We have 4,579 outliers, or documents that do not neatly cluster into any one category. This is a clear limitation of this approach. What do we do with these outliers? One option is to assign them to the nearest topic. The process of doing this, however, can be quite complex as the we calculate distance between a document vector and a topic can vary depending on which measurements we wish to use. In the final section of this chapter, we will examine a library that handles this problem for us.</p>
 </section>
 </section>
 
