@@ -13,3 +13,4 @@ scikit-learn
 umap-learn
 hdbscan
 pydeck
+nltk

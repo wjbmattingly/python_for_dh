@@ -12,3 +12,5 @@ sentence_transformers
 scikit-learn
 umap-learn
 hdbscan
+pydeck
+nltk
