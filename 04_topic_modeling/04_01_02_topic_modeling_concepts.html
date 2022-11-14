@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.2. What is Topic Modeling? &#8212; Introduction to Python for Humanists</title>
+    <title>1.1. What is Topic Modeling? &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.3. Topics and Clusters" href="04_01_03_clusters.html" />
+    <link rel="next" title="1.2. Topics and Clusters" href="04_01_03_clusters.html" />
     <link rel="prev" title="1. Topic Modeling: Concepts and Theory" href="04_01_01_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -505,37 +505,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.2. What is Topic Modeling?
+     1.1. What is Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_03_clusters.html">
-     1.3. Topics and Clusters
+     1.2. Topics and Clusters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_04_bigrams.html">
-     1.4. Bigrams and Trigrams
+     1.3. Bigrams and Trigrams
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_02_lda_concept.html">
-     1.5. What is LDA Topic Modeling?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_06_lda.html">
-     1.6. Implementing LDA in Python
+     1.4. LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.7. Embedding, Flattening, and Clustering
+     1.5. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.8. Top2Vec in Python
+     1.6. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -955,17 +950,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rules-based-methods">
-   1.2.1. Rules-Based Methods
+   1.1.1. Rules-Based Methods
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#machine-learning-based-methods">
-   1.2.2. Machine Learning-Based Methods
+   1.1.2. Machine Learning-Based Methods
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-use-topic-modeling">
-   1.2.3. Why use Topic Modeling?
+   1.1.3. Why use Topic Modeling?
   </a>
  </li>
 </ul>
@@ -989,17 +984,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rules-based-methods">
-   1.2.1. Rules-Based Methods
+   1.1.1. Rules-Based Methods
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#machine-learning-based-methods">
-   1.2.2. Machine Learning-Based Methods
+   1.1.2. Machine Learning-Based Methods
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-use-topic-modeling">
-   1.2.3. Why use Topic Modeling?
+   1.1.3. Why use Topic Modeling?
   </a>
  </li>
 </ul>
@@ -1013,24 +1008,23 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-topic-modeling">
-<h1><span class="section-number">1.2. </span>What is Topic Modeling?<a class="headerlink" href="#what-is-topic-modeling" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.1. </span>What is Topic Modeling?<a class="headerlink" href="#what-is-topic-modeling" title="Permalink to this headline">#</a></h1>
 <p><strong>Topic modeling</strong> is an approach in NLP where we try to find hidden themes within a collection of documents in a corpus. These themes are the <strong>topics</strong>. Topic modeling is particularly useful when we do not know the subject of each document in our collection and the corpus is too vast to manually tag each document with a specific topic name. It allows us to automate the tagging of each document without doing so manually.</p>
 <p>Topic modeling is distinctly different from approach in NLP known as <strong>text classification</strong>. In text classification, we train a machine learning model to recognize specific known labels. We do this with training data that consists of texts and their corresponding labels. This method of using training data is similar to the machine learning NER approach we saw in Part Three of this textbook. When we use labeled date to train a machine learning model, this is known as supervised learning. Topic modeling is an entirely different approach designed to work with an entirely different problem. Since we do not know our labels and do not have training data, supervised learning would not work. Topic modeling is an unsupervised learning approach to finding and identifying the labels.</p>
 <p>Today, there are many approaches to topic modeling. In Chapter 2, we will learn how to build an LDA (Latent Dirichlet Allocation) model. While useful, this approach to topic modeling has largely been replaced with transformer-based topic models (Chapter 3). Nevertheless, it is import to understand LDA topic models in order to appreciate the novelty of transformer-based approaches. Further, LDA topic modeling has a strong history in the digital humanities and it is useful to understand how and why this approach works to understand the literature produced by digital humanities during the early twenty-first century. Before we can explore each of these, however, it is import to have a key understanding of the themes and concepts of topic modeling. This will be the subject of this chapter.</p>
 <section id="rules-based-methods">
-<h2><span class="section-number">1.2.1. </span>Rules-Based Methods<a class="headerlink" href="#rules-based-methods" title="Permalink to this headline">#</a></h2>
-<p>A simple approach to the identification of subjects in a collection of documents is what we would call a rules-based approach. Here, we could identify the words used in each document relative to the entire corpus.</p>
-<p>One of the most common ways to perform this task is via TF-IDF, or term frequency-inverse document frequency. We will discuss this method a lot more in the next section because it is a necessary step in LDA topic modeling. Simply put, a TF-IDF model looks for a word’s frequency in a single text, respective to that word’s use across the corpus as a whole. If that word occurs infrequently in all other documents, but frequently in one document, then we could presume that that specific word may indicate the theme of the document.</p>
-<p>For certain problems, a rules-based approach is particularly useful. As we will see, documents that are shorter, such as tweets, tend to fare better from rules-based approaches.</p>
+<h2><span class="section-number">1.1.1. </span>Rules-Based Methods<a class="headerlink" href="#rules-based-methods" title="Permalink to this headline">#</a></h2>
+<p>A simple approach to the identification of subjects in a collection of documents is what we would call a rules-based approach. Here, we could argue that documents in which certain words appear indicate a specific topic. This manual approach may yield good results. For example, if I had a 100,000 documents and I knew that some dealt with medical details, I could look for a handful of terms, such as <code class="docutils literal notranslate"><span class="pre">doctor</span></code>, <code class="docutils literal notranslate"><span class="pre">medicine</span></code>, <code class="docutils literal notranslate"><span class="pre">hospital</span></code>, etc. to extract those documents as dealing with a topic of <code class="docutils literal notranslate"><span class="pre">medical</span></code>.</p>
+<p>The key problem with this approach is scale. We cannot practically construct lists like this for all possible topics, especially if we do not know the topics found within a corpus. Further, constructing lists like this requires detailed knowledge about a subject. For these reasons, a rules-based approach to classifying documents is not practical for large corpora.</p>
 </section>
 <section id="machine-learning-based-methods">
-<h2><span class="section-number">1.2.2. </span>Machine Learning-Based Methods<a class="headerlink" href="#machine-learning-based-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.1.2. </span>Machine Learning-Based Methods<a class="headerlink" href="#machine-learning-based-methods" title="Permalink to this headline">#</a></h2>
 <p>Another option to identify topics in a text is via a machine learning-based approach. In this method, we do not give a computer system a set of rules, rather we let the computer generate its own rules to identify topics in a corpus. This is done in two different ways: supervised and unsupervised learning.</p>
 <p>In supervised learning, we know the key subjects in a corpus. We give a computer system a set of documents with their corresponding label to teach it to identify the characteristics that make that particular topic or class unique. This is mostly used for text classification.</p>
 <p>Another approach is via unsupervised learning. In unsupervised learning, we do not know the topics of our documents and, instead, we want let the system identify those topics and cluster (or group together) the ones of a high degree of similarity together. We then examine the words that occur the most frequently in each cluster to get a sense of the topics at hand. The classic example for machine learning topic modeling is LDA, or Latent Dirichlet Allocation. We will learn about this method in far more detail in Chapter 2.</p>
 </section>
 <section id="why-use-topic-modeling">
-<h2><span class="section-number">1.2.3. </span>Why use Topic Modeling?<a class="headerlink" href="#why-use-topic-modeling" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.1.3. </span>Why use Topic Modeling?<a class="headerlink" href="#why-use-topic-modeling" title="Permalink to this headline">#</a></h2>
 <p>All of this leads to a vital question: Why use topic modeling? Topic modeling affords researchers the ability to learn a lot about their corpus very quickly. It is often used when the corpus is so large that no single human could read it in a single lifetime.</p>
 <p>In both a rules-based and machine learning-based approach, a researcher can see what major subjects are discussed in a corpus. This information can be used to perform targeted research by weeding out the documents that likely do not contain the information the researcher needs. Additionally, the information drawn from topic modeling can be used to make large deductions about the corpus at hand. We will see that topic modeling can be used to draw imprecise or incorrect conclusions.</p>
 <p>It is vital, however, to understand the limitations of topic modeling. There is always a potential for the researcher to use topic modeling to validate a wrong presumption about the data. Throughout this part of the textbook, I will emphasize methodological steps that can (and should) be taken to limit these mistakes. Despite this potential for error, topic modeling can provide valuable insight, relatively quickly about a large corpus.</p>
@@ -1074,7 +1068,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="04_01_03_clusters.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Topics and Clusters</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Topics and Clusters</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Topics and Clusters &#8212; Introduction to Python for Humanists</title>
+    <title>1.2. Topics and Clusters &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Bigrams and Trigrams" href="04_01_04_bigrams.html" />
-    <link rel="prev" title="1.2. What is Topic Modeling?" href="04_01_02_topic_modeling_concepts.html" />
+    <link rel="next" title="1.3. Bigrams and Trigrams" href="04_01_04_bigrams.html" />
+    <link rel="prev" title="1.1. What is Topic Modeling?" href="04_01_02_topic_modeling_concepts.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -505,37 +505,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
-     1.2. What is Topic Modeling?
+     1.1. What is Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.3. Topics and Clusters
+     1.2. Topics and Clusters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_04_bigrams.html">
-     1.4. Bigrams and Trigrams
+     1.3. Bigrams and Trigrams
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_02_lda_concept.html">
-     1.5. What is LDA Topic Modeling?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_06_lda.html">
-     1.6. Implementing LDA in Python
+     1.4. LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.7. Embedding, Flattening, and Clustering
+     1.5. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.8. Top2Vec in Python
+     1.6. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -955,12 +950,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-topics">
-   1.3.1. What are Topics?
+   1.2.1. What are Topics?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-clusters">
-   1.3.2. What are Clusters?
+   1.2.2. What are Clusters?
   </a>
  </li>
 </ul>
@@ -984,12 +979,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-topics">
-   1.3.1. What are Topics?
+   1.2.1. What are Topics?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-are-clusters">
-   1.3.2. What are Clusters?
+   1.2.2. What are Clusters?
   </a>
  </li>
 </ul>
@@ -1003,9 +998,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="topics-and-clusters">
-<h1><span class="section-number">1.3. </span>Topics and Clusters<a class="headerlink" href="#topics-and-clusters" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.2. </span>Topics and Clusters<a class="headerlink" href="#topics-and-clusters" title="Permalink to this headline">#</a></h1>
 <section id="what-are-topics">
-<h2><span class="section-number">1.3.1. </span>What are Topics?<a class="headerlink" href="#what-are-topics" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>What are Topics?<a class="headerlink" href="#what-are-topics" title="Permalink to this headline">#</a></h2>
 <p><strong>Topics</strong> are labels assigned to textual data that detail the subjects contained within a given text. In topic modeling we try to create computer systems that can assign topics the way a human would. In order to understand this process, it’s best if we take a step back and think about how we assign topics as humans.</p>
 <p>To do this, let’s examine these two texts.</p>
 <table class="colwidths-auto table">
@@ -1049,14 +1044,10 @@ title="Print to PDF"
 <p>What does this demonstrate? It tells us that topics are corpus-dependent, meaning the topics we assign to texts depend on their context against surrounding texts. The same holds true for topic modeling via computer systems.</p>
 </section>
 <section id="what-are-clusters">
-<h2><span class="section-number">1.3.2. </span>What are Clusters?<a class="headerlink" href="#what-are-clusters" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>What are Clusters?<a class="headerlink" href="#what-are-clusters" title="Permalink to this headline">#</a></h2>
 <p>In topic modeling, computer systems do not generate topics, rather they generate a list of high concentration words. Texts that share common terms are clustered together by similarity. A <strong>cluster</strong> is nothing more than a collection of similar pieces of data. When we are working with texts, a cluster is a collection of texts that have similar overlapping themes.</p>
-<p>There are various ways to cluster textual data that we will explore throughout this part of the textbook, but one of the fundamental ones we will use is k-means.</p>
-<p><strong>K-means</strong> is a common method of clustering in data science and can be easily implemented via the Python library Scikit-Learn (see Part Two of this book). The K-means method of clustering takes in the textual data and places all documens in <em>k</em> number of clusters. In this scenario, the researcher assigns a numerical variable for <em>k</em>, so if the researcher wished to see all texts clustered into 10 topics, or clusters, the k-means algorithm would find the documents with the greatest degree of similarity and place them in the closest mean cluster. The result is a forced clustering of all texts neatly into 10 clusters. We can then discern their topics by examining the words that overlap between texts in each cluster. As we will see in Part Two, this can be tricky and invovles trial and error.</p>
-<p>In the example below, we can see a sample output of K-Means clustering. In this image, there are 3 clusters. Notice how all data (dots on the graph) are clustered into one of the three categories. This is the K-Means clustering method at work. Notice also how the blue dot in the top of the graph and the nearby red dots may have similarity or overlap, yet are clustered differently. This is the result of the absolute nature of K-Means clustering.</p>
-<p style="text-align:center;">
-<img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2018/11/02/k-means-sagemaker-1.gif" height="240" align="center"/>
-</p></section>
+<p>There are various ways to cluster textual data that we will explore throughout this chapter.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1090,13 +1081,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.2. </span>What is Topic Modeling?</p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span>What is Topic Modeling?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_01_04_bigrams.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Bigrams and Trigrams</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Bigrams and Trigrams</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

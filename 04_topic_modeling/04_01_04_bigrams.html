@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.4. Bigrams and Trigrams &#8212; Introduction to Python for Humanists</title>
+    <title>1.3. Bigrams and Trigrams &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. What is LDA Topic Modeling?" href="04_02_02_lda_concept.html" />
-    <link rel="prev" title="1.3. Topics and Clusters" href="04_01_03_clusters.html" />
+    <link rel="next" title="1.4. LDA Topic Modeling" href="04_02_02_lda_concept.html" />
+    <link rel="prev" title="1.2. Topics and Clusters" href="04_01_03_clusters.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -505,37 +505,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
-     1.2. What is Topic Modeling?
+     1.1. What is Topic Modeling?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_03_clusters.html">
-     1.3. Topics and Clusters
+     1.2. Topics and Clusters
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.4. Bigrams and Trigrams
+     1.3. Bigrams and Trigrams
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_02_lda_concept.html">
-     1.5. What is LDA Topic Modeling?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_06_lda.html">
-     1.6. Implementing LDA in Python
+     1.4. LDA Topic Modeling
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.7. Embedding, Flattening, and Clustering
+     1.5. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.8. Top2Vec in Python
+     1.6. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -955,22 +950,22 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#textual-ambiguity">
-   1.4.1. Textual Ambiguity
+   1.3.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bigrams">
-   1.4.2. Bigrams
+   1.3.2. Bigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trigrams">
-   1.4.3. Trigrams
+   1.3.3. Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-are-these-important">
-   1.4.4. Why are these Important?
+   1.3.4. Why are these Important?
   </a>
  </li>
 </ul>
@@ -994,22 +989,22 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#textual-ambiguity">
-   1.4.1. Textual Ambiguity
+   1.3.1. Textual Ambiguity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bigrams">
-   1.4.2. Bigrams
+   1.3.2. Bigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trigrams">
-   1.4.3. Trigrams
+   1.3.3. Trigrams
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-are-these-important">
-   1.4.4. Why are these Important?
+   1.3.4. Why are these Important?
   </a>
  </li>
 </ul>
@@ -1023,29 +1018,29 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="bigrams-and-trigrams">
-<h1><span class="section-number">1.4. </span>Bigrams and Trigrams<a class="headerlink" href="#bigrams-and-trigrams" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.3. </span>Bigrams and Trigrams<a class="headerlink" href="#bigrams-and-trigrams" title="Permalink to this headline">#</a></h1>
 <p>Let’s take a moment and step away topic modeling. Instead, let’s think about language. The essential medium of topic modeling is texts which are the products of language. And language is nothing more than a collection of words whose usage is rooted around grammar and syntax. A given word’s meaning, in other words, is often defined by how, when, and where it is used in a given text. Words can also mean different things when used collectively.</p>
 <section id="textual-ambiguity">
-<h2><span class="section-number">1.4.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.1. </span>Textual Ambiguity<a class="headerlink" href="#textual-ambiguity" title="Permalink to this headline">#</a></h2>
 <p>If I use the word apple, you likely are thinking of something like the fruit. Apple is a simple word, yet it can mean different things in different contexts. What if I said the following: “My Apple is better than a PC.” Now, what image comes to mind? Perhaps the computer product.</p>
 <p>This is an example of textual ambiguity. Syntactical context helps eliminate textual ambiguity. Apple is a single word here that contains a single concept. It’s a relatively simple word. Perhaps one of the earliest a native speaker of English learns as a child. And yet it has textual ambiguity. Because “apple” is a single word, it is known as a unigram. A <strong>unigram</strong> is a single word that represents a single concept.</p>
 <p>Textual ambiguity, however, occurs in more dynamic ways when we think about concepts beyond the single span of a single word. In this section, we will focus on two such cases that are essential for natural language processing: bigrams and trigrams. <strong>Bigrams</strong> are two words that contain a distinct meaning when used together, while <strong>trigrams</strong> are three words that contain a distinct meaning when used together.</p>
 <p>Understanding bigrams and trigrams are essential because in order for a computer to truly understand langauge the way a human does, it must be able to understand the nuances of a single word and how a word’s meaning not only shifts in context, but shifts in meaning when used in conjunction with other words.</p>
 </section>
 <section id="bigrams">
-<h2><span class="section-number">1.4.2. </span>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.2. </span>Bigrams<a class="headerlink" href="#bigrams" title="Permalink to this headline">#</a></h2>
 <p>As noted above, a bigram is a combination of two words that have a distinct meaning. To demonstrate this, let us consider quickly the word “French”. A single word, that may have multiple meanings. Perhaps the word French refers to the language, perhaps it references a French person.</p>
 <p>Let’s hold off on the word French for just a moment. Let’s now use the word “revolution”. Again, there is textual ambiguity, but perhaps I am referencing the concept of revolution in the sense of the Earth.</p>
 <p>Now you may already see where I am going with this, but let’s now think about what happens when I put those two textually ambiguous unigrams together “The French Revolution”. “The” here is a stop word that is frequently dropped in natural language processing, so “French Revolution” is all that we should consider. These two words when combined have a distinct concept.</p>
 <p>But we can think about language in even more nuanced ways.</p>
 </section>
 <section id="trigrams">
-<h2><span class="section-number">1.4.3. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.3. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">#</a></h2>
 <p>Trigrams, as noted above, are the same as bigrams, except with three words, instead of two. Let’s continue with our example of “French”. What might you think about if I used the word “army”. Perhaps something distinct to your own experiences with the word. For me, as a modern American, I think initially about the American Army in the modern sense of the word. So I may picture something like modern soldiers in my mind’s eye.</p>
 <p>For others in other parts of the world, other images may be more relevant. However, when I use the phrase “The French Revolutionary Army”, I now have something defined, something distinct. This is a trigram, a distinct concept consisting of three words that may have individual meanings when used alone.</p>
 </section>
 <section id="why-are-these-important">
-<h2><span class="section-number">1.4.4. </span>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.4. </span>Why are these Important?<a class="headerlink" href="#why-are-these-important" title="Permalink to this headline">#</a></h2>
 <p>So, why are bigrams and trigrams so important? The reason comes down to getting machines to understand that when certain words are used together, they bear a distinct meaning. In order to produce a good topic model, therefore, the model must be able to understand and process words in this manner, the way we humans use the language we are trying to get the machine to understand.</p>
 </section>
 </section>
@@ -1081,13 +1076,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.3. </span>Topics and Clusters</p>
+            <p class="prev-next-title"><span class="section-number">1.2. </span>Topics and Clusters</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04_02_02_lda_concept.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>What is LDA Topic Modeling?</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>LDA Topic Modeling</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
