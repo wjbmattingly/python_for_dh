@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Implementing LDA in Python &#8212; Introduction to Python for Humanists</title>
+    <title>1.9. Implementing LDA in Python &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.10. Embedding, Flattening, and Clustering" href="04_03_03_embedding_clustering.html" />
+    <link rel="prev" title="1.8. TF-IDF with Scikit Learn" href="04_02_05_tfidf_build.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -490,17 +492,17 @@ const thebe_selector_output = ".output, .cell_output"
   PART FOUR: OTHER APPLICATIONS OF PYTHON
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04_01_01_intro.html">
    1. Topic Modeling in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_02_topic_modeling_concepts.html">
      1.2. What is Topic Modeling?
@@ -536,14 +538,19 @@ const thebe_selector_output = ".output, .cell_output"
      1.8. TF-IDF with Scikit Learn
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.9. Implementing LDA in Python
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_03_embedding_clustering.html">
-     1.9. Embedding, Flattening, and Clustering
+     1.10. Embedding, Flattening, and Clustering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_03_04_top2vec.html">
-     1.10. Top2Vec in Python
+     1.11. Top2Vec in Python
     </a>
    </li>
   </ul>
@@ -963,27 +970,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   1.9.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-required-libraries">
-   Importing the Required Libraries
+   1.9.2. Importing the Required Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-id-word-index">
-   Create ID-Word Index
+   1.9.3. Create ID-Word Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-lda-topic-model">
-   Creating LDA Topic Model
+   1.9.4. Creating LDA Topic Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-a-document">
+   1.9.5. Analyze a Document
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-the-topic-model">
-   Analyze the Topic Model
+   1.9.6. Analyze the Topic Model
   </a>
  </li>
 </ul>
@@ -1007,27 +1019,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   1.9.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-the-required-libraries">
-   Importing the Required Libraries
+   1.9.2. Importing the Required Libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-id-word-index">
-   Create ID-Word Index
+   1.9.3. Create ID-Word Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-lda-topic-model">
-   Creating LDA Topic Model
+   1.9.4. Creating LDA Topic Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-a-document">
+   1.9.5. Analyze a Document
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyze-the-topic-model">
-   Analyze the Topic Model
+   1.9.6. Analyze the Topic Model
   </a>
  </li>
 </ul>
@@ -1041,12 +1058,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="implementing-lda-in-python">
-<h1>Implementing LDA in Python<a class="headerlink" href="#implementing-lda-in-python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.9. </span>Implementing LDA in Python<a class="headerlink" href="#implementing-lda-in-python" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="importing-the-required-libraries">
-<h2>Importing the Required Libraries<a class="headerlink" href="#importing-the-required-libraries" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.9.2. </span>Importing the Required Libraries<a class="headerlink" href="#importing-the-required-libraries" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1237,7 +1254,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="create-id-word-index">
-<h2>Create ID-Word Index<a class="headerlink" href="#create-id-word-index" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.9.3. </span>Create ID-Word Index<a class="headerlink" href="#create-id-word-index" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id2word</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">cleaned_docs</span><span class="p">)</span>
@@ -1331,7 +1348,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creating-lda-topic-model">
-<h2>Creating LDA Topic Model<a class="headerlink" href="#creating-lda-topic-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.9.4. </span>Creating LDA Topic Model<a class="headerlink" href="#creating-lda-topic-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_nums</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1354,8 +1371,76 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+<section id="analyze-a-document">
+<h2><span class="section-number">1.9.5. </span>Analyze a Document<a class="headerlink" href="#analyze-a-document" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">get_document_topics</span><span class="p">(</span><span class="n">id_docs</span><span class="p">)</span>
+<span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(25, 0.44881102), (93, 0.5214861)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">docs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An ANCYL member who was shot and severely injured by SAP members at Lephoi, Bethulie, Orange Free State (OFS) on 17 April 1991. Police opened fire on a gathering at an ANC supporter&#39;s house following a dispute between two neighbours, one of whom was linked to the ANC and the other to the SAP and a councillor.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">get_topic_terms</span><span class="p">(</span><span class="n">topic</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">terms</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">id2word</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(77, 0.33222044)
+17 members
+26 shot
+2 anc
+49 supporter
+85 dead
+94 attack
+347 ifp
+28 supporters
+41 ciskei
+24 sap
+
+(93, 0.63807696)
+28 supporters
+26 shot
+17 members
+13 injured
+189 conflict
+94 attack
+121 near
+24 sap
+55 cape
+308 home
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="analyze-the-topic-model">
-<h2>Analyze the Topic Model<a class="headerlink" href="#analyze-the-topic-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.9.6. </span>Analyze the Topic Model<a class="headerlink" href="#analyze-the-topic-model" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim_models</span>
@@ -1450,6 +1535,20 @@ if(typeof(LDAvis) !== "undefined"){
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_02_05_tfidf_build.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.8. </span>TF-IDF with Scikit Learn</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_03_03_embedding_clustering.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.10. </span>Embedding, Flattening, and Clustering</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
