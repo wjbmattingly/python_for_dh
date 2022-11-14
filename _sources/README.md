@@ -5,33 +5,41 @@ This repository is a free JupyterBook that introduces readers to Python. It pres
 # Table of Contents
 PREFACE
 
+   Preface
+
 PART ONE: The Basics of Python
+
    1. Introduction to Python
-   2. Working with Data
+   2. Data and Data Structures
    3. Loops and Logic
    4. Formal Coding: Functions, Classes, and Libraries
-   5. Working with External Data
+   5. Formal Coding: Functions, Classes, and Libraries
    6. Working with Data on the Web
 
-PART TWO: Data Analysis with Pandas
+PART TWO: Data Analysis with Pandas (Work in Progress)
+
    1. Introduction to Pandas
    2. Working with Data in Pandas
    3. Searching for Data
    4. Advanced Pandas
 
 PART THREE: Natural Language Processing with spaCy
+
    1. Introduction to spaCy
    2. Rules-Based spaCy
    3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
 
-PART FOUR: Other Applications of Python
-   1. Topic Modeling in Python
-   2. Introduction to Social Network Analysis in Python
+PART FOUR: OTHER APPLICATIONS OF PYTHON
 
-PART FIVE: Designing an Application with Streamlit
+   1. Topic Modeling in Python
+   2. Text Analysis with BookNLP
+   3. Social Network Analysis
+
+PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
+
    1. Introduction to Streamlit
    2. Advanced Streamlit Features
-   3. Building a Streamlit Application
+   3. Building a Database Query Application
 
  ### <p align="center">How to Cite</p>
  Mattingly, William. <i>Introduction to Python for Digital Humanities</i>, 2022. <a href="python-textbook.pythonhumanities.com" target="_blank">python-textbook.pythonhumanities.com</a>.
