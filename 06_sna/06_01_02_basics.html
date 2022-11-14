@@ -1027,6 +1027,20 @@ title="Print to PDF"
 <section id="sna-libraries-in-python">
 <h2><span class="section-number">3.1.2. </span>SNA Libraries in Python<a class="headerlink" href="#sna-libraries-in-python" title="Permalink to this headline">#</a></h2>
 <p>Python has several libraries for performing SNA. In this chapter, we will look closely at two: NetworkX (and Matplotlib to visualize the graph) and PyVis. Each has its strengths and weaknesses.</p>
+<p>NetworkX is a powerful library that allows users to hold complex graph-based data, such as nodes and edges, in a single class. It also allows us to perform basic mathematical calculations to discover things like centrality of a node in a graph, a concept we will learn about in the next section. NetworkX is designed to work alongside Matplotlib for plotting those graphs. As we shall see, there are some limitations to this approach. PyVis is another graph visualization library and while you can create graphs entirely independently of NetworkX, some workflows may benefit from creating the graph data in NetworkX and then passing that data to PyVis for visualization. You can download all of these libraries with <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<p>To install matplotlib, use the following command in your terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+<p>For NetworkX, you can use this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">networkx</span>
+</pre></div>
+</div>
+<p>And for PyVis, you can use this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyvis</span>
+</pre></div>
+</div>
+<p>Note that each of these libraries are all in lowercase when we install them via pip.</p>
 </section>
 </section>
 

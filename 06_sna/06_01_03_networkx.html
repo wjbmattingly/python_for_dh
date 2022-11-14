@@ -1054,6 +1054,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-networkx">
 <h1><span class="section-number">3.2. </span>Introduction to NetworkX<a class="headerlink" href="#introduction-to-networkx" title="Permalink to this headline">#</a></h1>
+<p>Now that we have installed our libraries correctly, we can begin working with NetworkX and Matplotlib. To import each library, we will use the code below. You will often see Matplotlib imported one of two ways:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+<p>Both import <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> and, therefore, are identical. The usage comes down to preference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -1105,7 +1114,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06_01_03_networkx_9_0.png" src="../_images/06_01_03_networkx_9_0.png" />
+<img alt="../_images/06_01_03_networkx_10_0.png" src="../_images/06_01_03_networkx_10_0.png" />
 </div>
 </div>
 <section id="adding-all-edges-at-once">
@@ -1121,7 +1130,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06_01_03_networkx_12_0.png" src="../_images/06_01_03_networkx_12_0.png" />
+<img alt="../_images/06_01_03_networkx_13_0.png" src="../_images/06_01_03_networkx_13_0.png" />
 </div>
 </div>
 </section>
@@ -1139,7 +1148,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06_01_03_networkx_15_0.png" src="../_images/06_01_03_networkx_15_0.png" />
+<img alt="../_images/06_01_03_networkx_16_0.png" src="../_images/06_01_03_networkx_16_0.png" />
 </div>
 </div>
 <p>Note the salient change in our graph, specifically the arrows that point towards specific nodes. These arrows in a graph indicate the direction, or <strong>force</strong>, between two nodes in a graph. In the graph above, for example, we can see that Harry has a different relationship to Rita than Rita does with Harry.</p>
@@ -1176,7 +1185,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06_01_03_networkx_20_0.png" src="../_images/06_01_03_networkx_20_0.png" />
+<img alt="../_images/06_01_03_networkx_21_0.png" src="../_images/06_01_03_networkx_21_0.png" />
 </div>
 </div>
 <p>A common problem in graph theory is calculating the shortest distance to individuals. A good way to think about this is with the classic game <code class="docutils literal notranslate"><span class="pre">Seven</span> <span class="pre">Degrees</span> <span class="pre">of</span> <span class="pre">Kevin</span> <span class="pre">Bacon</span></code>. If we wanted to know the shortest distance between Fred and Rita, we could realistically look at the graph above and figure that out. But what if we had thousands of nodes? What about millions? These are real-world problems that cannot be solved practically by simple human observation. NetworkX preserves the network as a graph that it can walk to easily identify the shortest path between two nodes at any given point. To calculate this, we cna use <code class="docutils literal notranslate"><span class="pre">nx.shortest_path()</span></code>. This will take three arguments, the graph in which the nodes are found and the source node and target node. The result will be a list of the source node, followed by all <strong>brokers</strong> or intermediaries between the source and target node. These brokers will be followed by the target node.</p>
