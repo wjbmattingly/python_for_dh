@@ -99,7 +99,7 @@ parts:
     # - file: 04_topic_modeling/04_02_03_tfidf
     # - file: 04_topic_modeling/04_02_04_scikit_learn
     # - file: 04_topic_modeling/04_02_05_tfidf_build
-    - file: 04_topic_modeling/04_02_06_lda
+    # - file: 04_topic_modeling/04_02_06_lda
     - file: 04_topic_modeling/04_03_03_embedding_clustering
     - file: 04_topic_modeling/04_03_04_top2vec
 
