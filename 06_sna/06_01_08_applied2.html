@@ -1548,9 +1548,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>When you open the generated HTML file, you will see this:</p>
-<p><img alt="pyvis with a menu selection enabled" src="images/pyvis_select.png" /></p>
+<p><img alt="pyvis with a menu selection enabled" src="../_images/pyvis_select.png" /></p>
 <p>You can the select a node in the graph and highlight that particular node. Let’s say I wanted to see all nodes connected to the ANC in the graph. I would select <code class="docutils literal notranslate"><span class="pre">ANC</span></code>. The graph will then highlight that particular node and its connections.</p>
-<p><img alt="pyvis with a filter selection enabled with ANC" src="images/pyvis_select2.png" /></p>
+<p><img alt="pyvis with a filter selection enabled with ANC" src="../_images/pyvis_select2.png" /></p>
 <p>PyVis also offers a way to filter the graph with a Filter Menu. The filter menu allows you to find nodes or edges that have specific metadata. In the previous notebook, we made sure that our nodes and edges contained metadata about the place that was connected to it. This means that we can isolate the relevant edges or nodes in the graph with this metadata. Again, this makes it a lot easier to find relevant material and identify patterns in your data that may not be so easy to do as raw data. We can create a <code class="docutils literal notranslate"><span class="pre">Filter</span> <span class="pre">Menu</span></code> by passing a keyword argument <code class="docutils literal notranslate"><span class="pre">filter_menu</span></code> when we create the <code class="docutils literal notranslate"><span class="pre">Network</span></code> class and setting it to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1570,13 +1570,13 @@ title="Print to PDF"
 </div>
 </div>
 <p>When you open the HTML file that is created, you will see the following graph:</p>
-<p><img alt="pyvis with a filter selection enabled" src="images/pyvis_filter.png" /></p>
+<p><img alt="pyvis with a filter selection enabled" src="../_images/pyvis_filter.png" /></p>
 <p>Notice the addition of the Filter Menu below the Select Menu. You can select between nodes or edges as the item to filter and then select which piece of metadata. In our case, we want to filter by <code class="docutils literal notranslate"><span class="pre">place</span></code>. We then select the place that we want to isolate and view. In our case, let’s view <code class="docutils literal notranslate"><span class="pre">Durban</span></code>. We can then press <code class="docutils literal notranslate"><span class="pre">Filter</span></code> and view the results.</p>
-<p><img alt="pyvis with a filter selection enabled on Durban" src="images/pyvis_filter2.png" /></p>
+<p><img alt="pyvis with a filter selection enabled on Durban" src="../_images/pyvis_filter2.png" /></p>
 </section>
 <section id="conclusion">
 <h2><span class="section-number">3.8.4. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>Applying SNA to humanities data is not always the right solution to the problem, but if you are dealing with many pieces of data that are interconnected with different types of relationships, it can offer you a great way to quickly get a sense of patterns that you may otherwise miss. As a humanist, you can then use this information to generate questions or perhaps have a specific collection of sources or nodes that you can explore more closely. This chapter has not covered all aspects of SN</p>
+<p>Applying SNA to humanities data is not always the right solution to the problem, but if you are dealing with many pieces of data that are interconnected with different types of relationships, it can offer you a great way to quickly get a sense of patterns that you may otherwise miss. As a humanist, you can then use this information to generate questions or perhaps have a specific collection of sources or nodes that you can explore more closely. This chapter has not covered all aspects of SNA nor all the libraries for performing it via Python, but you should have a strong enough basis to begin applying it to your own data with minor modifications.</p>
 </section>
 </section>
 
