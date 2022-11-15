@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.6. SNA on Humanities Data &#8212; Introduction to Python for Humanists</title>
+    <title>3.6. SNA on Humanities Data: Structuring the Data &#8212; Introduction to Python for Humanists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -614,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.6. SNA on Humanities Data
+     3.6. SNA on Humanities Data: Structuring the Data
     </a>
    </li>
    <li class="toctree-l2">
@@ -960,7 +960,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data
+   3.6. SNA on Humanities Data: Structuring the Data
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -984,7 +984,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>SNA on Humanities Data</h1>
+                <h1>SNA on Humanities Data: Structuring the Data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -996,7 +996,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data
+   3.6. SNA on Humanities Data: Structuring the Data
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1021,14 +1021,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sna-on-humanities-data">
-<h1><span class="section-number">3.6. </span>SNA on Humanities Data<a class="headerlink" href="#sna-on-humanities-data" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sna-on-humanities-data-structuring-the-data">
+<h1><span class="section-number">3.6. </span>SNA on Humanities Data: Structuring the Data<a class="headerlink" href="#sna-on-humanities-data-structuring-the-data" title="Permalink to this headline">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1><span class="section-number">3.7. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring victim relationships to specific organizations in their description. It is important to note here, that we do not in this approach know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization.</p>
+<p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring how organizations relate to specific individuals as they appear in their descriptions. It is important to note here, in this approach we do not know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization. To understand these relationships, we would want to use spaCy and a few NLP techniques to extract meaning about these relationships first.</p>
 <section id="examining-the-data">
 <h2><span class="section-number">3.7.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
+<p>First, let’s import our required libraries. We will only be concerned with structuring the data in this section, so we will only import Pandas. We will also import random because we want to assign a random color to each unique organization. This ensures that our approach scales quickly if we were to add thousands of new organizations into our dataset. For a polished, final version, one would want to manually assign a color to each organization so that the results would be more reproducible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1037,12 +1038,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>We will now load our data. We only need four of the columns: <code class="docutils literal notranslate"><span class="pre">Last</span></code>, <code class="docutils literal notranslate"><span class="pre">First</span></code>, <code class="docutils literal notranslate"><span class="pre">ORG</span></code>, <code class="docutils literal notranslate"><span class="pre">Place</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/trc.csv&quot;</span><span class="p">)</span>
-<span class="c1"># df = df.dropna()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span><span class="s2">&quot;ORG&quot;</span><span class="p">,</span> <span class="s2">&quot;Place&quot;</span><span class="p">]]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span><span class="s2">&quot;ORG&quot;</span><span class="p">,</span> <span class="s2">&quot;Place&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1075,6 @@ title="Print to PDF"
       <th></th>
       <th>Last</th>
       <th>First</th>
-      <th>Description</th>
       <th>ORG</th>
       <th>Place</th>
     </tr>
@@ -1084,7 +1084,6 @@ title="Print to PDF"
       <th>0</th>
       <td>AARON</td>
       <td>Thabo Simon</td>
-      <td>An ANCYL member who was shot and severely inju...</td>
       <td>ANC|ANCYL|Police|SAP</td>
       <td>Bethulie</td>
     </tr>
@@ -1092,7 +1091,6 @@ title="Print to PDF"
       <th>1</th>
       <td>ABBOTT</td>
       <td>Montaigne</td>
-      <td>A member of the SADF who was severely injured ...</td>
       <td>SADF</td>
       <td>Messina</td>
     </tr>
@@ -1100,7 +1098,6 @@ title="Print to PDF"
       <th>2</th>
       <td>ABRAHAM</td>
       <td>Nzaliseko Christopher</td>
-      <td>A COSAS supporter who was kicked and beaten wi...</td>
       <td>COSAS|Police</td>
       <td>Mdantsane</td>
     </tr>
@@ -1108,7 +1105,6 @@ title="Print to PDF"
       <th>3</th>
       <td>ABRAHAMS</td>
       <td>Achmat Fardiel</td>
-      <td>Was shot and blinded in one eye by members of ...</td>
       <td>SAP</td>
       <td>Athlone</td>
     </tr>
@@ -1116,7 +1112,6 @@ title="Print to PDF"
       <th>4</th>
       <td>ABRAHAMS</td>
       <td>Annalene Mildred</td>
-      <td>Was shot and injured by members of the SAP in ...</td>
       <td>Police|SAP</td>
       <td>Robertson</td>
     </tr>
@@ -1126,13 +1121,11 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>995</th>
       <td>CELE</td>
       <td>Nompumelelo Iris ‘Magwaza’</td>
-      <td>An ANC district organiser for southern Natal w...</td>
       <td>ANC</td>
       <td>Ndwedwe</td>
     </tr>
@@ -1140,7 +1133,6 @@ title="Print to PDF"
       <th>996</th>
       <td>CELE</td>
       <td>Nomvula Eunice</td>
-      <td>Her home was burnt down by IFP supporters in U...</td>
       <td>ANC</td>
       <td>Umbumbulu</td>
     </tr>
@@ -1148,7 +1140,6 @@ title="Print to PDF"
       <th>997</th>
       <td>CELE</td>
       <td>Nonhlanhla Evelina</td>
-      <td>An IFP supporter who was killed by ANC support...</td>
       <td>ANC</td>
       <td>Umzimkulu</td>
     </tr>
@@ -1156,7 +1147,6 @@ title="Print to PDF"
       <th>998</th>
       <td>CELE</td>
       <td>Nozimpahla</td>
-      <td>Her home was burnt down by IFP supporters on 2...</td>
       <td>NaN</td>
       <td>Sonkombo</td>
     </tr>
@@ -1164,15 +1154,15 @@ title="Print to PDF"
       <th>999</th>
       <td>DLAMINI</td>
       <td>Cedric Bongani</td>
-      <td>An ANC supporter who was shot dead by IFP supp...</td>
       <td>ANC</td>
       <td>Durban</td>
     </tr>
   </tbody>
 </table>
-<p>1000 rows × 5 columns</p>
+<p>1000 rows × 4 columns</p>
 </div></div></div>
 </div>
+<p>Now that we have our data, we can begin clean it and prepare it for inclusion in a NetworkX graph. Our goal is to create a list of nodes and edges separately which we will then store as two separate Pandas DataFrames. We will then be able to use this data for graph creation in the next section. To do this, we will use the following code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1180,7 +1170,6 @@ title="Print to PDF"
 <span class="n">found_orgs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
-
     <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
     <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">}))</span>
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
@@ -1189,6 +1178,7 @@ title="Print to PDF"
             <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">found_orgs</span><span class="p">:</span>
                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;0123456789ABCDEF&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
                 <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">})</span>
+                <span class="n">found_orgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
             <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">edge_list</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
@@ -1199,11 +1189,42 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;name&#39;: &#39;0_Thabo Simon AARON&#39;, &#39;color&#39;: &#39;green&#39;, &#39;place&#39;: &#39;Bethulie&#39;}]
 [{&#39;source&#39;: &#39;ANC&#39;, &#39;target&#39;: &#39;0_Thabo Simon AARON&#39;, &#39;place&#39;: &#39;Bethulie&#39;}]
-2172
+1021
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s break this down. First, we create three separate lists that we will append to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">found_orgs</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>The list <code class="docutils literal notranslate"><span class="pre">nodes</span></code> will contain a list of all nodes for the graph. The list <code class="docutils literal notranslate"><span class="pre">edge_list</span></code> will contain all the edges in our graph. The list <code class="docutils literal notranslate"><span class="pre">found_orgs</span></code> will be an easy way to know which organizations have already been found. This is to prevent us from adding an organization into our nodes list more than once.</p>
+<p>Next, we begin iterating over our DataFrame and creating a unique <code class="docutils literal notranslate"><span class="pre">node_id</span></code> for each person. Remember, some individuals have the same first and last names. This means we need to assign a unique number to their name as well. We also want to give each node some extra metadata, namely the <code class="docutils literal notranslate"><span class="pre">place</span></code> that is referenced in their description and the <code class="docutils literal notranslate"><span class="pre">color</span></code> of <code class="docutils literal notranslate"><span class="pre">green</span></code>. This will keep all individuals in our graph the same node color.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">node_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">First</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">Last</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">Place</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">}))</span>
+</pre></div>
+</div>
+<p>After this, we want to then add each organization to the node list if it does not appear already in there and then add an edge between it and the individual to which it is connected.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">orgs</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">org</span> <span class="ow">in</span> <span class="n">orgs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">org</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">found_orgs</span><span class="p">:</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;0123456789ABCDEF&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">})</span>
+                <span class="n">found_orgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">org</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span> <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="n">place</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Not all individual’s, however, are connected to organizations. Sometimes, our <code class="docutils literal notranslate"><span class="pre">ORG</span></code> column is null. For this reason, we use the condition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">ORG</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>This checks to see if the <code class="docutils literal notranslate"><span class="pre">ORG</span></code> column is empty. If it is, we ignore it. If not, then we split up all the organizations into individual strings and then check to see if is in <code class="docutils literal notranslate"><span class="pre">found_orgs</span></code>. If not, then we assign it a random color and add it to our list of nodes. Next, we add it to <code class="docutils literal notranslate"><span class="pre">found_orgs</span></code> so that we do not add it again.</p>
+<p>Once we have created our data, we can save each the node list and the edge list to CSV files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
