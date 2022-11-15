@@ -1104,7 +1104,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
@@ -1120,8 +1120,7 @@ title="Print to PDF"
     <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
 <span class="c1"># net.force_atlas_2based()</span>
 <span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1133,7 +1132,7 @@ title="Print to PDF"
 <div class="output text_html">
 <iframe
     width="100%"
-    height="500"
+    height="600px"
     src="trc_graph.html"
     frameborder="0"
     allowfullscreen
