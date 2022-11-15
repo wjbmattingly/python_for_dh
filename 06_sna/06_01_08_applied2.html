@@ -936,12 +936,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-network">
+   3.8.1. Building the Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-network">
+   3.8.2. Visualizing the Network
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -953,6 +982,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-network">
+   3.8.1. Building the Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-network">
+   3.8.2. Visualizing the Network
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -962,6 +1009,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="sna-on-humanities-data-creating-the-graph">
 <h1><span class="section-number">3.8. </span>SNA on Humanities Data: Creating the Graph<a class="headerlink" href="#sna-on-humanities-data-creating-the-graph" title="Permalink to this headline">#</a></h1>
+<p>Now that we have created our node data and edge data, let’s go ahead and load them via Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1059,6 +1107,15 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
+<p>With this data, we can now construct a node list and edge list with just a few lines of Python. In the code below, we will be iterating over each DataFrame and creating lists of nodes and lists of edges sin the format that NetworkX expects. Remember, NetworkX wants to see each node in a node list rendered like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">NODE_ID</span><span class="p">,</span> <span class="p">{</span><span class="n">METADATA</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Each edge in the edge list should be rendered like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">EDGE_SOURCE</span><span class="p">,</span> <span class="n">EDGE_TARGET</span><span class="p">,</span> <span class="p">{</span><span class="n">METADATA</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Remember, that these must be tuples and the meta data must be stored in the final index with each key being an attribute and each value being the value of that attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1073,13 +1130,40 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">IFrame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;0_Thabo Simon AARON&#39;,
+ {&#39;color&#39;: &#39;green&#39;, &#39;place&#39;: &#39;Bethulie&#39;, &#39;title&#39;: &#39;0_Thabo Simon AARON&#39;})
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ANC&#39;, &#39;0_Thabo Simon AARON&#39;, {&#39;place&#39;: &#39;Bethulie&#39;})
+</pre></div>
+</div>
+</div>
+</div>
+<section id="building-the-network">
+<h2><span class="section-number">3.8.1. </span>Building the Network<a class="headerlink" href="#building-the-network" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have our data structured correctly, we can begin constructing our network with NetworkX. We will first create our <code class="docutils literal notranslate"><span class="pre">Graph</span></code> class (<code class="docutils literal notranslate"><span class="pre">G</span></code>) and then add the nodes from our list of nodes and our edges from our list of edges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
@@ -1089,6 +1173,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>When working with larger datasets, calculating the physics can often be time consuming when the PyVis HTML graph loads. For this reason, it can be useful to calculate the placement of the x and y coordinates beforehand. NetworkX gives us the ability to do this by leveraging the method of the algorithm we wish to use. In our case, we will use the <code class="docutils literal notranslate"><span class="pre">spring_layout()</span></code>. This method will take a single argument, the graph that we want to process. In our case, this is <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+<p>This will return a list of lists. Each sublist will be x and y coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -1102,33 +1188,161 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="visualizing-the-network">
+<h2><span class="section-number">3.8.2. </span>Visualizing the Network<a class="headerlink" href="#visualizing-the-network" title="Permalink to this headline">#</a></h2>
+<p>First, we want to create our PyVis graph. We will be setting <code class="docutils literal notranslate"><span class="pre">notebook</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> because we are working within a Notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
-
-<span class="n">neighbor_map</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_adj_list</span><span class="p">()</span>
-
-<span class="c1"># add neighbor data to node hover data</span>
-<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]]</span>
-    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">10000</span>
-    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="mi">10000</span>
-    <span class="c1"># node[&quot;title&quot;] += &quot; Neighbors:\n&quot; + &quot;\n&quot;.join(neighbor_map[node[&quot;id&quot;]])</span>
-    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
-<span class="c1"># net.force_atlas_2based()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local cdn resources have problems on chrome/safari when used in jupyter-notebook. 
-1021
 </pre></div>
 </div>
+</div>
+</div>
+<p>Let’s first take a look at the first node in our graph. We can access this individual’s node by grabbing index 0 in the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> attribute of our <code class="docutils literal notranslate"><span class="pre">net</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;color&#39;: &#39;green&#39;,
+ &#39;place&#39;: &#39;Bethulie&#39;,
+ &#39;title&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;size&#39;: 10,
+ &#39;id&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;label&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;shape&#39;: &#39;dot&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want this node to have an x and a y coordinate as attributes and we want this data to come from the <code class="docutils literal notranslate"><span class="pre">pos</span></code> object above which contains the data about each node’s position in the graph. To manually add these attributes to our nodes, we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and create a new key of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and add those to each node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="mi">10000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;color&#39;: &#39;green&#39;,
+ &#39;place&#39;: &#39;Bethulie&#39;,
+ &#39;title&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;size&#39;: 10,
+ &#39;id&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;label&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;shape&#39;: &#39;dot&#39;,
+ &#39;x&#39;: -241.3400448858738,
+ &#39;y&#39;: 295.41967436671257}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have our PyVis graph created and assigned x and y coordinates, we can start to do some more advanced things. I can use <code class="docutils literal notranslate"><span class="pre">get_adj_list()</span></code> to create a dictionary of all nodes. Each key will be a unique node id. The values will be sets (lists with only unique items in each index) that correspond to the nodes to which they are connected. Because the purpose of this graph is to visualize relationships between people and organizations, set will include only organizations referenced in that individual’s description.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neighbor_map</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_adj_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neighbor_map</span><span class="p">[</span><span class="s2">&quot;0_Thabo Simon AARON&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ANC&#39;, &#39;ANCYL&#39;, &#39;Police&#39;, &#39;SAP&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the PyVis official documentation, this data is used to generate a title that will pop up when an individual hovers over it. It is modified slightly to replace the <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> HTML tag with <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot; Neighbors:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;color&#39;: &#39;green&#39;,
+ &#39;place&#39;: &#39;Bethulie&#39;,
+ &#39;title&#39;: &#39;0_Thabo Simon AARON Neighbors:\nANCYL\nSAP\nANC\nPolice&#39;,
+ &#39;size&#39;: 10,
+ &#39;id&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;label&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;shape&#39;: &#39;dot&#39;,
+ &#39;x&#39;: -241.3400448858738,
+ &#39;y&#39;: 295.41967436671257}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The number of connections in our graph also tells us the relative importance of a node. Remember, we have all individuals connected to organizations; we do not have individuals connected to other individuals. This means the organizations in our graph will have a larger number of connections. What if we wanted to use that information to increase the size of each node in the graph based on the number of unique connections? For this, we can set a node’s value based on the length of connections found in the <code class="docutils literal notranslate"><span class="pre">neighbor_map</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;color&#39;: &#39;green&#39;,
+ &#39;place&#39;: &#39;Bethulie&#39;,
+ &#39;title&#39;: &#39;0_Thabo Simon AARON Neighbors:\nANCYL\nSAP\nANC\nPolice&#39;,
+ &#39;size&#39;: 10,
+ &#39;id&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;label&#39;: &#39;0_Thabo Simon AARON&#39;,
+ &#39;shape&#39;: &#39;dot&#39;,
+ &#39;x&#39;: -241.3400448858738,
+ &#39;y&#39;: 295.41967436671257,
+ &#39;value&#39;: 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have all of our data, we can now visualize it all. Because we already calculated the physics of our graph, we do not want to enable Physics, so we will set that to False.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;trc_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
     width="100%"
@@ -1140,6 +1354,7 @@ title="Print to PDF"
 ></iframe>
 </div></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
