@@ -968,6 +968,16 @@ title="Print to PDF"
    3.8.2. Visualizing the Network
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-menus">
+   3.8.3. Adding Menus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.8.4. Conclusion
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -995,6 +1005,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-the-network">
    3.8.2. Visualizing the Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-menus">
+   3.8.3. Adding Menus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.8.4. Conclusion
   </a>
  </li>
 </ul>
@@ -1500,6 +1520,63 @@ title="Print to PDF"
     </body>
 </html></div></div>
 </div>
+<p>The above graph may be a bit difficult to interpret as the default window is quite zoomed  out. This is because there are a lot of nodes in our graph that do not have any connections. A graph is a visual representation of mathematical relationships between nodes. The weaker nodes, or those with fewer connections, appear further away from the center of the graph. Likewise, stronger clusters, or those collection of nodes with the highest number of connections, will appear closer to the center. The gravity of these larger nodes push the smaller nodes with fewer connections further away in a <code class="docutils literal notranslate"><span class="pre">spring</span></code> loaded graph.</p>
+<p>Because this is a dynamic graph, you can zoom in to examine the cluster if you are viewing this textbook online.</p>
+</section>
+<section id="adding-menus">
+<h2><span class="section-number">3.8.3. </span>Adding Menus<a class="headerlink" href="#adding-menus" title="Permalink to this headline">#</a></h2>
+<p>Finding and isolating specific nodes in a large graph can be a bit difficult as well. What if you wanted to see where a specific node appeared? You would need to keep searching until you found that node. PyVis offers a solution to this problem with two types of menus. The first is a <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Menu</span></code>. This allows you to select a specific node in the graph and highlight it. Depending on the graph size, it may take a few seconds for this visualization to take place. You can create a select menu with your graph by passing a keyword argument of <code class="docutils literal notranslate"><span class="pre">select_menu</span></code> and setting it to <code class="docutils literal notranslate"><span class="pre">True</span></code> when you first create your PyVis graph and call the <code class="docutils literal notranslate"><span class="pre">Network</span></code> class, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note, if you are using a Jupyer Notebook to analyze your graph, this menu will appear but your graph data will not. This is due to the extra layer of JavaScript found within the HTML file. In order to visualize this graph, you will need to open it as a separate HTML file. The code below would create the same graph as above, but with a Select Menu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">neighbor_map</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_adj_list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot; Neighbors:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+<span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph_select.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you open the generated HTML file, you will see this:</p>
+<p><img alt="pyvis with a menu selection enabled" src="images/pyvis_select.png" /></p>
+<p>You can the select a node in the graph and highlight that particular node. Let’s say I wanted to see all nodes connected to the ANC in the graph. I would select <code class="docutils literal notranslate"><span class="pre">ANC</span></code>. The graph will then highlight that particular node and its connections.</p>
+<p><img alt="pyvis with a filter selection enabled with ANC" src="images/pyvis_select2.png" /></p>
+<p>PyVis also offers a way to filter the graph with a Filter Menu. The filter menu allows you to find nodes or edges that have specific metadata. In the previous notebook, we made sure that our nodes and edges contained metadata about the place that was connected to it. This means that we can isolate the relevant edges or nodes in the graph with this metadata. Again, this makes it a lot easier to find relevant material and identify patterns in your data that may not be so easy to do as raw data. We can create a <code class="docutils literal notranslate"><span class="pre">Filter</span> <span class="pre">Menu</span></code> by passing a keyword argument <code class="docutils literal notranslate"><span class="pre">filter_menu</span></code> when we create the <code class="docutils literal notranslate"><span class="pre">Network</span></code> class and setting it to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">neighbor_map</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_adj_list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="mi">10000</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot; Neighbors:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+    <span class="n">node</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbor_map</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]])</span>
+<span class="n">net</span><span class="o">.</span><span class="n">toggle_physics</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="s2">&quot;trc_graph_select_filter.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you open the HTML file that is created, you will see the following graph:</p>
+<p><img alt="pyvis with a filter selection enabled" src="images/pyvis_filter.png" /></p>
+<p>Notice the addition of the Filter Menu below the Select Menu. You can select between nodes or edges as the item to filter and then select which piece of metadata. In our case, we want to filter by <code class="docutils literal notranslate"><span class="pre">place</span></code>. We then select the place that we want to isolate and view. In our case, let’s view <code class="docutils literal notranslate"><span class="pre">Durban</span></code>. We can then press <code class="docutils literal notranslate"><span class="pre">Filter</span></code> and view the results.</p>
+<p><img alt="pyvis with a filter selection enabled on Durban" src="images/pyvis_filter2.png" /></p>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">3.8.4. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Applying SNA to humanities data is not always the right solution to the problem, but if you are dealing with many pieces of data that are interconnected with different types of relationships, it can offer you a great way to quickly get a sense of patterns that you may otherwise miss. As a humanist, you can then use this information to generate questions or perhaps have a specific collection of sources or nodes that you can explore more closely. This chapter has not covered all aspects of SN</p>
 </section>
 </section>
 
