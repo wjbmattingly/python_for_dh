@@ -964,18 +964,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-example">
-   2.3.2. Basic Example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setting-a-custom-attribute">
-   2.3.3. Setting a Custom Attribute
+   2.3.2. Setting a Custom Attribute
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-a-function-with-on-match">
-   2.3.4. Adding a Function with
+   2.3.3. Adding a Function with
    <code class="docutils literal notranslate">
     <span class="pre">
      on_match
@@ -1008,18 +1003,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-example">
-   2.3.2. Basic Example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setting-a-custom-attribute">
-   2.3.3. Setting a Custom Attribute
+   2.3.2. Setting a Custom Attribute
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-a-function-with-on-match">
-   2.3.4. Adding a Function with
+   2.3.3. Adding a Function with
    <code class="docutils literal notranslate">
     <span class="pre">
      on_match
@@ -1043,9 +1033,7 @@ title="Print to PDF"
 <h2><span class="section-number">2.3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>Another rules-based component built into spaCy is the PhraseMatcher. Like the Matcher, the PhraseMatcher does not sit inside a spaCy pipeline. It does not, therefore, align with a spaCy extension, such as <code class="docutils literal notranslate"><span class="pre">doc.ents</span></code>, like the EntityRuler does. Instead, it is meant to run over a Doc container, just like the Matcher. Unlike the Matcher, however, the PhraseMatcher does not function a sequence of linguistic features at the token level, rather it is focused on matching at the phrase level.</p>
 <p>In practice, you would use the Matcher when you need to rely on a sequence of linguistic features at the token level to extract data. This is powerful, but can sometimes be difficult to write robust patterns to match all instances of a the patterns you wish to match. The PhraseMatcher, on the other hand, should be used when you know relatively well how the data will appear in a text. It is easier to use the PhraseMatcher, but it is not as dynamic as the Matcher.</p>
-</section>
-<section id="basic-example">
-<h2><span class="section-number">2.3.2. </span>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
+<p>.## Basic Example</p>
 <p>As with the Matcher, it is best to see the PhraseMatcher in action with a basic example. First, let’s import the <code class="docutils literal notranslate"><span class="pre">PhraseMatcher</span></code> class and load up the default small English pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1159,7 +1147,7 @@ Sentence: He is also known as the Boy who Lived.
 <p>As we can tel, the results are good, but we are missing one case. The second example of <code class="docutils literal notranslate"><span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code> was not grabbed because <code class="docutils literal notranslate"><span class="pre">The</span></code> was not capitalized. We can account for this by changing the main attribute of the PhraseMatcher.</p>
 </section>
 <section id="setting-a-custom-attribute">
-<h2><span class="section-number">2.3.3. </span>Setting a Custom Attribute<a class="headerlink" href="#setting-a-custom-attribute" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.2. </span>Setting a Custom Attribute<a class="headerlink" href="#setting-a-custom-attribute" title="Permalink to this headline">#</a></h2>
 <p>Unlike the Matcher, the PhraseMatcher does not let us control how it reads each individual token in the pattern. The way the PhraseMatcher parses the phrase is as the sequence level. By default, the PhraseMatcher reads the entire pattern as <code class="docutils literal notranslate"><span class="pre">ORTH</span></code>, or raw text. In other words, it must be a precise match in order to be flagged and extracted. In some instances, however, it may be important for a pattern to be not just raw text, but also in all forms, both uppercase and lowercase. This is particularly important for phrases, like <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code>, where the word <code class="docutils literal notranslate"><span class="pre">the</span></code> may be capitalized if it is at the start of a sentence. In these instances, we can change the main way the PhraseMatcher works by using the <code class="docutils literal notranslate"><span class="pre">attr</span></code> argument. By using <code class="docutils literal notranslate"><span class="pre">attr=&quot;LOWER&quot;</span></code>, we can make our PhraseMatcher pattern case-agnostic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1226,7 +1214,7 @@ Sentence: The Boy who Lived has an enemy named Voldemorte who is known as He who
 <p>Notice that now, we have grabbed all ways the phrase <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">boy</span> <span class="pre">who</span> <span class="pre">lived</span></code> is expressed in our text.</p>
 </section>
 <section id="adding-a-function-with-on-match">
-<h2><span class="section-number">2.3.4. </span>Adding a Function with <code class="docutils literal notranslate"><span class="pre">on_match</span></code><a class="headerlink" href="#adding-a-function-with-on-match" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.3. </span>Adding a Function with <code class="docutils literal notranslate"><span class="pre">on_match</span></code><a class="headerlink" href="#adding-a-function-with-on-match" title="Permalink to this headline">#</a></h2>
 <p>In production, it can sometimes be difficult to deploy a spaCy-based solution that requires pasting a for loop each time you want to iterate over the results. Usually, you want to automate certain tasks so that when a match is found, some event occurs in your code. The PhraseMatcher allows you to pass an extra argument to your patterns: <code class="docutils literal notranslate"><span class="pre">on_match</span></code>. This keyword argument will take a function which will receive four arguments from the PhraseMatcher: <code class="docutils literal notranslate"><span class="pre">matcher</span></code> (the PhraseMatcher), <code class="docutils literal notranslate"><span class="pre">doc</span></code> (the doc container that the PhraseMatcher just passed over), <code class="docutils literal notranslate"><span class="pre">id</span></code>, and <code class="docutils literal notranslate"><span class="pre">matches</span></code> (the resulting matches from the PhraseMatcher).</p>
 <p>Let’s create a basic function that will iterate over each match and print off the match, its label, and the sentence in which it was found.</p>
 <div class="cell docutils container">
