@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.8. SNA on Humanities Data: Creating the Graph" href="06_01_08_applied2.html" />
+    <link rel="next" title="3.7. SNA on Humanities Data: Creating the Graph" href="06_01_08_applied2.html" />
     <link rel="prev" title="3.5. Adding Color to Nodes" href="06_01_06_node_color.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01_intro/01_05-01_intro.html">
-   5. Formal Coding: Functions, Classes, and Libraries
+   5. Working with External Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06_01_08_applied2.html">
-     3.8. SNA on Humanities Data: Creating the Graph
+     3.7. SNA on Humanities Data: Creating the Graph
     </a>
    </li>
   </ul>
@@ -958,22 +958,10 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data: Structuring the Data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examining-the-data">
+   3.6.1. Examining the Data
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.7. Introduction
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     3.7.1. Examining the Data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -994,22 +982,10 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.6. SNA on Humanities Data: Structuring the Data
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examining-the-data">
+   3.6.1. Examining the Data
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   3.7. Introduction
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examining-the-data">
-     3.7.1. Examining the Data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1023,12 +999,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="sna-on-humanities-data-structuring-the-data">
 <h1><span class="section-number">3.6. </span>SNA on Humanities Data: Structuring the Data<a class="headerlink" href="#sna-on-humanities-data-structuring-the-data" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1><span class="section-number">3.7. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p>In this section, we will apply the skills we have learned about SNA on real humanities data. Again, we will be working with the Volume 7 Dataset from the South African TRC. Unlike the last chapter on Topic Modeling, we will not be interested in how the descriptions of violence cluster together. Instead, we will be interested in exploring how organizations relate to specific individuals as they appear in their descriptions. It is important to note here, in this approach we do not know the relationship between the victim and the organization. There is equal possibility that they were a member or victim of the organization. To understand these relationships, we would want to use spaCy and a few NLP techniques to extract meaning about these relationships first.</p>
 <section id="examining-the-data">
-<h2><span class="section-number">3.7.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6.1. </span>Examining the Data<a class="headerlink" href="#examining-the-data" title="Permalink to this headline">#</a></h2>
 <p>First, let’s import our required libraries. We will only be concerned with structuring the data in this section, so we will only import Pandas. We will also import random because we want to assign a random color to each unique organization. This ensures that our approach scales quickly if we were to add thousands of new organizations into our dataset. For a polished, final version, one would want to manually assign a color to each organization so that the results would be more reproducible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1351,7 +1324,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="06_01_08_applied2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.8. </span>SNA on Humanities Data: Creating the Graph</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>SNA on Humanities Data: Creating the Graph</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

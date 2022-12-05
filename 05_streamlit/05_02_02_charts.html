@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01_intro/01_05-01_intro.html">
-   5. Formal Coding: Functions, Classes, and Libraries
+   5. Working with External Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_08_applied2.html">
-     3.8. SNA on Humanities Data: Creating the Graph
+     3.7. SNA on Humanities Data: Creating the Graph
     </a>
    </li>
   </ul>
@@ -1090,7 +1090,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="metric1 widget in Streamlit" src="../_images/metrics1.png" /></p>
+<figure class="align-default" id="id1">
+<img alt="../_images/metrics1.png" src="../_images/metrics1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Example of Standard st.metric() Widget()</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Since we are using the <code class="docutils literal notranslate"><span class="pre">st.metric()</span></code> widget, however, we can also pass in a keyword argument that displays the degree to which the metric changed from the previous state. To do this, we will need to leverage the Streamlit Session State, which we will meet later in this chapter. This allows us to store a variable across different runs of the application. For now, we can ignore this bit of the code below and focus on the third argument that we passed to metric, <code class="docutils literal notranslate"><span class="pre">change</span></code>. This will display a change feature in the widget that will show the up or down trend of the change in green and red color, respectively.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;prev_word_count&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
     <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;prev_word_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1102,7 +1107,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="metric1 widget in Streamlit" src="../_images/metrics2.png" /></p>
+<figure class="align-default" id="id2">
+<img alt="../_images/metrics2.png" src="../_images/metrics2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Example of st.metric() Widget with Change</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Metric is a useful feature that allows us to create apps that display numerical data in easy-to-understand ways. But in other situations, a single qualitative number may not be appropriate. Here is where charts come in handy.</p>
 </section>
 <section id="plotting-basic-graphs-with-streamlit">
@@ -1121,7 +1131,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="line_chart widget in Streamlit" src="../_images/line_chart.png" /></p>
+<figure class="align-default" id="id3">
+<img alt="../_images/line_chart.png" src="../_images/line_chart.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Example of Streamlit Line Chart</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="bar-charts-with-st-bar-chart">
 <h3><span class="section-number">2.1.2.2. </span>Bar Charts with st.bar_chart()<a class="headerlink" href="#bar-charts-with-st-bar-chart" title="Permalink to this headline">#</a></h3>
@@ -1130,7 +1145,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="bar_chart widget in Streamlit" src="../_images/bar_chart.png" /></p>
+<figure class="align-default" id="id4">
+<img alt="../_images/bar_chart.png" src="../_images/bar_chart.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Example of Streamlit Bar Chart</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="area-charts-with-st-area-chart">
 <h3><span class="section-number">2.1.2.3. </span>Area Charts with st.area_chart()<a class="headerlink" href="#area-charts-with-st-area-chart" title="Permalink to this headline">#</a></h3>
@@ -1139,7 +1159,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="area_chart widget in Streamlit" src="../_images/area_chart.png" /></p>
+<figure class="align-default" id="id5">
+<img alt="../_images/area_chart.png" src="../_images/area_chart.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Example of Streamlit Area Chart</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 <section id="map-charts">
@@ -1160,8 +1185,13 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The output will look like this:
-<img alt="basic_map widget in Streamlit" src="../_images/basic_map.png" /></p>
+<p>The output will look like this:</p>
+<figure class="align-default" id="id6">
+<img alt="../_images/basic_map.png" src="../_images/basic_map.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Example of st.map() Òutput</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Each node on this graph is a row in the dataframe. This is an interactive map that users can zoom in to each node on the graph. While this is useful for users to get a sense of the geospatial data quickly, the Streamlit <code class="docutils literal notranslate"><span class="pre">st.map()</span></code> widget is limited in what it can do.</p>
 </section>
 <section id="third-party-maps-an-example-with-pydeck">
@@ -1199,7 +1229,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>The output will look like this:</p>
-<p><img alt="pydeck_map widget in Streamlit" src="../_images/pydeck_map.png" /></p>
+<figure class="align-default" id="id7">
+<img alt="../_images/pydeck_map.png" src="../_images/pydeck_map.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Example of Streamlit PyDeck Map</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>

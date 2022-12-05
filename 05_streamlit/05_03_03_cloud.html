@@ -230,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01_intro/01_05-01_intro.html">
-   5. Formal Coding: Functions, Classes, and Libraries
+   5. Working with External Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -618,7 +618,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_08_applied2.html">
-     3.8. SNA on Humanities Data: Creating the Graph
+     3.7. SNA on Humanities Data: Creating the Graph
     </a>
    </li>
   </ul>
@@ -1048,38 +1048,92 @@ title="Print to PDF"
 <p>Once you have created your GitHub account, you can create a repository and upload the code into the repository. If you are just starting out with GitHub, getting used to Git can be a bit daunting. Git is powerful, but has a steep learning curve. It allows you to maintain your code, especially in teams, and version control everything. This means that your code is always backed up and you can access previous versions of your code at any single time.</p>
 <p>To upload your application formally, you would want to be familiar with Git and how to perform basic tasks, such as cloning a repository, adding files to it, committing those changes, and then pushing them to the repository. While this is the better approach, it is not the only one. For now, you can get your application up and running entirely in your browser.</p>
 <p>First, we will create a new repository. To do this, we will go to our GitHub main page and select <code class="docutils literal notranslate"><span class="pre">New</span></code>, found in the top-left side of your screen.</p>
-<p><img alt="streamlit share login" src="../_images/github_new.png" /></p>
+<figure class="align-default" id="id1">
+<img alt="../_images/github_new.png" src="../_images/github_new.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Creating a New GitHub Repository by Selecting New</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Once you click <code class="docutils literal notranslate"><span class="pre">New</span></code>, you will see the following screen:</p>
-<p><img alt="streamlit share login" src="../_images/github_create.png" /></p>
+<figure class="align-default" id="id2">
+<img alt="../_images/github_create.png" src="../_images/github_create.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Example of GitHub Form for Creating New Repository</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Here, we will fill out the details of our repository. We need to first give it a unique name. We can keep all other settings the default for now. Once done, we will click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code>. After this, you will see a new screen that looks like this:</p>
-<p><img alt="github create repository setup page" src="../_images/github_setup.png" /></p>
+<figure class="align-default" id="id3">
+<img alt="../_images/github_setup.png" src="../_images/github_setup.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">Example of First Screen after Creating New Repository</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>You will now select <code class="docutils literal notranslate"><span class="pre">creating</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">file</span></code>. Once you do, you will see a screen that looks like this:</p>
-<p><img alt="github create repository commit page" src="../_images/github_commit.png" /></p>
+<figure class="align-default" id="id4">
+<img alt="../_images/github_commit.png" src="../_images/github_commit.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Example of Creating your First File and Commit in the New Repository</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Here, you will create a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and assign some text to it. This will ideally describe your application. It will be what users see when they visit your GitHub repository. Once you have a description you are happy with, click <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">new</span> <span class="pre">file</span></code>. This will lead to a final new screen.</p>
-<p><img alt="github create repository setup adding files" src="../_images/github_addfiles.png" /></p>
+<figure class="align-default" id="id5">
+<img alt="../_images/github_addfiles.png" src="../_images/github_addfiles.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.10 </span><span class="caption-text">Example of Adding Files to the New Repository</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Next, we need upload our application and data to our repository. To do this, we will click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file</span></code> and upload our local files that are necessary for running our Streamlit application. You will also want to make a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file lists all required libraries, such as Pandas.</p>
 </section>
 <section id="connect-streamlit-share-to-your-github">
 <h2><span class="section-number">3.2.3. </span>Connect Streamlit Share to your GitHub<a class="headerlink" href="#connect-streamlit-share-to-your-github" title="Permalink to this headline">#</a></h2>
 <p>Now that we have our repository created, we need to link Streamlit Share to our GitHub. To do so, you will need to visit <code class="docutils literal notranslate"><span class="pre">https://share.streamlit.io/</span></code> Once on this page, you will see a screen that looks like this:</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_signin.png" /></p>
+<figure class="align-default" id="id6">
+<img alt="../_images/streamlit_signin.png" src="../_images/streamlit_signin.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Connecting GitHub to Streamlit Share</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Select <code class="docutils literal notranslate"><span class="pre">Continue</span> <span class="pre">with</span> <span class="pre">GitHub</span></code> and use your GitHub credentials for login verification. Once you are logged in, you will see a screen that looks like this at the top:</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_mainpage.png" /></p>
+<p>````{figure} `../images/streamlit/streamlit_mainpage.png
+Main Screen of Streamlit Share</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 <section id="create-a-new-app">
 <h2><span class="section-number">3.2.4. </span>Create a New App<a class="headerlink" href="#create-a-new-app" title="Permalink to this headline">#</a></h2>
 <p>Select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">App</span></code>. After a few seconds, you will be taken to a page that looks like this:</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_deployapp.png" /></p>
+<figure class="align-default" id="id7">
+<img alt="../_images/streamlit_deployapp.png" src="../_images/streamlit_deployapp.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Form for Creating a New Application</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Click on each of these fields. First, select your repository. Streamlit will be connected to your GitHub, so you will be able to see all your repositories, both private and public. Next, select the branch of your repository. We have not covered branches in this textbook. Branches are a function of Git. By default, your application will be on the main branch of your repository. Finally, select the main Python file in which your application rests. Once you have filled out these three fields, click <code class="docutils literal notranslate"><span class="pre">Deploy!</span></code>.</p>
 </section>
 <section id="set-custom-subdomain">
 <h2><span class="section-number">3.2.5. </span>Set Custom Subdomain<a class="headerlink" href="#set-custom-subdomain" title="Permalink to this headline">#</a></h2>
 <p>It will take several minutes (depending on the complexity of your application and the number of required libraries you wish to have installed). At this point, Streamlit Share is building an environment on a server to host your application in the cloud. Once complete, it will provide you with a unique domain for your application with the extension. This will be based on your repository name and your GitHub username. We can create a custom subdomain for free by returning to our Streamlit Share homepage and selecting the three dots next to our application’s name.</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_changeurl.png" /></p>
+<figure class="align-default" id="id8">
+<img alt="../_images/streamlit_changeurl.png" src="../_images/streamlit_changeurl.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Select the Settings for your Application</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Once here, select <code class="docutils literal notranslate"><span class="pre">Settings</span></code> and you will see a page that looks like this:</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_oldurl.png" /></p>
+<figure class="align-default" id="id9">
+<img alt="../_images/streamlit_oldurl.png" src="../_images/streamlit_oldurl.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.14 </span><span class="caption-text">The Default URL for your Application</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Note that in the middle of the screen, you will see your long subdomain. You can now change it to something unique and easier to remember for distributing to users. After you change your subdomain, click <code class="docutils literal notranslate"><span class="pre">Save</span></code>.</p>
-<p><img alt="streamlit share login" src="../_images/streamlit_newurl.png" /></p>
+<figure class="align-default" id="id10">
+<img alt="../_images/streamlit_newurl.png" src="../_images/streamlit_newurl.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.15 </span><span class="caption-text">The New URL for your Application</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Now, your app is in the cloud with a unique and easy-to-remember subdomain!</p>
 </section>
 </section>

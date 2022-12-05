@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01_intro/01_05-01_intro.html">
-   5. Formal Coding: Functions, Classes, and Libraries
+   5. Working with External Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_sna/06_01_08_applied2.html">
-     3.8. SNA on Humanities Data: Creating the Graph
+     3.7. SNA on Humanities Data: Creating the Graph
     </a>
    </li>
   </ul>
@@ -1045,7 +1045,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/titanic.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/titanic.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="s2">&quot;Fare&quot;</span><span class="p">]]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1069,95 +1070,53 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
       <th>Sex</th>
       <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
+      <th>Pclass</th>
       <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
       <td>male</td>
       <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
+      <td>3</td>
       <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
       <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
       <td>female</td>
       <td>38.0</td>
       <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
       <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
       <td>Heikkinen, Miss. Laina</td>
       <td>female</td>
       <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
+      <td>3</td>
       <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
       <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
       <td>female</td>
       <td>35.0</td>
       <td>1</td>
-      <td>0</td>
-      <td>113803</td>
       <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
       <td>male</td>
       <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
+      <td>3</td>
       <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1166,92 +1125,50 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
       <td>male</td>
       <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
+      <td>2</td>
       <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>887</th>
-      <td>888</td>
-      <td>1</td>
-      <td>1</td>
       <td>Graham, Miss. Margaret Edith</td>
       <td>female</td>
       <td>19.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>112053</td>
+      <td>1</td>
       <td>30.0000</td>
-      <td>B42</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>888</th>
-      <td>889</td>
-      <td>0</td>
-      <td>3</td>
       <td>Johnston, Miss. Catherine Helen "Carrie"</td>
       <td>female</td>
       <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>W./C. 6607</td>
+      <td>3</td>
       <td>23.4500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
       <td>male</td>
       <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
+      <td>1</td>
       <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
       <td>male</td>
       <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
+      <td>3</td>
       <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>891 rows × 12 columns</p>
+<p>891 rows × 5 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1265,7 +1182,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001F436D18910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002754F3CFB80&gt;
 </pre></div>
 </div>
 </div>
@@ -1296,95 +1213,53 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
       <th>Sex</th>
       <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
+      <th>Pclass</th>
       <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
       <td>male</td>
       <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
+      <td>3</td>
       <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
       <td>Allen, Mr. William Henry</td>
       <td>male</td>
       <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
+      <td>3</td>
       <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>0</td>
-      <td>3</td>
       <td>Moran, Mr. James</td>
       <td>male</td>
       <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>330877</td>
+      <td>3</td>
       <td>8.4583</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>7</td>
-      <td>0</td>
-      <td>1</td>
       <td>McCarthy, Mr. Timothy J</td>
       <td>male</td>
       <td>54.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>17463</td>
+      <td>1</td>
       <td>51.8625</td>
-      <td>E46</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>8</td>
-      <td>0</td>
-      <td>3</td>
       <td>Palsson, Master. Gosta Leonard</td>
       <td>male</td>
       <td>2.0</td>
       <td>3</td>
-      <td>1</td>
-      <td>349909</td>
       <td>21.0750</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1393,92 +1268,50 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>883</th>
-      <td>884</td>
-      <td>0</td>
-      <td>2</td>
       <td>Banfield, Mr. Frederick James</td>
       <td>male</td>
       <td>28.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>C.A./SOTON 34068</td>
+      <td>2</td>
       <td>10.5000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>884</th>
-      <td>885</td>
-      <td>0</td>
-      <td>3</td>
       <td>Sutehall, Mr. Henry Jr</td>
       <td>male</td>
       <td>25.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/OQ 392076</td>
+      <td>3</td>
       <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>887</td>
-      <td>0</td>
-      <td>2</td>
       <td>Montvila, Rev. Juozas</td>
       <td>male</td>
       <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>211536</td>
+      <td>2</td>
       <td>13.0000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>889</th>
-      <td>890</td>
-      <td>1</td>
-      <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
       <td>male</td>
       <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>111369</td>
+      <td>1</td>
       <td>30.0000</td>
-      <td>C148</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>891</td>
-      <td>0</td>
-      <td>3</td>
       <td>Dooley, Mr. Patrick</td>
       <td>male</td>
       <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>370376</td>
+      <td>3</td>
       <td>7.7500</td>
-      <td>NaN</td>
-      <td>Q</td>
     </tr>
   </tbody>
 </table>
-<p>577 rows × 12 columns</p>
+<p>577 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>This argument does not have to be a string. Let’s say, we want to just get all the people who are aged 20. We can do the same thing by grouping the dataset by “Age” and then getting the group of 20 year olds.</p>
@@ -1507,245 +1340,133 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
       <th>Sex</th>
       <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
+      <th>Pclass</th>
       <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>12</th>
-      <td>13</td>
-      <td>0</td>
-      <td>3</td>
       <td>Saundercock, Mr. William Henry</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>A/5. 2151</td>
+      <td>3</td>
       <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>91</th>
-      <td>92</td>
-      <td>0</td>
-      <td>3</td>
       <td>Andreasson, Mr. Paul Edvin</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>347466</td>
+      <td>3</td>
       <td>7.8542</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>113</th>
-      <td>114</td>
-      <td>0</td>
-      <td>3</td>
       <td>Jussila, Miss. Katriina</td>
       <td>female</td>
       <td>20.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4136</td>
+      <td>3</td>
       <td>9.8250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>131</th>
-      <td>132</td>
-      <td>0</td>
-      <td>3</td>
       <td>Coelho, Mr. Domingos Fernandeo</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/O.Q. 3101307</td>
+      <td>3</td>
       <td>7.0500</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>378</th>
-      <td>379</td>
-      <td>0</td>
-      <td>3</td>
       <td>Betros, Mr. Tannous</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2648</td>
+      <td>3</td>
       <td>4.0125</td>
-      <td>NaN</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>404</th>
-      <td>405</td>
-      <td>0</td>
-      <td>3</td>
       <td>Oreskovic, Miss. Marija</td>
       <td>female</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>315096</td>
+      <td>3</td>
       <td>8.6625</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>441</th>
-      <td>442</td>
-      <td>0</td>
-      <td>3</td>
       <td>Hampe, Mr. Leon</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>345769</td>
+      <td>3</td>
       <td>9.5000</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>622</th>
-      <td>623</td>
-      <td>1</td>
-      <td>3</td>
       <td>Nakid, Mr. Sahid</td>
       <td>male</td>
       <td>20.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2653</td>
+      <td>3</td>
       <td>15.7417</td>
-      <td>NaN</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>640</th>
-      <td>641</td>
-      <td>0</td>
-      <td>3</td>
       <td>Jensen, Mr. Hans Peder</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>350050</td>
+      <td>3</td>
       <td>7.8542</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>664</th>
-      <td>665</td>
-      <td>1</td>
-      <td>3</td>
       <td>Lindqvist, Mr. Eino William</td>
       <td>male</td>
       <td>20.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>STON/O 2. 3101285</td>
+      <td>3</td>
       <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>682</th>
-      <td>683</td>
-      <td>0</td>
-      <td>3</td>
       <td>Olsvigen, Mr. Thor Anderson</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>6563</td>
+      <td>3</td>
       <td>9.2250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>725</th>
-      <td>726</td>
-      <td>0</td>
-      <td>3</td>
       <td>Oreskovic, Mr. Luka</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>315094</td>
+      <td>3</td>
       <td>8.6625</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>762</th>
-      <td>763</td>
-      <td>1</td>
-      <td>3</td>
       <td>Barah, Mr. Hanna Assi</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2663</td>
+      <td>3</td>
       <td>7.2292</td>
-      <td>NaN</td>
-      <td>C</td>
     </tr>
     <tr>
       <th>840</th>
-      <td>841</td>
-      <td>0</td>
-      <td>3</td>
       <td>Alhomaki, Mr. Ilmari Rudolf</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>SOTON/O2 3101287</td>
+      <td>3</td>
       <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
     <tr>
       <th>876</th>
-      <td>877</td>
-      <td>0</td>
-      <td>3</td>
       <td>Gustafsson, Mr. Alfred Ossian</td>
       <td>male</td>
       <td>20.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>7534</td>
+      <td>3</td>
       <td>9.8458</td>
-      <td>NaN</td>
-      <td>S</td>
     </tr>
   </tbody>
 </table>
@@ -1780,27 +1501,13 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Name</th>
       <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
+      <th>Pclass</th>
       <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
     </tr>
     <tr>
       <th>Sex</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1811,29 +1518,15 @@ title="Print to PDF"
     <tr>
       <th>female</th>
       <td>314</td>
-      <td>314</td>
-      <td>314</td>
-      <td>314</td>
       <td>261</td>
       <td>314</td>
       <td>314</td>
-      <td>314</td>
-      <td>314</td>
-      <td>97</td>
-      <td>312</td>
     </tr>
     <tr>
       <th>male</th>
       <td>577</td>
-      <td>577</td>
-      <td>577</td>
-      <td>577</td>
       <td>453</td>
       <td>577</td>
-      <td>577</td>
-      <td>577</td>
-      <td>577</td>
-      <td>107</td>
       <td>577</td>
     </tr>
   </tbody>
@@ -1866,20 +1559,12 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
       <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
+      <th>Pclass</th>
       <th>Fare</th>
     </tr>
     <tr>
       <th>Sex</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1888,22 +1573,14 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>female</th>
-      <td>135343</td>
-      <td>233</td>
-      <td>678</td>
       <td>7286.00</td>
-      <td>218</td>
-      <td>204</td>
+      <td>678</td>
       <td>13966.6628</td>
     </tr>
     <tr>
       <th>male</th>
-      <td>262043</td>
-      <td>109</td>
-      <td>1379</td>
       <td>13919.17</td>
-      <td>248</td>
-      <td>136</td>
+      <td>1379</td>
       <td>14727.2865</td>
     </tr>
   </tbody>
@@ -1961,7 +1638,7 @@ Name: Fare, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sex     Pclass  Age 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sex     Pclass  Age 
 female  1       2.0     151.5500
                 14.0    120.0000
                 15.0    211.3375
@@ -1974,304 +1651,6 @@ male    3       59.0      7.2500
                 70.5      7.7500
                 74.0      7.7750
 Name: Fare, Length: 283, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>In order to print off this many rows, we need to increase the amount of data Pandas will display. We can use the pd.set_options() command and pass an argument to display 1000 rows.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">Fare</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sex     Pclass  Age  
-female  1       2.00     151.5500
-                14.00    120.0000
-                15.00    211.3375
-                16.00    183.8792
-                17.00    165.9000
-                18.00    569.5500
-                19.00    147.3625
-                21.00    340.3333
-                22.00    322.6500
-                23.00    376.2750
-                24.00    534.2625
-                25.00    151.5500
-                26.00     78.8500
-                29.00    211.3375
-                30.00    374.3542
-                31.00    278.1417
-                32.00     76.2917
-                33.00    229.6000
-                35.00    926.5375
-                36.00    326.6333
-                38.00    378.8083
-                39.00    329.5916
-                40.00    287.9625
-                41.00    134.5000
-                42.00    227.5250
-                43.00    211.3375
-                44.00     85.7000
-                45.00    164.8667
-                47.00     52.5542
-                48.00     65.5292
-                49.00    102.6584
-                50.00    276.2333
-                51.00     77.9583
-                52.00    171.7667
-                53.00     51.4792
-                54.00    137.6667
-                56.00     83.1583
-                58.00    326.5333
-                60.00     75.2500
-                62.00     80.0000
-                63.00     77.9583
-        2       2.00      26.0000
-                3.00      41.5792
-                4.00      62.0000
-                5.00      27.7500
-                6.00      33.0000
-                7.00      26.2500
-                8.00      26.2500
-                13.00     19.5000
-                14.00     30.0708
-                17.00     22.5000
-                18.00     36.0000
-                19.00     52.0000
-                21.00     10.5000
-                22.00     70.5792
-                23.00     13.7917
-                24.00    177.2500
-                25.00     56.0000
-                26.00     26.0000
-                27.00     45.3583
-                28.00     88.6500
-                29.00     62.5000
-                30.00     46.3500
-                31.00     26.2500
-                32.00     13.0000
-                32.50     13.0000
-                33.00     53.7500
-                34.00     79.0000
-                35.00     21.0000
-                36.00     52.0000
-                38.00     13.0000
-                40.00     67.7500
-                41.00     19.5000
-                42.00     39.0000
-                44.00     26.0000
-                45.00     39.7500
-                48.00     65.0000
-                50.00     47.0000
-                54.00     23.0000
-                55.00     16.0000
-                57.00     10.5000
-        3       0.75      38.5166
-                1.00      26.8750
-                2.00      81.9250
-                3.00      21.0750
-                4.00      52.1417
-                5.00      63.1208
-                6.00      31.2750
-                8.00      21.0750
-                9.00     108.7958
-                10.00     24.1500
-                11.00     31.2750
-                13.00      7.2292
-                14.00     19.0959
-                14.50     14.4542
-                15.00     29.7084
-                16.00     62.3833
-                17.00     22.3833
-                18.00     91.4667
-                19.00     15.7334
-                20.00     18.4875
-                21.00     59.6000
-                22.00     50.8792
-                23.00     15.4750
-                24.00     60.6583
-                25.00     15.7000
-                26.00     31.8792
-                27.00     31.5333
-                28.00     22.2958
-                29.00     46.7833
-                30.00     45.2875
-                30.50      7.7500
-                31.00     55.0625
-                32.00     15.5000
-                33.00     15.8500
-                35.00     20.2500
-                36.00     17.4000
-                37.00      9.5875
-                38.00     31.3875
-                39.00     60.4000
-                40.00      9.4750
-                41.00     59.9000
-                43.00     46.9000
-                45.00     50.1042
-                47.00     14.5000
-                48.00     34.3750
-                63.00      9.5875
-male    1       0.92     151.5500
-                4.00      81.8583
-                11.00    120.0000
-                17.00    110.8833
-                18.00    108.9000
-                19.00    316.1000
-                21.00     77.2875
-                22.00    135.6333
-                23.00     63.3583
-                24.00    326.7208
-                25.00    146.5209
-                26.00     30.0000
-                27.00    371.8292
-                28.00    191.3208
-                29.00     96.6000
-                30.00     27.7500
-                31.00    159.4958
-                32.00     30.5000
-                33.00      5.0000
-                34.00     26.5500
-                35.00    565.1667
-                36.00    803.9792
-                37.00    135.3542
-                38.00    243.4625
-                39.00      0.0000
-                40.00     58.7208
-                42.00    130.8417
-                44.00     90.0000
-                45.00    172.0750
-                45.50     28.5000
-                46.00    140.3750
-                47.00    150.1083
-                48.00    155.2792
-                49.00    256.9167
-                50.00    295.9750
-                51.00     87.9292
-                52.00    110.1500
-                54.00    129.1500
-                55.00     30.5000
-                56.00     92.7458
-                58.00    142.9750
-                60.00    105.7500
-                61.00     65.8208
-                62.00     53.1000
-                64.00    289.0000
-                65.00     88.5292
-                70.00     71.0000
-                71.00     84.1584
-                80.00     30.0000
-        2       0.67      14.5000
-                0.83      47.7500
-                1.00      76.0042
-                2.00      26.0000
-                3.00      44.7500
-                8.00      36.7500
-                16.00     36.5000
-                18.00    109.5000
-                19.00     70.7500
-                21.00    158.5000
-                23.00     76.0458
-                24.00     97.0000
-                25.00    106.5792
-                26.00     10.5000
-                27.00     52.0000
-                28.00     70.0000
-                29.00     59.2208
-                30.00     73.5000
-                31.00     86.7542
-                32.00    110.0000
-                32.50     30.0708
-                33.00     12.2750
-                34.00    107.0000
-                35.00     36.5000
-                36.00     64.1250
-                36.50     26.0000
-                37.00     26.0000
-                39.00     52.0000
-                42.00     53.0000
-                43.00     26.2500
-                44.00     26.0000
-                46.00     26.0000
-                47.00     15.0000
-                48.00     13.0000
-                50.00     13.0000
-                51.00     12.5250
-                52.00     26.5000
-                54.00     66.0000
-                57.00     12.3500
-                59.00     13.5000
-                60.00     39.0000
-                62.00     10.5000
-                66.00     10.5000
-                70.00     10.5000
-        3       0.42       8.5167
-                1.00     107.1625
-                2.00      89.8875
-                3.00      47.2875
-                4.00      99.4333
-                6.00      12.4750
-                7.00      68.8125
-                8.00      29.1250
-                9.00     114.7125
-                10.00     27.9000
-                11.00     65.6875
-                12.00     11.2417
-                14.00     86.5875
-                15.00      7.2292
-                16.00    154.9042
-                17.00     47.3959
-                18.00     74.2333
-                19.00     94.7915
-                20.00    110.8751
-                20.50      7.2500
-                21.00    111.3541
-                22.00    108.8874
-                23.00     24.9750
-                23.50      7.2292
-                24.00     95.1791
-                24.50      8.0500
-                25.00     85.2125
-                26.00    166.3333
-                27.00     45.7833
-                28.00    153.2374
-                28.50     23.3292
-                29.00     65.3749
-                30.00     71.3000
-                30.50      8.0500
-                31.00     23.4500
-                32.00    192.5291
-                33.00     70.9083
-                34.00     36.9958
-                34.50      6.4375
-                35.00     38.1708
-                36.00     55.0916
-                37.00      7.9250
-                38.00     23.6083
-                39.00     71.2750
-                40.00     58.5208
-                40.50     22.2500
-                41.00     21.2333
-                42.00     32.2667
-                43.00     14.5000
-                44.00     40.1250
-                45.00     15.0250
-                45.50      7.2250
-                47.00     16.2500
-                48.00      7.8542
-                49.00      0.0000
-                50.00      8.0500
-                51.00     22.8542
-                55.50      8.0500
-                59.00      7.2500
-                61.00      6.2375
-                65.00      7.7500
-                70.50      7.7500
-                74.00      7.7750
-Name: Fare, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2316,1147 +1695,58 @@ Name: Fare, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="127" valign="top">female</th>
-      <th rowspan="41" valign="top">1</th>
-      <th>2.00</th>
+      <th rowspan="5" valign="top">female</th>
+      <th rowspan="5" valign="top">1</th>
+      <th>2.0</th>
       <td>151.5500</td>
     </tr>
     <tr>
-      <th>14.00</th>
+      <th>14.0</th>
       <td>120.0000</td>
     </tr>
     <tr>
-      <th>15.00</th>
+      <th>15.0</th>
       <td>211.3375</td>
     </tr>
     <tr>
-      <th>16.00</th>
+      <th>16.0</th>
       <td>183.8792</td>
     </tr>
     <tr>
-      <th>17.00</th>
+      <th>17.0</th>
       <td>165.9000</td>
     </tr>
     <tr>
-      <th>18.00</th>
-      <td>569.5500</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>147.3625</td>
-    </tr>
-    <tr>
-      <th>21.00</th>
-      <td>340.3333</td>
-    </tr>
-    <tr>
-      <th>22.00</th>
-      <td>322.6500</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>376.2750</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>534.2625</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>151.5500</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>78.8500</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>211.3375</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>374.3542</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>278.1417</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>76.2917</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>229.6000</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>926.5375</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>326.6333</td>
-    </tr>
-    <tr>
-      <th>38.00</th>
-      <td>378.8083</td>
-    </tr>
-    <tr>
-      <th>39.00</th>
-      <td>329.5916</td>
-    </tr>
-    <tr>
-      <th>40.00</th>
-      <td>287.9625</td>
-    </tr>
-    <tr>
-      <th>41.00</th>
-      <td>134.5000</td>
-    </tr>
-    <tr>
-      <th>42.00</th>
-      <td>227.5250</td>
-    </tr>
-    <tr>
-      <th>43.00</th>
-      <td>211.3375</td>
-    </tr>
-    <tr>
-      <th>44.00</th>
-      <td>85.7000</td>
-    </tr>
-    <tr>
-      <th>45.00</th>
-      <td>164.8667</td>
-    </tr>
-    <tr>
-      <th>47.00</th>
-      <td>52.5542</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>65.5292</td>
-    </tr>
-    <tr>
-      <th>49.00</th>
-      <td>102.6584</td>
-    </tr>
-    <tr>
-      <th>50.00</th>
-      <td>276.2333</td>
-    </tr>
-    <tr>
-      <th>51.00</th>
-      <td>77.9583</td>
-    </tr>
-    <tr>
-      <th>52.00</th>
-      <td>171.7667</td>
-    </tr>
-    <tr>
-      <th>53.00</th>
-      <td>51.4792</td>
-    </tr>
-    <tr>
-      <th>54.00</th>
-      <td>137.6667</td>
-    </tr>
-    <tr>
-      <th>56.00</th>
-      <td>83.1583</td>
-    </tr>
-    <tr>
-      <th>58.00</th>
-      <td>326.5333</td>
-    </tr>
-    <tr>
-      <th>60.00</th>
-      <td>75.2500</td>
-    </tr>
-    <tr>
-      <th>62.00</th>
-      <td>80.0000</td>
-    </tr>
-    <tr>
-      <th>63.00</th>
-      <td>77.9583</td>
-    </tr>
-    <tr>
-      <th rowspan="40" valign="top">2</th>
-      <th>2.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>3.00</th>
-      <td>41.5792</td>
-    </tr>
-    <tr>
-      <th>4.00</th>
-      <td>62.0000</td>
-    </tr>
-    <tr>
-      <th>5.00</th>
-      <td>27.7500</td>
-    </tr>
-    <tr>
-      <th>6.00</th>
-      <td>33.0000</td>
-    </tr>
-    <tr>
-      <th>7.00</th>
-      <td>26.2500</td>
-    </tr>
-    <tr>
-      <th>8.00</th>
-      <td>26.2500</td>
-    </tr>
-    <tr>
-      <th>13.00</th>
-      <td>19.5000</td>
-    </tr>
-    <tr>
-      <th>14.00</th>
-      <td>30.0708</td>
-    </tr>
-    <tr>
-      <th>17.00</th>
-      <td>22.5000</td>
-    </tr>
-    <tr>
-      <th>18.00</th>
-      <td>36.0000</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>52.0000</td>
-    </tr>
-    <tr>
-      <th>21.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th>22.00</th>
-      <td>70.5792</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>13.7917</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>177.2500</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>56.0000</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>27.00</th>
-      <td>45.3583</td>
-    </tr>
-    <tr>
-      <th>28.00</th>
-      <td>88.6500</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>62.5000</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>46.3500</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>26.2500</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>13.0000</td>
-    </tr>
-    <tr>
-      <th>32.50</th>
-      <td>13.0000</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>53.7500</td>
-    </tr>
-    <tr>
-      <th>34.00</th>
-      <td>79.0000</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>21.0000</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>52.0000</td>
-    </tr>
-    <tr>
-      <th>38.00</th>
-      <td>13.0000</td>
-    </tr>
-    <tr>
-      <th>40.00</th>
-      <td>67.7500</td>
-    </tr>
-    <tr>
-      <th>41.00</th>
-      <td>19.5000</td>
-    </tr>
-    <tr>
-      <th>42.00</th>
-      <td>39.0000</td>
-    </tr>
-    <tr>
-      <th>44.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>45.00</th>
-      <td>39.7500</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>65.0000</td>
-    </tr>
-    <tr>
-      <th>50.00</th>
-      <td>47.0000</td>
-    </tr>
-    <tr>
-      <th>54.00</th>
-      <td>23.0000</td>
-    </tr>
-    <tr>
-      <th>55.00</th>
-      <td>16.0000</td>
-    </tr>
-    <tr>
-      <th>57.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th rowspan="46" valign="top">3</th>
-      <th>0.75</th>
-      <td>38.5166</td>
-    </tr>
-    <tr>
-      <th>1.00</th>
-      <td>26.8750</td>
-    </tr>
-    <tr>
-      <th>2.00</th>
-      <td>81.9250</td>
-    </tr>
-    <tr>
-      <th>3.00</th>
-      <td>21.0750</td>
-    </tr>
-    <tr>
-      <th>4.00</th>
-      <td>52.1417</td>
-    </tr>
-    <tr>
-      <th>5.00</th>
-      <td>63.1208</td>
-    </tr>
-    <tr>
-      <th>6.00</th>
-      <td>31.2750</td>
-    </tr>
-    <tr>
-      <th>8.00</th>
-      <td>21.0750</td>
-    </tr>
-    <tr>
-      <th>9.00</th>
-      <td>108.7958</td>
-    </tr>
-    <tr>
-      <th>10.00</th>
-      <td>24.1500</td>
-    </tr>
-    <tr>
-      <th>11.00</th>
-      <td>31.2750</td>
-    </tr>
-    <tr>
-      <th>13.00</th>
-      <td>7.2292</td>
-    </tr>
-    <tr>
-      <th>14.00</th>
-      <td>19.0959</td>
-    </tr>
-    <tr>
-      <th>14.50</th>
-      <td>14.4542</td>
-    </tr>
-    <tr>
-      <th>15.00</th>
-      <td>29.7084</td>
-    </tr>
-    <tr>
-      <th>16.00</th>
-      <td>62.3833</td>
-    </tr>
-    <tr>
-      <th>17.00</th>
-      <td>22.3833</td>
-    </tr>
-    <tr>
-      <th>18.00</th>
-      <td>91.4667</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>15.7334</td>
-    </tr>
-    <tr>
-      <th>20.00</th>
-      <td>18.4875</td>
-    </tr>
-    <tr>
-      <th>21.00</th>
-      <td>59.6000</td>
-    </tr>
-    <tr>
-      <th>22.00</th>
-      <td>50.8792</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>15.4750</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>60.6583</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>15.7000</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>31.8792</td>
-    </tr>
-    <tr>
-      <th>27.00</th>
-      <td>31.5333</td>
-    </tr>
-    <tr>
-      <th>28.00</th>
-      <td>22.2958</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>46.7833</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>45.2875</td>
-    </tr>
-    <tr>
-      <th>30.50</th>
-      <td>7.7500</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>55.0625</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>15.5000</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>15.8500</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>20.2500</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>17.4000</td>
-    </tr>
-    <tr>
-      <th>37.00</th>
-      <td>9.5875</td>
-    </tr>
-    <tr>
-      <th>38.00</th>
-      <td>31.3875</td>
-    </tr>
-    <tr>
-      <th>39.00</th>
-      <td>60.4000</td>
-    </tr>
-    <tr>
-      <th>40.00</th>
-      <td>9.4750</td>
-    </tr>
-    <tr>
-      <th>41.00</th>
-      <td>59.9000</td>
-    </tr>
-    <tr>
-      <th>43.00</th>
-      <td>46.9000</td>
-    </tr>
-    <tr>
-      <th>45.00</th>
-      <td>50.1042</td>
-    </tr>
-    <tr>
-      <th>47.00</th>
-      <td>14.5000</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>34.3750</td>
-    </tr>
-    <tr>
-      <th>63.00</th>
-      <td>9.5875</td>
-    </tr>
-    <tr>
-      <th rowspan="156" valign="top">male</th>
-      <th rowspan="49" valign="top">1</th>
-      <th>0.92</th>
-      <td>151.5500</td>
-    </tr>
-    <tr>
-      <th>4.00</th>
-      <td>81.8583</td>
-    </tr>
-    <tr>
-      <th>11.00</th>
-      <td>120.0000</td>
-    </tr>
-    <tr>
-      <th>17.00</th>
-      <td>110.8833</td>
-    </tr>
-    <tr>
-      <th>18.00</th>
-      <td>108.9000</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>316.1000</td>
-    </tr>
-    <tr>
-      <th>21.00</th>
-      <td>77.2875</td>
-    </tr>
-    <tr>
-      <th>22.00</th>
-      <td>135.6333</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>63.3583</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>326.7208</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>146.5209</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>30.0000</td>
-    </tr>
-    <tr>
-      <th>27.00</th>
-      <td>371.8292</td>
-    </tr>
-    <tr>
-      <th>28.00</th>
-      <td>191.3208</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>96.6000</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>27.7500</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>159.4958</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>30.5000</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>5.0000</td>
-    </tr>
-    <tr>
-      <th>34.00</th>
-      <td>26.5500</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>565.1667</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>803.9792</td>
-    </tr>
-    <tr>
-      <th>37.00</th>
-      <td>135.3542</td>
-    </tr>
-    <tr>
-      <th>38.00</th>
-      <td>243.4625</td>
-    </tr>
-    <tr>
-      <th>39.00</th>
-      <td>0.0000</td>
-    </tr>
-    <tr>
-      <th>40.00</th>
-      <td>58.7208</td>
-    </tr>
-    <tr>
-      <th>42.00</th>
-      <td>130.8417</td>
-    </tr>
-    <tr>
-      <th>44.00</th>
-      <td>90.0000</td>
-    </tr>
-    <tr>
-      <th>45.00</th>
-      <td>172.0750</td>
-    </tr>
-    <tr>
-      <th>45.50</th>
-      <td>28.5000</td>
-    </tr>
-    <tr>
-      <th>46.00</th>
-      <td>140.3750</td>
-    </tr>
-    <tr>
-      <th>47.00</th>
-      <td>150.1083</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>155.2792</td>
-    </tr>
-    <tr>
-      <th>49.00</th>
-      <td>256.9167</td>
-    </tr>
-    <tr>
-      <th>50.00</th>
-      <td>295.9750</td>
-    </tr>
-    <tr>
-      <th>51.00</th>
-      <td>87.9292</td>
-    </tr>
-    <tr>
-      <th>52.00</th>
-      <td>110.1500</td>
-    </tr>
-    <tr>
-      <th>54.00</th>
-      <td>129.1500</td>
-    </tr>
-    <tr>
-      <th>55.00</th>
-      <td>30.5000</td>
-    </tr>
-    <tr>
-      <th>56.00</th>
-      <td>92.7458</td>
-    </tr>
-    <tr>
-      <th>58.00</th>
-      <td>142.9750</td>
-    </tr>
-    <tr>
-      <th>60.00</th>
-      <td>105.7500</td>
-    </tr>
-    <tr>
-      <th>61.00</th>
-      <td>65.8208</td>
-    </tr>
-    <tr>
-      <th>62.00</th>
-      <td>53.1000</td>
-    </tr>
-    <tr>
-      <th>64.00</th>
-      <td>289.0000</td>
-    </tr>
-    <tr>
-      <th>65.00</th>
-      <td>88.5292</td>
-    </tr>
-    <tr>
-      <th>70.00</th>
-      <td>71.0000</td>
-    </tr>
-    <tr>
-      <th>71.00</th>
-      <td>84.1584</td>
-    </tr>
-    <tr>
-      <th>80.00</th>
-      <td>30.0000</td>
-    </tr>
-    <tr>
-      <th rowspan="44" valign="top">2</th>
-      <th>0.67</th>
-      <td>14.5000</td>
-    </tr>
-    <tr>
-      <th>0.83</th>
-      <td>47.7500</td>
-    </tr>
-    <tr>
-      <th>1.00</th>
-      <td>76.0042</td>
-    </tr>
-    <tr>
-      <th>2.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>3.00</th>
-      <td>44.7500</td>
-    </tr>
-    <tr>
-      <th>8.00</th>
-      <td>36.7500</td>
-    </tr>
-    <tr>
-      <th>16.00</th>
-      <td>36.5000</td>
-    </tr>
-    <tr>
-      <th>18.00</th>
-      <td>109.5000</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>70.7500</td>
-    </tr>
-    <tr>
-      <th>21.00</th>
-      <td>158.5000</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>76.0458</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>97.0000</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>106.5792</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th>27.00</th>
-      <td>52.0000</td>
-    </tr>
-    <tr>
-      <th>28.00</th>
-      <td>70.0000</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>59.2208</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>73.5000</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>86.7542</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>110.0000</td>
-    </tr>
-    <tr>
-      <th>32.50</th>
-      <td>30.0708</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>12.2750</td>
-    </tr>
-    <tr>
-      <th>34.00</th>
-      <td>107.0000</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>36.5000</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>64.1250</td>
-    </tr>
-    <tr>
-      <th>36.50</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>37.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>39.00</th>
-      <td>52.0000</td>
-    </tr>
-    <tr>
-      <th>42.00</th>
-      <td>53.0000</td>
-    </tr>
-    <tr>
-      <th>43.00</th>
-      <td>26.2500</td>
-    </tr>
-    <tr>
-      <th>44.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>46.00</th>
-      <td>26.0000</td>
-    </tr>
-    <tr>
-      <th>47.00</th>
-      <td>15.0000</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>13.0000</td>
-    </tr>
-    <tr>
-      <th>50.00</th>
-      <td>13.0000</td>
-    </tr>
-    <tr>
-      <th>51.00</th>
-      <td>12.5250</td>
-    </tr>
-    <tr>
-      <th>52.00</th>
-      <td>26.5000</td>
-    </tr>
-    <tr>
-      <th>54.00</th>
-      <td>66.0000</td>
-    </tr>
-    <tr>
-      <th>57.00</th>
-      <td>12.3500</td>
-    </tr>
-    <tr>
-      <th>59.00</th>
-      <td>13.5000</td>
-    </tr>
-    <tr>
-      <th>60.00</th>
-      <td>39.0000</td>
-    </tr>
-    <tr>
-      <th>62.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th>66.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th>70.00</th>
-      <td>10.5000</td>
-    </tr>
-    <tr>
-      <th rowspan="63" valign="top">3</th>
-      <th>0.42</th>
-      <td>8.5167</td>
-    </tr>
-    <tr>
-      <th>1.00</th>
-      <td>107.1625</td>
-    </tr>
-    <tr>
-      <th>2.00</th>
-      <td>89.8875</td>
-    </tr>
-    <tr>
-      <th>3.00</th>
-      <td>47.2875</td>
-    </tr>
-    <tr>
-      <th>4.00</th>
-      <td>99.4333</td>
-    </tr>
-    <tr>
-      <th>6.00</th>
-      <td>12.4750</td>
-    </tr>
-    <tr>
-      <th>7.00</th>
-      <td>68.8125</td>
-    </tr>
-    <tr>
-      <th>8.00</th>
-      <td>29.1250</td>
-    </tr>
-    <tr>
-      <th>9.00</th>
-      <td>114.7125</td>
-    </tr>
-    <tr>
-      <th>10.00</th>
-      <td>27.9000</td>
-    </tr>
-    <tr>
-      <th>11.00</th>
-      <td>65.6875</td>
-    </tr>
-    <tr>
-      <th>12.00</th>
-      <td>11.2417</td>
-    </tr>
-    <tr>
-      <th>14.00</th>
-      <td>86.5875</td>
-    </tr>
-    <tr>
-      <th>15.00</th>
-      <td>7.2292</td>
-    </tr>
-    <tr>
-      <th>16.00</th>
-      <td>154.9042</td>
-    </tr>
-    <tr>
-      <th>17.00</th>
-      <td>47.3959</td>
-    </tr>
-    <tr>
-      <th>18.00</th>
-      <td>74.2333</td>
-    </tr>
-    <tr>
-      <th>19.00</th>
-      <td>94.7915</td>
-    </tr>
-    <tr>
-      <th>20.00</th>
-      <td>110.8751</td>
-    </tr>
-    <tr>
-      <th>20.50</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">male</th>
+      <th rowspan="5" valign="top">3</th>
+      <th>59.0</th>
       <td>7.2500</td>
     </tr>
     <tr>
-      <th>21.00</th>
-      <td>111.3541</td>
-    </tr>
-    <tr>
-      <th>22.00</th>
-      <td>108.8874</td>
-    </tr>
-    <tr>
-      <th>23.00</th>
-      <td>24.9750</td>
-    </tr>
-    <tr>
-      <th>23.50</th>
-      <td>7.2292</td>
-    </tr>
-    <tr>
-      <th>24.00</th>
-      <td>95.1791</td>
-    </tr>
-    <tr>
-      <th>24.50</th>
-      <td>8.0500</td>
-    </tr>
-    <tr>
-      <th>25.00</th>
-      <td>85.2125</td>
-    </tr>
-    <tr>
-      <th>26.00</th>
-      <td>166.3333</td>
-    </tr>
-    <tr>
-      <th>27.00</th>
-      <td>45.7833</td>
-    </tr>
-    <tr>
-      <th>28.00</th>
-      <td>153.2374</td>
-    </tr>
-    <tr>
-      <th>28.50</th>
-      <td>23.3292</td>
-    </tr>
-    <tr>
-      <th>29.00</th>
-      <td>65.3749</td>
-    </tr>
-    <tr>
-      <th>30.00</th>
-      <td>71.3000</td>
-    </tr>
-    <tr>
-      <th>30.50</th>
-      <td>8.0500</td>
-    </tr>
-    <tr>
-      <th>31.00</th>
-      <td>23.4500</td>
-    </tr>
-    <tr>
-      <th>32.00</th>
-      <td>192.5291</td>
-    </tr>
-    <tr>
-      <th>33.00</th>
-      <td>70.9083</td>
-    </tr>
-    <tr>
-      <th>34.00</th>
-      <td>36.9958</td>
-    </tr>
-    <tr>
-      <th>34.50</th>
-      <td>6.4375</td>
-    </tr>
-    <tr>
-      <th>35.00</th>
-      <td>38.1708</td>
-    </tr>
-    <tr>
-      <th>36.00</th>
-      <td>55.0916</td>
-    </tr>
-    <tr>
-      <th>37.00</th>
-      <td>7.9250</td>
-    </tr>
-    <tr>
-      <th>38.00</th>
-      <td>23.6083</td>
-    </tr>
-    <tr>
-      <th>39.00</th>
-      <td>71.2750</td>
-    </tr>
-    <tr>
-      <th>40.00</th>
-      <td>58.5208</td>
-    </tr>
-    <tr>
-      <th>40.50</th>
-      <td>22.2500</td>
-    </tr>
-    <tr>
-      <th>41.00</th>
-      <td>21.2333</td>
-    </tr>
-    <tr>
-      <th>42.00</th>
-      <td>32.2667</td>
-    </tr>
-    <tr>
-      <th>43.00</th>
-      <td>14.5000</td>
-    </tr>
-    <tr>
-      <th>44.00</th>
-      <td>40.1250</td>
-    </tr>
-    <tr>
-      <th>45.00</th>
-      <td>15.0250</td>
-    </tr>
-    <tr>
-      <th>45.50</th>
-      <td>7.2250</td>
-    </tr>
-    <tr>
-      <th>47.00</th>
-      <td>16.2500</td>
-    </tr>
-    <tr>
-      <th>48.00</th>
-      <td>7.8542</td>
-    </tr>
-    <tr>
-      <th>49.00</th>
-      <td>0.0000</td>
-    </tr>
-    <tr>
-      <th>50.00</th>
-      <td>8.0500</td>
-    </tr>
-    <tr>
-      <th>51.00</th>
-      <td>22.8542</td>
-    </tr>
-    <tr>
-      <th>55.50</th>
-      <td>8.0500</td>
-    </tr>
-    <tr>
-      <th>59.00</th>
-      <td>7.2500</td>
-    </tr>
-    <tr>
-      <th>61.00</th>
+      <th>61.0</th>
       <td>6.2375</td>
     </tr>
     <tr>
-      <th>65.00</th>
+      <th>65.0</th>
       <td>7.7500</td>
     </tr>
     <tr>
-      <th>70.50</th>
+      <th>70.5</th>
       <td>7.7500</td>
     </tr>
     <tr>
-      <th>74.00</th>
+      <th>74.0</th>
       <td>7.7750</td>
     </tr>
   </tbody>
 </table>
+<p>283 rows × 1 columns</p>
 </div></div></div>
 </div>
 <p>This is now a bit easier to read. You should now have a fairly good understanding of how to group data in Pandas using groupby() and some of the more powerful ways you can use groupby() to manipulate quantitative data.</p>
