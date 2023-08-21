@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>1.2. Displaying Data in Streamlit &#8212; Introduction to Python for Humanists</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,61 +61,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_streamlit/05_01_03_displaying_data';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.3. Streamlit Input Widgets" href="05_01_04_input_widgets.html" />
     <link rel="prev" title="1.1. Creating Our First App" href="05_01_02_streamlit.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/chapman-logo.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Python for Humanists</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/chapman-logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/chapman-logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,1215 +156,436 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PREFACE
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PREFACE</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_01_preface.html">
-   Preface
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../00_preface/00_01_preface.html">Preface</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PART ONE: The Basics of Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PART ONE: The Basics of Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_01-01_intro.html">
-   1. Introduction to Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">
-     1.1. Introduction to Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-03_installing_python.html">
-     1.2. Installing Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">
-     1.3. Coding Basics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_02-01_intro.html">
-   2. Data and Data Structures
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02-02_data.html">
-     2.1. Introduction to Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_02-03_data_structures.html">
-     2.2. Introduction to Data Structures
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_03-01_intro.html">
-   3. Loops and Logic
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_03-02_loops.html">
-     3.1. Introduction to Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_03-03_conditionals.html">
-     3.2. Conditionals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_04-01_intro.html">
-   4. Formal Coding: Functions, Classes, and Libraries
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-02_functions.html">
-     4.1. Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-03_classes.html">
-     4.2. Classes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_04-04_libraries.html">
-     4.3. Libraries in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_05-01_intro.html">
-   5. Working with External Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-02_texts.html">
-     5.1. Working with Textual Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-03_json.html">
-     5.2. Working with JSON Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">
-     5.3. Working with Multiple Files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_intro/01_06-01_intro.html">
-   6. Working with Data on the Web
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_06-02_html.html">
-     6.1. Introduction to HTML
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">
-     6.2. Scraping Web Pages with Requests and BeautifulSoup
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_01-01_intro.html">1. Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_01-02_introduction_to_python.html">1.1. Introduction to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_01-03_installing_python.html">1.2. Installing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_01-04_coding_basics.html">1.3. Coding Basics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PART TWO: Data Analysis with Pandas (Work in Progress)
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_02-01_intro.html">2. Data and Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_02-02_data.html">2.1. Introduction to Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_02-03_data_structures.html">2.2. Introduction to Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_03-01_intro.html">3. Loops and Logic</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_03-02_loops.html">3.1. Introduction to Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_03-03_conditionals.html">3.2. Conditionals</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_04-01_intro.html">4. Formal Coding: Functions, Classes, and Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_04-02_functions.html">4.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_04-03_classes.html">4.2. Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_04-04_libraries.html">4.3. Libraries in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_05-01_intro.html">5. Working with External Data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_05-02_texts.html">5.1. Working with Textual Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_05-03_json.html">5.2. Working with JSON Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_05-04_multiple_files.html">5.3. Working with Multiple Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_intro/01_06-01_intro.html">6. Working with Data on the Web</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_06-02_html.html">6.1. Introduction to HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_intro/01_06-03_scraping_pages.html">6.2. Scraping Web Pages with Requests and BeautifulSoup</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PART TWO: Data Analysis with Pandas (Work in Progress)</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02_pandas/02_01_01_intro.html">
-   1. Introduction to Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_01_02_introduction_to_pandas.html">
-     1.1. Introduction to Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_01_03_the_basics.html">
-     1.2. The Basics of Pandas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02_pandas/02_02_01_intro.html">
-   2. Working with Data in Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_02_02_finding_data.html">
-     2.1. Finding Data in DataFrame
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_02_03_organizing_data.html">
-     2.2. Organizing the DataFrame
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_02_04_cleaning_data.html">
-     2.3. Cleaning the DataFrame
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02_pandas/02_03_01_intro.html">
-   3. Searching for Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_03_02_advanced_strings.html">
-     3.1. Advanced Searching on Strings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_03_03_advanced_querying.html">
-     3.2. Filter and Querying
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_03_04_advanced_grouping.html">
-     3.3. Grouping with Groupby()
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02_pandas/02_04_01_intro.html">
-   4. Advanced Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_04_02_pandas_and_plots.html">
-     4.1. Plotting Data with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_04_03_graphing_networks_with_pandas.html">
-     4.2. Graphing Network Data with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_pandas/02_04_04_time_series_data.html">
-     4.3. Time Series Data
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_pandas/02_01_01_intro.html">1. Introduction to Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_01_02_introduction_to_pandas.html">1.1. Introduction to Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_01_03_the_basics.html">1.2. The Basics of Pandas</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PART THREE: Natural Language Processing with spaCy
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_pandas/02_02_01_intro.html">2. Working with Data in Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_02_02_finding_data.html">2.1. Finding Data in DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_02_03_organizing_data.html">2.2. Organizing the DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_02_04_cleaning_data.html">2.3. Cleaning the DataFrame</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_pandas/02_03_01_intro.html">3. Searching for Data</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_03_02_advanced_strings.html">3.1. Advanced Searching on Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_03_03_advanced_querying.html">3.2. Filter and Querying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_03_04_advanced_grouping.html">3.3. Grouping with Groupby()</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_pandas/02_04_01_intro.html">4. Advanced Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_04_02_pandas_and_plots.html">4.1. Plotting Data with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_04_03_graphing_networks_with_pandas.html">4.2. Graphing Network Data with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_pandas/02_04_04_time_series_data.html">4.3. Time Series Data</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PART THREE: Natural Language Processing with spaCy</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03_spacy/03_01_01_intro.html">
-   1. Introduction to spaCy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_01_02_install_and_containers.html">
-     1.1. The Basics of spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_01_03_linguistic_annotations.html">
-     1.2. Getting Started with spaCy and its Linguistic Annotations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_01_04_pipelines.html">
-     1.3. spaCy’s Pipelines
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03_spacy/03_02_01_intro.html">
-   2. Rules-Based spaCy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_02_02_entityruler.html">
-     2.1. The EntityRuler
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_02_03_matcher.html">
-     2.2. The Matcher
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_02_04_phrase_matcher.html">
-     2.3. The PhraseMatcher
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_02_06_simple_regex.html">
-     2.4. Using RegEx with spaCy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_02_07_complex_regex.html">
-     2.5. Working with Multi-Word Token Entities and RegEx in spaCy 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03_spacy/03_03_01_intro.html">
-   3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_03_02_cultivating_concentration_camp_dataset.html">
-     3.1. Cultivating Good Datasets for Entities
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_03_03_challenges.html">
-     3.2. The Challenges of Holocaust NER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_spacy/03_03_04_building_holocaust_pipeline_rules_based.html">
-     3.3. Creating Rules-Based Pipeline for Holocaust Documents
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_spacy/03_01_01_intro.html">1. Introduction to spaCy</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_01_02_install_and_containers.html">1.1. The Basics of spaCy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_01_03_linguistic_annotations.html">1.2. Getting Started with spaCy and its Linguistic Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_01_04_pipelines.html">1.3. spaCy’s Pipelines</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PART FOUR: OTHER APPLICATIONS OF PYTHON
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_spacy/03_02_01_intro.html">2. Rules-Based spaCy</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_02_02_entityruler.html">2.1. The EntityRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_02_03_matcher.html">2.2. The Matcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_02_04_phrase_matcher.html">2.3. The PhraseMatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_02_06_simple_regex.html">2.4. Using RegEx with spaCy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_02_07_complex_regex.html">2.5. Working with Multi-Word Token Entities and RegEx in spaCy 3</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_spacy/03_03_01_intro.html">3. Solving a Domain-Specific Problem: A Case Study with Holocaust NER</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_03_02_cultivating_concentration_camp_dataset.html">3.1. Cultivating Good Datasets for Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_03_03_challenges.html">3.2. The Challenges of Holocaust NER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_spacy/03_03_04_building_holocaust_pipeline_rules_based.html">3.3. Creating Rules-Based Pipeline for Holocaust Documents</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PART FOUR: OTHER APPLICATIONS OF PYTHON </span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">
-   1. Topic Modeling in Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">
-     1.1. What is Topic Modeling?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">
-     1.2. Topics and Clusters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_01_04_bigrams.html">
-     1.3. Bigrams and Trigrams
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">
-     1.4. LDA Topic Modeling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_02_06_lda.html">
-     1.5. Creating LDA in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">
-     1.6. Transformer Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">
-     1.7. Top2Vec in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08_booknlp/01_01_intro.html">
-   2. Text Analysis with BookNLP
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08_booknlp/01_intro.html">
-     2.1. Introduction to BookNLP
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08_booknlp/02_starting.html">
-     2.2. Getting Started with BookNLP
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08_booknlp/03_files.html">
-     2.3. The Output Files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08_booknlp/04_character_analysis.html">
-     2.4. Character Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08_booknlp/05_events.html">
-     2.5. Events Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06_sna/06_01_01_intro.html">
-   3. Social Network Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_02_basics.html">
-     3.1. The Basic Concepts of Social Network Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_03_networkx.html">
-     3.2. Introduction to NetworkX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">
-     3.3. Producing Dynamic Graphs with PyVis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_05_networkx_pyvis.html">
-     3.4. NetworkX and PyVis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_06_node_color.html">
-     3.5. Adding Color to Nodes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_07_applied.html">
-     3.6. SNA on Humanities Data: Structuring the Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_sna/06_01_08_applied2.html">
-     3.7. SNA on Humanities Data: Creating the Graph
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_topic_modeling/04_01_01_intro.html">1. Topic Modeling in Python</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_01_02_topic_modeling_concepts.html">1.1. What is Topic Modeling?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_01_03_clusters.html">1.2. Topics and Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_01_04_bigrams.html">1.3. Bigrams and Trigrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_02_02_lda_concept.html">1.4. LDA Topic Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_02_06_lda.html">1.5. Creating LDA in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_03_03_embedding_clustering.html">1.6. Transformer Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_topic_modeling/04_03_04_top2vec.html">1.7. Top2Vec in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_booknlp/01_01_intro.html">2. Text Analysis with BookNLP</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_booknlp/01_intro.html">2.1. Introduction to BookNLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_booknlp/02_starting.html">2.2. Getting Started with BookNLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_booknlp/03_files.html">2.3. The Output Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_booknlp/04_character_analysis.html">2.4. Character Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_booknlp/05_events.html">2.5. Events Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_sna/06_01_01_intro.html">3. Social Network Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_02_basics.html">3.1. The Basic Concepts of Social Network Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_03_networkx.html">3.2. Introduction to NetworkX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_04_pyvis_basics.html">3.3. Producing Dynamic Graphs with PyVis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_05_networkx_pyvis.html">3.4. NetworkX and PyVis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_06_node_color.html">3.5. Adding Color to Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_07_applied.html">3.6. SNA on Humanities Data: Structuring the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_sna/06_01_08_applied2.html">3.7. SNA on Humanities Data: Creating the Graph</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PART FIVE: DESIGNING AN APPLICATION WITH STREAMLIT</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="05_01_01_intro.html">
-   1. Introduction to Streamlit
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_01_02_streamlit.html">
-     1.1. Creating Our First App
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.2. Displaying Data in Streamlit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_01_04_input_widgets.html">
-     1.3. Streamlit Input Widgets
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="05_02_01_intro.html">
-   2. Advanced Streamlit Features
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_02_02_charts.html">
-     2.1. Data Visualization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_02_03_layout_design.html">
-     2.2. Layout Design
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_02_04_cache.html">
-     2.3. Streamlit Cache and Session States
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_02_05_custom_html.html">
-     2.5. Custom HTML
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_02_06_multiple_pages.html">
-     2.6. Multi-Page Applications
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="05_03_01_intro.html">
-   3. Building a Database Query Application
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label for="toctree-checkbox-19">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_03_02_database_query_app.html">
-     3.1. Building a Database Query Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05_03_03_cloud.html">
-     3.2. Deploying an App in the Cloud with Streamlit Share
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="05_01_01_intro.html">1. Introduction to Streamlit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="05_01_02_streamlit.html">1.1. Creating Our First App</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Displaying Data in Streamlit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_01_04_input_widgets.html">1.3. Streamlit Input Widgets</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="05_02_01_intro.html">2. Advanced Streamlit Features</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_02_02_charts.html">2.1. Data Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_02_03_layout_design.html">2.2. Layout Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_02_04_cache.html">2.3. Streamlit Cache and Session States</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="05_02_05_custom_html.html">2.5. Custom HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_02_06_multiple_pages.html">2.6. Multi-Page Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="05_03_01_intro.html">3. Building a Database Query Application</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_03_02_database_query_app.html">3.1. Building a Database Query Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_03_03_cloud.html">3.2. Deploying an App in the Cloud with Streamlit Share</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/wjbmattingly/python_for_dh/main?urlpath=tree/05_streamlit/05_01_03_displaying_data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_streamlit/05_01_03_displaying_data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/wjbmattingly/python_for_dh/blob/main/05_streamlit/05_01_03_displaying_data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/wjbmattingly/python_for_dh" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_streamlit/05_01_03_displaying_data.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_streamlit/05_01_03_displaying_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05_streamlit/05_01_03_displaying_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/issues/new?title=Issue%20on%20page%20%2F05_streamlit/05_01_03_displaying_data.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/wjbmattingly/python_for_dh/edit/main/05_streamlit/05_01_03_displaying_data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/05_streamlit/05_01_03_displaying_data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-text-to-users">
-   1.2.1. Displaying Text to Users
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-title">
-     1.2.1.1.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.title
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-header">
-     1.2.1.2.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.header
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-subheader">
-     1.2.1.3.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.subheader
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-write">
-     1.2.1.4.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-caption">
-     1.2.1.5.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.caption
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-markdown">
-     1.2.1.6.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.markdown
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-python-data-structures">
-   1.2.2. Displaying Python Data Structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-structures-with-st-write">
-     1.2.2.1. Data Structures with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-structures-with-st-json">
-     1.2.2.2. Data Structures with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.json()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-tabular-data">
-   1.2.3. Displaying Tabular Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-write">
-     1.2.3.1. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-dataframe">
-     1.2.3.2. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.dataframe()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-table">
-     1.2.3.3. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.table()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-markdown">
-     1.2.3.4. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.markdown()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">
-   1.2.4. Displaying Multimedia in Streamlit
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#images">
-     1.2.4.1. Images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#audio">
-     1.2.4.2. Audio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#video">
-     1.2.4.3. Video
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Displaying Data in Streamlit</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-text-to-users">
-   1.2.1. Displaying Text to Users
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-title">
-     1.2.1.1.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.title
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-header">
-     1.2.1.2.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.header
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-subheader">
-     1.2.1.3.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.subheader
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-write">
-     1.2.1.4.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-caption">
-     1.2.1.5.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.caption
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#st-markdown">
-     1.2.1.6.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.markdown
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-python-data-structures">
-   1.2.2. Displaying Python Data Structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-structures-with-st-write">
-     1.2.2.1. Data Structures with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-structures-with-st-json">
-     1.2.2.2. Data Structures with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.json()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-tabular-data">
-   1.2.3. Displaying Tabular Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-write">
-     1.2.3.1. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.write()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-dataframe">
-     1.2.3.2. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.dataframe()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-table">
-     1.2.3.3. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.table()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data-with-st-markdown">
-     1.2.3.4. Tabular Data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       st.markdown()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">
-   1.2.4. Displaying Multimedia in Streamlit
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#images">
-     1.2.4.1. Images
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#audio">
-     1.2.4.2. Audio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#video">
-     1.2.4.3. Video
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Displaying Data in Streamlit</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-text-to-users">1.2.1. Displaying Text to Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-title">1.2.1.1. <code class="docutils literal notranslate"><span class="pre">st.title</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-header">1.2.1.2. <code class="docutils literal notranslate"><span class="pre">st.header</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-subheader">1.2.1.3. <code class="docutils literal notranslate"><span class="pre">st.subheader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-write">1.2.1.4. <code class="docutils literal notranslate"><span class="pre">st.write</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-caption">1.2.1.5. <code class="docutils literal notranslate"><span class="pre">st.caption</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-markdown">1.2.1.6. <code class="docutils literal notranslate"><span class="pre">st.markdown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-python-data-structures">1.2.2. Displaying Python Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-with-st-write">1.2.2.1. Data Structures with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-with-st-json">1.2.2.2. Data Structures with <code class="docutils literal notranslate"><span class="pre">st.json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-tabular-data">1.2.3. Displaying Tabular Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-write">1.2.3.1. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-dataframe">1.2.3.2. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.dataframe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-table">1.2.3.3. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-markdown">1.2.3.4. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">1.2.4. Displaying Multimedia in Streamlit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">1.2.4.1. Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#audio">1.2.4.2. Audio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">1.2.4.3. Video</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="displaying-data-in-streamlit">
-<h1><span class="section-number">1.2. </span>Displaying Data in Streamlit<a class="headerlink" href="#displaying-data-in-streamlit" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="displaying-data-in-streamlit">
+<h1><span class="section-number">1.2. </span>Displaying Data in Streamlit<a class="headerlink" href="#displaying-data-in-streamlit" title="Permalink to this heading">#</a></h1>
 <p>Streamlit offers numerous ways to display different types of data. In this section, we will be looking at a few of those methods from raw text, to structured markdown, to Pandas DataFrames, and even images.</p>
 <section id="displaying-text-to-users">
-<h2><span class="section-number">1.2.1. </span>Displaying Text to Users<a class="headerlink" href="#displaying-text-to-users" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>Displaying Text to Users<a class="headerlink" href="#displaying-text-to-users" title="Permalink to this heading">#</a></h2>
 <p>Once you have imported streamlit, you can use the Streamlit library to create an application with just a few lines of code. To follow along in the repository, you can view the <code class="docutils literal notranslate"><span class="pre">01-Displaying</span> <span class="pre">Data.py</span></code> file or the <code class="docutils literal notranslate"><span class="pre">Displaying</span> <span class="pre">Data</span></code> page of the application.</p>
 <p>Streamlit offers a number of ways to display information to the users of your application. One of the most common things we must convey to a user is text. This can be a title, it can explain basic information about the application, or it can be to display results from some prompt. Streamlit offers several ways to display information to users.</p>
 <section id="st-title">
-<h3><span class="section-number">1.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">st.title</span></code><a class="headerlink" href="#st-title" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">st.title</span></code><a class="headerlink" href="#st-title" title="Permalink to this heading">#</a></h3>
 <p>Every application needs a name. If you want the title of your application to stand out on the page, you can use <code class="docutils literal notranslate"><span class="pre">st.title()</span></code> to output a title on your application page. This will take one argument, a string which will be your application title. It is entirely optional to have a title. To add the title, you would place the following line into your Python file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;This a Title.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1329,7 +593,7 @@ title="Print to PDF"
 <p>Once you have added this to your Python file, you can hit refresh in your Streamlit application, and you should see a title page now appear at the top of your page.</p>
 </section>
 <section id="st-header">
-<h3><span class="section-number">1.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">st.header</span></code><a class="headerlink" href="#st-header" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">st.header</span></code><a class="headerlink" href="#st-header" title="Permalink to this heading">#</a></h3>
 <p>Now that we have a title, we can add some extra layers to our application, rather like a traditional HTML website. We can add headers, for example, with <code class="docutils literal notranslate"><span class="pre">st.header()</span></code>. Again, this will take a single argument, the text that you wish to display as a header. You can add a header to your application by adding the following line to the same Python file and hitting refresh:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;This a Header.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1337,14 +601,14 @@ title="Print to PDF"
 <p>Notice that our header appears below our title. This is because Streamlit reads the Python file top-to-bottom as it reruns in the background. If you want an item to appear higher in the application, you must place it earlier in your Python file. Additionally, you can use containers which we will meet later in this chapter.</p>
 </section>
 <section id="st-subheader">
-<h3><span class="section-number">1.2.1.3. </span><code class="docutils literal notranslate"><span class="pre">st.subheader</span></code><a class="headerlink" href="#st-subheader" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.3. </span><code class="docutils literal notranslate"><span class="pre">st.subheader</span></code><a class="headerlink" href="#st-subheader" title="Permalink to this heading">#</a></h3>
 <p>Just like <code class="docutils literal notranslate"><span class="pre">st.header</span></code>, <code class="docutils literal notranslate"><span class="pre">st.subheader</span></code> adds a subheading to your application to allow you to have even greater nested structure. If you add the following line to your Python file and hit refresh, you will see a subheading appear.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">subheader</span><span class="p">(</span><span class="s2">&quot;This a Subheader.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="st-write">
-<h3><span class="section-number">1.2.1.4. </span><code class="docutils literal notranslate"><span class="pre">st.write</span></code><a class="headerlink" href="#st-write" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.4. </span><code class="docutils literal notranslate"><span class="pre">st.write</span></code><a class="headerlink" href="#st-write" title="Permalink to this heading">#</a></h3>
 <p>The most common way to display text to a user is with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code>. With this command, we can pass a single argument, some sort of data that we want to display. Let’s use this command and display the string <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">text.</span></code>. To do this, we would add the following line to our Python file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is text.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1352,14 +616,14 @@ title="Print to PDF"
 <p>Streamlit’s <code class="docutils literal notranslate"><span class="pre">st.write</span></code>is quite powerful. As we will see below, it can display data structures, such as lists and dictionaries, as well as entire dataframes, automatically.</p>
 </section>
 <section id="st-caption">
-<h3><span class="section-number">1.2.1.5. </span><code class="docutils literal notranslate"><span class="pre">st.caption</span></code><a class="headerlink" href="#st-caption" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.5. </span><code class="docutils literal notranslate"><span class="pre">st.caption</span></code><a class="headerlink" href="#st-caption" title="Permalink to this heading">#</a></h3>
 <p>In Streamlit, it may be necessary to caption something. As we will see, images can be captioned separately. To caption something in your application, you will use<code class="docutils literal notranslate"><span class="pre">st.caption()</span></code>. Again, this will take a single argument, the string that we wish to display as a caption. We can add a caption to our application by adding the following line to our Python file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">caption</span><span class="p">(</span><span class="s2">&quot;This a Caption.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="st-markdown">
-<h3><span class="section-number">1.2.1.6. </span><code class="docutils literal notranslate"><span class="pre">st.markdown</span></code><a class="headerlink" href="#st-markdown" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.1.6. </span><code class="docutils literal notranslate"><span class="pre">st.markdown</span></code><a class="headerlink" href="#st-markdown" title="Permalink to this heading">#</a></h3>
 <p>Finally, we have <code class="docutils literal notranslate"><span class="pre">st.markdown</span></code>. Markdown is a type of language that allows you to structure text quickly. Markdown is easy-to-read for both humans and machines and is the standard language used for README pages. Markdown files end with a <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension.</p>
 <p>Streamlit allows users to leverage the power of markdown inside a Streamlit application. This means that we can read in a markdown file stored in the same directory as our application and automatically display that file’s contents in our application. This is really useful when you have pages or sections on a page that require longer section of text or, perhaps, things like lists. These types of long strings can often crowd a Python file. In our demonstration Streamlit application, for example, we can see this in action with the following lines added to our Python file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./markdown/sample.md&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1371,10 +635,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="displaying-python-data-structures">
-<h2><span class="section-number">1.2.2. </span>Displaying Python Data Structures<a class="headerlink" href="#displaying-python-data-structures" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>Displaying Python Data Structures<a class="headerlink" href="#displaying-python-data-structures" title="Permalink to this heading">#</a></h2>
 <p>It is often necessary to display raw data inside an application either during the development phase of the application or in production (when users will engage with the app). Streamlit has two different ways to display data with the same results: <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> or <code class="docutils literal notranslate"><span class="pre">st.json()</span></code>. On the surface, they both do the same thing, but <code class="docutils literal notranslate"><span class="pre">st.json</span></code> allows you to set an <code class="docutils literal notranslate"><span class="pre">expanded</span></code> keyword argument to <code class="docutils literal notranslate"><span class="pre">True</span></code>or <code class="docutils literal notranslate"><span class="pre">False</span></code>. This allows you to control if the data appears in its entirety in the application or as a expandable option within the application.</p>
 <section id="data-structures-with-st-write">
-<h3><span class="section-number">1.2.2.1. </span>Data Structures with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code><a class="headerlink" href="#data-structures-with-st-write" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.2.1. </span>Data Structures with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code><a class="headerlink" href="#data-structures-with-st-write" title="Permalink to this heading">#</a></h3>
 <p>Let’s first test this out with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code>. We can use the following two lines to create a dictionary called <code class="docutils literal notranslate"><span class="pre">names</span></code> and then <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> to display that data.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;people&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Mary&quot;</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephanie&quot;</span><span class="p">]}</span>
 <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
@@ -1389,7 +653,7 @@ title="Print to PDF"
 </figure>
 </section>
 <section id="data-structures-with-st-json">
-<h3><span class="section-number">1.2.2.2. </span>Data Structures with <code class="docutils literal notranslate"><span class="pre">st.json()</span></code><a class="headerlink" href="#data-structures-with-st-json" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.2.2. </span>Data Structures with <code class="docutils literal notranslate"><span class="pre">st.json()</span></code><a class="headerlink" href="#data-structures-with-st-json" title="Permalink to this heading">#</a></h3>
 <p>For our second option, we can use <code class="docutils literal notranslate"><span class="pre">st.json</span></code>, but note that we are able to specify expanded here as a keyword argument.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;people&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Mary&quot;</span><span class="p">,</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Stephanie&quot;</span><span class="p">]}</span>
 <span class="n">st</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1405,7 +669,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="displaying-tabular-data">
-<h2><span class="section-number">1.2.3. </span>Displaying Tabular Data<a class="headerlink" href="#displaying-tabular-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>Displaying Tabular Data<a class="headerlink" href="#displaying-tabular-data" title="Permalink to this heading">#</a></h2>
 <p>There are four ways to display tabular data within Streamlit.</p>
 <ul class="simple">
 <li><p>st.write() (defaults to st.dataframe())</p></li>
@@ -1415,14 +679,14 @@ title="Print to PDF"
 </ul>
 <p>While on the surface, these may all seem to display the same data, understanding what each does is important so that you can have your application do precisely what you wish.</p>
 <section id="tabular-data-with-st-write">
-<h3><span class="section-number">1.2.3.1. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code><a class="headerlink" href="#tabular-data-with-st-write" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.1. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code><a class="headerlink" href="#tabular-data-with-st-write" title="Permalink to this heading">#</a></h3>
 <p>If you are trying to test an application quickly and just want to display tabular data without any extra customization, then <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> is perfectly suitable. If Streamlit detects a Pandas DataFrame as the object that is being passed to <code class="docutils literal notranslate"><span class="pre">st.write()</span></code>, it will automatically output that data via <code class="docutils literal notranslate"><span class="pre">st.dataframe()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="tabular-data-with-st-dataframe">
-<h3><span class="section-number">1.2.3.2. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.dataframe()</span></code><a class="headerlink" href="#tabular-data-with-st-dataframe" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.2. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.dataframe()</span></code><a class="headerlink" href="#tabular-data-with-st-dataframe" title="Permalink to this heading">#</a></h3>
 <p>If you want to have more control over how your tabular data is displayed in your application, you may want to use <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code> instead. By using <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code>, you can control the width and height of the displayed dataframe.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
 </pre></div>
@@ -1437,14 +701,14 @@ title="Print to PDF"
 <p>With both <code class="docutils literal notranslate"><span class="pre">st.write()</span></code> and <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code>, users will be given a Streamlit dataframe display. This means that they can highlight certain parts of the dataframe, expand cells to read longer text, and sort the data. In other words, the dataframe is an entirely interactive display widget.</p>
 </section>
 <section id="tabular-data-with-st-table">
-<h3><span class="section-number">1.2.3.3. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.table()</span></code><a class="headerlink" href="#tabular-data-with-st-table" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.3. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.table()</span></code><a class="headerlink" href="#tabular-data-with-st-table" title="Permalink to this heading">#</a></h3>
 <p>One of the downsides the <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code> display is that the interactivity comes at the cost of aesthetics. If you are working with humanities data, you may have a lot of text in your tables. That text can be difficult for viewers to read in the standard <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code> output. In these situations, <code class="docutils literal notranslate"><span class="pre">st.table</span></code> may be more appropriate.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="tabular-data-with-st-markdown">
-<h3><span class="section-number">1.2.3.4. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code><a class="headerlink" href="#tabular-data-with-st-markdown" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.4. </span>Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code><a class="headerlink" href="#tabular-data-with-st-markdown" title="Permalink to this heading">#</a></h3>
 <p>A key limitation of both the <code class="docutils literal notranslate"><span class="pre">st.table()</span></code> and <code class="docutils literal notranslate"><span class="pre">st.dataframe</span></code> is that they do not offer a way to display images. With markdown, we can easily display images within our tables. This, however, comes at the cost of not being able to sort the output. We will learn how to do this later when we work with custom HTML in our Streamlit application. For now, understand that you can convert a Pandas DataFrame to markdown by using the <code class="docutils literal notranslate"><span class="pre">to_markdown()</span></code> method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
 </pre></div>
@@ -1452,7 +716,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="displaying-multimedia-in-streamlit">
-<h2><span class="section-number">1.2.4. </span>Displaying Multimedia in Streamlit<a class="headerlink" href="#displaying-multimedia-in-streamlit" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.4. </span>Displaying Multimedia in Streamlit<a class="headerlink" href="#displaying-multimedia-in-streamlit" title="Permalink to this heading">#</a></h2>
 <p>Streamlit also offers the ability to easily add multimedia into your application. For all three types of media (images, audio, and video), Streamlit allows you to place the media in the app in four ways:</p>
 <ul class="simple">
 <li><p>file path</p></li>
@@ -1462,21 +726,21 @@ title="Print to PDF"
 </ul>
 <p>Each of these has its own uses. If the media you have is available locally within the app (such as logos and design elements), from file path usually makes the most sense. If your data sits on a server on the Web, then url is the right choice. These will be images that do not sit within the code of your application or in the local directory. When you have a user input media data into the app (via file upload), you will want to load the data via NumPy Array or Bytes. We will see these last two in action during the final chapter of this section when we apply Streamlit to develop real digital humanities applications.</p>
 <section id="images">
-<h3><span class="section-number">1.2.4.1. </span>Images<a class="headerlink" href="#images" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.1. </span>Images<a class="headerlink" href="#images" title="Permalink to this heading">#</a></h3>
 <p>If we are working with images, we can load a local image with the following line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">path_to_image</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="audio">
-<h3><span class="section-number">1.2.4.2. </span>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.2. </span>Audio<a class="headerlink" href="#audio" title="Permalink to this heading">#</a></h3>
 <p>For audio, we would use the following line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">audio</span><span class="p">(</span><span class="n">path_to_image</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="video">
-<h3><span class="section-number">1.2.4.3. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.4.3. </span>Video<a class="headerlink" href="#video" title="Permalink to this heading">#</a></h3>
 <p>For video we would use the following line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">video</span><span class="p">(</span><span class="n">path_to_image</span><span class="p">)</span>
 </pre></div>
@@ -1497,7 +761,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./05_streamlit"
         },
         predefinedOutput: true
@@ -1505,50 +769,131 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="05_01_02_streamlit.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.1. </span>Creating Our First App</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_01_02_streamlit.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>Creating Our First App</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="05_01_04_input_widgets.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="05_01_04_input_widgets.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">1.3. </span>Streamlit Input Widgets</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By William J.B. Mattingly<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-text-to-users">1.2.1. Displaying Text to Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-title">1.2.1.1. <code class="docutils literal notranslate"><span class="pre">st.title</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-header">1.2.1.2. <code class="docutils literal notranslate"><span class="pre">st.header</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-subheader">1.2.1.3. <code class="docutils literal notranslate"><span class="pre">st.subheader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-write">1.2.1.4. <code class="docutils literal notranslate"><span class="pre">st.write</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-caption">1.2.1.5. <code class="docutils literal notranslate"><span class="pre">st.caption</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#st-markdown">1.2.1.6. <code class="docutils literal notranslate"><span class="pre">st.markdown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-python-data-structures">1.2.2. Displaying Python Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-with-st-write">1.2.2.1. Data Structures with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-with-st-json">1.2.2.2. Data Structures with <code class="docutils literal notranslate"><span class="pre">st.json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-tabular-data">1.2.3. Displaying Tabular Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-write">1.2.3.1. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-dataframe">1.2.3.2. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.dataframe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-table">1.2.3.3. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data-with-st-markdown">1.2.3.4. Tabular Data with <code class="docutils literal notranslate"><span class="pre">st.markdown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-multimedia-in-streamlit">1.2.4. Displaying Multimedia in Streamlit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">1.2.4.1. Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#audio">1.2.4.2. Audio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">1.2.4.3. Video</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By William J.B. Mattingly
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
